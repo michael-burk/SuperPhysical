@@ -1,9 +1,9 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="1005" top="9750" width="795" height="240">
+   <BOUNDS type="Box" left="975" top="9750" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="1005" top="9750" width="0" height="0">
+   <BOUNDS type="Node" left="975" top="9750" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
    </PIN>
@@ -20,14 +20,14 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="3120" top="735" width="23085" height="14340">
+   <BOUNDS type="Window" left="1350" top="600" width="21465" height="14340">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="3030" top="9750" width="795" height="240">
+   <BOUNDS type="Box" left="3000" top="9750" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="3030" top="9750" width="0" height="0">
+   <BOUNDS type="Node" left="3000" top="9750" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -617,6 +617,8 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="RefractionIndexXYZ">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="171">
    <BOUNDS type="Box" left="9135" top="5220" width="1035" height="240">
@@ -777,6 +779,8 @@
    </PIN>
    <PIN pinname="Color Output" visible="1">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="205">
    <BOUNDS type="Box" left="16605" top="4590" width="795" height="240">
@@ -794,6 +798,8 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="219">
@@ -816,6 +822,8 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
    <NODE id="186" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
@@ -883,6 +891,8 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <NODE systemname="ParallaxOcclusionMapping (SuperPhysical Material)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="ParallaxOcclusionMapping (SuperPhysical)" componentmode="Hidden" id="236">
    <BOUNDS type="Node" left="15255" top="9615" width="100" height="100">
@@ -921,6 +931,8 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="241">
    <BOUNDS type="Box" left="17985" top="9615" width="795" height="240">
@@ -936,6 +948,8 @@
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="SSSFalloff">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
    <NODE systemname="SubsurfaceScattering (SuperPhysical Material)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="SubsurfaceScattering (SuperPhysical)" componentmode="Hidden" id="253">
@@ -965,6 +979,8 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <LINK srcnodeid="254" srcpinname="Y Output Value" dstnodeid="253" dstpinname="SSSAmount">
    </LINK>
@@ -984,52 +1000,26 @@
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <NODE systemname="ControlTextures (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="ControlTextures (SuperPhysical Material)" componentmode="Hidden" id="265">
-   <BOUNDS type="Node" left="9150" top="5820" width="9630" height="270">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="AlbedoTex" visible="1">
-   </PIN>
-   <PIN pinname="EmissiveTex" visible="1">
-   </PIN>
-   <PIN pinname="NormalMap" visible="1">
-   </PIN>
-   <PIN pinname="HeightMap" visible="1">
-   </PIN>
-   <PIN pinname="RoughnessMap" visible="1">
-   </PIN>
-   <PIN pinname="MetallicMap" visible="1">
-   </PIN>
-   <PIN pinname="AOMap" visible="1">
-   </PIN>
-   <PIN pinname="Bumpiness" visible="1">
-   </PIN>
-   <PIN pinname="noTile" visible="1">
-   </PIN>
-   <PIN pinname="tTex" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Material (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Material (SuperPhysical Material)" componentmode="Hidden" id="267">
    <BOUNDS type="Node" left="960" top="10815" width="16410" height="270">
    </BOUNDS>
-   <PIN pinname="Metallic" visible="1">
+   <PIN pinname="Metallic" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Roughness" visible="1">
+   <PIN pinname="Roughness" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Color" visible="1">
+   <PIN pinname="Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
-   <PIN pinname="Emissive" visible="1">
+   <PIN pinname="Emissive" visible="1" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
-   <PIN pinname="ControlTextures" visible="1">
+   <PIN pinname="ControlTextures" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Iridescence" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Refraction" visible="1">
+   <PIN pinname="Refraction" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="ParallaxOcclusionMapping" visible="1">
+   <PIN pinname="ParallaxOcclusionMapping" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="SubsurfaceScattering" visible="1">
+   <PIN pinname="SubsurfaceScattering" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -1042,11 +1032,7 @@
    </LINK>
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="267" dstpinname="Emissive">
    </LINK>
-   <LINK srcnodeid="265" srcpinname="Output" dstnodeid="267" dstpinname="ControlTextures">
-   </LINK>
    <LINK srcnodeid="263" srcpinname="Output" dstnodeid="267" dstpinname="Refraction">
-   </LINK>
-   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="267" dstpinname="ParallaxOcclusionMapping">
    </LINK>
    <LINK srcnodeid="253" srcpinname="Output" dstnodeid="267" dstpinname="SubsurfaceScattering" linkstyle="VHV">
    <LINKPOINT x="17985" y="10680">
@@ -1054,34 +1040,14 @@
    <LINKPOINT x="17370" y="10680">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="267" srcpinname="Output" dstnodeid="152" dstpinname="Input Node">
-   </LINK>
-   <LINK srcnodeid="171" srcpinname="Y Output Value" dstnodeid="265" dstpinname="AlbedoTex">
-   </LINK>
-   <LINK srcnodeid="172" srcpinname="Y Output Value" dstnodeid="265" dstpinname="EmissiveTex">
-   </LINK>
-   <LINK srcnodeid="173" srcpinname="Y Output Value" dstnodeid="265" dstpinname="NormalMap">
-   </LINK>
-   <LINK srcnodeid="174" srcpinname="Y Output Value" dstnodeid="265" dstpinname="HeightMap">
-   </LINK>
-   <LINK srcnodeid="175" srcpinname="Y Output Value" dstnodeid="265" dstpinname="RoughnessMap">
-   </LINK>
-   <LINK srcnodeid="176" srcpinname="Y Output Value" dstnodeid="265" dstpinname="MetallicMap">
-   </LINK>
-   <LINK srcnodeid="177" srcpinname="Y Output Value" dstnodeid="265" dstpinname="AOMap">
-   </LINK>
-   <LINK srcnodeid="205" srcpinname="Y Output Value" dstnodeid="265" dstpinname="Bumpiness">
-   </LINK>
-   <LINK srcnodeid="61" srcpinname="Y Output Value" dstnodeid="265" dstpinname="noTile">
-   </LINK>
-   <LINK srcnodeid="56" srcpinname="Transform Out" dstnodeid="265" dstpinname="tTex" linkstyle="PolyLine">
-   </LINK>
    <NODE systemname="Iridescence (SuperPhysical Material)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Iridescenec (SuperPhysical Material)" componentmode="Hidden" id="268">
    <BOUNDS type="Node" left="11190" top="9615" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="11190" top="9615">
    </BOUNDS>
-   <PIN pinname="Enabled" visible="1">
+   <PIN pinname="Enabled" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="186" srcpinname="Y Output Value" dstnodeid="268" dstpinname="IridescenceMap">
@@ -1203,5 +1169,37 @@
    <LINK srcnodeid="225" srcpinname="Y Output Value" dstnodeid="263" dstpinname="Enabled">
    </LINK>
    <LINK srcnodeid="219" srcpinname="Y Output Value" dstnodeid="268" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="ControlTextures (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="ControlTextures (SuperPhysical Material)" componentmode="Hidden" id="271">
+   <BOUNDS type="Node" left="9150" top="5820" width="9630" height="270">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="171" srcpinname="Y Output Value" dstnodeid="271" dstpinname="AlbedoTex">
+   </LINK>
+   <LINK srcnodeid="172" srcpinname="Y Output Value" dstnodeid="271" dstpinname="EmissiveTex">
+   </LINK>
+   <LINK srcnodeid="173" srcpinname="Y Output Value" dstnodeid="271" dstpinname="NormalMap">
+   </LINK>
+   <LINK srcnodeid="174" srcpinname="Y Output Value" dstnodeid="271" dstpinname="HeightMap">
+   </LINK>
+   <LINK srcnodeid="175" srcpinname="Y Output Value" dstnodeid="271" dstpinname="RoughnessMap">
+   </LINK>
+   <LINK srcnodeid="176" srcpinname="Y Output Value" dstnodeid="271" dstpinname="MetallicMap">
+   </LINK>
+   <LINK srcnodeid="177" srcpinname="Y Output Value" dstnodeid="271" dstpinname="AOMap">
+   </LINK>
+   <LINK srcnodeid="205" srcpinname="Y Output Value" dstnodeid="271" dstpinname="Bumpiness">
+   </LINK>
+   <LINK srcnodeid="61" srcpinname="Y Output Value" dstnodeid="271" dstpinname="noTile">
+   </LINK>
+   <LINK srcnodeid="56" srcpinname="Transform Out" dstnodeid="271" dstpinname="tTex" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="267" srcpinname="Output" dstnodeid="152" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="271" srcpinname="Output" dstnodeid="267" dstpinname="ControlTextures">
+   </LINK>
+   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="267" dstpinname="ParallaxOcclusionMapping">
    </LINK>
    </PATCH>

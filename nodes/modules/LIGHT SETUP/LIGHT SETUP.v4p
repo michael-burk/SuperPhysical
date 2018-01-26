@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="15" scrolly="15">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="15">
    <BOUNDS type="Window" left="2985" top="3240" width="13725" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
@@ -161,7 +161,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="3510" top="4470">
    </BOUNDS>
-   <BOUNDS type="Window" left="1950" top="2820" width="16650" height="14130">
+   <BOUNDS type="Window" left="1695" top="735" width="15390" height="14130">
    </BOUNDS>
    <PIN pinname="ShadowBlurWidth" slicecount="1" values="0.24">
    </PIN>
@@ -245,12 +245,14 @@
    </PIN>
    <PIN pinname="DirectionalLightSettings" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="LightSetup" visible="1">
+   </PIN>
+   <PIN pinname="IBLSettings" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="181" srcpinname="LightSetup" dstnodeid="64" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="181" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="164" srcpinname="Output" dstnodeid="181" dstpinname="IBLSettings" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="181" dstpinname="GlobalSettings">
    </LINK>
@@ -259,7 +261,7 @@
    <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182">
    <BOUNDS type="Node" left="4770" top="3900" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="615" top="3405" width="15165" height="10455">
+   <BOUNDS type="Window" left="0" top="2055" width="26070" height="10455">
    </BOUNDS>
    <BOUNDS type="Box" left="4770" top="3900">
    </BOUNDS>
@@ -277,5 +279,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="125" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
+   </LINK>
+   <LINK srcnodeid="164" srcpinname="Output" dstnodeid="181" dstpinname="IBLSettings">
    </LINK>
    </PATCH>

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1950" top="2820" width="16650" height="14130">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="15" scrolly="0">
+   <BOUNDS type="Window" left="1695" top="735" width="15390" height="14130">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>
@@ -235,13 +235,13 @@
    <PACK Name="dx11" Version="1.0.2">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="58">
-   <BOUNDS type="Box" left="1275" top="10185" width="795" height="240">
+   <BOUNDS type="Box" left="1365" top="9990" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="1275" top="10185" width="0" height="0">
+   <BOUNDS type="Node" left="1365" top="9990" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="SpotLights">
    </PIN>
-   <PIN pinname="Input Node" slicecount="1" values="||">
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="81">
@@ -475,7 +475,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="11865" top="3360" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -487,7 +487,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
@@ -545,13 +545,9 @@
    </BOUNDS>
    <PIN pinname="Shadow" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="SpotLights" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="300" srcpinname="SpotLights" dstnodeid="58" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="1395" y="9923">
-   </LINKPOINT>
-   <LINKPOINT x="1305" y="9923">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="300" dstpinname="PosXYZ">
    </LINK>
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Helper" linkstyle="Bezier">
@@ -651,5 +647,7 @@
    </LINKPOINT>
    <LINKPOINT x="6555" y="8753">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="300" srcpinname="SpotLights" dstnodeid="58" dstpinname="Input Node">
    </LINK>
    </PATCH>

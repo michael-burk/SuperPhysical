@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\SuperPhysical.v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="2745" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\SuperPhysical.v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -115,7 +115,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7470" top="2820" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="1548846496,1548846496,1548846496,1548846496">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -125,7 +125,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7815" top="3255" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="1548838048,1548861856,1548853408,1548852640">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -135,7 +135,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8145" top="3705" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="1548833440,1548845728,1548836512,1548852640">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -145,7 +145,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8520" top="4185" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="1548835744,1548837280,1548834976,1548852640">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -155,7 +155,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8835" top="4635" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -165,7 +165,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="9660" top="5580" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="881594656,881594656,881594656,881594656">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -513,7 +513,7 @@
    </BOUNDS>
    <PIN pinname="Texture" visible="1">
    </PIN>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="1548850336,1548842656,1548858016,1548852640">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
    </PIN>
    </NODE>
    <LINK srcnodeid="131" srcpinname="Texture" dstnodeid="1" dstpinname="Texture" linkstyle="Bezier">
@@ -754,162 +754,6 @@
    <LINKPOINT x="1050" y="8258">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="298">
-   <BOUNDS type="Node" left="2895" top="1350" width="6645" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2895" top="1350">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="298" srcpinname="RefractionIndexXYZ" dstnodeid="77" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="6960" y="4050">
-   </LINKPOINT>
-   <LINKPOINT x="10050" y="4050">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="EmissiveTex" dstnodeid="132" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="7770" y="2205">
-   </LINKPOINT>
-   <LINKPOINT x="7500" y="2205">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="NormalMap" dstnodeid="133" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8070" y="2430">
-   </LINKPOINT>
-   <LINKPOINT x="7845" y="2430">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="HeightMap" dstnodeid="134" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8355" y="2663">
-   </LINKPOINT>
-   <LINKPOINT x="8175" y="2663">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="RoughnessMap" dstnodeid="135" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8640" y="2895">
-   </LINKPOINT>
-   <LINKPOINT x="8550" y="2895">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="MetallicMap" dstnodeid="136" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8925" y="3128">
-   </LINKPOINT>
-   <LINKPOINT x="8865" y="3128">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="IridescenceMap" dstnodeid="138" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="9510" y="3593">
-   </LINKPOINT>
-   <LINKPOINT x="9675" y="3593">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="Iridescence" dstnodeid="1" dstpinname="useIridescence" linkstyle="Bezier">
-   <LINKPOINT x="7185" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="4335" y="4613">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="Refraction" dstnodeid="1" dstpinname="Refraction" linkstyle="Bezier">
-   <LINKPOINT x="6615" y="4605">
-   </LINKPOINT>
-   <LINKPOINT x="4080" y="4605">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="fHeigtMapScale" dstnodeid="1" dstpinname="fHeightMapScale" linkstyle="Bezier">
-   <LINKPOINT x="6315" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="2085" y="4613">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="POMnumSamples" dstnodeid="1" dstpinname="POM_numSamples" linkstyle="Bezier">
-   <LINKPOINT x="6045" y="4620">
-   </LINKPOINT>
-   <LINKPOINT x="2325" y="4620">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="POM" dstnodeid="1" dstpinname="Parallax Occlusion Mapping" linkstyle="Bezier">
-   <LINKPOINT x="5775" y="4605">
-   </LINKPOINT>
-   <LINKPOINT x="5595" y="4605">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="noTile" dstnodeid="1" dstpinname="noTile" linkstyle="Bezier">
-   <LINKPOINT x="5505" y="4620">
-   </LINKPOINT>
-   <LINKPOINT x="6855" y="4620">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="Bumpiness" dstnodeid="1" dstpinname="Bumpiness" linkstyle="Bezier">
-   <LINKPOINT x="5220" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="5340" y="4613">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="SSSFalloff" dstnodeid="1" dstpinname="sssFalloff" linkstyle="Bezier">
-   <LINKPOINT x="4935" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="6600" y="4613">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="SSS" dstnodeid="1" dstpinname="sss" linkstyle="Bezier">
-   <LINKPOINT x="4650" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="6345" y="4613">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="Emissive" dstnodeid="1" dstpinname="Color(Emissive)" linkstyle="Bezier">
-   <LINKPOINT x="4335" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="3330" y="4613">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="Color" dstnodeid="1" dstpinname="Color(Albedo)" linkstyle="Bezier">
-   <LINKPOINT x="4050" y="4605">
-   </LINKPOINT>
-   <LINKPOINT x="3075" y="4605">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="Roughness" dstnodeid="1" dstpinname="roughness" linkstyle="Bezier">
-   <LINKPOINT x="3795" y="4620">
-   </LINKPOINT>
-   <LINKPOINT x="6090" y="4620">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="Metallic" dstnodeid="1" dstpinname="metallic" linkstyle="Bezier">
-   <LINKPOINT x="3510" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="5835" y="4613">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="tTex" dstnodeid="1" dstpinname="tTex" linkstyle="Bezier">
-   <LINKPOINT x="2925" y="4605">
-   </LINKPOINT>
-   <LINKPOINT x="4575" y="4605">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="298" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="2910" y="1065">
-   </LINKPOINT>
-   <LINKPOINT x="2910" y="1065">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="AOMap" dstnodeid="261" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="9210" y="3353">
-   </LINKPOINT>
-   <LINKPOINT x="9090" y="3353">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="AlbedoTex" dstnodeid="131" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="7470" y="1995">
-   </LINKPOINT>
-   <LINKPOINT x="7185" y="1995">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="298" srcpinname="tTexInverse" dstnodeid="1" dstpinname="tTexInv" linkstyle="Bezier">
-   <LINKPOINT x="3210" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="4830" y="4613">
-   </LINKPOINT>
-   </LINK>
    <NODE id="12" nodename="IOBox (Enumerations)" componentmode="InABox" systemname="IOBox (Enumerations)">
    <BOUNDS type="Box" left="12585" top="6900" width="1485" height="270">
    </BOUNDS>
@@ -1097,5 +941,161 @@
    <LINK srcnodeid="307" srcpinname="Texture Array Out" dstnodeid="1" dstpinname="SpotTex">
    </LINK>
    <LINK srcnodeid="296" srcpinname="Output" dstnodeid="293" dstpinname="Switch">
+   </LINK>
+   <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="313">
+   <BOUNDS type="Node" left="2895" top="1350" width="6645" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2895" top="1350">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="313" srcpinname="RefractionIndexXYZ" dstnodeid="77" dstpinname="Data" linkstyle="Bezier">
+   <LINKPOINT x="6390" y="4043">
+   </LINKPOINT>
+   <LINKPOINT x="10050" y="4043">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="EmissiveTex" dstnodeid="132" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="6945" y="2213">
+   </LINKPOINT>
+   <LINKPOINT x="7485" y="2213">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="NormalMap" dstnodeid="133" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="7230" y="2438">
+   </LINKPOINT>
+   <LINKPOINT x="7830" y="2438">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="HeightMap" dstnodeid="134" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="7500" y="2655">
+   </LINKPOINT>
+   <LINKPOINT x="8160" y="2655">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="RoughnessMap" dstnodeid="135" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="7785" y="2895">
+   </LINKPOINT>
+   <LINKPOINT x="8535" y="2895">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="MetallicMap" dstnodeid="136" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="8085" y="3128">
+   </LINKPOINT>
+   <LINKPOINT x="8850" y="3128">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="IridescenceMap" dstnodeid="138" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="9510" y="3593">
+   </LINKPOINT>
+   <LINKPOINT x="9675" y="3593">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="Iridescence" dstnodeid="1" dstpinname="useIridescence" linkstyle="Bezier">
+   <LINKPOINT x="9180" y="4605">
+   </LINKPOINT>
+   <LINKPOINT x="4365" y="4605">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="Refraction" dstnodeid="1" dstpinname="Refraction" linkstyle="Bezier">
+   <LINKPOINT x="6060" y="4605">
+   </LINKPOINT>
+   <LINKPOINT x="4080" y="4605">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="fHeigtMapScale" dstnodeid="1" dstpinname="fHeightMapScale" linkstyle="Bezier">
+   <LINKPOINT x="5190" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="2070" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="POMnumSamples" dstnodeid="1" dstpinname="POM_numSamples" linkstyle="Bezier">
+   <LINKPOINT x="5475" y="4620">
+   </LINKPOINT>
+   <LINKPOINT x="2325" y="4620">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="POM" dstnodeid="1" dstpinname="Parallax Occlusion Mapping" linkstyle="Bezier">
+   <LINKPOINT x="5775" y="4605">
+   </LINKPOINT>
+   <LINKPOINT x="5595" y="4605">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="noTile" dstnodeid="1" dstpinname="noTile" linkstyle="Bezier">
+   <LINKPOINT x="8910" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="6870" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="Bumpiness" dstnodeid="1" dstpinname="Bumpiness" linkstyle="Bezier">
+   <LINKPOINT x="8625" y="4620">
+   </LINKPOINT>
+   <LINKPOINT x="5370" y="4620">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="SSSFalloff" dstnodeid="1" dstpinname="sssFalloff" linkstyle="Bezier">
+   <LINKPOINT x="4650" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="6600" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="SSS" dstnodeid="1" dstpinname="sss" linkstyle="Bezier">
+   <LINKPOINT x="4935" y="4605">
+   </LINKPOINT>
+   <LINKPOINT x="6345" y="4605">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="Emissive" dstnodeid="1" dstpinname="Color(Emissive)" linkstyle="Bezier">
+   <LINKPOINT x="4335" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="3330" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="Color" dstnodeid="1" dstpinname="Color(Albedo)" linkstyle="Bezier">
+   <LINKPOINT x="4050" y="4605">
+   </LINKPOINT>
+   <LINKPOINT x="3075" y="4605">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="Roughness" dstnodeid="1" dstpinname="roughness" linkstyle="Bezier">
+   <LINKPOINT x="3795" y="4620">
+   </LINKPOINT>
+   <LINKPOINT x="6090" y="4620">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="Metallic" dstnodeid="1" dstpinname="metallic" linkstyle="Bezier">
+   <LINKPOINT x="3510" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="5835" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="tTex" dstnodeid="1" dstpinname="tTex" linkstyle="Bezier">
+   <LINKPOINT x="2925" y="4605">
+   </LINKPOINT>
+   <LINKPOINT x="4575" y="4605">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="313" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="2910" y="1065">
+   </LINKPOINT>
+   <LINKPOINT x="2910" y="1065">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="AOMap" dstnodeid="261" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="8370" y="3360">
+   </LINKPOINT>
+   <LINKPOINT x="9075" y="3360">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="AlbedoTex" dstnodeid="131" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="6675" y="1995">
+   </LINKPOINT>
+   <LINKPOINT x="7155" y="1995">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="313" srcpinname="tTexInverse" dstnodeid="1" dstpinname="tTexInv" linkstyle="Bezier">
+   <LINKPOINT x="3210" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="4830" y="4613">
+   </LINKPOINT>
    </LINK>
    </PATCH>

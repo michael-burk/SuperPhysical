@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p">
-   <BOUNDS type="Window" left="1410" top="225" width="11985" height="14025">
+   <BOUNDS type="Window" left="1755" top="885" width="11985" height="12645">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
    <BOUNDS type="Node" left="1990" top="9445" width="100" height="100">
@@ -17,7 +17,7 @@
    </PIN>
    <PIN pinname="AA Samples per Pixel" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Background Color" slicecount="1" visible="1" values="|0.29843,0.29843,0.29843,1.00000|">
+   <PIN pinname="Background Color" slicecount="1" visible="1" values="|0.21688,0.21688,0.21688,1.00000|">
    </PIN>
    <PIN pinname="Show Cursor" slicecount="1" values="1">
    </PIN>
@@ -311,7 +311,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7140" top="3300" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.3,0.3,0.31,2">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.3,0.3,0.31,1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -455,7 +455,7 @@
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
-   <BOUNDS type="Window" left="14340" top="300" width="12240" height="12585">
+   <BOUNDS type="Window" left="13560" top="855" width="12240" height="12585">
    </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12">
@@ -486,32 +486,20 @@
    </LINK>
    <LINK srcnodeid="36" srcpinname="Layer" dstnodeid="37" dstpinname="Layer 2">
    </LINK>
-   <NODE systemname="GetGlobalSettings (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalSettings (SuperPhysical)" componentmode="Hidden" id="11" debug="0">
-   <BOUNDS type="Node" left="3045" top="8790" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="11" srcpinname="GlobalReflectionColor" dstnodeid="41" dstpinname="Background Color" linkstyle="Bezier">
-   <LINKPOINT x="3075" y="9248">
-   </LINKPOINT>
-   <LINKPOINT x="3090" y="9248">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="21" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture In">
    </LINK>
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
-   <BOUNDS type="Node" left="3900" top="4650" width="1410" height="270">
+   <BOUNDS type="Node" left="3930" top="4650" width="1410" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="3120" top="735" width="23085" height="14340">
+   <BOUNDS type="Window" left="1350" top="600" width="21465" height="14340">
    </BOUNDS>
    <PIN pinname="Material" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Iridescence" visible="1" slicecount="1" values="0">
    </PIN>
-   <BOUNDS type="Box" left="3900" top="4650">
+   <BOUNDS type="Box" left="3930" top="4650">
    </BOUNDS>
    </NODE>
    <NODE systemname="PerfMeter (DX11.Debug)" filename="%VVVV%\packs\dx11\nodes\modules\PerfMeter (DX11.Debug).v4p" nodename="PerfMeter (DX11.Debug)" componentmode="Hidden" id="9">
@@ -548,12 +536,6 @@
    <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="11" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="5460" y="6855">
-   </LINKPOINT>
-   <LINKPOINT x="3090" y="6855">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Anisotropic (DX11 Sampler)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Anisotropic (DX11 Sampler)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="4755" top="4155" width="100" height="100">
    </BOUNDS>
@@ -598,15 +580,11 @@
    </LINK>
    <LINK srcnodeid="8" srcpinname="Render State" dstnodeid="5" dstpinname="Render State" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="6" srcpinname="Sampler" dstnodeid="5" dstpinname="g_samLinear">
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="5" dstpinname="LightSetup" linkstyle="Bezier">
-   <LINKPOINT x="5460" y="5108">
+   <LINK srcnodeid="6" srcpinname="Sampler" dstnodeid="5" dstpinname="g_samLinear" linkstyle="Bezier">
+   <LINKPOINT x="4770" y="4868">
    </LINKPOINT>
-   <LINKPOINT x="4380" y="5108">
+   <LINKPOINT x="4755" y="4868">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="10" srcpinname="Material" dstnodeid="5" dstpinname="MaterialSetup">
    </LINK>
    <NODE systemname="SuperToneMapping (DX11.TextureFX)" filename="..\dx11\SuperToneMapping.tfx" nodename="SuperToneMapping (DX11.TextureFX)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="2865" top="10125" width="100" height="100">
@@ -665,7 +643,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
-   <BOUNDS type="Node" left="8970" top="7080" width="100" height="100">
+   <BOUNDS type="Node" left="8370" top="7260" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Maximum Foreground FPS" visible="1">
    </PIN>
@@ -675,9 +653,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42">
-   <BOUNDS type="Box" left="8955" top="6450" width="795" height="240">
+   <BOUNDS type="Box" left="8355" top="6630" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8955" top="6450" width="0" height="0">
+   <BOUNDS type="Node" left="8355" top="6630" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="120">
    </PIN>
@@ -694,12 +672,44 @@
    </LINK>
    <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
    </LINK>
-   <LINK srcnodeid="41" srcpinname="Buffers" dstnodeid="4" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="37" dstpinname="Layer 1">
    </LINK>
-   <LINK srcnodeid="37" srcpinname="Layer Out" dstnodeid="40" dstpinname="Layer In">
+   <LINK srcnodeid="37" srcpinname="Layer Out" dstnodeid="40" dstpinname="Layer In" linkstyle="Bezier">
+   <LINKPOINT x="2190" y="7995">
+   </LINKPOINT>
+   <LINKPOINT x="2805" y="7995">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="40" srcpinname="Layer Out" dstnodeid="41" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Material" dstnodeid="5" dstpinname="MaterialSetup">
+   <LINKPOINT x="3960" y="5325">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="5" dstpinname="LightSetup" linkstyle="Bezier">
+   <LINKPOINT x="5460" y="5108">
+   </LINKPOINT>
+   <LINKPOINT x="4380" y="5108">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="GetGlobalLight (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalLight (SuperPhysical Light)" componentmode="Hidden" id="11" debug="0">
+   <BOUNDS type="Node" left="3060" top="8790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="GlobalReflectionColor" dstnodeid="41" dstpinname="Background Color" linkstyle="Bezier">
+   <LINKPOINT x="3085" y="9248">
+   </LINKPOINT>
+   <LINKPOINT x="3095" y="9248">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="11" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="5465" y="6855">
+   </LINKPOINT>
+   <LINKPOINT x="3100" y="6855">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="41" srcpinname="Buffers" dstnodeid="4" dstpinname="Texture In">
    </LINK>
    </PATCH>
