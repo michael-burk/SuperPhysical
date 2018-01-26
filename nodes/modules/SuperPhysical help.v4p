@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p">
-   <BOUNDS type="Window" left="540" top="525" width="12195" height="14595">
+   <BOUNDS type="Window" left="1410" top="225" width="12195" height="14595">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
    <BOUNDS type="Node" left="225" top="600" width="5100" height="600">
@@ -547,9 +547,9 @@
    <LINK srcnodeid="30" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 3" linkstyle="PolyLine">
    </LINK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="8">
-   <BOUNDS type="Node" left="3015" top="4305" width="100" height="100">
+   <BOUNDS type="Node" left="2985" top="4305" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3015" top="4305">
+   <BOUNDS type="Box" left="2985" top="4305">
    </BOUNDS>
    </NODE>
    <NODE id="7" componentmode="Hidden" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
@@ -577,7 +577,7 @@
    </PIN>
    </NODE>
    <NODE id="5" componentmode="Hidden" systemname="SuperPhysical" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\SuperPhysical.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\SuperPhysical.v4p" debug="0" stayontop="0">
-   <BOUNDS type="Window" left="300" top="495" width="13920" height="13815">
+   <BOUNDS type="Window" left="525" top="2160" width="18450" height="13815">
    </BOUNDS>
    <BOUNDS type="Node" left="2580" top="4935" width="3300" height="270">
    </BOUNDS>
@@ -681,5 +681,35 @@
    </LINKPOINT>
    <LINKPOINT x="3960" y="9278">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
+   <BOUNDS type="Node" left="9270" top="6870" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Maximum Foreground FPS" visible="1">
+   </PIN>
+   <PIN pinname="Maximum Background FPS" visible="1">
+   </PIN>
+   <PIN pinname="Time Mode" slicecount="1" values="Filtered">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42">
+   <BOUNDS type="Box" left="9240" top="6060" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9240" top="6060" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="120">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
    </LINK>
    </PATCH>

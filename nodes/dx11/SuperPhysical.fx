@@ -306,9 +306,11 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		switch (Light[i].lightType){
 			
 			
-			//DIRECTIONAL
+		//DIRECTIONAL
 			case 0:
 				shadow = 0;
+			
+				if(Light[i].useShadow){
 				viewPosition = mul(PosW, LightMatrices[i].VP);
 				
 				projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
@@ -325,15 +327,16 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					shadow = 1;
 				}
 					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);			
-					if(Light[i].useShadow){
+					
 							shadowCounter++;
 							
 							finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
 											  lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT,iridescenceColor);
-					} else {
+				} else {
+							float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
 					       	finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
 											  1.0, 1.0, 1.0, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT,iridescenceColor);
-					}
+				}
 				lightCounter ++;
 				break;
 			
@@ -355,7 +358,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					if(tXS+tYS > 4) falloffSpot = lightMap.Sample(g_samLinear, float3(projectTexCoord.xy, spotLightCount), 0 ).rgb;
 					else if(tXS+tYS < 4) falloffSpot = smoothstep(1,0,saturate(length(.5-projectTexCoord.xy)*2));
 					
-					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, shadowTexSize, i, shadowCounter);
+					if(Light[i].useShadow)doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, shadowTexSize, i, shadowCounter);
 					
 				} else {
 					shadow = 1;
