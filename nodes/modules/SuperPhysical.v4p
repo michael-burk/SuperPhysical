@@ -724,7 +724,7 @@
    <LINKPOINT x="15480" y="4238">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetGlobalSettings (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalSettings (SuperPhysical)" componentmode="Hidden" id="297">
+   <NODE systemname="GetGlobalSettings (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalSettings (SuperPhysical)" componentmode="Hidden" id="297">
    <BOUNDS type="Node" left="13170" top="1350" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="13170" top="1350">
@@ -996,7 +996,7 @@
    <LINKPOINT x="11385" y="7395">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetBuffer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical)" componentmode="Hidden" id="301">
+   <NODE systemname="GetBuffer (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical)" componentmode="Hidden" id="301">
    <BOUNDS type="Node" left="10350" top="1350" width="2460" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="10350" top="1350">

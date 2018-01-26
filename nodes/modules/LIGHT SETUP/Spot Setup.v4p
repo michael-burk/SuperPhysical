@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1950" top="2820" width="16650" height="14130">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
@@ -516,7 +516,7 @@
    <LINKPOINT x="13130" y="7808">
    </LINKPOINT>
    </LINK>
-   <NODE id="294" systemname="SpotLight (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="SpotLight (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <NODE id="294" systemname="SpotLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="SpotLight (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <BOUNDS type="Node" left="1380" top="9390" width="8835" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1380" top="9390" width="2400" height="1800">

@@ -190,7 +190,7 @@
    <PIN pinname="SpotLights" visible="1">
    </PIN>
    </NODE>
-   <NODE id="146" systemname="GlobalLight (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GlobalLight (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <NODE id="146" systemname="GlobalLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GlobalLight (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <BOUNDS type="Node" left="1395" top="3120" width="1050" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1395" top="3120" width="2400" height="1800">
@@ -218,7 +218,7 @@
    </LINK>
    <LINK srcnodeid="42" srcpinname="Color Output" dstnodeid="146" dstpinname="GlobalDiffuseColor">
    </LINK>
-   <NODE systemname="ImageBasedLighting (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="ImageBasedLighting (SuperPhysical)" componentmode="Hidden" id="164">
+   <NODE systemname="ImageBasedLighting (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="ImageBasedLighting (SuperPhysical)" componentmode="Hidden" id="164">
    <BOUNDS type="Node" left="5580" top="2955" width="2610" height="270">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
@@ -252,7 +252,7 @@
    <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
-   <NODE systemname="LightSetup (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical)" componentmode="Hidden" id="181">
+   <NODE systemname="LightSetup (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical)" componentmode="Hidden" id="181">
    <BOUNDS type="Node" left="1395" top="5010" width="5655" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1395" top="5010">

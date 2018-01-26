@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1680" top="2505" width="16650" height="14130">
+   <BOUNDS type="Window" left="1950" top="2820" width="16650" height="14130">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>

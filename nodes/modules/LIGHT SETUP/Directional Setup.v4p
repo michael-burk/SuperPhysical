@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="420" top="1665" width="18510" height="10500">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
@@ -254,7 +254,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="DirectionalLights">
    </PIN>
    </NODE>
-   <NODE systemname="DirectionalLight (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="DirectionalLight (SuperPhysical)" componentmode="Hidden" id="48">
+   <NODE systemname="DirectionalLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="DirectionalLight (SuperPhysical)" componentmode="Hidden" id="48">
    <BOUNDS type="Node" left="4575" top="7530" width="6555" height="270">
    </BOUNDS>
    <PIN pinname="Scale" visible="1">

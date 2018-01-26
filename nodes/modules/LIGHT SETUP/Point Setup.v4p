@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="615" top="3405" width="15165" height="10455">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
@@ -246,12 +246,12 @@
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    </NODE>
-   <NODE systemname="PointLight (SuperPhysical)" filename="C:\vvvv\vvvv_50alpha35.10_x64\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="PointLights (SuperPhysical)" componentmode="Hidden" id="91">
+   <NODE systemname="PointLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="PointLights (SuperPhysical)" componentmode="Hidden" id="91">
    <BOUNDS type="Node" left="1530" top="6930" width="5940" height="270">
    </BOUNDS>
-   <PIN pinname="Shadow FOV" visible="1" slicecount="1" values="0.27">
+   <PIN pinname="Shadow FOV" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="LightIntensity" visible="1" slicecount="1" values="1">
+   <PIN pinname="LightIntensity" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="LightCount" visible="1">
    </PIN>

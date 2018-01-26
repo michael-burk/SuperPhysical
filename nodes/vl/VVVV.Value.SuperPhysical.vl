@@ -8,10 +8,10 @@
       <Canvas Id="RsnG368kV5LNLbMraKBUQm" Name="SuperPhysical" Position="267,9" DefaultCategory="VVVV.SuperPhysical">
         <!--
 
-    ************************ Cons (DirectionalLights) ************************
+    ************************ Cons (Directional Light) ************************
 
 -->
-        <Node Name="Cons (DirectionalLights)" Bounds="-887,717,161,127" Id="PTmgXTzzsfXLxRkmoGth3O">
+        <Node Name="Cons (Directional Light)" Bounds="-887,717,161,127" Id="PTmgXTzzsfXLxRkmoGth3O">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -52,10 +52,10 @@
         </Node>
         <!--
 
-    ************************ Cons (PointLights) ************************
+    ************************ Cons (Point Light) ************************
 
 -->
-        <Node Name="Cons (PointLights)" Bounds="-407,717,190,127" Id="KMwyuyHJxhYMWv0aYHH8R7">
+        <Node Name="Cons (Point Light)" Bounds="-407,717,190,127" Id="KMwyuyHJxhYMWv0aYHH8R7">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -96,10 +96,10 @@
         </Node>
         <!--
 
-    ************************ Cons (SpotLights) ************************
+    ************************ Cons (Spot Light) ************************
 
 -->
-        <Node Name="Cons (SpotLights)" Bounds="-667,717,220,127" Id="HXwIMTEVvutNBUPCOk8g3U">
+        <Node Name="Cons (Spot Light)" Bounds="-667,717,220,127" Id="HXwIMTEVvutNBUPCOk8g3U">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -140,10 +140,10 @@
         </Node>
         <!--
 
-    ************************ DirectionalLight ************************
+    ************************ DirectionalLight (Light) ************************
 
 -->
-        <Node Name="DirectionalLight" Bounds="-879,1235,513,252" Id="EGrMFtdsGhbN5cRbLQk9jk">
+        <Node Name="DirectionalLight (Light)" Bounds="-879,1235,513,252" Id="EGrMFtdsGhbN5cRbLQk9jk">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -243,10 +243,10 @@
         </Node>
         <!--
 
-    ************************ GetBuffer ************************
+    ************************ GetBuffer (Light) ************************
 
 -->
-        <Node Name="GetBuffer" Bounds="1506,2382,520,1063" Id="U9ZNR1KQ7ZNPGkY7GsniuR">
+        <Node Name="GetBuffer (Light)" Bounds="1506,2382,520,1063" Id="U9ZNR1KQ7ZNPGkY7GsniuR">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -1748,10 +1748,10 @@
         </Node>
         <!--
 
-    ************************ GlobalLight ************************
+    ************************ GlobalLight (Light) ************************
 
 -->
-        <Node Name="GlobalLight" Bounds="1007,952,330,183" Id="COQSPGZAbeKPvyJa3lIZ3I">
+        <Node Name="GlobalLight (Light)" Bounds="1007,952,330,183" Id="COQSPGZAbeKPvyJa3lIZ3I">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -1792,10 +1792,10 @@
         </Node>
         <!--
 
-    ************************ LightSetup ************************
+    ************************ LightSetup (Light) ************************
 
 -->
-        <Node Name="LightSetup" Bounds="-876,933,289,247" Id="Tn56a63N5ErOTtPBIGfpl0">
+        <Node Name="LightSetup (Light)" Bounds="-876,933,289,247" Id="Tn56a63N5ErOTtPBIGfpl0">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -1852,10 +1852,10 @@
         </Node>
         <!--
 
-    ************************ PointLight ************************
+    ************************ PointLight (Light) ************************
 
 -->
-        <Node Name="PointLight" Bounds="335,1252,581,245" Id="UCdqAKMW68KOphhLFMrqYB">
+        <Node Name="PointLight (Light)" Bounds="335,1252,581,245" Id="UCdqAKMW68KOphhLFMrqYB">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -1946,10 +1946,10 @@
         </Node>
         <!--
 
-    ************************ SpotLight ************************
+    ************************ SpotLight (Light) ************************
 
 -->
-        <Node Name="SpotLight" Bounds="-217,1235,519,262" Id="Q1RSaufvJQHPqarLlY4HCT">
+        <Node Name="SpotLight (Light)" Bounds="-217,1235,519,262" Id="Q1RSaufvJQHPqarLlY4HCT">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -2151,10 +2151,10 @@
         </Node>
         <!--
 
-    ************************ GetGlobalSettings ************************
+    ************************ GetGlobalSettings (Light) ************************
 
 -->
-        <Node Name="GetGlobalSettings" Bounds="1025,1238,899,299" Id="VT8oHcvVU3gOcfvHfWP8wb">
+        <Node Name="GetGlobalSettings (Light)" Bounds="1025,1238,899,299" Id="VT8oHcvVU3gOcfvHfWP8wb">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -11982,10 +11982,10 @@
         </Node>
         <!--
 
-    ************************ ImageBasedLighting ************************
+    ************************ ImageBasedLighting (Light) ************************
 
 -->
-        <Node Name="ImageBasedLighting" Bounds="1454,969,370,108" Id="DReogcYlDzKNhWyL9mIbpk">
+        <Node Name="ImageBasedLighting (Light)" Bounds="1454,969,370,108" Id="DReogcYlDzKNhWyL9mIbpk">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VVVV.Value.SuperPhysical.vl">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
