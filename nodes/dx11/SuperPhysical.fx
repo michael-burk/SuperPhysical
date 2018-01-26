@@ -354,7 +354,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				&& (saturate(projectTexCoord.z) == projectTexCoord.z)){
 					
 					uint tXS,tYS,mS;
-					lightMap.GetDimensions(mS,tXS,tYS);
+					lightMap.GetDimensions(tXS,tYS,mS);
 					if(tXS+tYS > 4) falloffSpot = lightMap.Sample(g_samLinear, float3(projectTexCoord.xy, spotLightCount), 0 ).rgb;
 					else if(tXS+tYS < 4) falloffSpot = smoothstep(1,0,saturate(length(.5-projectTexCoord.xy)*2));
 					

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="15" scrolly="0">
-   <BOUNDS type="Window" left="2955" top="4020" width="13725" height="14340">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="15" scrolly="15">
+   <BOUNDS type="Window" left="2985" top="3240" width="13725" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>
@@ -33,33 +33,33 @@
    </PIN>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="50">
-   <BOUNDS type="Node" left="8130" top="1320" width="100" height="100">
+   <BOUNDS type="Node" left="8835" top="1665" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\..\assets\ibl\studio\output_irrad.dds">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="8130" top="1320">
+   <BOUNDS type="Box" left="8835" top="1665">
    </BOUNDS>
    <PIN pinname="Reload" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="49">
-   <BOUNDS type="Node" left="6840" top="1320" width="100" height="100">
+   <BOUNDS type="Node" left="7545" top="1665" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\..\assets\ibl\studio\output_refl.dds">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="6840" top="1320">
+   <BOUNDS type="Box" left="7545" top="1665">
    </BOUNDS>
    <PIN pinname="Reload" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="47" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="6840" top="1800" width="795" height="240">
+   <BOUNDS type="Box" left="7545" top="2145" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="6840" top="1800" width="0" height="0">
+   <BOUNDS type="Node" left="7545" top="2145" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -69,9 +69,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="46" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="8130" top="1800" width="795" height="240">
+   <BOUNDS type="Box" left="8835" top="2145" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8130" top="1800" width="0" height="0">
+   <BOUNDS type="Node" left="8835" top="2145" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -83,9 +83,9 @@
    <LINK srcnodeid="50" srcpinname="Texture Out" dstnodeid="46" dstpinname="Input Node">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="55" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5595" top="1800" width="795" height="480">
+   <BOUNDS type="Box" left="6300" top="2145" width="795" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="5595" top="1800" width="0" height="0">
+   <BOUNDS type="Node" left="6300" top="2145" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0.5,3">
    </PIN>
@@ -107,7 +107,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="49" srcpinname="Texture Out" dstnodeid="47" dstpinname="Input Node">
-   <LINKPOINT x="6855" y="1905">
+   <LINKPOINT x="7560" y="2250">
    </LINKPOINT>
    </LINK>
    <PACK Name="dx11" Version="1.0.2">
@@ -123,9 +123,9 @@
    </PIN>
    </NODE>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="86">
-   <BOUNDS type="Node" left="6840" top="2400" width="100" height="100">
+   <BOUNDS type="Node" left="7545" top="2745" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="6840" top="2400" width="3000" height="3000">
+   <BOUNDS type="Box" left="7545" top="2745" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -137,9 +137,9 @@
    <LINK srcnodeid="47" srcpinname="Output Node" dstnodeid="86" dstpinname="Texture In">
    </LINK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="87">
-   <BOUNDS type="Node" left="8130" top="2400" width="100" height="100">
+   <BOUNDS type="Node" left="8835" top="2745" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="8130" top="2400" width="3000" height="3000">
+   <BOUNDS type="Box" left="8835" top="2745" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -183,15 +183,15 @@
    <LINK srcnodeid="41" srcpinname="Color Output" dstnodeid="146" dstpinname="GlobalReflectionColor">
    </LINK>
    <LINK srcnodeid="86" srcpinname="Pointer" dstnodeid="146" dstpinname="CubeMapRefl" linkstyle="Bezier">
-   <LINKPOINT x="6225" y="2863">
+   <LINKPOINT x="6695" y="3093">
    </LINKPOINT>
-   <LINKPOINT x="4470" y="2898">
+   <LINKPOINT x="4705" y="3013">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="87" srcpinname="Pointer" dstnodeid="146" dstpinname="CubeMapIrrradiance" linkstyle="Bezier">
-   <LINKPOINT x="7455" y="2873">
+   <LINKPOINT x="7925" y="3103">
    </LINKPOINT>
-   <LINKPOINT x="5130" y="2903">
+   <LINKPOINT x="5365" y="3018">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="55" srcpinname="Y Output Value" dstnodeid="146" dstpinname="IBLSettingsXY">
@@ -199,7 +199,7 @@
    <LINK srcnodeid="42" srcpinname="Color Output" dstnodeid="146" dstpinname="GlobalDiffuseColor">
    </LINK>
    <NODE systemname="ImageBasedLighting (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="ImageBasedLighting (SuperPhysical)" componentmode="Hidden" id="164">
-   <BOUNDS type="Node" left="5580" top="2955" width="2610" height="270">
+   <BOUNDS type="Node" left="6285" top="3300" width="2610" height="270">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -263,7 +263,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4770" top="3900">
    </BOUNDS>
-   <PIN pinname="SpotLights" visible="1">
+   <PIN pinname="SpotLights" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE systemname="Directional Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" componentmode="Hidden" id="183" stayontop="0">
@@ -273,7 +273,7 @@
    </BOUNDS>
    <BOUNDS type="Window" left="1395" top="3675" width="18510" height="10500">
    </BOUNDS>
-   <PIN pinname="DirectionalLights" visible="1">
+   <PIN pinname="DirectionalLights" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="125" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">

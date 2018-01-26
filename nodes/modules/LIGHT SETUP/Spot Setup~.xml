@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.3">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.35">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -165,9 +165,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8250" top="6420" width="480" height="480">
+   <BOUNDS type="Box" left="8250" top="6780" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="8250" top="6420" width="0" height="0">
+   <BOUNDS type="Node" left="8250" top="6780" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -446,18 +446,6 @@
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    </NODE>
-   <NODE systemname="Halo (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Source\Halo.tfx" nodename="HALO (DX11.TEXTUREFX)" componentmode="Hidden" id="263" hiddenwhenlocked="0">
-   <BOUNDS type="Node" left="12210" top="6720" width="1350" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="12210" top="6720">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="263" srcpinname="Texture Out" dstnodeid="45" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="12240" y="7140">
-   </LINKPOINT>
-   <LINKPOINT x="12240" y="7140">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="268">
    <BOUNDS type="Box" left="13830" top="420" width="480" height="480">
    </BOUNDS>
@@ -483,11 +471,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="279">
-   <BOUNDS type="Box" left="11880" top="3210" width="480" height="480">
+   <BOUNDS type="Box" left="11865" top="3360" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="11880" top="3210" width="0" height="0">
+   <BOUNDS type="Node" left="11865" top="3360" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -499,23 +487,11 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    </NODE>
-   <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="291">
-   <BOUNDS type="Node" left="12210" top="7875" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="12210" top="7875" width="3000" height="3000">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="81" srcpinname="Y Output Value" dstnodeid="291" dstpinname="Apply" linkstyle="VHV">
-   <LINKPOINT x="13945" y="7598">
-   </LINKPOINT>
-   <LINKPOINT x="13130" y="7808">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Shadow (SuperPhysical Shadow)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Shadow (SuperPhysical Shadow)" componentmode="Hidden" id="296">
    <BOUNDS type="Node" left="8715" top="4035" width="3195" height="270">
    </BOUNDS>
@@ -644,12 +620,36 @@
    <LINKPOINT x="10170" y="9105">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="291" srcpinname="Pointer" dstnodeid="300" dstpinname="SpotLightTex" linkstyle="Bezier">
+   <LINK srcnodeid="296" srcpinname="Output" dstnodeid="300" dstpinname="Shadow">
+   </LINK>
+   <NODE systemname="Halo (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Source\Halo.tfx" nodename="HALO (DX11.TEXTUREFX)" componentmode="Hidden" id="308" hiddenwhenlocked="0">
+   <BOUNDS type="Node" left="12210" top="6720" width="1350" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12210" top="6720">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="308" srcpinname="Texture Out" dstnodeid="45" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="12240" y="7140">
+   </LINKPOINT>
+   <LINKPOINT x="12240" y="7140">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="309">
+   <BOUNDS type="Node" left="12210" top="7875" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12210" top="7875" width="3000" height="3000">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="81" srcpinname="Y Output Value" dstnodeid="309" dstpinname="Apply" linkstyle="VHV">
+   <LINKPOINT x="13945" y="7598">
+   </LINKPOINT>
+   <LINKPOINT x="13130" y="7808">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="309" srcpinname="Pointer" dstnodeid="300" dstpinname="SpotLightTex" linkstyle="Bezier">
    <LINKPOINT x="12210" y="8753">
    </LINKPOINT>
    <LINKPOINT x="6555" y="8753">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="296" srcpinname="Output" dstnodeid="300" dstpinname="Shadow">
    </LINK>
    </PATCH>

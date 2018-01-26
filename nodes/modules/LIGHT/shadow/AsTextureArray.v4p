@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.11.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.11_x64\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\light\shadow\AsTextureArray.v4p" systemname="AsTextureArray" filename="C:\Projects\superphong\Modules\AsTextureArray.v4p" scrollx="0" scrolly="345">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\AsTextureArray.v4p" systemname="AsTextureArray" filename="C:\Projects\superphong\Modules\AsTextureArray.v4p" scrollx="0" scrolly="345">
    <BOUNDS type="Window" left="5085" top="4455" width="7635" height="8925">
    </BOUNDS>
    <PACK Name="vvvv.packs_" Version="0.2.0">
@@ -81,13 +81,15 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3675" top="5235" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" visible="1">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Element Count|">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="12" systemname="IOBox (Node)">
@@ -145,8 +147,6 @@
    <LINK srcnodeid="7" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform In">
    </LINK>
    <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="1" dstpinname="Texture">
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Count" dstnodeid="8" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="5" dstpinname="Input">
    </LINK>
@@ -271,5 +271,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="21" srcpinname="Depth Out" dstnodeid="22" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Count" dstnodeid="8" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
