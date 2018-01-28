@@ -87,43 +87,75 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 		
 		for (uint j = 0; j < lightCount; j++)
 		{
+			
+			bool shadowed = true;
+			
+			float4x4 LVP = 0; 
 
-			float4x4 LVP = (lightVP[j]); 
-			
-			lightDir = float3(LVP._13, LVP._23, LVP._33);
-			
-			worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
-			worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
-			
-			
 			switch(LightType[j]){
 				case 0:
+				
+					
+						LVP = (lightVP[j]); 
+			
+						lightDir = float3(LVP._13, LVP._23, LVP._33);
+						
+						worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
+						worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
+				
 						spotTex = worldInShadowCameraSpace.z > 0; 
+
+				
+						shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
+						
+						if(shadowMapValue >= worldInShadowCameraSpace.z) shadowed = false;
+						
 						break;
 				case 1:
+				
+						LVP = (lightVP[j]); 
+			
+						lightDir = float3(LVP._13, LVP._23, LVP._33);
+						
+						worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
+						worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
+				
 						uint tXS,tYS,mS;
 						lightMap.GetDimensions(tXS,tYS,mS);
 						if(tXS+tYS > 4) spotTex = lightMap.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5,(-worldInShadowCameraSpace.y + 1) * .5, j),0).rgb;
 						else if(tXS+tYS < 4) spotTex = smoothstep(1, 0, saturate(length(worldInShadowCameraSpace.xy)));
+						
+						shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
+						
+						if(shadowMapValue >= worldInShadowCameraSpace.z && shadowMapValue != 0) shadowed = false;
+				
 						break;
 				case 2:
-						spotTex = .25;
+						spotTex = 1;
+						for (uint k = 0; k < 6; k++){
+						
+							LVP = (lightVP[j+k]); 
+				
+							lightDir = float3(LVP._13, LVP._23, LVP._33);
+							
+							worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
+							worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
+							
+							shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j+k), 0).r;
+							if(shadowMapValue >= worldInShadowCameraSpace.z && shadowMapValue != 0) shadowed = false;
+						}
+			
 						break;
 			}
-			
 
-		
-			shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
 			
-			if (shadowMapValue >= worldInShadowCameraSpace.z)
+			if (!shadowed)
 			{	
 				distFactor =  pow(saturate( farPlane[j] * fade - length(currentPos - lPos[j])), 1);
-				accumFog += ComputeScattering(dot(rayDir, lightDir)).r * distFactor * brightness * stepLength  *
-				spotTex.rgb * LightColor[j].rgb * 10;
+				accumFog   += ComputeScattering(dot(rayDir, lightDir)).r * distFactor * brightness * stepLength * spotTex.rgb * LightColor[j].rgb * 10;
 			}
 			
 		}
-	
 			currentPos += steppy /* NB_STEPS */;		
 	}
 	
