@@ -23,7 +23,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1410" top="1095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.51342,0.51342,0.51342,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.30397,0.30397,0.30397,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Global Reflection Color|">
    </PIN>
@@ -244,16 +244,6 @@
    </LINK>
    <LINK srcnodeid="171" srcpinname="Output String" dstnodeid="181" dstpinname="BRDF LUT Path">
    </LINK>
-   <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182">
-   <BOUNDS type="Node" left="4905" top="4470" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Window" left="0" top="2055" width="14055" height="10455">
-   </BOUNDS>
-   <BOUNDS type="Box" left="4905" top="4470">
-   </BOUNDS>
-   <PIN pinname="SpotLights" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
    <NODE systemname="Directional Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" componentmode="Hidden" id="183" stayontop="0">
    <BOUNDS type="Node" left="2100" top="4065" width="1410" height="270">
    </BOUNDS>
@@ -271,17 +261,29 @@
    </BOUNDS>
    <BOUNDS type="Box" left="3510" top="4470">
    </BOUNDS>
-   <BOUNDS type="Window" left="420" top="2355" width="15390" height="10965">
+   <BOUNDS type="Window" left="420" top="2355" width="15390" height="11685">
    </BOUNDS>
-   <PIN pinname="ShadowBlurWidth" slicecount="1" values="0.150000005960464">
+   <PIN pinname="ShadowBlurWidth" slicecount="1" values="0.02">
    </PIN>
    <PIN pinname="SpotLights" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="LightSize" slicecount="1" values="5">
    </PIN>
    </NODE>
-   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
+   <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182">
+   <BOUNDS type="Node" left="4905" top="4470" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="2055" width="14460" height="10455">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4905" top="4470">
+   </BOUNDS>
+   <PIN pinname="SpotLights" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="181" dstpinname="PointLightSettings">
    </LINK>
    <LINK srcnodeid="125" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
+   </LINK>
+   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
    </LINK>
    </PATCH>

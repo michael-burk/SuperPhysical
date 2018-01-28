@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="1020">
-   <BOUNDS type="Window" left="420" top="2355" width="15390" height="10965">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="420" top="2355" width="15390" height="11685">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>
@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.35">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.42">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Show Connections" slicecount="1" values="0">
    </PIN>
@@ -115,7 +115,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.18">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.2">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0.15">
    </PIN>
@@ -296,32 +296,12 @@
    <BOUNDS type="Box" left="9570" top="1860">
    </BOUNDS>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="243">
-   <BOUNDS type="Box" left="11205" top="1305" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="11205" top="1305" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="5">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="LightSize">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="244">
    <BOUNDS type="Box" left="12090" top="750" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="12090" top="750" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="6">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="12">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -352,6 +332,8 @@
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="3">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="246">
@@ -397,7 +379,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="10590" top="3555" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.150000005960464">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -451,7 +433,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13830" top="420" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -461,7 +443,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -515,7 +497,7 @@
    <NODE systemname="PostFiltering (SuperPhysical Shadow)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="PostFiltering (SuperPhysical Shadow)" componentmode="Hidden" id="297">
    <BOUNDS type="Node" left="11205" top="2175" width="2670" height="270">
    </BOUNDS>
-   <PIN pinname="LightSize" visible="1">
+   <PIN pinname="LightSize" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="NumShadowSamples" visible="1">
    </PIN>
@@ -526,8 +508,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="243" srcpinname="Y Output Value" dstnodeid="297" dstpinname="LightSize">
-   </LINK>
    <LINK srcnodeid="244" srcpinname="Y Output Value" dstnodeid="297" dstpinname="NumShadowSamples">
    </LINK>
    <LINK srcnodeid="245" srcpinname="Y Output Value" dstnodeid="297" dstpinname="PenumbraScale">
@@ -655,5 +635,23 @@
    </LINKPOINT>
    <LINKPOINT x="6555" y="8318">
    </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="319">
+   <BOUNDS type="Box" left="11190" top="1425" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11190" top="1425" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="5">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="LightSize">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="319" srcpinname="Y Output Value" dstnodeid="297" dstpinname="LightSize">
    </LINK>
    </PATCH>

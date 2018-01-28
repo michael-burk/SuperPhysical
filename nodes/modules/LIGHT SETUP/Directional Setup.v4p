@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="15" scrolly="0">
    <BOUNDS type="Window" left="1215" top="930" width="16290" height="10500">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.35" visible="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.07" visible="1">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0.28">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0.73">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
@@ -109,7 +109,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.3">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.5">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0.5">
    </PIN>
@@ -483,7 +483,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12525" top="4860" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -497,7 +497,7 @@
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -610,9 +610,7 @@
    </LINK>
    <LINK srcnodeid="30" srcpinname="Color Output" dstnodeid="48" dstpinname="Color">
    </LINK>
-   <LINK srcnodeid="68" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Enabled">
-   <LINKPOINT x="12510" y="5235">
-   </LINKPOINT>
+   <LINK srcnodeid="68" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Enabled" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Enabled">
    </LINK>
