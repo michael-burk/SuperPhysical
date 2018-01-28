@@ -527,7 +527,7 @@
    </PIN>
    <PIN pinname="SpotLights" visible="1">
    </PIN>
-   <PIN pinname="Enabled" visible="1" slicecount="2" values="1,1">
+   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="300" dstpinname="PosXYZ">

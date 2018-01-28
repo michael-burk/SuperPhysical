@@ -109,8 +109,8 @@ SamplerState g_samLinear
 #include "NoTile.fxh"
 #include "ParallaxOcclusionMapping.fxh"
 #include "CookTorrance.fxh"
+#include "IBL.fxh"
 //#include "dx11/ToneMapping.fxh"
-
 
 struct vs2ps
 {
@@ -173,17 +173,10 @@ vs2ps VS(
     return Out;
 }
 
-static const half3 wavelength[3] =
-{
-	{ 1, 0, 0},
-	{ 0, 1, 0},
-	{ 0, 0, 1},
-};
-
-
 float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	
 	float3 V = normalize(tVI[3].xyz - PosW.xyz);
+	
 	float3 LightDirW;
 	float4 viewPosition;
 	float4 projectTexCoord;
@@ -213,71 +206,20 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	if(tX+tY > 4 && !noTile) metallicT = metallTex.Sample(g_samLinear, TexCd.xy).r;
 	else if(tX+tY > 4 && noTile) metallicT = textureNoTile(metallTex, TexCd.xy).r;
 
-	float3 reflColor = float3(0,0,0);
-	float3 IBL = float3(0,0,0);
-
 	float4 albedo = texCol * saturate(Color) * aoT;
 	metallicT *= metallic;
-	
-    float3 F0 = lerp(F, albedo.xyz, metallicT);
+
 	texRoughness *= roughness;
 	texRoughness = min(max(texRoughness,.01),.95);
 
-	float3 reflVect = -reflect(V,N);
-	float3 reflVecNorm = N;
-
-	uint tX1,tY1,m1;
-	cubeTexRefl.GetDimensions(tX,tY);
-	cubeTexIrradiance.GetDimensions(tX1,tY1);
+	float3 F0 = lerp(F, albedo.xyz, metallicT);
 	
-	float3 refrColor = 0;
 	float3 iridescenceColor = 1;
-	float2 envBRDF = 1;
 	
 	if (useIridescence){
 		float inverseDotView = 1.0 - max(dot(N,V),0.0);
 		iridescenceColor = iridescence.Sample(g_samLinear, float2(inverseDotView,0)).rgb;
-	} 
-	
-	float3 kS  = fresnelSchlickRoughness(max(dot(N, V), 0.0), F0,texRoughness);
-	float3 kD  = 1.0 - kS;
-		   kD *= 1.0 - metallicT;
-	envBRDF  = brdfLUT.Sample(g_samLinear, float2(max(dot(N, V), 0.0)-.01,texRoughness)*float2(1,-1)).rg;
-	
-	
-	// If IBL
-	if(tX+tY > 4 || tX1+tY1 > 4){
-			
-		IBL = cubeTexIrradiance.Sample(g_samLinear,reflVecNorm).rgb;
-		IBL  = IBL * albedo.xyz;
-		
-		float3 refl = cubeTexRefl.SampleLevel(g_samLinear,reflVect,texRoughness*MAX_REFLECTION_LOD).rgb;
-		
-		if(useIridescence){
-		  refl *= iridescenceColor * (kS * envBRDF.x + envBRDF.y);
-		} else {
-		  refl *= (kS * envBRDF.x + envBRDF.y);
-		}
-
-		if(refraction){
-			float3 refrVect;
-		    for(int r=0; r<3; r++) {
-		    	refrVect = refract(-V, N , refractionIndex[r]);
-		    	refrColor += cubeTexRefl.SampleLevel(g_samLinear,refrVect,texRoughness*MAX_REFLECTION_LOD).rgb * wavelength[r];
-			}
-			refrColor *= 1 - (kS * envBRDF.x + envBRDF.y);
-			IBL *= texRoughness;
-		}
-		
-		IBL  = saturate( (IBL * iblIntensity.x + refrColor) * kD + refl * iblIntensity.y) * aoT;
-	
-	} else if(useIridescence){
-			iridescenceColor *= (kS * envBRDF.x + envBRDF.y);
-			IBL = iridescenceColor / kD;	
-		
-	}
-	
-	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y)* 2 * iridescenceColor;
+	} 	
 	
 	texRoughness += .05;
 	
@@ -331,11 +273,11 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 							shadowCounter++;
 							
 							finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-											  lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT,iridescenceColor);
+											  lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT, iridescenceColor);
 				} else {
 							float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
 					       	finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-											  1.0, 1.0, 1.0, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT,iridescenceColor);
+											  1.0, 1.0, 1.0, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT, iridescenceColor);
 				}
 				lightCounter ++;
 				break;
@@ -438,13 +380,12 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		}	
 	}
 	
-	finalLight.rgb += IBL;
+	finalLight.rgb += IBL(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT, aoT );
 	
 	EmissiveTex.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) finalLight.rgb += saturate(Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, TexCd.xy,0).rgb);
 	else if(tX+tY > 4 && noTile) finalLight.rgb += saturate(Emissive.rgb + textureNoTile(EmissiveTex,TexCd.xy).rgb);
 	else finalLight.rgb += saturate(Emissive.rgb);
-	
 	
 //	Gamma Correction
 //	if(gammaCorrection) finalLight.rgb = ACESFitted(finalLight.rgb);
