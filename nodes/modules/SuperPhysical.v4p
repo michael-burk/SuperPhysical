@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="525" top="2160" width="18450" height="13815">
+   <BOUNDS type="Window" left="630" top="1500" width="18450" height="12315">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>
@@ -85,7 +85,7 @@
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
-   <PIN pinname="Data" visible="1" slicecount="12" values="0.810000002384186,0.800000011920929,0.790000021457672,0.810000002384186,0.800000011920929,0.790000021457672,0.810000002384186,0.800000011920929,0.790000021457672,0.810000002384186,0.800000011920929,0.790000021457672">
+   <PIN pinname="Data" visible="1" slicecount="12" values="0,0,0,0,0,0,0,0,0,0,0,0">
    </PIN>
    <BOUNDS type="Box" left="10050" top="6480">
    </BOUNDS>
@@ -125,7 +125,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7815" top="3255" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="741209888,741195296,741208352,741204512">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -135,7 +135,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8145" top="3705" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="741196064,741203744,741206048,741204512">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -145,7 +145,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8520" top="4185" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="741199904,741205280,741206816,741204512">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -155,7 +155,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8835" top="4635" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="741200672,741196832,741207584,741204512">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -165,7 +165,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="9660" top="5580" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="741210656,741210656,741210656,741210656">
    </PIN>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -229,13 +229,13 @@
    </PIN>
    <PIN pinname="ShadowMap" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="fHeightMapScale" slicecount="4" visible="1" pintype="Input" values="0.150000005960464,0.150000005960464,0.150000005960464,0.150000005960464">
+   <PIN pinname="fHeightMapScale" slicecount="4" visible="1" pintype="Input" values="0.100000001490116,0.100000001490116,0.100000001490116,0.100000001490116">
    </PIN>
    <PIN pinname="Camera PositionXYZ" visible="1">
    </PIN>
    <PIN pinname="IBL IntensityXY" slicecount="2" visible="1" pintype="Input" values="1,1">
    </PIN>
-   <PIN pinname="roughness" slicecount="4" visible="1" values="1,1,1,1">
+   <PIN pinname="roughness" slicecount="4" visible="1" values="0,0,0,0">
    </PIN>
    <PIN pinname="Power" slicecount="1" values="1">
    </PIN>
@@ -243,7 +243,7 @@
    </PIN>
    <PIN pinname="metallic" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
-   <PIN pinname="Bumpiness" slicecount="4" visible="1" pintype="Input" values="1,1,1,1">
+   <PIN pinname="Bumpiness" slicecount="4" visible="1" pintype="Input" values="0,0,0,0">
    </PIN>
    <PIN pinname="NormalMap" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
@@ -263,7 +263,7 @@
    </PIN>
    <PIN pinname="CubeMap Irradiance" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Parallax Occlusion Mapping" slicecount="4" visible="1" pintype="Input" values="0,1,0,0">
+   <PIN pinname="Parallax Occlusion Mapping" slicecount="4" visible="1" pintype="Input" values="0,0,0,0">
    </PIN>
    <PIN pinname="Color(Albedo)" slicecount="4" visible="1" values="|1.00000,1.00000,1.00000,1.00000|,|1.00000,1.00000,1.00000,1.00000|,|1.00000,1.00000,1.00000,1.00000|,|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
@@ -283,7 +283,7 @@
    </PIN>
    <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="POM_numSamples" visible="1" pintype="Input" slicecount="4" values="40,40,40,40">
+   <PIN pinname="POM_numSamples" visible="1" pintype="Input" slicecount="4" values="25,25,25,25">
    </PIN>
    <PIN pinname="Refraction" visible="1" pintype="Input" slicecount="4" values="0,0,0,0">
    </PIN>
@@ -291,7 +291,7 @@
    </PIN>
    <PIN pinname="sss" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
-   <PIN pinname="sssFalloff" visible="1" slicecount="4" values="1,1,1,1">
+   <PIN pinname="sssFalloff" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Light Color" visible="1" slicecount="1" values="||">
    </PIN>
@@ -309,7 +309,7 @@
    </PIN>
    <PIN pinname="Color(Emissive)" slicecount="4" visible="1" values="|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
-   <PIN pinname="num" visible="1" slicecount="1" values="26">
+   <PIN pinname="num" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Light2" visible="1" slicecount="1" values="||">
    </PIN>
@@ -513,7 +513,7 @@
    </BOUNDS>
    <PIN pinname="Texture" visible="1">
    </PIN>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="-2147483648,-2147483648,-2147483648,-2147483648">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="188139744,188140512,188138208,741204512">
    </PIN>
    </NODE>
    <LINK srcnodeid="131" srcpinname="Texture" dstnodeid="1" dstpinname="Texture" linkstyle="Bezier">
@@ -938,8 +938,6 @@
    </LINK>
    <LINK srcnodeid="309" srcpinname="Y Output Value" dstnodeid="308" dstpinname="Input 2">
    </LINK>
-   <LINK srcnodeid="307" srcpinname="Texture Array Out" dstnodeid="1" dstpinname="SpotTex">
-   </LINK>
    <LINK srcnodeid="296" srcpinname="Output" dstnodeid="293" dstpinname="Switch">
    </LINK>
    <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="313">
@@ -1096,6 +1094,12 @@
    <LINKPOINT x="3210" y="4613">
    </LINKPOINT>
    <LINKPOINT x="4830" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="307" srcpinname="Texture Array Out" dstnodeid="1" dstpinname="SpotTex" linkstyle="Bezier">
+   <LINKPOINT x="15450" y="6398">
+   </LINKPOINT>
+   <LINKPOINT x="10440" y="6398">
    </LINKPOINT>
    </LINK>
    </PATCH>

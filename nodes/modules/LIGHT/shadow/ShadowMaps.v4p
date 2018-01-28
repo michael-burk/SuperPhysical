@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.11.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.11_x64\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\light\shadow\ShadowMaps.v4p" systemname="ShadowMaps" filename="C:\Users\Michael\Desktop\PROJECTS\superphong\Modules\ShadowMaps.v4p" scrollx="0" scrolly="4950" locked="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps.v4p" systemname="ShadowMaps" filename="C:\Users\Michael\Desktop\PROJECTS\superphong\Modules\ShadowMaps.v4p" scrollx="0" scrolly="0" locked="0">
    <BOUNDS type="Window" left="2850" top="405" width="12780" height="13905">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
@@ -361,9 +361,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="228">
-   <BOUNDS type="Box" left="2115" top="3255" width="795" height="240">
+   <BOUNDS type="Box" left="2250" top="3780" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="2115" top="3255" width="0" height="0">
+   <BOUNDS type="Node" left="2250" top="3780" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" visible="1" slicecount="12" values="256,256,256,256,256,256,256,256,256,256,256,256">
    </PIN>
@@ -801,7 +801,7 @@
    <LINK srcnodeid="155" srcpinname="Y Output Value" dstnodeid="295" dstpinname="SizeXY">
    </LINK>
    <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="299">
-   <BOUNDS type="Node" left="2115" top="2685" width="100" height="100">
+   <BOUNDS type="Node" left="2250" top="3210" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -811,9 +811,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="291" srcpinname="ShadowRes" dstnodeid="299" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="4560" y="2183">
+   <LINKPOINT x="4605" y="2358">
    </LINKPOINT>
-   <LINKPOINT x="2175" y="2183">
+   <LINKPOINT x="2265" y="2533">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="299" srcpinname="Output" dstnodeid="228" dstpinname="Y Input Value">
@@ -911,5 +911,17 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="305" srcpinname="Y Output Value" dstnodeid="299" dstpinname="Default">
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="306">
+   <BOUNDS type="Node" left="7065" top="15975" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7065" top="15975" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11430" top="7785" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="290" srcpinname="Texture Array Out" dstnodeid="306" dstpinname="Texture In">
    </LINK>
    </PATCH>

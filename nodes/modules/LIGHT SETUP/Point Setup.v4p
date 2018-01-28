@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="585">
-   <BOUNDS type="Window" left="0" top="2055" width="26070" height="10455">
+   <BOUNDS type="Window" left="0" top="2055" width="14055" height="10455">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>
@@ -27,7 +27,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0.23,0">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0.39,0.01">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="3">
    </PIN>
@@ -119,7 +119,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3090" top="5475" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,0.00286,0.00000,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Color">
    </PIN>

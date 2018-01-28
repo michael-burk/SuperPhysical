@@ -545,7 +545,7 @@
    </PIN>
    </NODE>
    <NODE id="5" componentmode="Hidden" systemname="SuperPhysical" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\SuperPhysical.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\SuperPhysical.v4p" debug="0" stayontop="0">
-   <BOUNDS type="Window" left="525" top="2160" width="18450" height="13815">
+   <BOUNDS type="Window" left="630" top="1500" width="18450" height="12315">
    </BOUNDS>
    <BOUNDS type="Node" left="2295" top="5325" width="3300" height="270">
    </BOUNDS>

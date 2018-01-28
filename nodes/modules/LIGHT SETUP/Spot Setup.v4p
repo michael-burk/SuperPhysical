@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.35">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.39">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
    </PIN>
    <PIN pinname="Show Connections" slicecount="1" values="0">
    </PIN>
@@ -169,7 +169,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8250" top="6780" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -181,7 +181,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -471,9 +471,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="279">
-   <BOUNDS type="Box" left="11865" top="3360" width="480" height="480">
+   <BOUNDS type="Box" left="11865" top="2760" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="11865" top="3360" width="0" height="0">
+   <BOUNDS type="Node" left="11865" top="2760" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
