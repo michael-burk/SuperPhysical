@@ -1,0 +1,142 @@
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_LINEAR;AddressU=BORDER;AddressV=BORDER;};
+SamplerState s1 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_LINEAR;AddressU=WRAP;AddressV=WRAP;};
+
+float2 R:TARGETSIZE;
+
+Texture2DArray shadowMaps <string uiname="shadowMaps";>;
+Texture2D depthMap <string uiname="depthMap";>;
+Texture2D noiseTex <string uiname="noise";>;
+
+StructuredBuffer <float4> LightColor;
+Texture2DArray lightMap <string uiname="LightMap";>;
+
+float4x4 tVI;
+float4x4 tPI;
+float4x4 tP;
+
+StructuredBuffer <float> farPlane;
+StructuredBuffer <float3> lPos;
+StructuredBuffer <uint> LightType;
+
+float fade;
+
+static const float G_SCATTERING = -.2;
+static const float PI = 3.14159265f;
+
+uint NB_STEPS = 32;
+
+StructuredBuffer <float4x4> lightVP;
+
+float brightness = 1;
+float stepLength = 1;
+
+uint lightCount = 0;
+
+float4 UVZtoVIEW(float2 UV,float z){
+	float4 p=mul(float4(UV.x*2-1,1-2*UV.y,0,1.0),tPI);
+	float ld = tP._43 / (z - tP._33);
+	p=float4(p.xy*ld,ld,1.0);
+	return p; 
+}
+float4 UVZtoWORLD(float2 UV,float z){
+	return mul(UVZtoVIEW(UV,z),tVI); 
+}
+
+
+float3 UVtoEYE(float2 UV){
+	return normalize( mul(float4(mul(float4((UV.xy*2-1)*float2(1,-1),0,1),tPI).xy,1,0),tVI).xyz);
+}
+	// Mie scaterring approximated with Henyey-Greenstein phase function.
+	float ComputeScattering(float lightDotView)
+	{
+	float result = 1.0f - G_SCATTERING /* * G_SCATTERING */;
+	result *= result;
+	result /= (4.0f * PI * pow(abs(1.0f + G_SCATTERING * G_SCATTERING - (2.0f * G_SCATTERING) * lightDotView), 1.5f));
+	return result;
+	}
+
+
+
+float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	
+	float3 endRayPos =  UVZtoWORLD(x,depthMap.Sample(s0,x).r).xyz;
+	// Ray Origin
+	float3 startPos = tVI[3].xyz;
+	// Ray Direction
+	float3 rayDir = UVtoEYE(x.xy);
+	
+	float3 steppy = rayDir * stepLength;
+
+	startPos += steppy * noiseTex.Sample(s0,x).r;
+	
+	float3 currentPos = startPos;
+	
+	float3 accumFog = 0.0f.xxx;
+	float  shadowMapValue = 0;
+	float4 worldInShadowCameraSpace;
+
+	float distFactor;
+	float3 lightToObject;
+
+	float3 lightDir = 0;
+	float3 spotTex = 1;
+	
+	for (uint i = 0; i < NB_STEPS; i++)
+	{	
+		if( length(currentPos - endRayPos) <= stepLength) break;		
+		
+		for (uint j = 0; j < lightCount; j++)
+		{
+
+			float4x4 LVP = (lightVP[j]); 
+			
+			lightDir = float3(LVP._13, LVP._23, LVP._33);
+			
+			worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
+			worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
+			
+			
+			switch(LightType[j]){
+				case 0:
+						spotTex = worldInShadowCameraSpace.z > 0; 
+						break;
+				case 1:
+						uint tXS,tYS,mS;
+						lightMap.GetDimensions(tXS,tYS,mS);
+						if(tXS+tYS > 4) spotTex = lightMap.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5,(-worldInShadowCameraSpace.y + 1) * .5, j),0).rgb;
+						else if(tXS+tYS < 4) spotTex = smoothstep(1, 0, saturate(length(worldInShadowCameraSpace.xy)));
+						break;
+				case 2:
+						spotTex = .25;
+						break;
+			}
+			
+
+		
+			shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
+			
+			if (shadowMapValue >= worldInShadowCameraSpace.z)
+			{	
+				distFactor =  pow(saturate( farPlane[j] * fade - length(currentPos - lPos[j])), 1);
+				accumFog += ComputeScattering(dot(rayDir, lightDir)).r * distFactor * brightness * stepLength  *
+				spotTex.rgb * LightColor[j].rgb * 10;
+			}
+			
+		}
+	
+			currentPos += steppy /* NB_STEPS */;		
+	}
+	
+	accumFog ;
+
+	
+	return float4(accumFog,1);
+
+}
+
+technique10 Volumetric_Light{
+	pass P1<string format="R16G16B16A16_float";>{
+		SetPixelShader(CompileShader(ps_5_0, VolumetricLight()));
+		
+	}
+}
