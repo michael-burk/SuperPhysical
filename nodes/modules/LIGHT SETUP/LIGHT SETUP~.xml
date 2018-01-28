@@ -23,7 +23,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1410" top="1095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.29933,0.29933,0.29933,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.30217,0.30217,0.30217,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Global Reflection Color|">
    </PIN>
@@ -279,7 +279,7 @@
    <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
    </LINK>
    <NODE systemname="Multiply (Color)" nodename="Multiply (Color)" componentmode="Hidden" id="186">
-   <BOUNDS type="Node" left="1800" top="1770" width="100" height="100">
+   <BOUNDS type="Node" left="2415" top="1680" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Color" visible="1">
    </PIN>
@@ -288,7 +288,11 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="41" srcpinname="Color Output" dstnodeid="186" dstpinname="Color">
+   <LINK srcnodeid="41" srcpinname="Color Output" dstnodeid="186" dstpinname="Color" linkstyle="VHV">
+   <LINKPOINT x="1470" y="1613">
+   </LINKPOINT>
+   <LINKPOINT x="2415" y="1613">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="186" srcpinname="Output" dstnodeid="42" dstpinname="Color Input">
    </LINK>

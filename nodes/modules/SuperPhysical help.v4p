@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1680" top="1095" width="10965" height="12855">
+   <BOUNDS type="Window" left="1545" top="1050" width="10965" height="12990">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
    <BOUNDS type="Node" left="1075" top="9115" width="100" height="100">
@@ -221,7 +221,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8880" top="915" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="-2.92,0.13,-1.09,0.75">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="-2.95,0.13,-1.09,0.75">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -317,7 +317,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6225" top="2970" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.3,0.5,0.37,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.41,0.5,0.37,1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -442,7 +442,7 @@
    <BOUNDS type="Box" left="1710" top="2445">
    </BOUNDS>
    </NODE>
-   <NODE id="16" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="0">
+   <NODE id="16" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="0" border="0">
    <BOUNDS type="Node" left="1950" top="11745" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1950" top="11745" width="6000" height="4500">
@@ -573,7 +573,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1950" top="10755">
    </BOUNDS>
-   <PIN pinname="gamma" slicecount="1" values="1.1">
+   <PIN pinname="gamma" slicecount="1" values="1.2">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -591,9 +591,9 @@
    <NODE systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.74.6-g5402bea065\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden" id="38">
    <BOUNDS type="Node" left="3750" top="8445" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Initial Longitude" visible="1" slicecount="1" values="1.48">
+   <PIN pinname="Initial Longitude" visible="1" slicecount="1" values="1.45">
    </PIN>
-   <PIN pinname="Initial Latitude" slicecount="1" values="0.03">
+   <PIN pinname="Initial Latitude" slicecount="1" values="0.1">
    </PIN>
    <PIN pinname="Near Plane" slicecount="1" values="0.01">
    </PIN>
@@ -603,7 +603,7 @@
    </PIN>
    <PIN pinname="View" visible="1">
    </PIN>
-   <PIN pinname="Initial Distance" slicecount="1" values="3">
+   <PIN pinname="Initial Distance" slicecount="1" values="2.06">
    </PIN>
    <PIN pinname="Initial Pitch" slicecount="1" values="0.05">
    </PIN>
