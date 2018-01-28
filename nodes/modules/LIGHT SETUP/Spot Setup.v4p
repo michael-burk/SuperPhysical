@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="15" scrolly="0">
-   <BOUNDS type="Window" left="1695" top="735" width="15390" height="14130">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="1020">
+   <BOUNDS type="Window" left="420" top="2355" width="15390" height="10965">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>
@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.39">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.35">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -169,7 +169,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8250" top="6780" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -181,7 +181,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -397,7 +397,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="10590" top="3555" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.24">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.150000005960464">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -547,76 +547,76 @@
    </PIN>
    <PIN pinname="SpotLights" visible="1">
    </PIN>
+   <PIN pinname="Enabled" visible="1" slicecount="2" values="1,1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="300" dstpinname="PosXYZ">
    </LINK>
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Helper" linkstyle="Bezier">
-   <LINKPOINT x="7425" y="8318">
+   <LINKPOINT x="7395" y="8318">
    </LINKPOINT>
-   <LINKPOINT x="7260" y="8318">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="8265" y="8138">
-   </LINKPOINT>
-   <LINKPOINT x="7995" y="8138">
+   <LINKPOINT x="5835" y="8318">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="300" dstpinname="InterestXYZ" linkstyle="Bezier">
-   <LINKPOINT x="990" y="7035">
+   <LINKPOINT x="1020" y="7028">
    </LINKPOINT>
-   <LINKPOINT x="1395" y="7035">
+   <LINKPOINT x="9420" y="7028">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Distance" linkstyle="Bezier">
-   <LINKPOINT x="2175" y="6788">
+   <LINKPOINT x="2175" y="6795">
    </LINKPOINT>
-   <LINKPOINT x="2145" y="6788">
+   <LINKPOINT x="1410" y="6795">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Range" linkstyle="Bezier">
-   <LINKPOINT x="3555" y="6795">
+   <LINKPOINT x="3555" y="6803">
    </LINKPOINT>
-   <LINKPOINT x="2865" y="6795">
+   <LINKPOINT x="2145" y="6803">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Pitch" linkstyle="Bezier">
-   <LINKPOINT x="4755" y="7313">
+   <LINKPOINT x="4740" y="7320">
    </LINKPOINT>
-   <LINKPOINT x="3600" y="7313">
+   <LINKPOINT x="2865" y="7320">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Yaw" linkstyle="Bezier">
-   <LINKPOINT x="5940" y="7320">
+   <LINKPOINT x="6000" y="7305">
    </LINKPOINT>
-   <LINKPOINT x="4335" y="7320">
+   <LINKPOINT x="10140" y="7305">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="300" dstpinname="FOV" linkstyle="Bezier">
-   <LINKPOINT x="7260" y="7313">
+   <LINKPOINT x="7245" y="7313">
    </LINKPOINT>
-   <LINKPOINT x="5400" y="7313">
+   <LINKPOINT x="3630" y="7313">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="122" srcpinname="Color Output" dstnodeid="300" dstpinname="Color" linkstyle="Bezier">
-   <LINKPOINT x="5805" y="9008">
+   <LINKPOINT x="5775" y="8993">
    </LINKPOINT>
-   <LINKPOINT x="5805" y="9008">
+   <LINKPOINT x="4365" y="8993">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="251" srcpinname="Y Output Value" dstnodeid="300" dstpinname="LightIntensity" linkstyle="Bezier">
-   <LINKPOINT x="9450" y="8438">
+   <LINKPOINT x="9420" y="8430">
    </LINKPOINT>
-   <LINKPOINT x="9450" y="8438">
+   <LINKPOINT x="8025" y="8430">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="252" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Falloff" linkstyle="Bezier">
-   <LINKPOINT x="10155" y="9105">
+   <LINKPOINT x="10125" y="9105">
    </LINKPOINT>
-   <LINKPOINT x="10170" y="9105">
+   <LINKPOINT x="8745" y="9105">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="296" srcpinname="Output" dstnodeid="300" dstpinname="Shadow">
+   <LINK srcnodeid="296" srcpinname="Output" dstnodeid="300" dstpinname="Shadow" linkstyle="Bezier">
+   <LINKPOINT x="8730" y="6848">
+   </LINKPOINT>
+   <LINKPOINT x="7260" y="6848">
+   </LINKPOINT>
    </LINK>
    <NODE systemname="Halo (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Source\Halo.tfx" nodename="HALO (DX11.TEXTUREFX)" componentmode="Hidden" id="308" hiddenwhenlocked="0">
    <BOUNDS type="Node" left="12210" top="6720" width="1350" height="270">
@@ -645,9 +645,15 @@
    <LINK srcnodeid="309" srcpinname="Pointer" dstnodeid="300" dstpinname="SpotLightTex" linkstyle="Bezier">
    <LINKPOINT x="12210" y="8753">
    </LINKPOINT>
-   <LINKPOINT x="6555" y="8753">
+   <LINKPOINT x="5100" y="8753">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="300" srcpinname="SpotLights" dstnodeid="58" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="8235" y="8318">
+   </LINKPOINT>
+   <LINKPOINT x="6555" y="8318">
+   </LINKPOINT>
    </LINK>
    </PATCH>

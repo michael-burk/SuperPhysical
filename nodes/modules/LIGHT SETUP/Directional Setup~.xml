@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.36">
+   <PIN pinname="Y Input Value" slicecount="2" values="0.36,0.08" visible="1">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -207,9 +207,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="30" systemname="IOBox (Color)">
-   <BOUNDS type="Box" left="7320" top="4860" width="2070" height="645">
+   <BOUNDS type="Box" left="6945" top="4980" width="2070" height="645">
    </BOUNDS>
-   <BOUNDS type="Node" left="7320" top="4860" width="0" height="0">
+   <BOUNDS type="Node" left="6945" top="4980" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.78997,0.00000,1.00000,1.00000|">
    </PIN>
@@ -261,7 +261,7 @@
    </PIN>
    <PIN pinname="Shadow" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Enabled" visible="1">
+   <PIN pinname="Enabled" visible="1" slicecount="2" values="1,1">
    </PIN>
    <PIN pinname="Helper" visible="1">
    </PIN>
@@ -362,12 +362,6 @@
    <LINKPOINT x="6260" y="6113">
    </LINKPOINT>
    <LINKPOINT x="6430" y="6173">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="8100" y="7778">
-   </LINKPOINT>
-   <LINKPOINT x="8100" y="7778">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Helper" linkstyle="Bezier">
@@ -489,7 +483,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12525" top="4860" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -503,11 +497,11 @@
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="68" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Enabled">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="73">
    <BOUNDS type="Box" left="11865" top="3195" width="795" height="240">
    </BOUNDS>
@@ -615,5 +609,11 @@
    <LINK srcnodeid="69" srcpinname="Output" dstnodeid="67" dstpinname="PostFiltering">
    </LINK>
    <LINK srcnodeid="30" srcpinname="Color Output" dstnodeid="48" dstpinname="Color">
+   </LINK>
+   <LINK srcnodeid="68" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Enabled">
+   <LINKPOINT x="12510" y="5235">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Enabled">
    </LINK>
    </PATCH>
