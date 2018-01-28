@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="240">
-   <BOUNDS type="Window" left="0" top="2055" width="14460" height="10455">
+   <BOUNDS type="Window" left="0" top="2100" width="14460" height="10410">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.9.0">
    </PACK>
@@ -27,7 +27,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.17,0.25,0.32">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.19,0.06,0.35">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="3">
    </PIN>
@@ -43,9 +43,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4485" top="4335" width="480" height="480">
+   <BOUNDS type="Box" left="4485" top="4560" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="4485" top="4335" width="0" height="0">
+   <BOUNDS type="Node" left="4485" top="4560" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -67,9 +67,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5340" top="4275" width="480" height="480">
+   <BOUNDS type="Box" left="5205" top="4560" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="5340" top="4275" width="0" height="0">
+   <BOUNDS type="Node" left="5205" top="4560" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -95,7 +95,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3090" top="5475" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,0.00220,0.00000,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,0.00000,0.00718,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Color">
    </PIN>
@@ -193,7 +193,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9285" top="4965" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.09">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -402,72 +402,12 @@
    <LINKPOINT x="10590" y="5265">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="PointLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="PointLights (SuperPhysical)" componentmode="Hidden" id="121">
-   <BOUNDS type="Node" left="1530" top="6930" width="5940" height="270">
-   </BOUNDS>
-   <PIN pinname="Enabled" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Range" visible="1" slicecount="1" values="6">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="121" dstpinname="Helper" linkstyle="Bezier">
-   <LINKPOINT x="4500" y="5873">
-   </LINKPOINT>
-   <LINKPOINT x="4500" y="5873">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="65" srcpinname="Color Output" dstnodeid="121" dstpinname="Color" linkstyle="Bezier">
-   <LINKPOINT x="3150" y="6443">
-   </LINKPOINT>
-   <LINKPOINT x="3735" y="6443">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="121" dstpinname="FOV">
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="121" dstpinname="PosXYZ" linkstyle="Bezier">
-   <LINKPOINT x="1560" y="5655">
-   </LINKPOINT>
-   <LINKPOINT x="1560" y="5655">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="86" srcpinname="Y Output Value" dstnodeid="121" dstpinname="Falloff" linkstyle="Bezier">
-   <LINKPOINT x="7800" y="6810">
-   </LINKPOINT>
-   <LINKPOINT x="7470" y="6810">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="121" dstpinname="Shadow FOV" linkstyle="Bezier">
-   <LINKPOINT x="2565" y="6810">
-   </LINKPOINT>
-   <LINKPOINT x="3000" y="6810">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="95" srcpinname="Y Output Value" dstnodeid="121" dstpinname="LightIntensity" linkstyle="Bezier">
-   <LINKPOINT x="6705" y="6803">
-   </LINKPOINT>
-   <LINKPOINT x="6705" y="6803">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="121" srcpinname="SpotLights" dstnodeid="72" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="1560" y="7485">
-   </LINKPOINT>
-   <LINKPOINT x="1560" y="7485">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="97" srcpinname="Output" dstnodeid="121" dstpinname="Shadow" linkstyle="Bezier">
-   <LINKPOINT x="7425" y="6278">
-   </LINKPOINT>
-   <LINKPOINT x="6000" y="6278">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="121" dstpinname="Enabled">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="124">
    <BOUNDS type="Box" left="2265" top="4980" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="2265" top="4980" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.66">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -478,8 +418,6 @@
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="124" srcpinname="Y Output Value" dstnodeid="121" dstpinname="Range">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="125">
    <BOUNDS type="Box" left="9960" top="3120" width="795" height="240">
    </BOUNDS>
@@ -495,9 +433,69 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="LightSize">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
    </NODE>
    <LINK srcnodeid="125" srcpinname="Y Output Value" dstnodeid="98" dstpinname="LightSize">
    </LINK>
    <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="98" dstpinname="PenumbraScale">
+   </LINK>
+   <NODE systemname="PointLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="PointLights (SuperPhysical)" componentmode="Hidden" id="126">
+   <BOUNDS type="Node" left="1530" top="6930" width="5940" height="270">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="126" dstpinname="Helper" linkstyle="Bezier">
+   <LINKPOINT x="4500" y="6053">
+   </LINKPOINT>
+   <LINKPOINT x="4500" y="5963">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="65" srcpinname="Color Output" dstnodeid="126" dstpinname="Color" linkstyle="Bezier">
+   <LINKPOINT x="3150" y="6443">
+   </LINKPOINT>
+   <LINKPOINT x="3735" y="6443">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="126" dstpinname="FOV">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="126" dstpinname="PosXYZ" linkstyle="Bezier">
+   <LINKPOINT x="1560" y="5655">
+   </LINKPOINT>
+   <LINKPOINT x="1560" y="5655">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="86" srcpinname="Y Output Value" dstnodeid="126" dstpinname="Falloff" linkstyle="Bezier">
+   <LINKPOINT x="7800" y="6810">
+   </LINKPOINT>
+   <LINKPOINT x="7470" y="6810">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="126" dstpinname="Shadow FOV" linkstyle="Bezier">
+   <LINKPOINT x="2565" y="6810">
+   </LINKPOINT>
+   <LINKPOINT x="3000" y="6810">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="95" srcpinname="Y Output Value" dstnodeid="126" dstpinname="LightIntensity" linkstyle="Bezier">
+   <LINKPOINT x="6705" y="6803">
+   </LINKPOINT>
+   <LINKPOINT x="6705" y="6803">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="126" srcpinname="SpotLights" dstnodeid="72" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="1560" y="7485">
+   </LINKPOINT>
+   <LINKPOINT x="1560" y="7485">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="Output" dstnodeid="126" dstpinname="Shadow" linkstyle="Bezier">
+   <LINKPOINT x="7425" y="6278">
+   </LINKPOINT>
+   <LINKPOINT x="6000" y="6278">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="126" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="124" srcpinname="Y Output Value" dstnodeid="126" dstpinname="Range">
    </LINK>
    </PATCH>
