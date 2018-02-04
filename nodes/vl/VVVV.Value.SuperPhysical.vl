@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" Authors="vvvv group" LicenseUrl="https://www.gnu.org/licenses/lgpl.html" ProjectUrl="http://vvvv.org/" Version="0.74">
+<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" Authors="vvvv group" LicenseUrl="https://www.gnu.org/licenses/lgpl.html" ProjectUrl="http://vvvv.org/" Version="0.75">
   <NugetDependency Id="RKFCmk1Lg5EP3I4IQegLTw" Location="VL.CoreLib" Version="0.35.21" />
   <NugetDependency Id="U2JwHqMJLyGLDs97lM6eZ6" Location="VL.CoreLib.VVVV" Version="0.35.21" />
   <NugetDependency Id="Q18ZLENm9gzPhBnFnztPMP" Location="VL.Core" Version="0.35.21" />
@@ -282,13 +282,12 @@
             <ControlPoint Id="FP1bH7upqyNLKYmgo9HDh4" Bounds="1593,2398" />
             <Link Id="HDCkVvu8dSXOoQj1GKvVoZ" Ids="Aajro7zxErBPXXkbFDhRAt,FP1bH7upqyNLKYmgo9HDh4" IsHidden="true" />
             <Node Bounds="1539,3348,103,22" Id="Hl7rmsYRb3TMDTTNV31MiN">
-              <p:NodeReference LastCategoryFullName="CraftLie.DynamicBufferDescription" LastSymbolSource="CraftLie.vl">
+              <p:NodeReference LastCategoryFullName="Collections.Array" LastSymbolSource="VL.CoreLib.VVVV.vl" LastDependency="VVVV.Value.SuperPhysical.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                <CategoryReference Kind="TypeFlag" Name="DynamicBufferDescription" NeedsToBeDirectParent="true" />
-                <Choice Kind="OperationCallFlag" Name="FromArray (Stride)" />
+                <Choice Kind="OperationCallFlag" Name="ToBufferDescription" />
+                <CategoryReference Kind="ArrayType" Name="Array" NeedsToBeDirectParent="true" />
               </p:NodeReference>
               <Pin Id="Q3flCIBYrmUOS5QZbWKoq2" Name="Data" Kind="InputPin" />
-              <Pin Id="LnMc2lafvYuO9Vq2ufyF6k" Name="Stride In Bytes" Kind="InputPin" />
               <Pin Id="VA0bJb6lHifOShSqUPLO7g" Name="Set" Kind="InputPin" />
               <Pin Id="A6n1rjICrBPNZgqxH6IU16" Name="Output" Kind="StateOutputPin" />
             </Node>
@@ -301,22 +300,15 @@
               <Pin Id="RBiexgBS5fhOUMvaKOb3fO" Name="Input" Kind="InputPin" />
               <Pin Id="D79Mbyd85xQQAuuzhHFKA1" Name="Result" Kind="OutputPin" />
             </Node>
-            <Pad Id="RSTdVTGKpmCPwjokJmtcQY" Comment="Stride In Bytes" Bounds="1591,3310,24,19" ShowValueBox="true" isIOBox="true" Value="16">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
-                <Choice Kind="TypeFlag" Name="Integer32" />
-                <CategoryReference Kind="Category" Name="Primitive" />
-              </p:TypeAnnotation>
-            </Pad>
             <ControlPoint Id="I7qmqsASGPeLwHkHxapo14" Bounds="1539,3426" />
             <ControlPoint Id="D8564OGtBpfMjifMVEGL7R" Bounds="1688,3426" />
             <Node Bounds="1686,3352,103,22" Id="MeGK8IZIyZaNCeq5dTpANU">
-              <p:NodeReference LastCategoryFullName="CraftLie.DynamicBufferDescription" LastSymbolSource="CraftLie.vl">
+              <p:NodeReference LastCategoryFullName="Collections.Array" LastSymbolSource="VL.CoreLib.VVVV.vl" LastDependency="VVVV.Value.SuperPhysical.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                <CategoryReference Kind="TypeFlag" Name="DynamicBufferDescription" NeedsToBeDirectParent="true" />
-                <Choice Kind="OperationCallFlag" Name="FromArray (Stride)" />
+                <Choice Kind="OperationCallFlag" Name="ToBufferDescription" />
+                <CategoryReference Kind="ArrayType" Name="Array" NeedsToBeDirectParent="true" />
               </p:NodeReference>
               <Pin Id="P8HWwnqJTjCOCOV3tHmm2W" Name="Data" Kind="InputPin" />
-              <Pin Id="RBv93DGnuvnPrSnQsY4EqK" Name="Stride In Bytes" Kind="InputPin" />
               <Pin Id="RkLqel2wGWePvnXiR4JW9u" Name="Set" Kind="InputPin" />
               <Pin Id="MiSpCfZcp02MRrJAbXa9If" Name="Output" Kind="StateOutputPin" />
             </Node>
@@ -329,22 +321,14 @@
               <Pin Id="FvaGbdvW6g9N8VOHiLjkyk" Name="Input" Kind="InputPin" />
               <Pin Id="KK7gXvlWCkCN0dx41F5qAu" Name="Result" Kind="OutputPin" />
             </Node>
-            <Pad Id="I63FS2wFnjgPJUJYGLQTHd" Comment="Stride In Bytes" Bounds="1737,3309,24,19" ShowValueBox="true" isIOBox="true" Value="16">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
-                <Choice Kind="TypeFlag" Name="Integer32" />
-                <CategoryReference Kind="Category" Name="Primitive" />
-              </p:TypeAnnotation>
-            </Pad>
             <Pin Id="PR7ZL7dH0xgP7w4Q6tnksv" Name="LightMatricesBuffer" Kind="OutputPin" />
             <Pin Id="FaTfU1V22tDPaDTjBkJZP4" Name="LightParameterBuffer" Kind="OutputPin" />
             <Link Id="Cxam1io5fMvOSvkMWCqY2U" Ids="D79Mbyd85xQQAuuzhHFKA1,Q3flCIBYrmUOS5QZbWKoq2" />
-            <Link Id="AE0DbaCSH0KOO7qFxio8tY" Ids="RSTdVTGKpmCPwjokJmtcQY,LnMc2lafvYuO9Vq2ufyF6k" />
             <Link Id="C0piADzZl4fMZaGeDWbsp7" Ids="I7qmqsASGPeLwHkHxapo14,PR7ZL7dH0xgP7w4Q6tnksv" IsHidden="true" />
             <Link Id="U5Y3S5NCQegLkbdbc1LrzP" Ids="A6n1rjICrBPNZgqxH6IU16,I7qmqsASGPeLwHkHxapo14" />
             <Link Id="TIlvYO43px2LHjB69KV9nL" Ids="D8564OGtBpfMjifMVEGL7R,FaTfU1V22tDPaDTjBkJZP4" IsHidden="true" />
             <Link Id="Iq60EpCEpb7LPBnJqtyQtF" Ids="MiSpCfZcp02MRrJAbXa9If,D8564OGtBpfMjifMVEGL7R" />
             <Link Id="KdN6tLCUAo4P39wkqYXa3i" Ids="KK7gXvlWCkCN0dx41F5qAu,P8HWwnqJTjCOCOV3tHmm2W" />
-            <Link Id="EqCy4a24ivFOo1bnF29a6G" Ids="I63FS2wFnjgPJUJYGLQTHd,RBv93DGnuvnPrSnQsY4EqK" />
             <Node Bounds="1591,2438,91,22" Id="PaY4ORAMUEALKzUHOYvZh6">
               <p:NodeReference LastCategoryFullName="VVVV.SuperPhysical.Light.LightSetup" LastSymbolSource="VVVV.Value.SuperPhysical.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
