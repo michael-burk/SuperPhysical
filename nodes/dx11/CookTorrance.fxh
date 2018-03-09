@@ -66,9 +66,8 @@ float3 cookTorrance(float3 V, float3 L, float3 N, float3 albedo, float3 lDiff,
     specular *= lPower;
     specular *= iridescenceColor;
 
-    // Limit to LightRange                	
-                    	
     if(refraction) radiance *= roughness;
+                    	
     float NdotL = max(dot(N, L), 0.0);
                     
 	return ( ( (kD * albedo.xyz / PI + specular) * radiance * NdotL) + saturate(albedo * lDiff * attenuation * projectionColor / pow(lightDist,sssFalloff) * sss)  ) * ao * 3 /*because*/ ;
