@@ -180,45 +180,38 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	///////////////////////////////////////////////////////////////////////////
 	
 	float3 V = normalize(tVI[3].xyz - PosW.xyz);
-
-	float3 LightDirW;
-	float4 viewPosition;
-	float4 projectTexCoord;
-	float3 projectionColor;
-	float2 reflectTexCoord;
-	float4 finalLight = float4(0.0,0.0,0.0,0.0);
 	
-	uint tX,tY,m;
-	float4 texCol = float4(1,1,1,1);
-	float texRoughness = 1;
-	float aoT = 1;
-	float metallicT = 1;
 	
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
 	///////////////////////////////////////////////////////////////////////////
 	
+	uint tX,tY,m;
+	
+	float texRoughness = roughness;
 	roughTex.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) texRoughness = roughTex.Sample(g_samLinear, TexCd.xy).r;
 	else if(tX+tY > 4 && noTile) texRoughness = textureNoTile(roughTex,TexCd.xy).r;
-	texRoughness *= roughness;
 	texRoughness = min(max(texRoughness,.01),.95);
 //	texRoughness += .05;
 	
+	float aoT = 1;
 	aoTex.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) aoT = aoTex.Sample(g_samLinear, TexCd.xy).r;
 	else if(tX+tY > 4 && noTile) aoT = textureNoTile(aoTex,TexCd.xy).r;
-	
+
+	float metallicT = 1;
 	metallTex.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) metallicT = metallTex.Sample(g_samLinear, TexCd.xy).r;
 	else if(tX+tY > 4 && noTile) metallicT = textureNoTile(metallTex, TexCd.xy).r;
 	metallicT *= metallic;
 	
+	float4 texCol = 1;
 	texture2d.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) texCol = texture2d.Sample(g_samLinear, TexCd.xy);
 	else if(tX+tY > 4 && noTile) texCol = textureNoTile(texture2d,TexCd.xy);
+
 	float4 albedo = texCol * saturate(Color) * aoT;
-	
 	
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
@@ -231,22 +224,31 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		iridescenceColor = iridescence.Sample(g_samLinear, float2(inverseDotView,0)).rgb;
 	} 	
 		
+	///////////////////////////////////////////////////////////////////////////
+	// INITIALIZE VARIABLES FOR LIGHT LOOP
+	///////////////////////////////////////////////////////////////////////////
+	
+	float4 viewPosition;
+	float4 projectTexCoord;
 	
 	float3 F0 = lerp(F, albedo.xyz, metallicT);
 	
 	int shadowCounter = 0;
 	int spotLightCount = 0;
 	int lightCounter = 0;
+	
 	float4 shadow = 0;
+	
 	float3 lightToObject;
 	float3 L;
 	float lightDist;
 	float falloff;
+
+	float4 finalLight = 0;
 	
-//	uint a;
-//	float b,c;
-//	shadowMap.GetDimensions(a,b,c);
-//	float2 shadowTexSize = float2(b,c);
+	///////////////////////////////////////////////////////////////////////////
+	// SHADING AND SHADOW MAPPING FOR EACH LIGHT
+	///////////////////////////////////////////////////////////////////////////
 	
 	for(uint i = 0; i< num; i++){
 
@@ -256,10 +258,10 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		
 		falloff = smoothstep(0,Light[i].lAtt1,(Light[i%num].lightRange-lightDist));
 			
+		
 		switch (Light[i].lightType){
 			
-			
-		//DIRECTIONAL
+		// DIRECTIONAL
 			case 0:
 				shadow = 0;
 			
@@ -268,7 +270,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				
 				projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
 		   		projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;			
-				projectTexCoord.z = viewPosition.z / viewPosition.w / 2.0f + 0.5f;
+				projectTexCoord.z =  viewPosition.z / viewPosition.w / 2.0f + 0.5f;
 			
 				if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y)
 				&& (saturate(projectTexCoord.z) == projectTexCoord.z)){
@@ -289,14 +291,14 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				lightCounter ++;
 				break;
 			
-			//SPOT
+			// SPOT
 			case 1:
 				shadow = 0;
 				viewPosition = mul(PosW, LightMatrices[i].VP);
 					
 				projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
 		   		projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;			
-				projectTexCoord.z = viewPosition.z / viewPosition.w / 2.0f + 0.5f;
+				projectTexCoord.z =  viewPosition.z / viewPosition.w / 2.0f + 0.5f;
 			
 				float3 falloffSpot = 0;
 				if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y)
@@ -329,7 +331,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				spotLightCount++;
 				break;
 	
-			//POINT
+			// POINT
 			case 2:
 			
 				shadow = 0;
@@ -349,7 +351,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 						
 						projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
 			   			projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;
-						projectTexCoord.z = viewPosition.z / viewPosition.w / 2.0f + 0.5f;
+						projectTexCoord.z =  viewPosition.z / viewPosition.w / 2.0f + 0.5f;
 					
 						if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y)
 						&& (saturate(projectTexCoord.z) == projectTexCoord.z)){
@@ -358,7 +360,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 							
 							projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
 				   			projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;
-							projectTexCoord.z = viewPosition.z / viewPosition.w / 2.0f + 0.5f;
+							projectTexCoord.z =  viewPosition.z / viewPosition.w / 2.0f + 0.5f;
 							
 							doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, p+shadowCounter);
 							
@@ -383,7 +385,15 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		}	
 	}
 	
+	///////////////////////////////////////////////////////////////////////////
+	// IMAGE BASED LIGHTING
+	///////////////////////////////////////////////////////////////////////////
+	
 	finalLight.rgb += IBL(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT, aoT );
+	
+	///////////////////////////////////////////////////////////////////////////
+	// EMISSIVE LIGHTING
+	///////////////////////////////////////////////////////////////////////////
 	
 	EmissiveTex.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) finalLight.rgb += saturate(Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, TexCd.xy,0).rgb);
@@ -394,7 +404,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 //	if(gammaCorrection) finalLight.rgb = ACESFitted(finalLight.rgb);
 
 	finalLight.a = Alpha*albedo.a;
-
+	
 	return finalLight;
 }
 
