@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1545" top="1050" width="10965" height="12990">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="1545" top="1035" width="10965" height="12990">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
    <BOUNDS type="Node" left="1075" top="9115" width="100" height="100">
@@ -485,7 +485,7 @@
    <LINK srcnodeid="21" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture In">
    </LINK>
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
-   <BOUNDS type="Node" left="3015" top="4320" width="1410" height="270">
+   <BOUNDS type="Node" left="3045" top="4365" width="1410" height="270">
    </BOUNDS>
    <BOUNDS type="Window" left="525" top="735" width="18825" height="14340">
    </BOUNDS>
@@ -493,7 +493,7 @@
    </PIN>
    <PIN pinname="Iridescence" visible="1" slicecount="1" values="0">
    </PIN>
-   <BOUNDS type="Box" left="3015" top="4320">
+   <BOUNDS type="Box" left="3045" top="4365">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="29" srcpinname="Output" dstnodeid="33" dstpinname="Input 4" linkstyle="PolyLine">
@@ -509,9 +509,9 @@
    </PIN>
    </NODE>
    <NODE id="7" componentmode="Hidden" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
-   <BOUNDS type="Node" left="4545" top="4320" width="100" height="100">
+   <BOUNDS type="Node" left="4545" top="4365" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4545" top="4320">
+   <BOUNDS type="Box" left="4545" top="4365">
    </BOUNDS>
    <BOUNDS type="Window" left="1185" top="750" width="11025" height="7515">
    </BOUNDS>
@@ -736,10 +736,38 @@
    </NODE>
    <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="46" dstpinname="Enabled">
    </LINK>
+   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
+   <BOUNDS type="Node" left="8100" top="7830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Maximum Foreground FPS" visible="1">
+   </PIN>
+   <PIN pinname="Maximum Background FPS" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="49">
+   <BOUNDS type="Box" left="8100" top="7200" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8100" top="7200" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="12">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="49" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
+   </LINK>
    <NODE id="5" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
    <BOUNDS type="Window" left="630" top="1500" width="16935" height="10335">
    </BOUNDS>
-   <BOUNDS type="Node" left="1380" top="4995" width="3390" height="270">
+   <BOUNDS type="Node" left="1380" top="4995" width="3870" height="270">
    </BOUNDS>
    <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
    </PIN>
@@ -794,4 +822,10 @@
    </LINK>
    <LINK srcnodeid="10" srcpinname="Material" dstnodeid="5" dstpinname="MaterialSetup">
    </LINK>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
+   </PACK>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
    </PATCH>

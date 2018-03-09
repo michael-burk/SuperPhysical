@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\SuperPhysical.v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="4590" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -12,7 +12,7 @@
    </NODE>
    <BOUNDS type="Window" left="630" top="1500" width="16935" height="10335">
    </BOUNDS>
-   <PACK Name="addonpack" Version="35.9.0">
+   <PACK Name="addonpack" Version="36.0.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="10" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1545" top="4650" width="795" height="240">
@@ -78,7 +78,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Render State|">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.0.2">
+   <PACK Name="dx11" Version="1.2">
    </PACK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="77">
    <BOUNDS type="Node" left="10050" top="6480" width="100" height="100">
@@ -285,7 +285,7 @@
    </PIN>
    <PIN pinname="POM_numSamples" visible="1" pintype="Input" slicecount="4" values="25,25,25,25">
    </PIN>
-   <PIN pinname="Refraction" visible="1" pintype="Input" slicecount="4" values="0,0,0,0">
+   <PIN pinname="Refraction" visible="1" pintype="Input" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Refraction Index" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
@@ -313,7 +313,7 @@
    </PIN>
    <PIN pinname="Light2" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Alpha" slicecount="1" values="1">
+   <PIN pinname="Alpha" slicecount="1" values="1" visible="1">
    </PIN>
    <PIN pinname="minVariance" slicecount="1" values="-0.02">
    </PIN>
@@ -393,10 +393,6 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="77" srcpinname="Buffer" dstnodeid="1" dstpinname="Refraction Index" linkstyle="Bezier">
-   <LINKPOINT x="10035" y="7170">
-   </LINKPOINT>
-   <LINKPOINT x="9420" y="7170">
-   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="19" srcpinname="Output Node" dstnodeid="1" dstpinname="Render State" linkstyle="Bezier">
    <LINKPOINT x="1290" y="5955">
@@ -749,6 +745,8 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2895" top="1350">
    </BOUNDS>
+   <PIN pinname="tTex" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="313" srcpinname="RefractionIndexXYZ" dstnodeid="77" dstpinname="Data" linkstyle="Bezier">
    <LINKPOINT x="6390" y="4043">
@@ -894,12 +892,6 @@
    <LINKPOINT x="7155" y="1995">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="313" srcpinname="tTexInverse" dstnodeid="1" dstpinname="tTexInv" linkstyle="Bezier">
-   <LINKPOINT x="3210" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="4830" y="4613">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="SpotLightTextures" filename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" nodename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" componentmode="Hidden" id="314">
    <BOUNDS type="Node" left="13920" top="4591" width="0" height="0">
    </BOUNDS>
@@ -915,5 +907,33 @@
    </LINKPOINT>
    <LINKPOINT x="10440" y="6225">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="315">
+   <BOUNDS type="Node" left="4815" top="7140" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="313" srcpinname="tTex" dstnodeid="315" dstpinname="Source">
+   </LINK>
+   <LINK srcnodeid="315" srcpinname="Transform Out" dstnodeid="1" dstpinname="tTexInv">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="316">
+   <BOUNDS type="Box" left="3570" top="6630" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3570" top="6630" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Alpha">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="316" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Alpha">
    </LINK>
    </PATCH>

@@ -262,12 +262,17 @@ float4 calcShadowESM(float worldSpaceDistance, float lightRange, float2 projectT
 }
 
 
-float4 doShadow(inout float4 shadow, int shadowType, float lightDist, float lightRange, float4 projectTexCoord, float4 viewPosition, float2 shadowTexSize, uint i, uint shadowCounter){
+float4 doShadow(inout float4 shadow, int shadowType, float lightDist, float lightRange, float4 projectTexCoord, float4 viewPosition, uint i, uint shadowCounter){
 			switch(shadowType){
 			case 0:
 				shadow += saturate(calcShadowVSM(lightDist,lightRange,projectTexCoord.xy,shadowCounter, i));
 				break;
 			case 1:
+				uint a;
+				float b,c;
+				shadowMap.GetDimensions(a,b,c);
+				float2 shadowTexSize = float2(b,c);
+				
 				shadow += calcShadow_VSM_PCSS( lightDist, lightRange, float4(projectTexCoord.x,projectTexCoord.y,projectTexCoord.z,viewPosition.w),shadowCounter,i,shadowTexSize,Light[i].lightSize,Light[i].penumbraScale,Light[i].numShadowSamples);
 				break;
 			case 2:

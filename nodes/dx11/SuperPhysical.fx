@@ -53,13 +53,13 @@ cbuffer cbPerObject : register (b0)
 	float Alpha <float uimin=0.0; float uimax=1.0;> = 1;
 	float lPower <String uiname="Power"; float uimin=0.0;> = 1.0;     //shininess of specular highlight
 
-	bool refraction <bool visible=false; String uiname="Refraction";> = false;
+	bool refraction <String uiname="Refraction";> = false;
 	bool useIridescence = false;	
 
 	float4x4 tTex <bool uvspace=true;>;
 	float4x4 tTexInv <bool uvspace=true;>;
 	
-	float2 iblIntensity <bool visible=true; String uiname="IBL Intensity";> = float2(1,1);	
+	float2 iblIntensity <String uiname="IBL Intensity";> = float2(1,1);	
 	
 	float bumpy <string uiname="Bumpiness"; float uimin=0.0; float uimax=1.0;> = 0 ;
 	bool pom <string uiname="Parallax Occlusion Mapping";> = false;
@@ -74,7 +74,7 @@ cbuffer cbPerObject : register (b0)
 cbuffer cbPerRender : register (b1)
 {	
 	float4x4 tVI : VIEWINVERSE;
-//	bool gammaCorrection <bool visible=false;> = true;
+//	bool gammaCorrection = true;
 }
 
 Texture2D texture2d <string uiname="Texture"; >;
@@ -86,7 +86,7 @@ Texture2D metallTex <string uiname="MetallicMap"; >;
 Texture2D aoTex <string uiname="AOMap"; >;
 Texture2D iridescence <string uiname="Iridescence"; >;
 
-StructuredBuffer <float> refractionIndex <bool visible=false; String uiname="Refraction Index";>;
+StructuredBuffer <float> refractionIndex <String uiname="Refraction Index";>;
 
 TextureCube cubeTexRefl <string uiname="CubeMap Refl"; >;
 TextureCube cubeTexIrradiance <string uiname="CubeMap Irradiance"; >;
@@ -105,7 +105,7 @@ SamplerState g_samLinear
     AddressV = WRAP;
 };
 
-#include "VSM.fxh"
+#include "ShadowMapping.fxh"
 #include "NoTile.fxh"
 #include "ParallaxOcclusionMapping.fxh"
 #include "CookTorrance.fxh"
@@ -175,8 +175,12 @@ vs2ps VS(
 
 float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	
-	float3 V = normalize(tVI[3].xyz - PosW.xyz);
+	///////////////////////////////////////////////////////////////////////////
+	// INITIALIZE GLOBAL VARIABLES
+	///////////////////////////////////////////////////////////////////////////
 	
+	float3 V = normalize(tVI[3].xyz - PosW.xyz);
+
 	float3 LightDirW;
 	float4 viewPosition;
 	float4 projectTexCoord;
@@ -190,13 +194,16 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	float aoT = 1;
 	float metallicT = 1;
 	
-	texture2d.GetDimensions(tX,tY);
-	if(tX+tY > 4 && !noTile) texCol = texture2d.Sample(g_samLinear, TexCd.xy);
-	else if(tX+tY > 4 && noTile) texCol = textureNoTile(texture2d,TexCd.xy);
-
+	///////////////////////////////////////////////////////////////////////////
+	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
+	///////////////////////////////////////////////////////////////////////////
+	
 	roughTex.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) texRoughness = roughTex.Sample(g_samLinear, TexCd.xy).r;
 	else if(tX+tY > 4 && noTile) texRoughness = textureNoTile(roughTex,TexCd.xy).r;
+	texRoughness *= roughness;
+	texRoughness = min(max(texRoughness,.01),.95);
+//	texRoughness += .05;
 	
 	aoTex.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) aoT = aoTex.Sample(g_samLinear, TexCd.xy).r;
@@ -205,14 +212,17 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	metallTex.GetDimensions(tX,tY);
 	if(tX+tY > 4 && !noTile) metallicT = metallTex.Sample(g_samLinear, TexCd.xy).r;
 	else if(tX+tY > 4 && noTile) metallicT = textureNoTile(metallTex, TexCd.xy).r;
-
-	float4 albedo = texCol * saturate(Color) * aoT;
 	metallicT *= metallic;
-
-	texRoughness *= roughness;
-	texRoughness = min(max(texRoughness,.01),.95);
-
-	float3 F0 = lerp(F, albedo.xyz, metallicT);
+	
+	texture2d.GetDimensions(tX,tY);
+	if(tX+tY > 4 && !noTile) texCol = texture2d.Sample(g_samLinear, TexCd.xy);
+	else if(tX+tY > 4 && noTile) texCol = textureNoTile(texture2d,TexCd.xy);
+	float4 albedo = texCol * saturate(Color) * aoT;
+	
+	
+	///////////////////////////////////////////////////////////////////////////
+	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
+	///////////////////////////////////////////////////////////////////////////
 	
 	float3 iridescenceColor = 1;
 	
@@ -220,10 +230,10 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		float inverseDotView = 1.0 - max(dot(N,V),0.0);
 		iridescenceColor = iridescence.Sample(g_samLinear, float2(inverseDotView,0)).rgb;
 	} 	
+		
 	
-	texRoughness += .05;
+	float3 F0 = lerp(F, albedo.xyz, metallicT);
 	
-	int pL = 0;
 	int shadowCounter = 0;
 	int spotLightCount = 0;
 	int lightCounter = 0;
@@ -233,16 +243,17 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	float lightDist;
 	float falloff;
 	
-	uint a;
-	float b,c;
-	shadowMap.GetDimensions(a,b,c);
-	float2 shadowTexSize = float2(b,c);
+//	uint a;
+//	float b,c;
+//	shadowMap.GetDimensions(a,b,c);
+//	float2 shadowTexSize = float2(b,c);
 	
 	for(uint i = 0; i< num; i++){
 
 		lightToObject = Light[i].lPos.xyz - PosW.xyz;
 		L = normalize(lightToObject);
 		lightDist = length(lightToObject);
+		
 		falloff = smoothstep(0,Light[i].lAtt1,(Light[i%num].lightRange-lightDist));
 			
 		switch (Light[i].lightType){
@@ -261,23 +272,19 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			
 				if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y)
 				&& (saturate(projectTexCoord.z) == projectTexCoord.z)){
-					
-					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, shadowTexSize, i, shadowCounter);
-					
-					
+					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter);
 				} else {
 					shadow = 1;
 				}
 					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);			
-					
-							shadowCounter++;
+					shadowCounter++;
 							
-							finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-											  lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT, iridescenceColor);
+					finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
+					lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT, iridescenceColor);
 				} else {
-							float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
-					       	finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-											  1.0, 1.0, 1.0, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT, iridescenceColor);
+					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
+					finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
+					1.0, 1.0, 1.0, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT, iridescenceColor);
 				}
 				lightCounter ++;
 				break;
@@ -300,7 +307,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					if(tXS+tYS > 4) falloffSpot = lightMap.Sample(g_samLinear, float3(projectTexCoord.xy, spotLightCount), 0 ).rgb;
 					else if(tXS+tYS < 4) falloffSpot = smoothstep(1,0,saturate(length(.5-projectTexCoord.xy)*2));
 					
-					if(Light[i].useShadow)doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, shadowTexSize, i, shadowCounter);
+					if(Light[i].useShadow) doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter);
 					
 				} else {
 					shadow = 1;
@@ -324,11 +331,8 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	
 			//POINT
 			case 2:
+			
 				shadow = 0;
-
-				bool shadowed = false;
-				
-				float pZ;
 			
 				if(Light[i].useShadow){
 					
@@ -351,13 +355,12 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 						&& (saturate(projectTexCoord.z) == projectTexCoord.z)){
 							
 							viewPosition = mul(PosW, LightMatrices[p + lightCounter].VP);
-
+							
 							projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
 				   			projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;
 							projectTexCoord.z = viewPosition.z / viewPosition.w / 2.0f + 0.5f;
 							
-							
-							doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, shadowTexSize, i, p+shadowCounter);
+							doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, p+shadowCounter);
 							
 						}
 					}
