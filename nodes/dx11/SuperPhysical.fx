@@ -65,6 +65,7 @@ cbuffer cbPerObject : register (b0)
 	bool pom <string uiname="Parallax Occlusion Mapping";> = false;
 	float metallic <float uimin=0.0; float uimax=1.0;>;
 	float roughness <float uimin=0.0; float uimax=1.0;>;
+	
 	float sss = 0;
 	float sssFalloff = 0;
 	bool noTile = false;
@@ -109,7 +110,14 @@ SamplerState g_samLinear
 #include "NoTile.fxh"
 #include "ParallaxOcclusionMapping.fxh"
 #include "CookTorrance.fxh"
-#include "IBL.fxh"
+#ifdef doIBL
+		#include "IBL.fxh"
+#elif doIridescence	
+		#include "IRIDESCENCE.fxh"
+#elif doGlobalLight
+		#include "GLOBALLIGHT.fxh"
+#endif
+
 //#include "dx11/ToneMapping.fxh"
 
 struct vs2ps
@@ -186,43 +194,54 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
 	///////////////////////////////////////////////////////////////////////////
 	
-	uint tX,tY,m;
+	#ifdef doControlTextures
+		
+		uint tX,tY,m;
+		
+		float roughnessT = roughness;
+		roughTex.GetDimensions(tX,tY);
+		if(tX+tY > 4 && !noTile) roughnessT = roughTex.Sample(g_samLinear, TexCd.xy).r;
+		else if(tX+tY > 4 && noTile) roughnessT = textureNoTile(roughTex,TexCd.xy).r;
+		roughnessT = min(max(roughnessT,.01),.95);
 	
-	float texRoughness = roughness;
-	roughTex.GetDimensions(tX,tY);
-	if(tX+tY > 4 && !noTile) texRoughness = roughTex.Sample(g_samLinear, TexCd.xy).r;
-	else if(tX+tY > 4 && noTile) texRoughness = textureNoTile(roughTex,TexCd.xy).r;
-	texRoughness = min(max(texRoughness,.01),.95);
-//	texRoughness += .05;
+		float aoT = 1;
+		aoTex.GetDimensions(tX,tY);
+		if(tX+tY > 4 && !noTile) aoT = aoTex.Sample(g_samLinear, TexCd.xy).r;
+		else if(tX+tY > 4 && noTile) aoT = textureNoTile(aoTex,TexCd.xy).r;
 	
-	float aoT = 1;
-	aoTex.GetDimensions(tX,tY);
-	if(tX+tY > 4 && !noTile) aoT = aoTex.Sample(g_samLinear, TexCd.xy).r;
-	else if(tX+tY > 4 && noTile) aoT = textureNoTile(aoTex,TexCd.xy).r;
-
-	float metallicT = 1;
-	metallTex.GetDimensions(tX,tY);
-	if(tX+tY > 4 && !noTile) metallicT = metallTex.Sample(g_samLinear, TexCd.xy).r;
-	else if(tX+tY > 4 && noTile) metallicT = textureNoTile(metallTex, TexCd.xy).r;
-	metallicT *= metallic;
+		float metallicT = 1;
+		metallTex.GetDimensions(tX,tY);
+		if(tX+tY > 4 && !noTile) metallicT = metallTex.Sample(g_samLinear, TexCd.xy).r;
+		else if(tX+tY > 4 && noTile) metallicT = textureNoTile(metallTex, TexCd.xy).r;
+		metallicT *= metallic;
+		
+		float4 texCol = 1;
+		texture2d.GetDimensions(tX,tY);
+		if(tX+tY > 4 && !noTile) texCol = texture2d.Sample(g_samLinear, TexCd.xy);
+		else if(tX+tY > 4 && noTile) texCol = textureNoTile(texture2d,TexCd.xy);
 	
-	float4 texCol = 1;
-	texture2d.GetDimensions(tX,tY);
-	if(tX+tY > 4 && !noTile) texCol = texture2d.Sample(g_samLinear, TexCd.xy);
-	else if(tX+tY > 4 && noTile) texCol = textureNoTile(texture2d,TexCd.xy);
-
-	float4 albedo = texCol * saturate(Color) * aoT;
+		float4 albedo = texCol * saturate(Color) * aoT;
+	
+	#else
+		
+		float roughnessT = min(max(roughness,.01),.95);
+		float aoT = 1;
+		float metallicT = metallic;
+		float4 albedo = saturate(Color);
+	
+	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
 	///////////////////////////////////////////////////////////////////////////
 	
 	float3 iridescenceColor = 1;
-	
+	#ifdef doIridescence
 	if (useIridescence){
 		float inverseDotView = 1.0 - max(dot(N,V),0.0);
 		iridescenceColor = iridescence.Sample(g_samLinear, float2(inverseDotView,0)).rgb;
 	} 	
+	#endif
 		
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE VARIABLES FOR LIGHT LOOP
@@ -282,11 +301,11 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					shadowCounter++;
 							
 					finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-					lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT, iridescenceColor);
+					lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor);
 				} else {
 					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
 					finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-					1.0, 1.0, 1.0, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, texRoughness, metallicT, aoT, iridescenceColor);
+					1.0, 1.0, 1.0, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor);
 				}
 				lightCounter ++;
 				break;
@@ -319,12 +338,12 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 						shadowCounter++;
 						float attenuation = Light[i].lAtt0;
 						finalLight.xyz += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-						shadow.x, falloffSpot * falloff, falloff, lightDist, sss, sssFalloff, F0, attenuation, texRoughness, metallicT, aoT, iridescenceColor);
+						shadow.x, falloffSpot * falloff, falloff, lightDist, sss, sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor);
 					
 				} else {
 						float attenuation = Light[i].lAtt0;
 						finalLight.xyz += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-						1.0, falloffSpot * falloff, falloff, lightDist, sss, sssFalloff, F0, attenuation, texRoughness, metallicT, aoT, iridescenceColor);
+						1.0, falloffSpot * falloff, falloff, lightDist, sss, sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor);
 				}
 			
 				lightCounter ++;
@@ -368,14 +387,14 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					}
 							float attenuation = Light[i].lAtt0 * falloff;
 							finalLight.xyz += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-							shadow.x, 1.0, falloff, lightDist, sss, sssFalloff, F0, attenuation, texRoughness, metallicT, aoT, iridescenceColor);
+							shadow.x, 1.0, falloff, lightDist, sss, sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor);
 				
 							shadowCounter += 6;
 							lightCounter  += 6;
 				} else {
 						    float attenuation = Light[i].lAtt0 * falloff;
 							finalLight.xyz += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-							1, 1, falloff, lightDist, sss, sssFalloff, F0, attenuation, texRoughness, metallicT, aoT, iridescenceColor);
+							1, 1, falloff, lightDist, sss, sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor);
 			
 				}	
 			
@@ -388,17 +407,25 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	///////////////////////////////////////////////////////////////////////////
 	// IMAGE BASED LIGHTING
 	///////////////////////////////////////////////////////////////////////////
-	
-	finalLight.rgb += IBL(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT, aoT );
+	#ifdef doIBL
+		finalLight.rgb += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT );
+	#elif doIridescence
+		finalLight.rgb += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT );
+	#elif doGlobalLight
+		finalLight.rgb +=  GLOBALLIGHT(N, V, F0, albedo, texRoughness, metallicT );
+	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
 	// EMISSIVE LIGHTING
 	///////////////////////////////////////////////////////////////////////////
 	
-	EmissiveTex.GetDimensions(tX,tY);
-	if(tX+tY > 4 && !noTile) finalLight.rgb += saturate(Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, TexCd.xy,0).rgb);
-	else if(tX+tY > 4 && noTile) finalLight.rgb += saturate(Emissive.rgb + textureNoTile(EmissiveTex,TexCd.xy).rgb);
-	else finalLight.rgb += saturate(Emissive.rgb);
+	#ifdef doControlTextures
+		EmissiveTex.GetDimensions(tX,tY);
+		if(tX+tY > 4 && !noTile) finalLight.rgb += saturate(Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, TexCd.xy,0).rgb);
+		else if(tX+tY > 4 && noTile) finalLight.rgb += saturate(Emissive.rgb + textureNoTile(EmissiveTex,TexCd.xy).rgb);
+	#else
+		finalLight.rgb += saturate(Emissive.rgb);
+	#endif
 	
 //	Gamma Correction
 //	if(gammaCorrection) finalLight.rgb = ACESFitted(finalLight.rgb);
@@ -416,10 +443,11 @@ float4 PS_PBR(vs2ps In): SV_Target
 
 float4 PS_PBR_Bump(vs2psBump In): SV_Target
 {	
-	
+	#ifdef doPOM
 	if(pom){
 		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(In.tangent,In.binormal,In.NormW.xyz));
 	}
+	#endif
 	
 	float3 bumpMap = float3(0,0,0);
 	
@@ -456,9 +484,11 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	b = cross(n, x);
 	b = normalize(b);
 	
+	#ifdef doPOM
 	if(pom){
 		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(t,b,In.NormW.xyz));
 	}
+	#endif
 	
 	float3 bumpMap = float3(0,0,0);
 
