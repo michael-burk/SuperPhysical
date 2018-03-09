@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="765" top="1395" width="17445" height="13185">
+   <BOUNDS type="Window" left="765" top="1395" width="17445" height="11505">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -405,7 +405,7 @@
    <LINK srcnodeid="297" srcpinname="SpotLightTex" dstnodeid="314" dstpinname="Pointer">
    </LINK>
    <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="315">
-   <BOUNDS type="Node" left="4815" top="7140" width="100" height="100">
+   <BOUNDS type="Node" left="4710" top="8865" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Source" visible="1" slicecount="1" values="||">
    </PIN>
@@ -497,9 +497,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="324" srcpinname="tTex" dstnodeid="315" dstpinname="Source" linkstyle="Bezier">
-   <LINKPOINT x="2940" y="4373">
+   <LINKPOINT x="2905" y="4948">
    </LINKPOINT>
-   <LINKPOINT x="5370" y="4373">
+   <LINKPOINT x="5300" y="5523">
    </LINKPOINT>
    </LINK>
    <NODE id="328" systemname="SuperPhysical (DX11.Effect)" filename="..\dx11\SuperPhysical.fx" nodename="SuperPhysical (DX11.Effect)" componentmode="Hidden">
@@ -690,11 +690,7 @@
    <LINKPOINT x="10230" y="7208">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="315" srcpinname="Transform Out" dstnodeid="328" dstpinname="tTexInv" linkstyle="Bezier">
-   <LINKPOINT x="4830" y="8475">
-   </LINKPOINT>
-   <LINKPOINT x="4755" y="8475">
-   </LINKPOINT>
+   <LINK srcnodeid="315" srcpinname="Transform Out" dstnodeid="328" dstpinname="tTexInv" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="316" srcpinname="Y Output Value" dstnodeid="328" dstpinname="Alpha" linkstyle="Bezier">
    <LINKPOINT x="3585" y="8213">

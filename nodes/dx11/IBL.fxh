@@ -30,15 +30,15 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	
 	float3 refl = cubeTexRefl.SampleLevel(g_samLinear,reflVect,roughness*MAX_REFLECTION_LOD).rgb;
 	
-//	#ifdef doIridescence
+	#ifdef doIridescence
 	if(useIridescence){
 	  refl *= iridescenceColor * (kS * envBRDF.x + envBRDF.y);
-	} else {
-	  refl *= (kS * envBRDF.x + envBRDF.y);
-	}
-//	#endif
+	} 
+	#else
+		refl *= (kS * envBRDF.x + envBRDF.y);
+	#endif
 	
-//	#ifdef doRefraction
+	#ifdef doRefraction
 	if(refraction){
 		float3 refrVect;
 	    for(int r=0; r<3; r++) {
@@ -46,15 +46,23 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	    	refrColor += cubeTexRefl.SampleLevel(g_samLinear,refrVect,roughness*MAX_REFLECTION_LOD).rgb * wavelength[r];
 		}
 		refrColor *= 1 - (kS * envBRDF.x + envBRDF.y);
+		
 		IBL *= roughness;
 	}
-//	#endif
+	#endif
+	
 	
 	IBL  = saturate( (IBL * iblIntensity.x + refrColor) * kD + refl * iblIntensity.y) * ao;
 	
-//	#ifdef doGlobalLight
+	#ifdef doRefraction
+	if(refraction){
+		IBL += GlobalReflectionColor.rgb;
+	}
+	#endif
+	
+	#ifdef doGlobalLight
 	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * 2 * iridescenceColor;
-//	#endif
+	#endif
 	
 	//////////////////////////////////
 

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="45">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="450" top="8490" width="795" height="240">
    </BOUNDS>
@@ -1112,8 +1112,6 @@
    <PIN pinname="Apply" visible="1" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="166" srcpinname="Pointer" dstnodeid="174" dstpinname="Y Input Value">
-   </LINK>
    <LINK srcnodeid="90" srcpinname="Output" dstnodeid="166" dstpinname="Texture In">
    </LINK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="167">
@@ -1186,8 +1184,6 @@
    </LINK>
    <LINK srcnodeid="261" srcpinname="Pointer" dstnodeid="177" dstpinname="Y Input Value">
    </LINK>
-   <LINK srcnodeid="167" srcpinname="Pointer" dstnodeid="175" dstpinname="Y Input Value">
-   </LINK>
    <LINK srcnodeid="258" srcpinname="Pointer" dstnodeid="171" dstpinname="Y Input Value">
    </LINK>
    <NODE id="272" systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
@@ -1251,6 +1247,10 @@
    <LINK srcnodeid="56" srcpinname="Transform Out" dstnodeid="273" dstpinname="tTex" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="173" srcpinname="Y Output Value" dstnodeid="273" dstpinname="NormalMap">
+   </LINK>
+   <LINK srcnodeid="166" srcpinname="Pointer" dstnodeid="174" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="167" srcpinname="Pointer" dstnodeid="175" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="273" srcpinname="Output" dstnodeid="267" dstpinname="ControlTextures" linkstyle="Bezier">
    <LINKPOINT x="1575" y="7118">

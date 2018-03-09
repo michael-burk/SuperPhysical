@@ -202,7 +202,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		roughTex.GetDimensions(tX,tY);
 		if(tX+tY > 4 && !noTile) roughnessT = roughTex.Sample(g_samLinear, TexCd.xy).r;
 		else if(tX+tY > 4 && noTile) roughnessT = textureNoTile(roughTex,TexCd.xy).r;
-		roughnessT = min(max(roughnessT,.01),.95);
+		roughnessT = min(max(roughnessT * roughness,.01),.95);
 	
 		float aoT = 1;
 		aoTex.GetDimensions(tX,tY);
