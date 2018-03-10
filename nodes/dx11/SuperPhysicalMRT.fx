@@ -7,6 +7,14 @@ static const float MAX_REFLECTION_LOD = 9.0;
 
 float2 R : Targetsize;
 
+
+struct MRT {
+	float4 LIGHT : COLOR0;
+	float3 NORMAL : COLRO1;
+	float4 PBR : COLOR0;
+	
+};
+
 struct LightStruct
 {
 	float4   Color;
@@ -75,6 +83,7 @@ cbuffer cbPerObject : register (b0)
 cbuffer cbPerRender : register (b1)
 {	
 	float4x4 tVI : VIEWINVERSE;
+	float4x4 tV : VIEW;
 }
 
 Texture2D texture2d <string uiname="Texture"; >;
@@ -182,7 +191,7 @@ vs2ps VS(
     return Out;
 }
 
-float4 doLighting(float4 PosW, float3 N, float4 TexCd){
+MRT doLighting(float4 PosW, float3 N, float4 TexCd){
 	
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE GLOBAL VARIABLES
@@ -408,8 +417,10 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	///////////////////////////////////////////////////////////////////////////
 	// IMAGE BASED LIGHTING
 	///////////////////////////////////////////////////////////////////////////
+	float3 IBLResult;
 	#ifdef doIBL
-		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT );
+//		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT );
+		IBLResult = IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT );
 	#elif doIridescence
 		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT );
 	#elif doGlobalLight
@@ -432,16 +443,20 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	finalLight.rgb = ACESFitted(finalLight.rgb);
 	#endif
 	
-	return float4(finalLight,Alpha+albedo.a);
+	MRT output;
+	output.LIGHT = float4(finalLight,Alpha+albedo.a);
+	output.NORMAL = normalize(mul(tVI,float4(N,1)).xyz); // Normal in View Space
+	output.PBR = float4(IBLResult,roughnessT);
+	return output;
 }
 
 
-float4 PS_PBR(vs2ps In): SV_Target
+MRT PS_PBR(vs2ps In): SV_Target
 {	
-	return doLighting(In.PosW, normalize(In.NormW), In.TexCd);
+	return doLighting(In.PosW, In.NormW, In.TexCd);
 }
 
-float4 PS_PBR_Bump(vs2psBump In): SV_Target
+MRT PS_PBR_Bump(vs2psBump In): SV_Target
 {	
 	#ifdef doPOM
 	if(pom){
@@ -458,11 +473,13 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * In.tangent + bumpMap.y * In.binormal)*bumpy);
+	
+	
 	return doLighting(In.PosW, Nb, In.TexCd);
 
 }
 
-float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
+MRT PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 {	
 	
 	// compute derivations of the world position
@@ -500,7 +517,8 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b))*bumpy);
 	
-	return doLighting(In.PosW, Nb, In.TexCd);
+	return  doLighting(In.PosW, Nb, In.TexCd);
+	
 }
 
 
