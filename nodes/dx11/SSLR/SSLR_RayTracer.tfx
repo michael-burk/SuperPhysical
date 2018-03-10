@@ -45,10 +45,11 @@
 //#include "../../Utils/DepthUtils.hlsli"
 
 float4x4 InvProj;
+float4x4 tV;
 
 Texture2D depthBuffer : register(t0);
 Texture2D normalBuffer: register(t1);
-Texture2D PositionView: register(t2);
+Texture2D ViewRay: register(t2);
 
 SamplerState linearSampler <string uiname="Sampler State";>
 {
@@ -61,7 +62,7 @@ struct VertexOut
 {
     float4 posH : SV_POSITION;
     float3 viewRay : VIEWRAY;
-    float2 tex : TEXCOORD;
+    float2 uv : TEXCOORD0;
 };
 
 float distanceSquared(float2 a, float2 b)
@@ -89,6 +90,8 @@ void swap(inout float a, inout float b)
     a = b;
     b = t;
 }
+
+float2 R : TARGETSIZE;
 
 float linearDepthTexelFetch(int2 hitPixel)
 {
@@ -224,24 +227,29 @@ float4 main(VertexOut pIn) : SV_TARGET
         return 0.0f;
     }
 	
-	pIn.viewRay = mul((PositionView.Sample(linearSampler,(pIn.posH.xy))), 1).xyz;
-	pIn.viewRay = float3(pIn.viewRay.xy / pIn.viewRay.z, 1.0f);
+//	pIn.viewRay = mul((PositionView.Sample(linearSampler,(pIn.posH.xy))), 1).xyz;
+//	pIn.viewRay = float3(pIn.viewRay.xy / pIn.viewRay.z, 1.0f);
+	
+//	pIn.viewRay = (ViewRay.Sample(linearSampler,  pIn.posH.xy / R).xyz);
+	
+//	pIn.viewRay = mul(pIn.posH/R, InvProj).xyz;
+	
+//	return pIn.viewRay.xyzx;
+//	pIn.viewRay = normalize( mul(float4(pIn.viewRay,1), tV).xyz );
+	
 	
     float depth = depthBuffer.Load(loadIndices).r;
 //  float3 rayOriginVS = pIn.viewRay * linearizeDepth(depth);
 	float3 rayOriginVS =  pIn.viewRay * depth;
-
-
 
     /*
      * Since position is reconstructed in view space, just normalize it to get the
      * vector from the eye to the position and then reflect that around the normal to
      * get the ray direction to trace.
      */
+	
     float3 toPositionVS = normalize(rayOriginVS);
     float3 rayDirectionVS = normalize(reflect(toPositionVS, normalVS));
-
-	
 	
     // output rDotV to the alpha channel for use in determining how much to fade the ray
     float rDotV = dot(rayDirectionVS, toPositionVS);
@@ -264,6 +272,7 @@ float4 main(VertexOut pIn) : SV_TARGET
         intersection = false;
     }
 	
+//	return rayDirectionVS.xyzx;
 //	return rayOriginVS.xyzx;
 //	return pIn.viewRay.xyzx;
 //	return depth;

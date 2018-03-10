@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical MRT (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="690">
-   <BOUNDS type="Window" left="1935" top="1710" width="16905" height="12975">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical MRT (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="1425">
+   <BOUNDS type="Window" left="210" top="1875" width="16905" height="12975">
    </BOUNDS>
    <NODE id="40" systemname="AspectRatio (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="AspectRatio (DX11.Layer)" componentmode="Hidden">
    <BOUNDS type="Node" left="935" top="7855" width="100" height="100">
@@ -183,7 +183,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8580" top="765" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="-2.95,0.13,-1.09,0.75">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="-2.94,0.14,-2.09,0.75">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -279,7 +279,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5925" top="2820" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.28,0.5,0.43,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.28,0.5,0.43,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -787,7 +787,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="540" top="8400" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -844,7 +844,7 @@
    </NODE>
    <LINK srcnodeid="63" srcpinname="frames per second" dstnodeid="64" dstpinname="Y Input Value">
    </LINK>
-   <NODE id="62" nodename="DepthReconstruction (DX11.Texture 2d)" componentmode="InAWindow" systemname="DepthReconstruction (DX11.Texture 2d)" filename="DepthReconstruction (DX11.Texture 2d).v4p" hiddenwhenlocked="0" managers="">
+   <NODE id="62" nodename="DepthReconstruction (DX11.Texture 2d)" componentmode="Hidden" systemname="DepthReconstruction (DX11.Texture 2d)" filename="DepthReconstruction (DX11.Texture 2d).v4p" hiddenwhenlocked="0" managers="">
    <PIN pinname="Projection" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
    <PIN pinname="View" visible="1" pintype="Input" slicecount="1" values="||">
@@ -1029,13 +1029,11 @@
    </BOUNDS>
    <BOUNDS type="Box" left="3930" top="12060" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="13890" top="9480" width="6240" height="5085">
+   <BOUNDS type="Window" left="14535" top="10425" width="6240" height="5085">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="55" srcpinname="Output Node" dstnodeid="90" dstpinname="Texture In">
-   </LINK>
    <NODE id="61" componentmode="Hidden" systemname="Renderer (DX11 TempTarget)" nodename="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" hiddenwhenlocked="0" managers="">
    <BOUNDS type="Window" left="12195" top="3165" width="4080" height="6510">
    </BOUNDS>
@@ -1217,15 +1215,19 @@
    </PIN>
    <PIN pinname="Projection" visible="1">
    </PIN>
-   <PIN pinname="cb_stride" slicecount="1" values="10">
+   <PIN pinname="cb_stride" slicecount="1" values="3">
    </PIN>
    <PIN pinname="cb_zThickness" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Texture In" visible="1">
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="View" visible="1">
    </PIN>
    <PIN pinname="PositionView" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="tV" visible="1">
+   </PIN>
+   <PIN pinname="ViewRay" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="41" srcpinname="Depth Buffer" dstnodeid="86" dstpinname="depthBuffer" linkstyle="Bezier">
@@ -1258,12 +1260,6 @@
    <LINKPOINT x="3825" y="10155">
    </LINKPOINT>
    <LINKPOINT x="8505" y="10155">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="53" srcpinname="Output Node" dstnodeid="86" dstpinname="Texture In" linkstyle="Bezier">
-   <LINKPOINT x="1650" y="10815">
-   </LINKPOINT>
-   <LINKPOINT x="6495" y="10815">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="55" srcpinname="Output Node" dstnodeid="86" dstpinname="normalBuffer" linkstyle="Bezier">
@@ -1322,4 +1318,22 @@
    <PIN pinname="String Type" slicecount="1" values="Url">
    </PIN>
    </NODE>
+   <LINK srcnodeid="38" srcpinname="View" dstnodeid="86" dstpinname="tV">
+   </LINK>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="96">
+   <BOUNDS type="Node" left="4680" top="11175" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Buffers" dstnodeid="96" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="96" srcpinname="Output Node" dstnodeid="90" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="96" srcpinname="Output Node" dstnodeid="86" dstpinname="ViewRay">
+   </LINK>
    </PATCH>

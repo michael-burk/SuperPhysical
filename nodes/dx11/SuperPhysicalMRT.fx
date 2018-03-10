@@ -11,7 +11,8 @@ float2 R : Targetsize;
 struct MRT {
 	float4 LIGHT : COLOR0;
 	float3 NORMAL : COLRO1;
-	float4 PBR : COLOR0;
+	float4 PBR : COLOR2;
+	float3 V : COLOR3;
 	
 };
 
@@ -447,6 +448,7 @@ MRT doLighting(float4 PosW, float3 N, float4 TexCd){
 	output.LIGHT = float4(finalLight,Alpha+albedo.a);
 	output.NORMAL = normalize(mul(tVI,float4(N,1)).xyz); // Normal in View Space
 	output.PBR = float4(IBLResult,roughnessT);
+	output.V = tVI[3].xyz - PosW.xyz;
 	return output;
 }
 

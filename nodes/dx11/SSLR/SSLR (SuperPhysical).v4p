@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\dx11\SSLR\SSLR (SuperPhysical).v4p" systemname="SSLR (SuperPhysical)" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\dx11\SSLR\SSLR (SuperPhysical).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\dx11\SSLR\SSLR (SuperPhysical).v4p" systemname="SSLR (SuperPhysical)" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\dx11\SSLR\SSLR (SuperPhysical).v4p" scrollx="0" scrolly="30">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2550" top="870" width="795" height="480">
    </BOUNDS>
@@ -57,7 +57,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4920" top="3405" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="10">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -145,7 +145,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7995" top="2925" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.17">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -163,7 +163,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8550" top="3525" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.17">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -323,9 +323,9 @@
    <LINK srcnodeid="25" srcpinname="Output" dstnodeid="26" dstpinname="XY">
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="32">
-   <BOUNDS type="Box" left="1470" top="3075" width="795" height="240">
+   <BOUNDS type="Box" left="1455" top="2745" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="1470" top="3075" width="0" height="0">
+   <BOUNDS type="Node" left="1455" top="2745" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -360,6 +360,12 @@
    <PIN pinname="depthBuffer" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="InvProj" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="tV" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ViewRay" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Use Default Size" slicecount="1" values="1" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="47" dstpinname="cb_depthBufferSizeXY">
@@ -398,20 +404,8 @@
    </LINK>
    <LINK srcnodeid="34" srcpinname="Texture Out" dstnodeid="47" dstpinname="depthBuffer">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="48">
-   <BOUNDS type="Box" left="12150" top="1470" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="12150" top="1470" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="PositionView">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="48" srcpinname="Output Node" dstnodeid="47" dstpinname="PositionView">
-   </LINK>
    <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="49">
-   <BOUNDS type="Node" left="11745" top="2235" width="100" height="100">
+   <BOUNDS type="Node" left="3405" top="2310" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Source" visible="1">
    </PIN>
@@ -419,13 +413,57 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="17" srcpinname="Output Node" dstnodeid="49" dstpinname="Source" linkstyle="Bezier">
-   <LINKPOINT x="10105" y="2100">
+   <LINKPOINT x="7325" y="2125">
    </LINKPOINT>
-   <LINKPOINT x="12995" y="1995">
+   <LINKPOINT x="7435" y="2045">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="26" srcpinname="X" dstnodeid="2" dstpinname="Y Input Value">
    </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="50">
+   <BOUNDS type="Box" left="9120" top="660" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9120" top="660" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="tV">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="50" srcpinname="Output Node" dstnodeid="47" dstpinname="tV">
+   </LINK>
    <LINK srcnodeid="49" srcpinname="Transform Out" dstnodeid="47" dstpinname="InvProj">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="52">
+   <BOUNDS type="Box" left="12750" top="480" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12750" top="480" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="ViewRay">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="52" srcpinname="Output Node" dstnodeid="47" dstpinname="ViewRay">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="55">
+   <BOUNDS type="Box" left="1965" top="3390" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1965" top="3390" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Use Default Size|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="55" srcpinname="Y Output Value" dstnodeid="47" dstpinname="Use Default Size">
    </LINK>
    </PATCH>
