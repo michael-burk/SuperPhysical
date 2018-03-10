@@ -75,7 +75,6 @@ cbuffer cbPerObject : register (b0)
 cbuffer cbPerRender : register (b1)
 {	
 	float4x4 tVI : VIEWINVERSE;
-//	bool gammaCorrection = true;
 }
 
 Texture2D texture2d <string uiname="Texture"; >;
@@ -118,7 +117,9 @@ SamplerState g_samLinear
 		#include "GLOBALLIGHT.fxh"
 #endif
 
-//#include "dx11/ToneMapping.fxh"
+#ifdef doToneMap
+		#include "ToneMapping.fxh"
+#endif
 
 struct vs2ps
 {
@@ -263,7 +264,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	float lightDist;
 	float falloff;
 
-	float4 finalLight = 0;
+	float3 finalLight = 0;
 	
 	///////////////////////////////////////////////////////////////////////////
 	// SHADING AND SHADOW MAPPING FOR EACH LIGHT
@@ -300,11 +301,11 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);			
 					shadowCounter++;
 							
-					finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
+					finalLight += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
 					lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor);
 				} else {
 					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
-					finalLight.xyz += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
+					finalLight += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
 					1.0, 1.0, 1.0, lightDist, sss, sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor);
 				}
 				lightCounter ++;
@@ -337,12 +338,12 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				if(Light[i].useShadow){
 						shadowCounter++;
 						float attenuation = Light[i].lAtt0;
-						finalLight.xyz += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
+						finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
 						shadow.x, falloffSpot * falloff, falloff, lightDist, sss, sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor);
 					
 				} else {
 						float attenuation = Light[i].lAtt0;
-						finalLight.xyz += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
+						finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
 						1.0, falloffSpot * falloff, falloff, lightDist, sss, sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor);
 				}
 			
@@ -386,14 +387,14 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 						}
 					}
 							float attenuation = Light[i].lAtt0 * falloff;
-							finalLight.xyz += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
+							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
 							shadow.x, 1.0, falloff, lightDist, sss, sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor);
 				
 							shadowCounter += 6;
 							lightCounter  += 6;
 				} else {
 						    float attenuation = Light[i].lAtt0 * falloff;
-							finalLight.xyz += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
+							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
 							1, 1, falloff, lightDist, sss, sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor);
 			
 				}	
@@ -408,11 +409,11 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	// IMAGE BASED LIGHTING
 	///////////////////////////////////////////////////////////////////////////
 	#ifdef doIBL
-		finalLight.rgb += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT );
+		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT );
 	#elif doIridescence
-		finalLight.rgb += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT );
+		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT );
 	#elif doGlobalLight
-		finalLight.rgb +=  GLOBALLIGHT(N, V, F0, albedo, texRoughness, metallicT );
+		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, texRoughness, metallicT );
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -427,12 +428,11 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		finalLight.rgb += saturate(Emissive.rgb);
 	#endif
 	
-//	Gamma Correction
-//	if(gammaCorrection) finalLight.rgb = ACESFitted(finalLight.rgb);
-
-	finalLight.a = Alpha*albedo.a;
+	#ifdef doToneMap
+	finalLight.rgb = ACESFitted(finalLight.rgb);
+	#endif
 	
-	return finalLight;
+	return float4(finalLight,Alpha+albedo.a);
 }
 
 

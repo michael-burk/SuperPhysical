@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical MRT (SuperPhysical) help - Kopie.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1545" top="1050" width="10965" height="12975">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
@@ -742,10 +742,38 @@
    <LINKPOINT x="3645" y="7073">
    </LINKPOINT>
    </LINK>
-   <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
+   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
+   <BOUNDS type="Node" left="6615" top="6810" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Maximum Foreground FPS" visible="1">
+   </PIN>
+   <PIN pinname="Maximum Background FPS" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="52">
+   <BOUNDS type="Box" left="6900" top="6015" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6900" top="6015" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="12">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="52" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
+   </LINK>
+   <LINK srcnodeid="52" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
+   </LINK>
+   <NODE id="51" componentmode="Hidden" systemname="MRT (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical MRT (SuperPhysical).v4p" nodename="MRT (SuperPhysical)" debug="0" stayontop="0">
    <BOUNDS type="Window" left="765" top="1395" width="17445" height="11505">
    </BOUNDS>
-   <BOUNDS type="Node" left="1080" top="4845" width="3870" height="270">
+   <BOUNDS type="Node" left="1080" top="4845" width="3900" height="270">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="25" srcpinname="Transform Out" dstnodeid="51" dstpinname="Transform In" linkstyle="Bezier">

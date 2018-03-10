@@ -205,7 +205,7 @@
    </PIN>
    </NODE>
    <NODE systemname="LightSetup (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical)" componentmode="Hidden" id="181">
-   <BOUNDS type="Node" left="1395" top="5010" width="5655" height="270">
+   <BOUNDS type="Node" left="1395" top="5010" width="6375" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1395" top="5010">
    </BOUNDS>
@@ -222,6 +222,8 @@
    <PIN pinname="IBLSettings" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="GlobalSettings" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ToneMapping" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="181" srcpinname="LightSetup" dstnodeid="64" dstpinname="Input Node">
