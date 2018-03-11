@@ -1,3 +1,8 @@
+//@author: mburk
+//@help:
+//@tags:
+//@credits: 
+
 // By Morgan McGuire and Michael Mara at Williams College 2014
 // Released as open source under the BSD 2-Clause License
 // http://opensource.org/licenses/BSD-2-Clause
@@ -40,31 +45,63 @@
  * The ray tracing step of the SSLR implementation.
  * Modified version of the work stated above.
  */
-#include "SSLRConstantBuffer.fxh"
-//#include "../../ConstantBuffers/PerFrame.hlsli"
-//#include "../../Utils/DepthUtils.hlsli"
 
-// <bool uvspace=true;>;
-float4x4 InvProj;
-float4x4 tV;
+Texture2D texture2d <string uiname="Texture";>;
 
-Texture2D depthBuffer : register(t0);
-Texture2D normalBuffer: register(t1);
-Texture2D positionView: register(t2);
-
-SamplerState linearSampler <string uiname="Sampler State";>
+SamplerState linearSampler : IMMUTABLE
 {
     Filter = MIN_MAG_MIP_LINEAR;
     AddressU = Clamp;
     AddressV = Clamp;
 };
-
-struct VertexOut
+ 
+cbuffer cbPerDraw : register( b0 )
 {
-    float4 posH : SV_POSITION;
-    float3 viewRay : VIEWRAY;
-    float2 uv : TEXCOORD0;
+	float4x4 tVP : LAYERVIEWPROJECTION;	
 };
+
+cbuffer cbPerObj : register( b1 )
+{
+	float4x4 tW : WORLD;
+	float4 cAmb <bool color=true;String uiname="Color";> = { 1.0f,1.0f,1.0f,1.0f };
+	float4x4 tVPI : VIEWPROJECTIONINVERSE;
+	float4x4 tPI : PROJECTIONINVERSE;
+};
+
+//float4x4 tVPI;
+
+struct VS_IN
+{
+	float4 PosO : POSITION;
+	float4 TexCd : TEXCOORD0;
+
+};
+
+struct PS_INPUT
+{
+	float4 position	    : SV_POSITION;
+	float4 uv    		: TEXCOORD0;
+	float3 viewRay	    : VIEWRAY;
+};
+
+PS_INPUT VS(VS_IN input)
+{
+    PS_INPUT output;
+  	output.position  = mul(input.PosO,mul(tW,tVP));
+//	output.position  = input.PosO;
+//    output.uv = output.position.xy * float2(0.5, -0.5) + 0.5;
+	output.uv = input.TexCd;
+	output.viewRay  = mul(tVPI, output.position).xyz;
+    return output;
+}
+
+#include "SSLRConstantBuffer.fxh"
+//#include "../../ConstantBuffers/PerFrame.hlsli"
+//#include "../../Utils/DepthUtils.hlsli"
+
+Texture2D depthBuffer : register(t0);
+Texture2D normalBuffer: register(t1);
+
 
 float distanceSquared(float2 a, float2 b)
 {
@@ -92,7 +129,7 @@ void swap(inout float a, inout float b)
     b = t;
 }
 
-float2 R : TARGETSIZE;
+//float2 R : TARGETSIZE;
 
 float linearDepthTexelFetch(int2 hitPixel)
 {
@@ -218,27 +255,22 @@ bool traceScreenSpaceRay(
     return intersectsDepthBuffer(sceneZMax, rayZMin, rayZMax);
 }
 
-//float4 main(float4 posH:SV_POSITION,float4 uv:TEXCOORD0) : SV_TARGET
-float4 main(VertexOut pIn) : SV_TARGET
+
+float4 main(PS_INPUT pIn) : SV_TARGET
 {
-    int3 loadIndices = int3(pIn.posH.xy, 0);
+    int3 loadIndices = int3(pIn.position.xy, 0);
     float3 normalVS = normalBuffer.Load(loadIndices).xyz;
     if(!any(normalVS))
     {
         return 0.0f;
     }
 	
-//	float3 viewRay = mul(InvProj, pIn.uv.xyzw).xyz;
-	
     float depth = depthBuffer.Load(loadIndices).r;
 //  float3 rayOriginVS = pIn.viewRay * linearizeDepth(depth);
 	float3 rayOriginVS =  pIn.viewRay * depth;
-//	return float4(pIn.viewRay.xy,0,0);
 	
-//	rayOriginVS = positionView.Load(loadIndices).xyz;
-	
-//	return pIn.viewRay.xyxy + .5;
-//	return rayOriginVS.xyzx;
+	return rayOriginVS.xyxy;
+
 	
     /*
      * Since position is reconstructed in view space, just normalize it to get the
@@ -247,11 +279,7 @@ float4 main(VertexOut pIn) : SV_TARGET
      */
 	
     float3 toPositionVS = normalize(rayOriginVS);
-//	float3 toPositionVS = float3(positionView.Load(loadIndices).xy, depth);
     float3 rayDirectionVS = normalize(reflect(toPositionVS, normalVS));
-	
-//	return toPositionVS.xyzx;
-//	return rayDirectionVS.xyzx;
 	
     // output rDotV to the alpha channel for use in determining how much to fade the ray
     float rDotV = dot(rayDirectionVS, toPositionVS);
@@ -260,8 +288,8 @@ float4 main(VertexOut pIn) : SV_TARGET
     float2 hitPixel = float2(0.0f, 0.0f);
     float3 hitPoint = float3(0.0f, 0.0f, 0.0f);
 
-    float jitter = cb_stride > 1.0f ? float(int(pIn.posH.x + pIn.posH.y) & 1) * 0.5f : 0.0f;
-	
+    float jitter = cb_stride > 1.0f ? float(int(pIn.position.x + pIn.position.y) & 1) * 0.5f : 0.0f;
+
     // perform ray tracing - true if hit found, false otherwise
     bool intersection = traceScreenSpaceRay(rayOriginVS, rayDirectionVS, jitter, hitPixel, hitPoint);
 
@@ -274,16 +302,21 @@ float4 main(VertexOut pIn) : SV_TARGET
         intersection = false;
     }
 	
+//	return rayDirectionVS.xyzx;
+//	return rayOriginVS.xyzx;
+//	return pIn.viewRay.xyzx;
+//	return intersection.xxxx;
+//	return depth;
+	
     return float4(hitPixel, depth, rDotV) * (intersection ? 1.0f : 0.0f);
 }
 
 technique10 Process
 {
-	pass P0  < bool mips=true; string format="R32G32B32A32_Float"; >
+	pass P0
 	{
+		
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
 		SetPixelShader(CompileShader(ps_4_0,main()));
 	}
 }
-
-
-

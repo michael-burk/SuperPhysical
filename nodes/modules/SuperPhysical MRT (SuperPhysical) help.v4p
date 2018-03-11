@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical MRT (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="1425">
-   <BOUNDS type="Window" left="210" top="1875" width="16905" height="12975">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical MRT (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="105">
+   <BOUNDS type="Window" left="540" top="1095" width="12975" height="13695">
    </BOUNDS>
    <NODE id="40" systemname="AspectRatio (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="AspectRatio (DX11.Layer)" componentmode="Hidden">
    <BOUNDS type="Node" left="935" top="7855" width="100" height="100">
@@ -211,7 +211,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6030" top="765" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="-0.16,0.21,0.12,-0.16">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="-0.05,0.21,0.12,-0.16">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -279,7 +279,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5925" top="2820" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.28,0.5,0.43,0">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.28,0.5,0.43,0.94">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -392,19 +392,7 @@
    <LINKPOINT x="6155" y="2000">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GeometryFile (DX11.Geometry Assimp)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.Assimp.dll" nodename="GeometryFile (DX11.Geometry Assimp)" componentmode="Hidden" id="17">
-   <BOUNDS type="Node" left="1410" top="2295" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Filename" slicecount="1" values="..\..\assets\teapot.fbx">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Reload" slicecount="1" values="0">
-   </PIN>
-   <BOUNDS type="Box" left="1410" top="2295">
-   </BOUNDS>
-   </NODE>
-   <NODE id="16" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="0" border="0">
+   <NODE id="16" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" stayontop="0" border="0">
    <BOUNDS type="Node" left="1575" top="11670" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1575" top="11670" width="6000" height="4500">
@@ -436,8 +424,6 @@
    </NODE>
    <LINK srcnodeid="36" srcpinname="Layer" dstnodeid="37" dstpinname="Layer 2">
    </LINK>
-   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1" linkstyle="PolyLine">
-   </LINK>
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
    <BOUNDS type="Node" left="2790" top="4215" width="1410" height="270">
    </BOUNDS>
@@ -450,8 +436,6 @@
    <BOUNDS type="Box" left="2790" top="4215">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="29" srcpinname="Output" dstnodeid="33" dstpinname="Input 4" linkstyle="PolyLine">
-   </LINK>
    <LINK srcnodeid="30" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 3" linkstyle="PolyLine">
    </LINK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="8">
@@ -514,6 +498,8 @@
    <PIN pinname="Initial Yaw" slicecount="1" values="-0.5">
    </PIN>
    <PIN pinname="Far Plane" visible="1">
+   </PIN>
+   <PIN pinname="View Projection" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="37" srcpinname="Layer Out" dstnodeid="40" dstpinname="Layer In" linkstyle="Bezier">
@@ -787,7 +773,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="540" top="8400" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -815,11 +801,11 @@
    <LINK srcnodeid="41" srcpinname="Buffers" dstnodeid="55" dstpinname="Input Node">
    </LINK>
    <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="56" stayontop="1">
-   <BOUNDS type="Node" left="6405" top="12360" width="100" height="100">
+   <BOUNDS type="Node" left="5400" top="11880" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="6405" top="12360" width="6000" height="4500">
+   <BOUNDS type="Box" left="5400" top="11880" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="16380" top="840" width="11640" height="12000">
+   <BOUNDS type="Window" left="16125" top="840" width="11895" height="12000">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -990,8 +976,6 @@
    </LINK>
    <LINK srcnodeid="38" srcpinname="View" dstnodeid="62" dstpinname="View">
    </LINK>
-   <LINK srcnodeid="41" srcpinname="Depth Buffer" dstnodeid="62" dstpinname="Texture In">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="87">
    <BOUNDS type="Box" left="4530" top="7170" width="795" height="240">
    </BOUNDS>
@@ -1025,11 +1009,11 @@
    <LINK srcnodeid="88" srcpinname="Y Output Value" dstnodeid="38" dstpinname="Far Plane">
    </LINK>
    <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="90" stayontop="1">
-   <BOUNDS type="Node" left="3930" top="12060" width="100" height="100">
+   <BOUNDS type="Node" left="3870" top="11955" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3930" top="12060" width="6000" height="4500">
+   <BOUNDS type="Box" left="3870" top="11955" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="14535" top="10425" width="6240" height="5085">
+   <BOUNDS type="Window" left="18120" top="9450" width="6240" height="5790">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
@@ -1139,7 +1123,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="9915" top="6840" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="14220" top="10125" width="6240" height="5085">
+   <BOUNDS type="Window" left="14205" top="9300" width="6285" height="5760">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
@@ -1195,11 +1179,11 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="SSLR (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SSLR\SSLR (SuperPhysical).v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\dx11\SSLR\SSLR (SuperPhysical).v4p" componentmode="Hidden" id="86" stayontop="0">
-   <BOUNDS type="Node" left="6489" top="11776" width="0" height="0">
+   <BOUNDS type="Node" left="5394" top="11476" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="1344" top="8859" width="10290" height="5835">
+   <BOUNDS type="Box" left="249" top="8559" width="10290" height="5835">
    </BOUNDS>
-   <BOUNDS type="Window" left="1125" top="3810" width="15585" height="6945">
+   <BOUNDS type="Window" left="675" top="900" width="12855" height="9960">
    </BOUNDS>
    <PIN pinname="depthBuffer" visible="1">
    </PIN>
@@ -1229,49 +1213,55 @@
    </PIN>
    <PIN pinname="ViewRay" visible="1">
    </PIN>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="positionView" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="LinearDepth" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="41" srcpinname="Depth Buffer" dstnodeid="86" dstpinname="depthBuffer" linkstyle="Bezier">
-   <LINKPOINT x="2565" y="10493">
+   <LINKPOINT x="2565" y="10343">
    </LINKPOINT>
-   <LINKPOINT x="8205" y="10493">
+   <LINKPOINT x="7425" y="10343">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="86" srcpinname="Texture Out" dstnodeid="56" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="86" dstpinname="cb_depthBufferSizeXY" linkstyle="Bezier">
-   <LINKPOINT x="2400" y="9938">
+   <LINKPOINT x="2400" y="9795">
    </LINKPOINT>
-   <LINKPOINT x="6630" y="9938">
+   <LINKPOINT x="5700" y="9795">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="87" srcpinname="Y Output Value" dstnodeid="86" dstpinname="cb_nearPlaneZ" linkstyle="Bezier">
-   <LINKPOINT x="4590" y="9593">
+   <LINKPOINT x="4560" y="9428">
    </LINKPOINT>
-   <LINKPOINT x="6795" y="9593">
+   <LINKPOINT x="5880" y="9428">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="88" srcpinname="Y Output Value" dstnodeid="86" dstpinname="cb_maxDistance" linkstyle="Bezier">
-   <LINKPOINT x="4605" y="9900">
+   <LINKPOINT x="4605" y="9758">
    </LINKPOINT>
-   <LINKPOINT x="7275" y="9900">
+   <LINKPOINT x="6480" y="9758">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="38" srcpinname="Projection" dstnodeid="86" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="3825" y="10155">
+   <LINKPOINT x="3825" y="10005">
    </LINKPOINT>
-   <LINKPOINT x="8505" y="10155">
+   <LINKPOINT x="7725" y="10005">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="55" srcpinname="Output Node" dstnodeid="86" dstpinname="normalBuffer" linkstyle="Bezier">
-   <LINKPOINT x="3945" y="11438">
+   <LINKPOINT x="3580" y="11338">
    </LINKPOINT>
-   <LINKPOINT x="8370" y="11438">
+   <LINKPOINT x="7640" y="11238">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="38" srcpinname="View" dstnodeid="86" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="3675" y="10155">
+   <LINKPOINT x="3310" y="10055">
    </LINKPOINT>
-   <LINKPOINT x="7875" y="10155">
+   <LINKPOINT x="7145" y="9955">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="61" srcpinname="Buffers" dstnodeid="86" dstpinname="PositionView">
@@ -1291,9 +1281,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="94">
-   <BOUNDS type="Node" left="9420" top="8490" width="5580" height="270">
+   <BOUNDS type="Node" left="9720" top="8490" width="5580" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="9420" top="8490" width="5580" height="270">
+   <BOUNDS type="Box" left="9720" top="8490" width="5580" height="270">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="https://mynameismjp.wordpress.com/2010/09/05/position-from-depth-3/">
    </PIN>
@@ -1305,9 +1295,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="95">
-   <BOUNDS type="Node" left="8940" top="9015" width="7470" height="270">
+   <BOUNDS type="Node" left="9720" top="9015" width="7470" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="8940" top="9015" width="7470" height="270">
+   <BOUNDS type="Box" left="9720" top="9015" width="7470" height="270">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="https://www.gamedev.net/forums/topic/691829-screen-space-glossy-reflections-viewray-calculation/">
    </PIN>
@@ -1318,22 +1308,72 @@
    <PIN pinname="String Type" slicecount="1" values="Url">
    </PIN>
    </NODE>
-   <LINK srcnodeid="38" srcpinname="View" dstnodeid="86" dstpinname="tV">
+   <LINK srcnodeid="38" srcpinname="View" dstnodeid="86" dstpinname="tV" linkstyle="Bezier">
+   <LINKPOINT x="3675" y="10013">
+   </LINKPOINT>
+   <LINKPOINT x="6330" y="10013">
+   </LINKPOINT>
    </LINK>
-   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="96">
-   <BOUNDS type="Node" left="4680" top="11175" width="100" height="100">
+   <LINK srcnodeid="55" srcpinname="Output Node" dstnodeid="90" dstpinname="Texture In">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="97">
+   <BOUNDS type="Box" left="7275" top="10875" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Input Node" visible="1">
+   <BOUNDS type="Node" left="7275" top="10875" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|View Projection|">
    </PIN>
    <PIN pinname="Output Node" visible="1">
    </PIN>
-   <PIN pinname="Index" slicecount="1" values="3">
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="View Projection" dstnodeid="97" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="3990" y="9705">
+   </LINKPOINT>
+   <LINKPOINT x="7260" y="9705">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="Output Node" dstnodeid="86" dstpinname="View Projection">
+   </LINK>
+   <NODE systemname="Sphere (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Sphere (DX11.Geometry)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="1410" top="2295" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" slicecount="1" values="..\..\assets\teapot.fbx">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Box" left="1410" top="2295">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="64">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="64">
+   </PIN>
+   <PIN pinname="Radius" slicecount="1" values="0.33">
    </PIN>
    </NODE>
-   <LINK srcnodeid="41" srcpinname="Buffers" dstnodeid="96" dstpinname="Input Node">
+   <LINK srcnodeid="17" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 1">
    </LINK>
-   <LINK srcnodeid="96" srcpinname="Output Node" dstnodeid="90" dstpinname="Texture In">
+   <LINK srcnodeid="41" srcpinname="Depth Buffer" dstnodeid="62" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="96" srcpinname="Output Node" dstnodeid="86" dstpinname="ViewRay">
+   <LINK srcnodeid="29" srcpinname="Output" dstnodeid="33" dstpinname="Input 4">
    </LINK>
+   <LINK srcnodeid="61" srcpinname="Buffers" dstnodeid="86" dstpinname="positionView">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="100">
+   <BOUNDS type="Node" left="9720" top="9645" width="7725" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9720" top="9645" width="7725" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="https://github.com/arkenthera/YumeEngine/blob/master/Engine/Assets/Shaders/HLSL/SSLR/Raytrace.hlsl">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Url">
+   </PIN>
+   </NODE>
    </PATCH>
