@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" systemname="SuperPhysical Deferred (SuperPhysical) help" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1545" top="1050" width="10965" height="12975">
+   <BOUNDS type="Window" left="255" top="1020" width="10965" height="12975">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="39" systemname="IOBox (String)">
    <BOUNDS type="Node" left="375" top="480" width="5100" height="450">
@@ -344,18 +344,6 @@
    </LINK>
    <LINK srcnodeid="21" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture In">
    </LINK>
-   <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
-   <BOUNDS type="Node" left="2790" top="4215" width="1410" height="270">
-   </BOUNDS>
-   <BOUNDS type="Window" left="-1320" top="1095" width="17790" height="11580">
-   </BOUNDS>
-   <PIN pinname="Material" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Iridescence" visible="1" slicecount="1" values="0">
-   </PIN>
-   <BOUNDS type="Box" left="2790" top="4215">
-   </BOUNDS>
-   </NODE>
    <LINK srcnodeid="29" srcpinname="Output" dstnodeid="33" dstpinname="Input 4" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="30" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 3" linkstyle="PolyLine">
@@ -594,8 +582,22 @@
    </LINK>
    <LINK srcnodeid="52" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
    </LINK>
+   <LINK srcnodeid="47" srcpinname="Texture Out" dstnodeid="4" dstpinname="Texture In">
+   </LINK>
+   <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
+   <BOUNDS type="Node" left="2790" top="4215" width="1410" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1140" top="2430" width="17790" height="11580">
+   </BOUNDS>
+   <PIN pinname="Material" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Iridescence" visible="1" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Box" left="2790" top="4215">
+   </BOUNDS>
+   </NODE>
    <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="1">
-   <BOUNDS type="Window" left="840" top="480" width="21540" height="12495">
+   <BOUNDS type="Window" left="1350" top="1725" width="21585" height="12495">
    </BOUNDS>
    <PIN pinname="Default SizeXY" visible="1">
    </PIN>
@@ -650,12 +652,6 @@
    <LINKPOINT x="4275" y="4665">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="10" srcpinname="Material" dstnodeid="51" dstpinname="MaterialSetup" linkstyle="Bezier">
-   <LINKPOINT x="2835" y="4665">
-   </LINKPOINT>
-   <LINKPOINT x="3000" y="4665">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="51" srcpinname="ShadowMaps" dstnodeid="46" dstpinname="ShadowMaps" linkstyle="Bezier">
    <LINKPOINT x="4145" y="6633">
    </LINKPOINT>
@@ -678,6 +674,10 @@
    </LINK>
    <LINK srcnodeid="6" srcpinname="Sampler" dstnodeid="51" dstpinname="g_samLinear">
    </LINK>
-   <LINK srcnodeid="47" srcpinname="Texture Out" dstnodeid="4" dstpinname="Texture In">
+   <LINK srcnodeid="10" srcpinname="Material" dstnodeid="51" dstpinname="MaterialSetup" linkstyle="Bezier">
+   <LINKPOINT x="2835" y="4665">
+   </LINKPOINT>
+   <LINKPOINT x="3000" y="4665">
+   </LINKPOINT>
    </LINK>
    </PATCH>

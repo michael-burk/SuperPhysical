@@ -103,6 +103,8 @@ Texture2DArray metallTex <string uiname="MetallicMap"; >;
 Texture2DArray aoTex <string uiname="AOMap"; >;
 Texture2DArray iridescence <string uiname="Iridescence"; >;
 
+StructuredBuffer <bool> useTex;
+
 
 Texture2D GBufferPos <string uiname="GBufferPos"; >;
 Texture2D GBufferNorm <string uiname="GBufferNorm"; >;
@@ -169,6 +171,7 @@ float4 doLighting(psInput input) : SV_Target
 	///////////////////////////////////////////////////////////////////////////
 	// BUMP MAPPING & POM
 	//////////////////////////////////////////////////////////////////////////
+
 	
 	// compute derivations of the world position
 	float3 p_dx = ddx(PosW.xyz);
@@ -195,41 +198,62 @@ float4 doLighting(psInput input) : SV_Target
 	}
 	#endif
 
-	float3 bumpMap = normalTex.Sample(g_samLinear,float3(TexCd.xy, texID)).rgb;
-	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
+	float3 bumpMap = 0;
+	if(useTex[texID]){
+		bumpMap = normalTex.Sample(g_samLinear,float3(TexCd.xy, texID)).rgb;
+		if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
+	}
 	
 	N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b))*bumpy[texID]);
+	
+
 
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
 	///////////////////////////////////////////////////////////////////////////
 	
+	float4 albedo = 1;
+	float roughnessT = 0;
+	float aoT = 1;
+	float metallicT = 0;
+	
 	#ifdef doControlTextures
+	if(useTex[texID]){
 		
+	
 		uint tX,tY,m;
 		
-		float roughnessT = roughness[texID];
+		roughnessT = roughness[texID];
 		roughnessT = roughTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
 		roughnessT = min(max(roughnessT * roughness[texID],.01),.95);
 	
-		float aoT = 1;
+		aoT = 1;
 		aoT = aoTex.Sample(g_samLinear,  float3(TexCd.xy, texID)).r;
 	
-		float metallicT = 1;
+		metallicT = 1;
 		metallicT = metallTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
 		metallicT *= metallic[texID];
 		
 		float4 texCol = 1;
 		texCol = texture2d.Sample(g_samLinear, float3(TexCd.xy, texID));
 	
-		float4 albedo = texCol * saturate(Color[texID]) * aoT;
-
+		albedo = texCol * saturate(Color[texID]) * aoT;	
+		
+	} else {
+		roughnessT = min(max(roughness[texID],.01),.95);
+		aoT = 1;
+		metallicT = metallic[texID];
+		albedo = saturate(Color[texID]);
+	}
+	
 	#else
 		
-		float roughnessT = min(max(roughness[texID],.01),.95);
-		float aoT = 1;
-		float metallicT = metallic[texID];
-		float4 albedo = saturate(Color[texID]);
+		roughnessT = min(max(roughness[texID],.01),.95);
+		aoT = 1;
+		metallicT = metallic[texID];
+		albedo = saturate(Color[texID]);
+		
+	
 	
 	#endif
 	

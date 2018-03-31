@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="2475">
-   <BOUNDS type="Window" left="840" top="480" width="21540" height="12495">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="1905" scrolly="2745">
+   <BOUNDS type="Window" left="1350" top="1725" width="21585" height="12495">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -312,76 +312,6 @@
    <PIN pinname="Transform Out" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="324">
-   <BOUNDS type="Node" left="2895" top="1350" width="6645" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2895" top="1350">
-   </BOUNDS>
-   <PIN pinname="SSSAmount" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="AlbedoTex" visible="1">
-   </PIN>
-   <PIN pinname="EmissiveTex" visible="1">
-   </PIN>
-   <PIN pinname="NormalMap" visible="1">
-   </PIN>
-   <PIN pinname="HeightMap" visible="1">
-   </PIN>
-   <PIN pinname="RoughnessMap" visible="1">
-   </PIN>
-   <PIN pinname="MetallicMap" visible="1">
-   </PIN>
-   <PIN pinname="AOMap" visible="1">
-   </PIN>
-   <PIN pinname="IridescenceMap" visible="1">
-   </PIN>
-   <PIN pinname="tTex" visible="1">
-   </PIN>
-   <PIN pinname="Metallic" visible="1">
-   </PIN>
-   <PIN pinname="Roughness" visible="1">
-   </PIN>
-   <PIN pinname="Color" visible="1">
-   </PIN>
-   <PIN pinname="Emissive" visible="1">
-   </PIN>
-   <PIN pinname="SSSFalloff" visible="1">
-   </PIN>
-   <PIN pinname="noTile" visible="1">
-   </PIN>
-   <PIN pinname="fHeigtMapScale" visible="1">
-   </PIN>
-   <PIN pinname="POMnumSamples" visible="1">
-   </PIN>
-   <PIN pinname="POM" visible="1">
-   </PIN>
-   <PIN pinname="Refraction" visible="1">
-   </PIN>
-   <PIN pinname="Iridescence" visible="1">
-   </PIN>
-   <PIN pinname="Bumpiness" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="324" srcpinname="RefractionIndexXYZ" dstnodeid="77" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="6100" y="4330">
-   </LINKPOINT>
-   <LINKPOINT x="9155" y="4355">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="324" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="2910" y="1065">
-   </LINKPOINT>
-   <LINKPOINT x="2910" y="1065">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="324" srcpinname="tTex" dstnodeid="315" dstpinname="Source" linkstyle="Bezier">
-   <LINKPOINT x="3280" y="5565">
-   </LINKPOINT>
-   <LINKPOINT x="5975" y="5895">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="330">
    <BOUNDS type="Box" left="17970" top="10185" width="480" height="480">
    </BOUNDS>
@@ -435,7 +365,7 @@
    </PIN>
    <PIN pinname="Switch" visible="1">
    </PIN>
-   <PIN pinname="Input 2" visible="1" slicecount="8" values=",doPOM=1,,,doIBL=1,doGlobalLight=1,doControlTextures=1,">
+   <PIN pinname="Input 2" visible="1" slicecount="8" values=",,,,doIBL=1,doGlobalLight=1,,">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -454,12 +384,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="Output" dstnodeid="343" dstpinname="Material" linkstyle="Bezier">
-   <LINKPOINT x="5255" y="5895">
-   </LINKPOINT>
-   <LINKPOINT x="16195" y="6735">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="330" srcpinname="Y Output Value" dstnodeid="343" dstpinname="Enabled">
    </LINK>
    <LINK srcnodeid="254" srcpinname="Output Node" dstnodeid="343" dstpinname="LightSetup" linkstyle="Bezier">
@@ -489,87 +413,81 @@
    <NODE systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden" id="347">
    <BOUNDS type="Node" left="6300" top="3195" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
    <PIN pinname="Texture Slices Out" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="AlbedoTex" dstnodeid="347" dstpinname="Pointer">
-   </LINK>
    <LINK srcnodeid="347" srcpinname="Texture Array Out" dstnodeid="225" dstpinname="Alpha Tex">
    </LINK>
    <NODE systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden" id="348">
    <BOUNDS type="Node" left="6735" top="3750" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
+   <PIN pinname="Texture Slices Out" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="EmissiveTex" dstnodeid="348" dstpinname="Pointer">
-   </LINK>
    <NODE systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden" id="349">
    <BOUNDS type="Node" left="6990" top="4140" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
+   <PIN pinname="Texture Slices Out" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="NormalMap" dstnodeid="349" dstpinname="Pointer">
-   </LINK>
    <NODE systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden" id="350">
    <BOUNDS type="Node" left="7320" top="4560" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
+   <PIN pinname="Texture Slices Out" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="HeightMap" dstnodeid="350" dstpinname="Pointer">
-   </LINK>
    <NODE systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden" id="351">
    <BOUNDS type="Node" left="7590" top="5010" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
+   <PIN pinname="Texture Slices Out" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="RoughnessMap" dstnodeid="351" dstpinname="Pointer">
-   </LINK>
    <NODE systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden" id="352">
    <BOUNDS type="Node" left="7875" top="5385" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
+   <PIN pinname="Texture Slices Out" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="MetallicMap" dstnodeid="352" dstpinname="Pointer">
-   </LINK>
    <NODE systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden" id="353">
    <BOUNDS type="Node" left="8100" top="5790" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="AOMap" dstnodeid="353" dstpinname="Pointer">
-   </LINK>
    <NODE systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden" id="354">
    <BOUNDS type="Node" left="8640" top="6435" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
+   <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="IridescenceMap" dstnodeid="354" dstpinname="Pointer">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Transform)" componentmode="Hidden" id="355">
    <BOUNDS type="Node" left="5805" top="10560" width="100" height="100">
    </BOUNDS>
@@ -590,84 +508,66 @@
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="tTex" dstnodeid="359" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="3420" y="6338">
-   </LINKPOINT>
-   <LINKPOINT x="5880" y="6488">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="362">
    <BOUNDS type="Node" left="7950" top="12060" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="7950" top="12060" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1">
+   <PIN pinname="Data" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="Metallic" dstnodeid="362" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="363">
    <BOUNDS type="Node" left="8310" top="11610" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="8310" top="11610" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="1" values="0">
+   <PIN pinname="Data" visible="1" slicecount="4" values="1,1,1,1">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="Roughness" dstnodeid="363" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Color)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Color)" componentmode="Hidden" id="364">
    <BOUNDS type="Node" left="4455" top="10665" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="4455" top="10665" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="1" values="|0.00000,1.00000,0.00000,1.00000|">
+   <PIN pinname="Data" visible="1" slicecount="4" values="|1.00000,1.00000,1.00000,1.00000|,|1.00000,1.00000,1.00000,1.00000|,|1.00000,1.00000,1.00000,1.00000|,|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="Color" dstnodeid="364" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Color)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Color)" componentmode="Hidden" id="365">
    <BOUNDS type="Node" left="4875" top="11370" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="4875" top="11370" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="1" values="|0.00000,1.00000,0.00000,1.00000|">
+   <PIN pinname="Data" visible="1" slicecount="4" values="|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="Emissive" dstnodeid="365" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="366">
    <BOUNDS type="Node" left="8940" top="11115" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="8940" top="11115" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="1" values="0">
+   <PIN pinname="Data" visible="1" slicecount="4" values="1,1,1,1">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="SSSFalloff" dstnodeid="366" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="367">
    <BOUNDS type="Node" left="8595" top="10620" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="8595" top="10620" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="1" values="0">
+   <PIN pinname="Data" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="SSSAmount" dstnodeid="367" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Int)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Int)" componentmode="Hidden" id="368">
    <BOUNDS type="Node" left="9300" top="12000" width="100" height="100">
    </BOUNDS>
@@ -675,11 +575,9 @@
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
-   <PIN pinname="Data" visible="1">
+   <PIN pinname="Data" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="noTile" dstnodeid="368" dstpinname="Data">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="371">
    <BOUNDS type="Box" left="1020" top="7575" width="795" height="480">
    </BOUNDS>
@@ -705,49 +603,41 @@
    </BOUNDS>
    <BOUNDS type="Box" left="16995" top="11940" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1">
+   <PIN pinname="Data" visible="1" slicecount="4" values="0.150000005960464,0.150000005960464,0.150000005960464,0.150000005960464">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="fHeigtMapScale" dstnodeid="372" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden" id="374">
    <BOUNDS type="Node" left="15555" top="11070" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="15555" top="11070" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1">
+   <PIN pinname="Data" visible="1" slicecount="4" values="40,40,40,40">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="POMnumSamples" dstnodeid="374" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden" id="375">
    <BOUNDS type="Node" left="7290" top="10470" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="7290" top="10470" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1">
+   <PIN pinname="Data" visible="1" slicecount="4" values="0,1,0,0">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="POM" dstnodeid="375" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden" id="376">
    <BOUNDS type="Node" left="5535" top="12150" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="5535" top="12150" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="1" values="0">
+   <PIN pinname="Data" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="Refraction" dstnodeid="376" dstpinname="Data">
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="377">
    <BOUNDS type="Node" left="4920" top="11760" width="100" height="100">
    </BOUNDS>
@@ -775,15 +665,9 @@
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
-   <PIN pinname="Data" visible="1">
+   <PIN pinname="Data" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="Iridescence" dstnodeid="379" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="8925" y="7275">
-   </LINKPOINT>
-   <LINKPOINT x="6090" y="7275">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="380">
    <BOUNDS type="Node" left="7440" top="12780" width="100" height="100">
    </BOUNDS>
@@ -791,15 +675,9 @@
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
-   <PIN pinname="Data" visible="1">
+   <PIN pinname="Data" visible="1" slicecount="4" values="1,1,1,1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="Bumpiness" dstnodeid="380" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="8355" y="7193">
-   </LINKPOINT>
-   <LINKPOINT x="7470" y="7193">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 2d)" componentmode="Hidden" id="381">
    <BOUNDS type="Node" left="6735" top="12360" width="100" height="100">
    </BOUNDS>
@@ -845,7 +723,7 @@
    </PIN>
    <PIN pinname="Texture SizeXY" visible="1">
    </PIN>
-   <PIN pinname="Background Color" slicecount="1" visible="1" values="|0.50232,0.50232,0.50232,1.00000|">
+   <PIN pinname="Background Color" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
    <PIN pinname="Depth Buffer" visible="1">
    </PIN>
@@ -890,28 +768,6 @@
    <PIN pinname="Index" slicecount="1" values="2">
    </PIN>
    </NODE>
-   <NODE systemname="TimeStamp (DX11.Query)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="TimeStamp (DX11.Query)" componentmode="Hidden" id="395">
-   <BOUNDS type="Node" left="17190" top="14070" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="17190" top="14070" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Query Source" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Time" visible="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="396">
-   <BOUNDS type="Box" left="17115" top="14670" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="17115" top="14670" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="395" srcpinname="Time" dstnodeid="396" dstpinname="Y Input Value">
-   </LINK>
    <NODE systemname="SuperPhysical_Deferred (DX11.TextureFX)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SuperPhysical_Deferred.tfx" nodename="SuperPhysical_Deferred (DX11.TextureFX)" componentmode="Hidden" id="403">
    <BOUNDS type="Node" left="2325" top="13365" width="15645" height="270">
    </BOUNDS>
@@ -948,6 +804,8 @@
    <PIN pinname="linearSampler" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Background Color" visible="1">
+   </PIN>
+   <PIN pinname="useTex" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="364" srcpinname="Buffer" dstnodeid="403" dstpinname="Color(Albedo)" linkstyle="Bezier">
@@ -1088,8 +946,6 @@
    <LINKPOINT x="3735" y="7478">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="403" srcpinname="Query" dstnodeid="395" dstpinname="Query Source">
-   </LINK>
    <LINK srcnodeid="362" srcpinname="Buffer" dstnodeid="403" dstpinname="metallic" linkstyle="Bezier">
    <LINKPOINT x="7980" y="12848">
    </LINKPOINT>
@@ -1211,7 +1067,7 @@
    <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="413">
    <BOUNDS type="Node" left="1965" top="6180" width="100" height="100">
    </BOUNDS>
-   <PIN pinname=".. To [" slicecount="1" visible="1" values="3">
+   <PIN pinname=".. To [" slicecount="1" visible="1" values="4">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -1228,10 +1084,6 @@
    </NODE>
    <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="414" dstpinname="Input">
    </LINK>
-   <NODE systemname="Glow (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Filter\Glow.tfx" nodename="Glow (DX11.TextureFX)" componentmode="Hidden" id="419">
-   <BOUNDS type="Node" left="15330" top="14490" width="100" height="100">
-   </BOUNDS>
-   </NODE>
    <LINK srcnodeid="371" srcpinname="Y Output Value" dstnodeid="403" dstpinname="Default SizeXY">
    </LINK>
    <LINK srcnodeid="394" srcpinname="Output Node" dstnodeid="403" dstpinname="GBufferTexCd">
@@ -1247,8 +1099,6 @@
    <LINK srcnodeid="386" srcpinname="Buffers" dstnodeid="392" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="300" srcpinname="Output Node" dstnodeid="403" dstpinname="g_samLinear">
-   </LINK>
-   <LINK srcnodeid="414" srcpinname="High" dstnodeid="413" dstpinname=".. To [">
    </LINK>
    <LINK srcnodeid="297" srcpinname="IBLSettingsXY" dstnodeid="403" dstpinname="IBL IntensityXY" linkstyle="Bezier">
    <LINKPOINT x="13470" y="7485">
@@ -1285,5 +1135,109 @@
    <LINK srcnodeid="19" srcpinname="Output Node" dstnodeid="391" dstpinname="Render State">
    </LINK>
    <LINK srcnodeid="413" srcpinname="Output" dstnodeid="391" dstpinname="materialID">
+   </LINK>
+   <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="421">
+   <BOUNDS type="Node" left="2895" top="1350" width="6645" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2895" top="1350">
+   </BOUNDS>
+   <PIN pinname="useTex" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="421" srcpinname="RefractionIndexXYZ" dstnodeid="77" dstpinname="Data" linkstyle="Bezier">
+   <LINKPOINT x="6100" y="4330">
+   </LINKPOINT>
+   <LINKPOINT x="9155" y="4355">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="421" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="2910" y="1065">
+   </LINKPOINT>
+   <LINKPOINT x="2910" y="1065">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="tTex" dstnodeid="315" dstpinname="Source" linkstyle="Bezier">
+   <LINKPOINT x="3280" y="5565">
+   </LINKPOINT>
+   <LINKPOINT x="5975" y="5895">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="Output" dstnodeid="343" dstpinname="Material" linkstyle="Bezier">
+   <LINKPOINT x="5255" y="5895">
+   </LINKPOINT>
+   <LINKPOINT x="16195" y="6735">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="AlbedoTex" dstnodeid="347" dstpinname="Pointer">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="EmissiveTex" dstnodeid="348" dstpinname="Pointer">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="NormalMap" dstnodeid="349" dstpinname="Pointer">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="HeightMap" dstnodeid="350" dstpinname="Pointer">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="RoughnessMap" dstnodeid="351" dstpinname="Pointer">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="MetallicMap" dstnodeid="352" dstpinname="Pointer">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="AOMap" dstnodeid="353" dstpinname="Pointer">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="IridescenceMap" dstnodeid="354" dstpinname="Pointer">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="tTex" dstnodeid="359" dstpinname="Data" linkstyle="Bezier">
+   <LINKPOINT x="3420" y="6338">
+   </LINKPOINT>
+   <LINKPOINT x="5880" y="6488">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="Metallic" dstnodeid="362" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="Roughness" dstnodeid="363" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="Color" dstnodeid="364" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="Emissive" dstnodeid="365" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="SSSFalloff" dstnodeid="366" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="SSSAmount" dstnodeid="367" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="noTile" dstnodeid="368" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="fHeigtMapScale" dstnodeid="372" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="POMnumSamples" dstnodeid="374" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="POM" dstnodeid="375" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="Refraction" dstnodeid="376" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="Iridescence" dstnodeid="379" dstpinname="Data" linkstyle="Bezier">
+   <LINKPOINT x="8925" y="7275">
+   </LINKPOINT>
+   <LINKPOINT x="6090" y="7275">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="421" srcpinname="Bumpiness" dstnodeid="380" dstpinname="Data" linkstyle="Bezier">
+   <LINKPOINT x="8355" y="7193">
+   </LINKPOINT>
+   <LINKPOINT x="7470" y="7193">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden" id="422">
+   <BOUNDS type="Node" left="11820" top="8445" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11820" top="8445" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Data" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="421" srcpinname="useTex" dstnodeid="422" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="422" srcpinname="Buffer" dstnodeid="403" dstpinname="useTex">
+   </LINK>
+   <LINK srcnodeid="414" srcpinname="Count" dstnodeid="413" dstpinname=".. To [">
    </LINK>
    </PATCH>
