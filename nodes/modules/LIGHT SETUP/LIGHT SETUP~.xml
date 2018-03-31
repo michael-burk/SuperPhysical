@@ -271,7 +271,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="3510" top="4470">
    </BOUNDS>
-   <BOUNDS type="Window" left="-2955" top="1560" width="15390" height="11685">
+   <BOUNDS type="Window" left="525" top="1185" width="15390" height="11685">
    </BOUNDS>
    <PIN pinname="SpotLights" visible="1">
    </PIN>
