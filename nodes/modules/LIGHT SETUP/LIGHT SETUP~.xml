@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="15" scrolly="0">
    <BOUNDS type="Window" left="1185" top="750" width="11025" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -23,7 +23,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1410" top="1095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.30212,0.30212,0.30212,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.39480,0.39480,0.39480,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Global Reflection Color|">
    </PIN>
@@ -205,7 +205,7 @@
    </PIN>
    </NODE>
    <NODE systemname="LightSetup (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical)" componentmode="Hidden" id="181">
-   <BOUNDS type="Node" left="1395" top="5010" width="5655" height="270">
+   <BOUNDS type="Node" left="1395" top="5010" width="6375" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1395" top="5010">
    </BOUNDS>
@@ -223,9 +223,9 @@
    </PIN>
    <PIN pinname="GlobalSettings" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="ToneMapping" visible="1" slicecount="1" values="0">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="181" srcpinname="LightSetup" dstnodeid="64" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="181" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="171" srcpinname="Output String" dstnodeid="181" dstpinname="BRDF LUT Path">
@@ -288,16 +288,20 @@
    </LINK>
    <LINK srcnodeid="55" srcpinname="Y Output Value" dstnodeid="187" dstpinname="IBLSettingsXY">
    </LINK>
+   <LINK srcnodeid="186" srcpinname="Output" dstnodeid="42" dstpinname="Color Input">
+   </LINK>
+   <LINK srcnodeid="181" srcpinname="LightSetup" dstnodeid="64" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
+   </LINK>
    <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
    </LINK>
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="181" dstpinname="PointLightSettings">
    </LINK>
-   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
-   </LINK>
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="181" dstpinname="GlobalSettings">
+   <LINKPOINT x="1395" y="5100">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="187" srcpinname="Output" dstnodeid="181" dstpinname="IBLSettings">
-   </LINK>
-   <LINK srcnodeid="186" srcpinname="Output" dstnodeid="42" dstpinname="Color Input">
    </LINK>
    </PATCH>

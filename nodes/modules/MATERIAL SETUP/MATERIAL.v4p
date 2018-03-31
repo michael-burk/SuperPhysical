@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="45">
+   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="450" top="8490" width="795" height="240">
    </BOUNDS>
@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="1335" top="240" width="17790" height="11580">
+   <BOUNDS type="Window" left="3015" top="570" width="17790" height="11580">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -353,7 +353,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="11700" top="2430" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="2,1,1,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="2,2,1,1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -513,7 +513,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12690" top="2415" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="2,1,1,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="2,2,1,1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -531,7 +531,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13635" top="2415" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="2,1,3,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="2,2,3,1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1060,12 +1060,6 @@
    </LINK>
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="267" dstpinname="Emissive">
    </LINK>
-   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="267" dstpinname="Refraction" linkstyle="Bezier">
-   <LINKPOINT x="10365" y="9210">
-   </LINKPOINT>
-   <LINKPOINT x="9960" y="9210">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="253" srcpinname="Output" dstnodeid="267" dstpinname="SubsurfaceScattering" linkstyle="VHV">
    <LINKPOINT x="15810" y="9385">
    </LINKPOINT>
@@ -1173,6 +1167,10 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2565" top="3075" width="3000" height="3000">
    </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Apply" slicecount="1" visible="1" values="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="269" srcpinname="Pointer" dstnodeid="172" dstpinname="Y Input Value">
    </LINK>
@@ -1227,6 +1225,10 @@
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="tTex" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Bumpiness" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="171" srcpinname="Y Output Value" dstnodeid="273" dstpinname="AlbedoTex">
    </LINK>
@@ -1240,17 +1242,61 @@
    </LINK>
    <LINK srcnodeid="177" srcpinname="Y Output Value" dstnodeid="273" dstpinname="AOMap">
    </LINK>
-   <LINK srcnodeid="205" srcpinname="Y Output Value" dstnodeid="273" dstpinname="Bumpiness">
-   </LINK>
    <LINK srcnodeid="61" srcpinname="Y Output Value" dstnodeid="273" dstpinname="noTile">
-   </LINK>
-   <LINK srcnodeid="56" srcpinname="Transform Out" dstnodeid="273" dstpinname="tTex" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="173" srcpinname="Y Output Value" dstnodeid="273" dstpinname="NormalMap">
    </LINK>
    <LINK srcnodeid="166" srcpinname="Pointer" dstnodeid="174" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="167" srcpinname="Pointer" dstnodeid="175" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="267" dstpinname="Refraction" linkstyle="Bezier">
+   <LINKPOINT x="10365" y="9210">
+   </LINKPOINT>
+   <LINKPOINT x="9960" y="9210">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="DynamicTexture (DX11.Texture 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicTexture (DX11.Texture 2d)" componentmode="Hidden" id="278">
+   <BOUNDS type="Node" left="3255" top="1320" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3255" top="1320">
+   </BOUNDS>
+   <PIN pinname="Height" visible="1">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="Channel Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Data" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="279">
+   <BOUNDS type="Box" left="3540" top="780" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3540" top="780" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="279" srcpinname="Y Output Value" dstnodeid="278" dstpinname="Height">
+   </LINK>
+   <LINK srcnodeid="279" srcpinname="Y Output Value" dstnodeid="278" dstpinname="Width">
+   </LINK>
+   <LINK srcnodeid="278" srcpinname="Texture Out" dstnodeid="269" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="56" srcpinname="Transform Out" dstnodeid="273" dstpinname="tTex">
+   </LINK>
+   <LINK srcnodeid="205" srcpinname="Y Output Value" dstnodeid="273" dstpinname="Bumpiness">
    </LINK>
    <LINK srcnodeid="273" srcpinname="Output" dstnodeid="267" dstpinname="ControlTextures" linkstyle="Bezier">
    <LINKPOINT x="1575" y="7118">

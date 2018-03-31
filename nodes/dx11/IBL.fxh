@@ -5,7 +5,7 @@ static const half3 wavelength[3] =
 	{ 0, 0, 1},
 };
 
-float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor, float roughness, float metallic, float ao){
+float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor, float roughness, float metallic, float ao, uint texID){
 	///////////////////////////////////
 	//  IBL
 	//////////////////////////////////
@@ -31,7 +31,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	float3 refl = cubeTexRefl.SampleLevel(g_samLinear,reflVect,roughness*MAX_REFLECTION_LOD).rgb;
 	
 	#ifdef doIridescence
-	if(useIridescence){
+	if(useIridescence[texID]){
 	  refl *= iridescenceColor * (kS * envBRDF.x + envBRDF.y);
 	} 
 	#else
@@ -39,7 +39,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	#endif
 	
 	#ifdef doRefraction
-	if(refraction){
+	if(refraction[texID]){
 		float3 refrVect;
 	    for(int r=0; r<3; r++) {
 	    	refrVect = refract(-V, N , refractionIndex[r]);
@@ -55,7 +55,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	IBL  = saturate( (IBL * iblIntensity.x + refrColor) * kD + refl * iblIntensity.y) * ao;
 	
 	#ifdef doRefraction
-	if(refraction){
+	if(refraction[texID]){
 		IBL += GlobalReflectionColor.rgb;
 	}
 	#endif

@@ -1,6 +1,6 @@
 StructuredBuffer <float> fHeightMapScale;
 
-StructuredBuffer <uint> POM_numSamples;
+StructuredBuffer <uint> POM_numSamples <bool visible=false;>;
 
 
 void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID){
