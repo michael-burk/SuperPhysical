@@ -154,7 +154,7 @@ float4 doLighting(psInput input) : SV_Target
 	
 	
 	float3 N = GBufferNorm.Sample(linearSampler,input.uv).rgb;
-	if(length(N) == 0) return Background;
+	if(length(N) == 0) return Background * 2;
 	
 	uint texID = GBufferNorm.Sample(linearSampler, input.uv).a * 1000;
 	
