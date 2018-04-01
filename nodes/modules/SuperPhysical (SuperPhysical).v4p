@@ -439,7 +439,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="392">
-   <BOUNDS type="Node" left="10455" top="9270" width="100" height="100">
+   <BOUNDS type="Node" left="10440" top="9060" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
@@ -673,13 +673,9 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Depth Buffer|">
    </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="386" srcpinname="Depth Buffer" dstnodeid="408" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="2295" y="10815">
-   </LINKPOINT>
-   <LINKPOINT x="4200" y="10815">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="413">
    <BOUNDS type="Node" left="2040" top="5805" width="100" height="100">
    </BOUNDS>
@@ -708,42 +704,6 @@
    <LINKPOINT x="1275" y="9758">
    </LINKPOINT>
    <LINKPOINT x="2895" y="9758">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="394" srcpinname="Output Node" dstnodeid="403" dstpinname="GBufferTexCd" linkstyle="Bezier">
-   <LINKPOINT x="11085" y="10913">
-   </LINKPOINT>
-   <LINKPOINT x="11400" y="10913">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="392" srcpinname="Output Node" dstnodeid="403" dstpinname="GBufferPos" linkstyle="Bezier">
-   <LINKPOINT x="10470" y="10500">
-   </LINKPOINT>
-   <LINKPOINT x="10470" y="10500">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="393" srcpinname="Output Node" dstnodeid="403" dstpinname="GBufferNorm" linkstyle="Bezier">
-   <LINKPOINT x="10785" y="10688">
-   </LINKPOINT>
-   <LINKPOINT x="10920" y="10688">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="386" srcpinname="Buffers" dstnodeid="394" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="1470" y="9465">
-   </LINKPOINT>
-   <LINKPOINT x="11055" y="9465">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="386" srcpinname="Buffers" dstnodeid="393" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="1470" y="9248">
-   </LINKPOINT>
-   <LINKPOINT x="10755" y="9248">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="386" srcpinname="Buffers" dstnodeid="392" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="1470" y="9045">
-   </LINKPOINT>
-   <LINKPOINT x="10455" y="9045">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="300" srcpinname="Output Node" dstnodeid="403" dstpinname="g_samLinear" linkstyle="Bezier">
@@ -931,19 +891,19 @@
    <LINK srcnodeid="430" srcpinname="Output" dstnodeid="432" dstpinname="Input">
    </LINK>
    <NODE systemname="TimeStamp (DX11.Query)" nodename="TimeStamp (DX11.Query)" componentmode="Hidden" id="435" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
-   <BOUNDS type="Node" left="3585" top="6750" width="100" height="100">
+   <BOUNDS type="Node" left="3735" top="7140" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Query Source" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Time" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="3585" top="6750">
+   <BOUNDS type="Box" left="3735" top="7140">
    </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="436">
-   <BOUNDS type="Box" left="3585" top="7260" width="795" height="240">
+   <BOUNDS type="Box" left="3735" top="7650" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="3585" top="7260" width="0" height="0">
+   <BOUNDS type="Node" left="3735" top="7650" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -951,9 +911,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="435" srcpinname="Time" dstnodeid="436" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="3615" y="7140">
+   <LINKPOINT x="3765" y="7530">
    </LINKPOINT>
-   <LINKPOINT x="3615" y="7140">
+   <LINKPOINT x="3765" y="7530">
    </LINKPOINT>
    </LINK>
    <NODE systemname="TimeStamp (DX11.Query)" nodename="TimeStamp (DX11.Query)" componentmode="Hidden" id="438" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
@@ -986,12 +946,6 @@
    <LINKPOINT x="1500" y="3803">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="386" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="17025" y="6180">
-   </LINKPOINT>
-   <LINKPOINT x="2145" y="6015">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="SuperPhysicalGBuffer_Instanced (DX11.Effect)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SuperPhysicalGBuffer_Instanced.fx" nodename="SuperPhysicalGBuffer_Instanced (DX11.Effect)" componentmode="Hidden" id="440">
    <BOUNDS type="Node" left="870" top="6360" width="2715" height="270">
    </BOUNDS>
@@ -1004,6 +958,8 @@
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="IntanceStartIndex" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="432" srcpinname="Remainder" dstnodeid="440" dstpinname="IntanceStartIndex" linkstyle="Bezier">
@@ -1023,9 +979,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="440" srcpinname="Query" dstnodeid="435" dstpinname="Query Source" linkstyle="Bezier">
-   <LINKPOINT x="3570" y="6708">
+   <LINKPOINT x="3620" y="6838">
    </LINKPOINT>
-   <LINKPOINT x="3585" y="6673">
+   <LINKPOINT x="3685" y="6933">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="426" srcpinname="Buffer" dstnodeid="440" dstpinname="world" linkstyle="PolyLine">
@@ -1257,9 +1213,9 @@
    <LINK srcnodeid="350" srcpinname="Texture Array Out" dstnodeid="403" dstpinname="HeightMap" linkstyle="PolyLine">
    </LINK>
    <NODE id="422" systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden">
-   <BOUNDS type="Node" left="9960" top="10800" width="100" height="100">
+   <BOUNDS type="Node" left="8715" top="10920" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="9960" top="10800" width="3000" height="3000">
+   <BOUNDS type="Box" left="8715" top="10920" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Data" visible="1" slicecount="1" values="0">
    </PIN>
@@ -1269,17 +1225,49 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="421" srcpinname="useTex" dstnodeid="422" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="7485" y="7073">
+   <LINKPOINT x="7070" y="7113">
    </LINKPOINT>
-   <LINKPOINT x="9975" y="7073">
+   <LINKPOINT x="9145" y="7153">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="422" srcpinname="Buffer" dstnodeid="403" dstpinname="useTex" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Buffers" dstnodeid="394" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="1470" y="9465">
+   </LINKPOINT>
+   <LINKPOINT x="11055" y="9465">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Buffers" dstnodeid="393" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="1470" y="9248">
+   </LINKPOINT>
+   <LINKPOINT x="10755" y="9248">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Buffers" dstnodeid="392" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="1465" y="8975">
+   </LINKPOINT>
+   <LINKPOINT x="10445" y="8905">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="440" srcpinname="Layer" dstnodeid="386" dstpinname="Layer" linkstyle="Bezier">
    <LINKPOINT x="900" y="7615">
    </LINKPOINT>
    <LINKPOINT x="915" y="7580">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="386" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="16965" y="6098">
+   </LINKPOINT>
+   <LINKPOINT x="2205" y="6098">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="392" srcpinname="Output Node" dstnodeid="403" dstpinname="GBufferPos">
+   </LINK>
+   <LINK srcnodeid="393" srcpinname="Output Node" dstnodeid="403" dstpinname="GBufferNorm">
+   </LINK>
+   <LINK srcnodeid="394" srcpinname="Output Node" dstnodeid="403" dstpinname="GBufferTexCd">
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Depth Buffer" dstnodeid="408" dstpinname="Input Node">
    </LINK>
    </PATCH>
