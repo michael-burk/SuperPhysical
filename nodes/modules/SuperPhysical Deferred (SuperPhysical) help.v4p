@@ -203,7 +203,7 @@
    </PIN>
    </NODE>
    <NODE id="57" systemname="Transform (Transform 3d Vector)" nodename="Transform (Transform 3d Vector)" componentmode="Hidden">
-   <PIN pinname="Scale XYZ" slicecount="3" visible="1" values="0.05,0.05,0.05">
+   <PIN pinname="Scale XYZ" slicecount="3" visible="1" values="0.04,0.04,0.04">
    </PIN>
    <BOUNDS type="Node" left="4140" top="4035" width="100" height="100">
    </BOUNDS>
@@ -307,6 +307,8 @@
    </PIN>
    <BOUNDS type="Box" left="5910" top="5385">
    </BOUNDS>
+   <PIN pinname="Far Plane" slicecount="1" values="100">
+   </PIN>
    </NODE>
    <NODE id="6" systemname="Anisotropic (DX11 Sampler)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Anisotropic (DX11 Sampler)" componentmode="Hidden">
    <BOUNDS type="Node" left="4770" top="5385" width="100" height="100">
@@ -728,14 +730,12 @@
    </LINK>
    <LINK srcnodeid="21" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
-   </LINK>
    <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
    </LINK>
    <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
-   <BOUNDS type="Window" left="390" top="480" width="22110" height="14145">
+   <BOUNDS type="Window" left="390" top="480" width="22470" height="14145">
    </BOUNDS>
    <PIN pinname="Default SizeXY" visible="1" slicecount="2" values="1024,1024">
    </PIN>
@@ -851,5 +851,7 @@
    </LINKPOINT>
    <LINKPOINT x="4155" y="5835">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
    </LINK>
    </PATCH>

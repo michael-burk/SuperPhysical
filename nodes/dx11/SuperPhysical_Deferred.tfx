@@ -3,9 +3,9 @@
 //@tags: texture
 //@credits: 
 
-SamplerState linearSampler : immutable
+SamplerState linearSampler : Immutable
 {
-    Filter = MIN_MAG_MIP_POINT;
+    Filter = MIN_MAG_MIP_LINEAR;
     AddressU = WRAP;
     AddressV = WRAP;
 };
@@ -182,15 +182,19 @@ float4 doLighting(psInput input) : SV_Target
 	//////////////////////////////////////////////////////////////////////////
 
 	if(useTex[texID]){
+	
+	
 	// compute derivations of the world position
-	float3 p_dx = ddx(PosW.xyz);
-	float3 p_dy = ddy(PosW.xyz);
+	float3 p_dx = ddx_fine(PosW.xyz);
+	float3 p_dy = ddy_fine(PosW.xyz);
 	// compute derivations of the texture coordinate
-	float2 tc_dx = ddx(TexCd.xy);
-	float2 tc_dy = ddy(TexCd.xy);
+	float2 tc_dx = ddx_fine(TexCd.xy);
+	float2 tc_dy = ddy_fine(TexCd.xy);
+			
 	// compute initial tangent and bi-tangent
-	float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );
-	float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); // sign inversion
+	float3 t = normalize( (tc_dy.y * p_dx - tc_dx.y * p_dy)  +.0000000000000001 );
+	float3 b = normalize( (tc_dy.x * p_dx - tc_dx.x * p_dy)  +.0000000000000001 ); // sign inversion
+		
 	// get new tangent from a given mesh normal
 	float3 n = normalize(N);
 	float3 x = cross(n, t);
@@ -211,11 +215,11 @@ float4 doLighting(psInput input) : SV_Target
 	
 		bumpMap = normalTex.Sample(g_samLinear,float3(TexCd.xy, texID)).rgb;
 		if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
-	
-	
-	N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material[texID].bumpy);
+		N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material[texID].bumpy);
+		
 	}
-
+	
+	
 
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
@@ -262,9 +266,11 @@ float4 doLighting(psInput input) : SV_Target
 		metallicT = Material[texID].metallic;
 		albedo = saturate( Material[texID].Color);
 		
-	
+		
 	
 	#endif
+	
+	
 	
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
@@ -473,7 +479,7 @@ technique10 Process
 {
 	pass P0 < bool mips=true; string format="R16G16B16A16_Float"; >
 	{
-		SetPixelShader(CompileShader(ps_4_0,doLighting()));
+		SetPixelShader(CompileShader(ps_5_0,doLighting()));
 	}
 }
 

@@ -29,8 +29,8 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 //    int POM_numSamples = (int)lerp( nMaxSamples, nMinSamples, saturate(-dot( N, V)) );
     float fStepSize = 1.0 / (float)Material[texID].POMnumSamples;
     
-    float2 dx = ddx( texcoord );
-    float2 dy = ddy( texcoord );
+    float2 dx = ddx_fine( texcoord );
+    float2 dy = ddy_fine( texcoord );
     
     float fCurrRayHeight = 1.0;
     float2 vCurrOffset = float2( 0, 0 );
