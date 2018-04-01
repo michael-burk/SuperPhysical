@@ -31,7 +31,7 @@ struct psInput
 
 cbuffer cbPerObj : register( b1 )
 {
-	uint materialID;
+//	uint materialID;
 	uint IntanceStartIndex = 0;
 	float4x4 tVP : LAYERVIEWPROJECTION;
 	float4x4 tWI : WORLDINVERSE;
@@ -41,6 +41,7 @@ cbuffer cbPerObj : register( b1 )
 };
 
 StructuredBuffer<float4x4> world;
+StructuredBuffer<uint> materialID;
 
 cbuffer cbTextureData : register(b2)
 {
@@ -72,7 +73,7 @@ gBuffer PS(psInput input): SV_Target
 {
 	gBuffer output;
 	output.pos = input.posW;
-	output.norm = float4(input.norm,(float) materialID * 0.001);
+	output.norm = float4(input.norm,(float) materialID[input.ii + IntanceStartIndex] * 0.001);
 	output.uv = input.uv;
 	return output;
 }

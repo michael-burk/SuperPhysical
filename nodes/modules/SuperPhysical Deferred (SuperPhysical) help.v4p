@@ -25,7 +25,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7950" top="4875" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="120">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="20">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -203,7 +203,7 @@
    </PIN>
    </NODE>
    <NODE id="57" systemname="Transform (Transform 3d Vector)" nodename="Transform (Transform 3d Vector)" componentmode="Hidden">
-   <PIN pinname="Scale XYZ" slicecount="3" visible="1" values="0.04,0.04,0.04">
+   <PIN pinname="Scale XYZ" slicecount="3" visible="1" values="0.03,0.03,0.03">
    </PIN>
    <BOUNDS type="Node" left="4140" top="4035" width="100" height="100">
    </BOUNDS>
@@ -361,7 +361,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6090" top="3420" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.35,0.25,0.75">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.35,0.25,0.5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -580,7 +580,7 @@
    <PIN pinname="Query" visible="1">
    </PIN>
    </NODE>
-   <NODE id="16" border="1" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="0">
+   <NODE id="16" border="1" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="1">
    <BOUNDS type="Window" left="16260" top="1710" width="10755" height="11085">
    </BOUNDS>
    <BOUNDS type="Node" left="630" top="9525" width="100" height="100">
@@ -634,7 +634,7 @@
    <PIN pinname="brightness" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="46" dstpinname="Input" linkstyle="VHV">
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="46" dstpinname="Input" linkstyle="Bezier">
    <LINKPOINT x="3270" y="6615">
    </LINKPOINT>
    <LINKPOINT x="2625" y="6615">
@@ -660,7 +660,7 @@
    <LINKPOINT x="1695" y="6608">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="46" dstpinname="HighRes" linkstyle="VHV">
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="46" dstpinname="HighRes" linkstyle="Bezier">
    <LINKPOINT x="1350" y="5873">
    </LINKPOINT>
    <LINKPOINT x="1350" y="5873">
@@ -772,19 +772,19 @@
    <PIN pinname="Set" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="33" srcpinname="Output" dstnodeid="51" dstpinname="Geometry" linkstyle="VHV">
+   <LINK srcnodeid="33" srcpinname="Output" dstnodeid="51" dstpinname="Geometry" linkstyle="Bezier">
    <LINKPOINT x="1620" y="4620">
    </LINKPOINT>
    <LINKPOINT x="1350" y="4620">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="58" srcpinname="Output" dstnodeid="51" dstpinname="Transform In" linkstyle="VHV">
+   <LINK srcnodeid="58" srcpinname="Output" dstnodeid="51" dstpinname="Transform In" linkstyle="Bezier">
    <LINKPOINT x="4125" y="5595">
    </LINKPOINT>
-   <LINKPOINT x="1725" y="5595">
+   <LINKPOINT x="2070" y="5595">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="8" srcpinname="Render State" dstnodeid="51" dstpinname="Render State" linkstyle="VHV">
+   <LINK srcnodeid="8" srcpinname="Render State" dstnodeid="51" dstpinname="Render State" linkstyle="Bezier">
    <LINKPOINT x="660" y="5843">
    </LINKPOINT>
    <LINKPOINT x="660" y="5843">
@@ -798,22 +798,22 @@
    </LINK>
    <LINK srcnodeid="51" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="38" srcpinname="View" dstnodeid="51" dstpinname="View" linkstyle="VHV">
+   <LINK srcnodeid="38" srcpinname="View" dstnodeid="51" dstpinname="View" linkstyle="Bezier">
    <LINKPOINT x="6075" y="5835">
    </LINKPOINT>
-   <LINKPOINT x="2070" y="5835">
+   <LINKPOINT x="3465" y="5835">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="38" srcpinname="Projection" dstnodeid="51" dstpinname="Projection" linkstyle="VHV">
+   <LINK srcnodeid="38" srcpinname="Projection" dstnodeid="51" dstpinname="Projection" linkstyle="Bezier">
    <LINKPOINT x="6225" y="5835">
    </LINKPOINT>
-   <LINKPOINT x="2415" y="5835">
+   <LINKPOINT x="3810" y="5835">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="38" srcpinname="Inverse View" dstnodeid="51" dstpinname="tVI" linkstyle="VHV">
+   <LINK srcnodeid="38" srcpinname="Inverse View" dstnodeid="51" dstpinname="tVI" linkstyle="Bezier">
    <LINKPOINT x="6540" y="5835">
    </LINKPOINT>
-   <LINKPOINT x="3120" y="5835">
+   <LINKPOINT x="4155" y="5835">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="51" srcpinname="Depth Buffer" dstnodeid="46" dstpinname="DepthHighRes" linkstyle="Bezier">
@@ -822,34 +822,34 @@
    <LINKPOINT x="1545" y="6945">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="51" dstpinname="Default SizeXY" linkstyle="VHV">
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="51" dstpinname="Default SizeXY" linkstyle="Bezier">
    <LINKPOINT x="1335" y="5093">
    </LINKPOINT>
    <LINKPOINT x="1005" y="5093">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="63" srcpinname="Output" dstnodeid="51" dstpinname="ObjectCount" linkstyle="VHV">
+   <LINK srcnodeid="63" srcpinname="Output" dstnodeid="51" dstpinname="ObjectCount" linkstyle="Bezier">
    <LINKPOINT x="690" y="5595">
    </LINKPOINT>
-   <LINKPOINT x="2715" y="5595">
+   <LINKPOINT x="1650" y="5595">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="51" dstpinname="LightSetup" linkstyle="VHV">
-   <LINKPOINT x="3315" y="5835">
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="51" dstpinname="LightSetup" linkstyle="Bezier">
+   <LINKPOINT x="3255" y="5835">
    </LINKPOINT>
-   <LINKPOINT x="3735" y="5835">
+   <LINKPOINT x="2775" y="5835">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="51" dstpinname="MaterialSetup" linkstyle="VHV">
+   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="51" dstpinname="MaterialSetup" linkstyle="Bezier">
    <LINKPOINT x="1620" y="5835">
    </LINKPOINT>
-   <LINKPOINT x="3405" y="5835">
+   <LINKPOINT x="2355" y="5835">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="6" srcpinname="Sampler" dstnodeid="51" dstpinname="g_samLinear" linkstyle="VHV">
+   <LINK srcnodeid="6" srcpinname="Sampler" dstnodeid="51" dstpinname="g_samLinear" linkstyle="Bezier">
    <LINKPOINT x="4770" y="5835">
    </LINKPOINT>
-   <LINKPOINT x="4155" y="5835">
+   <LINKPOINT x="3120" y="5835">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
