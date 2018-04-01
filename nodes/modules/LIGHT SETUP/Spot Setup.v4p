@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.35">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.43">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.08">
    </PIN>
    <PIN pinname="Show Connections" slicecount="1" values="0">
    </PIN>
@@ -115,7 +115,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.2">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.12">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0.15">
    </PIN>
@@ -379,7 +379,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="10590" top="3555" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -433,7 +433,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13830" top="420" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -443,7 +443,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -483,14 +483,14 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="ShadowType" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="246" srcpinname="Y Output Value" dstnodeid="296" dstpinname="LightBleedingLimit">
    </LINK>
    <LINK srcnodeid="247" srcpinname="Y Output Value" dstnodeid="296" dstpinname="ShadowRes">
    </LINK>
    <LINK srcnodeid="279" srcpinname="Y Output Value" dstnodeid="296" dstpinname="Enabled">
-   </LINK>
-   <LINK srcnodeid="240" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="248" srcpinname="Y Output Value" dstnodeid="296" dstpinname="ShadowBlurWidth">
    </LINK>
@@ -655,5 +655,27 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="319" srcpinname="Y Output Value" dstnodeid="297" dstpinname="LightSize">
+   </LINK>
+   <LINK srcnodeid="240" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="320">
+   <BOUNDS type="Box" left="4815" top="2430" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4815" top="2430" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0.38,0.29">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="320" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
