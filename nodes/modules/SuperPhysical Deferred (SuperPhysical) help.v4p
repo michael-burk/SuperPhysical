@@ -732,6 +732,8 @@
    </LINK>
    <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
    </LINK>
+   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
+   </LINK>
    <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
@@ -851,7 +853,5 @@
    </LINKPOINT>
    <LINKPOINT x="3120" y="5835">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
    </LINK>
    </PATCH>

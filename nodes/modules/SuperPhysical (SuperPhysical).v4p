@@ -285,9 +285,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="371">
-   <BOUNDS type="Box" left="1230" top="7575" width="795" height="480">
+   <BOUNDS type="Box" left="1215" top="7845" width="795" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="1230" top="7575" width="0" height="0">
+   <BOUNDS type="Node" left="1215" top="7845" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="2" visible="1" values="1024,1024">
    </PIN>
@@ -967,9 +967,9 @@
    <LINK srcnodeid="392" srcpinname="Output Node" dstnodeid="403" dstpinname="GBufferPos">
    </LINK>
    <LINK srcnodeid="371" srcpinname="Y Output Value" dstnodeid="403" dstpinname="Default SizeXY" linkstyle="Bezier">
-   <LINKPOINT x="1275" y="9758">
+   <LINKPOINT x="1265" y="9938">
    </LINKPOINT>
-   <LINKPOINT x="2895" y="9758">
+   <LINKPOINT x="2890" y="9848">
    </LINKPOINT>
    </LINK>
    <NODE id="354" systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden">
@@ -1209,9 +1209,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="371" srcpinname="Y Output Value" dstnodeid="386" dstpinname="Texture SizeXY" linkstyle="Bezier">
-   <LINKPOINT x="1290" y="8303">
+   <LINKPOINT x="1280" y="8483">
    </LINKPOINT>
-   <LINKPOINT x="1815" y="8303">
+   <LINKPOINT x="1810" y="8393">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="461">
@@ -1367,5 +1367,25 @@
    <LINK srcnodeid="465" srcpinname="Output" dstnodeid="463" dstpinname="Data">
    </LINK>
    <LINK srcnodeid="425" srcpinname="Y Output Value" dstnodeid="465" dstpinname="Select">
+   </LINK>
+   <NODE id="466" nodename="IOBox (Enumerations)" componentmode="InABox" systemname="IOBox (Enumerations)">
+   <PIN pinname="Input Enum" slicecount="3" visible="1" values="R32G32B32A32_Float,R32G32B32A32_Float,R32G32_UInt">
+   </PIN>
+   <BOUNDS type="Box" left="720" top="6840" width="1800" height="675">
+   </BOUNDS>
+   <BOUNDS type="Node" left="720" top="6840" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="R32G32B32A32_Float">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="466" srcpinname="Output Enum" dstnodeid="386" dstpinname="Target Format">
    </LINK>
    </PATCH>

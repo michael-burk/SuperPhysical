@@ -7,7 +7,7 @@ struct gBuffer{
 	
 	float4 pos : COLOR0;
 	float4 norm : COLOR1;
-	float4 uv : COLOR2;
+	float2 uv : COLOR2;
 	
 };
 
@@ -16,7 +16,7 @@ struct vsInput
 	uint ii : SV_InstanceID;
     float4 posObject : POSITION;
 	float3 norm : NORMAL;
-	float4 uv: TEXCOORD0;
+	float2 uv: TEXCOORD0;
 };
 
 struct psInput
@@ -25,7 +25,7 @@ struct psInput
     float4 posScreen : SV_Position;
 	float4 posW : POSW;
 	float3 norm : NORMAL;
-	float4 uv: TEXCOORD0;
+	float2 uv: TEXCOORD0;
 };
 
 
