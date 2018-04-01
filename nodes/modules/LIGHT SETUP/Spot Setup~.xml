@@ -115,7 +115,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.12">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.15">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0.15">
    </PIN>
@@ -656,6 +656,6 @@
    </NODE>
    <LINK srcnodeid="319" srcpinname="Y Output Value" dstnodeid="297" dstpinname="LightSize">
    </LINK>
-   <LINK srcnodeid="241" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
+   <LINK srcnodeid="240" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
    </LINK>
    </PATCH>

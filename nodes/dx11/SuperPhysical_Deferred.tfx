@@ -257,10 +257,10 @@ float4 doLighting(psInput input) : SV_Target
 	
 	#else
 		
-		roughnessT = min(max(roughness[texID],.01),.95);
+		roughnessT = min(max(Material[texID].roughness,.01),.95);
 		aoT = 1;
-		metallicT = metallic[texID];
-		albedo = saturate(Color[texID]);
+		metallicT = Material[texID].metallic;
+		albedo = saturate( Material[texID].Color);
 		
 	
 	
@@ -458,7 +458,7 @@ float4 doLighting(psInput input) : SV_Target
 		finalLight.rgb += saturate(Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb);
 	
 	#else
-		finalLight.rgb += saturate(Emissive[texID].rgb);
+		finalLight.rgb += saturate( Material[texID].Emissive.rgb);
 	#endif
 	
 	#ifdef doToneMap

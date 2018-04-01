@@ -129,7 +129,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7410" top="6780" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -143,7 +143,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
@@ -656,6 +656,6 @@
    </NODE>
    <LINK srcnodeid="319" srcpinname="Y Output Value" dstnodeid="297" dstpinname="LightSize">
    </LINK>
-   <LINK srcnodeid="241" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
+   <LINK srcnodeid="240" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
    </LINK>
    </PATCH>
