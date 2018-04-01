@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" Authors="vvvv group" LicenseUrl="https://www.gnu.org/licenses/lgpl.html" ProjectUrl="http://vvvv.org/" Version="0.77">
+<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" Authors="vvvv group" LicenseUrl="https://www.gnu.org/licenses/lgpl.html" ProjectUrl="http://vvvv.org/" Version="0.79">
   <NugetDependency Id="RKFCmk1Lg5EP3I4IQegLTw" Location="VL.CoreLib" Version="0.35.21" />
   <NugetDependency Id="U2JwHqMJLyGLDs97lM6eZ6" Location="VL.CoreLib.VVVV" Version="0.35.21" />
   <NugetDependency Id="Q18ZLENm9gzPhBnFnztPMP" Location="VL.Core" Version="0.35.21" />
@@ -9909,7 +9909,7 @@
               </Node>
               <Node Bounds="348,338,1446,402" Id="Ilx2IWPDf8yO88CNzRwIgV">
                 <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
-                  <Choice Kind="ApplicationStatefulRegion" Name="Cache" />
+                  <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                   <FullNameCategoryReference ID="Primitive" />
                 </p:NodeReference>
                 <Pin Id="EeAyZYjceZ4O9hkEBvuH5d" Name="Force" Kind="InputPin" />
@@ -10190,9 +10190,22 @@
             </Canvas>
             <Patch Id="KqyUA9tNUuTQNyGq65yQjn" Name="Create" />
             <Patch Id="OqBtJ3ZpZLXPifTNEkVs81" Name="Update">
-              <Pin Id="Lzt8H7aMDO8MUnO0DG2OzY" Name="Material" Kind="InputPin" Bounds="1046,1962" />
+              <Pin Id="Lzt8H7aMDO8MUnO0DG2OzY" Name="Material" Kind="InputPin" Bounds="1046,1962">
+                <p:TypeAnnotation LastCategoryFullName="Collections" LastSymbolSource="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="Sequence" />
+                  <p:TypeArguments>
+                    <TypeReference>
+                      <Choice Kind="TypeFlag" Name="MaterialSettings" />
+                    </TypeReference>
+                  </p:TypeArguments>
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="KzTjTWBnMThNYPgizEbv2I" Name="Output" Kind="OutputPin" Bounds="1262,2153" />
-              <Pin Id="ATsvj1aAwBOPq9JqWs09zJ" Name="LightSetup" Kind="InputPin" Bounds="1955,1824" />
+              <Pin Id="ATsvj1aAwBOPq9JqWs09zJ" Name="LightSetup" Kind="InputPin" Bounds="1955,1824">
+                <p:TypeAnnotation LastCategoryFullName="VVVV.SuperPhysical.Light" LastSymbolSource="VVVV.Value.SuperPhysical.vl">
+                  <Choice Kind="TypeFlag" Name="LightSetup" />
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="J31QSJXRIxIL5XN3k0ClNj" Name="Update" Kind="InputPin" DefaultValue="true">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />

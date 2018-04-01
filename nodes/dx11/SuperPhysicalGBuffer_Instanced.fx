@@ -3,11 +3,6 @@
 //@tags: color
 //@credits: 
 
-uint materialID;
-
-int IntanceStartIndex = 0;
-StructuredBuffer<float4x4> world;
-
 struct gBuffer{
 	
 	float4 pos : COLOR0;
@@ -34,8 +29,10 @@ struct psInput
 };
 
 
-cbuffer cbPerDraw : register(b0)
+cbuffer cbPerObj : register( b1 )
 {
+	uint materialID;
+	int IntanceStartIndex = 0;
 	float4x4 tVP : LAYERVIEWPROJECTION;
 	float4x4 tWI : WORLDINVERSE;
 	float4x4 tW : WORLD;
@@ -43,9 +40,11 @@ cbuffer cbPerDraw : register(b0)
 	float4x4 tP : PROJECTION;
 };
 
+StructuredBuffer<float4x4> world;
 
 cbuffer cbTextureData : register(b2)
 {
+	
 	float4x4 tTex <string uiname="Texture Transform"; bool uvspace=true; >;
 };
 

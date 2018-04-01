@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="30" scrolly="30">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1185" top="750" width="11025" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -112,16 +112,6 @@
    </LINK>
    <PACK Name="dx11" Version="1.2">
    </PACK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="64">
-   <BOUNDS type="Box" left="1380" top="5520" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1380" top="5520" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="LightSetup">
-   </PIN>
-   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="86">
    <BOUNDS type="Node" left="7860" top="2745" width="100" height="100">
    </BOUNDS>
@@ -290,8 +280,6 @@
    </LINK>
    <LINK srcnodeid="186" srcpinname="Output" dstnodeid="42" dstpinname="Color Input">
    </LINK>
-   <LINK srcnodeid="181" srcpinname="LightSetup" dstnodeid="64" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="181" dstpinname="GlobalSettings">
    <LINKPOINT x="1395" y="5100">
    </LINKPOINT>
@@ -303,5 +291,15 @@
    <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
    </LINK>
    <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="188">
+   <BOUNDS type="Box" left="1455" top="5640" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1455" top="5640" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="LightSetup">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="181" srcpinname="LightSetup" dstnodeid="188" dstpinname="Input Node">
    </LINK>
    </PATCH>
