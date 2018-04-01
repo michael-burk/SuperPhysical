@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" systemname="SuperPhysical Deferred (SuperPhysical) help" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="360" top="0" width="11415" height="13005">
+   <BOUNDS type="Window" left="2190" top="375" width="11415" height="13005">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -203,7 +203,7 @@
    </PIN>
    </NODE>
    <NODE id="57" systemname="Transform (Transform 3d Vector)" nodename="Transform (Transform 3d Vector)" componentmode="Hidden">
-   <PIN pinname="Scale XYZ" slicecount="3" values="0.02,0.02,0.02">
+   <PIN pinname="Scale XYZ" slicecount="3" values="0.04,0.04,0.04">
    </PIN>
    <BOUNDS type="Node" left="4590" top="3435" width="100" height="100">
    </BOUNDS>
@@ -215,39 +215,11 @@
    <NODE id="56" componentmode="Hidden" systemname="RandomSpread (Spreads 3d)" filename="%VVVV%\lib\nodes\modules\2D\RandomSpread (Spreads 3d).v4p" nodename="RandomSpread (Spreads 3d)">
    <PIN pinname="Spread Count" slicecount="1" visible="1" values="1000">
    </PIN>
-   <PIN pinname="SizeXYZ" slicecount="3" values="0.17,0.17,0.17">
+   <PIN pinname="SizeXYZ" slicecount="3" values="0.2,0.2,0.2">
    </PIN>
    <BOUNDS type="Node" left="4800" top="3000" width="100" height="100">
    </BOUNDS>
    <PIN pinname="XYZ" visible="1">
-   </PIN>
-   </NODE>
-   <NODE id="54" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="2745" top="1005" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="2745" top="1005" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="15">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <NODE id="53" systemname="Sphere (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Sphere (DX11.Geometry)" componentmode="Hidden">
-   <BOUNDS type="Node" left="2070" top="1485" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2070" top="1485" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Geometry Out" visible="1">
-   </PIN>
-   <PIN pinname="Resolution Y" visible="1">
-   </PIN>
-   <PIN pinname="Resolution X" visible="1">
    </PIN>
    </NODE>
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
@@ -317,7 +289,7 @@
    </PIN>
    </NODE>
    <NODE id="38" systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.77.4-g925bcd9949\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden">
-   <PIN pinname="Initial Longitude" slicecount="1" visible="1" values="0">
+   <PIN pinname="Initial Longitude" slicecount="1" visible="1" values="0.5">
    </PIN>
    <BOUNDS type="Node" left="6360" top="4335" width="100" height="100">
    </BOUNDS>
@@ -522,8 +494,6 @@
    <PIN pinname="Size" slicecount="1" visible="1" values="14">
    </PIN>
    </NODE>
-   <LINK srcnodeid="53" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 1">
-   </LINK>
    <LINK srcnodeid="30" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 3">
    </LINK>
    <LINK srcnodeid="43" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 2">
@@ -581,10 +551,6 @@
    </LINKPOINT>
    <LINKPOINT x="6495" y="5368">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="54" srcpinname="Y Output Value" dstnodeid="53" dstpinname="Resolution X">
-   </LINK>
-   <LINK srcnodeid="54" srcpinname="Y Output Value" dstnodeid="53" dstpinname="Resolution Y">
    </LINK>
    <LINK srcnodeid="56" srcpinname="XYZ" dstnodeid="57" dstpinname="Translate XYZ">
    </LINK>
@@ -708,10 +674,70 @@
    </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="46" dstpinname="HighRes" linkstyle="PolyLine">
    </LINK>
-   <NODE id="51" componentmode="InAWindow" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
+   <NODE systemname="Cons (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Spreads)" componentmode="Hidden" id="63">
+   <BOUNDS type="Node" left="945" top="3765" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="945" top="3765" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Input 4" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="64">
+   <BOUNDS type="Box" left="5595" top="2535" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5595" top="2535" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="100">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="64" srcpinname="Y Output Value" dstnodeid="56" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="64" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="65">
+   <BOUNDS type="Box" left="1185" top="3345" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1185" top="3345" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="65" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="65" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="65" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Input 4">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
+   </LINK>
+   <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
-   <BOUNDS type="Window" left="825" top="930" width="22020" height="14145">
+   <BOUNDS type="Window" left="825" top="930" width="22155" height="14145">
    </BOUNDS>
    <PIN pinname="Default SizeXY" visible="1" slicecount="2" values="1024,1024">
    </PIN>
@@ -795,64 +821,6 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="51" dstpinname="Default SizeXY" linkstyle="PolyLine">
-   </LINK>
-   <NODE systemname="Cons (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Spreads)" componentmode="Hidden" id="63">
-   <BOUNDS type="Node" left="360" top="3990" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="360" top="3990" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Input Count" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1">
-   </PIN>
-   <PIN pinname="Input 3" visible="1">
-   </PIN>
-   <PIN pinname="Input 4" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="64">
-   <BOUNDS type="Box" left="5595" top="2535" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="5595" top="2535" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1000">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="64" srcpinname="Y Output Value" dstnodeid="56" dstpinname="Spread Count">
-   </LINK>
-   <LINK srcnodeid="64" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Input 1">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="65">
-   <BOUNDS type="Box" left="600" top="3570" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="600" top="3570" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="65" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="65" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Input 3">
-   </LINK>
-   <LINK srcnodeid="65" srcpinname="Y Output Value" dstnodeid="63" dstpinname="Input 4">
    </LINK>
    <LINK srcnodeid="63" srcpinname="Output" dstnodeid="51" dstpinname="ObjectCount">
    </LINK>

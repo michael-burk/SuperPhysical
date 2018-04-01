@@ -271,7 +271,7 @@
     ************************ GetBuffer (Light) ************************
 
 -->
-        <Node Name="GetBuffer (Light)" Bounds="1381,2744,520,1063" Id="U9ZNR1KQ7ZNPGkY7GsniuR">
+        <Node Name="GetBuffer (Light)" Bounds="1381,2744,519,1063" Id="U9ZNR1KQ7ZNPGkY7GsniuR">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />

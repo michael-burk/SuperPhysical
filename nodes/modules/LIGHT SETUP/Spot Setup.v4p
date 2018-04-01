@@ -656,8 +656,6 @@
    </NODE>
    <LINK srcnodeid="319" srcpinname="Y Output Value" dstnodeid="297" dstpinname="LightSize">
    </LINK>
-   <LINK srcnodeid="240" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="320">
    <BOUNDS type="Box" left="4815" top="2430" width="795" height="480">
    </BOUNDS>
@@ -677,5 +675,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="320" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="241" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
    </LINK>
    </PATCH>

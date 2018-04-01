@@ -298,10 +298,10 @@
    </LINK>
    <LINK srcnodeid="187" srcpinname="Output" dstnodeid="181" dstpinname="IBLSettings">
    </LINK>
-   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
-   </LINK>
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="181" dstpinname="PointLightSettings">
    </LINK>
    <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
+   </LINK>
+   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
    </LINK>
    </PATCH>
