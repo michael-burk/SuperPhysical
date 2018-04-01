@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="1650" top="2025" width="16725" height="11580">
+   <BOUNDS type="Window" left="0" top="315" width="17775" height="11580">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -91,65 +91,65 @@
    </PIN>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d.Pooled)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d.Pooled)" componentmode="Hidden" id="42">
-   <BOUNDS type="Node" left="1500" top="1725" width="100" height="100">
+   <BOUNDS type="Node" left="1500" top="2175" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="3" values="..\..\..\assets\materials\albedo\Copper-scuffed_basecolor-boosted.png,..\..\..\assets\materials\albedo\cratered-rock-albedo.png,..\..\..\assets\materials\albedo\mahogfloor_basecolor.png">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="1500" top="1725">
+   <BOUNDS type="Box" left="1500" top="2175">
    </BOUNDS>
    <PIN pinname="Reload" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d.Pooled)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d.Pooled)" componentmode="Hidden" id="39">
-   <BOUNDS type="Node" left="3660" top="1725" width="100" height="100">
+   <BOUNDS type="Node" left="3660" top="2175" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="3" values="..\..\..\assets\materials\normal\Copper-scuffed_normal.png,..\..\..\assets\materials\normal\cratered-rock-normal.png,..\..\..\assets\materials\normal\mahogfloor_normal.png">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="3660" top="1725">
+   <BOUNDS type="Box" left="3660" top="2175">
    </BOUNDS>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d.Pooled)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d.Pooled)" componentmode="Hidden" id="36">
-   <BOUNDS type="Node" left="4710" top="1725" width="100" height="100">
+   <BOUNDS type="Node" left="4710" top="2175" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="3" values="..\..\..\assets\materials\heightmap\Copper-scuffed_height.png,..\..\..\assets\materials\heightmap\cratered-rock-height.png,..\..\..\assets\materials\heightmap\mahogfloor_Height.png">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="4710" top="1725">
+   <BOUNDS type="Box" left="4710" top="2175">
    </BOUNDS>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d.Pooled)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d.Pooled)" componentmode="Hidden" id="33">
-   <BOUNDS type="Node" left="5790" top="1725" width="100" height="100">
+   <BOUNDS type="Node" left="5790" top="2175" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="3" values="..\..\..\assets\materials\roughness\Copper-scuffed_roughness.png,..\..\..\assets\materials\roughness\cratered-rock-roughness.png,..\..\..\assets\materials\roughness\mahogfloor_roughness.png">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="5790" top="1725">
+   <BOUNDS type="Box" left="5790" top="2175">
    </BOUNDS>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d.Pooled)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d.Pooled)" componentmode="Hidden" id="30">
-   <BOUNDS type="Node" left="6960" top="1725" width="100" height="100">
+   <BOUNDS type="Node" left="6840" top="2175" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="3" values="..\..\..\assets\materials\metallic\Copper-scuffed_metallic.png,..\..\..\assets\materials\metallic\cratered-rock-metalness.png,..\..\..\assets\materials\metallic\mahogfloor_metallic.png">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="6960" top="1725">
+   <BOUNDS type="Box" left="6840" top="2175">
    </BOUNDS>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d.Pooled)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d.Pooled)" componentmode="Hidden" id="27">
-   <BOUNDS type="Node" left="8025" top="1725" width="100" height="100">
+   <BOUNDS type="Node" left="7905" top="2175" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="3" values="..\..\..\assets\materials\ao\Copper-scuffed_ao.png,..\..\..\assets\materials\ao\cratered-rock-ao.png,..\..\..\assets\materials\ao\mahogfloor_AO.png">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="8025" top="1725">
+   <BOUNDS type="Box" left="7905" top="2175">
    </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="53" systemname="IOBox (Value Advanced)">
@@ -209,9 +209,9 @@
    <NODE id="61" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)" hiddenwhenlocked="0" managers="">
    <PIN pinname="Descriptive Name" slicecount="1" pintype="Configuration" values="noTile">
    </PIN>
-   <BOUNDS type="Box" left="9165" top="3135" width="480" height="480">
+   <BOUNDS type="Box" left="10080" top="2955" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="9165" top="3135" width="0" height="0">
+   <BOUNDS type="Node" left="10080" top="2955" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" pintype="Input" values="0">
    </PIN>
@@ -349,11 +349,11 @@
    <LINK srcnodeid="77" srcpinname="Output" dstnodeid="73" dstpinname="Input">
    </LINK>
    <NODE id="58" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="11700" top="1830" width="900" height="780">
+   <BOUNDS type="Box" left="11760" top="1830" width="900" height="780">
    </BOUNDS>
-   <BOUNDS type="Node" left="11700" top="1830" width="0" height="0">
+   <BOUNDS type="Node" left="11760" top="1830" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,1,5,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,2,3,1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -365,9 +365,11 @@
    </PIN>
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
+   <PIN pinname="X Input Value" slicecount="4" values="1,1,1,1">
+   </PIN>
    </NODE>
    <NODE id="56" systemname="Transform (Transform 3d)" nodename="Transform (Transform 3d)" componentmode="Hidden">
-   <BOUNDS type="Node" left="11070" top="3015" width="100" height="100">
+   <BOUNDS type="Node" left="11130" top="3015" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -377,13 +379,19 @@
    </PIN>
    <PIN pinname="ScaleZ" visible="1">
    </PIN>
+   <PIN pinname="Yaw" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Pitch" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="TranslateX" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="58" srcpinname="Y Output Value" dstnodeid="56" dstpinname="ScaleX">
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="81">
-   <BOUNDS type="Node" left="11325" top="3420" width="1710" height="270">
+   <BOUNDS type="Node" left="11385" top="3420" width="1710" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="11325" top="3420" width="1710" height="270">
+   <BOUNDS type="Box" left="11385" top="3420" width="1710" height="270">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|transform 3D for POM|">
    </PIN>
@@ -411,11 +419,11 @@
    </PIN>
    </NODE>
    <NODE id="104" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="12690" top="1815" width="900" height="780">
+   <BOUNDS type="Box" left="12750" top="1815" width="900" height="780">
    </BOUNDS>
-   <BOUNDS type="Node" left="12690" top="1815" width="0" height="0">
+   <BOUNDS type="Node" left="12750" top="1815" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,1,2,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,2,1,1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -426,14 +434,16 @@
    <PIN pinname="Rows" slicecount="1" values="4">
    </PIN>
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="4" values="1,1,1,1">
    </PIN>
    </NODE>
    <NODE id="105" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="13635" top="1815" width="900" height="780">
+   <BOUNDS type="Box" left="13695" top="1815" width="900" height="780">
    </BOUNDS>
-   <BOUNDS type="Node" left="13635" top="1815" width="0" height="0">
+   <BOUNDS type="Node" left="13695" top="1815" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,1,2,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,2,1,1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -444,6 +454,8 @@
    <PIN pinname="Rows" slicecount="1" values="4">
    </PIN>
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="4" values="1,1,1,1">
    </PIN>
    </NODE>
    <LINK srcnodeid="104" srcpinname="Y Output Value" dstnodeid="56" dstpinname="ScaleY">
@@ -453,9 +465,9 @@
    <PACK Name="dx11" Version="1.2">
    </PACK>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="156">
-   <BOUNDS type="Node" left="10365" top="7065" width="100" height="100">
+   <BOUNDS type="Node" left="10365" top="6915" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="10365" top="7065" width="795" height="720">
+   <BOUNDS type="Box" left="10365" top="6915" width="795" height="720">
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
@@ -567,9 +579,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="176">
-   <BOUNDS type="Box" left="6975" top="3255" width="1005" height="240">
+   <BOUNDS type="Box" left="6855" top="3255" width="1005" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="6975" top="3255" width="0" height="0">
+   <BOUNDS type="Node" left="6855" top="3255" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="4" visible="1" values="734322400,734323168,734316256,736557024">
    </PIN>
@@ -585,9 +597,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="177">
-   <BOUNDS type="Box" left="8025" top="3255" width="1035" height="240">
+   <BOUNDS type="Box" left="7905" top="3255" width="1035" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8025" top="3255" width="0" height="0">
+   <BOUNDS type="Node" left="7905" top="3255" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="4" visible="1" values="2058984032,2059004768,2059006304,2059038560">
    </PIN>
@@ -609,7 +621,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5145" top="7890" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.01483,0.01483,0.01483,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Emissive">
    </PIN>
@@ -619,9 +631,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="205">
-   <BOUNDS type="Box" left="8970" top="2625" width="795" height="240">
+   <BOUNDS type="Box" left="9000" top="2775" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8970" top="2625" width="0" height="0">
+   <BOUNDS type="Node" left="9000" top="2775" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -639,9 +651,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="219">
-   <BOUNDS type="Box" left="9315" top="7140" width="480" height="480">
+   <BOUNDS type="Box" left="9525" top="7140" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="9315" top="7140" width="0" height="0">
+   <BOUNDS type="Node" left="9525" top="7140" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -663,7 +675,7 @@
    </PIN>
    </NODE>
    <NODE id="186" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8355" top="7455" width="795" height="240">
+   <BOUNDS type="Box" left="8355" top="7455" width="1020" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="8355" top="7455" width="0" height="0">
    </BOUNDS>
@@ -875,7 +887,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Iridescence (SuperPhysical Material)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Iridescenec (SuperPhysical Material)" componentmode="Hidden" id="268">
-   <BOUNDS type="Node" left="8325" top="7995" width="100" height="100">
+   <BOUNDS type="Node" left="8325" top="7995" width="1245" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="8325" top="7995">
    </BOUNDS>
@@ -887,9 +899,9 @@
    <LINK srcnodeid="186" srcpinname="Y Output Value" dstnodeid="268" dstpinname="IridescenceMap">
    </LINK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="165">
-   <BOUNDS type="Node" left="3660" top="2475" width="100" height="100">
+   <BOUNDS type="Node" left="3660" top="2775" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3660" top="2475" width="3000" height="3000">
+   <BOUNDS type="Box" left="3660" top="2775" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -901,9 +913,9 @@
    <LINK srcnodeid="165" srcpinname="Pointer" dstnodeid="173" dstpinname="Y Input Value">
    </LINK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="166">
-   <BOUNDS type="Node" left="4710" top="2475" width="100" height="100">
+   <BOUNDS type="Node" left="4710" top="2775" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4710" top="2475" width="3000" height="3000">
+   <BOUNDS type="Box" left="4710" top="2775" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -913,9 +925,9 @@
    </PIN>
    </NODE>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="167">
-   <BOUNDS type="Node" left="5790" top="2475" width="100" height="100">
+   <BOUNDS type="Node" left="5790" top="2775" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="5790" top="2475" width="3000" height="3000">
+   <BOUNDS type="Box" left="5790" top="2775" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -941,9 +953,9 @@
    <LINK srcnodeid="74" srcpinname="Texture Out" dstnodeid="185" dstpinname="Texture In">
    </LINK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="258">
-   <BOUNDS type="Node" left="1500" top="2475" width="100" height="100">
+   <BOUNDS type="Node" left="1500" top="2775" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1500" top="2475" width="3000" height="3000">
+   <BOUNDS type="Box" left="1500" top="2775" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Apply" visible="1" slicecount="1" values="1">
    </PIN>
@@ -953,9 +965,9 @@
    </PIN>
    </NODE>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="261">
-   <BOUNDS type="Node" left="8025" top="2475" width="100" height="100">
+   <BOUNDS type="Node" left="7905" top="2775" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="8025" top="2475" width="3000" height="3000">
+   <BOUNDS type="Box" left="7905" top="2775" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Apply" visible="1" slicecount="1" values="1">
    </PIN>
@@ -975,9 +987,9 @@
    <NODE id="272" systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <PIN pinname="Texture In" visible="1" slicecount="1" pintype="Input" values="||">
    </PIN>
-   <BOUNDS type="Node" left="6975" top="2460" width="100" height="100">
+   <BOUNDS type="Node" left="6855" top="2775" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="6975" top="2460" width="3000" height="3000">
+   <BOUNDS type="Box" left="6855" top="2775" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Apply" slicecount="1" visible="1" pintype="Input" values="1">
    </PIN>
@@ -1007,7 +1019,7 @@
    <LINK srcnodeid="268" srcpinname="Output" dstnodeid="267" dstpinname="Iridescence">
    </LINK>
    <NODE systemname="ControlTextures (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="ControlTextures (SuperPhysical Material)" componentmode="Hidden" id="273">
-   <BOUNDS type="Node" left="1515" top="3855" width="9630" height="270">
+   <BOUNDS type="Node" left="1515" top="3855" width="10755" height="270">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -1015,7 +1027,7 @@
    </PIN>
    <PIN pinname="Bumpiness" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="useTex" visible="1" slicecount="1" values="1">
+   <PIN pinname="useTex" visible="1" slicecount="4" values="1,1,1,0">
    </PIN>
    </NODE>
    <LINK srcnodeid="171" srcpinname="Y Output Value" dstnodeid="273" dstpinname="AlbedoTex">
@@ -1045,9 +1057,9 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="DynamicTexture (DX11.Texture 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicTexture (DX11.Texture 2d)" componentmode="Hidden" id="278">
-   <BOUNDS type="Node" left="2565" top="1260" width="100" height="100">
+   <BOUNDS type="Node" left="2565" top="1710" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2565" top="1260">
+   <BOUNDS type="Box" left="2565" top="1710">
    </BOUNDS>
    <PIN pinname="Height" visible="1">
    </PIN>
@@ -1061,9 +1073,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="279">
-   <BOUNDS type="Box" left="2550" top="720" width="795" height="240">
+   <BOUNDS type="Box" left="2550" top="1170" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="2550" top="720" width="0" height="0">
+   <BOUNDS type="Node" left="2550" top="1170" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -1111,9 +1123,9 @@
    </PIN>
    </NODE>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="281">
-   <BOUNDS type="Node" left="2565" top="2475" width="100" height="100">
+   <BOUNDS type="Node" left="2565" top="2775" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2565" top="2475" width="3000" height="3000">
+   <BOUNDS type="Box" left="2565" top="2775" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
@@ -1124,27 +1136,17 @@
    </LINK>
    <LINK srcnodeid="278" srcpinname="Texture Out" dstnodeid="281" dstpinname="Texture In">
    </LINK>
-   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="283">
-   <BOUNDS type="Node" left="9165" top="720" width="5850" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="9165" top="720" width="5850" height="270">
-   </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|use Tex spreading could be nicer, so that only textures are used that are needed|">
-   </PIN>
-   <PIN pinname="Output String" visible="0">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="MultiLine">
-   </PIN>
-   </NODE>
    <LINK srcnodeid="273" srcpinname="Output" dstnodeid="267" dstpinname="ControlTextures" linkstyle="Bezier">
    <LINKPOINT x="1575" y="6518">
    </LINKPOINT>
    <LINKPOINT x="6735" y="6518">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="280" srcpinname="Y Output Value" dstnodeid="273" dstpinname="useTex">
+   <LINK srcnodeid="280" srcpinname="Y Output Value" dstnodeid="273" dstpinname="useTex" linkstyle="Bezier">
+   <LINKPOINT x="15135" y="3420">
+   </LINKPOINT>
+   <LINKPOINT x="12270" y="3420">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="27" srcpinname="Texture Out" dstnodeid="261" dstpinname="Texture In">
    </LINK>

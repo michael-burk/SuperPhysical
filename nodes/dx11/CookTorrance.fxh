@@ -63,10 +63,10 @@ float3 cookTorrance(float3 V, float3 L, float3 N, float3 albedo, float3 lDiff,
     float3 nominator  = NDF * G * F;
     float denominator = 4 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.001; 
     float3 specular   = nominator / denominator;
-    specular *= lPower[texID];
+    specular *= lPower;
     specular *= iridescenceColor;
 
-    if(refraction[texID]) radiance *= roughness;
+    if(Material[texID].Refraction.x) radiance *= roughness;
                     	
     float NdotL = max(dot(N, L), 0.0);
                     

@@ -1,6 +1,6 @@
-StructuredBuffer <float> fHeightMapScale;
-
-StructuredBuffer <uint> POM_numSamples;
+//StructuredBuffer <float> fHeightMapScale;
+//
+//StructuredBuffer <uint> POM_numSamples;
 
 
 void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID){
@@ -21,13 +21,13 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 //    N = mul( tbn[2], worldToTangentSpace );
 	
     float fParallaxLimit = -length( V.xy ) / V.z;
-    fParallaxLimit *= -fHeightMapScale[texID];  
+    fParallaxLimit *= -Material[texID].fHeightMapScale;  
     
     float2 vOffsetDir = normalize( V.xy );
     float2 vMaxOffset = vOffsetDir * fParallaxLimit;
     
 //    int POM_numSamples = (int)lerp( nMaxSamples, nMinSamples, saturate(-dot( N, V)) );
-    float fStepSize = 1.0 / (float)POM_numSamples[texID];
+    float fStepSize = 1.0 / (float)Material[texID].POMnumSamples;
     
     float2 dx = ddx( texcoord );
     float2 dy = ddy( texcoord );
@@ -44,7 +44,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
     float delta1;
 	float delta2;
 	float ratio;
-    while ( nCurrSample < POM_numSamples[texID] ){    
+    while ( nCurrSample < (float) Material[texID].POMnumSamples ){    
                 
       fCurrSampledHeight = heightMap.SampleGrad( g_samLinear, float3(texcoord + vCurrOffset, texID), dx, dy ).r;
       if ( fCurrSampledHeight > fCurrRayHeight ){
@@ -55,7 +55,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
     
         vCurrOffset = (ratio) * vLastOffset + (1.0-ratio) * vCurrOffset;
     
-        nCurrSample = POM_numSamples[texID] + 1;
+        nCurrSample = Material[texID].POMnumSamples + 1;
       } else {
         nCurrSample++;
     
@@ -71,6 +71,6 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 	texcoord += vCurrOffset;
 	
 	float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
-	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale[texID])),mul(tangentToWorldSpace,(float3x3)tTexInv[texID])).xyz,scale);
+	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-Material[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
 }
 
