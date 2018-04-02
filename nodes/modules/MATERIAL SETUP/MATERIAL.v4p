@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="270" top="585" width="17775" height="11580">
+   <BOUNDS type="Window" left="8430" top="3165" width="17775" height="11580">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -1161,9 +1161,9 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="MaterialSettings">
    </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="267" srcpinname="Output" dstnodeid="284" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="56" srcpinname="Transform Out" dstnodeid="273" dstpinname="tTex">
    </LINK>
    <LINK srcnodeid="273" srcpinname="Output" dstnodeid="267" dstpinname="ControlTextures" linkstyle="Bezier">
@@ -1171,5 +1171,7 @@
    </LINKPOINT>
    <LINKPOINT x="6735" y="6518">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="267" srcpinname="Output" dstnodeid="284" dstpinname="Input Node">
    </LINK>
    </PATCH>

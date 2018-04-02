@@ -1,0 +1,73 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\Set Material IDs (SuperPhysical).v4p" systemname="Set Material IDs (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\Set Material IDs (SuperPhysical).v4p">
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="855" top="1845" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname=".. To [" slicecount="1" visible="1" values="4">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1035" top="1230" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="High" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="855" top="2340" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="855" top="2340" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Select" visible="1" slicecount="4" values="100,1,1,1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Count" dstnodeid="0" dstpinname=".. To [" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <BOUNDS type="Window" left="-1" top="-1" width="3280" height="4210">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
+   </PACK>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="3">
+   <BOUNDS type="Box" left="1035" top="525" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1035" top="525" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="MaterialSettings">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output Node" dstnodeid="1" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4">
+   <BOUNDS type="Box" left="855" top="2820" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="855" top="2820" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Material IDs|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="4" dstpinname="Y Input Value">
+   </LINK>
+   </PATCH>
