@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="0" top="315" width="17775" height="11580">
+   <BOUNDS type="Window" left="270" top="585" width="17775" height="11580">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -49,7 +49,7 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="2" systemname="IOBox (Color)">
-   <BOUNDS type="Box" left="3585" top="7890" width="1455" height="540">
+   <BOUNDS type="Box" left="3585" top="7890" width="1245" height="375">
    </BOUNDS>
    <BOUNDS type="Node" left="3585" top="7890" width="0" height="0">
    </BOUNDS>
@@ -617,7 +617,7 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="204">
-   <BOUNDS type="Box" left="5145" top="7890" width="1740" height="495">
+   <BOUNDS type="Box" left="5145" top="7890" width="1530" height="375">
    </BOUNDS>
    <BOUNDS type="Node" left="5145" top="7890" width="0" height="0">
    </BOUNDS>
