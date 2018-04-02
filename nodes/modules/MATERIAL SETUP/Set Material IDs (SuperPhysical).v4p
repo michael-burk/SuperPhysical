@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\Set Material IDs (SuperPhysical).v4p" systemname="Set Material IDs (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\Set Material IDs (SuperPhysical).v4p">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\Set Material IDs (SuperPhysical).v4p" systemname="Set Material IDs (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\Set Material IDs (SuperPhysical).v4p" scrollx="0" scrolly="0">
    <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="855" top="1845" width="100" height="100">
    </BOUNDS>

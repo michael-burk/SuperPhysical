@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Material Visualizer (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="5565">
-   <BOUNDS type="Window" left="7410" top="2445" width="22470" height="12570">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Material Visualizer (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="1485">
+   <BOUNDS type="Window" left="7290" top="2415" width="22470" height="12570">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -119,7 +119,7 @@
    <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="339">
    <BOUNDS type="Node" left="19380" top="17640" width="555" height="270">
    </BOUNDS>
-   <PIN pinname="Input 1" visible="1" slicecount="8" values="doSSS=1,doPOM=1,doRefraction=1,doIridescence=1,doIBL=1,doGlobalLight=1,doControlTextures=1,doToneMap=1">
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="text">
    </PIN>
    <PIN pinname="Switch" visible="1">
    </PIN>
@@ -201,7 +201,7 @@
    </PIN>
    <PIN pinname="Use Default Size" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="IBL IntensityXY" visible="1" slicecount="2" values="1,2">
+   <PIN pinname="IBL IntensityXY" visible="1" slicecount="2" values="0,0">
    </PIN>
    <PIN pinname="Enabled" visible="1" slicecount="1" values="0">
    </PIN>
@@ -281,7 +281,7 @@
    </PIN>
    <PIN pinname="Emissive">
    </PIN>
-   <PIN pinname="Texture">
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="gamma" slicecount="1" values="1">
    </PIN>
@@ -351,7 +351,7 @@
    </PIN>
    </NODE>
    <NODE systemname="SetAlpha (Color)" nodename="SetAlpha (Color)" componentmode="Hidden" id="420">
-   <BOUNDS type="Node" left="6975" top="17430" width="100" height="100">
+   <BOUNDS type="Node" left="7110" top="17565" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="|0.40777,0.40777,0.40777,1.00000|">
    </PIN>
@@ -433,7 +433,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="12300" top="16200" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="4" values="1,1,1,0">
+   <PIN pinname="Data" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
@@ -521,31 +521,15 @@
    <NODE id="348" systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden">
    <BOUNDS type="Node" left="8400" top="10200" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="4" values="3622008672,3622008672,3622008672,3622008672">
-   </PIN>
-   <PIN pinname="Texture Array Out" visible="1">
-   </PIN>
-   <PIN pinname="Texture Slices Out" visible="1">
-   </PIN>
-   <PIN pinname="Enabled" visible="1">
-   </PIN>
-   </NODE>
-   <NODE id="347" systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden">
-   <BOUNDS type="Node" left="7920" top="9780" width="100" height="100">
-   </BOUNDS>
    <PIN pinname="Pointer" visible="1" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
    <PIN pinname="Texture Slices Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="7920" top="9780">
-   </BOUNDS>
    <PIN pinname="Enabled" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="347" srcpinname="Texture Array Out" dstnodeid="403" dstpinname="Texture" linkstyle="PolyLine">
-   </LINK>
    <LINK srcnodeid="348" srcpinname="Texture Array Out" dstnodeid="403" dstpinname="Emissive" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="349" srcpinname="Texture Array Out" dstnodeid="403" dstpinname="NormalMap" linkstyle="PolyLine">
@@ -656,12 +640,6 @@
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="461" srcpinname="Y Output Value" dstnodeid="347" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="10390" y="9005">
-   </LINKPOINT>
-   <LINKPOINT x="9305" y="9175">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="461" srcpinname="Y Output Value" dstnodeid="348" dstpinname="Enabled" linkstyle="Bezier">
    <LINKPOINT x="10390" y="9230">
    </LINKPOINT>
@@ -715,7 +693,7 @@
    </BOUNDS>
    <PIN pinname="Bang" visible="1">
    </PIN>
-   <PIN pinname="Simulate" slicecount="1" values="0">
+   <PIN pinname="Simulate" slicecount="1" visible="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="462" srcpinname="Bang" dstnodeid="461" dstpinname="Y Input Value">
@@ -799,23 +777,23 @@
    <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="481">
    <BOUNDS type="Node" left="18330" top="5295" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="View" visible="1">
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Projection" visible="1">
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Inverse View" visible="1">
+   <PIN pinname="Inverse View" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Initial FOV" slicecount="1" values="0.04">
    </PIN>
-   <PIN pinname="Initial Distance" slicecount="1" values="8">
+   <PIN pinname="Initial Distance" slicecount="1" values="8.25">
    </PIN>
    <PIN pinname="Initial Latitude" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Initial Longitude" slicecount="1" values="-0.5">
    </PIN>
-   <PIN pinname="View Projection" visible="1">
+   <PIN pinname="View Projection" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="PositionXYZ" visible="1">
+   <PIN pinname="PositionXYZ" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="481" srcpinname="View" dstnodeid="405" dstpinname="Input Node">
@@ -1025,9 +1003,9 @@
    </PIN>
    </NODE>
    <NODE id="492" systemname="ImageBasedLighting (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="ImageBasedLighting (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
-   <PIN pinname="CubeMapIrrradiance" pintype="Input" visible="1">
+   <PIN pinname="CubeMapIrrradiance" pintype="Input" visible="1" slicecount="1" values="185276064">
    </PIN>
-   <PIN pinname="CubeMapRefl" pintype="Input" visible="1">
+   <PIN pinname="CubeMapRefl" pintype="Input" visible="1" slicecount="1" values="185289888">
    </PIN>
    <BOUNDS type="Node" left="13815" top="4425" width="2610" height="270">
    </BOUNDS>
@@ -1041,7 +1019,7 @@
    </PIN>
    <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="IBLSettingsXY" pintype="Input" visible="1">
+   <PIN pinname="IBLSettingsXY" pintype="Input" visible="1" slicecount="2" values="1,2">
    </PIN>
    <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
    </PIN>
@@ -1135,9 +1113,9 @@
    </PIN>
    <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="GlobalReflectionColor" pintype="Input" visible="1">
+   <PIN pinname="GlobalReflectionColor" pintype="Input" visible="1" slicecount="1" values="|0.40777,0.40777,0.40777,1.00000|">
    </PIN>
-   <PIN pinname="GlobalDiffuseColor" pintype="Input" visible="1">
+   <PIN pinname="GlobalDiffuseColor" pintype="Input" visible="1" slicecount="1" values="|0.40777,0.40777,0.40777,1.00000|">
    </PIN>
    <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
    </PIN>
@@ -1690,28 +1668,6 @@
    <PIN pinname="Texture Out" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="529">
-   <BOUNDS type="Box" left="15060" top="5070" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="15060" top="5070" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="ToneMapping">
-   </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="False">
-   </PIN>
-   </NODE>
    <NODE systemname="Sqrt (Complex)" nodename="Sqrt (Complex)" componentmode="Hidden" id="556">
    <BOUNDS type="Node" left="3495" top="3915" width="100" height="100">
    </BOUNDS>
@@ -1884,8 +1840,6 @@
    </LINK>
    <LINK srcnodeid="492" srcpinname="Output" dstnodeid="582" dstpinname="IBLSettings">
    </LINK>
-   <LINK srcnodeid="529" srcpinname="Y Output Value" dstnodeid="582" dstpinname="ToneMapping">
-   </LINK>
    <NODE systemname="GetBuffer (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical)" componentmode="Hidden" id="583">
    <BOUNDS type="Node" left="12390" top="8145" width="2460" height="270">
    </BOUNDS>
@@ -1997,9 +1951,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="593" srcpinname="GlobalReflectionColor" dstnodeid="420" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="15275" y="12598">
+   <LINKPOINT x="15320" y="12643">
    </LINKPOINT>
-   <LINKPOINT x="7000" y="13218">
+   <LINKPOINT x="7090" y="13308">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="442" srcpinname="Output Node" dstnodeid="593" dstpinname="Input" linkstyle="Bezier">
@@ -2061,9 +2015,9 @@
    </PIN>
    <PIN pinname="Buffers" visible="1">
    </PIN>
-   <PIN pinname="View" visible="1">
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Projection" visible="1">
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Depth Buffer Mode" slicecount="1" values="ReadOnly">
    </PIN>
@@ -2082,6 +2036,8 @@
    <PIN pinname="Technique" slicecount="1" values="Add">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="403" srcpinname="Texture Out" dstnodeid="599" dstpinname="Texture In 2">
@@ -2252,74 +2208,6 @@
    </LINK>
    <LINK srcnodeid="625" srcpinname="Transform Out" dstnodeid="617" dstpinname="Transform In">
    </LINK>
-   <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="626">
-   <BOUNDS type="Node" left="7920" top="7890" width="1350" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="7920" top="7890">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="626" srcpinname="useTex" dstnodeid="422" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="9355" y="12070">
-   </LINKPOINT>
-   <LINKPOINT x="12215" y="12260">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="626" srcpinname="AlbedoTex" dstnodeid="347" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="7950" y="8970">
-   </LINKPOINT>
-   <LINKPOINT x="7950" y="8970">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="626" srcpinname="EmissiveTex" dstnodeid="348" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8115" y="9173">
-   </LINKPOINT>
-   <LINKPOINT x="8415" y="9173">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="626" srcpinname="NormalMap" dstnodeid="349" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8265" y="9368">
-   </LINKPOINT>
-   <LINKPOINT x="8670" y="9368">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="626" srcpinname="HeightMap" dstnodeid="350" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8430" y="9578">
-   </LINKPOINT>
-   <LINKPOINT x="9000" y="9578">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="626" srcpinname="RoughnessMap" dstnodeid="351" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8595" y="9803">
-   </LINKPOINT>
-   <LINKPOINT x="9270" y="9803">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="626" srcpinname="MetallicMap" dstnodeid="352" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8760" y="9983">
-   </LINKPOINT>
-   <LINKPOINT x="9555" y="9983">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="626" srcpinname="AOMap" dstnodeid="353" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8925" y="10193">
-   </LINKPOINT>
-   <LINKPOINT x="9780" y="10193">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="626" srcpinname="IridescenceMap" dstnodeid="354" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="9075" y="10395">
-   </LINKPOINT>
-   <LINKPOINT x="10320" y="10395">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="626" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="3585" y="4830">
-   </LINKPOINT>
-   <LINKPOINT x="7920" y="4830">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="GetSlice (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="GetSlice (Transform)" componentmode="Hidden" id="627">
    <BOUNDS type="Node" left="2100" top="14370" width="100" height="100">
    </BOUNDS>
@@ -2331,5 +2219,103 @@
    <LINK srcnodeid="490" srcpinname="Output" dstnodeid="627" dstpinname="Index">
    </LINK>
    <LINK srcnodeid="627" srcpinname="Output" dstnodeid="624" dstpinname="Transform In">
+   </LINK>
+   <NODE id="634" systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden">
+   <BOUNDS type="Node" left="7920" top="9780" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7920" top="9780">
+   </BOUNDS>
+   <PIN pinname="Texture Array Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="461" srcpinname="Y Output Value" dstnodeid="634" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="10390" y="9005">
+   </LINKPOINT>
+   <LINKPOINT x="9305" y="9175">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="634" srcpinname="Texture Array Out" dstnodeid="403" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="641">
+   <BOUNDS type="Node" left="7920" top="7890" width="1350" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7920" top="7890">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="641" srcpinname="useTex" dstnodeid="422" dstpinname="Data" linkstyle="Bezier">
+   <LINKPOINT x="9355" y="12070">
+   </LINKPOINT>
+   <LINKPOINT x="12215" y="12260">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="641" srcpinname="EmissiveTex" dstnodeid="348" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="8115" y="9173">
+   </LINKPOINT>
+   <LINKPOINT x="8415" y="9173">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="641" srcpinname="NormalMap" dstnodeid="349" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="8265" y="9368">
+   </LINKPOINT>
+   <LINKPOINT x="8670" y="9368">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="641" srcpinname="HeightMap" dstnodeid="350" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="8430" y="9578">
+   </LINKPOINT>
+   <LINKPOINT x="9000" y="9578">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="641" srcpinname="RoughnessMap" dstnodeid="351" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="8595" y="9803">
+   </LINKPOINT>
+   <LINKPOINT x="9270" y="9803">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="641" srcpinname="MetallicMap" dstnodeid="352" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="8760" y="9983">
+   </LINKPOINT>
+   <LINKPOINT x="9555" y="9983">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="641" srcpinname="AOMap" dstnodeid="353" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="8925" y="10193">
+   </LINKPOINT>
+   <LINKPOINT x="9780" y="10193">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="641" srcpinname="IridescenceMap" dstnodeid="354" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="9075" y="10395">
+   </LINKPOINT>
+   <LINKPOINT x="10320" y="10395">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="641" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="3585" y="4830">
+   </LINKPOINT>
+   <LINKPOINT x="7920" y="4830">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="641" srcpinname="AlbedoTex" dstnodeid="634" dstpinname="Pointer">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="642">
+   <BOUNDS type="Box" left="10410" top="6435" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10410" top="6435" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="642" srcpinname="Y Output Value" dstnodeid="462" dstpinname="Simulate">
    </LINK>
    </PATCH>
