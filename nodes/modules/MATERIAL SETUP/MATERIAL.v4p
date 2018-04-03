@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="0" top="1620" width="21540" height="16500">
+   <BOUNDS type="Window" left="2595" top="2355" width="18195" height="13200">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -1116,330 +1116,56 @@
    </NODE>
    <LINK srcnodeid="56" srcpinname="Transform Out" dstnodeid="273" dstpinname="tTex">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="285">
-   <BOUNDS type="Box" left="16890" top="2175" width="750" height="2760">
+   <NODE systemname="Material (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Material (SuperPhysical Material)" componentmode="Hidden" id="401">
+   <BOUNDS type="Node" left="375" top="8340" width="14370" height="270">
    </BOUNDS>
-   <BOUNDS type="Node" left="16890" top="2175" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="13" visible="1" values="0,1,2,3,4,5,6,7,8,9,11,12,13">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="13">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0, 0, 1|">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Mesh IDs|">
-   </PIN>
-   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="13" values="0,0,0,1,0,0,0,1,0,0,0,1,0">
-   </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="286">
-   <BOUNDS type="Box" left="18135" top="4260" width="795" height="960">
-   </BOUNDS>
-   <BOUNDS type="Node" left="18135" top="4260" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="10,1,2">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0, 0, 1|">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="MeshCount">
-   </PIN>
-   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="375">
-   <BOUNDS type="Box" left="4185" top="9030" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4185" top="9030" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Bang">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="383">
-   <BOUNDS type="Box" left="3225" top="8940" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3225" top="8940" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="MeshID">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="384">
-   <BOUNDS type="Box" left="1995" top="9090" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1995" top="9090" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Slice">
-   </PIN>
-   </NODE>
-   <NODE systemname="Integral (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Integral (Spreads)" componentmode="Hidden" id="387">
-   <BOUNDS type="Node" left="19800" top="4875" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="19800" top="4875" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="4" values="10,1,1,1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Input Bin Size" slicecount="1" visible="1" values="-1">
-   </PIN>
-   <PIN pinname="Offset" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="286" srcpinname="Y Output Value" dstnodeid="387" dstpinname="Input">
+   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="401" dstpinname="Metallic" linkstyle="PolyLine">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="388">
-   <BOUNDS type="Box" left="22185" top="6735" width="690" height="2370">
-   </BOUNDS>
-   <BOUNDS type="Node" left="22185" top="6735" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="8">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="387" srcpinname="Output" dstnodeid="388" dstpinname="Y Input Value">
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="401" dstpinname="Roughness">
    </LINK>
-   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="389">
-   <BOUNDS type="Node" left="19800" top="5820" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname=".. To [" visible="1" slicecount="4" values="10,11,12,13">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="[ From .." visible="1" slicecount="4" values="0,10,11,12">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="390">
-   <BOUNDS type="Box" left="19800" top="6525" width="675" height="4395">
-   </BOUNDS>
-   <BOUNDS type="Node" left="19800" top="6525" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="13" visible="1" values="0,1,2,3,4,5,6,7,8,9,10,11,12">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="20">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0, 0, 1|">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Mesh IDs|">
-   </PIN>
-   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="20" values="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="389" srcpinname="Output" dstnodeid="390" dstpinname="Y Input Value" linkstyle="PolyLine">
-   </LINK>
-   <NODE systemname="Pairwise (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Pairwise (Spreads)" componentmode="Hidden" id="391">
-   <BOUNDS type="Node" left="19815" top="5355" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="19815" top="5355" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="InputXY" visible="1">
-   </PIN>
-   <PIN pinname="Output 1XY" visible="1">
-   </PIN>
-   <PIN pinname="Output 2XY" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Output 1" visible="1">
-   </PIN>
-   <PIN pinname="Output 2" visible="1">
-   </PIN>
-   <PIN pinname="Input Bin Size" slicecount="1" values="-1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="387" srcpinname="Output" dstnodeid="391" dstpinname="InputXY">
-   </LINK>
-   <LINK srcnodeid="387" srcpinname="Output" dstnodeid="391" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="391" srcpinname="Output 1" dstnodeid="389" dstpinname="[ From ..">
-   </LINK>
-   <LINK srcnodeid="391" srcpinname="Output 2" dstnodeid="389" dstpinname=".. To [">
-   </LINK>
-   <NODE systemname="Cons (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Spreads)" componentmode="Hidden" id="394">
-   <BOUNDS type="Node" left="18690" top="2505" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="18690" top="2505" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Input Count" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" slicecount="1" values="11">
-   </PIN>
-   <PIN pinname="Input 3" slicecount="1" visible="1" values="12">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Material (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Material (SuperPhysical Material)" componentmode="Hidden" id="395">
-   <BOUNDS type="Node" left="375" top="8340" width="17835" height="270">
-   </BOUNDS>
-   <PIN pinname="MeshIDs" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="MeshIDs Bin Size" visible="1" slicecount="1" values="-1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="395" dstpinname="Metallic" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="395" dstpinname="Roughness">
-   </LINK>
-   <LINK srcnodeid="2" srcpinname="Color Output" dstnodeid="395" dstpinname="Color" linkstyle="Bezier">
+   <LINK srcnodeid="2" srcpinname="Color Output" dstnodeid="401" dstpinname="Color" linkstyle="Bezier">
    <LINKPOINT x="3625" y="8103">
    </LINKPOINT>
    <LINKPOINT x="3950" y="8053">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="395" dstpinname="Emissive" linkstyle="Bezier">
+   <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="401" dstpinname="Emissive" linkstyle="Bezier">
    <LINKPOINT x="5185" y="8095">
    </LINKPOINT>
    <LINKPOINT x="5720" y="8045">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="253" srcpinname="Output" dstnodeid="395" dstpinname="SubsurfaceScattering" linkstyle="VHV">
+   <LINK srcnodeid="253" srcpinname="Output" dstnodeid="401" dstpinname="SubsurfaceScattering" linkstyle="VHV">
    <LINKPOINT x="15790" y="8185">
    </LINKPOINT>
    <LINKPOINT x="15980" y="8195">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="395" dstpinname="ParallaxOcclusionMapping" linkstyle="Bezier">
+   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="401" dstpinname="ParallaxOcclusionMapping" linkstyle="Bezier">
    <LINKPOINT x="12100" y="8103">
    </LINKPOINT>
    <LINKPOINT x="12815" y="8053">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="268" srcpinname="Output" dstnodeid="395" dstpinname="Iridescence" linkstyle="Bezier">
+   <LINK srcnodeid="268" srcpinname="Output" dstnodeid="401" dstpinname="Iridescence" linkstyle="Bezier">
    <LINKPOINT x="8365" y="8088">
    </LINKPOINT>
    <LINKPOINT x="9275" y="8038">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="395" dstpinname="Refraction" linkstyle="Bezier">
+   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="401" dstpinname="Refraction" linkstyle="Bezier">
    <LINKPOINT x="10420" y="8103">
    </LINKPOINT>
    <LINKPOINT x="11045" y="8053">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="273" srcpinname="Output" dstnodeid="395" dstpinname="ControlTextures" linkstyle="Bezier">
+   <LINK srcnodeid="273" srcpinname="Output" dstnodeid="401" dstpinname="ControlTextures" linkstyle="Bezier">
    <LINKPOINT x="1555" y="6018">
    </LINKPOINT>
    <LINKPOINT x="7490" y="5968">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="396">
-   <BOUNDS type="Node" left="18675" top="1500" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname=".. To [" slicecount="1" values="10">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="396" srcpinname="Output" dstnodeid="394" dstpinname="Input 1">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="397">
-   <BOUNDS type="Box" left="19410" top="1680" width="795" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="19410" top="1680" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="12,13">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0|">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="397" srcpinname="Y Output Value" dstnodeid="394" dstpinname="Input 3">
-   </LINK>
-   <LINK srcnodeid="285" srcpinname="Y Output Value" dstnodeid="395" dstpinname="MeshIDs">
-   </LINK>
-   <LINK srcnodeid="286" srcpinname="Y Output Value" dstnodeid="395" dstpinname="MeshIDs Bin Size">
-   </LINK>
-   <LINK srcnodeid="394" srcpinname="Output" dstnodeid="285" dstpinname="Y Input Value">
-   </LINK>
-   <NODE systemname="SetMeshIDs (SuperPhysical.Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="SetMeshIDs (SuperPhysical.Material)" componentmode="Hidden" id="399">
-   <BOUNDS type="Node" left="2730" top="9870" width="100" height="100">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="375" srcpinname="Y Output Value" dstnodeid="399" dstpinname="ChangeID">
-   </LINK>
-   <LINK srcnodeid="383" srcpinname="Y Output Value" dstnodeid="399" dstpinname="MaterialID">
-   </LINK>
-   <LINK srcnodeid="384" srcpinname="Y Output Value" dstnodeid="399" dstpinname="Slice">
-   </LINK>
-   <LINK srcnodeid="395" srcpinname="Output" dstnodeid="399" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="395" srcpinname="Output" dstnodeid="399" dstpinname="Materials">
-   </LINK>
-   <LINK srcnodeid="395" srcpinname="Output" dstnodeid="284" dstpinname="Input Node">
+   <LINK srcnodeid="401" srcpinname="Output" dstnodeid="284" dstpinname="Input Node">
    </LINK>
    </PATCH>
