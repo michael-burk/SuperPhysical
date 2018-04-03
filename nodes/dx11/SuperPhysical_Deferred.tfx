@@ -82,28 +82,7 @@ struct MaterialStruct
 
 static const float3 F = float3(0.04,0.04,0.04);	
 
-cbuffer cbPerObject : register (b0)
-{	
-	//transforms
-	float4x4 tW: WORLD;
-	float4x4 tWI: WORLDINVERSE;
-	float4x4 tWVP: WORLDVIEWPROJECTION;
-	
-	float4 GlobalReflectionColor <bool color = true; string uiname="Global Reflection Color";>  = { 0.0f,0.0f,0.0f,0.0f };
-	float4 GlobalDiffuseColor <bool color = true; string uiname="Global Diffuse Color";>  = { 0.0f,0.0f,0.0f,0.0f };
-	float4 Background <bool color = true; string uiname="Background Color";>  = { 0.0f,0.0f,0.0f,0.0f };
-	
-	uint num;
-};
 
-float lPower <String uiname="Power"; float uimin=0.0;> = 1;     //shininess of specular highlight
-
-float2 iblIntensity <String uiname="IBL Intensity";>;	
-
-cbuffer cbPerRender : register (b1)
-{	
-	float4x4 tVI;
-}
 
 Texture2DArray texture2d <string uiname="Texture"; >;
 Texture2DArray EmissiveTex <string uiname="Emissive"; >;
@@ -127,9 +106,25 @@ Texture2D brdfLUT <string uiname="brdfLUT"; >;
 Texture2DArray lightMap <string uiname="SpotTex"; >;
 Texture2DArray shadowMap <string uiname="ShadowMap"; >;
 
-StructuredBuffer <LightStruct> Light  <string uiname="Light Parameter Buffer";>;
 StructuredBuffer <LightMatricesStruct> LightMatrices  <string uiname="Light Matrices Buffer";>;
+StructuredBuffer <LightStruct> Light  <string uiname="Light Parameter Buffer";>;
 StructuredBuffer <MaterialStruct> Material  <string uiname="Material";>;
+
+
+cbuffer cbPerObject : register (b0)
+{	
+	float4 GlobalReflectionColor <bool color = true; string uiname="Global Reflection Color";>  = { 0.0f,0.0f,0.0f,0.0f };
+	float4 GlobalDiffuseColor <bool color = true; string uiname="Global Diffuse Color";>  = { 0.0f,0.0f,0.0f,0.0f };
+	float4 Background <bool color = true; string uiname="Background Color";>  = { 0.0f,0.0f,0.0f,0.0f };
+	
+	float4x4 tVI;
+	
+	float lPower <String uiname="Power"; float uimin=0.0;> = 1;     //shininess of specular highlight
+
+	float2 iblIntensity <String uiname="IBL Intensity";>;	
+
+	uint num;
+};
 
 
 SamplerState g_samLinear

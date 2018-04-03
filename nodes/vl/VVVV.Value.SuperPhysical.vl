@@ -597,7 +597,7 @@
     ************************ GetMaterial ************************
 
 -->
-        <Node Name="GetMaterial" Bounds="-868,1937,844,117" Id="OXDlTRMBdpTLfhzH1e3xRD">
+        <Node Name="GetMaterial" Bounds="-868,1937,844,203" Id="OXDlTRMBdpTLfhzH1e3xRD">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
@@ -7231,14 +7231,14 @@
     ************************ Shadow (Shadow) ************************
 
 -->
-        <Node Name="Shadow (Shadow)" Bounds="-529,950,439,196" Id="LUSDGVFa18QLr6207JPks6">
+        <Node Name="Shadow (Shadow)" Bounds="-497,926,439,196" Id="LUSDGVFa18QLr6207JPks6">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
           <Patch Id="ASAb8eSQrZ0Ly8qH1Ak2kF">
-            <Node Bounds="-515,1065,368,22" Id="Q6AJDNpQlAGNil03iRdszh">
+            <Node Bounds="-483,1041,368,22" Id="Q6AJDNpQlAGNil03iRdszh">
               <p:NodeReference LastCategoryFullName="VVVV.SuperPhysical.Light.Shadow" LastSymbolSource="VVVV.Value.SuperPhysical.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="Create" />
@@ -7252,7 +7252,7 @@
               <Pin Id="VlLkcO6RpmZNPvGxCGFl5e" Name="Enabled" Kind="InputPin" />
               <Pin Id="K3u0mNKYWuSM8IGC0DjVZZ" Name="Output" Kind="StateOutputPin" />
             </Node>
-            <ControlPoint Id="V1LcyXuKaXXMTvZqDJe9RQ" Bounds="-147,972" />
+            <ControlPoint Id="V1LcyXuKaXXMTvZqDJe9RQ" Bounds="-115,948" />
             <Link Id="SnUD47hRltkPp2YVz1WgeC" Ids="V1LcyXuKaXXMTvZqDJe9RQ,VlLkcO6RpmZNPvGxCGFl5e" />
             <Pin Id="KYhyfYEUxuANewbo0KFdle" Name="Enabled" Kind="InputPin" Bounds="-499,997" DefaultValue="true">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
@@ -7260,11 +7260,11 @@
               </p:TypeAnnotation>
             </Pin>
             <Link Id="PncBEfkTqBUQZTUhaW8rNm" Ids="KYhyfYEUxuANewbo0KFdle,V1LcyXuKaXXMTvZqDJe9RQ" IsHidden="true" />
-            <ControlPoint Id="UZazhCBrwqmPSp2aADCOeC" Bounds="-433,1025" />
+            <ControlPoint Id="UZazhCBrwqmPSp2aADCOeC" Bounds="-401,1001" />
             <Link Id="AmCmtwqaIdUPJEm0zo3n3H" Ids="UZazhCBrwqmPSp2aADCOeC,OP4XHVa1KjIOL9i7uIMJgp" />
             <Pin Id="L0rXKKRLnVgPQ3aMCXRFO8" Name="LightBleedingLimit" Kind="InputPin" Bounds="-450,968" />
             <Link Id="LTqrDMmbJUFM6ghZ1ulDeA" Ids="L0rXKKRLnVgPQ3aMCXRFO8,UZazhCBrwqmPSp2aADCOeC" IsHidden="true" />
-            <ControlPoint Id="GABDDKGntaYNoWewXS3Wxo" Bounds="-364,966" />
+            <ControlPoint Id="GABDDKGntaYNoWewXS3Wxo" Bounds="-332,942" />
             <Link Id="IUMyexgAcOYMecYCq9tGqO" Ids="GABDDKGntaYNoWewXS3Wxo,FuG8Y6POAAFQW1heu4Zcly" />
             <Pin Id="TFcJXAq28ZaLtj0wQ5hDXU" Name="ShadowRes" Kind="InputPin" Bounds="-396,1006" DefaultValue="256">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
@@ -7272,7 +7272,7 @@
               </p:TypeAnnotation>
             </Pin>
             <Link Id="CKJG0nLdRVMNOqQhrQyCEL" Ids="TFcJXAq28ZaLtj0wQ5hDXU,GABDDKGntaYNoWewXS3Wxo" IsHidden="true" />
-            <ControlPoint Id="FQ5gXe1rXcnLJGKHlgM1lE" Bounds="-322,1022" />
+            <ControlPoint Id="FQ5gXe1rXcnLJGKHlgM1lE" Bounds="-290,998" />
             <Link Id="OyipTwwGUDwMu4kd8VTGDx" Ids="FQ5gXe1rXcnLJGKHlgM1lE,H2MihRRyqQjOJ5oMss5JAM" />
             <Pin Id="DTGyfdDinWcLvRIaLswp1V" Name="ShadowBlurWidth" Kind="InputPin" Bounds="-325,982" DefaultValue="0.15">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
@@ -7280,15 +7280,15 @@
               </p:TypeAnnotation>
             </Pin>
             <Link Id="BatEgw3vYpCOqAs38GM8l8" Ids="DTGyfdDinWcLvRIaLswp1V,FQ5gXe1rXcnLJGKHlgM1lE" IsHidden="true" />
-            <ControlPoint Id="DS7zYJ7H3GlO1I6ebujZeX" Bounds="-513,1127" />
+            <ControlPoint Id="DS7zYJ7H3GlO1I6ebujZeX" Bounds="-481,1103" />
             <Link Id="SorXqMjFRauQUwqAMb6VIJ" Ids="K3u0mNKYWuSM8IGC0DjVZZ,DS7zYJ7H3GlO1I6ebujZeX" />
             <Pin Id="AMzWmHvrX8vOigkNQmuP9t" Name="Output" Kind="OutputPin" Bounds="-493,1110" />
             <Link Id="TOdBt3LjLPIP6uiFDyCU3e" Ids="DS7zYJ7H3GlO1I6ebujZeX,AMzWmHvrX8vOigkNQmuP9t" IsHidden="true" />
-            <ControlPoint Id="SwUlCIzwvcNMRCNO6Z1jaa" Bounds="-515,1008" />
+            <ControlPoint Id="SwUlCIzwvcNMRCNO6Z1jaa" Bounds="-483,984" />
             <Link Id="JtCtVUPJXpTPJUHM7pZxEN" Ids="SwUlCIzwvcNMRCNO6Z1jaa,ABfcAXia096LUC6tknpYdG" />
             <Pin Id="UixEYEMG8BMNOkFl2gpxKT" Name="ShadowType" Kind="InputPin" Bounds="388,981" />
             <Link Id="DH59FIad1pVMUW6iay9BML" Ids="UixEYEMG8BMNOkFl2gpxKT,SwUlCIzwvcNMRCNO6Z1jaa" IsHidden="true" />
-            <ControlPoint Id="Q3LvQvAPwmuLxjYCCXQfSx" Bounds="-224,999" />
+            <ControlPoint Id="Q3LvQvAPwmuLxjYCCXQfSx" Bounds="-192,975" />
             <Link Id="C7DRJG9R5t0LcEWAKcrwIl" Ids="Q3LvQvAPwmuLxjYCCXQfSx,Lw2m8IjyAnuPtvXZ1mFnMB" />
             <Pin Id="Ho22ZMcizhKO288B22RfEm" Name="PostFiltering" Kind="InputPin" Bounds="548,1023" />
             <Link Id="B8Jp2odaRQjQRDanj5xvi7" Ids="Ho22ZMcizhKO288B22RfEm,Q3LvQvAPwmuLxjYCCXQfSx" IsHidden="true" />
@@ -10826,6 +10826,64 @@
             <Link Id="PhXmO7vUI0mNj5mOV9y63p" Ids="IoX5bTEtHOLL1kQgyrPStv,H5JfkPPiK0PMdg0Yr8q1VR" />
             <Link Id="TfVqMRt3Xk3M0SqKeoOUOa" Ids="GgXePC1oTBzMGEkpgTjyq6,IoX5bTEtHOLL1kQgyrPStv" IsHidden="true" />
             <Link Id="GwC6PIlRAXrNZYL3NdFNXg" Ids="NHxKJ5hTCbZN0zoql7YfbJ,CDCUOUGdELcMecErsevz4P" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ SplitLightSetup ************************
+
+-->
+        <Node Name="SplitLightSetup" Bounds="2380,1243,700,200" Id="BPoaK5cg7ymLOe2svL97ys">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VVVV.Value.SuperPhysical.vl">
+            <Choice Kind="OperationDefinition" Name="Operation" />
+          </p:NodeReference>
+          <Patch Id="NccKW2TkrsiNPlQhesVvh1">
+            <Node Bounds="2394,1372,595,22" Id="CZELM1zdqKRNmUeFqF41VZ">
+              <p:NodeReference LastCategoryFullName="VVVV.SuperPhysical.Light.LightSetup" LastSymbolSource="VVVV.Value.SuperPhysical.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="GetLightSetup" />
+              </p:NodeReference>
+              <Pin Id="Ghf0yQdCvV1QJCL2gzmvWd" Name="Input" Kind="StateInputPin" />
+              <Pin Id="PiG2CN0iDyXNf9iMr1Exn3" Name="Result" Kind="OutputPin" />
+              <Pin Id="OmoTujfHhvGORJvG0nOfAz" Name="IBLSettings" Kind="OutputPin" />
+              <Pin Id="VAjOAgfDjUTQZ8bHHbnA0h" Name="DirectionalLightSettings" Kind="OutputPin" />
+              <Pin Id="IcGXVhz1AhmOLZeT0kjdh8" Name="SpotLightSettings" Kind="OutputPin" />
+              <Pin Id="UK3AuW9YWQ4MYRTpMabQYL" Name="PointLightSettings" Kind="OutputPin" />
+              <Pin Id="NJAdIrUeLwKLwRGmL7g3ip" Name="BRDF LUT Path" Kind="OutputPin" />
+              <Pin Id="NeVJWztpj8JNzAM5PJpcco" Name="ToneMapping" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="UNDI36D9o1RPQ9CGt8P8ht" Bounds="2399,1259" />
+            <Link Id="JlXr60khb2IM4DAISJL0e6" Ids="UNDI36D9o1RPQ9CGt8P8ht,Ghf0yQdCvV1QJCL2gzmvWd" />
+            <Pin Id="QxJ5Yggbd2VQVFej2ALwPX" Name="Input" Kind="InputPin" Bounds="2399,1348" />
+            <Link Id="Ap7aNU0mJ25OtqYtx7nV3P" Ids="QxJ5Yggbd2VQVFej2ALwPX,UNDI36D9o1RPQ9CGt8P8ht" IsHidden="true" />
+            <Pin Id="Iqxy2LtDNmJOmBdrmNScZw" Name="Result" Kind="OutputPin" />
+            <ControlPoint Id="CdIj43qtx8mNRiQtCB2ygR" Bounds="2394,1424" />
+            <Link Id="OLIDRQuDolmMd8gCNPoP8m" Ids="CdIj43qtx8mNRiQtCB2ygR,Iqxy2LtDNmJOmBdrmNScZw" IsHidden="true" />
+            <Link Id="CvzM21vSaTEPjoiHpl1T5H" Ids="PiG2CN0iDyXNf9iMr1Exn3,CdIj43qtx8mNRiQtCB2ygR" />
+            <Pin Id="DlCWTqlYov7PC4ahNZoUmK" Name="IBLSettings" Kind="OutputPin" />
+            <ControlPoint Id="JvwbuUziFrwOAk49wU1vW1" Bounds="2452,1424" />
+            <Link Id="L6FbD2FQ76HNWoHAH0xk0A" Ids="JvwbuUziFrwOAk49wU1vW1,DlCWTqlYov7PC4ahNZoUmK" IsHidden="true" />
+            <Link Id="EALvQxjvaoZQS3JCUHCrnp" Ids="OmoTujfHhvGORJvG0nOfAz,JvwbuUziFrwOAk49wU1vW1" />
+            <Pin Id="CWxPu5f0R00P1oVoCNOr7Y" Name="DirectionalLightSettings" Kind="OutputPin" />
+            <ControlPoint Id="HJep87IWCeQQboc3vdeF20" Bounds="2532,1424" />
+            <Link Id="Ii2uih8AXTxNOW9seXxoSt" Ids="HJep87IWCeQQboc3vdeF20,CWxPu5f0R00P1oVoCNOr7Y" IsHidden="true" />
+            <Link Id="M07iiLRr58EPle46MmnePd" Ids="VAjOAgfDjUTQZ8bHHbnA0h,HJep87IWCeQQboc3vdeF20" />
+            <Pin Id="D5FG0YocYFSOuoLzWwCDfN" Name="SpotLightSettings" Kind="OutputPin" />
+            <ControlPoint Id="OKMexmaUmhtMJE3sg0rpTO" Bounds="2673,1424" />
+            <Link Id="N4QQyC5yDctLuhiNzQjV1D" Ids="OKMexmaUmhtMJE3sg0rpTO,D5FG0YocYFSOuoLzWwCDfN" IsHidden="true" />
+            <Link Id="MkBhVEfuscOLuXuO6r6IrB" Ids="IcGXVhz1AhmOLZeT0kjdh8,OKMexmaUmhtMJE3sg0rpTO" />
+            <Pin Id="MibJ0DsXeCtM0kKHVQxK0D" Name="PointLightSettings" Kind="OutputPin" />
+            <ControlPoint Id="OWVqidD6m7jQSABcMUWWXV" Bounds="2784,1424" />
+            <Link Id="N0TINqW1TmQNs3XICgZw1l" Ids="OWVqidD6m7jQSABcMUWWXV,MibJ0DsXeCtM0kKHVQxK0D" IsHidden="true" />
+            <Link Id="ICgfRqEwG5gQG6Ux568wZi" Ids="UK3AuW9YWQ4MYRTpMabQYL,OWVqidD6m7jQSABcMUWWXV" />
+            <Pin Id="VcvEfhojb9QN2sdqcMD5Vf" Name="BRDF LUT Path" Kind="OutputPin" />
+            <ControlPoint Id="OBwCRIcxRSvLuYLFAfrgM1" Bounds="2898,1424" />
+            <Link Id="RY7l3z0HDuuOu0Uicb1VUh" Ids="OBwCRIcxRSvLuYLFAfrgM1,VcvEfhojb9QN2sdqcMD5Vf" IsHidden="true" />
+            <Link Id="TrbetRd7BNEMbpzk2pint8" Ids="NJAdIrUeLwKLwRGmL7g3ip,OBwCRIcxRSvLuYLFAfrgM1" />
+            <Pin Id="F6wra1OKhkVMO4eq67fMez" Name="ToneMapping" Kind="OutputPin" />
+            <ControlPoint Id="FP9in18m34mOrRHUFJPfS4" Bounds="2996,1424" />
+            <Link Id="QkJxnKE7n67M99SP4oaoeh" Ids="FP9in18m34mOrRHUFJPfS4,F6wra1OKhkVMO4eq67fMez" IsHidden="true" />
+            <Link Id="NpumCv3RRObM8PXoLMzq7H" Ids="NeVJWztpj8JNzAM5PJpcco,FP9in18m34mOrRHUFJPfS4" />
           </Patch>
         </Node>
       </Canvas>
