@@ -678,6 +678,104 @@
    </LINK>
    <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
    </LINK>
+   <NODE id="38" systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden">
+   <PIN pinname="Initial Longitude" slicecount="1" visible="1" values="0.5">
+   </PIN>
+   <BOUNDS type="Node" left="5910" top="5985" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Initial Latitude" slicecount="1" values="0.05">
+   </PIN>
+   <PIN pinname="Near Plane" slicecount="1" values="0.01">
+   </PIN>
+   <PIN pinname="Initial FOV" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Initial Distance" slicecount="1" values="1.5">
+   </PIN>
+   <PIN pinname="Initial Pitch" slicecount="1" values="0.05">
+   </PIN>
+   <PIN pinname="Roll" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="-0.5">
+   </PIN>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="Inverse View" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="5910" top="5985">
+   </BOUNDS>
+   <PIN pinname="Far Plane" slicecount="1" values="100">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Projection" dstnodeid="46" dstpinname="Projection" linkstyle="Bezier">
+   <LINKPOINT x="6225" y="7558">
+   </LINKPOINT>
+   <LINKPOINT x="1860" y="7908">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="38" srcpinname="View" dstnodeid="46" dstpinname="View" linkstyle="Bezier">
+   <LINKPOINT x="6075" y="7558">
+   </LINKPOINT>
+   <LINKPOINT x="1695" y="7908">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
+   <BOUNDS type="Node" left="1665" top="5985" width="1410" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2595" top="2355" width="18195" height="13200">
+   </BOUNDS>
+   <PIN pinname="Material" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Iridescence" visible="1" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Box" left="1665" top="5985">
+   </BOUNDS>
+   <PIN pinname="MaterialSettings" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="MeshCount" visible="1" slicecount="3" values="10,1,2">
+   </PIN>
+   </NODE>
+   <NODE systemname="WindowHandler (EditingFramework)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\WindowHandler (EditingFramework).v4p" nodename="WindowHandler (EditingFramework)" componentmode="Hidden" id="76">
+   <BOUNDS type="Node" left="630" top="11445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Is Active" visible="1">
+   </PIN>
+   <PIN pinname="Handle" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Is Hovered" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FrameDelay (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Value)" componentmode="Hidden" id="75">
+   <BOUNDS type="Node" left="1875" top="12105" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1875" top="12105" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="76" srcpinname="Is Hovered" dstnodeid="75" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Window Handle" dstnodeid="76" dstpinname="Handle" linkstyle="PolyLine">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="77">
+   <BOUNDS type="Node" left="5700" top="8655" width="1920" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5700" top="8655" width="2340" height="1020">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Load Textures only once!&cr;&lf;Clean up editors in modules.&cr;&lf;Save Edited Materials|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    <NODE id="67" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="1">
    <BOUNDS type="Window" left="1620" top="885" width="19110" height="16095">
    </BOUNDS>
@@ -693,7 +791,7 @@
    </PIN>
    <PIN pinname="Instance Count" visible="1">
    </PIN>
-   <PIN pinname="SelectedMaterial" visible="1">
+   <PIN pinname="SelectedMaterial" visible="1" slicecount="1" values="2">
    </PIN>
    <PIN pinname="Reset" slicecount="1" values="0">
    </PIN>
@@ -758,50 +856,6 @@
    <LINKPOINT x="3120" y="7335">
    </LINKPOINT>
    </LINK>
-   <NODE id="38" systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden">
-   <PIN pinname="Initial Longitude" slicecount="1" visible="1" values="0.5">
-   </PIN>
-   <BOUNDS type="Node" left="5910" top="5985" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Initial Latitude" slicecount="1" values="0.05">
-   </PIN>
-   <PIN pinname="Near Plane" slicecount="1" values="0.01">
-   </PIN>
-   <PIN pinname="Initial FOV" slicecount="1" values="0.1">
-   </PIN>
-   <PIN pinname="Projection" visible="1">
-   </PIN>
-   <PIN pinname="View" visible="1">
-   </PIN>
-   <PIN pinname="Initial Distance" slicecount="1" values="1.5">
-   </PIN>
-   <PIN pinname="Initial Pitch" slicecount="1" values="0.05">
-   </PIN>
-   <PIN pinname="Roll" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Initial Yaw" slicecount="1" values="-0.5">
-   </PIN>
-   <PIN pinname="View Projection" visible="1">
-   </PIN>
-   <PIN pinname="Inverse View" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="5910" top="5985">
-   </BOUNDS>
-   <PIN pinname="Far Plane" slicecount="1" values="100">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="38" srcpinname="Projection" dstnodeid="46" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="6225" y="7558">
-   </LINKPOINT>
-   <LINKPOINT x="1860" y="7908">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="38" srcpinname="View" dstnodeid="46" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="6075" y="7558">
-   </LINKPOINT>
-   <LINKPOINT x="1695" y="7908">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="38" srcpinname="View" dstnodeid="67" dstpinname="View" linkstyle="Bezier">
    <LINKPOINT x="6075" y="6885">
    </LINKPOINT>
@@ -820,22 +874,6 @@
    <LINKPOINT x="4155" y="7335">
    </LINKPOINT>
    </LINK>
-   <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
-   <BOUNDS type="Node" left="1665" top="5985" width="1410" height="270">
-   </BOUNDS>
-   <BOUNDS type="Window" left="2595" top="2355" width="18195" height="13200">
-   </BOUNDS>
-   <PIN pinname="Material" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Iridescence" visible="1" slicecount="1" values="0">
-   </PIN>
-   <BOUNDS type="Box" left="1665" top="5985">
-   </BOUNDS>
-   <PIN pinname="MaterialSettings" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="MeshCount" visible="1" slicecount="3" values="10,1,2">
-   </PIN>
-   </NODE>
    <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="67" dstpinname="MaterialSetup" linkstyle="Bezier">
    <LINKPOINT x="1710" y="7075">
    </LINKPOINT>
@@ -848,80 +886,24 @@
    <LINKPOINT x="1665" y="6735">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="WindowHandler (EditingFramework)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\WindowHandler (EditingFramework).v4p" nodename="WindowHandler (EditingFramework)" componentmode="Hidden" id="76">
-   <BOUNDS type="Node" left="630" top="11445" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Is Active" visible="1">
-   </PIN>
-   <PIN pinname="Handle" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Is Hovered" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="FrameDelay (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Value)" componentmode="Hidden" id="75">
-   <BOUNDS type="Node" left="1875" top="12105" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="1875" top="12105" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Output 1" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="76" srcpinname="Is Hovered" dstnodeid="75" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Window Handle" dstnodeid="76" dstpinname="Handle" linkstyle="PolyLine">
-   </LINK>
    <LINK srcnodeid="75" srcpinname="Output 1" dstnodeid="67" dstpinname="MouseActive" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="1920" y="10185">
    </LINKPOINT>
    <LINKPOINT x="4440" y="10185">
    </LINKPOINT>
    </LINK>
-   <NODE id="70" componentmode="Hidden" systemname="Visualizer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Material Visualizer (SuperPhysical).v4p" nodename="Visualizer (SuperPhysical)" stayontop="0">
+   <NODE id="85" componentmode="Hidden" systemname="Visualizer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Material Visualizer (SuperPhysical).v4p" nodename="Visualizer (SuperPhysical)" stayontop="0">
    <BOUNDS type="Node" left="1785" top="6870" width="1470" height="270">
    </BOUNDS>
-   <PIN pinname="MaterialSetup" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="View" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <PIN pinname="tVI" visible="1" slicecount="1" values="||">
-   </PIN>
    <BOUNDS type="Window" left="3330" top="1680" width="22470" height="13755">
    </BOUNDS>
-   <PIN pinname="SelectedMaterial" visible="1">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
    </NODE>
-   <LINK srcnodeid="70" srcpinname="SelectedMaterial" dstnodeid="67" dstpinname="SelectedMaterial">
-   </LINK>
-   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="70" dstpinname="MaterialSetup" linkstyle="Bezier">
+   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="85" dstpinname="MaterialSetup" linkstyle="Bezier">
    <LINKPOINT x="1795" y="6545">
    </LINKPOINT>
    <LINKPOINT x="2405" y="6565">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="77">
-   <BOUNDS type="Node" left="5550" top="8415" width="1920" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="5550" top="8415" width="1920" height="270">
-   </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|Load Textures only once!|">
-   </PIN>
-   <PIN pinname="Output String" visible="0">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="MultiLine">
-   </PIN>
-   </NODE>
+   <LINK srcnodeid="85" srcpinname="SelectedMaterial" dstnodeid="67" dstpinname="SelectedMaterial">
+   </LINK>
    </PATCH>
