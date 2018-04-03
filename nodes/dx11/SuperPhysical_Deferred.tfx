@@ -104,7 +104,7 @@ TextureCube cubeTexIrradiance <string uiname="CubeMap Irradiance"; >;
 Texture2D brdfLUT <string uiname="brdfLUT"; >;
 
 Texture2DArray lightMap <string uiname="SpotTex"; >;
-Texture2DArray shadowMap <string uiname="ShadowMap"; >;
+Texture2DArray shadowMap <string uiname="ShadowMaps"; >;
 
 StructuredBuffer <LightMatricesStruct> LightMatrices  <string uiname="Light Matrices Buffer";>;
 StructuredBuffer <LightStruct> Light  <string uiname="Light Parameter Buffer";>;

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Submodules\Material Visualizer (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="0" scrolly="2640">
    <BOUNDS type="Window" left="3330" top="1680" width="22470" height="13755">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -10,10 +10,10 @@
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="255">
-   <BOUNDS type="Box" left="3435" top="1815" width="795" height="240">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="255" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1035" top="1110" width="300" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="3435" top="1815" width="0" height="0">
+   <BOUNDS type="Node" left="1035" top="1110" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -34,7 +34,7 @@
    <PIN pinname="Reload" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE systemname="SpotLightTextures" filename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" nodename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" componentmode="Hidden" id="314">
+   <NODE systemname="SpotLightTextures" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" nodename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" componentmode="Hidden" id="314">
    <BOUNDS type="Node" left="16095" top="10366" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="13395" top="7031" width="5400" height="6670">
@@ -46,7 +46,7 @@
    <PIN pinname="Enabled" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="330">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="330" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="19395" top="16080" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="19395" top="16080" width="0" height="0">
@@ -70,7 +70,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="335">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="335" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="20790" top="16425" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="20790" top="16425" width="0" height="0">
@@ -112,7 +112,7 @@
    <LINKPOINT x="19410" y="17100">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="371">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="371" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2970" top="12645" width="795" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="2970" top="12645" width="0" height="0">
@@ -268,7 +268,7 @@
    </LINK>
    <LINK srcnodeid="339" srcpinname="Output" dstnodeid="403" dstpinname="Defines" linkstyle="PolyLine">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="405">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="405" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="18480" top="5880" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="18480" top="5880" width="0" height="0">
@@ -280,7 +280,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="406">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="406" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="18750" top="6450" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="18750" top="6450" width="0" height="0">
@@ -292,7 +292,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="407">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="407" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="19140" top="7905" width="825" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="19140" top="7905" width="0" height="0">
@@ -344,7 +344,7 @@
    <PIN pinname="Keep In Memory" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="442">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="442" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="12405" top="7095" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="12405" top="7095" width="0" height="0">
@@ -391,9 +391,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="449" dstpinname="Material" linkstyle="Bezier">
-   <LINKPOINT x="3525" y="9600">
+   <LINKPOINT x="1095" y="9203">
    </LINKPOINT>
-   <LINKPOINT x="19575" y="9510">
+   <LINKPOINT x="19605" y="9203">
    </LINKPOINT>
    </LINK>
    <NODE id="422" systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden">
@@ -620,7 +620,7 @@
    <LINKPOINT x="3585" y="13230">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="461">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="461" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="10425" top="7950" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="10425" top="7950" width="0" height="0">
@@ -842,7 +842,7 @@
    <PIN pinname="Width" slicecount="1" values="2">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="487">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="487" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5445" top="13920" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="5445" top="13920" width="0" height="0">
@@ -860,7 +860,7 @@
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="486">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="486" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="7035" top="11490" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="7035" top="11490" width="0" height="0">
@@ -962,7 +962,7 @@
    <PIN pinname="Input 3" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="515">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="515" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="19830" top="7080" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="19830" top="7080" width="0" height="0">
@@ -1006,7 +1006,11 @@
    </LINK>
    <LINK srcnodeid="483" srcpinname="Output" dstnodeid="518" dstpinname="X In">
    </LINK>
-   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="414" dstpinname="Input" linkstyle="PolyLine">
+   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="414" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="1095" y="1950">
+   </LINKPOINT>
+   <LINKPOINT x="3480" y="1950">
+   </LINKPOINT>
    </LINK>
    <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="522">
    <BOUNDS type="Node" left="1845" top="5160" width="100" height="100">
@@ -1188,7 +1192,7 @@
    <LINKPOINT x="19835" y="5560">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\packs\CraftLie.1.1.0\vvvv\nodes\plugins\CraftLie.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden" id="569">
+   <NODE systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\lib\packs\VL.VVVV.DirectX11.0.79.17-g63a3d4ba77\vvvv\nodes\plugins\VL.VVVV.DirectX11.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden" id="569">
    <BOUNDS type="Node" left="17475" top="16560" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="17475" top="16560" width="3000" height="3000">
@@ -1205,9 +1209,9 @@
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="570" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="3525" y="9038">
+   <LINKPOINT x="1095" y="8640">
    </LINKPOINT>
-   <LINKPOINT x="17430" y="8948">
+   <LINKPOINT x="17445" y="8640">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="570" srcpinname="Output" dstnodeid="569" dstpinname="Buffer Description" linkstyle="Bezier">
@@ -1224,7 +1228,7 @@
    <PIN pinname="Simulate" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE id="582" systemname="LightSetup (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <NODE id="582" systemname="LightSetup (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <BOUNDS type="Node" left="12390" top="5475" width="1500" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="12390" top="5475" width="2400" height="1800">
@@ -1240,7 +1244,7 @@
    <PIN pinname="BRDF LUT Path" visible="1">
    </PIN>
    </NODE>
-   <NODE id="584" systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\packs\CraftLie.1.1.0\vvvv\nodes\plugins\CraftLie.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden">
+   <NODE id="584" systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\lib\packs\VL.VVVV.DirectX11.0.79.17-g63a3d4ba77\vvvv\nodes\plugins\VL.VVVV.DirectX11.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden">
    <BOUNDS type="Node" left="12405" top="9405" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="12405" top="9405" width="3000" height="3000">
@@ -1252,7 +1256,7 @@
    <LINKPOINT x="17025" y="13898">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\packs\CraftLie.1.1.0\vvvv\nodes\plugins\CraftLie.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden" id="585">
+   <NODE systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\lib\packs\VL.VVVV.DirectX11.0.79.17-g63a3d4ba77\vvvv\nodes\plugins\VL.VVVV.DirectX11.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden" id="585">
    <BOUNDS type="Node" left="13605" top="9405" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="13605" top="9405" width="3000" height="3000">
@@ -1580,7 +1584,7 @@
    <LINKPOINT x="8535" y="14085">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="642">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="642" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="10410" top="6435" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="10410" top="6435" width="0" height="0">
@@ -1616,7 +1620,7 @@
    </NODE>
    <LINK srcnodeid="528" srcpinname="Texture Out" dstnodeid="643" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="644">
+   <NODE systemname="FromPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\nodes\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="644">
    <BOUNDS type="Node" left="15735" top="8640" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="15735" top="8640" width="3000" height="3000">
@@ -1628,7 +1632,7 @@
    <LINKPOINT x="14220" y="13508">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="645">
+   <NODE systemname="FromPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\nodes\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="645">
    <BOUNDS type="Node" left="15930" top="9000" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="15930" top="9000" width="3000" height="3000">
@@ -1640,7 +1644,7 @@
    <LINKPOINT x="14685" y="13688">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetGlobalSettings (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalSettings (SuperPhysical)" componentmode="Hidden" id="647">
+   <NODE systemname="GetGlobalSettings (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalSettings (SuperPhysical)" componentmode="Hidden" id="647">
    <BOUNDS type="Node" left="15240" top="8145" width="1890" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="15240" top="8145">
@@ -1700,7 +1704,7 @@
    <LINKPOINT x="15945" y="8700">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="648">
+   <NODE systemname="GetMaterial (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetMaterial (SuperPhysical)" componentmode="Hidden" id="648">
    <BOUNDS type="Node" left="7920" top="8940" width="1350" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="7920" top="8940">
@@ -1755,9 +1759,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="648" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="3525" y="5543">
+   <LINKPOINT x="1095" y="5138">
    </LINKPOINT>
-   <LINKPOINT x="7890" y="5453">
+   <LINKPOINT x="7920" y="5138">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="648" srcpinname="AlbedoTex" dstnodeid="634" dstpinname="Pointer" linkstyle="Bezier">
@@ -1778,7 +1782,7 @@
    </NODE>
    <LINK srcnodeid="643" srcpinname="Window Handle" dstnodeid="658" dstpinname="Handle">
    </LINK>
-   <NODE systemname="PixelButton" filename="%VVVV%\packs\SuperPhysical\nodes\modules\PixelCoverage\PixelButton.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\PixelCoverage\PixelButton.v4p" componentmode="Hidden" id="488" debug="0">
+   <NODE systemname="PixelButton" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Submodules\PixelCoverage\PixelButton.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\PixelCoverage\PixelButton.v4p" componentmode="Hidden" id="488" debug="0">
    <BOUNDS type="Node" left="5445" top="13155" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
@@ -1906,7 +1910,7 @@
    <LINKPOINT x="19905" y="13673">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetBuffer (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical)" componentmode="Hidden" id="671">
+   <NODE systemname="GetBuffer (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical)" componentmode="Hidden" id="671">
    <BOUNDS type="Node" left="12390" top="8145" width="2460" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="12390" top="8145">
@@ -2064,7 +2068,7 @@
    <BOUNDS type="Box" left="12390" top="4890">
    </BOUNDS>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="679">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="679" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="12390" top="4065" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="12390" top="4065" width="0" height="0">

@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics.v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="0" bgcolor="15132390">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics.v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="0" bgcolor="15132390">
    <BOUNDS type="Window" left="3675" top="1740" width="15975" height="13365">
    </BOUNDS>
-   <PACK Name="addonpack" Version="35.9.0">
+   <PACK Name="addonpack" Version="36.0.0">
    </PACK>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="242">
    <BOUNDS type="Node" left="1710" top="7260" width="100" height="100">
@@ -152,26 +152,6 @@
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="DepthHighRes">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="424">
-   <BOUNDS type="Box" left="3735" top="5250" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3735" top="5250" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="View">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="425">
-   <BOUNDS type="Box" left="4755" top="5250" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4755" top="5250" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Projection">
    </PIN>
    </NODE>
    <LINK srcnodeid="422" srcpinname="Y Output Value" dstnodeid="242" dstpinname="Input" linkstyle="Bezier">
@@ -454,18 +434,6 @@
    <LINKPOINT x="6675" y="6690">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="424" srcpinname="Output Node" dstnodeid="288" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="3750" y="6705">
-   </LINKPOINT>
-   <LINKPOINT x="3045" y="6705">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="425" srcpinname="Output Node" dstnodeid="288" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="4770" y="6705">
-   </LINKPOINT>
-   <LINKPOINT x="3960" y="6705">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="436" srcpinname="Y Output Value" dstnodeid="288" dstpinname="lightCount" linkstyle="Bezier">
    <LINKPOINT x="9015" y="7208">
    </LINKPOINT>
@@ -616,4 +584,38 @@
    <LINKPOINT x="9380" y="2630">
    </LINKPOINT>
    </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="567">
+   <BOUNDS type="Box" left="14175" top="660" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14175" top="660" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Camera State|">
+   </PIN>
+   </NODE>
+   <NODE systemname="CameraState (EditingFramework Split 3d)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\vl\VVVV.Cameras.vl" nodename="CameraState (EditingFramework Split 3d)" componentmode="Hidden" id="566">
+   <BOUNDS type="Node" left="3540" top="3930" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Inverse View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="567" srcpinname="Output Node" dstnodeid="566" dstpinname="Camera State">
+   </LINK>
+   <LINK srcnodeid="566" srcpinname="View" dstnodeid="288" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="566" srcpinname="Projection" dstnodeid="288" dstpinname="Projection">
+   </LINK>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
+   </PACK>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
    </PATCH>

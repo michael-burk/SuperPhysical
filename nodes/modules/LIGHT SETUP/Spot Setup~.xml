@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.35">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.36">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.08">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Show Connections" slicecount="1" values="0">
    </PIN>
@@ -657,45 +657,5 @@
    <LINK srcnodeid="319" srcpinname="Y Output Value" dstnodeid="297" dstpinname="LightSize">
    </LINK>
    <LINK srcnodeid="240" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="320">
-   <BOUNDS type="Box" left="4770" top="2910" width="795" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4770" top="2910" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0.35,0.44">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0|">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="320" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Y Input Value">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="321">
-   <BOUNDS type="Box" left="6045" top="3030" width="795" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="6045" top="3030" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0.08,0.18">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0|">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="321" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

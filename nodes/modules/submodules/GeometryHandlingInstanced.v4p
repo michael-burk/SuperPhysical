@@ -435,9 +435,9 @@
    <NODE id="35" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Remainder">
    </PIN>
-   <BOUNDS type="Box" left="5055" top="11655" width="750" height="240">
+   <BOUNDS type="Box" left="5850" top="11505" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5055" top="11655" width="750" height="240">
+   <BOUNDS type="Node" left="5850" top="11505" width="750" height="240">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="4" srcpinname="Remainder" dstnodeid="35" dstpinname="Y Input Value" linkstyle="PolyLine">
@@ -458,7 +458,11 @@
    </LINK>
    <LINK srcnodeid="22" srcpinname="MaterialIDs" dstnodeid="9" dstpinname="Y Input Value" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="23" srcpinname="Up Edge" dstnodeid="22" dstpinname="SetID" linkstyle="PolyLine">
+   <LINK srcnodeid="23" srcpinname="Up Edge" dstnodeid="22" dstpinname="SetID" linkstyle="Bezier">
+   <LINKPOINT x="7935" y="5745">
+   </LINKPOINT>
+   <LINKPOINT x="3945" y="5745">
+   </LINKPOINT>
    </LINK>
    <NODE id="37" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Reset">
@@ -486,15 +490,35 @@
    </NODE>
    <LINK srcnodeid="38" srcpinname="Y Output Value" dstnodeid="16" dstpinname="Input">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="23" dstpinname="Geometry" linkstyle="PolyLine">
+   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="23" dstpinname="Geometry" linkstyle="Bezier">
+   <LINKPOINT x="2445" y="6698">
+   </LINKPOINT>
+   <LINKPOINT x="7935" y="6698">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="27" srcpinname="Output Node" dstnodeid="23" dstpinname="View" linkstyle="PolyLine">
+   <LINK srcnodeid="27" srcpinname="Output Node" dstnodeid="23" dstpinname="View" linkstyle="Bezier">
+   <LINKPOINT x="1560" y="4245">
+   </LINKPOINT>
+   <LINKPOINT x="8100" y="4245">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="4" srcpinname="Remainder" dstnodeid="23" dstpinname="IntanceStartIndex" linkstyle="PolyLine">
+   <LINK srcnodeid="4" srcpinname="Remainder" dstnodeid="23" dstpinname="IntanceStartIndex" linkstyle="Bezier">
+   <LINKPOINT x="3030" y="7155">
+   </LINKPOINT>
+   <LINKPOINT x="8265" y="7155">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="28" srcpinname="Output Node" dstnodeid="23" dstpinname="Projection" linkstyle="PolyLine">
+   <LINK srcnodeid="28" srcpinname="Output Node" dstnodeid="23" dstpinname="Projection" linkstyle="Bezier">
+   <LINKPOINT x="2460" y="4245">
+   </LINKPOINT>
+   <LINKPOINT x="8430" y="4245">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="2" srcpinname="Buffer" dstnodeid="23" dstpinname="world" linkstyle="PolyLine">
+   <LINK srcnodeid="2" srcpinname="Buffer" dstnodeid="23" dstpinname="world" linkstyle="Bezier">
+   <LINKPOINT x="3555" y="7155">
+   </LINKPOINT>
+   <LINKPOINT x="8580" y="7155">
+   </LINKPOINT>
    </LINK>
    <NODE id="39" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="MouseActive">
@@ -506,7 +530,11 @@
    </NODE>
    <LINK srcnodeid="39" srcpinname="Y Output Value" dstnodeid="23" dstpinname="MouseActive" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="33" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Input" linkstyle="PolyLine">
+   <LINK srcnodeid="33" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="5685" y="4268">
+   </LINKPOINT>
+   <LINKPOINT x="8925" y="4268">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="26" srcpinname="Output" dstnodeid="23" dstpinname="Evaluate" linkstyle="PolyLine">
    </LINK>
@@ -528,7 +556,11 @@
    </LINK>
    <LINK srcnodeid="15" srcpinname="Count" dstnodeid="20" dstpinname="Input 1" linkstyle="VHV">
    </LINK>
-   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="21" dstpinname="Input" linkstyle="PolyLine">
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="21" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="9075" y="5490">
+   </LINKPOINT>
+   <LINKPOINT x="5580" y="5490">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="33" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input" linkstyle="PolyLine">
    </LINK>
