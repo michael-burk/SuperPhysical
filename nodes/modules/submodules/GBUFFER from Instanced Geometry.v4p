@@ -161,7 +161,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6945" top="4935" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" visible="1" slicecount="103" values="0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0">
+   <PIN pinname="Y Input Value" visible="1" slicecount="103" values="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -510,7 +510,7 @@
    <LINKPOINT x="15840" y="4035">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="480" top="765" width="19215" height="12960">
+   <BOUNDS type="Window" left="870" top="12435" width="19215" height="15900">
    </BOUNDS>
    <PACK Name="dx11" Version="1.2">
    </PACK>
@@ -611,9 +611,9 @@
    <LINK srcnodeid="46" srcpinname="Count" dstnodeid="20" dstpinname="Input 2">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="48" exposed="0">
-   <BOUNDS type="Box" left="15480" top="450" width="480" height="480">
+   <BOUNDS type="Box" left="16830" top="450" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="15480" top="450" width="0" height="0">
+   <BOUNDS type="Node" left="16830" top="450" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -716,40 +716,10 @@
    <PIN pinname="String Type" slicecount="1" values="Filename">
    </PIN>
    </NODE>
-   <NODE systemname="MaterialIDs (SuperPhysical.Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="MaterialIDs (SuperPhysical.Material)" componentmode="Hidden" id="67">
-   <BOUNDS type="Node" left="6975" top="4425" width="4170" height="270">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="67" srcpinname="MaterialIDs" dstnodeid="9" dstpinname="Y Input Value" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="23" srcpinname="Up Edge" dstnodeid="67" dstpinname="SetID" linkstyle="Bezier">
-   <LINKPOINT x="14655" y="9450">
-   </LINKPOINT>
-   <LINKPOINT x="11415" y="3120">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="67" dstpinname="ID" linkstyle="Bezier">
-   <LINKPOINT x="8940" y="2813">
-   </LINKPOINT>
-   <LINKPOINT x="8370" y="2813">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="67" dstpinname="Input" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="67" dstpinname="Index" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Reset" linkstyle="Bezier">
-   <LINKPOINT x="15480" y="2663">
-   </LINKPOINT>
-   <LINKPOINT x="7725" y="2663">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="60" srcpinname="Output String" dstnodeid="67" dstpinname="File Path">
-   </LINK>
    <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Input 4" linkstyle="Bezier">
-   <LINKPOINT x="15465" y="3998">
+   <LINKPOINT x="16365" y="3998">
    </LINKPOINT>
-   <LINKPOINT x="9465" y="3998">
+   <LINKPOINT x="9915" y="3998">
    </LINKPOINT>
    </LINK>
    <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="70">
@@ -771,5 +741,83 @@
    </LINKPOINT>
    <LINKPOINT x="15525" y="6525">
    </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="72">
+   <BOUNDS type="Box" left="15330" top="450" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="15330" top="450" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Save">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="73">
+   <BOUNDS type="Box" left="16215" top="450" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16215" top="450" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Load">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="MaterialIDs (SuperPhysical.Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="MaterialIDs (SuperPhysical.Material)" componentmode="Hidden" id="74">
+   <BOUNDS type="Node" left="6975" top="4425" width="4170" height="270">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="74" srcpinname="MaterialIDs" dstnodeid="9" dstpinname="Y Input Value" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Up Edge" dstnodeid="74" dstpinname="SetID" linkstyle="Bezier">
+   <LINKPOINT x="14655" y="9450">
+   </LINKPOINT>
+   <LINKPOINT x="11415" y="3120">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="74" dstpinname="ID" linkstyle="Bezier">
+   <LINKPOINT x="8940" y="2813">
+   </LINKPOINT>
+   <LINKPOINT x="8370" y="2813">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="74" dstpinname="Input" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="74" dstpinname="Index" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="74" dstpinname="Reset" linkstyle="Bezier">
+   <LINKPOINT x="16380" y="2663">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="2663">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="60" srcpinname="Output String" dstnodeid="74" dstpinname="File Path">
+   </LINK>
+   <LINK srcnodeid="72" srcpinname="Y Output Value" dstnodeid="74" dstpinname="Save">
+   </LINK>
+   <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="74" dstpinname="Load">
    </LINK>
    </PATCH>

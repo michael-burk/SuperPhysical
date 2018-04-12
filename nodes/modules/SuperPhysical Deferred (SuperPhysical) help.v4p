@@ -136,8 +136,8 @@
    <PIN pinname="Query" visible="1">
    </PIN>
    </NODE>
-   <NODE id="16" border="1" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="0">
-   <BOUNDS type="Window" left="17685" top="750" width="10755" height="11085">
+   <NODE id="16" border="1" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="1">
+   <BOUNDS type="Window" left="17700" top="750" width="10740" height="11085">
    </BOUNDS>
    <BOUNDS type="Node" left="930" top="9630" width="100" height="100">
    </BOUNDS>
@@ -409,7 +409,7 @@
    </LINKPOINT>
    </LINK>
    <NODE id="67" componentmode="Hidden" systemname="Deferred (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical).v4p" nodename="Deferred (SuperPhysical)" debug="0" stayontop="1">
-   <BOUNDS type="Window" left="2835" top="1635" width="22200" height="16095">
+   <BOUNDS type="Window" left="2895" top="13845" width="21315" height="12180">
    </BOUNDS>
    <BOUNDS type="Node" left="930" top="6675" width="3870" height="270">
    </BOUNDS>
@@ -529,7 +529,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="555" top="1755" width="7965" height="10990">
    </BOUNDS>
-   <BOUNDS type="Window" left="480" top="765" width="19215" height="12960">
+   <BOUNDS type="Window" left="870" top="12435" width="19215" height="15900">
    </BOUNDS>
    <PIN pinname="MaterialCount" visible="1" slicecount="1" values="3">
    </PIN>
