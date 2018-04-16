@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="2595" top="2355" width="18195" height="13200">
+   <BOUNDS type="Window" left="1335" top="240" width="17790" height="11580">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -64,30 +64,6 @@
    <PIN pinname="Rows" slicecount="1" values="1">
    </PIN>
    <PIN pinname="SliceCount Mode" slicecount="1" values="Input">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="14025" top="5595" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="14025" top="5595" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,1,0,0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Parallax Occlusion Mapping|">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="False">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d.Pooled)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d.Pooled)" componentmode="Hidden" id="42">
@@ -755,9 +731,9 @@
    </PIN>
    <BOUNDS type="Box" left="12060" top="7575">
    </BOUNDS>
+   <PIN pinname="Enabled" slicecount="1" values="0">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="236" dstpinname="Enabled">
-   </LINK>
    <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="236" dstpinname="POMnumSamples">
    </LINK>
    <LINK srcnodeid="52" srcpinname="Y Output Value" dstnodeid="236" dstpinname="fHeigtMapScale">
@@ -767,7 +743,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="16590" top="7050" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1044,8 +1020,6 @@
    </LINK>
    <LINK srcnodeid="205" srcpinname="Y Output Value" dstnodeid="273" dstpinname="Bumpiness">
    </LINK>
-   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Y Input Value" linkstyle="PolyLine">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="280">
    <BOUNDS type="Box" left="15135" top="1050" width="450" height="1410">
    </BOUNDS>
@@ -1119,6 +1093,10 @@
    <NODE systemname="Material (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Material (SuperPhysical Material)" componentmode="Hidden" id="401">
    <BOUNDS type="Node" left="375" top="8340" width="14370" height="270">
    </BOUNDS>
+   <PIN pinname="ControlTextures" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="401" dstpinname="Metallic" linkstyle="PolyLine">
    </LINK>
@@ -1160,12 +1138,40 @@
    <LINKPOINT x="11045" y="8053">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="273" srcpinname="Output" dstnodeid="401" dstpinname="ControlTextures" linkstyle="Bezier">
-   <LINKPOINT x="1555" y="6018">
+   <NODE id="10" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <PIN pinname="Y Input Value" visible="1" slicecount="3" values="1,1,0">
+   </PIN>
+   <BOUNDS type="Box" left="14025" top="5595" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14025" top="5595" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Parallax Occlusion Mapping|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="236" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="401" srcpinname="Output" dstnodeid="284" dstpinname="Input Node" linkstyle="VHV">
+   <LINKPOINT x="375" y="8723">
    </LINKPOINT>
-   <LINKPOINT x="7490" y="5968">
+   <LINKPOINT x="90" y="8723">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="401" srcpinname="Output" dstnodeid="284" dstpinname="Input Node">
+   <LINK srcnodeid="273" srcpinname="Output" dstnodeid="401" dstpinname="ControlTextures">
    </LINK>
    </PATCH>

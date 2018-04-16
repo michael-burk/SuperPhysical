@@ -21,13 +21,13 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 //    N = mul( tbn[2], worldToTangentSpace );
 	
     float fParallaxLimit = -length( V.xy ) / V.z;
-    fParallaxLimit *= -Material[texID].fHeightMapScale;  
+    fParallaxLimit *= -Material[texID%mCount].fHeightMapScale;  
     
     float2 vOffsetDir = normalize( V.xy );
     float2 vMaxOffset = vOffsetDir * fParallaxLimit;
     
 //    int POM_numSamples = (int)lerp( nMaxSamples, nMinSamples, saturate(-dot( N, V)) );
-    float fStepSize = 1.0 / (float)Material[texID].POMnumSamples;
+    float fStepSize = 1.0 / (float)Material[texID%mCount].POMnumSamples;
     
     float2 dx = ddx_fine( texcoord );
     float2 dy = ddy_fine( texcoord );
@@ -44,7 +44,8 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
     float delta1;
 	float delta2;
 	float ratio;
-    while ( nCurrSample < (float) Material[texID].POMnumSamples ){    
+	// (uint) = (float)
+    while ( nCurrSample < (uint) Material[texID%mCount].POMnumSamples ){    
                 
       fCurrSampledHeight = heightMap.SampleGrad( g_samLinear, float3(texcoord + vCurrOffset, texID), dx, dy ).r;
       if ( fCurrSampledHeight > fCurrRayHeight ){
@@ -55,7 +56,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
     
         vCurrOffset = (ratio) * vLastOffset + (1.0-ratio) * vCurrOffset;
     
-        nCurrSample = Material[texID].POMnumSamples + 1;
+        nCurrSample = Material[texID%mCount].POMnumSamples + 1;
       } else {
         nCurrSample++;
     
