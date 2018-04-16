@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred) help.v4p" systemname="SuperPhysical Deferred (SuperPhysical) help" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="7185" top="765" width="10635" height="12255">
+   <BOUNDS type="Window" left="7185" top="765" width="9420" height="12255">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -10,46 +10,16 @@
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
-   <BOUNDS type="Node" left="8250" top="5460" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Maximum Foreground FPS" visible="1">
-   </PIN>
-   <PIN pinname="Maximum Background FPS" visible="1">
-   </PIN>
-   <PIN pinname="Time Mode" slicecount="1" values="Filtered">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="52">
-   <BOUNDS type="Box" left="8250" top="4950" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="8250" top="4950" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="120">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="52" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
-   </LINK>
-   <LINK srcnodeid="52" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
-   </LINK>
    <NODE systemname="Timing (Debug)" nodename="Timing (Debug)" componentmode="Hidden" id="59">
-   <BOUNDS type="Node" left="8250" top="5880" width="100" height="100">
+   <BOUNDS type="Node" left="6915" top="5940" width="100" height="100">
    </BOUNDS>
    <PIN pinname="frames per second" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="60">
-   <BOUNDS type="Box" left="8250" top="6450" width="795" height="240">
+   <BOUNDS type="Box" left="6915" top="6510" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8250" top="6450" width="0" height="0">
+   <BOUNDS type="Node" left="6915" top="6510" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -136,8 +106,8 @@
    <PIN pinname="Query" visible="1">
    </PIN>
    </NODE>
-   <NODE id="16" border="1" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="1">
-   <BOUNDS type="Window" left="17700" top="750" width="10740" height="11085">
+   <NODE id="16" border="1" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="0">
+   <BOUNDS type="Window" left="16530" top="795" width="15600" height="15945">
    </BOUNDS>
    <BOUNDS type="Node" left="930" top="9630" width="100" height="100">
    </BOUNDS>
@@ -291,7 +261,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="555" top="1755" width="7965" height="10990">
    </BOUNDS>
-   <BOUNDS type="Window" left="870" top="12435" width="19215" height="15900">
+   <BOUNDS type="Window" left="1410" top="10935" width="19215" height="15900">
    </BOUNDS>
    <PIN pinname="MaterialCount" visible="1" slicecount="1" values="3">
    </PIN>
@@ -334,6 +304,8 @@
    <PIN pinname="Geometry ByPass" visible="1">
    </PIN>
    <PIN pinname="MaterialID (AssignToObject)" visible="1">
+   </PIN>
+   <PIN pinname="MaterialSetup" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Default SizeXY" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -429,7 +401,7 @@
    </LINKPOINT>
    </LINK>
    <NODE id="67" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred).v4p" nodename="SuperPhysical (SuperPhysical Deferred)" debug="0" stayontop="1">
-   <BOUNDS type="Window" left="2895" top="13845" width="21315" height="12180">
+   <BOUNDS type="Window" left="15570" top="13605" width="21315" height="12180">
    </BOUNDS>
    <BOUNDS type="Node" left="930" top="6675" width="3885" height="270">
    </BOUNDS>
@@ -528,8 +500,6 @@
    <LINKPOINT x="4170" y="5303">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="91" srcpinname="Buffers" dstnodeid="67" dstpinname="GBuffer (Pos, Normal  TexCD)" linkstyle="PolyLine">
-   </LINK>
    <NODE id="92" componentmode="Hidden" stayontop="0" systemname="ShadowMaps (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred).v4p" nodename="ShadowMaps (SuperPhysical Deferred)" debug="0" hiddenwhenlocked="0">
    <PIN pinname="ShadowMapsVSM" visible="1">
    </PIN>
@@ -597,5 +567,13 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="92" srcpinname="ShadowMapsVSM" dstnodeid="67" dstpinname="ShadowMaps">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="91" dstpinname="MaterialSetup" linkstyle="Bezier">
+   <LINKPOINT x="4470" y="3870">
+   </LINKPOINT>
+   <LINKPOINT x="5520" y="3870">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="91" srcpinname="Buffers" dstnodeid="67" dstpinname="GBuffer (Pos, Normal  TexCD)">
    </LINK>
    </PATCH>

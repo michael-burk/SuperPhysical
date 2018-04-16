@@ -88,8 +88,8 @@ static const float3 F = float3(0.04,0.04,0.04);
 
 Texture2DArray texture2d <string uiname="Texture"; >;
 Texture2DArray EmissiveTex <string uiname="Emissive"; >;
-Texture2DArray normalTex <string uiname="NormalMap"; >;
-Texture2DArray heightMap <string uiname="HeightMap"; >;
+//Texture2DArray normalTex <string uiname="NormalMap"; >;
+//Texture2DArray heightMap <string uiname="HeightMap"; >;
 Texture2DArray roughTex <string uiname="RoughnessMap"; >;
 Texture2DArray metallTex <string uiname="MetallicMap"; >;
 Texture2DArray aoTex <string uiname="AOMap"; >;
@@ -138,7 +138,7 @@ SamplerState g_samLinear
 
 #include "ShadowMapping.fxh"
 #include "NoTile.fxh"
-#include "ParallaxOcclusionMapping.fxh"
+//#include "ParallaxOcclusionMapping.fxh"
 #include "CookTorrance.fxh"
 #ifdef doIBL
 #include "IBL.fxh"
@@ -177,46 +177,44 @@ float4 doLighting(psInput input) : SV_Target
 	// BUMP MAPPING & POM
 	//////////////////////////////////////////////////////////////////////////
 
-	if(useTex[texID]){
+//	if(useTex[texID]){
+//	
+//	
+//	// compute derivations of the world position
+//	float3 p_dx = ddx_fine(PosW.xyz);
+//	float3 p_dy = ddy_fine(PosW.xyz);
+//	// compute derivations of the texture coordinate
+//	float2 tc_dx = ddx_fine(TexCd.xy);
+//	float2 tc_dy = ddy_fine(TexCd.xy);
+//			
+//	// compute initial tangent and bi-tangent
+//	float3 t = normalize( (tc_dy.y * p_dx - tc_dx.y * p_dy)  +.0000000000000001 );
+//	float3 b = normalize( (tc_dy.x * p_dx - tc_dx.x * p_dy)  +.0000000000000001 ); // sign inversion
+//		
+//	// get new tangent from a given mesh normal
+//	float3 n = normalize(N);
+//	float3 x = cross(n, t);
+//	t = cross(x, n);
+//	t = normalize(t);
+//	// get updated bi-tangent
+//	x = cross(b, n);
+//	b = cross(n, x);
+//	b = normalize(b);
+//	
+//	#ifdef doPOM
+//	if(Material[texID].POM){
+//		parallaxOcclusionMapping(TexCd.xy, PosW.xyz, V, float3x3(t,b,N), texID);
+//	}
+//	#endif
+//
+//	float3 bumpMap = 0;
+//	
+//		bumpMap = normalTex.Sample(g_samLinear,float3(TexCd.xy, texID)).rgb;
+//		if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
+//		N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material[texID].bumpy);
+//		
+//	}
 	
-	
-	// compute derivations of the world position
-	float3 p_dx = ddx_fine(PosW.xyz);
-	float3 p_dy = ddy_fine(PosW.xyz);
-	// compute derivations of the texture coordinate
-	float2 tc_dx = ddx_fine(TexCd.xy);
-	float2 tc_dy = ddy_fine(TexCd.xy);
-			
-	// compute initial tangent and bi-tangent
-	float3 t = normalize( (tc_dy.y * p_dx - tc_dx.y * p_dy)  +.0000000000000001 );
-	float3 b = normalize( (tc_dy.x * p_dx - tc_dx.x * p_dy)  +.0000000000000001 ); // sign inversion
-		
-	// get new tangent from a given mesh normal
-	float3 n = normalize(N);
-	float3 x = cross(n, t);
-	t = cross(x, n);
-	t = normalize(t);
-	// get updated bi-tangent
-	x = cross(b, n);
-	b = cross(n, x);
-	b = normalize(b);
-	
-	#ifdef doPOM
-	if(Material[texID].POM){
-		parallaxOcclusionMapping(TexCd.xy, PosW.xyz, V, float3x3(t,b,N), texID);
-	}
-	#endif
-
-	float3 bumpMap = 0;
-	
-		bumpMap = normalTex.Sample(g_samLinear,float3(TexCd.xy, texID)).rgb;
-		if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
-		N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material[texID].bumpy);
-		
-	}
-	
-	
-
 	///////////////////////////////////////////////////////////////////////////
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
 	///////////////////////////////////////////////////////////////////////////
