@@ -3,6 +3,8 @@
 //@tags: texture
 //@credits: 
 
+#define Deferred=true;
+
 SamplerState linearSampler : Immutable
 {
     Filter = MIN_MAG_MIP_LINEAR;
@@ -162,7 +164,6 @@ float4 doLighting(psInput input) : SV_Target
 	if(length(N) == 0) return Background * 2;
 	
 	uint texID = GBufferNorm.Sample(linearSampler, input.uv).a * 1000;
-	
 	float4 PosW = GBufferPos.Sample(linearSampler, input.uv);
 	
 	float4 TexCd = GBufferTexCd.Sample(linearSampler, input.uv);

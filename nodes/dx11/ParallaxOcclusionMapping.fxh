@@ -6,7 +6,6 @@
 void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID){
     
 	
-	
 	float3x3 tangentToWorldSpace;
 
 	tangentToWorldSpace[0] = -tbn[0];
@@ -21,13 +20,16 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 //    N = mul( tbn[2], worldToTangentSpace );
 	
     float fParallaxLimit = -length( V.xy ) / V.z;
-    fParallaxLimit *= -Material[texID%mCount].fHeightMapScale;  
+	#ifdef Deferred
+		 fParallaxLimit *= -Material[texID].fHeightMapScale;  
+	#else
+   		 fParallaxLimit *= -Material[texID].fHeightMapScale;
+	#endif
     
     float2 vOffsetDir = normalize( V.xy );
     float2 vMaxOffset = vOffsetDir * fParallaxLimit;
     
-//    int POM_numSamples = (int)lerp( nMaxSamples, nMinSamples, saturate(-dot( N, V)) );
-    float fStepSize = 1.0 / (float)Material[texID%mCount].POMnumSamples;
+    float fStepSize = 1.0 / (float)Material[texID].POMnumSamples;
     
     float2 dx = ddx_fine( texcoord );
     float2 dy = ddy_fine( texcoord );
@@ -45,7 +47,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 	float delta2;
 	float ratio;
 	// (uint) = (float)
-    while ( nCurrSample < (uint) Material[texID%mCount].POMnumSamples ){    
+    while ( nCurrSample < (uint) Material[texID].POMnumSamples ){    
                 
       fCurrSampledHeight = heightMap.SampleGrad( g_samLinear, float3(texcoord + vCurrOffset, texID), dx, dy ).r;
       if ( fCurrSampledHeight > fCurrRayHeight ){
@@ -56,7 +58,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
     
         vCurrOffset = (ratio) * vLastOffset + (1.0-ratio) * vCurrOffset;
     
-        nCurrSample = Material[texID%mCount].POMnumSamples + 1;
+        nCurrSample = Material[texID].POMnumSamples + 1;
       } else {
         nCurrSample++;
     
@@ -71,9 +73,13 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
     }
 	texcoord += vCurrOffset;
 	
+	#ifdef Deferred
+	
+	#else
 //	PosW.xyz -= mul((float3(vCurrOffset,delta1*-Material[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz;
 	
-//	float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
-//	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-Material[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
+	float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
+	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-Material[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
+	#endif
 }
 

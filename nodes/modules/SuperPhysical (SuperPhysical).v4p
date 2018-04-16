@@ -164,66 +164,6 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE id="225" componentmode="Hidden" stayontop="0" systemname="ShadowMaps" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\light\shadow\ShadowMaps.v4p" nodename="ShadowMaps" debug="0" hiddenwhenlocked="0">
-   <PIN pinname="ShadowMapsVSM" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="2850" top="405" width="12780" height="13905">
-   </BOUNDS>
-   <BOUNDS type="Node" left="12300" top="6210" width="1200" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="12300" top="6210" width="3100" height="3100">
-   </BOUNDS>
-   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="ViewVP" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="LightType" visible="1">
-   </PIN>
-   <PIN pinname="useShadow" visible="1">
-   </PIN>
-   <PIN pinname="Depth Out" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Technique" slicecount="1" visible="1" values="VSM">
-   </PIN>
-   <PIN pinname="Alpha Tex" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="exponentsXY" visible="1" slicecount="2" values="0.02,0.1">
-   </PIN>
-   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="ShadowMaps" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="254" srcpinname="Output Node" dstnodeid="225" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="10365" y="3398">
-   </LINKPOINT>
-   <LINKPOINT x="12315" y="3398">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="225" srcpinname="ShadowMaps" dstnodeid="249" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="13500" y="7395">
-   </LINKPOINT>
-   <LINKPOINT x="15405" y="7395">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="225" dstpinname="Geometry" linkstyle="Bezier">
-   <LINKPOINT x="1605" y="5535">
-   </LINKPOINT>
-   <LINKPOINT x="12585" y="5535">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="225" dstpinname="Transform In" linkstyle="Bezier">
-   <LINKPOINT x="1860" y="5813">
-   </LINKPOINT>
-   <LINKPOINT x="12870" y="5813">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="GetGlobalSettings (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalSettings (SuperPhysical)" componentmode="Hidden" id="297">
    <BOUNDS type="Node" left="13170" top="1350" width="100" height="100">
    </BOUNDS>
@@ -456,12 +396,10 @@
    <LINKPOINT x="6185" y="7123">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="225" srcpinname="Depth Out" dstnodeid="328" dstpinname="ShadowMap2">
-   </LINK>
    <LINK srcnodeid="297" srcpinname="IBLSettingsXY" dstnodeid="328" dstpinname="IBL IntensityXY" linkstyle="Bezier">
    <LINKPOINT x="13485" y="5580">
    </LINKPOINT>
-   <LINKPOINT x="5040" y="5580">
+   <LINKPOINT x="3885" y="5580">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="297" srcpinname="GlobalDiffuseColor" dstnodeid="328" dstpinname="Global Diffuse Color" linkstyle="Bezier">
@@ -512,16 +450,10 @@
    <LINKPOINT x="10695" y="6210">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="225" srcpinname="ShadowMapsVSM" dstnodeid="328" dstpinname="ShadowMap" linkstyle="Bezier">
-   <LINKPOINT x="12300" y="8025">
-   </LINKPOINT>
-   <LINKPOINT x="10455" y="8025">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="301" srcpinname="LightCount" dstnodeid="328" dstpinname="num" linkstyle="Bezier">
    <LINKPOINT x="12750" y="5580">
    </LINKPOINT>
-   <LINKPOINT x="4230" y="5580">
+   <LINKPOINT x="4590" y="5580">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="314" srcpinname="Texture Array Out" dstnodeid="328" dstpinname="SpotTex" linkstyle="Bezier">
@@ -751,9 +683,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="324" srcpinname="useTex" dstnodeid="350" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="9440" y="5225">
+   <LINKPOINT x="9495" y="5258">
    </LINKPOINT>
-   <LINKPOINT x="7420" y="5290">
+   <LINKPOINT x="7365" y="5258">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="350" srcpinname="Buffer" dstnodeid="328" dstpinname="useTex">
@@ -772,12 +704,6 @@
    <PIN pinname="Texture" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="352" srcpinname="Texture" dstnodeid="225" dstpinname="Alpha Tex" linkstyle="Bezier">
-   <LINKPOINT x="5655" y="6008">
-   </LINKPOINT>
-   <LINKPOINT x="12375" y="5213">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="324" srcpinname="AlbedoTex" dstnodeid="352" dstpinname="Pointer" linkstyle="Bezier">
    <LINKPOINT x="2955" y="3195">
    </LINKPOINT>
@@ -785,9 +711,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="352" srcpinname="Texture" dstnodeid="328" dstpinname="Texture" linkstyle="Bezier">
-   <LINKPOINT x="4830" y="7298">
+   <LINKPOINT x="4845" y="7290">
    </LINKPOINT>
-   <LINKPOINT x="4560" y="7298">
+   <LINKPOINT x="4890" y="7290">
    </LINKPOINT>
    </LINK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="354">
@@ -805,9 +731,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="354" srcpinname="Texture" dstnodeid="328" dstpinname="NormalMap" linkstyle="Bezier">
-   <LINKPOINT x="5490" y="7740">
+   <LINKPOINT x="5505" y="7725">
    </LINKPOINT>
-   <LINKPOINT x="5265" y="7740">
+   <LINKPOINT x="5595" y="7725">
    </LINKPOINT>
    </LINK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="355">
@@ -823,9 +749,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="355" srcpinname="Texture" dstnodeid="328" dstpinname="HeightMap" linkstyle="Bezier">
-   <LINKPOINT x="5820" y="7958">
+   <LINKPOINT x="5835" y="7958">
    </LINKPOINT>
-   <LINKPOINT x="5610" y="7958">
+   <LINKPOINT x="5940" y="7958">
    </LINKPOINT>
    </LINK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="356">
@@ -841,9 +767,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="356" srcpinname="Texture" dstnodeid="328" dstpinname="RoughnessMap" linkstyle="Bezier">
-   <LINKPOINT x="6195" y="8205">
+   <LINKPOINT x="6210" y="8198">
    </LINKPOINT>
-   <LINKPOINT x="5955" y="8205">
+   <LINKPOINT x="6300" y="8198">
    </LINKPOINT>
    </LINK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="357">
@@ -859,9 +785,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="357" srcpinname="Texture" dstnodeid="328" dstpinname="MetallicMap" linkstyle="Bezier">
-   <LINKPOINT x="6510" y="8423">
+   <LINKPOINT x="6525" y="8430">
    </LINKPOINT>
-   <LINKPOINT x="6315" y="8423">
+   <LINKPOINT x="6645" y="8430">
    </LINKPOINT>
    </LINK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="358">
@@ -877,9 +803,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="358" srcpinname="Texture" dstnodeid="328" dstpinname="AOMap" linkstyle="Bezier">
-   <LINKPOINT x="6735" y="8655">
+   <LINKPOINT x="6750" y="8655">
    </LINKPOINT>
-   <LINKPOINT x="6660" y="8655">
+   <LINKPOINT x="7005" y="8655">
    </LINKPOINT>
    </LINK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="363">
@@ -895,13 +821,13 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="363" srcpinname="Texture" dstnodeid="328" dstpinname="Emissive" linkstyle="Bezier">
-   <LINKPOINT x="5145" y="7523">
+   <LINKPOINT x="5160" y="7523">
    </LINKPOINT>
-   <LINKPOINT x="4905" y="7523">
+   <LINKPOINT x="5250" y="7523">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="364">
-   <BOUNDS type="Node" left="10860" top="8895" width="100" height="100">
+   <BOUNDS type="Node" left="4155" top="8865" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -910,8 +836,88 @@
    <PIN pinname="High" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="364" dstpinname="Input">
+   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="364" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="2910" y="4830">
+   </LINKPOINT>
+   <LINKPOINT x="4170" y="4830">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="364" srcpinname="Count" dstnodeid="328" dstpinname="Material Count">
+   </LINK>
+   <NODE id="225" componentmode="Hidden" stayontop="0" systemname="ShadowMaps (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical).v4p" nodename="ShadowMaps (SuperPhysical)" debug="0" hiddenwhenlocked="0">
+   <PIN pinname="ShadowMapsVSM" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="2850" top="405" width="12780" height="13905">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12300" top="6210" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12300" top="6210" width="3100" height="3100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ViewVP" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="LightType" visible="1">
+   </PIN>
+   <PIN pinname="useShadow" visible="1">
+   </PIN>
+   <PIN pinname="Depth Out" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" visible="1" values="VSM">
+   </PIN>
+   <PIN pinname="Alpha Tex" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="exponentsXY" visible="1" slicecount="2" values="0.02,0.1">
+   </PIN>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ShadowMaps" visible="1">
+   </PIN>
+   <PIN pinname="IntanceCount" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="254" srcpinname="Output Node" dstnodeid="225" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="10365" y="3398">
+   </LINKPOINT>
+   <LINKPOINT x="12315" y="3398">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="225" srcpinname="ShadowMaps" dstnodeid="249" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="13500" y="7395">
+   </LINKPOINT>
+   <LINKPOINT x="15405" y="7395">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="225" dstpinname="Geometry" linkstyle="Bezier">
+   <LINKPOINT x="1605" y="5535">
+   </LINKPOINT>
+   <LINKPOINT x="12585" y="5535">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="225" dstpinname="Transform In" linkstyle="Bezier">
+   <LINKPOINT x="1860" y="5813">
+   </LINKPOINT>
+   <LINKPOINT x="12870" y="5813">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="225" srcpinname="Depth Out" dstnodeid="328" dstpinname="ShadowMap2">
+   </LINK>
+   <LINK srcnodeid="225" srcpinname="ShadowMapsVSM" dstnodeid="328" dstpinname="ShadowMap" linkstyle="Bezier">
+   <LINKPOINT x="12300" y="8025">
+   </LINKPOINT>
+   <LINKPOINT x="10455" y="8025">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="352" srcpinname="Texture" dstnodeid="225" dstpinname="Alpha Tex" linkstyle="Bezier">
+   <LINKPOINT x="5655" y="6008">
+   </LINKPOINT>
+   <LINKPOINT x="12375" y="5213">
+   </LINKPOINT>
    </LINK>
    </PATCH>

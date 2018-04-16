@@ -561,6 +561,8 @@
    </PIN>
    <PIN pinname="Initial Yaw" slicecount="1" values="-0.5">
    </PIN>
+   <PIN pinname="Camera State" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="38" srcpinname="View" dstnodeid="41" dstpinname="View" linkstyle="Bezier">
    <LINKPOINT x="3450" y="8753">
@@ -652,6 +654,8 @@
    <PIN pinname="stepLength" slicecount="1" values="0.15">
    </PIN>
    <PIN pinname="brightness" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Camera State" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="46" dstpinname="HighRes">
@@ -787,5 +791,7 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="51" dstpinname="MaterialSetup">
+   </LINK>
+   <LINK srcnodeid="38" srcpinname="Camera State" dstnodeid="46" dstpinname="Camera State">
    </LINK>
    </PATCH>

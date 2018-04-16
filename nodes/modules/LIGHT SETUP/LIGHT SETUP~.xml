@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="11985" top="2550" width="11025" height="7515">
+   <BOUNDS type="Window" left="1185" top="750" width="11025" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -284,12 +284,6 @@
    </LINK>
    <LINK srcnodeid="187" srcpinname="Output" dstnodeid="181" dstpinname="IBLSettings">
    </LINK>
-   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="181" dstpinname="PointLightSettings">
-   </LINK>
-   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
-   </LINK>
-   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="188">
    <BOUNDS type="Box" left="1395" top="5640" width="795" height="240">
    </BOUNDS>
@@ -299,5 +293,11 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="181" srcpinname="LightSetup" dstnodeid="188" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
+   </LINK>
+   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
+   </LINK>
+   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="181" dstpinname="PointLightSettings">
    </LINK>
    </PATCH>

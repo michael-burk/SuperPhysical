@@ -6,8 +6,12 @@ Texture2D inputTexture <string uiname="Alpha Tex";>;
 
 static float2 exponents = float2(.01,.1);
 
+int IntanceStartIndex = 0;
+StructuredBuffer<float4x4> world;
+
 struct vsInput
 {
+	uint ii : SV_InstanceID;
     float4 posObject : POSITION;
 };
 
@@ -46,6 +50,8 @@ cbuffer cbPerDraw : register(b0)
 cbuffer cbPerObj : register( b1 )
 {	
 	float4x4 tW : WORLD;
+	float4x4 tV : VIEW;
+	float4x4 tP : PROJECTION;
 	float3 lightPos;
 	float lightDist;
 	float depthOffset = 0.0001;
@@ -61,20 +67,24 @@ cbuffer cbTextureData : register(b2)
 
 psInput VS(vsInput input)
 {
+	
+	/*Here we look up for local world transform using
+	the object instance id and start offset*/
+	float4x4 wo = world[input.ii + IntanceStartIndex];
+	
+	/* the WORLD transform applies to the 
+	whole batch in case of instancing, so we can transform 
+	all the batch at once using it */
+	wo = mul(wo,tW);
+	
+	float4x4 wv = mul(wo,tV);
+	
 	psInput output;
-	output.posObject = mul(input.posObject,tW);
-	output.posScreen = mul(input.posObject,mul(tW,tVP));
+	output.posObject = mul(input.posObject,wo);
+	output.posScreen = mul(input.posObject,mul(wo,tVP));
 	return output;
 }
 
-psInput_AT VS_AT(vsInput_AT input)
-{
-	psInput_AT output;
-	output.posObject = mul(input.posObject,tW);
-	output.posScreen = mul(input.posObject,mul(tW,tVP));
-	output.uv = mul(input.uv, tTex);
-	return output;
-}
 
 
 float4 PS(psInput input): SV_Target
