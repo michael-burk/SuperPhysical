@@ -238,20 +238,6 @@
    </NODE>
    <LINK srcnodeid="16" srcpinname="Window Handle" dstnodeid="76" dstpinname="Handle" linkstyle="PolyLine">
    </LINK>
-   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="77">
-   <BOUNDS type="Node" left="6000" top="7170" width="1920" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="6000" top="7170" width="3135" height="1290">
-   </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|Load Textures only once!&cr;&lf;Clean up editors in modules.&cr;&lf;Save Edited Materials -&gt; Kinda working, last change is not saved yet&cr;&lf;Material Buffer according to defines?|">
-   </PIN>
-   <PIN pinname="Output String" visible="0">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="MultiLine">
-   </PIN>
-   </NODE>
    <NODE systemname="GEOMETRY" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" componentmode="Hidden" id="88">
    <BOUNDS type="Node" left="2151" top="4320" width="1155" height="270">
    </BOUNDS>
