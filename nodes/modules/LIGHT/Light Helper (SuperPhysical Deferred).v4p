@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\Light Helper Deferred (SuperPhysical).v4p" systemname="Light Helper Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\Light Helper Deferred (SuperPhysical).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="2445" top="4095" width="15690" height="10740">
+   <PATCH nodename="C:\Projects\_SCHUMANN\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\Light Helper (SuperPhysical Deferred).v4p" systemname="Light Helper Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\Light Helper Deferred (SuperPhysical).v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="2445" top="4095" width="15690" height="13455">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -639,7 +639,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="15015" top="3615" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -708,7 +708,7 @@
    </LINK>
    <LINK srcnodeid="105" srcpinname="Geometry Out" dstnodeid="106" dstpinname="Geometry">
    </LINK>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.0.4">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
@@ -736,6 +736,8 @@
    <PIN pinname="Projection" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.00000,0.00000,0.00000,0.00000|">
    </PIN>
    </NODE>
    <LINK srcnodeid="111" srcpinname="Layer Out" dstnodeid="119" dstpinname="Layer">
@@ -856,16 +858,28 @@
    </NODE>
    <LINK srcnodeid="129" srcpinname="Output Node" dstnodeid="128" dstpinname="Camera State">
    </LINK>
-   <LINK srcnodeid="128" srcpinname="View" dstnodeid="119" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="12225" y="6105">
-   </LINKPOINT>
-   <LINKPOINT x="3555" y="6105">
-   </LINKPOINT>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="130">
+   <BOUNDS type="Box" left="10110" top="450" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10110" top="450" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="View">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="130" srcpinname="Output Node" dstnodeid="119" dstpinname="View">
    </LINK>
-   <LINK srcnodeid="128" srcpinname="Projection" dstnodeid="119" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="11895" y="6113">
-   </LINKPOINT>
-   <LINKPOINT x="3705" y="6113">
-   </LINKPOINT>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="131">
+   <BOUNDS type="Box" left="10395" top="915" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10395" top="915" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Projection">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="131" srcpinname="Output Node" dstnodeid="119" dstpinname="Projection">
    </LINK>
    </PATCH>
