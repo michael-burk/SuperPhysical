@@ -1,5 +1,5 @@
 
-float3 IRIDESCENCE(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor, float roughness, float metallic){
+float3 IRIDESCENCE(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor, float roughness, float ao, float metallic){
 	///////////////////////////////////
 	//  IBL
 	//////////////////////////////////
@@ -14,7 +14,7 @@ float3 IRIDESCENCE(float3 N, float3 V, float3 F0, float4 albedo, float3 iridesce
 	
 	iridescenceColor *= (kS * envBRDF.x + envBRDF.y);
 	IBL = iridescenceColor / kD;	
-	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * 2 * iridescenceColor;
+	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * 2 * iridescenceColor;
 	
 	//////////////////////////////////
 

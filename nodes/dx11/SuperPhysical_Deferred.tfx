@@ -445,9 +445,9 @@ float4 doLighting(psInput input) : SV_Target
 	#ifdef doIBL
 		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT, texID );
 	#elif doIridescence
-		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT );
+		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, aoT, metallicT );
 	#elif doGlobalLight
-		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, texRoughness, metallicT );
+		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, texRoughness, aoT, metallicT );
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////

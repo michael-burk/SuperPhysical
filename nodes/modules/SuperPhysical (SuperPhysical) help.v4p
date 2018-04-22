@@ -749,7 +749,7 @@
    </LINKPOINT>
    </LINK>
    <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
-   <BOUNDS type="Window" left="2175" top="6630" width="17445" height="11505">
+   <BOUNDS type="Window" left="3150" top="2940" width="17445" height="11505">
    </BOUNDS>
    <BOUNDS type="Node" left="1080" top="4845" width="3870" height="270">
    </BOUNDS>

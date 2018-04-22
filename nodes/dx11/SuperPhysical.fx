@@ -439,9 +439,9 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	#ifdef doIBL
 		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT, texID );
 	#elif doIridescence
-		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, metallicT );
+		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, aoT,metallicT );
 	#elif doGlobalLight
-		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, texRoughness, metallicT );
+		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, texRoughness, aoT, metallicT );
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -523,7 +523,7 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	
 	float3 bumpMap = float3(0,0,0);
 
-	uint tX2,tY2,m2;
+//	uint tX2,tY2,m2;
 //	normalTex.GetDimensions(tX2,tY2);
 //	if(tX2+tY2 > 4 && !noTile) bumpMap = normalTex.Sample(g_samLinear,In.TexCd.xy).rgb;
 //	else if(tX2+tY2 > 4 && noTile) bumpMap = textureNoTile(normalTex,In.TexCd.xy).rgb;

@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="1335" top="240" width="17790" height="11580">
+   <BOUNDS type="Window" left="6555" top="1890" width="18195" height="13200">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -579,7 +579,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7905" top="2805" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="2058984032,2059004768,2059006304,2059038560">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -913,14 +913,12 @@
    </PIN>
    <PIN pinname="Pointer" visible="1">
    </PIN>
-   <PIN pinname="Texture In" visible="1">
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="225" srcpinname="Y Output Value" dstnodeid="263" dstpinname="Enabled">
    </LINK>
    <LINK srcnodeid="219" srcpinname="Y Output Value" dstnodeid="268" dstpinname="Enabled">
-   </LINK>
-   <LINK srcnodeid="261" srcpinname="Pointer" dstnodeid="177" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="258" srcpinname="Pointer" dstnodeid="171" dstpinname="Y Input Value">
    </LINK>
@@ -1066,8 +1064,6 @@
    <LINKPOINT x="12270" y="2970">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="27" srcpinname="Texture Out" dstnodeid="261" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="30" srcpinname="Texture Out" dstnodeid="272" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="167" dstpinname="Texture In">
@@ -1139,7 +1135,7 @@
    </LINKPOINT>
    </LINK>
    <NODE id="10" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
-   <PIN pinname="Y Input Value" visible="1" slicecount="3" values="1,1,0">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="1">
    </PIN>
    <BOUNDS type="Box" left="14025" top="5595" width="480" height="480">
    </BOUNDS>
@@ -1164,8 +1160,6 @@
    </NODE>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="236" dstpinname="Enabled">
    </LINK>
-   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Y Input Value">
-   </LINK>
    <LINK srcnodeid="401" srcpinname="Output" dstnodeid="284" dstpinname="Input Node" linkstyle="VHV">
    <LINKPOINT x="375" y="8723">
    </LINKPOINT>
@@ -1173,5 +1167,11 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="273" srcpinname="Output" dstnodeid="401" dstpinname="ControlTextures">
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Texture Out" dstnodeid="261" dstpinname="Texture In" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="261" srcpinname="Pointer" dstnodeid="177" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

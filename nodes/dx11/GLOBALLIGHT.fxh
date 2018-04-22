@@ -1,5 +1,5 @@
 
-float3 GLOBALLIGHT(float3 N, float3 V, float3 F0, float4 albedo, float roughness, float metallic){
+float3 GLOBALLIGHT(float3 N, float3 V, float3 F0, float4 albedo, float roughness, float ao, float metallic){
 	///////////////////////////////////
 	//  IBL
 	//////////////////////////////////
@@ -11,7 +11,7 @@ float3 GLOBALLIGHT(float3 N, float3 V, float3 F0, float4 albedo, float roughness
 		   kD *= 1.0 - metallic;
 	float2 envBRDF  = brdfLUT.Sample(g_samLinear, float2(max(dot(N, V), 0.0)-.01,roughness)*float2(1,-1)).rg;
 
-	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * 2;
+	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y)* ao * 2;
 	
 	//////////////////////////////////
 

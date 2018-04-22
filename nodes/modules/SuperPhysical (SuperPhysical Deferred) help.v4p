@@ -31,9 +31,9 @@
    <LINK srcnodeid="59" srcpinname="frames per second" dstnodeid="60" dstpinname="Y Input Value">
    </LINK>
    <NODE id="7" componentmode="Hidden" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
-   <BOUNDS type="Node" left="6030" top="2535" width="100" height="100">
+   <BOUNDS type="Node" left="5430" top="2280" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="6030" top="2535">
+   <BOUNDS type="Box" left="5430" top="2280">
    </BOUNDS>
    <BOUNDS type="Window" left="11985" top="2550" width="11025" height="7515">
    </BOUNDS>
@@ -165,9 +165,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="46" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6045" y="5128">
+   <LINKPOINT x="5445" y="5010">
    </LINKPOINT>
-   <LINKPOINT x="4680" y="5178">
+   <LINKPOINT x="4680" y="5010">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="46" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In 2">
@@ -181,15 +181,15 @@
    <LINK srcnodeid="21" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture In">
    </LINK>
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
-   <BOUNDS type="Node" left="4410" top="2535" width="1410" height="270">
+   <BOUNDS type="Node" left="3570" top="2280" width="1410" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="2595" top="2355" width="18195" height="13200">
+   <BOUNDS type="Window" left="6555" top="1890" width="18195" height="13200">
    </BOUNDS>
    <PIN pinname="Material" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Iridescence" visible="1" slicecount="1" values="0">
    </PIN>
-   <BOUNDS type="Box" left="4410" top="2535">
+   <BOUNDS type="Box" left="3570" top="2280">
    </BOUNDS>
    <PIN pinname="MaterialSettings" visible="1" slicecount="1" values="||">
    </PIN>
@@ -209,9 +209,9 @@
    <LINK srcnodeid="16" srcpinname="Window Handle" dstnodeid="76" dstpinname="Handle" linkstyle="PolyLine">
    </LINK>
    <NODE systemname="GEOMETRY" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" componentmode="Hidden" id="88">
-   <BOUNDS type="Node" left="2151" top="4320" width="1155" height="270">
+   <BOUNDS type="Node" left="2046" top="4455" width="1155" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="945" top="1800" width="11985" height="6810">
+   <BOUNDS type="Box" left="840" top="1935" width="11985" height="6810">
    </BOUNDS>
    <BOUNDS type="Window" left="8955" top="4155" width="12705" height="8070">
    </BOUNDS>
@@ -256,12 +256,206 @@
    <LINKPOINT x="4995" y="5723">
    </LINKPOINT>
    </LINK>
+   <NODE systemname="Helper (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\Light Helper (SuperPhysical Deferred).v4p" nodename="Helper (SuperPhysical Deferred)" componentmode="Hidden" id="98">
+   <BOUNDS type="Node" left="915" top="8760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Depth Buffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Camera State" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="98" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="98" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="98" dstpinname="Texture SizeXY" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="705" y="5640">
+   </LINKPOINT>
+   <LINKPOINT x="1335" y="5640">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="98" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="5430" y="5655">
+   </LINKPOINT>
+   <LINKPOINT x="1455" y="5655">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="98" dstpinname="Camera State" linkstyle="Bezier">
+   <LINKPOINT x="6390" y="6353">
+   </LINKPOINT>
+   <LINKPOINT x="1950" y="6353">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="67" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred).v4p" nodename="SuperPhysical (SuperPhysical Deferred)" debug="0" stayontop="1">
+   <BOUNDS type="Window" left="5385" top="2280" width="21315" height="12180">
+   </BOUNDS>
+   <BOUNDS type="Node" left="930" top="6675" width="3885" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="675" top="6675">
+   </BOUNDS>
+   <PIN pinname="SelectObject" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="MaterialSetup" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Material IDs" visible="1" slicecount="103" values="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3">
+   </PIN>
+   <PIN pinname="Instance Count" visible="1" slicecount="4" values="100,1,1,1">
+   </PIN>
+   <PIN pinname="SelectedMaterial" visible="1" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="MouseActive" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Reset Material IDs" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Depth Buffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="GBuffer (Pos, Normal  TexCD)" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ShadowMaps" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="67" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In" linkstyle="Bezier">
+   <LINKPOINT x="960" y="7540">
+   </LINKPOINT>
+   <LINKPOINT x="960" y="7385">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Default SizeXY" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="705" y="4590">
+   </LINKPOINT>
+   <LINKPOINT x="945" y="4590">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="67" dstpinname="LightSetup" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="5430" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="2880" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="67" dstpinname="MaterialSetup" linkstyle="Bezier">
+   <LINKPOINT x="3585" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="2235" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Transforms" dstnodeid="67" dstpinname="Transform In" linkstyle="Bezier">
+   <LINKPOINT x="2970" y="5803">
+   </LINKPOINT>
+   <LINKPOINT x="2415" y="5598">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Geometry" dstnodeid="67" dstpinname="Geometry" linkstyle="Bezier">
+   <LINKPOINT x="1900" y="5843">
+   </LINKPOINT>
+   <LINKPOINT x="1745" y="5543">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="InstanceCount" dstnodeid="67" dstpinname="Instance Count" linkstyle="Bezier">
+   <LINKPOINT x="2455" y="5850">
+   </LINKPOINT>
+   <LINKPOINT x="2060" y="5550">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="View" dstnodeid="67" dstpinname="View" linkstyle="Bezier">
+   <LINKPOINT x="5995" y="5008">
+   </LINKPOINT>
+   <LINKPOINT x="4100" y="5598">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Projection" dstnodeid="67" dstpinname="Projection" linkstyle="Bezier">
+   <LINKPOINT x="6145" y="5008">
+   </LINKPOINT>
+   <LINKPOINT x="4430" y="5598">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Inverse View" dstnodeid="67" dstpinname="tVI" linkstyle="Bezier">
+   <LINKPOINT x="6460" y="5008">
+   </LINKPOINT>
+   <LINKPOINT x="4745" y="5598">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="67" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="6390" y="5310">
+   </LINKPOINT>
+   <LINKPOINT x="4185" y="5310">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="92" componentmode="Hidden" stayontop="0" systemname="ShadowMaps (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred).v4p" nodename="ShadowMaps (SuperPhysical Deferred)" debug="0" hiddenwhenlocked="0">
+   <PIN pinname="ShadowMapsVSM" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="6345" top="735" width="12780" height="13905">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3480" top="5940" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3480" top="5940" width="3100" height="3100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ViewVP" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="LightType" visible="1">
+   </PIN>
+   <PIN pinname="useShadow" visible="1">
+   </PIN>
+   <PIN pinname="Depth Out" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" visible="1" values="VSM">
+   </PIN>
+   <PIN pinname="Alpha Tex" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="exponentsXY" visible="1" slicecount="2" values="0.02,0.1">
+   </PIN>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ShadowMaps" visible="1">
+   </PIN>
+   <PIN pinname="IntanceStartIndex" visible="1" slicecount="4" values="0,100,101,102">
+   </PIN>
+   <PIN pinname="IntanceCount" visible="1" slicecount="4" values="0,100,101,102">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="92" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="5430" y="4245">
+   </LINKPOINT>
+   <LINKPOINT x="3525" y="4245">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="92" srcpinname="ShadowMaps" dstnodeid="46" dstpinname="ShadowMaps" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4650" y="6823">
+   </LINKPOINT>
+   <LINKPOINT x="4830" y="6873">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="92" srcpinname="ShadowMapsVSM" dstnodeid="67" dstpinname="ShadowMaps">
+   </LINK>
    <NODE systemname="GBUFFER from Instanced Geometry" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GBUFFER from Instanced Geometry.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GBUFFER from Instanced Geometry.v4p" componentmode="Hidden" id="91" debug="0">
    <BOUNDS type="Node" left="1560" top="4950" width="4020" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="555" top="1755" width="7965" height="10990">
    </BOUNDS>
-   <BOUNDS type="Window" left="1410" top="10935" width="19215" height="15900">
+   <BOUNDS type="Window" left="960" top="2415" width="19215" height="15900">
    </BOUNDS>
    <PIN pinname="MaterialCount" visible="1" slicecount="1" values="3">
    </PIN>
@@ -317,7 +511,7 @@
    <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="91" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
    <LINKPOINT x="6405" y="4440">
    </LINKPOINT>
-   <LINKPOINT x="5010" y="4440">
+   <LINKPOINT x="4590" y="4440">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="88" srcpinname="Geometry" dstnodeid="91" dstpinname="Geometry In" linkstyle="PolyLine">
@@ -327,9 +521,9 @@
    <LINK srcnodeid="88" srcpinname="Transforms" dstnodeid="91" dstpinname="Transforms" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="91" dstpinname="MaterialSettings" linkstyle="Bezier">
-   <LINKPOINT x="4425" y="3870">
+   <LINKPOINT x="3585" y="3735">
    </LINKPOINT>
-   <LINKPOINT x="3855" y="3870">
+   <LINKPOINT x="3570" y="3735">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="91" srcpinname="Depth Buffer" dstnodeid="46" dstpinname="DepthHighRes" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -344,212 +538,10 @@
    <LINKPOINT x="6985" y="3255">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Visualizer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" nodename="Visualizer (SuperPhysical)" componentmode="Hidden" id="97">
-   <BOUNDS type="Node" left="4425" top="3510" width="100" height="100">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="97" dstpinname="MaterialSetup">
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="97" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="97" srcpinname="SelectedMaterial" dstnodeid="91" dstpinname="MaterialID (AssignToObject)">
-   </LINK>
-   <NODE systemname="Helper (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\Light Helper (SuperPhysical Deferred).v4p" nodename="Helper (SuperPhysical Deferred)" componentmode="Hidden" id="98">
-   <BOUNDS type="Node" left="915" top="8760" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Texture In" visible="1">
-   </PIN>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <PIN pinname="Depth Buffer" visible="1">
-   </PIN>
-   <PIN pinname="Texture SizeXY" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Camera State" visible="1">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="98" dstpinname="Texture In">
-   </LINK>
-   <LINK srcnodeid="98" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="91" srcpinname="Depth Buffer" dstnodeid="98" dstpinname="Depth Buffer" linkstyle="Bezier">
    <LINKPOINT x="2550" y="6990">
    </LINKPOINT>
    <LINKPOINT x="1155" y="6990">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="98" dstpinname="Texture SizeXY" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="705" y="5640">
-   </LINKPOINT>
-   <LINKPOINT x="1335" y="5640">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="98" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="6015" y="5775">
-   </LINKPOINT>
-   <LINKPOINT x="1590" y="5775">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="98" dstpinname="Camera State" linkstyle="Bezier">
-   <LINKPOINT x="6390" y="6353">
-   </LINKPOINT>
-   <LINKPOINT x="1785" y="6353">
-   </LINKPOINT>
-   </LINK>
-   <NODE id="67" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred).v4p" nodename="SuperPhysical (SuperPhysical Deferred)" debug="0" stayontop="1">
-   <BOUNDS type="Window" left="15570" top="13605" width="21315" height="12180">
-   </BOUNDS>
-   <BOUNDS type="Node" left="930" top="6675" width="3885" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="675" top="6675">
-   </BOUNDS>
-   <PIN pinname="SelectObject" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="MaterialSetup" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Material IDs" visible="1" slicecount="103" values="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3">
-   </PIN>
-   <PIN pinname="Instance Count" visible="1" slicecount="4" values="100,1,1,1">
-   </PIN>
-   <PIN pinname="SelectedMaterial" visible="1" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Reset" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="MouseActive" visible="1" pintype="Input" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Reset Material IDs" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Depth Buffer" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="GBuffer (Pos, Normal  TexCD)" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="ShadowMaps" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="67" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In" linkstyle="Bezier">
-   <LINKPOINT x="960" y="7540">
-   </LINKPOINT>
-   <LINKPOINT x="960" y="7385">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Default SizeXY" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="705" y="4590">
-   </LINKPOINT>
-   <LINKPOINT x="945" y="4590">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="67" dstpinname="LightSetup" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="6015" y="4698">
-   </LINKPOINT>
-   <LINKPOINT x="2895" y="4753">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="67" dstpinname="MaterialSetup" linkstyle="Bezier">
-   <LINKPOINT x="4410" y="4713">
-   </LINKPOINT>
-   <LINKPOINT x="2250" y="4768">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="88" srcpinname="Transforms" dstnodeid="67" dstpinname="Transform In" linkstyle="Bezier">
-   <LINKPOINT x="3040" y="5713">
-   </LINKPOINT>
-   <LINKPOINT x="2450" y="5553">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="88" srcpinname="Geometry" dstnodeid="67" dstpinname="Geometry" linkstyle="Bezier">
-   <LINKPOINT x="1970" y="5753">
-   </LINKPOINT>
-   <LINKPOINT x="1780" y="5498">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="88" srcpinname="InstanceCount" dstnodeid="67" dstpinname="Instance Count" linkstyle="Bezier">
-   <LINKPOINT x="2525" y="5760">
-   </LINKPOINT>
-   <LINKPOINT x="2095" y="5505">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="View" dstnodeid="67" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="5995" y="5008">
-   </LINKPOINT>
-   <LINKPOINT x="4100" y="5598">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Projection" dstnodeid="67" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="6145" y="5008">
-   </LINKPOINT>
-   <LINKPOINT x="4430" y="5598">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Inverse View" dstnodeid="67" dstpinname="tVI" linkstyle="Bezier">
-   <LINKPOINT x="6460" y="5008">
-   </LINKPOINT>
-   <LINKPOINT x="4745" y="5598">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="67" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="6390" y="5303">
-   </LINKPOINT>
-   <LINKPOINT x="4170" y="5303">
-   </LINKPOINT>
-   </LINK>
-   <NODE id="92" componentmode="Hidden" stayontop="0" systemname="ShadowMaps (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred).v4p" nodename="ShadowMaps (SuperPhysical Deferred)" debug="0" hiddenwhenlocked="0">
-   <PIN pinname="ShadowMapsVSM" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="6345" top="735" width="12780" height="13905">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3480" top="5940" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="3480" top="5940" width="3100" height="3100">
-   </BOUNDS>
-   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="ViewVP" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="LightType" visible="1">
-   </PIN>
-   <PIN pinname="useShadow" visible="1">
-   </PIN>
-   <PIN pinname="Depth Out" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Technique" slicecount="1" visible="1" values="VSM">
-   </PIN>
-   <PIN pinname="Alpha Tex" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="exponentsXY" visible="1" slicecount="2" values="0.02,0.1">
-   </PIN>
-   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="ShadowMaps" visible="1">
-   </PIN>
-   <PIN pinname="IntanceStartIndex" visible="1" slicecount="4" values="0,100,101,102">
-   </PIN>
-   <PIN pinname="IntanceCount" visible="1" slicecount="4" values="0,100,101,102">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="92" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="6015" y="4358">
-   </LINKPOINT>
-   <LINKPOINT x="3540" y="4358">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="92" srcpinname="ShadowMaps" dstnodeid="46" dstpinname="ShadowMaps" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4650" y="6823">
-   </LINKPOINT>
-   <LINKPOINT x="4830" y="6873">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="91" srcpinname="Transforms ByPass" dstnodeid="92" dstpinname="Transform In">
@@ -566,14 +558,30 @@
    <LINKPOINT x="3780" y="5580">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="92" srcpinname="ShadowMapsVSM" dstnodeid="67" dstpinname="ShadowMaps">
-   </LINK>
    <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="91" dstpinname="MaterialSetup" linkstyle="Bezier">
-   <LINKPOINT x="4470" y="3870">
+   <LINKPOINT x="3630" y="3743">
    </LINKPOINT>
-   <LINKPOINT x="5520" y="3870">
+   <LINKPOINT x="5520" y="3743">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="91" srcpinname="Buffers" dstnodeid="67" dstpinname="GBuffer (Pos, Normal  TexCD)">
+   </LINK>
+   <NODE systemname="Visualizer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" nodename="Visualizer (SuperPhysical)" componentmode="Hidden" id="97">
+   <BOUNDS type="Node" left="4035" top="4080" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="97" dstpinname="MaterialSetup" linkstyle="Bezier">
+   <LINKPOINT x="3600" y="3308">
+   </LINKPOINT>
+   <LINKPOINT x="4050" y="3308">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="97" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="5445" y="3300">
+   </LINKPOINT>
+   <LINKPOINT x="5010" y="3300">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="SelectedMaterial" dstnodeid="91" dstpinname="MaterialID (AssignToObject)">
    </LINK>
    </PATCH>
