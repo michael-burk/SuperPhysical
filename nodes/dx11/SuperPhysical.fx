@@ -439,9 +439,9 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	#ifdef doIBL
 		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT, texID );
 	#elif doIridescence
-		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, texRoughness, aoT,metallicT );
+		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughnessT, aoT,metallicT );
 	#elif doGlobalLight
-		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, texRoughness, aoT, metallicT );
+		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughnessT, aoT, metallicT );
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
