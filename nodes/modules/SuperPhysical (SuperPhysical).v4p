@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="-360">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="3150" top="2940" width="17445" height="11505">
+   <BOUNDS type="Window" left="10695" top="10335" width="17445" height="11505">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -101,9 +101,9 @@
    </PIN>
    </NODE>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="138">
-   <BOUNDS type="Node" left="9660" top="5580" width="100" height="100">
+   <BOUNDS type="Node" left="7230" top="7965" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="9660" top="5580" width="3000" height="3000">
+   <BOUNDS type="Box" left="7230" top="7965" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Pointer" visible="1" slicecount="4" values="858170784,858170784,858170784,858170784">
    </PIN>
@@ -195,7 +195,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12585" top="6900" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="PBR_Bump_AutoTNB">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="PBR">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
@@ -287,11 +287,13 @@
    </PIN>
    <PIN pinname="useTex" visible="1">
    </PIN>
+   <PIN pinname="EmissiveTex" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="324" srcpinname="IridescenceMap" dstnodeid="138" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="8685" y="3600">
+   <LINKPOINT x="7875" y="4395">
    </LINKPOINT>
-   <LINKPOINT x="9675" y="3600">
+   <LINKPOINT x="8055" y="5190">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="324" dstpinname="Input" linkstyle="Bezier">
@@ -335,11 +337,15 @@
    </PIN>
    <PIN pinname="Material Count" visible="1" slicecount="1" values="3">
    </PIN>
+   <PIN pinname="gamma" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Power" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="138" srcpinname="Texture" dstnodeid="328" dstpinname="Iridescence" linkstyle="Bezier">
-   <LINKPOINT x="9675" y="7710">
+   <LINKPOINT x="7260" y="8888">
    </LINKPOINT>
-   <LINKPOINT x="8955" y="7710">
+   <LINKPOINT x="7350" y="8888">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="127" srcpinname="Texture" dstnodeid="328" dstpinname="CubeMap Irradiance" linkstyle="Bezier">
@@ -644,21 +650,13 @@
    <LINKPOINT x="13950" y="4560">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetBuffer (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical Material)" componentmode="Hidden" id="347">
-   <BOUNDS type="Node" left="4185" top="3435" width="100" height="100">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="347" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="2925" y="2108">
-   </LINKPOINT>
-   <LINKPOINT x="4200" y="2108">
-   </LINKPOINT>
-   </LINK>
    <NODE id="348" systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\packs\CraftLie.1.1.0\vvvv\nodes\plugins\CraftLie.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden">
    <BOUNDS type="Node" left="4170" top="4005" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="4170" top="4005" width="3000" height="3000">
    </BOUNDS>
+   <PIN pinname="Buffer Description" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="348" srcpinname="Buffer" dstnodeid="328" dstpinname="Material" linkstyle="Bezier">
    <LINKPOINT x="4335" y="6870">
@@ -666,14 +664,12 @@
    <LINKPOINT x="10770" y="6945">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="347" srcpinname="Output" dstnodeid="348" dstpinname="Buffer Description">
-   </LINK>
    <LINK srcnodeid="339" srcpinname="Output" dstnodeid="328" dstpinname="Defines">
    </LINK>
    <NODE id="350" systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden">
-   <BOUNDS type="Node" left="7335" top="8910" width="100" height="100">
+   <BOUNDS type="Node" left="7650" top="8895" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="7335" top="8910" width="3000" height="3000">
+   <BOUNDS type="Box" left="7650" top="8895" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Data" visible="1" slicecount="3" values="1,1,1">
    </PIN>
@@ -683,9 +679,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="324" srcpinname="useTex" dstnodeid="350" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="9495" y="5258">
+   <LINKPOINT x="9600" y="5253">
    </LINKPOINT>
-   <LINKPOINT x="7365" y="5258">
+   <LINKPOINT x="7575" y="5248">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="350" srcpinname="Buffer" dstnodeid="328" dstpinname="useTex">
@@ -813,13 +809,9 @@
    </BOUNDS>
    <BOUNDS type="Box" left="5130" top="5205" width="3000" height="3000">
    </BOUNDS>
+   <PIN pinname="Pointer" visible="1" slicecount="100" values="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="324" srcpinname="EmissiveTex" dstnodeid="363" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="3765" y="3413">
-   </LINKPOINT>
-   <LINKPOINT x="5145" y="3413">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="363" srcpinname="Texture" dstnodeid="328" dstpinname="Emissive" linkstyle="Bezier">
    <LINKPOINT x="5160" y="7523">
    </LINKPOINT>
@@ -919,5 +911,21 @@
    </LINKPOINT>
    <LINKPOINT x="12375" y="5213">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="324" srcpinname="EmissiveTex" dstnodeid="363" dstpinname="Pointer" linkstyle="Bezier">
+   <LINKPOINT x="3765" y="3413">
+   </LINKPOINT>
+   <LINKPOINT x="5145" y="3413">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="GetBuffer (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical Material)" componentmode="Hidden" id="366">
+   <BOUNDS type="Node" left="4590" top="2880" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="366" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="366" srcpinname="Output" dstnodeid="348" dstpinname="Buffer Description">
    </LINK>
    </PATCH>
