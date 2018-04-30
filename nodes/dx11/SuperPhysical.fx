@@ -460,7 +460,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	#endif
 	
 	
-	return float4(finalLight,Alpha+albedo.a);
+	return float4(finalLight,Alpha*albedo.a);
 }
 
 
