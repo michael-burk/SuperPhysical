@@ -608,26 +608,6 @@
    </NODE>
    <LINK srcnodeid="43" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 2">
    </LINK>
-   <NODE id="45" componentmode="Hidden" debug="0" systemname="Helper (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\Light Helper (SuperPhysical).v4p" nodename="Helper (SuperPhysical)">
-   <BOUNDS type="Window" left="2445" top="4095" width="15690" height="10740">
-   </BOUNDS>
-   <PIN pinname="Enabled" slicecount="1" values="0">
-   </PIN>
-   <BOUNDS type="Node" left="3120" top="6675" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <BOUNDS type="Box" left="3120" top="6675">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="45" srcpinname="Layer" dstnodeid="37" dstpinname="Layer 3" linkstyle="Bezier">
-   <LINKPOINT x="3120" y="7103">
-   </LINKPOINT>
-   <LINKPOINT x="1530" y="7103">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Volumetrics" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics.v4p" componentmode="Hidden" id="46">
    <BOUNDS type="Node" left="2340" top="9660" width="100" height="100">
    </BOUNDS>
@@ -736,12 +716,6 @@
    <LINKPOINT x="1890" y="6398">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="45" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="4245" y="5580">
-   </LINKPOINT>
-   <LINKPOINT x="3165" y="5580">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="46" dstpinname="Input" linkstyle="Bezier">
    <LINKPOINT x="4260" y="7073">
    </LINKPOINT>
@@ -793,5 +767,31 @@
    <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="51" dstpinname="MaterialSetup">
    </LINK>
    <LINK srcnodeid="38" srcpinname="Camera State" dstnodeid="46" dstpinname="Camera State">
+   </LINK>
+   <NODE id="45" componentmode="Hidden" debug="0" systemname="LightHelper (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\LightHelper (SuperPhysical).v4p" nodename="LightHelper (SuperPhysical)">
+   <BOUNDS type="Window" left="2445" top="4095" width="15690" height="10740">
+   </BOUNDS>
+   <PIN pinname="Enabled" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Node" left="3120" top="6675" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Box" left="3120" top="6675">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Layer" dstnodeid="37" dstpinname="Layer 3" linkstyle="Bezier">
+   <LINKPOINT x="3120" y="7103">
+   </LINKPOINT>
+   <LINKPOINT x="1530" y="7103">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="45" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="4245" y="5580">
+   </LINKPOINT>
+   <LINKPOINT x="3165" y="5580">
+   </LINKPOINT>
    </LINK>
    </PATCH>

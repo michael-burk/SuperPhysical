@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="10695" top="10335" width="17445" height="11505">
+   <BOUNDS type="Window" left="3150" top="2940" width="17445" height="11505">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -195,7 +195,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12585" top="6900" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="PBR">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="PBR_Bump_AutoTNB">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
@@ -839,7 +839,7 @@
    <NODE id="225" componentmode="Hidden" stayontop="0" systemname="ShadowMaps (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical).v4p" nodename="ShadowMaps (SuperPhysical)" debug="0" hiddenwhenlocked="0">
    <PIN pinname="ShadowMapsVSM" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="2850" top="405" width="12780" height="13905">
+   <BOUNDS type="Window" left="27540" top="6315" width="12780" height="13905">
    </BOUNDS>
    <BOUNDS type="Node" left="12300" top="6210" width="100" height="100">
    </BOUNDS>
