@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="-360">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="3150" top="2940" width="17445" height="11505">
+   <BOUNDS type="Window" left="7950" top="7500" width="19995" height="12120">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -39,9 +39,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="13" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="15360" top="6870" width="480" height="480">
+   <BOUNDS type="Box" left="18690" top="5865" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="15360" top="6870" width="0" height="0">
+   <BOUNDS type="Node" left="18690" top="5865" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -373,9 +373,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="328" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="15360" y="8445">
+   <LINKPOINT x="18690" y="7943">
    </LINKPOINT>
-   <LINKPOINT x="11715" y="8445">
+   <LINKPOINT x="11610" y="7943">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="328" dstpinname="Transform In" linkstyle="Bezier">
@@ -839,7 +839,7 @@
    <NODE id="225" componentmode="Hidden" stayontop="0" systemname="ShadowMaps (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical).v4p" nodename="ShadowMaps (SuperPhysical)" debug="0" hiddenwhenlocked="0">
    <PIN pinname="ShadowMapsVSM" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="27540" top="6315" width="12780" height="13905">
+   <BOUNDS type="Window" left="27540" top="5565" width="13170" height="17700">
    </BOUNDS>
    <BOUNDS type="Node" left="12300" top="6210" width="100" height="100">
    </BOUNDS>
@@ -859,7 +859,7 @@
    </PIN>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Technique" slicecount="1" visible="1" values="VSM">
+   <PIN pinname="Technique" slicecount="1" visible="1" values="VSM_AlphaTexture">
    </PIN>
    <PIN pinname="Alpha Tex" visible="1" slicecount="1" values="||">
    </PIN>
@@ -872,6 +872,8 @@
    <PIN pinname="ShadowMaps" visible="1">
    </PIN>
    <PIN pinname="IntanceCount" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="254" srcpinname="Output Node" dstnodeid="225" dstpinname="Input" linkstyle="Bezier">
@@ -919,7 +921,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="GetBuffer (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical Material)" componentmode="Hidden" id="366">
-   <BOUNDS type="Node" left="4590" top="2880" width="100" height="100">
+   <BOUNDS type="Node" left="4185" top="3510" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -927,5 +929,43 @@
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="366" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="366" srcpinname="Output" dstnodeid="348" dstpinname="Buffer Description">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="367">
+   <BOUNDS type="Box" left="16425" top="5580" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16425" top="5580" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="VSM_AlphaTexture">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="VSM">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Shadow Technique|">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="367" srcpinname="Output Enum" dstnodeid="225" dstpinname="Technique">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="368">
+   <BOUNDS type="Box" left="14760" top="5595" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14760" top="5595" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Shadow Render State|">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="368" srcpinname="Output Node" dstnodeid="225" dstpinname="Render State" linkstyle="Bezier">
+   <LINKPOINT x="14760" y="6008">
+   </LINKPOINT>
+   <LINKPOINT x="12585" y="6008">
+   </LINKPOINT>
    </LINK>
    </PATCH>

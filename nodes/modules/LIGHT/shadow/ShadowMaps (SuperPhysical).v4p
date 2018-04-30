@@ -1,17 +1,9 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical).v4p" systemname="ShadowMaps" filename="C:\Users\Michael\Desktop\PROJECTS\superphong\Modules\ShadowMaps.v4p" scrollx="0" scrolly="2790" locked="0">
-   <BOUNDS type="Window" left="27540" top="6315" width="12780" height="16290">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical).v4p" systemname="ShadowMaps" filename="C:\Users\Michael\Desktop\PROJECTS\superphong\Modules\ShadowMaps.v4p" scrollx="0" scrolly="0" locked="0">
+   <BOUNDS type="Window" left="27540" top="5565" width="13170" height="17700">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
-   <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="4">
-   <BOUNDS type="Node" left="3135" top="6675" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Mode" slicecount="1" visible="1" values="FrontCullSimple">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="10" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="7635" top="3990" width="645" height="240">
    </BOUNDS>
@@ -24,20 +16,6 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="12" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Box" left="3840" top="5985" width="1380" height="375">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3840" top="5985" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="BackCullSimple">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="12" srcpinname="Output Enum" dstnodeid="4" dstpinname="Mode" linkstyle="Bezier">
-   <LINKPOINT x="3870" y="6518">
-   </LINKPOINT>
-   <LINKPOINT x="3870" y="6518">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="17" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="4005" top="7485" width="300" height="240">
    </BOUNDS>
@@ -143,9 +121,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="155" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="2265" top="5460" width="795" height="480">
+   <BOUNDS type="Box" left="2265" top="5160" width="795" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="2265" top="5460" width="0" height="0">
+   <BOUNDS type="Node" left="2265" top="5160" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="16" visible="1" values="256,256,256,256,256,256,256,256,256,256,256,256,256,256,256,256">
    </PIN>
@@ -267,9 +245,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="155" srcpinname="Y Output Value" dstnodeid="204" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="2325" y="9623">
+   <LINKPOINT x="2325" y="9423">
    </LINKPOINT>
-   <LINKPOINT x="6030" y="9623">
+   <LINKPOINT x="6030" y="9523">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="204" srcpinname="Output" dstnodeid="201" dstpinname="Input" linkstyle="Bezier">
@@ -321,11 +299,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="209" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Box" left="10875" top="8205" width="990" height="240">
+   <BOUNDS type="Box" left="10875" top="6375" width="990" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="10875" top="8205" width="0" height="0">
+   <BOUNDS type="Node" left="10875" top="6375" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="VSM">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="VSM_AlphaTexture">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
@@ -463,9 +441,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="259" srcpinname="Output" dstnodeid="155" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="2295" y="5140">
+   <LINKPOINT x="2295" y="5040">
    </LINKPOINT>
-   <LINKPOINT x="2295" y="5240">
+   <LINKPOINT x="2295" y="5040">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="261">
@@ -499,11 +477,11 @@
    <LINK srcnodeid="213" srcpinname="Texture Out" dstnodeid="186" dstpinname="Texture In">
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="280">
-   <BOUNDS type="Box" left="855" top="10485" width="1380" height="240">
+   <BOUNDS type="Box" left="585" top="10785" width="1275" height="270">
    </BOUNDS>
-   <BOUNDS type="Node" left="855" top="10485" width="0" height="0">
+   <BOUNDS type="Node" left="585" top="10785" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="R32G32_Float">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="R32G32B32A32_Float">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="R32G32B32A32_Float">
    </PIN>
@@ -531,9 +509,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="155" srcpinname="Y Output Value" dstnodeid="197" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="2310" y="9765">
+   <LINKPOINT x="2310" y="9565">
    </LINKPOINT>
-   <LINKPOINT x="4890" y="9765">
+   <LINKPOINT x="4890" y="9665">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="283">
@@ -643,9 +621,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="280" srcpinname="Output Enum" dstnodeid="295" dstpinname="Target Format" linkstyle="Bezier">
-   <LINKPOINT x="915" y="11505">
+   <LINKPOINT x="735" y="11705">
    </LINKPOINT>
-   <LINKPOINT x="2310" y="11505">
+   <LINKPOINT x="2220" y="11605">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="295" srcpinname="Texture Out" dstnodeid="213" dstpinname="Texture In">
@@ -669,9 +647,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="280" srcpinname="Output Enum" dstnodeid="290" dstpinname="Target Format" linkstyle="Bezier">
-   <LINKPOINT x="900" y="12930">
+   <LINKPOINT x="720" y="13130">
    </LINKPOINT>
-   <LINKPOINT x="2640" y="12975">
+   <LINKPOINT x="2550" y="13075">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="243" srcpinname="Output" dstnodeid="290" dstpinname="Enabled" linkstyle="PolyLine">
@@ -707,9 +685,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="155" srcpinname="Y Output Value" dstnodeid="297" dstpinname="SizeXY" linkstyle="Bezier">
-   <LINKPOINT x="2310" y="10830">
+   <LINKPOINT x="2310" y="10630">
    </LINKPOINT>
-   <LINKPOINT x="6120" y="10830">
+   <LINKPOINT x="6120" y="10730">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="297" srcpinname="Texture Array Out" dstnodeid="283" dstpinname="Input Node">
@@ -863,6 +841,12 @@
    </PIN>
    <PIN pinname="c" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Alpha Tex" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layout Message" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="277" srcpinname="Layer" dstnodeid="113" dstpinname="Layer In" linkstyle="Bezier">
    <LINKPOINT x="2300" y="10195">
@@ -871,9 +855,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="209" srcpinname="Output Enum" dstnodeid="277" dstpinname="Technique" linkstyle="Bezier">
-   <LINKPOINT x="10905" y="8618">
+   <LINKPOINT x="10905" y="7398">
    </LINKPOINT>
-   <LINKPOINT x="10905" y="8618">
+   <LINKPOINT x="10905" y="8008">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="125" srcpinname="Output" dstnodeid="277" dstpinname="Transform In" linkstyle="Bezier">
@@ -888,22 +872,10 @@
    <LINKPOINT x="3885" y="8565">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="4" srcpinname="Render State" dstnodeid="277" dstpinname="Render State" linkstyle="Bezier">
-   <LINKPOINT x="3150" y="7875">
-   </LINKPOINT>
-   <LINKPOINT x="3105" y="7875">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="227" srcpinname="Y Output Value" dstnodeid="277" dstpinname="lightPosXYZ" linkstyle="Bezier">
    <LINKPOINT x="6245" y="8308">
    </LINKPOINT>
    <LINKPOINT x="5470" y="8373">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="277" dstpinname="Alpha Tex" linkstyle="Bezier">
-   <LINKPOINT x="9365" y="8613">
-   </LINKPOINT>
-   <LINKPOINT x="9355" y="8608">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="229" srcpinname="Y Output Value" dstnodeid="277" dstpinname="lightDist" linkstyle="Bezier">
@@ -915,5 +887,91 @@
    <LINK srcnodeid="303" srcpinname="Output" dstnodeid="277" dstpinname="shadowType">
    </LINK>
    <LINK srcnodeid="186" srcpinname="Texture Out" dstnodeid="290" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="277" dstpinname="Alpha Tex">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="319">
+   <BOUNDS type="Box" left="5970" top="9945" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5970" top="9945" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="277" srcpinname="Layout Message" dstnodeid="319" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Enum2Ord (Enumerations)" nodename="Enum2Ord (Enumerations)" componentmode="Hidden" id="320">
+   <BOUNDS type="Node" left="510" top="8700" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enum" visible="1">
+   </PIN>
+   <PIN pinname="Ord Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="209" srcpinname="Output Enum" dstnodeid="320" dstpinname="Enum" linkstyle="Bezier">
+   <LINKPOINT x="10155" y="7425">
+   </LINKPOINT>
+   <LINKPOINT x="1290" y="7860">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Ord2Enum (Enumerations)" nodename="Ord2Enum (Enumerations)" componentmode="Hidden" id="322">
+   <BOUNDS type="Node" left="600" top="10365" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enum" visible="1">
+   </PIN>
+   <PIN pinname="Ord Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="323">
+   <BOUNDS type="Node" left="600" top="9735" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="320" srcpinname="Ord Value" dstnodeid="323" dstpinname="Switch" linkstyle="Bezier">
+   <LINKPOINT x="1215" y="9563">
+   </LINKPOINT>
+   <LINKPOINT x="0" y="9128">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="323" srcpinname="Output" dstnodeid="322" dstpinname="Ord Value">
+   </LINK>
+   <LINK srcnodeid="322" srcpinname="Enum" dstnodeid="280" dstpinname="Input Enum">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="324">
+   <BOUNDS type="Box" left="1080" top="9330" width="465" height="300">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1080" top="9330" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="11">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="324" srcpinname="Y Output Value" dstnodeid="323" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="325">
+   <BOUNDS type="Box" left="3090" top="6660" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3090" top="6660" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Render State|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="325" srcpinname="Output Node" dstnodeid="277" dstpinname="Render State">
    </LINK>
    </PATCH>

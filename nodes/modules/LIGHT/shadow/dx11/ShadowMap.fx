@@ -87,12 +87,47 @@ float4 PS(psInput input): SV_Target
 				float worldSpaceDistance = distance(lightPos, input.posObject.xyz);
 				float dist = (worldSpaceDistance - 0) /
 			              (lightDist - 0) + depthOffset;
-				
-//				float alpha = inputTexture.Sample(linearSampler,input.uv.xy).a;
 			
 				col.r = dist;
 				col.g = col.r * col.r;
-//				col.a = pow(max(alpha,0),.25);
+				
+			    return col;
+			
+		}
+		
+		else if(shadowType == 2){
+				//ESM
+				float worldSpaceDistance = distance(lightPos, input.posObject.xyz);
+				float dist = (worldSpaceDistance - 0) /
+       			(lightDist - 0) + depthOffset;
+
+   				return exp(30 * dist);
+			
+		}
+		
+		else return 0;
+	
+
+}
+
+float4 PS_AT(psInput_AT input): SV_Target
+{	
+
+	 float alpha = inputTexture.Sample(linearSampler,input.uv.xy).a;
+	
+		if(shadowType == 0 || shadowType == 1){
+				//VSM
+			    float4 col = 0;
+	
+				float worldSpaceDistance = distance(lightPos, input.posObject.xyz);
+				float dist = (worldSpaceDistance - 0) /
+			              (lightDist - 0) + depthOffset;
+				
+
+			
+				col.r = dist;
+				col.g = col.r * col.r;
+				col.a = alpha;
 				
 			    return col;
 			
@@ -120,6 +155,15 @@ technique11 VSM
 	{
 		SetVertexShader( CompileShader( vs_5_0, VS() ) );
 		SetPixelShader( CompileShader( ps_5_0, PS() ) );
+	}
+}
+
+technique11 VSM_AlphaTexture
+{
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_5_0, VS_AT() ) );
+		SetPixelShader( CompileShader( ps_5_0, PS_AT() ) );
 	}
 }
 
