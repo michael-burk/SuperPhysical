@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="11985" top="2550" width="11025" height="7515">
+   <BOUNDS type="Window" left="1185" top="750" width="11025" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -23,7 +23,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1395" top="1095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.49766,0.49766,0.49766,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.35311,0.35311,0.35311,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Global Reflection Color|">
    </PIN>
@@ -144,86 +144,10 @@
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <NODE id="146" systemname="GlobalLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GlobalLight (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
-   <BOUNDS type="Node" left="1380" top="3120" width="1050" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="1380" top="3120" width="2400" height="1800">
-   </BOUNDS>
-   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="41" srcpinname="Color Output" dstnodeid="146" dstpinname="GlobalReflectionColor">
-   </LINK>
-   <LINK srcnodeid="86" srcpinname="Pointer" dstnodeid="146" dstpinname="CubeMapRefl" linkstyle="Bezier">
-   <LINKPOINT x="6900" y="3093">
-   </LINKPOINT>
-   <LINKPOINT x="4800" y="3013">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="87" srcpinname="Pointer" dstnodeid="146" dstpinname="CubeMapIrrradiance" linkstyle="Bezier">
-   <LINKPOINT x="8130" y="3103">
-   </LINKPOINT>
-   <LINKPOINT x="5460" y="3018">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="55" srcpinname="Y Output Value" dstnodeid="146" dstpinname="IBLSettingsXY">
-   </LINK>
-   <LINK srcnodeid="42" srcpinname="Color Output" dstnodeid="146" dstpinname="GlobalDiffuseColor">
-   </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="171">
-   <BOUNDS type="Box" left="7365" top="4455" width="2625" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="7365" top="4455" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\..\assets\ibl\Brdf.dds">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="File Mask" slicecount="1" values="|All Files (*.*)||*.*|">
-   </PIN>
-   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="Filename">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|BRDF LUT Path|">
-   </PIN>
-   <PIN pinname="Output String" visible="1">
-   </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="False">
-   </PIN>
-   </NODE>
-   <NODE systemname="LightSetup (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical)" componentmode="Hidden" id="181">
-   <BOUNDS type="Node" left="1395" top="5010" width="6780" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="1395" top="5010">
-   </BOUNDS>
-   <PIN pinname="BRDF LUT Path" visible="1" slicecount="1" values="..\..\..\assets\ibl\Brdf.dds">
-   </PIN>
-   <PIN pinname="SpotLightSettings" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="PointLightSettings" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="DirectionalLightSettings" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="LightSetup" visible="1">
-   </PIN>
-   <PIN pinname="IBLSettings" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="GlobalSettings" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="ToneMapping" visible="1" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="146" srcpinname="Output" dstnodeid="181" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="171" srcpinname="Output String" dstnodeid="181" dstpinname="BRDF LUT Path">
-   </LINK>
    <NODE systemname="Directional Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" componentmode="Hidden" id="183" stayontop="0">
-   <BOUNDS type="Node" left="2130" top="4470" width="1410" height="270">
+   <BOUNDS type="Node" left="2025" top="3990" width="1410" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="2130" top="4470" width="3100" height="3100">
+   <BOUNDS type="Box" left="2025" top="3990" width="3100" height="3100">
    </BOUNDS>
    <BOUNDS type="Window" left="1215" top="930" width="16290" height="10500">
    </BOUNDS>
@@ -231,11 +155,11 @@
    </PIN>
    </NODE>
    <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182">
-   <BOUNDS type="Node" left="5145" top="4470" width="100" height="100">
+   <BOUNDS type="Node" left="4620" top="4485" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Window" left="1455" top="2445" width="14460" height="10410">
    </BOUNDS>
-   <BOUNDS type="Box" left="5145" top="4470">
+   <BOUNDS type="Box" left="4620" top="4485">
    </BOUNDS>
    <PIN pinname="SpotLights" visible="1" slicecount="1" values="||">
    </PIN>
@@ -270,10 +194,6 @@
    </LINK>
    <LINK srcnodeid="186" srcpinname="Output" dstnodeid="42" dstpinname="Color Input">
    </LINK>
-   <LINK srcnodeid="146" srcpinname="Output" dstnodeid="181" dstpinname="GlobalSettings" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="187" srcpinname="Output" dstnodeid="181" dstpinname="IBLSettings">
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="188">
    <BOUNDS type="Box" left="1395" top="5640" width="795" height="240">
    </BOUNDS>
@@ -281,23 +201,91 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="LightSetup">
    </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="181" srcpinname="LightSetup" dstnodeid="188" dstpinname="Input Node">
-   </LINK>
-   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="181" dstpinname="DirectionalLightSettings">
-   </LINK>
-   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="181" dstpinname="PointLightSettings">
-   </LINK>
    <NODE systemname="Spot Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" componentmode="Hidden" id="185" debug="0" stayontop="0">
-   <BOUNDS type="Node" left="3630" top="4470" width="100" height="100">
+   <BOUNDS type="Node" left="3345" top="4380" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3630" top="4470">
+   <BOUNDS type="Box" left="3345" top="4380">
    </BOUNDS>
    <BOUNDS type="Window" left="525" top="1185" width="15390" height="11685">
    </BOUNDS>
    <PIN pinname="SpotLights" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="181" dstpinname="SpotLightSettings">
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="200">
+   <BOUNDS type="Box" left="6615" top="5580" width="2160" height="540">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6615" top="5580" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Info">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
+   <PIN pinname="Input String" slicecount="1" values="|BRDF LUT located successfully.|">
+   </PIN>
+   </NODE>
+   <NODE id="219" systemname="LightSetup (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical Light)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="1380" top="4995" width="5280" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="0" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="Custom BRDF LUT Path" visible="-1" pintype="Input" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Use custom BRDF LUT Path" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="219" srcpinname="Info" dstnodeid="200" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="219" srcpinname="LightSetup" dstnodeid="188" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="187" srcpinname="Output" dstnodeid="219" dstpinname="IBLSettings">
+   </LINK>
+   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="219" dstpinname="PointLightSettings">
+   </LINK>
+   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="219" dstpinname="SpotLightSettings">
+   </LINK>
+   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="219" dstpinname="DirectionalLightSettings">
+   </LINK>
+   <NODE id="220" systemname="GlobalLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GlobalLight (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="1380" top="3120" width="1050" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1380" top="3120" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="GlobalReflectionColor" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="86" srcpinname="Pointer" dstnodeid="220" dstpinname="CubeMapRefl" linkstyle="Bezier">
+   <LINKPOINT x="6900" y="3093">
+   </LINKPOINT>
+   <LINKPOINT x="4800" y="3013">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="87" srcpinname="Pointer" dstnodeid="220" dstpinname="CubeMapIrrradiance" linkstyle="Bezier">
+   <LINKPOINT x="8130" y="3103">
+   </LINKPOINT>
+   <LINKPOINT x="5460" y="3018">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="55" srcpinname="Y Output Value" dstnodeid="220" dstpinname="IBLSettingsXY">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Color Output" dstnodeid="220" dstpinname="GlobalDiffuseColor">
+   </LINK>
+   <LINK srcnodeid="220" srcpinname="Output" dstnodeid="219" dstpinname="GlobalSettings">
+   </LINK>
+   <LINK srcnodeid="41" srcpinname="Color Output" dstnodeid="220" dstpinname="GlobalReflectionColor">
    </LINK>
    </PATCH>

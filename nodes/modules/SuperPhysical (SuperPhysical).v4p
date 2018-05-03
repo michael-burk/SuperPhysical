@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="855">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="7950" top="7500" width="19995" height="12120">
+   <BOUNDS type="Window" left="3150" top="2940" width="17445" height="11505">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -633,9 +633,9 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Update" visible="1">
+   <PIN pinname="Update" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="LightSetup" visible="1">
+   <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="344" srcpinname="Default" dstnodeid="339" dstpinname="Input 1">
@@ -651,18 +651,14 @@
    </LINKPOINT>
    </LINK>
    <NODE id="348" systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\packs\CraftLie.1.1.0\vvvv\nodes\plugins\CraftLie.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden">
-   <BOUNDS type="Node" left="4170" top="4005" width="100" height="100">
+   <BOUNDS type="Node" left="10500" top="9015" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4170" top="4005" width="3000" height="3000">
+   <BOUNDS type="Box" left="10500" top="9015" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Buffer Description" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="348" srcpinname="Buffer" dstnodeid="328" dstpinname="Material" linkstyle="Bezier">
-   <LINKPOINT x="4335" y="6870">
-   </LINKPOINT>
-   <LINKPOINT x="10770" y="6945">
-   </LINKPOINT>
+   <LINK srcnodeid="348" srcpinname="Buffer" dstnodeid="328" dstpinname="Material" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="339" srcpinname="Output" dstnodeid="328" dstpinname="Defines">
    </LINK>
@@ -921,7 +917,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="GetBuffer (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical Material)" componentmode="Hidden" id="366">
-   <BOUNDS type="Node" left="4185" top="3510" width="100" height="100">
+   <BOUNDS type="Node" left="10515" top="8430" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -968,4 +964,6 @@
    <LINKPOINT x="12585" y="6008">
    </LINKPOINT>
    </LINK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
    </PATCH>

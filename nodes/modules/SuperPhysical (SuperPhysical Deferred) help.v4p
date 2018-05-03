@@ -30,16 +30,6 @@
    </NODE>
    <LINK srcnodeid="59" srcpinname="frames per second" dstnodeid="60" dstpinname="Y Input Value">
    </LINK>
-   <NODE id="7" componentmode="Hidden" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
-   <BOUNDS type="Node" left="5430" top="2280" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="5430" top="2280">
-   </BOUNDS>
-   <BOUNDS type="Window" left="11985" top="2550" width="11025" height="7515">
-   </BOUNDS>
-   <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
    <NODE id="12" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
    <PIN pinname="Y Input Value" slicecount="2" visible="1" values="1024,1024">
    </PIN>
@@ -164,12 +154,6 @@
    <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="46" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5445" y="5010">
-   </LINKPOINT>
-   <LINKPOINT x="4680" y="5010">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="46" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In 2">
    </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="46" dstpinname="HighRes" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -296,12 +280,6 @@
    <PIN pinname="IntanceCount" visible="1" slicecount="4" values="0,100,101,102">
    </PIN>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="92" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="5430" y="4245">
-   </LINKPOINT>
-   <LINKPOINT x="3525" y="4245">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="92" srcpinname="ShadowMaps" dstnodeid="46" dstpinname="ShadowMaps" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="4650" y="6823">
    </LINKPOINT>
@@ -426,12 +404,6 @@
    <LINKPOINT x="4050" y="3308">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="97" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="5445" y="3300">
-   </LINKPOINT>
-   <LINKPOINT x="5010" y="3300">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="97" srcpinname="SelectedMaterial" dstnodeid="91" dstpinname="MaterialID (AssignToObject)">
    </LINK>
    <NODE systemname="LightHelper (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\LightHelper (SuperPhysical Deferred).v4p" nodename="LightHelper (SuperPhysical Deferred)" componentmode="Hidden" id="98">
@@ -445,7 +417,7 @@
    </PIN>
    <PIN pinname="Texture SizeXY" visible="1">
    </PIN>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Camera State" visible="1">
    </PIN>
@@ -458,12 +430,6 @@
    <LINKPOINT x="705" y="5640">
    </LINKPOINT>
    <LINKPOINT x="1335" y="5640">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="98" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="5430" y="5655">
-   </LINKPOINT>
-   <LINKPOINT x="1455" y="5655">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="98" dstpinname="Camera State" linkstyle="Bezier">
@@ -526,12 +492,6 @@
    <LINKPOINT x="945" y="4590">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="67" dstpinname="LightSetup" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="5430" y="4613">
-   </LINKPOINT>
-   <LINKPOINT x="2880" y="4613">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="67" dstpinname="MaterialSetup" linkstyle="Bezier">
    <LINKPOINT x="3585" y="4613">
    </LINKPOINT>
@@ -586,4 +546,44 @@
    </LINK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
+   <NODE id="7" componentmode="Hidden" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
+   <BOUNDS type="Node" left="5430" top="2280" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5430" top="2280">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11985" top="2550" width="11025" height="7515">
+   </BOUNDS>
+   <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="46" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5445" y="5010">
+   </LINKPOINT>
+   <LINKPOINT x="4680" y="5010">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="92" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="5430" y="4245">
+   </LINKPOINT>
+   <LINKPOINT x="3525" y="4245">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="97" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="5445" y="3300">
+   </LINKPOINT>
+   <LINKPOINT x="5010" y="3300">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="98" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="5430" y="5655">
+   </LINKPOINT>
+   <LINKPOINT x="1455" y="5655">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="67" dstpinname="LightSetup" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="5430" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="2880" y="4613">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

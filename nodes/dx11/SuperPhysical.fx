@@ -66,6 +66,20 @@ struct MaterialStruct
 	float	noTile;
 	float	useTex;
 	float	Iridescence;
+	
+	#ifdef doControlTextures
+	
+	float	sampleAlbedo;
+	float	sampleEmissive;
+	float	sampleNormal;
+	float	sampleHeight;
+	
+	float	sampleRoughness;
+	float	sampleMetallic;
+	float	sampleAO;
+	float	pad4;
+	
+	#endif
 };
 
 
@@ -227,18 +241,18 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	if(useTex[texID]){
 	
 		roughnessT = Material[texID].roughness;
-		roughnessT = roughTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
+		if(Material[texID].sampleRoughness) roughnessT = roughTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
 		roughnessT = min(max(roughnessT * Material[texID].roughness,.01),.95);
 	
 		aoT = 1;
-		aoT = aoTex.Sample(g_samLinear,  float3(TexCd.xy, texID)).r;
+		if(Material[texID].sampleAO) aoT = aoTex.Sample(g_samLinear,  float3(TexCd.xy, texID)).r;
 	
 		metallicT = 1;
-		metallicT = metallTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
+		if(Material[texID].sampleMetallic) metallicT = metallTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
 		metallicT *= Material[texID].metallic;
 		
 		float4 texCol = 1;
-		texCol = texture2d.Sample(g_samLinear, float3(TexCd.xy, texID));
+		if(Material[texID].sampleAlbedo) texCol = texture2d.Sample(g_samLinear, float3(TexCd.xy, texID));
 	
 		albedo = texCol * saturate(Material[texID].Color) * aoT;	
 		
@@ -449,8 +463,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	///////////////////////////////////////////////////////////////////////////
 	
 	#ifdef doControlTextures
-		finalLight.rgb += saturate(Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb);
-	
+		if(Material[texID].sampleEmissive) finalLight.rgb += saturate(Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb);
 	#else
 		finalLight.rgb += saturate( Material[texID].Emissive.rgb);
 	#endif

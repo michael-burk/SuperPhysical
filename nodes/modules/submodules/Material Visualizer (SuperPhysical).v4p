@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="0" scrolly="10350">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="0" scrolly="3720">
    <BOUNDS type="Window" left="3330" top="1680" width="22470" height="13755">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -27,7 +27,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="16605" top="9870" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Filename" visible="1" slicecount="1" values="..\..\assets\ibl\Brdf.dds">
+   <PIN pinname="Filename" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -169,7 +169,7 @@
    </PIN>
    <PIN pinname="Use Default Size" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="IBL IntensityXY" visible="1" slicecount="2" values="1,2">
+   <PIN pinname="IBL IntensityXY" visible="1" slicecount="2" values="0,0">
    </PIN>
    <PIN pinname="Enabled" visible="1" slicecount="1" values="0">
    </PIN>
@@ -321,7 +321,7 @@
    <NODE systemname="SetAlpha (Color)" nodename="SetAlpha (Color)" componentmode="Hidden" id="420">
    <BOUNDS type="Node" left="6315" top="17475" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="|0.40777,0.40777,0.40777,1.00000|">
+   <PIN pinname="Input" visible="1" slicecount="1" values="|0.35311,0.35311,0.35311,1.00000|">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -405,7 +405,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="12345" top="15720" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="3" values="1,1,1">
+   <PIN pinname="Data" visible="1" slicecount="3" values="0,0,0">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
@@ -473,7 +473,7 @@
    <NODE id="350" systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden">
    <BOUNDS type="Node" left="8985" top="11010" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="3" values="0,0,0">
+   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
@@ -485,7 +485,7 @@
    <NODE id="349" systemname="SetTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\SetTextureArray.v4p" componentmode="Hidden">
    <BOUNDS type="Node" left="8655" top="10590" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Pointer" visible="1" slicecount="3" values="0,0,0">
+   <PIN pinname="Pointer" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Texture Array Out" visible="1">
    </PIN>
@@ -809,7 +809,7 @@
    </PIN>
    <PIN pinname="View Projection" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="PositionXYZ" visible="1" slicecount="1" values="0">
+   <PIN pinname="PositionXYZ" visible="1" slicecount="3" values="0,0,0">
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
@@ -1218,22 +1218,6 @@
    <PIN pinname="Bang" visible="1">
    </PIN>
    <PIN pinname="Simulate" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <NODE id="582" systemname="LightSetup (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
-   <BOUNDS type="Node" left="12390" top="5475" width="1500" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="12390" top="5475" width="2400" height="1800">
-   </BOUNDS>
-   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
-   </BOUNDS>
-   <PIN pinname="LightSetup" visible="1">
-   </PIN>
-   <PIN pinname="GlobalSettings" visible="1">
-   </PIN>
-   <PIN pinname="IBLSettings" visible="1">
-   </PIN>
-   <PIN pinname="BRDF LUT Path" visible="1">
    </PIN>
    </NODE>
    <NODE id="584" systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\lib\packs\VL.VVVV.DirectX11.0.79.17-g63a3d4ba77\vvvv\nodes\plugins\VL.VVVV.DirectX11.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden">
@@ -2032,8 +2016,6 @@
    </LINK>
    <LINK srcnodeid="673" srcpinname="Output" dstnodeid="670" dstpinname="Set">
    </LINK>
-   <LINK srcnodeid="582" srcpinname="LightSetup" dstnodeid="442" dstpinname="Input Node">
-   </LINK>
    <NODE systemname="SplitLightSetup (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="SplitLightSetup (SuperPhysical)" componentmode="Hidden" id="678">
    <BOUNDS type="Node" left="12390" top="4890" width="100" height="100">
    </BOUNDS>
@@ -2060,12 +2042,6 @@
    </NODE>
    <LINK srcnodeid="679" srcpinname="Output Node" dstnodeid="678" dstpinname="Input">
    </LINK>
-   <LINK srcnodeid="678" srcpinname="Result" dstnodeid="582" dstpinname="GlobalSettings">
-   </LINK>
-   <LINK srcnodeid="678" srcpinname="IBLSettings" dstnodeid="582" dstpinname="IBLSettings">
-   </LINK>
-   <LINK srcnodeid="678" srcpinname="BRDF LUT Path" dstnodeid="582" dstpinname="BRDF LUT Path">
-   </LINK>
    <NODE id="676" componentmode="Hidden" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" stayontop="1">
    <BOUNDS type="Node" left="1185" top="19170" width="100" height="100">
    </BOUNDS>
@@ -2077,5 +2053,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="596" srcpinname="Buffers" dstnodeid="676" dstpinname="Texture In">
+   </LINK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <NODE id="680" systemname="LightSetup (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="LightSetup (SuperPhysical Light)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="12390" top="5475" width="1500" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12390" top="5475" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="680" srcpinname="LightSetup" dstnodeid="442" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="678" srcpinname="Result" dstnodeid="680" dstpinname="GlobalSettings">
+   </LINK>
+   <LINK srcnodeid="678" srcpinname="IBLSettings" dstnodeid="680" dstpinname="IBLSettings">
+   </LINK>
+   <LINK srcnodeid="678" srcpinname="BRDF LUT Path" dstnodeid="680" dstpinname="BRDF LUT Path">
    </LINK>
    </PATCH>
