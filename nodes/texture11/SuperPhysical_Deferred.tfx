@@ -136,16 +136,16 @@ SamplerState g_samLinear
     AddressV = WRAP;
 };
 
-#include "ShadowMapping.fxh"
-#include "NoTile.fxh"
+#include "..\dx11\ShadowMapping.fxh"
+#include "..\dx11\NoTile.fxh"
 //#include "ParallaxOcclusionMapping.fxh"
-#include "CookTorrance.fxh"
+#include "..\dx11\CookTorrance.fxh"
 #ifdef doIBL
-#include "IBL.fxh"
+#include "..\dx11\IBL.fxh"
 #elif doIridescence	
-#include "IRIDESCENCE.fxh"
+#include "..\dx11\IRIDESCENCE.fxh"
 #elif doGlobalLight
-#include "GLOBALLIGHT.fxh"
+#include "..\dx11\GLOBALLIGHT.fxh"
 #endif
 
 #ifdef doToneMap

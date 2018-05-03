@@ -2,7 +2,7 @@
 //@help: template for texture fx
 //@tags: texture
 //@credits: 
-#include "ToneMapping.fxh"
+#include "..\dx11\ToneMapping.fxh"
 
 Texture2D texture2d : PREVIOUS;
 
