@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\Volumetrics\subpatches\VolumetricLight.v4p" systemname="VolumetricLight" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\subpatches\VolumetricLight.v4p" scrollx="0" scrolly="0" bgcolor="15329769">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\subpatches\VolumetricLight.v4p" systemname="VolumetricLight" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\subpatches\VolumetricLight.v4p" scrollx="0" scrolly="0" bgcolor="15329769">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8070" top="4170" width="780" height="375">
    </BOUNDS>
@@ -260,7 +260,7 @@
    </NODE>
    <BOUNDS type="Window" left="810" top="1710" width="20550" height="13155">
    </BOUNDS>
-   <PACK Name="addonpack" Version="35.9.0">
+   <PACK Name="addonpack" Version="36.0.0">
    </PACK>
    <LINK srcnodeid="33" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Default SizeXY" linkstyle="Bezier">
    <LINKPOINT x="2610" y="6203">
@@ -560,7 +560,7 @@
    <LINKPOINT x="6390" y="2858">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="110">
+   <NODE systemname="ASPECTRATIO (TRANSFORM)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="110">
    <BOUNDS type="Node" left="5820" top="5190" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform In" visible="1">
@@ -572,6 +572,8 @@
    <PIN pinname="Aspect Width" slicecount="1" visible="1" values="16">
    </PIN>
    <PIN pinname="Aspect Height" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Alignment" slicecount="1" values="FitIn">
    </PIN>
    </NODE>
    <LINK srcnodeid="82" srcpinname="Transform Out" dstnodeid="110" dstpinname="Transform In" linkstyle="Bezier">
@@ -1012,4 +1014,12 @@
    <LINKPOINT x="9945" y="3705">
    </LINKPOINT>
    </LINK>
+   <PACK Name="dx11" Version="1.2">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
+   </PACK>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
    </PATCH>

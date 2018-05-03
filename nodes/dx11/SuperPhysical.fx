@@ -243,7 +243,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		roughnessT = Material[texID].roughness;
 		if(Material[texID].sampleRoughness) roughnessT = roughTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
 		roughnessT = min(max(roughnessT * Material[texID].roughness,.01),.95);
-	
+
 		aoT = 1;
 		if(Material[texID].sampleAO) aoT = aoTex.Sample(g_samLinear,  float3(TexCd.xy, texID)).r;
 	
@@ -493,13 +493,10 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 	
 	float3 bumpMap = float3(0,0,0);
 	
-	uint tX2,tY2,m2;
-//	normalTex.GetDimensions(tX2,tY2);
-//	if(tX2+tY2 > 4 && !noTile) bumpMap = normalTex.Sample(g_samLinear, In.TexCd.xy).rgb;
-//	else if(tX2+tY2 > 4 && noTile) bumpMap = textureNoTile(normalTex, In.TexCd.xy).rgb;
-
-	bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
+	#ifdef doControlTextures
+	if(Material[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
+	#endif
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * In.tangent + bumpMap.y * In.binormal)*Material[texID].bumpy);
 	return doLighting(In.PosW, Nb, In.TexCd);
@@ -540,8 +537,10 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 //	normalTex.GetDimensions(tX2,tY2);
 //	if(tX2+tY2 > 4 && !noTile) bumpMap = normalTex.Sample(g_samLinear,In.TexCd.xy).rgb;
 //	else if(tX2+tY2 > 4 && noTile) bumpMap = textureNoTile(normalTex,In.TexCd.xy).rgb;
-	bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
+	#ifdef doControlTextures
+	if(Material[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
+	#endif
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b))*Material[texID].bumpy);
 
