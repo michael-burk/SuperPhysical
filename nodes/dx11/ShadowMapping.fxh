@@ -262,7 +262,7 @@ float4 calcShadowESM(float worldSpaceDistance, float lightRange, float2 projectT
 }
 
 
-float4 doShadow(inout float4 shadow, int shadowType, float lightDist, float lightRange, float4 projectTexCoord, float4 viewPosition, uint i, uint shadowCounter){
+float4 doShadow(inout float4 shadow, int shadowType, float lightDist, float lightRange, float4 projectTexCoord, float4 viewPosition, uint i, uint shadowCounter, float3 N, float3 L){
 			switch(shadowType){
 			case 0:
 				shadow += saturate(calcShadowVSM(lightDist,lightRange,projectTexCoord.xy,shadowCounter, i));
@@ -279,5 +279,9 @@ float4 doShadow(inout float4 shadow, int shadowType, float lightDist, float ligh
 				shadow += saturate(calcShadowESM(lightDist, lightRange,projectTexCoord.xy,shadowCounter,i));
 				break;	
 			}
+	
+	// Reduce projective aliasing
+	shadow = min(dot(N,L) * 2, shadow);
+	
 	return shadow;
 }

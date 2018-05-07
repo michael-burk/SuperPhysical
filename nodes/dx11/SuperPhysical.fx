@@ -217,7 +217,7 @@ vs2ps VS(
 	Out.TexCd = mul(TexCd,Material[ID%mCount].tTex);
     return Out;
 }
-
+float bias;
 float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	
 	uint texID = ID%mCount;
@@ -336,7 +336,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			
 				if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y)
 				&& (saturate(projectTexCoord.z) == projectTexCoord.z)){
-					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter);
+					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter, N, L);
 				} else {
 					shadow = 1;
 				}
@@ -356,6 +356,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			// SPOT
 			case 1:
 				shadow = 0;
+//				float4 depthBias = float4(N * 0,0);
 				viewPosition = mul(PosW, LightMatrices[i].VP);
 					
 				projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
@@ -371,7 +372,8 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					if(tXS+tYS > 4) falloffSpot = lightMap.SampleLevel(g_samLinear, float3(projectTexCoord.xy, spotLightCount), 0 ).rgb;
 					else if(tXS+tYS < 4) falloffSpot = smoothstep(1,0,saturate(length(.5-projectTexCoord.xy)*2));
 					
-					if(Light[i].useShadow) doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter);
+					if(Light[i].useShadow) doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter, N, L);
+				
 					
 				} else {
 					shadow = 1;
@@ -424,8 +426,8 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				   			projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;
 							projectTexCoord.z =  viewPosition.z / viewPosition.w / 2.0f + 0.5f;
 							
-							doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, p+shadowCounter);
-							
+							doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, p+shadowCounter, N, L);
+
 						}
 					}
 							float attenuation = Light[i].lAtt0 * falloff;
