@@ -1,0 +1,151 @@
+//@author: vux
+//@help: template for texture fx
+//@tags: texture
+//@credits: 
+
+
+
+//https://gamedev.stackexchange.com/questions/44758/problems-implementing-a-screen-space-shadow-ray-tracing-shader
+
+
+Texture2D texture2d : PREVIOUS;
+
+Texture2D depthMap;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+
+float2 projAB;
+float2 resolution;
+//float4x4 projectionMatrix;
+
+float3 light_p;
+
+//noperspective in vec2 pass_TexCoord;
+//smooth in vec3 viewRay;
+
+//layout(location = 0) out float out_SH;
+
+
+float4x4 tVI;
+float4x4 tPI;
+float4x4 tP;
+
+float3 CalcPosition(float2 uv, float3 viewRay){
+    float depth = depthMap.SampleLevel(linearSampler, uv, 0).r;
+     float linearDepth = tP._43/(depth-tP._33);
+    float3 ray = normalize(viewRay);
+    ray = ray / ray.z;
+    return linearDepth * ray;
+}
+
+
+float4 UVZtoVIEW(float2 UV,float z){
+	float4 p=mul(float4(UV.x*2-1,1-2*UV.y,0,1.0),tPI);
+	float ld = tP._43 / (z - tP._33);
+	p=float4(p.xy*ld,ld,1.0);
+	return p; 
+}
+
+float4 UVZtoWORLD(float2 UV,float z){
+	return mul(UVZtoVIEW(UV,z),tVI); 
+}
+
+float3 UVtoEYE(float2 UV){
+	return normalize( mul(float4(mul(float4((UV.xy*2-1)*float2(1,-1),0,1),tPI).xy,1,0),tVI).xyz);
+}
+
+float3 PS(psInput input) : SV_Target
+{	
+	float3 output;
+	
+
+//	float3 viewRay = normalize(tVI[3].xyz - PosW.xyz);
+	
+  	float2 texel_size = float2(1.0 / resolution.x, 1.0 / resolution.y);
+//    float3 origin = CalcPosition(input.uv,UVtoEYE(input.uv));
+
+	float3 origin =  UVZtoWORLD(input.uv,depthMap.Sample(linearSampler,input.uv).r).xyz;
+
+    if(origin.z < -99) discard; //Don't check points at infinity
+    float2 pixOrigin = input.uv;
+
+    float3 dir = normalize(light_p - origin);
+
+    float4 tempDir = mul(float4(dir, 0.0), tP);
+    float2 pixDir = -tempDir.xy / tempDir.w;
+    float dirLength = length(pixDir);
+    pixDir = pixDir / dirLength;
+
+    float2 nextT, deltaT;
+
+    if(pixDir.x < 0){
+        deltaT.x = -texel_size.x / pixDir.x;
+        nextT.x = (floor(pixOrigin.x * resolution.x) * texel_size.x - pixOrigin.x) / pixDir.x;
+    }
+    else {
+        deltaT.x = texel_size.x / pixDir.x;
+        nextT.x = ((floor(pixOrigin.x * resolution.x) + 1.0) * texel_size.x - pixOrigin.x) / pixDir.x;
+    }
+    if(pixDir.y < 0){
+        deltaT.y = -texel_size.y / pixDir.y;
+        nextT.y = (floor(pixOrigin.y * resolution.y) * texel_size.y - pixOrigin.y) / pixDir.y;
+    }
+    else {
+        deltaT.y = texel_size.y / pixDir.y;
+        nextT.y = ((floor(pixOrigin.y * resolution.y) + 1.0) * texel_size.y - pixOrigin.y) / pixDir.y;
+    }
+
+
+    float t = 0.0;
+    float2 pixIndex = float2(pixOrigin * resolution);
+    output = 1.0;
+    while(true){
+        if(t > 0){
+            float rayDepth = (origin + t * dir).z;
+            float2 texCoord = pixOrigin + 0.5 * pixDir * t * dirLength;
+            float depth = depthMap.SampleLevel(linearSampler, texCoord, 0).r;
+            float linearDepth = tP._43/(depth-tP._33);
+			return linearDepth;
+            if(linearDepth > rayDepth + 0.1){
+                output = 0.2;
+                break;
+            }
+        }
+        if(nextT.x < nextT.y){
+            t = nextT.x;
+            nextT.x += deltaT.x;
+            if(pixDir.x < 0) pixIndex.x -= 1;
+            else pixIndex.x += 1;
+        }
+        else {
+            t = nextT.y;
+            nextT.y += deltaT.y;
+            if(pixDir.y < 0) pixIndex.y -= 1;
+            else pixIndex.y += 1;
+        }
+        if(pixIndex.x < 0 || pixIndex.x > resolution.x || pixIndex.y < 0 || pixIndex.y > resolution.y) break;
+    }
+	return output;
+}
+
+technique10 Process
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PS()));
+	}
+}
+
+
