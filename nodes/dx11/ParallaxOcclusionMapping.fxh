@@ -75,19 +75,14 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
     }
 	texcoord += vCurrOffset;
 	
-	#ifdef Deferred
-	
-	#else
-//	PosW.xyz -= mul((float3(vCurrOffset,delta1*-Material[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz;
 	
 	#ifdef Instancing
-	float4x4 wo = world[iid + IntanceStartIndex];
-	float scale = sqrt(wo._11*wo._11 + wo._12*wo._12 + wo._13*wo._13);
+		float4x4 wo = world[iid];
+		float scale = sqrt(wo._11*wo._11 + wo._12*wo._12 + wo._13*wo._13);
 	#else
-	float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
+		float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
 	#endif
 	
 	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-Material[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
-	#endif
 }
 
