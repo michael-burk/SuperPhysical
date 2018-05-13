@@ -3,11 +3,14 @@
 //@tags: color
 //@credits: 
 
+
+//#define Deferred = true;
+
 struct gBuffer{
 	
 	float4 pos : COLOR0;
 	float4 norm : COLOR1;
-	float2 uv : COLOR2;
+	float4 uv : COLOR2;
 	
 };
 
@@ -16,7 +19,7 @@ struct vsInput
 	uint ii : SV_InstanceID;
     float4 posObject : POSITION;
 	float3 norm : NORMAL;
-	float2 uv: TEXCOORD0;
+	float4 uv: TEXCOORD0;
 };
 
 struct psInput
@@ -25,7 +28,7 @@ struct psInput
     float4 posScreen : SV_Position;
 	float4 posW : POSW;
 	float3 norm : NORMAL;
-	float2 uv: TEXCOORD0;
+	float4 uv: TEXCOORD0;
 };
 
 
@@ -103,19 +106,17 @@ gBuffer PS(psInput input): SV_Target
 
 {
 	gBuffer output;
-	output.pos = input.posW;
 	
+	uint texID = materialID[input.ii + IntanceStartIndex];
 	
-	
+	input.uv = mul(input.uv,Material[texID].tTex);
 	
 	float3 N = input.norm;
 	
 	if(NormalMapping){
 	
 	float3 V = normalize(tVI[3].xyz - input.posW.xyz);
-		
-	uint texID = materialID[input.ii + IntanceStartIndex];
-	
+
 	
 	// compute derivations of the world position
 	float3 p_dx = ddx(input.posW.xyz);
@@ -141,7 +142,6 @@ gBuffer PS(psInput input): SV_Target
 	if(Material[texID].POM){
 		parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID);
 	}
-
 	float3 bumpMap = 0;
 	
 		bumpMap = normalTex.Sample(g_samLinear,float3(input.uv.xy, texID)).rgb;
@@ -150,8 +150,9 @@ gBuffer PS(psInput input): SV_Target
 		
 	}
 	
-	output.uv = input.uv;
+	output.pos = input.posW;
 	output.norm = float4(N,(float) materialID[input.ii + IntanceStartIndex] * 0.001);
+	output.uv = mul(input.uv, Material[texID].tTexInv);	
 	
 	return output;
 }
