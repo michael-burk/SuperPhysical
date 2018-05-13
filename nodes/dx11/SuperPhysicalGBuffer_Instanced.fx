@@ -4,7 +4,7 @@
 //@credits: 
 
 
-//#define Deferred = true;
+#define Instancing = true;
 
 struct gBuffer{
 	
@@ -140,7 +140,7 @@ gBuffer PS(psInput input): SV_Target
 	b = normalize(b);
 	
 	if(Material[texID].POM){
-		parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID);
+		parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID, input.ii + IntanceStartIndex);
 	}
 	float3 bumpMap = 0;
 	

@@ -2,9 +2,11 @@
 //
 //StructuredBuffer <uint> POM_numSamples;
 
-
+#ifdef Instancing
+void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID, uint iid){
+#else
 void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID){
-    
+#endif
 	
 	float3x3 tangentToWorldSpace;
 
@@ -78,7 +80,13 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 	#else
 //	PosW.xyz -= mul((float3(vCurrOffset,delta1*-Material[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz;
 	
+	#ifdef Instancing
+	float4x4 wo = world[iid + IntanceStartIndex];
+	float scale = sqrt(wo._11*wo._11 + wo._12*wo._12 + wo._13*wo._13);
+	#else
 	float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
+	#endif
+	
 	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-Material[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
 	#endif
 }
