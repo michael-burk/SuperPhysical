@@ -152,6 +152,7 @@ gBuffer PS(psInput input): SV_Target
 	
 	output.uv = input.uv;
 	output.norm = float4(N,(float) materialID[input.ii + IntanceStartIndex] * 0.001);
+	output.pos = input.posW;
 	
 	return output;
 }

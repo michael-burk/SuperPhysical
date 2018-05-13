@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.36">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.41">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.18">
    </PIN>
    <PIN pinname="Show Connections" slicecount="1" values="0">
    </PIN>
@@ -658,4 +658,6 @@
    </LINK>
    <LINK srcnodeid="240" srcpinname="Output" dstnodeid="296" dstpinname="ShadowType">
    </LINK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
    </PATCH>

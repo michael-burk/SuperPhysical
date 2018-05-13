@@ -11,6 +11,7 @@
 Texture2D texture2d : PREVIOUS;
 
 Texture2D depthMap;
+Texture2D GBufferPos;
 
 SamplerState linearSampler : IMMUTABLE
 {
@@ -26,7 +27,7 @@ struct psInput
 };
 
 
-float2 projAB;
+//float2 projAB;
 float2 resolution;
 //float4x4 projectionMatrix;
 
@@ -39,12 +40,22 @@ float3 light_p;
 
 
 float4x4 tVI;
+float4x4 tV;
+float4x4 tVP;
 float4x4 tPI;
 float4x4 tP;
 
-float3 CalcPosition(float2 uv, float3 viewRay){
+float zFar;
+float zNear;
+
+//vec2 projAB = vec2( zfar / (zfar - znear), zfar * znear / (zfar - znear) )
+//float2 projAB = 0;
+
+float3 CalcPosition(float2 uv, float3 viewRay, float2 projAB){
     float depth = depthMap.SampleLevel(linearSampler, uv, 0).r;
-     float linearDepth = tP._43/(depth-tP._33);
+//	 float depth = mul(GBufferPos.Sample(linearSampler,uv).xyzw,tVP).z;
+//    float linearDepth = tP._43/(depth-tP._33);
+	float linearDepth = projAB.y / (depth - projAB.x);
     float3 ray = normalize(viewRay);
     ray = ray / ray.z;
     return linearDepth * ray;
@@ -68,16 +79,23 @@ float3 UVtoEYE(float2 UV){
 
 float3 PS(psInput input) : SV_Target
 {	
+	float2 projAB = float2( zFar / (zFar - zNear), zFar * zNear / (zFar - zNear) );
 	float3 output;
-	
 
-//	float3 viewRay = normalize(tVI[3].xyz - PosW.xyz);
 	
   	float2 texel_size = float2(1.0 / resolution.x, 1.0 / resolution.y);
-//    float3 origin = CalcPosition(input.uv,UVtoEYE(input.uv));
+	
+    float3 origin = CalcPosition(input.uv,UVtoEYE(input.uv), projAB);
+	
+//	float3 viewRay = normalize(tVI[3].xyz - mul(float4(GBufferPos.Sample(linearSampler,input.uv).xyz,1),1).xyz);
+//	float3 origin = CalcPosition(input.uv,viewRay, projAB);
 
-	float3 origin =  UVZtoWORLD(input.uv,depthMap.Sample(linearSampler,input.uv).r).xyz;
+	
+//	float3 origin = mul(GBufferPos.Sample(linearSampler,input.uv).xyzw,tV).xyz;
+//		return origin;
 
+//	return mul(GBufferPos.Sample(linearSampler,input.uv).xyzw,tV).z;
+	
     if(origin.z < -99) discard; //Don't check points at infinity
     float2 pixOrigin = input.uv;
 
@@ -116,8 +134,14 @@ float3 PS(psInput input) : SV_Target
             float rayDepth = (origin + t * dir).z;
             float2 texCoord = pixOrigin + 0.5 * pixDir * t * dirLength;
             float depth = depthMap.SampleLevel(linearSampler, texCoord, 0).r;
-            float linearDepth = tP._43/(depth-tP._33);
-			return linearDepth;
+        	
+//        	depth = mul(GBufferPos.SampleLevel(linearSampler,texCoord,0).xyzw,tVP).z;
+//            float linearDepth = tP._43/(depth-tP._33);
+
+			float linearDepth = projAB.y / (depth - projAB.x);
+        	
+//        	return linearDepth;
+        	
             if(linearDepth > rayDepth + 0.1){
                 output = 0.2;
                 break;
