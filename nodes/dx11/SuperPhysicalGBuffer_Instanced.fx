@@ -78,7 +78,7 @@ struct MaterialStruct
 	
 };
 
-StructuredBuffer <MaterialStruct> Material  <string uiname="Material";>;
+StructuredBuffer <MaterialStruct> Material_NormalMapping  <string uiname="Material";>;
 
 #include "ParallaxOcclusionMapping.fxh"
 
@@ -109,7 +109,7 @@ gBuffer PS(psInput input): SV_Target
 	
 	uint texID = materialID[input.ii + IntanceStartIndex];
 	
-	input.uv = mul(input.uv,Material[texID].tTex);
+	input.uv = mul(input.uv,Material_NormalMapping[texID].tTex);
 	
 	float3 N = input.norm;
 	
@@ -138,20 +138,20 @@ gBuffer PS(psInput input): SV_Target
 	b = cross(N, x);
 	b = normalize(b);
 	
-	if(Material[texID].POM){
+	if(Material_NormalMapping[texID].POM){
 		parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID, input.ii + IntanceStartIndex);
 	}
 	float3 bumpMap = 0;
 	
 		bumpMap = normalTex.Sample(g_samLinear,float3(input.uv.xy, texID)).rgb;
 		if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
-		N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material[texID].bumpy);
+		N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material_NormalMapping[texID].bumpy);
 		
 	}
 	
 	output.pos = input.posW;
 	output.norm = float4(N,(float) materialID[input.ii + IntanceStartIndex] * 0.001);
-	output.uv = mul(input.uv, Material[texID].tTexInv);	
+	output.uv = mul(input.uv, Material_NormalMapping[texID].tTexInv);	
 	
 	return output;
 }
