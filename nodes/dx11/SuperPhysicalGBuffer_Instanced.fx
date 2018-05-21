@@ -130,13 +130,12 @@ gBuffer PS(psInput input): SV_Target
 	float3 b = normalize( (tc_dy.x * p_dx - tc_dx.x * p_dy)); // sign inversion
 		
 	// get new tangent from a given mesh normal
-	float3 n = normalize(N);
-	float3 x = cross(n, t);
-	t = cross(x, n);
+	float3 x = cross(N, t);
+	t = cross(x, N);
 	t = normalize(t);
 	// get updated bi-tangent
-	x = cross(b, n);
-	b = cross(n, x);
+	x = cross(b, N);
+	b = cross(N, x);
 	b = normalize(b);
 	
 	if(Material[texID].POM){
