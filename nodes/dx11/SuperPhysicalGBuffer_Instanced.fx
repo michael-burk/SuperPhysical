@@ -141,9 +141,8 @@ gBuffer PS(psInput input): SV_Target
 	if(Material_NormalMapping[texID].POM){
 		parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID, input.ii + IntanceStartIndex);
 	}
-	float3 bumpMap = 0;
 	
-		bumpMap = normalTex.Sample(g_samLinear,float3(input.uv.xy, texID)).rgb;
+		float3 bumpMap = normalTex.Sample(g_samLinear,float3(input.uv.xy, texID)).rgb;
 		if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
 		N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material_NormalMapping[texID].bumpy);
 		

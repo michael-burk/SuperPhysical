@@ -105,8 +105,8 @@ static const float3 F = float3(0.04,0.04,0.04);
 
 Texture2DArray texture2d <string uiname="Texture"; >;
 Texture2DArray EmissiveTex <string uiname="Emissive"; >;
-Texture2DArray normalTex <string uiname="NormalMap"; >;
-Texture2DArray heightMap <string uiname="HeightMap"; >;
+//Texture2DArray normalTex <string uiname="NormalMap"; >;
+//Texture2DArray heightMap <string uiname="HeightMap"; >;
 Texture2DArray roughTex <string uiname="RoughnessMap"; >;
 Texture2DArray metallTex <string uiname="MetallicMap"; >;
 Texture2DArray aoTex <string uiname="AOMap"; >;
