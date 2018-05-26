@@ -217,7 +217,7 @@ vs2ps VS(
 	Out.TexCd = mul(TexCd,Material[ID%mCount].tTex);
     return Out;
 }
-float bias;
+
 float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	
 	uint texID = ID%mCount;

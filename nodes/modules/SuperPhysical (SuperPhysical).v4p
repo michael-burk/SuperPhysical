@@ -78,7 +78,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Render State|">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.3">
    </PACK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="126">
    <BOUNDS type="Node" left="13695" top="2085" width="100" height="100">

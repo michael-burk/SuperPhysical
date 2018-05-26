@@ -22,16 +22,28 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 //    N = mul( tbn[2], worldToTangentSpace );
 	
     float fParallaxLimit = -length( V.xy ) / V.z;
+	
 	#ifdef Deferred
-		 fParallaxLimit *= -Material_NormalMapping[texID].fHeightMapScale;  
+		float fHeightMapScale = Material_NormalMapping[texID].fHeightMapScale;  
 	#else
-   		 fParallaxLimit *= -Material_NormalMapping[texID].fHeightMapScale;
+		float fHeightMapScale = Material[texID].fHeightMapScale;  
 	#endif
+	
+	
+	fParallaxLimit *= -fHeightMapScale;  
+
     
     float2 vOffsetDir = normalize( V.xy );
     float2 vMaxOffset = vOffsetDir * fParallaxLimit;
     
-    float fStepSize = 1.0 / (float)Material_NormalMapping[texID].POMnumSamples;
+	#ifdef Deferred
+		float samples = (float)Material_NormalMapping[texID].POMnumSamples;
+	#else
+		float samples = (float)Material[texID].POMnumSamples;
+	#endif
+	
+   	float fStepSize = 1.0 / samples;
+
     
     float2 dx = ddx_fine( texcoord );
     float2 dy = ddy_fine( texcoord );
@@ -49,7 +61,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 	float delta2;
 	float ratio;
 	// (uint) = (float)
-    while ( nCurrSample < (uint) Material_NormalMapping[texID].POMnumSamples ){    
+    while ( nCurrSample < (uint) samples ){    
                 
       fCurrSampledHeight = heightMap.SampleGrad( g_samLinear, float3(texcoord + vCurrOffset, texID), dx, dy ).r;
       if ( fCurrSampledHeight > fCurrRayHeight ){
@@ -60,7 +72,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
     
         vCurrOffset = (ratio) * vLastOffset + (1.0-ratio) * vCurrOffset;
     
-        nCurrSample = Material_NormalMapping[texID].POMnumSamples + 1;
+        nCurrSample = samples + 1;
       } else {
         nCurrSample++;
     
@@ -83,6 +95,13 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 		float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
 	#endif
 	
-	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-Material_NormalMapping[texID].fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material_NormalMapping[texID].tTexInv)).xyz,scale);
+	#ifdef Deferred
+		PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material_NormalMapping[texID].tTexInv)).xyz,scale);
+	#else
+		PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
+	#endif
+	
+	
+//	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material_NormalMapping[texID].tTexInv)).xyz,scale);
 }
 

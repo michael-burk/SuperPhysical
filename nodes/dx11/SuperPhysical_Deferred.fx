@@ -58,9 +58,9 @@ struct MaterialStruct
 {
 	float metallic;
 	float roughness;
-	
 	float 	pad0;
 	float 	pad1;
+	
 	float4  Color;
 	float4  Emissive;
 	

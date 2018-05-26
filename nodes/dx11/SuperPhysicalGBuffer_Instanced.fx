@@ -5,6 +5,7 @@
 
 
 #define Instancing = true;
+#define Deferred = true;
 
 struct gBuffer{
 	
@@ -54,7 +55,6 @@ SamplerState g_samLinear
 StructuredBuffer<float4x4> world;
 StructuredBuffer<uint> materialID;
 
-bool NormalMapping = false;
 
 Texture2DArray normalTex <string uiname="NormalMap"; >;
 Texture2DArray heightMap <string uiname="HeightMap"; >;
@@ -75,6 +75,15 @@ struct MaterialStruct
 	
 	row_major float4x4	tTex;
 	row_major float4x4	tTexInv;
+	
+	#ifdef doControlTextures
+	
+	float	sampleNormal;
+	float	sampleHeight;
+	float	pad0;
+	float	pad1;
+	
+	#endif
 	
 };
 
@@ -113,40 +122,42 @@ gBuffer PS(psInput input): SV_Target
 	
 	float3 N = input.norm;
 	
-	if(NormalMapping){
+	#ifdef doControlTextures
 	
-	float3 V = normalize(tVI[3].xyz - input.posW.xyz);
-
+		
+		float3 V = normalize(tVI[3].xyz - input.posW.xyz);
 	
-	// compute derivations of the world position
-	float3 p_dx = ddx(input.posW.xyz);
-	float3 p_dy = ddy(input.posW.xyz);
-	// compute derivations of the texture coordinate
-	float2 tc_dx = ddx(input.uv.xy);
-	float2 tc_dy = ddy(input.uv.xy);
+		
+		// compute derivations of the world position
+		float3 p_dx = ddx(input.posW.xyz);
+		float3 p_dy = ddy(input.posW.xyz);
+		// compute derivations of the texture coordinate
+		float2 tc_dx = ddx(input.uv.xy);
+		float2 tc_dy = ddy(input.uv.xy);
+				
+		// compute initial tangent and bi-tangent
+		float3 t = normalize( (tc_dy.y * p_dx - tc_dx.y * p_dy));
+		float3 b = normalize( (tc_dy.x * p_dx - tc_dx.x * p_dy)); // sign inversion
 			
-	// compute initial tangent and bi-tangent
-	float3 t = normalize( (tc_dy.y * p_dx - tc_dx.y * p_dy));
-	float3 b = normalize( (tc_dy.x * p_dx - tc_dx.x * p_dy)); // sign inversion
+		// get new tangent from a given mesh normal
+		float3 x = cross(N, t);
+		t = cross(x, N);
+		t = normalize(t);
+		// get updated bi-tangent
+		x = cross(b, N);
+		b = cross(N, x);
+		b = normalize(b);
 		
-	// get new tangent from a given mesh normal
-	float3 x = cross(N, t);
-	t = cross(x, N);
-	t = normalize(t);
-	// get updated bi-tangent
-	x = cross(b, N);
-	b = cross(N, x);
-	b = normalize(b);
-	
-	if(Material_NormalMapping[texID].POM){
-		parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID, input.ii + IntanceStartIndex);
-	}
-	
-		float3 bumpMap = normalTex.Sample(g_samLinear,float3(input.uv.xy, texID)).rgb;
-		if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
-		N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material_NormalMapping[texID].bumpy);
+		if(Material_NormalMapping[texID].POM){
+			parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID, input.ii + IntanceStartIndex);
+		}
+			float3 bumpMap = float3(.5,.5,1);
+			if(Material_NormalMapping[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(input.uv.xy, texID)).rgb;
+			if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
+			N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material_NormalMapping[texID].bumpy);
+			
 		
-	}
+	#endif
 	
 	output.pos = input.posW;
 	output.norm = float4(N,(float) materialID[input.ii + IntanceStartIndex] * 0.001);

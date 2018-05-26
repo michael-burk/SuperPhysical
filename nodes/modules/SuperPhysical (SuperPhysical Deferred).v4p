@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred).v4p" systemname="SuperPhysical Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="0" top="1200" width="21315" height="12180">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred).v4p" systemname="SuperPhysical Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical).v4p" scrollx="0" scrolly="90">
+   <BOUNDS type="Window" left="1005" top="1290" width="21315" height="12180">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -915,9 +915,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="420" srcpinname="Output" dstnodeid="588" dstpinname="Background Color" linkstyle="Bezier">
-   <LINKPOINT x="4500" y="9398">
+   <LINKPOINT x="4515" y="9405">
    </LINKPOINT>
-   <LINKPOINT x="4140" y="9398">
+   <LINKPOINT x="4305" y="9405">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="588" dstpinname="Enabled" linkstyle="Bezier">

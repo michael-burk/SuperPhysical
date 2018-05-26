@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="1095" scrolly="5820">
-   <BOUNDS type="Window" left="3330" top="1680" width="22470" height="13755">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="0" scrolly="1965">
+   <BOUNDS type="Window" left="4485" top="2805" width="22470" height="13590">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -1158,22 +1158,6 @@
    <LINKPOINT x="17400" y="17475">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetBuffer (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical Material)" componentmode="Hidden" id="570">
-   <BOUNDS type="Node" left="17460" top="15960" width="100" height="100">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="570" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="1095" y="8640">
-   </LINKPOINT>
-   <LINKPOINT x="17445" y="8640">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="570" srcpinname="Output" dstnodeid="569" dstpinname="Buffer Description" linkstyle="Bezier">
-   <LINKPOINT x="17490" y="16395">
-   </LINKPOINT>
-   <LINKPOINT x="17490" y="16395">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="571">
    <BOUNDS type="Node" left="21480" top="5595" width="100" height="100">
    </BOUNDS>
@@ -2012,82 +1996,106 @@
    </NODE>
    <LINK srcnodeid="680" srcpinname="LightSetup" dstnodeid="442" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="678" srcpinname="Result" dstnodeid="680" dstpinname="GlobalSettings">
+   <LINK srcnodeid="678" srcpinname="Result" dstnodeid="680" dstpinname="GlobalSettings" linkstyle="Bezier">
+   <LINKPOINT x="12420" y="5318">
+   </LINKPOINT>
+   <LINKPOINT x="12420" y="5318">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="678" srcpinname="IBLSettings" dstnodeid="680" dstpinname="IBLSettings">
+   <LINK srcnodeid="678" srcpinname="IBLSettings" dstnodeid="680" dstpinname="IBLSettings" linkstyle="Bezier">
+   <LINKPOINT x="12615" y="5303">
+   </LINKPOINT>
+   <LINKPOINT x="13665" y="5303">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="678" srcpinname="BRDF LUT Path" dstnodeid="680" dstpinname="BRDF LUT Path">
    </LINK>
-   <NODE id="682" systemname="SuperPhysicalGBuffer_Instanced (DX11.Effect)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SuperPhysicalGBuffer_Instanced.fx" nodename="SuperPhysicalGBuffer_Instanced (DX11.Effect)" componentmode="Hidden">
-   <BOUNDS type="Node" left="2625" top="11160" width="2715" height="270">
-   </BOUNDS>
-   <PIN pinname="Material" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="682" srcpinname="Layer" dstnodeid="386" dstpinname="Layer" linkstyle="Bezier">
-   <LINKPOINT x="2655" y="12398">
-   </LINKPOINT>
-   <LINKPOINT x="2670" y="12398">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="426" srcpinname="Buffer" dstnodeid="682" dstpinname="world" linkstyle="Bezier">
-   <LINKPOINT x="4035" y="10898">
-   </LINKPOINT>
-   <LINKPOINT x="4155" y="10898">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="463" srcpinname="Buffer" dstnodeid="682" dstpinname="materialID" linkstyle="Bezier">
-   <LINKPOINT x="4350" y="10613">
-   </LINKPOINT>
-   <LINKPOINT x="4350" y="10613">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="594" srcpinname="Render State" dstnodeid="682" dstpinname="Render State" linkstyle="Bezier">
-   <LINKPOINT x="2925" y="10995">
-   </LINKPOINT>
-   <LINKPOINT x="2850" y="10995">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="478" srcpinname="Geometry Out" dstnodeid="682" dstpinname="Geometry" linkstyle="Bezier">
-   <LINKPOINT x="3210" y="9510">
-   </LINKPOINT>
-   <LINKPOINT x="3030" y="9510">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="611" srcpinname="Output" dstnodeid="682" dstpinname="IntanceStartIndex" linkstyle="Bezier">
-   <LINKPOINT x="3825" y="10155">
-   </LINKPOINT>
-   <LINKPOINT x="3600" y="10155">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="349" srcpinname="Texture Array Out" dstnodeid="682" dstpinname="NormalMap">
-   </LINK>
-   <LINK srcnodeid="350" srcpinname="Texture Array Out" dstnodeid="682" dstpinname="HeightMap">
-   </LINK>
    <NODE systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\lib\packs\VL.VVVV.DirectX11.0.79.17-g63a3d4ba77\vvvv\nodes\plugins\VL.VVVV.DirectX11.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden" id="684">
-   <BOUNDS type="Node" left="4860" top="9180" width="100" height="100">
+   <BOUNDS type="Node" left="4650" top="8910" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4860" top="9180" width="3000" height="3000">
+   <BOUNDS type="Box" left="4650" top="8910" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="GetBufferNormalMapping (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBufferNormalMapping (SuperPhysical Material)" componentmode="Hidden" id="683">
-   <BOUNDS type="Node" left="4845" top="8580" width="100" height="100">
+   <BOUNDS type="Node" left="4635" top="8310" width="100" height="100">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="683" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="0" y="6180">
+   <LINKPOINT x="1095" y="4830">
    </LINKPOINT>
-   <LINKPOINT x="9035" y="3720">
+   <LINKPOINT x="4635" y="4830">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="683" srcpinname="Output" dstnodeid="684" dstpinname="Buffer Description" linkstyle="Bezier">
-   <LINKPOINT x="4875" y="9015">
+   <LINKPOINT x="4665" y="8745">
    </LINKPOINT>
-   <LINKPOINT x="4875" y="9015">
+   <LINKPOINT x="4665" y="8745">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="684" srcpinname="Buffer" dstnodeid="682" dstpinname="Material">
+   <NODE id="686" systemname="SuperPhysicalGBuffer_Instanced (DX11.Effect)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SuperPhysicalGBuffer_Instanced.fx" nodename="SuperPhysicalGBuffer_Instanced (DX11.Effect)" componentmode="Hidden">
+   <BOUNDS type="Node" left="2625" top="11160" width="2715" height="270">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="686" srcpinname="Layer" dstnodeid="386" dstpinname="Layer" linkstyle="Bezier">
+   <LINKPOINT x="2655" y="12398">
+   </LINKPOINT>
+   <LINKPOINT x="2670" y="12398">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="426" srcpinname="Buffer" dstnodeid="686" dstpinname="world" linkstyle="Bezier">
+   <LINKPOINT x="4035" y="10898">
+   </LINKPOINT>
+   <LINKPOINT x="4155" y="10898">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="463" srcpinname="Buffer" dstnodeid="686" dstpinname="materialID" linkstyle="Bezier">
+   <LINKPOINT x="4350" y="10613">
+   </LINKPOINT>
+   <LINKPOINT x="4350" y="10613">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="594" srcpinname="Render State" dstnodeid="686" dstpinname="Render State" linkstyle="Bezier">
+   <LINKPOINT x="2925" y="10995">
+   </LINKPOINT>
+   <LINKPOINT x="2850" y="10995">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="478" srcpinname="Geometry Out" dstnodeid="686" dstpinname="Geometry" linkstyle="Bezier">
+   <LINKPOINT x="3210" y="9510">
+   </LINKPOINT>
+   <LINKPOINT x="3030" y="9510">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="611" srcpinname="Output" dstnodeid="686" dstpinname="IntanceStartIndex" linkstyle="Bezier">
+   <LINKPOINT x="3825" y="10155">
+   </LINKPOINT>
+   <LINKPOINT x="3600" y="10155">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="349" srcpinname="Texture Array Out" dstnodeid="686" dstpinname="NormalMap">
+   </LINK>
+   <LINK srcnodeid="350" srcpinname="Texture Array Out" dstnodeid="686" dstpinname="HeightMap">
+   </LINK>
+   <LINK srcnodeid="684" srcpinname="Buffer" dstnodeid="686" dstpinname="Material">
+   </LINK>
+   <LINK srcnodeid="339" srcpinname="Output" dstnodeid="686" dstpinname="Defines">
+   </LINK>
+   <NODE systemname="GetBuffer (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical Material)" componentmode="Hidden" id="690">
+   <BOUNDS type="Node" left="17460" top="15960" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="690" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="1095" y="8640">
+   </LINKPOINT>
+   <LINKPOINT x="17445" y="8640">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="690" srcpinname="Output" dstnodeid="569" dstpinname="Buffer Description" linkstyle="Bezier">
+   <LINKPOINT x="17490" y="16395">
+   </LINKPOINT>
+   <LINKPOINT x="17490" y="16395">
+   </LINKPOINT>
    </LINK>
    </PATCH>
