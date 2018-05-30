@@ -3,9 +3,9 @@
 //StructuredBuffer <uint> POM_numSamples;
 
 #ifdef Instancing
-void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID, uint iid){
+void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID, inout float POM_Height, uint iid){
 #else
-void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID){
+void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID, inout float POM_Height){
 #endif
 	
 	float3x3 tangentToWorldSpace;
@@ -101,7 +101,88 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 		PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
 	#endif
 	
+	POM_Height = heightMap.SampleGrad( g_samLinear, texcoord, dx, dy ).r;
 	
-//	PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material_NormalMapping[texID].tTexInv)).xyz,scale);
 }
 
+
+	
+static float POM_shadow_factor = .25;
+float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float4x3 tbnh,  uint texID, uint lightID)
+{
+	float3x3 tangentToWorldSpace;
+
+	tangentToWorldSpace[0] =  tbnh[0];
+	tangentToWorldSpace[1] = -tbnh[1];
+	tangentToWorldSpace[2] =  tbnh[2];
+	
+	float3x3 worldToTangentSpace = transpose(tangentToWorldSpace);
+
+	L	=  mul(-L, worldToTangentSpace );
+
+   float shadowMultiplier = 1;
+
+//   const float minLayers = 15;
+//   const float maxLayers = 30;
+	
+   // calculate lighting only for surface oriented to the light source
+   if(dot(float3(0, 0, 1), L) > 0)
+   {
+      // calculate initial parameters
+      float numSamplesUnderSurface	= 0;
+      shadowMultiplier	= 0;
+	  float	 numLayers = Light[lightID].shadowPOMSamples ;
+   	
+      float layerHeight	= (1-tbnh[3].x) / numLayers;
+   	
+   		#ifdef Deferred
+		float fHeightMapScale = Material_NormalMapping[texID].fHeightMapScale;  
+		#else
+		float fHeightMapScale = Material[texID].fHeightMapScale * 3 ;  
+		#endif
+   	
+      float2 texStep	= fHeightMapScale * L.xy / (L.z + (L.z == 0) ) / numLayers ;
+
+      // current parameters
+      float currentLayerHeight	= 1-tbnh[3].x - layerHeight;
+      float2 currentTextureCoords	= initialTexCoord + texStep;
+
+      float heightFromTexture	= 1-heightMap.SampleLevel(g_samLinear, currentTextureCoords,0).r;
+      int stepIndex	= 1;
+
+      // while point is below depth 0.0 )
+      while(currentLayerHeight > 0)
+      {
+         // if point is under the surface
+         if(heightFromTexture < currentLayerHeight)
+         {
+            // calculate partial shadowing factor
+            numSamplesUnderSurface	+= 1;
+            float newShadowMultiplier	= (currentLayerHeight - heightFromTexture) *
+                                             (1.0 - stepIndex / numLayers);
+            shadowMultiplier	= pow(abs(max(shadowMultiplier, newShadowMultiplier)),POM_shadow_factor );
+//         	shadowMultiplier = max(shadowMultiplier, newShadowMultiplier) ;
+//			shadowMultiplier = 1;
+         }
+
+         // offset to the next layer
+         stepIndex	+= 1;
+         currentLayerHeight	-= layerHeight;
+         currentTextureCoords	+= texStep;
+         heightFromTexture	= 1-heightMap.SampleLevel(g_samLinear, currentTextureCoords,0).r;
+      }
+
+      // Shadowing factor should be 1 if there were no points under the surface
+      if(numSamplesUnderSurface < 1)
+      {
+         shadowMultiplier = 1;
+      }
+      else
+      {
+//         shadowMultiplier = (1.0 - pow(shadowMultiplier,.25));
+			shadowMultiplier = (1.0 - shadowMultiplier );
+      }
+   }
+	return shadowMultiplier;
+//   return lerp(1,shadowMultiplier,dot(float3(0, 0, 1), L)+.25);
+}

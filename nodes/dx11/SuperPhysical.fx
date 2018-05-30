@@ -218,7 +218,12 @@ vs2ps VS(
     return Out;
 }
 
+#ifdef doShadowPOM
+float4 doLighting(float4 PosW, float3 N, float4 TexCd, float4x3 tbnh){
+#else
 float4 doLighting(float4 PosW, float3 N, float4 TexCd){
+#endif
+
 	
 	uint texID = ID%mCount;
 	
@@ -334,21 +339,26 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		   		projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;			
 				projectTexCoord.z =  viewPosition.z / viewPosition.w / 2.0f + 0.5f;
 			
+				
+				float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
+					
 				if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y)
 				&& (saturate(projectTexCoord.z) == projectTexCoord.z)){
 					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter, N, L);
+					
 				} else {
 					shadow = 1;
 				}
-					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);			
-					shadowCounter++;
 							
+					shadowCounter++;
+					shadow = min(shadow, parallaxSoftShadowMultiplier(LDir, TexCd.xy, tbnh, texID, i).xxxx);		
 					finalLight += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
 					lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);
 				} else {
-					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
+					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);		
+					shadow = parallaxSoftShadowMultiplier(LDir, TexCd.xy, tbnh, texID, i).xxxx;
 					finalLight += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-					1.0, 1.0, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);
+					lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);					
 				}
 				lightCounter ++;
 				break;
@@ -356,7 +366,6 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			// SPOT
 			case 1:
 				shadow = 0;
-//				float4 depthBias = float4(N * 0,0);
 				viewPosition = mul(PosW, LightMatrices[i].VP);
 					
 				projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
@@ -481,15 +490,20 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 
 float4 PS_PBR(vs2ps In): SV_Target
 {	
+	#ifdef doShadowPOM
+	return doLighting(In.PosW, normalize(In.NormW), In.TexCd, 1);
+	#else
 	return doLighting(In.PosW, normalize(In.NormW), In.TexCd);
+	#endif
 }
 
 float4 PS_PBR_Bump(vs2psBump In): SV_Target
 {	
 	uint texID = ID%mCount;
 	#ifdef doPOM
+	float POM_Height;
 	if(Material[texID].POM){
-		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(In.tangent,In.binormal,In.NormW.xyz),texID);
+		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(In.tangent,In.binormal,In.NormW.xyz),texID,POM_Height);
 	}
 	#endif
 	
@@ -501,7 +515,12 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 	#endif
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * In.tangent + bumpMap.y * In.binormal)*Material[texID].bumpy);
-	return doLighting(In.PosW, Nb, In.TexCd);
+	
+	#ifdef doShadowPOM
+	return doLighting(In.PosW, normalize(In.NormW), In.TexCd, float4x3(In.tangent, In.binormal,In.NormW,POM_Height.xxx));
+	#else
+	return doLighting(In.PosW, normalize(In.NormW), In.TexCd);
+	#endif
 
 }
 
@@ -527,18 +546,16 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	b = cross(n, x);
 	b = normalize(b);
 	
+	
 	#ifdef doPOM
+	float pom_height = 0;
 	if(Material[texID].POM){
-		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(t,b,In.NormW.xyz),texID);
+		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(t,b,In.NormW.xyz),texID,pom_height);
 	}
 	#endif
 	
 	float3 bumpMap = float3(0,0,0);
 
-//	uint tX2,tY2,m2;
-//	normalTex.GetDimensions(tX2,tY2);
-//	if(tX2+tY2 > 4 && !noTile) bumpMap = normalTex.Sample(g_samLinear,In.TexCd.xy).rgb;
-//	else if(tX2+tY2 > 4 && noTile) bumpMap = textureNoTile(normalTex,In.TexCd.xy).rgb;
 	#ifdef doControlTextures
 	if(Material[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
@@ -546,8 +563,13 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b))*Material[texID].bumpy);
 	
-	// #ifdef doShadowPOM
-	return doLighting(In.PosW, Nb, In.TexCd);
+	
+	
+	#ifdef doShadowPOM
+			return doLighting(In.PosW, Nb, In.TexCd, float4x3(t,b,Nb,pom_height.xxx) );
+	#else
+			return doLighting(In.PosW, Nb, In.TexCd);
+	#endif
 }
 
 
