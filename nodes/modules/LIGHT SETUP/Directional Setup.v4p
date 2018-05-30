@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="-990" top="13605" width="16290" height="10500">
+   <BOUNDS type="Window" left="1215" top="930" width="16290" height="10500">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.36">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.11">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0.46">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0.64">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
@@ -213,7 +213,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6945" top="4980" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.71931,0.26264,1.00000,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Diffuse Color|">
    </PIN>
@@ -565,11 +565,47 @@
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
+   <PIN pinname="Enabled" slicecount="1" values="1" visible="1">
    </PIN>
-   <PIN pinname="Samples" slicecount="1" values="25">
+   <PIN pinname="Samples" slicecount="1" values="25" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="76" srcpinname="Output" dstnodeid="75" dstpinname="ShadowPOM">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="77">
+   <BOUNDS type="Box" left="11100" top="6465" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11100" top="6465" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="76" dstpinname="Enabled">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="78">
+   <BOUNDS type="Box" left="9990" top="6495" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9990" top="6495" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="12">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="76" dstpinname="Samples">
    </LINK>
    </PATCH>

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1545" top="1050" width="10965" height="12975">
+   <BOUNDS type="Window" left="1605" top="1080" width="10965" height="12975">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
    <BOUNDS type="Node" left="775" top="8965" width="100" height="100">
@@ -510,20 +510,12 @@
    <PIN pinname="Mode" slicecount="1" values="BackCullSimple">
    </PIN>
    </NODE>
-   <NODE systemname="Anisotropic (DX11 Sampler)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Anisotropic (DX11 Sampler)" componentmode="Hidden" id="6">
-   <BOUNDS type="Node" left="3225" top="3510" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Sampler" visible="1">
-   </PIN>
-   <PIN pinname="Maximum Anisotropy" slicecount="1" values="16">
-   </PIN>
-   </NODE>
    <NODE systemname="SuperToneMapping (DX11.TextureFX)" filename="..\dx11\SuperToneMapping.tfx" nodename="SuperToneMapping (DX11.TextureFX)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="1650" top="10605" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1650" top="10605">
    </BOUNDS>
-   <PIN pinname="gamma" slicecount="1" values="1.2">
+   <PIN pinname="gamma" slicecount="1" values="1.11">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -644,7 +636,7 @@
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.3">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
@@ -691,44 +683,6 @@
    </LINKPOINT>
    <LINKPOINT x="3165" y="5580">
    </LINKPOINT>
-   </LINK>
-   <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
-   <BOUNDS type="Window" left="3150" top="2940" width="17445" height="11505">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1080" top="4845" width="3870" height="270">
-   </BOUNDS>
-   <PIN pinname="MaterialSetup" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="25" srcpinname="Transform Out" dstnodeid="51" dstpinname="Transform In" linkstyle="Bezier">
-   <LINKPOINT x="4995" y="4410">
-   </LINKPOINT>
-   <LINKPOINT x="2415" y="4410">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="33" srcpinname="Output" dstnodeid="51" dstpinname="Geometry" linkstyle="Bezier">
-   <LINKPOINT x="1920" y="3983">
-   </LINKPOINT>
-   <LINKPOINT x="1935" y="3983">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="8" srcpinname="Render State" dstnodeid="51" dstpinname="Render State" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Sampler" dstnodeid="51" dstpinname="g_samLinear" linkstyle="Bezier">
-   <LINKPOINT x="3285" y="4305">
-   </LINKPOINT>
-   <LINKPOINT x="4050" y="4305">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="51" srcpinname="Layer" dstnodeid="37" dstpinname="Layer 1">
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="51" dstpinname="LightSetup" linkstyle="Bezier">
-   <LINKPOINT x="4245" y="4650">
-   </LINKPOINT>
-   <LINKPOINT x="3675" y="4650">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="51" dstpinname="MaterialSetup">
    </LINK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
@@ -789,6 +743,38 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="38" srcpinname="Camera State" dstnodeid="46" dstpinname="Camera State">
+   </LINK>
+   <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
+   <BOUNDS type="Window" left="3150" top="2940" width="17445" height="11505">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1080" top="4845" width="3870" height="270">
+   </BOUNDS>
+   <PIN pinname="MaterialSetup" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="Transform Out" dstnodeid="51" dstpinname="Transform In" linkstyle="Bezier">
+   <LINKPOINT x="4995" y="4410">
+   </LINKPOINT>
+   <LINKPOINT x="2415" y="4410">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Output" dstnodeid="51" dstpinname="Geometry" linkstyle="Bezier">
+   <LINKPOINT x="1920" y="3983">
+   </LINKPOINT>
+   <LINKPOINT x="1935" y="3983">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Render State" dstnodeid="51" dstpinname="Render State" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Layer" dstnodeid="37" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="51" dstpinname="LightSetup" linkstyle="Bezier">
+   <LINKPOINT x="4245" y="4650">
+   </LINKPOINT>
+   <LINKPOINT x="3675" y="4650">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="51" dstpinname="MaterialSetup">
    </LINK>
    <LINK srcnodeid="51" srcpinname="ShadowMaps" dstnodeid="46" dstpinname="ShadowMaps" linkstyle="Bezier">
    <LINKPOINT x="4335" y="7373">
