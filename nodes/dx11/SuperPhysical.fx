@@ -522,9 +522,9 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * In.tangent + bumpMap.y * In.binormal)*Material[texID].bumpy);
 	
 	#ifdef doShadowPOM
-	return doLighting(In.PosW, normalize(In.NormW), In.TexCd, float4x3(In.tangent, In.binormal,In.NormW,POM_Height.xxx));
+	return doLighting(In.PosW, Nb, In.TexCd, float4x3(In.tangent, In.binormal,In.NormW,POM_Height.xxx));
 	#else
-	return doLighting(In.PosW, normalize(In.NormW), In.TexCd);
+	return doLighting(In.PosW, Nb, In.TexCd);
 	#endif
 
 }
