@@ -26,8 +26,8 @@ struct LightStruct
 	
 	float 	 penumbraScale;
 	float 	 numShadowSamples;
-	float 	 pad0;
-	float 	 pad1;
+	float 	 shadowPOMSamples;
+	float 	 shadowPOM;
 };
 
 struct LightMatricesStruct
@@ -545,7 +545,8 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	#endif
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b))*Material[texID].bumpy);
-
+	
+	// #ifdef doShadowPOM
 	return doLighting(In.PosW, Nb, In.TexCd);
 }
 
