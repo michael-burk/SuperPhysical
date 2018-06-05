@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred) help.v4p" systemname="SuperPhysical Deferred (SuperPhysical) help" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred) help.v4p" systemname="SuperPhysical Deferred (SuperPhysical) help" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" scrollx="0" scrolly="15">
    <BOUNDS type="Window" left="7260" top="810" width="9420" height="12255">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -67,7 +67,7 @@
    </PIN>
    <PIN pinname="Texture In" slicecount="1" visible="1" values="||">
    </PIN>
-   <BOUNDS type="Node" left="945" top="7980" width="4185" height="270">
+   <BOUNDS type="Node" left="945" top="7800" width="4185" height="270">
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -77,7 +77,7 @@
    </PIN>
    <PIN pinname="Input" slicecount="1" values="1">
    </PIN>
-   <BOUNDS type="Box" left="675" top="7980">
+   <BOUNDS type="Box" left="675" top="7800">
    </BOUNDS>
    </NODE>
    <NODE id="4" systemname="SuperToneMapping (DX11.TextureFX)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SuperToneMapping.tfx" nodename="SuperToneMapping (DX11.TextureFX)" componentmode="Hidden">
@@ -133,6 +133,8 @@
    </PIN>
    <PIN pinname="Is Hovered" visible="1">
    </PIN>
+   <BOUNDS type="Box" left="930" top="10050">
+   </BOUNDS>
    </NODE>
    <LINK srcnodeid="16" srcpinname="Window Handle" dstnodeid="76" dstpinname="Handle" linkstyle="PolyLine">
    </LINK>
@@ -171,9 +173,9 @@
    </PIN>
    <BOUNDS type="Window" left="6345" top="735" width="12780" height="13905">
    </BOUNDS>
-   <BOUNDS type="Node" left="3480" top="5940" width="100" height="100">
+   <BOUNDS type="Node" left="3645" top="5790" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3480" top="5940" width="3100" height="3100">
+   <BOUNDS type="Box" left="3645" top="5790" width="3100" height="3100">
    </BOUNDS>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -207,7 +209,7 @@
    </PIN>
    </NODE>
    <NODE systemname="LightHelper (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\LightHelper (SuperPhysical Deferred).v4p" nodename="LightHelper (SuperPhysical Deferred)" componentmode="Hidden" id="98">
-   <BOUNDS type="Node" left="915" top="8760" width="100" height="100">
+   <BOUNDS type="Node" left="930" top="8835" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
@@ -223,22 +225,22 @@
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="0">
    </PIN>
+   <BOUNDS type="Box" left="930" top="8835">
+   </BOUNDS>
    </NODE>
    <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="98" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="98" dstpinname="Texture SizeXY" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="705" y="5640">
+   <LINKPOINT x="700" y="5665">
    </LINKPOINT>
-   <LINKPOINT x="1335" y="5640">
+   <LINKPOINT x="1325" y="5690">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="98" dstpinname="Camera State" linkstyle="Bezier">
-   <LINKPOINT x="6690" y="6353">
+   <LINKPOINT x="6685" y="6378">
    </LINKPOINT>
-   <LINKPOINT x="2100" y="6353">
+   <LINKPOINT x="2090" y="6403">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="98" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
    </LINK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
@@ -253,15 +255,15 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="92" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="5730" y="4245">
+   <LINKPOINT x="5785" y="4195">
    </LINKPOINT>
-   <LINKPOINT x="3675" y="4245">
+   <LINKPOINT x="3785" y="4145">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="98" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="5730" y="5655">
+   <LINKPOINT x="5725" y="5680">
    </LINKPOINT>
-   <LINKPOINT x="1605" y="5655">
+   <LINKPOINT x="1595" y="5705">
    </LINKPOINT>
    </LINK>
    <NODE id="46" systemname="Volumetrics (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" nodename="Volumetrics (SuperPhysical)" componentmode="Hidden">
@@ -269,7 +271,7 @@
    </PIN>
    <PIN pinname="ShadowMaps" slicecount="1" visible="1" values="||">
    </PIN>
-   <BOUNDS type="Node" left="3690" top="7500" width="100" height="100">
+   <BOUNDS type="Node" left="3690" top="7305" width="100" height="100">
    </BOUNDS>
    <PIN pinname="HighRes" visible="1">
    </PIN>
@@ -297,39 +299,39 @@
    <LINK srcnodeid="46" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In 2">
    </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="46" dstpinname="HighRes" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="735" y="5010">
+   <LINKPOINT x="735" y="4945">
    </LINKPOINT>
-   <LINKPOINT x="3690" y="5010">
+   <LINKPOINT x="3690" y="4880">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="90" srcpinname="Projection" dstnodeid="46" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="7135" y="5490">
+   <LINKPOINT x="7135" y="5425">
    </LINKPOINT>
-   <LINKPOINT x="4265" y="5940">
+   <LINKPOINT x="4265" y="5810">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="90" srcpinname="View" dstnodeid="46" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="6985" y="5490">
+   <LINKPOINT x="6985" y="5425">
    </LINKPOINT>
-   <LINKPOINT x="4100" y="5940">
+   <LINKPOINT x="4100" y="5810">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="46" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6705" y="5723">
+   <LINKPOINT x="6705" y="5658">
    </LINKPOINT>
-   <LINKPOINT x="5145" y="5723">
+   <LINKPOINT x="5145" y="5593">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="92" srcpinname="ShadowMaps" dstnodeid="46" dstpinname="ShadowMaps" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4650" y="6823">
+   <LINKPOINT x="4760" y="6658">
    </LINKPOINT>
-   <LINKPOINT x="4830" y="6873">
+   <LINKPOINT x="4885" y="6693">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="46" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5745" y="5010">
+   <LINKPOINT x="5745" y="4945">
    </LINKPOINT>
-   <LINKPOINT x="4830" y="5010">
+   <LINKPOINT x="4830" y="4880">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="21" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture In">
@@ -413,27 +415,27 @@
    <LINK srcnodeid="91" srcpinname="Transforms ByPass" dstnodeid="92" dstpinname="Transform In">
    </LINK>
    <LINK srcnodeid="91" srcpinname="InstanceCount ByPass" dstnodeid="92" dstpinname="IntanceCount" linkstyle="Bezier">
-   <LINKPOINT x="4830" y="5580">
+   <LINKPOINT x="4885" y="5530">
    </LINKPOINT>
-   <LINKPOINT x="4245" y="5580">
+   <LINKPOINT x="4355" y="5480">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="91" srcpinname="Geometry ByPass" dstnodeid="92" dstpinname="Geometry" linkstyle="Bezier">
-   <LINKPOINT x="3870" y="5580">
+   <LINKPOINT x="3925" y="5530">
    </LINKPOINT>
-   <LINKPOINT x="3930" y="5580">
+   <LINKPOINT x="4040" y="5480">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="91" srcpinname="Depth Buffer" dstnodeid="98" dstpinname="Depth Buffer" linkstyle="Bezier">
-   <LINKPOINT x="2850" y="6990">
+   <LINKPOINT x="2845" y="7015">
    </LINKPOINT>
-   <LINKPOINT x="1305" y="6990">
+   <LINKPOINT x="1295" y="7040">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="91" srcpinname="Depth Buffer" dstnodeid="46" dstpinname="DepthHighRes" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2910" y="6335">
+   <LINKPOINT x="2910" y="6270">
    </LINKPOINT>
-   <LINKPOINT x="4005" y="6385">
+   <LINKPOINT x="4005" y="6255">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Visualizer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" nodename="Visualizer (SuperPhysical)" componentmode="Hidden" id="97">
@@ -484,6 +486,8 @@
    <LINKPOINT x="4500" y="3308">
    </LINKPOINT>
    </LINK>
+   <LINK srcnodeid="98" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
+   </LINK>
    <NODE id="67" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred).v4p" nodename="SuperPhysical (SuperPhysical Deferred)" debug="0" stayontop="0">
    <BOUNDS type="Window" left="1005" top="1290" width="21315" height="12180">
    </BOUNDS>
@@ -520,12 +524,6 @@
    <PIN pinname="Texture Out" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="67" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In" linkstyle="Bezier">
-   <LINKPOINT x="960" y="7540">
-   </LINKPOINT>
-   <LINKPOINT x="960" y="7385">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Default SizeXY" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="705" y="4590">
    </LINKPOINT>
@@ -589,5 +587,7 @@
    </LINKPOINT>
    <LINKPOINT x="2385" y="4613">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="67" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In">
    </LINK>
    </PATCH>
