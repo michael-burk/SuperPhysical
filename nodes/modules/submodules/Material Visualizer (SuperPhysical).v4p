@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="330" scrolly="4185">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="0" scrolly="1890">
    <BOUNDS type="Window" left="4560" top="810" width="22470" height="13590">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -739,6 +739,8 @@
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <NODE systemname="Sqrt (Complex)" nodename="Sqrt (Complex)" componentmode="Hidden" id="556">
    <BOUNDS type="Node" left="3495" top="3915" width="100" height="100">
@@ -869,17 +871,17 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\lib\packs\VL.VVVV.DirectX11.0.79.17-g63a3d4ba77\vvvv\nodes\plugins\VL.VVVV.DirectX11.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden" id="569">
-   <BOUNDS type="Node" left="17475" top="16560" width="100" height="100">
+   <BOUNDS type="Node" left="17475" top="16995" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="17475" top="16560" width="3000" height="3000">
+   <BOUNDS type="Box" left="17475" top="16995" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="569" srcpinname="Buffer" dstnodeid="403" dstpinname="Material" linkstyle="Bezier">
-   <LINKPOINT x="17490" y="17475">
+   <LINKPOINT x="17490" y="17765">
    </LINKPOINT>
-   <LINKPOINT x="17400" y="17475">
+   <LINKPOINT x="17400" y="17620">
    </LINKPOINT>
    </LINK>
    <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="571">
@@ -1633,6 +1635,8 @@
    </BOUNDS>
    <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
    </BOUNDS>
+   <PIN pinname="ToneMapping" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="680" srcpinname="LightSetup" dstnodeid="442" dstpinname="Input Node">
    </LINK>
@@ -1725,42 +1729,20 @@
    <LINK srcnodeid="684" srcpinname="Buffer" dstnodeid="686" dstpinname="Material">
    </LINK>
    <NODE systemname="GetBuffer (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical Material)" componentmode="Hidden" id="690">
-   <BOUNDS type="Node" left="17460" top="15960" width="100" height="100">
+   <BOUNDS type="Node" left="17460" top="16545" width="100" height="100">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="690" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="1095" y="8640">
+   <LINKPOINT x="1095" y="8835">
    </LINKPOINT>
-   <LINKPOINT x="17445" y="8640">
+   <LINKPOINT x="17445" y="9030">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="690" srcpinname="Output" dstnodeid="569" dstpinname="Buffer Description" linkstyle="Bezier">
-   <LINKPOINT x="17490" y="16395">
+   <LINKPOINT x="17490" y="16930">
    </LINKPOINT>
-   <LINKPOINT x="17490" y="16395">
+   <LINKPOINT x="17490" y="16880">
    </LINKPOINT>
-   </LINK>
-   <NODE systemname="Sampler (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Sampler (DX11)" componentmode="Hidden" id="699">
-   <BOUNDS type="Node" left="17850" top="17400" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="17850" top="17400" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Sampler" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="699" srcpinname="Sampler" dstnodeid="403" dstpinname="g_samLinear">
-   </LINK>
-   <NODE systemname="Sampler (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Sampler (DX11)" componentmode="Hidden" id="700">
-   <BOUNDS type="Node" left="5985" top="10005" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="5985" top="10005" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Sampler" visible="1">
-   </PIN>
-   <PIN pinname="Mode" slicecount="1" values="LinearWrap">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="700" srcpinname="Sampler" dstnodeid="686" dstpinname="g_samLinear">
    </LINK>
    <LINK srcnodeid="403" srcpinname="Texture Out" dstnodeid="599" dstpinname="Texture In 2">
    </LINK>
@@ -1897,5 +1879,31 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="449" srcpinname="Output" dstnodeid="686" dstpinname="Defines">
+   </LINK>
+   <NODE systemname="Sampler (DX11 Advanced)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Sampler (DX11 Advanced)" componentmode="Hidden" id="701">
+   <BOUNDS type="Node" left="5130" top="7830" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5130" top="7830" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Sampler" visible="1">
+   </PIN>
+   <PIN pinname="Maximum Lod" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Filter Mode" slicecount="1" values="Anisotropic">
+   </PIN>
+   <PIN pinname="Maximum Anisotropy" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="701" srcpinname="Sampler" dstnodeid="403" dstpinname="g_samLinear" linkstyle="Bezier">
+   <LINKPOINT x="5190" y="13095">
+   </LINKPOINT>
+   <LINKPOINT x="17850" y="13095">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="701" srcpinname="Sampler" dstnodeid="686" dstpinname="g_samLinear" linkstyle="Bezier">
+   <LINKPOINT x="5130" y="9630">
+   </LINKPOINT>
+   <LINKPOINT x="3795" y="9630">
+   </LINKPOINT>
    </LINK>
    </PATCH>

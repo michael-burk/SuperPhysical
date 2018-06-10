@@ -8215,10 +8215,18 @@
               <Pin Id="NFw1ifkL5zJNw2tsR0YYlQ" Name="Output" Kind="StateOutputPin" />
             </Node>
             <ControlPoint Id="GaXdE3wU1izQKY8NyMqmAu" Bounds="1515,908" />
-            <Pin Id="RVl6msQcYwjOXL6oMeQ3CF" Name="Reflection Intensity" Kind="InputPin" Bounds="1601,1027" />
+            <Pin Id="RVl6msQcYwjOXL6oMeQ3CF" Name="Reflection Intensity" Kind="InputPin" Bounds="1601,1027" DefaultValue="1.0">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
             <Link Id="B0JDMg9wethPSWwPbyS6m6" Ids="RVl6msQcYwjOXL6oMeQ3CF,GaXdE3wU1izQKY8NyMqmAu" IsHidden="true" />
             <ControlPoint Id="BX8SDVJ44GFNNfKEq9kjwg" Bounds="1466,927" />
-            <Pin Id="BLzoQuturYxOwZXXWsJz3R" Name="Irradiance Intensity" Kind="InputPin" Bounds="1708,1051" />
+            <Pin Id="BLzoQuturYxOwZXXWsJz3R" Name="Irradiance Intensity" Kind="InputPin" Bounds="1708,1051" DefaultValue="1.0">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
             <Link Id="Hb22pj6oinGQFDE4QdWWLl" Ids="BLzoQuturYxOwZXXWsJz3R,BX8SDVJ44GFNNfKEq9kjwg" IsHidden="true" />
             <Link Id="D8H8qBlwfGmOA61L9mbEw3" Ids="NFw1ifkL5zJNw2tsR0YYlQ,KNgSUf79LqOO2z8EsgDy2h" />
             <Link Id="Ikh0ZsAudziPKbgO88lDmB" Ids="BX8SDVJ44GFNNfKEq9kjwg,CDgvqRDDuO5NVy4gQvVVFK" />
