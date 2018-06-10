@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="15" scrolly="210">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -554,34 +554,10 @@
    <LINKPOINT x="6240" y="5595">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="330">
-   <BOUNDS type="Box" left="11925" top="7665" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="11925" top="7665" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|PreprocessorDirectives Enabled|">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="335">
-   <BOUNDS type="Box" left="13350" top="7980" width="480" height="480">
+   <BOUNDS type="Box" left="13095" top="8250" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="13350" top="7980" width="0" height="0">
+   <BOUNDS type="Node" left="13095" top="8250" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -602,26 +578,8 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="339">
-   <BOUNDS type="Node" left="11910" top="9060" width="555" height="270">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1" slicecount="1" values="text">
-   </PIN>
-   <PIN pinname="Switch" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1" slicecount="8" values=",,,,doIBL=1,doGlobalLight=1,doControlTextures=1,">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="330" srcpinname="Y Output Value" dstnodeid="339" dstpinname="Switch" linkstyle="Bezier">
-   <LINKPOINT x="11940" y="8595">
-   </LINKPOINT>
-   <LINKPOINT x="11940" y="8595">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="PreprocessorDirectives (SuperPhysical.Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="PreprocessorDirectives (SuperPhysical.Material)" componentmode="Hidden" id="344">
-   <BOUNDS type="Node" left="12150" top="8565" width="100" height="100">
+   <BOUNDS type="Node" left="11910" top="9000" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Material" visible="1" slicecount="1" values="||">
    </PIN>
@@ -634,16 +592,12 @@
    <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="344" srcpinname="Default" dstnodeid="339" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="344" srcpinname="Output" dstnodeid="339" dstpinname="Input 2">
-   </LINK>
    <LINK srcnodeid="335" srcpinname="Y Output Value" dstnodeid="344" dstpinname="Update">
    </LINK>
    <LINK srcnodeid="254" srcpinname="Output Node" dstnodeid="344" dstpinname="LightSetup" linkstyle="Bezier">
-   <LINKPOINT x="10365" y="4560">
+   <LINKPOINT x="10285" y="4705">
    </LINKPOINT>
-   <LINKPOINT x="13950" y="4560">
+   <LINKPOINT x="13790" y="4850">
    </LINKPOINT>
    </LINK>
    <NODE id="348" systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\packs\CraftLie.1.1.0\vvvv\nodes\plugins\CraftLie.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden">
@@ -655,8 +609,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="348" srcpinname="Buffer" dstnodeid="328" dstpinname="Material" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="339" srcpinname="Output" dstnodeid="328" dstpinname="Defines">
    </LINK>
    <NODE id="350" systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden">
    <BOUNDS type="Node" left="7650" top="8895" width="100" height="100">
@@ -679,9 +631,9 @@
    <LINK srcnodeid="350" srcpinname="Buffer" dstnodeid="328" dstpinname="useTex">
    </LINK>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="344" dstpinname="Material" linkstyle="Bezier">
-   <LINKPOINT x="2940" y="4658">
+   <LINKPOINT x="2860" y="4803">
    </LINKPOINT>
-   <LINKPOINT x="12135" y="4658">
+   <LINKPOINT x="11975" y="4948">
    </LINKPOINT>
    </LINK>
    <NODE id="352" systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden">
@@ -975,5 +927,7 @@
    <LINK srcnodeid="299" srcpinname="Texture Out" dstnodeid="373" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="373" srcpinname="Texture Out" dstnodeid="328" dstpinname="brdfLUT">
+   </LINK>
+   <LINK srcnodeid="344" srcpinname="Output" dstnodeid="328" dstpinname="Defines">
    </LINK>
    </PATCH>

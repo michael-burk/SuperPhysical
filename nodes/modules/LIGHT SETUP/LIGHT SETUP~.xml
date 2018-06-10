@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="11985" top="2550" width="11025" height="7515">
+   <BOUNDS type="Window" left="9315" top="2220" width="11025" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -168,16 +168,6 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE systemname="Spot Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" componentmode="Hidden" id="185" debug="0" stayontop="0">
-   <BOUNDS type="Node" left="3345" top="4380" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="3345" top="4380">
-   </BOUNDS>
-   <BOUNDS type="Window" left="525" top="1185" width="15390" height="11685">
-   </BOUNDS>
-   <PIN pinname="SpotLights" visible="1">
-   </PIN>
-   </NODE>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="200">
@@ -282,12 +272,22 @@
    </LINK>
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="227" dstpinname="PointLightSettings">
    </LINK>
-   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="227" dstpinname="SpotLightSettings">
-   </LINK>
    <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="227" dstpinname="DirectionalLightSettings">
    </LINK>
    <LINK srcnodeid="220" srcpinname="Output" dstnodeid="227" dstpinname="GlobalSettings">
    </LINK>
    <LINK srcnodeid="226" srcpinname="Output" dstnodeid="227" dstpinname="IBLSettings">
+   </LINK>
+   <NODE systemname="Spot Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" componentmode="Hidden" id="185" debug="0" stayontop="0">
+   <BOUNDS type="Node" left="3345" top="4380" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3345" top="4380">
+   </BOUNDS>
+   <BOUNDS type="Window" left="525" top="1185" width="15390" height="11685">
+   </BOUNDS>
+   <PIN pinname="SpotLights" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="227" dstpinname="SpotLightSettings">
    </LINK>
    </PATCH>

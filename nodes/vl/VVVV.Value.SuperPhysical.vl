@@ -9892,7 +9892,7 @@
                   <Link Id="Jh04qMQmSdoPNyfj7iFLcd" Ids="LaQCWAAxXMLODxm0JdijrU,NbRbIokL79qONz3yF79FSt" IsHidden="true" />
                 </Patch>
               </Node>
-              <ControlPoint Id="UYufUd6rO1LPsHitPESdCZ" Bounds="350,889" />
+              <ControlPoint Id="UYufUd6rO1LPsHitPESdCZ" Bounds="658,894" />
               <Node Bounds="351,241,64,13" Id="BQNZKJqJRoZMRUGPziwUBf">
                 <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="VL.CoreLib.vl" LastDependency="VVVV.Value.SuperPhysical.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -10269,7 +10269,6 @@
             <Link Id="VNkp4sbxYb2NjL9ZcwkVeS" Ids="Ch5o2hOQSNYOlbLj0YBmLW,OItY3IJHjK0LF9qiYl8Eby" />
             <Link Id="M4eyfuIAXeoM7jq4EXuFta" Ids="OItY3IJHjK0LF9qiYl8Eby,ODhBT48LSu6LyfMdRHSFyN" />
             <Link Id="K4YwYTeaXJPLOOXlUyRimT" Ids="NzQ40aUQwUxMooierTw2rx,Np07MjRblmmO379UFGkopF" />
-            <Link Id="SSKPSD9gt6RN45FTOrxz58" Ids="Np07MjRblmmO379UFGkopF,UYufUd6rO1LPsHitPESdCZ" />
             <Link Id="H63vNBZcfOWO2Day8K2fbz" Ids="NY0OdP1I51dM6j0wz3evuj,BE9RjYgM1fNP3qtKhLGX3s" />
             <Link Id="AYKk0o6SF2IMRuoIEoyRdB" Ids="BE9RjYgM1fNP3qtKhLGX3s,FOFrpvVvvLqNjxGs4KcaC8" />
             <Link Id="AmUq8xkKVNAOUUINxP68gP" Ids="ETiZztdarMSK9tagOueUTF,S5UDmiTuKv2PHpKxO0oxCP" />
@@ -10282,6 +10281,7 @@
             <Link Id="LfL0JLl51QlNo1ieoiwqKA" Ids="BGKaHofEzMENz4AHUZkuXM,AQaJPecO1v9QE8qiwqP4HJ" />
             <Link Id="KLAQVTZb5oXMv2fO9Y2ztj" Ids="T4s6omw8hSDOojyZMCl04z,ULxo7Sw1jxIOlFIdTqvy1r" />
             <Link Id="OkYzAMebOU1Lv2zJj9Ztr2" Ids="OLzmmspmWz3LMPRCNjrxLg,EeAyZYjceZ4O9hkEBvuH5d" />
+            <Link Id="R46hLIlz73YO5Xs0EEwKkn" Ids="Np07MjRblmmO379UFGkopF,UYufUd6rO1LPsHitPESdCZ" />
           </Patch>
         </Node>
         <!--
@@ -11108,8 +11108,8 @@
                         <Pin Id="GfxbrPp8oGoQFIcWJxaIzt" Name="Material" Kind="InputPin" />
                         <Pin Id="B57aDxDY7V8QBOPxx6iSPq" Name="Update" Kind="InputPin" />
                         <Pin Id="SUKVHkrHijPOxB23vbVJ8b" Name="LightSetup" Kind="InputPin" />
-                        <Pin Id="BLNre0lOJHVLbdsNYOBMCU" Name="Default" Kind="OutputPin" />
                         <Pin Id="I4K5egNzR9LLyHCcYjG6Zv" Name="Output" Kind="OutputPin" />
+                        <Pin Id="BLNre0lOJHVLbdsNYOBMCU" Name="Default" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="913,659,237,99" Id="DFm1OXaN8YzPKoeJsnYg0c">
                         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl" LastDependency="VVVV.Value.SuperPhysical.vl">
@@ -12016,8 +12016,8 @@
                         <Pin Id="Mrxwfcp2tScOiFmaImmUQL" Name="Material" Kind="InputPin" />
                         <Pin Id="LSJowDEOj68NzDROB5ktN6" Name="Update" Kind="InputPin" />
                         <Pin Id="Rr5NVU4WXDbLh9RWwtZ1Zo" Name="LightSetup" Kind="InputPin" />
-                        <Pin Id="AQtmUpPt113M6n4OLnPjfk" Name="Default" Kind="OutputPin" />
                         <Pin Id="Ec957kOVcszOEHccR1p8sZ" Name="Output" Kind="OutputPin" />
+                        <Pin Id="AQtmUpPt113M6n4OLnPjfk" Name="Default" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="913,659,237,99" Id="PsHn0O4AkCDPCzNgPgv2vS">
                         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl" LastDependency="VVVV.Value.SuperPhysical.vl">

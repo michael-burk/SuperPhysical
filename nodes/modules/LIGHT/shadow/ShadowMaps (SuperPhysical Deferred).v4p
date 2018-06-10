@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred).v4p" systemname="ShadowMaps Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps Deferred (SuperPhysical).v4p" scrollx="900" scrolly="2310" locked="0">
-   <BOUNDS type="Window" left="6345" top="735" width="12780" height="13905">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred).v4p" systemname="ShadowMaps Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps Deferred (SuperPhysical).v4p" scrollx="0" scrolly="0" locked="0">
+   <BOUNDS type="Window" left="3045" top="2115" width="12780" height="13905">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -72,7 +72,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <PACK Name="vvvv-Message" Version="2.9.0">
+   <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
    <PACK Name="vvvv-ZeroMQ" Version="0.5.2">
    </PACK>
@@ -175,7 +175,7 @@
    </PIN>
    </NODE>
    <NODE systemname="CDR (Spreads Vector)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="CDR (Spreads Vector)" componentmode="Hidden" id="199">
-   <BOUNDS type="Node" left="4890" top="14025" width="100" height="100">
+   <BOUNDS type="Node" left="5250" top="13515" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
@@ -187,7 +187,7 @@
    </PIN>
    </NODE>
    <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="200">
-   <BOUNDS type="Node" left="5310" top="14445" width="750" height="270">
+   <BOUNDS type="Node" left="5670" top="13935" width="750" height="270">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -197,7 +197,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="201">
-   <BOUNDS type="Node" left="6015" top="13695" width="100" height="100">
+   <BOUNDS type="Node" left="6375" top="13185" width="100" height="100">
    </BOUNDS>
    <PIN pinname="OnChange" visible="1">
    </PIN>
@@ -205,7 +205,7 @@
    </PIN>
    </NODE>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="202">
-   <BOUNDS type="Node" left="6000" top="14055" width="840" height="270">
+   <BOUNDS type="Node" left="6360" top="13545" width="840" height="270">
    </BOUNDS>
    <PIN pinname="Input 2" visible="1">
    </PIN>
@@ -215,7 +215,7 @@
    </PIN>
    </NODE>
    <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="203">
-   <BOUNDS type="Node" left="6765" top="13695" width="100" height="100">
+   <BOUNDS type="Node" left="7125" top="13185" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Bang" visible="1">
    </PIN>
@@ -223,19 +223,19 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="203" srcpinname="Bang" dstnodeid="202" dstpinname="Input 2" linkstyle="Bezier">
-   <LINKPOINT x="6795" y="14010">
+   <LINKPOINT x="7155" y="13500">
    </LINKPOINT>
-   <LINKPOINT x="6795" y="14010">
+   <LINKPOINT x="7155" y="13500">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="201" srcpinname="OnChange" dstnodeid="202" dstpinname="Input 1" linkstyle="Bezier">
-   <LINKPOINT x="6030" y="14010">
+   <LINKPOINT x="6390" y="13500">
    </LINKPOINT>
-   <LINKPOINT x="6030" y="14010">
+   <LINKPOINT x="6390" y="13500">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Add (Value Spectral)" nodename="Add (Value Spectral)" componentmode="Hidden" id="204">
-   <BOUNDS type="Node" left="6030" top="13305" width="100" height="100">
+   <BOUNDS type="Node" left="6390" top="12795" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -243,27 +243,27 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="155" srcpinname="Y Output Value" dstnodeid="204" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="2325" y="9623">
+   <LINKPOINT x="2445" y="9453">
    </LINKPOINT>
-   <LINKPOINT x="6030" y="9623">
+   <LINKPOINT x="6270" y="9283">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="204" srcpinname="Output" dstnodeid="201" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="6045" y="13628">
+   <LINKPOINT x="6405" y="13118">
    </LINKPOINT>
-   <LINKPOINT x="6045" y="13628">
+   <LINKPOINT x="6405" y="13118">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="202" srcpinname="Output" dstnodeid="200" dstpinname="Set" linkstyle="Bezier">
-   <LINKPOINT x="6030" y="14385">
+   <LINKPOINT x="6390" y="13875">
    </LINKPOINT>
-   <LINKPOINT x="6030" y="14385">
+   <LINKPOINT x="6390" y="13875">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="199" srcpinname="Last Slice" dstnodeid="200" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="5325" y="14370">
+   <LINKPOINT x="5685" y="13860">
    </LINKPOINT>
-   <LINKPOINT x="5325" y="14370">
+   <LINKPOINT x="5685" y="13860">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Max (Value)" nodename="Max (Value)" componentmode="Hidden" id="205">
@@ -412,7 +412,7 @@
    <LINKPOINT x="3435" y="13553">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.3">
    </PACK>
    <NODE systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden" id="259">
    <BOUNDS type="Node" left="2265" top="4650" width="100" height="100">
@@ -461,7 +461,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Sort (Spreads)" nodename="Sort (Spreads)" componentmode="Hidden" id="197" filename="">
-   <BOUNDS type="Node" left="4875" top="13605" width="100" height="100">
+   <BOUNDS type="Node" left="5235" top="13095" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Bin Size" slicecount="1" values="-1">
    </PIN>
@@ -471,15 +471,15 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="197" srcpinname="Output" dstnodeid="199" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="4905" y="13950">
+   <LINKPOINT x="5265" y="13440">
    </LINKPOINT>
-   <LINKPOINT x="4905" y="13950">
+   <LINKPOINT x="5265" y="13440">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="155" srcpinname="Y Output Value" dstnodeid="197" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="2310" y="9765">
+   <LINKPOINT x="2430" y="9595">
    </LINKPOINT>
-   <LINKPOINT x="4890" y="9765">
+   <LINKPOINT x="5130" y="9425">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="283" systemname="IOBox (Node)">
@@ -553,7 +553,7 @@
    <NODE id="290" componentmode="Hidden" systemname="AsTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\AsTextureArray.v4p" nodename="AsTextureArray">
    <PIN pinname="Depth Out" visible="1">
    </PIN>
-   <BOUNDS type="Node" left="2280" top="15180" width="1455" height="270">
+   <BOUNDS type="Node" left="2280" top="15165" width="1455" height="270">
    </BOUNDS>
    <BOUNDS type="Window" left="5085" top="4455" width="7635" height="8925">
    </BOUNDS>
@@ -567,17 +567,17 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="280" srcpinname="Output Enum" dstnodeid="290" dstpinname="Target Format" linkstyle="Bezier">
-   <LINKPOINT x="900" y="12930">
+   <LINKPOINT x="900" y="12925">
    </LINKPOINT>
-   <LINKPOINT x="2640" y="12975">
+   <LINKPOINT x="2640" y="12965">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="243" srcpinname="Output" dstnodeid="290" dstpinname="Enabled" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="200" srcpinname="Output" dstnodeid="290" dstpinname="SizeXY" linkstyle="VHV">
-   <LINKPOINT x="5310" y="14910">
+   <LINKPOINT x="5550" y="14565">
    </LINKPOINT>
-   <LINKPOINT x="3045" y="14955">
+   <LINKPOINT x="3165" y="14775">
    </LINKPOINT>
    </LINK>
    <NODE id="297" componentmode="Hidden" systemname="AsTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\AsTextureArray.v4p" nodename="AsTextureArray">
@@ -609,8 +609,6 @@
    </LINKPOINT>
    <LINKPOINT x="6120" y="10830">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="297" srcpinname="Texture Array Out" dstnodeid="283" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="206" srcpinname="Output" dstnodeid="295" dstpinname="Enabled">
    </LINK>
@@ -681,8 +679,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="304" srcpinname="Output" dstnodeid="10" dstpinname="Input Node">
-   </LINK>
-   <LINK srcnodeid="290" srcpinname="Texture Array Out" dstnodeid="30" dstpinname="Input Node">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="305" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2895" top="1980" width="795" height="480">
@@ -963,5 +959,17 @@
    <LINK srcnodeid="319" srcpinname="Output" dstnodeid="277" dstpinname="IntanceStartIndex">
    </LINK>
    <LINK srcnodeid="206" srcpinname="Output" dstnodeid="277" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="ToTextureArray" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\ToTextureArray.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\ToTextureArray.v4p" componentmode="Hidden" id="334">
+   <BOUNDS type="Node" left="915" top="15165" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Textures Out" visible="1">
+   </PIN>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="297" srcpinname="Texture Array Out" dstnodeid="283" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="290" srcpinname="Texture Array Out" dstnodeid="30" dstpinname="Input Node">
    </LINK>
    </PATCH>

@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="3510" top="1695" width="18195" height="13200">
+   <BOUNDS type="Window" left="2505" top="1740" width="18825" height="13200">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -46,24 +46,6 @@
    <PIN pinname="Minimum" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Maximum" slicecount="1" values="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Color)" componentmode="InABox" id="2" systemname="IOBox (Color)">
-   <BOUNDS type="Box" left="3585" top="6045" width="1185" height="855">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3585" top="6045" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Color Input" slicecount="3" visible="1" values="|1.00000,0.82207,0.82207,1.00000|,|0.99815,0.00000,0.00000,1.00000|,|0.05210,0.00000,1.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Color(Albedo)">
-   </PIN>
-   <PIN pinname="Color Output" visible="1">
-   </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="False">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d.Pooled)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d.Pooled)" componentmode="Hidden" id="42">
@@ -595,9 +577,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="204">
-   <BOUNDS type="Box" left="5145" top="7440" width="1530" height="375">
+   <BOUNDS type="Box" left="5175" top="6705" width="1530" height="375">
    </BOUNDS>
-   <BOUNDS type="Node" left="5145" top="7440" width="0" height="0">
+   <BOUNDS type="Node" left="5175" top="6705" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
@@ -1010,8 +992,6 @@
    </LINK>
    <LINK srcnodeid="36" srcpinname="Texture Out" dstnodeid="166" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="42" srcpinname="Texture Out" dstnodeid="258" dstpinname="Texture In">
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="284">
    <BOUNDS type="Box" left="375" top="10095" width="795" height="240">
    </BOUNDS>
@@ -1139,6 +1119,8 @@
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Color">
+   </PIN>
    </NODE>
    <NODE systemname="Material (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Material (SuperPhysical Material)" componentmode="Hidden" id="417">
    <BOUNDS type="Node" left="375" top="8340" width="14370" height="270">
@@ -1157,9 +1139,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="417" dstpinname="Emissive" linkstyle="Bezier">
-   <LINKPOINT x="5205" y="8063">
+   <LINKPOINT x="5225" y="7573">
    </LINKPOINT>
-   <LINKPOINT x="5730" y="8063">
+   <LINKPOINT x="5740" y="7818">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="417" srcpinname="Output" dstnodeid="284" dstpinname="Input Node" linkstyle="VHV">
@@ -1173,5 +1155,7 @@
    <LINK srcnodeid="402" srcpinname="Output" dstnodeid="417" dstpinname="ControlTextures">
    </LINK>
    <LINK srcnodeid="236" srcpinname="Output" dstnodeid="417" dstpinname="ParallaxOcclusionMapping">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Texture Out" dstnodeid="258" dstpinname="Texture In">
    </LINK>
    </PATCH>
