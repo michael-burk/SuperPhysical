@@ -20,7 +20,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="2505" top="1740" width="18825" height="13200">
+   <BOUNDS type="Window" left="2505" top="1620" width="18825" height="13320">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -469,7 +469,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2565" top="2805" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="854255648">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="850736480">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -577,9 +577,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="204">
-   <BOUNDS type="Box" left="5175" top="6705" width="1530" height="375">
+   <BOUNDS type="Box" left="5715" top="6855" width="1530" height="375">
    </BOUNDS>
-   <BOUNDS type="Node" left="5175" top="6705" width="0" height="0">
+   <BOUNDS type="Node" left="5715" top="6855" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
@@ -910,42 +910,6 @@
    </LINK>
    <LINK srcnodeid="167" srcpinname="Pointer" dstnodeid="175" dstpinname="Y Input Value">
    </LINK>
-   <NODE systemname="DynamicTexture (DX11.Texture 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicTexture (DX11.Texture 2d)" componentmode="Hidden" id="278">
-   <BOUNDS type="Node" left="2565" top="1260" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2565" top="1260">
-   </BOUNDS>
-   <PIN pinname="Height" visible="1">
-   </PIN>
-   <PIN pinname="Width" visible="1">
-   </PIN>
-   <PIN pinname="Channel Count" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <PIN pinname="Data" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="279">
-   <BOUNDS type="Box" left="2550" top="720" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="2550" top="720" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="279" srcpinname="Y Output Value" dstnodeid="278" dstpinname="Height">
-   </LINK>
-   <LINK srcnodeid="279" srcpinname="Y Output Value" dstnodeid="278" dstpinname="Width">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="280">
    <BOUNDS type="Box" left="15135" top="1050" width="450" height="1410">
    </BOUNDS>
@@ -972,20 +936,6 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="281">
-   <BOUNDS type="Node" left="2565" top="2325" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2565" top="2325" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Texture In" visible="1">
-   </PIN>
-   <PIN pinname="Apply" slicecount="1" visible="1" values="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="281" srcpinname="Pointer" dstnodeid="172" dstpinname="Y Input Value">
-   </LINK>
-   <LINK srcnodeid="278" srcpinname="Texture Out" dstnodeid="281" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="30" srcpinname="Texture Out" dstnodeid="272" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="167" dstpinname="Texture In">
@@ -1113,9 +1063,9 @@
    <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Y Input Value">
    </LINK>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="415">
-   <BOUNDS type="Box" left="3600" top="7395" width="2250" height="480">
+   <BOUNDS type="Box" left="3960" top="7575" width="2250" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="3600" top="7395" width="0" height="0">
+   <BOUNDS type="Node" left="3960" top="7575" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
@@ -1138,11 +1088,7 @@
    <LINKPOINT x="2175" y="8108">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="417" dstpinname="Emissive" linkstyle="Bezier">
-   <LINKPOINT x="5225" y="7573">
-   </LINKPOINT>
-   <LINKPOINT x="5740" y="7818">
-   </LINKPOINT>
+   <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="417" dstpinname="Emissive" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="417" srcpinname="Output" dstnodeid="284" dstpinname="Input Node" linkstyle="VHV">
    <LINKPOINT x="375" y="8723">
@@ -1152,10 +1098,26 @@
    </LINK>
    <LINK srcnodeid="415" srcpinname="Color Output" dstnodeid="417" dstpinname="Color">
    </LINK>
-   <LINK srcnodeid="402" srcpinname="Output" dstnodeid="417" dstpinname="ControlTextures">
+   <LINK srcnodeid="402" srcpinname="Output" dstnodeid="417" dstpinname="ControlTextures" linkstyle="Bezier">
+   <LINKPOINT x="1575" y="5993">
+   </LINKPOINT>
+   <LINKPOINT x="7515" y="5993">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="417" dstpinname="ParallaxOcclusionMapping">
+   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="417" dstpinname="ParallaxOcclusionMapping" linkstyle="Bezier">
+   <LINKPOINT x="8130" y="7980">
+   </LINKPOINT>
+   <LINKPOINT x="9315" y="7980">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="Texture Out" dstnodeid="258" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="418">
+   <BOUNDS type="Node" left="2565" top="2325" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2565" top="2325" width="3000" height="3000">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="418" srcpinname="Pointer" dstnodeid="172" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

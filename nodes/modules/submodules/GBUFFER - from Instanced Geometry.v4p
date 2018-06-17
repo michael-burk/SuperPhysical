@@ -484,7 +484,7 @@
    <LINKPOINT x="15840" y="4035">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="1695" top="2460" width="19215" height="15900">
+   <BOUNDS type="Window" left="1275" top="1095" width="19215" height="15900">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3">
    </PACK>
@@ -958,6 +958,8 @@
    <PIN pinname="Sampler" visible="1">
    </PIN>
    <PIN pinname="Maximum Anisotropy" slicecount="1" values="16">
+   </PIN>
+   <PIN pinname="Mip Lod Bias" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="108" srcpinname="Sampler" dstnodeid="97" dstpinname="g_samLinear">

@@ -249,7 +249,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="5880" top="2280">
    </BOUNDS>
-   <BOUNDS type="Window" left="9315" top="2220" width="11025" height="7515">
+   <BOUNDS type="Window" left="9315" top="2220" width="11625" height="7455">
    </BOUNDS>
    <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
    </PIN>
@@ -341,7 +341,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1005" top="1755" width="7965" height="10990">
    </BOUNDS>
-   <BOUNDS type="Window" left="1695" top="2460" width="19215" height="15900">
+   <BOUNDS type="Window" left="1275" top="1095" width="19215" height="15900">
    </BOUNDS>
    <PIN pinname="MaterialCount" visible="1" slicecount="1" values="3">
    </PIN>
@@ -445,7 +445,7 @@
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
    <BOUNDS type="Node" left="4020" top="2280" width="1410" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="2505" top="1740" width="18825" height="13200">
+   <BOUNDS type="Window" left="2505" top="1620" width="18825" height="13320">
    </BOUNDS>
    <PIN pinname="Material" visible="1" slicecount="1" values="||">
    </PIN>
