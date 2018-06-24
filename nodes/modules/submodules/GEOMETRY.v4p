@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" systemname="GEOMETRY" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" systemname="GEOMETRY" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" scrollx="360" scrolly="0">
    <NODE id="0" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
    <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.35,0.08,-0.25">
    </PIN>
@@ -462,14 +462,16 @@
    <LINKPOINT x="7695" y="2445">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="8955" top="4155" width="12705" height="8070">
+   <BOUNDS type="Window" left="8955" top="4155" width="11145" height="8070">
    </BOUNDS>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.3">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
    <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
    </PATCH>

@@ -291,9 +291,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="324" srcpinname="IridescenceMap" dstnodeid="138" dstpinname="Pointer" linkstyle="Bezier">
-   <LINKPOINT x="7875" y="4395">
+   <LINKPOINT x="8670" y="4778">
    </LINKPOINT>
-   <LINKPOINT x="8055" y="5190">
+   <LINKPOINT x="7260" y="4778">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="324" dstpinname="Input" linkstyle="Bezier">
@@ -467,7 +467,7 @@
    <LINK srcnodeid="316" srcpinname="Y Output Value" dstnodeid="328" dstpinname="Alpha" linkstyle="Bezier">
    <LINKPOINT x="3585" y="8213">
    </LINKPOINT>
-   <LINKPOINT x="3525" y="8213">
+   <LINKPOINT x="3150" y="8213">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="324" srcpinname="Iridescence" dstnodeid="328" dstpinname="useIridescence" linkstyle="Bezier">
@@ -623,17 +623,17 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="324" srcpinname="useTex" dstnodeid="350" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="9600" y="5253">
+   <LINKPOINT x="9495" y="5250">
    </LINKPOINT>
-   <LINKPOINT x="7575" y="5248">
+   <LINKPOINT x="7680" y="5250">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="350" srcpinname="Buffer" dstnodeid="328" dstpinname="useTex">
    </LINK>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="344" dstpinname="Material" linkstyle="Bezier">
-   <LINKPOINT x="2860" y="4803">
+   <LINKPOINT x="2940" y="4883">
    </LINKPOINT>
-   <LINKPOINT x="11975" y="4948">
+   <LINKPOINT x="11895" y="4883">
    </LINKPOINT>
    </LINK>
    <NODE id="352" systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden">
@@ -854,7 +854,11 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="366" dstpinname="Input">
+   <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="366" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="2940" y="4598">
+   </LINKPOINT>
+   <LINKPOINT x="10515" y="4598">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="366" srcpinname="Output" dstnodeid="348" dstpinname="Buffer Description">
    </LINK>

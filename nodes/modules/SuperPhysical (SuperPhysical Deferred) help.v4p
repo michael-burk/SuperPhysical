@@ -143,13 +143,15 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1290" top="1935" width="11985" height="6810">
    </BOUNDS>
-   <BOUNDS type="Window" left="8955" top="4155" width="12705" height="8070">
+   <BOUNDS type="Window" left="8955" top="4155" width="11145" height="8070">
    </BOUNDS>
    <PIN pinname="Geometry" visible="1">
    </PIN>
    <PIN pinname="InstanceCount" visible="1">
    </PIN>
    <PIN pinname="Transforms" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
    <NODE id="90" systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden">
@@ -336,112 +338,6 @@
    </LINK>
    <LINK srcnodeid="21" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="GBUFFER - from Instanced Geometry" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GBUFFER - from Instanced Geometry.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GBUFFER - from Instanced Geometry.v4p" componentmode="Hidden" id="91" debug="0">
-   <BOUNDS type="Node" left="2010" top="4950" width="4020" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="1005" top="1755" width="7965" height="10990">
-   </BOUNDS>
-   <BOUNDS type="Window" left="1275" top="1095" width="19215" height="15900">
-   </BOUNDS>
-   <PIN pinname="MaterialCount" visible="1" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Buffers" visible="1">
-   </PIN>
-   <PIN pinname="View" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Default SizeXY" visible="1">
-   </PIN>
-   <PIN pinname="Camera State" visible="1">
-   </PIN>
-   <PIN pinname="Geometry In" visible="1">
-   </PIN>
-   <PIN pinname="Instance Count" visible="1">
-   </PIN>
-   <PIN pinname="Data" visible="1">
-   </PIN>
-   <PIN pinname="Depth Buffer" visible="1">
-   </PIN>
-   <PIN pinname="MaterialSettings" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Reset" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Input" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="MaterialID" visible="1" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="MouseActive" visible="1">
-   </PIN>
-   <PIN pinname="Reset Material IDs" visible="-1" pintype="Input" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="SelectObject" visible="-1" pintype="Input" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Transforms ByPass" visible="1">
-   </PIN>
-   <PIN pinname="InstanceCount ByPass" visible="1">
-   </PIN>
-   <PIN pinname="Geometry ByPass" visible="1">
-   </PIN>
-   <PIN pinname="MaterialID (AssignToObject)" visible="1">
-   </PIN>
-   <PIN pinname="MaterialSetup" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Default SizeXY" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="870" y="3728">
-   </LINKPOINT>
-   <LINKPOINT x="1875" y="3728">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="91" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="6855" y="4440">
-   </LINKPOINT>
-   <LINKPOINT x="5040" y="4440">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="88" srcpinname="Geometry" dstnodeid="91" dstpinname="Geometry In" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="88" srcpinname="InstanceCount" dstnodeid="91" dstpinname="Instance Count" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="88" srcpinname="Transforms" dstnodeid="91" dstpinname="Transforms" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="76" srcpinname="Is Hovered" dstnodeid="91" dstpinname="MouseActive" linkstyle="Bezier">
-   <LINKPOINT x="5525" y="11835">
-   </LINKPOINT>
-   <LINKPOINT x="7285" y="3255">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="91" srcpinname="Transforms ByPass" dstnodeid="92" dstpinname="Transform In" linkstyle="Bezier">
-   <LINKPOINT x="5970" y="5490">
-   </LINKPOINT>
-   <LINKPOINT x="4560" y="5490">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="91" srcpinname="InstanceCount ByPass" dstnodeid="92" dstpinname="IntanceCount" linkstyle="Bezier">
-   <LINKPOINT x="4885" y="5530">
-   </LINKPOINT>
-   <LINKPOINT x="4355" y="5480">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="91" srcpinname="Geometry ByPass" dstnodeid="92" dstpinname="Geometry" linkstyle="Bezier">
-   <LINKPOINT x="3925" y="5530">
-   </LINKPOINT>
-   <LINKPOINT x="4040" y="5480">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="91" srcpinname="Depth Buffer" dstnodeid="98" dstpinname="Depth Buffer" linkstyle="Bezier">
-   <LINKPOINT x="2845" y="7015">
-   </LINKPOINT>
-   <LINKPOINT x="1295" y="7040">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="91" srcpinname="Depth Buffer" dstnodeid="46" dstpinname="DepthHighRes" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2910" y="6270">
-   </LINKPOINT>
-   <LINKPOINT x="4005" y="6255">
-   </LINKPOINT>
-   </LINK>
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
    <BOUNDS type="Node" left="4020" top="2280" width="1410" height="270">
    </BOUNDS>
@@ -458,18 +354,6 @@
    <PIN pinname="MeshCount" visible="1" slicecount="3" values="10,1,2">
    </PIN>
    </NODE>
-   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="91" dstpinname="MaterialSettings" linkstyle="Bezier">
-   <LINKPOINT x="4035" y="3735">
-   </LINKPOINT>
-   <LINKPOINT x="4020" y="3735">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="91" dstpinname="MaterialSetup" linkstyle="Bezier">
-   <LINKPOINT x="4080" y="3743">
-   </LINKPOINT>
-   <LINKPOINT x="5970" y="3743">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="98" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
    </LINK>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
@@ -485,7 +369,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6915" top="4905" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="12">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="120">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -566,8 +450,6 @@
    <LINKPOINT x="3030" y="4613">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="91" srcpinname="Buffers" dstnodeid="102" dstpinname="GBuffer (Pos, Normal  TexCD)">
-   </LINK>
    <LINK srcnodeid="102" srcpinname="Texture Out" dstnodeid="47" dstpinname="Texture In">
    </LINK>
    <NODE systemname="Visualizer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" nodename="Visualizer (SuperPhysical)" componentmode="Hidden" id="97">
@@ -582,8 +464,6 @@
    <LINKPOINT x="5460" y="3300">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="97" srcpinname="SelectedMaterial" dstnodeid="91" dstpinname="MaterialID (AssignToObject)">
-   </LINK>
    <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="97" dstpinname="MaterialSetup" linkstyle="Bezier">
    <LINKPOINT x="4050" y="3308">
    </LINKPOINT>
@@ -595,5 +475,131 @@
    </LINKPOINT>
    <LINKPOINT x="2595" y="4605">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="GBUFFER - from Instanced Geometry" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GBUFFER - from Instanced Geometry.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\GBUFFER - from Instanced Geometry.v4p" componentmode="Hidden" id="91" debug="0">
+   <BOUNDS type="Node" left="2010" top="4950" width="4020" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1005" top="1755" width="7965" height="10990">
+   </BOUNDS>
+   <BOUNDS type="Window" left="480" top="1770" width="19215" height="13680">
+   </BOUNDS>
+   <PIN pinname="MaterialCount" visible="1" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Buffers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Default SizeXY" visible="1">
+   </PIN>
+   <PIN pinname="Camera State" visible="1">
+   </PIN>
+   <PIN pinname="Geometry In" visible="1">
+   </PIN>
+   <PIN pinname="Instance Count" visible="1">
+   </PIN>
+   <PIN pinname="Data" visible="1">
+   </PIN>
+   <PIN pinname="Depth Buffer" visible="1">
+   </PIN>
+   <PIN pinname="MaterialSettings" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="MaterialID" visible="1" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="MouseActive" visible="1">
+   </PIN>
+   <PIN pinname="Reset Material IDs" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="SelectObject" visible="-1" pintype="Input" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Transforms ByPass" visible="1">
+   </PIN>
+   <PIN pinname="InstanceCount ByPass" visible="1">
+   </PIN>
+   <PIN pinname="Geometry ByPass" visible="1">
+   </PIN>
+   <PIN pinname="MaterialID (AssignToObject)" visible="1">
+   </PIN>
+   <PIN pinname="MaterialSetup" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Buffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Default SizeXY" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="870" y="3728">
+   </LINKPOINT>
+   <LINKPOINT x="1875" y="3728">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="91" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="6855" y="4440">
+   </LINKPOINT>
+   <LINKPOINT x="5040" y="4440">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Geometry" dstnodeid="91" dstpinname="Geometry In" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="InstanceCount" dstnodeid="91" dstpinname="Instance Count" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Transforms" dstnodeid="91" dstpinname="Transforms" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="76" srcpinname="Is Hovered" dstnodeid="91" dstpinname="MouseActive" linkstyle="Bezier">
+   <LINKPOINT x="5525" y="11835">
+   </LINKPOINT>
+   <LINKPOINT x="7285" y="3255">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="91" srcpinname="Transforms ByPass" dstnodeid="92" dstpinname="Transform In" linkstyle="Bezier">
+   <LINKPOINT x="5970" y="5490">
+   </LINKPOINT>
+   <LINKPOINT x="4560" y="5490">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="91" srcpinname="InstanceCount ByPass" dstnodeid="92" dstpinname="IntanceCount" linkstyle="Bezier">
+   <LINKPOINT x="4885" y="5530">
+   </LINKPOINT>
+   <LINKPOINT x="4355" y="5480">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="91" srcpinname="Geometry ByPass" dstnodeid="92" dstpinname="Geometry" linkstyle="Bezier">
+   <LINKPOINT x="3925" y="5530">
+   </LINKPOINT>
+   <LINKPOINT x="4040" y="5480">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="91" srcpinname="Depth Buffer" dstnodeid="98" dstpinname="Depth Buffer" linkstyle="Bezier">
+   <LINKPOINT x="2845" y="7015">
+   </LINKPOINT>
+   <LINKPOINT x="1295" y="7040">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="91" srcpinname="Depth Buffer" dstnodeid="46" dstpinname="DepthHighRes" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2910" y="6270">
+   </LINKPOINT>
+   <LINKPOINT x="4005" y="6255">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="91" dstpinname="MaterialSettings" linkstyle="Bezier">
+   <LINKPOINT x="4035" y="3735">
+   </LINKPOINT>
+   <LINKPOINT x="4020" y="3735">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="MaterialSettings" dstnodeid="91" dstpinname="MaterialSetup" linkstyle="Bezier">
+   <LINKPOINT x="4080" y="3743">
+   </LINKPOINT>
+   <LINKPOINT x="5970" y="3743">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="91" srcpinname="Buffers" dstnodeid="102" dstpinname="GBuffer (Pos, Normal  TexCD)">
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="SelectedMaterial" dstnodeid="91" dstpinname="MaterialID (AssignToObject)">
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Output" dstnodeid="91" dstpinname="Transform Buffer">
    </LINK>
    </PATCH>

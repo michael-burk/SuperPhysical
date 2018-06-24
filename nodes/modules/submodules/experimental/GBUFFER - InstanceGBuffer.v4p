@@ -1,0 +1,439 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\experimental\GBUFFER - InstanceGBuffer.v4p" systemname="GBUFFER - InstanceGBuffer" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\experimental\GBUFFER - InstanceGBuffer.v4p">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="0" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="2775" top="5550" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2775" top="5550" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transform Buffer|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="InstanceGBuffer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\InstanceGBuffer (SuperPhysical).v4p" nodename="InstanceGBuffer (SuperPhysical)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="2085" top="6075" width="2175" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="3195" top="4140" width="13695" height="12375">
+   </BOUNDS>
+   <PIN pinname="Material ID Default" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="IID" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Material ID Buffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE id="2" systemname="Renderer (DX11 MRT)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 MRT)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="Layer" slicecount="1" visible="1" pintype="Input" values="||">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1" slicecount="2" pintype="Input" values="400,300">
+   </PIN>
+   <PIN pinname="Generate Mip Maps" slicecount="1" pintype="Input" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Mip Map Levels" slicecount="1" pintype="Input" visible="1" values="9">
+   </PIN>
+   <PIN pinname="Buffers" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" pintype="Input" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" pintype="Input" values="||">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" pintype="Input" values="1">
+   </PIN>
+   <PIN pinname="AA Samples per Pixel" slicecount="1" pintype="Input" visible="1" values="1">
+   </PIN>
+   <BOUNDS type="Node" left="1755" top="6630" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1755" top="6630" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Target Count" slicecount="1" pintype="Input" visible="1" values="3">
+   </PIN>
+   <PIN pinname="Target Format" slicecount="3" visible="1" pintype="Input" values="R32G32B32A32_Float,R32G32B32A32_Float,R32G32_UInt">
+   </PIN>
+   <PIN pinname="Depth Buffer Mode" slicecount="1" pintype="Configuration" values="Standard">
+   </PIN>
+   <PIN pinname="Depth Buffer Format" slicecount="1" pintype="Configuration" values="D32_Float">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" visible="1" pintype="Input" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Depth Buffer" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Enable Depth Buffer" slicecount="1" pintype="Input" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Query" visible="1" pintype="Output">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Clear" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Clear Depth" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Clear Depth Value" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" pintype="Input" visible="0" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Crop" pintype="Input" visible="-1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ViewPort" pintype="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output">
+   </PIN>
+   <PIN pinname="Buffer SizeXY" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IID (DX11.GeomFX)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\DX11.GeomFX\IID (DX11.GeomFX)\IID (DX11.GeomFX).v4p" nodename="IID (DX11.GeomFX)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1965" top="2430" width="1050" height="270">
+   </BOUNDS>
+   <PIN pinname="Instance Count" slicecount="1" visible="1" values="100">
+   </PIN>
+   <PIN pinname="Geometry In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="IID" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="4" systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden">
+   <BOUNDS type="Node" left="2295" top="1815" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2295" top="1815" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="SizeXYZ" visible="1" slicecount="3" values="1,1,0.01">
+   </PIN>
+   </NODE>
+   <NODE id="5" systemname="GeometryFile (DX11.Geometry Assimp)" filename="%VVVV%\packs\dx11\nodes\plugins\assimp\VVVV.DX11.Nodes.Assimp.dll" nodename="GeometryFile (DX11.Geometry Assimp)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1500" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" slicecount="1" values="..\..\..\assets\teapot.fbx">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Box" left="1500" top="1500">
+   </BOUNDS>
+   </NODE>
+   <NODE id="6" systemname="GeometryFile (DX11.Geometry Assimp)" filename="%VVVV%\packs\dx11\nodes\plugins\assimp\VVVV.DX11.Nodes.Assimp.dll" nodename="GeometryFile (DX11.Geometry Assimp)" componentmode="Hidden">
+   <BOUNDS type="Node" left="3570" top="2130" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" slicecount="1" values="..\..\..\assets\studio.fbx">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="3570" top="2130">
+   </BOUNDS>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE id="7" systemname="Torus (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Torus (DX11.Geometry)" componentmode="Hidden">
+   <BOUNDS type="Node" left="3345" top="1620" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" visible="1" values="64">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" visible="1" values="64">
+   </PIN>
+   <PIN pinname="Radius" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Thickness" slicecount="1" values="0.19">
+   </PIN>
+   <BOUNDS type="Box" left="3345" top="1620">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Cons (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Cons (DX11.Buffer)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="2715" top="4245" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2715" top="4245" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Input 4" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Cons (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Cons (DX11.Geometry)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="1905" top="3675" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1905" top="3675" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Input 4" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IID (DX11.GeomFX)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\DX11.GeomFX\IID (DX11.GeomFX)\IID (DX11.GeomFX).v4p" nodename="IID (DX11.GeomFX)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="2325" top="2790" width="1050" height="270">
+   </BOUNDS>
+   <PIN pinname="Instance Count" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Geometry In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="IID" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IID (DX11.GeomFX)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\DX11.GeomFX\IID (DX11.GeomFX)\IID (DX11.GeomFX).v4p" nodename="IID (DX11.GeomFX)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="2430" top="3165" width="1050" height="270">
+   </BOUNDS>
+   <PIN pinname="Instance Count" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Geometry In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="IID" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IID (DX11.GeomFX)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\DX11.GeomFX\IID (DX11.GeomFX)\IID (DX11.GeomFX).v4p" nodename="IID (DX11.GeomFX)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="3120" top="3615" width="1050" height="270">
+   </BOUNDS>
+   <PIN pinname="Instance Count" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Geometry In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="IID" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Cons (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Cons (DX11.Buffer)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="5385" top="4170" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5385" top="4170" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Input 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="5130" top="2505" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5130" top="2505" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Data" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="5745" top="2970" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5745" top="2970" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Data" visible="1" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="5895" top="3465" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5895" top="3465" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Data" visible="1" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="6300" top="3915" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6300" top="3915" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Data" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="5055" top="2100" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="17" values="0.151970555307344,0.143608699087054,0.173329998506233,0.46596635133028,-0.168817840283737,0.326855251099914,0.200310095911846,0.0286269625648856,0.153403024422005,0.333134554792196,0.460511202691123,-0.261696124449372,0.0683866722974926,0.357259146403521,-0.0917793905828148,0.0175565900281072,-0.30545416357927">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="-0.5">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="5055" top="1515" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Random Seed" slicecount="1" values="56">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="100">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7740" top="2970" width="795" height="960">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7740" top="2970" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0,,,">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0, 0, 1|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Frac (Value)" nodename="Frac (Value)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="7665" top="1665" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Whole Part" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="2" dstpinname="Layer">
+   </LINK>
+   <NODE id="22" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture SizeXY|">
+   </PIN>
+   <BOUNDS type="Box" left="1755" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1755" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Texture SizeXY">
+   </LINK>
+   <NODE id="23" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="View">
+   </PIN>
+   <BOUNDS type="Box" left="2655" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2655" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Output Node" dstnodeid="2" dstpinname="View">
+   </LINK>
+   <NODE id="24" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Projection">
+   </PIN>
+   <BOUNDS type="Box" left="3555" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3555" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Output Node" dstnodeid="2" dstpinname="Projection">
+   </LINK>
+   <NODE id="25" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Buffers">
+   </PIN>
+   <BOUNDS type="Box" left="1755" top="7230" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1755" top="7230" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Buffers" dstnodeid="25" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Geometry Out" dstnodeid="9" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Geometry Out" dstnodeid="9" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Geometry Out" dstnodeid="9" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Geometry Out" dstnodeid="9" dstpinname="Input 4">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="3" dstpinname="Geometry In">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="1" dstpinname="Geometry In">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Output Node" dstnodeid="1" dstpinname="Transform Buffer">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="1" dstpinname="Material ID Buffer">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="1" dstpinname="IID">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Geometry Out" dstnodeid="10" dstpinname="Geometry In">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Geometry Out" dstnodeid="11" dstpinname="Geometry In">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="IID" dstnodeid="8" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="IID" dstnodeid="8" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="IID" dstnodeid="8" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="IID" dstnodeid="8" dstpinname="Input 4">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="12" dstpinname="Geometry In">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="18" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Whole Part" dstnodeid="14" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Buffer" dstnodeid="13" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Buffer" dstnodeid="13" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Buffer" dstnodeid="13" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Buffer" dstnodeid="13" dstpinname="Input 4">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Output" dstnodeid="21" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Whole Part" dstnodeid="20" dstpinname="Y Input Value">
+   </LINK>
+   <BOUNDS type="Window" left="15810" top="6240" width="9255" height="8220">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
+   </PACK>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   </PATCH>
