@@ -93,7 +93,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 		float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
 	#endif
 	
-	POM_Height = heightMap.SampleGrad( g_samLinear, texcoord, dx, dy ).r;
+	POM_Height = heightMap.SampleGrad( g_samLinear, float3(texcoord, texID), dx, dy ).r;
 	
 	#ifdef Deferred
 		PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material_NormalMapping[texID].tTexInv)).xyz,scale);
@@ -105,7 +105,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 	
 }
 
-	
+#ifndef Instancing
 static const float POM_shadow_factor = 8;
 float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float4x3 tbnh,  uint texID, uint lightID, float factor)
 {
@@ -179,3 +179,5 @@ float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float
    }
 	return shadowMultiplier;
 }
+	
+#endif

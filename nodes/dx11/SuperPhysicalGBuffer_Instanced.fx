@@ -9,9 +9,9 @@
 
 struct gBuffer{
 	
-	float4 pos : COLOR0;
-	float4 norm : COLOR1;
-	float4 uv : COLOR2;
+	float4 pos : SV_Target0;
+	float4 norm : SV_Target1;
+	float4 uv : SV_Target2;
 	
 };
 
@@ -111,7 +111,7 @@ psInput VS(vsInput input)
 	return output;
 }
 
-gBuffer PS(psInput input): SV_Target
+gBuffer PS(psInput input)
 
 {
 	gBuffer output;
@@ -148,8 +148,9 @@ gBuffer PS(psInput input): SV_Target
 		b = cross(N, x);
 		b = normalize(b);
 		
+		float POM_Height;
 		if(Material_NormalMapping[texID].POM){
-			parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID, input.ii + IntanceStartIndex);
+			parallaxOcclusionMapping(input.uv.xy, input.posW.xyz, V, float3x3(t,b,N), texID, POM_Height, input.ii + IntanceStartIndex);
 		}
 			float3 bumpMap = float3(.5,.5,1);
 			if(Material_NormalMapping[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(input.uv.xy, texID)).rgb;

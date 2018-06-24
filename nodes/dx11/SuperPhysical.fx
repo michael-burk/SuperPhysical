@@ -565,10 +565,6 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	
 	float3 bumpMap = float3(0,0,0);
 
-//	uint tX2,tY2,m2;
-//	normalTex.GetDimensions(tX2,tY2);
-//	if(tX2+tY2 > 4 && !noTile) bumpMap = normalTex.Sample(g_samLinear,In.TexCd.xy).rgb;
-//	else if(tX2+tY2 > 4 && noTile) bumpMap = textureNoTile(normalTex,In.TexCd.xy).rgb;
 	#ifdef doControlTextures
 	if(Material[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
@@ -576,7 +572,6 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b))*Material[texID].bumpy);
 
-//	return doLighting(In.PosW, Nb, In.TexCd);
 	#ifdef doShadowPOM
 		return doLighting(In.PosW, Nb, In.TexCd, float4x3(t, b, Nb,POM_Height.xxx));
 	#else	

@@ -1053,7 +1053,7 @@
    </BOUNDS>
    <PIN pinname="ControlTextures" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="ParallaxOcclusionMapping" visible="1">
+   <PIN pinname="ParallaxOcclusionMapping" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Refraction" visible="1" slicecount="1" values="||">
    </PIN>
@@ -1084,12 +1084,6 @@
    <LINKPOINT x="1575" y="5993">
    </LINKPOINT>
    <LINKPOINT x="7515" y="5993">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="417" dstpinname="ParallaxOcclusionMapping" linkstyle="Bezier">
-   <LINKPOINT x="8130" y="7980">
-   </LINKPOINT>
-   <LINKPOINT x="9315" y="7980">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="Texture Out" dstnodeid="258" dstpinname="Texture In">
@@ -1123,5 +1117,7 @@
    <LINK srcnodeid="268" srcpinname="Output" dstnodeid="417" dstpinname="Iridescence">
    </LINK>
    <LINK srcnodeid="263" srcpinname="Output" dstnodeid="417" dstpinname="Refraction">
+   </LINK>
+   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="417" dstpinname="ParallaxOcclusionMapping">
    </LINK>
    </PATCH>

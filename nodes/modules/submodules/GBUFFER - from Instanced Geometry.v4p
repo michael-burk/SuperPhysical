@@ -962,44 +962,44 @@
    </NODE>
    <LINK srcnodeid="77" srcpinname="HeightMap" dstnodeid="109" dstpinname="Pointer">
    </LINK>
-   <NODE id="116" systemname="SuperPhysicalGBuffer_Instanced (DX11.Effect)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SuperPhysicalGBuffer_Instanced.fx" nodename="SuperPhysicalGBuffer_Instanced (DX11.Effect)" componentmode="Hidden">
+   <LINK srcnodeid="5" srcpinname="Depth Buffer" dstnodeid="30" dstpinname="Input Node" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Buffers" dstnodeid="29" dstpinname="Input Node">
+   </LINK>
+   <NODE id="119" systemname="SuperPhysicalGBuffer_Instanced (DX11.Effect)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SuperPhysicalGBuffer_Instanced.fx" nodename="SuperPhysicalGBuffer_Instanced (DX11.Effect)" componentmode="Hidden">
    <BOUNDS type="Node" left="1890" top="11355" width="10275" height="270">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="99" srcpinname="Output" dstnodeid="116" dstpinname="Defines" linkstyle="Bezier">
+   <LINK srcnodeid="99" srcpinname="Output" dstnodeid="119" dstpinname="Defines" linkstyle="Bezier">
    <LINKPOINT x="13590" y="10928">
    </LINKPOINT>
    <LINKPOINT x="12165" y="10928">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="109" srcpinname="Textures Out" dstnodeid="116" dstpinname="HeightMap">
+   <LINK srcnodeid="109" srcpinname="Textures Out" dstnodeid="119" dstpinname="HeightMap">
    </LINK>
-   <LINK srcnodeid="106" srcpinname="Textures Out" dstnodeid="116" dstpinname="NormalMap">
+   <LINK srcnodeid="106" srcpinname="Textures Out" dstnodeid="119" dstpinname="NormalMap">
    </LINK>
-   <LINK srcnodeid="108" srcpinname="Sampler" dstnodeid="116" dstpinname="g_samLinear">
+   <LINK srcnodeid="108" srcpinname="Sampler" dstnodeid="119" dstpinname="g_samLinear">
    </LINK>
-   <LINK srcnodeid="100" srcpinname="Buffer" dstnodeid="116" dstpinname="Material">
+   <LINK srcnodeid="100" srcpinname="Buffer" dstnodeid="119" dstpinname="Material">
    </LINK>
-   <LINK srcnodeid="7" srcpinname="Buffer" dstnodeid="116" dstpinname="materialID" linkstyle="Bezier">
+   <LINK srcnodeid="7" srcpinname="Buffer" dstnodeid="119" dstpinname="materialID" linkstyle="Bezier">
    <LINKPOINT x="7020" y="10200">
    </LINKPOINT>
    <LINKPOINT x="7740" y="10200">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="2" srcpinname="Buffer" dstnodeid="116" dstpinname="world" linkstyle="Bezier">
+   <LINK srcnodeid="2" srcpinname="Buffer" dstnodeid="119" dstpinname="world" linkstyle="Bezier">
    <LINKPOINT x="6360" y="9518">
    </LINKPOINT>
    <LINKPOINT x="7020" y="9518">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="4" srcpinname="Remainder" dstnodeid="116" dstpinname="IntanceStartIndex" linkstyle="PolyLine">
+   <LINK srcnodeid="4" srcpinname="Remainder" dstnodeid="119" dstpinname="IntanceStartIndex" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="116" dstpinname="Geometry" linkstyle="PolyLine">
+   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="119" dstpinname="Geometry" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="116" srcpinname="Layer" dstnodeid="5" dstpinname="Layer" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Depth Buffer" dstnodeid="30" dstpinname="Input Node" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Buffers" dstnodeid="29" dstpinname="Input Node">
+   <LINK srcnodeid="119" srcpinname="Layer" dstnodeid="5" dstpinname="Layer" linkstyle="PolyLine">
    </LINK>
    </PATCH>
