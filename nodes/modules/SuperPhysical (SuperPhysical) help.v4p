@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1545" top="1050" width="10965" height="12975">
+   <BOUNDS type="Window" left="1485" top="1035" width="10965" height="12975">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
    <BOUNDS type="Node" left="775" top="8965" width="100" height="100">
@@ -523,7 +523,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1650" top="10605">
    </BOUNDS>
-   <PIN pinname="gamma" slicecount="1" values="1.2">
+   <PIN pinname="gamma" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -724,7 +724,7 @@
    </LINK>
    <LINK srcnodeid="38" srcpinname="Camera State" dstnodeid="46" dstpinname="Camera State">
    </LINK>
-   <NODE id="7" componentmode="InAWindow" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
+   <NODE id="7" componentmode="Hidden" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
    <BOUNDS type="Node" left="4245" top="4215" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="4245" top="4215">

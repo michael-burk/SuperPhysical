@@ -331,7 +331,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			case 0:
 			
 				shadow = 0;
-				float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
+//				float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
 
 				viewPosition = mul(PosW, LightMatrices[i].VP);
 				
@@ -352,11 +352,11 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					
 			
 					#ifdef doShadowPOM
-						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(LDir, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
+						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
 					#endif
 
 					
-				finalLight += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
+				finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
 				lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);
 				
 				lightCounter ++;
@@ -390,8 +390,8 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				}
 				
 				#ifdef doShadowPOM
-						float3 LDir1 = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
-						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(LDir1, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
+//						float3 LDir1 = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
+						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
 				#endif
 			
 				float attenuation = Light[i].lAtt0;
@@ -438,6 +438,11 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 
 						}
 					}
+					
+							#ifdef doShadowPOM
+								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
+							#endif
+					
 							float attenuation = Light[i].lAtt0 * falloff;
 							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
 							shadow.x, 1.0, falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
@@ -445,9 +450,14 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 							shadowCounter += 6;
 							lightCounter  += 6;
 				} else {
+							shadow = 1;
+							#ifdef doShadowPOM
+								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
+							#endif
+					
 						    float attenuation = Light[i].lAtt0 * falloff;
 							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-							1, 1, falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
+							shadow, 1, falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
 			
 				}	
 			

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="15">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="30" scrolly="30">
    <BOUNDS type="Window" left="1935" top="1725" width="11025" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -294,10 +294,10 @@
    <PIN pinname="SpotLights" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="227" dstpinname="DirectionalLightSettings">
-   </LINK>
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="227" dstpinname="PointLightSettings">
    </LINK>
    <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="227" dstpinname="SpotLightSettings">
+   </LINK>
+   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="227" dstpinname="DirectionalLightSettings">
    </LINK>
    </PATCH>

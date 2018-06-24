@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.37">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.07">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0.18">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0.65">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
@@ -269,7 +269,7 @@
    </PIN>
    <PIN pinname="ShadowRes" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   <PIN pinname="Color" visible="1" slicecount="1" values="|0.63668,0.63668,0.63668,1.00000|">
    </PIN>
    <PIN pinname="LightBleedingLimit" visible="1" slicecount="1" values="||">
    </PIN>
@@ -612,8 +612,6 @@
    </LINK>
    <LINK srcnodeid="69" srcpinname="Output" dstnodeid="67" dstpinname="PostFiltering">
    </LINK>
-   <LINK srcnodeid="30" srcpinname="Color Output" dstnodeid="48" dstpinname="Color">
-   </LINK>
    <LINK srcnodeid="68" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Enabled" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Enabled">
@@ -626,4 +624,6 @@
    </PACK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
+   <LINK srcnodeid="30" srcpinname="Color Output" dstnodeid="48" dstpinname="Color">
+   </LINK>
    </PATCH>

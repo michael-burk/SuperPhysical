@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="270" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1455" top="2445" width="14460" height="10410">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -27,7 +27,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.31,0.27,0.34">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.06,0.13,0.24">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="3">
    </PIN>
@@ -443,17 +443,15 @@
    <NODE systemname="PointLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="PointLights (SuperPhysical)" componentmode="Hidden" id="126">
    <BOUNDS type="Node" left="1530" top="6930" width="5940" height="270">
    </BOUNDS>
+   <PIN pinname="InputPOMShadow" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Color" visible="1" slicecount="1" values="|1.00000,0.86376,0.86376,1.00000|">
+   </PIN>
    </NODE>
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="126" dstpinname="Helper" linkstyle="Bezier">
    <LINKPOINT x="4500" y="6053">
    </LINKPOINT>
    <LINKPOINT x="4500" y="5963">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="65" srcpinname="Color Output" dstnodeid="126" dstpinname="Color" linkstyle="Bezier">
-   <LINKPOINT x="3150" y="6443">
-   </LINKPOINT>
-   <LINKPOINT x="3735" y="6443">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="126" dstpinname="FOV">

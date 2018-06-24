@@ -115,7 +115,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9030" top="6810" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="25">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="12">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1017,7 +1017,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7905" top="2325" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Apply" slicecount="1" values="1" visible="1">
+   <PIN pinname="Apply" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Pointer" visible="1">
    </PIN>
@@ -1054,6 +1054,12 @@
    <PIN pinname="ControlTextures" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="ParallaxOcclusionMapping" visible="1">
+   </PIN>
+   <PIN pinname="Refraction" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Iridescence" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="SubsurfaceScattering" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="417" dstpinname="Metallic" linkstyle="PolyLine">
@@ -1111,5 +1117,11 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="404" srcpinname="Pointer" dstnodeid="177" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="253" srcpinname="Output" dstnodeid="417" dstpinname="SubsurfaceScattering">
+   </LINK>
+   <LINK srcnodeid="268" srcpinname="Output" dstnodeid="417" dstpinname="Iridescence">
+   </LINK>
+   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="417" dstpinname="Refraction">
    </LINK>
    </PATCH>
