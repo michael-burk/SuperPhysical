@@ -27,7 +27,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.22,0.1,0.09">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.31,0.27,0.34">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="3">
    </PIN>

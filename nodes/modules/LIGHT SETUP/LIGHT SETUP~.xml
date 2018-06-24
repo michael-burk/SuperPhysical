@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="9315" top="2220" width="11625" height="7455">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="15">
+   <BOUNDS type="Window" left="1935" top="1725" width="11025" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -23,7 +23,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1395" top="1095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.44858,0.44858,0.44858,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.30861,0.30861,0.30861,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Global Reflection Color|">
    </PIN>
@@ -125,7 +125,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1905" top="4110" width="3100" height="3100">
    </BOUNDS>
-   <BOUNDS type="Window" left="1215" top="930" width="16290" height="10500">
+   <BOUNDS type="Window" left="1215" top="930" width="13950" height="10500">
    </BOUNDS>
    <PIN pinname="DirectionalLights" visible="1" slicecount="1" values="||">
    </PIN>
@@ -229,9 +229,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="223">
-   <BOUNDS type="Box" left="6645" top="1320" width="795" height="240">
+   <BOUNDS type="Box" left="6600" top="1500" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="6645" top="1320" width="0" height="0">
+   <BOUNDS type="Node" left="6600" top="1500" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -265,14 +265,16 @@
    </BOUNDS>
    <PIN pinname="IBLSettings" visible="1">
    </PIN>
+   <PIN pinname="SpotLightSettings" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="PointLightSettings" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="DirectionalLightSettings" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="227" srcpinname="Info" dstnodeid="200" dstpinname="Input String">
    </LINK>
    <LINK srcnodeid="227" srcpinname="LightSetup" dstnodeid="188" dstpinname="Input Node">
-   </LINK>
-   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="227" dstpinname="PointLightSettings">
-   </LINK>
-   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="227" dstpinname="DirectionalLightSettings">
    </LINK>
    <LINK srcnodeid="220" srcpinname="Output" dstnodeid="227" dstpinname="GlobalSettings">
    </LINK>
@@ -287,11 +289,15 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2940" top="4530">
    </BOUNDS>
-   <BOUNDS type="Window" left="525" top="1185" width="15390" height="11685">
+   <BOUNDS type="Window" left="705" top="885" width="15390" height="11685">
    </BOUNDS>
    <PIN pinname="SpotLights" visible="1">
    </PIN>
    </NODE>
+   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="227" dstpinname="DirectionalLightSettings">
+   </LINK>
+   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="227" dstpinname="PointLightSettings">
+   </LINK>
    <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="227" dstpinname="SpotLightSettings">
    </LINK>
    </PATCH>

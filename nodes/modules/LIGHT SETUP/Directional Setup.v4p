@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1215" top="930" width="16290" height="10500">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="30">
+   <BOUNDS type="Window" left="1215" top="930" width="13950" height="10500">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -57,7 +57,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.37">
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Sticky Slider" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0.73">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0.18">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
@@ -145,9 +145,9 @@
    <LINK srcnodeid="16" srcpinname="Output" dstnodeid="15" dstpinname="Input">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7410" top="7140" width="480" height="480">
+   <BOUNDS type="Box" left="7440" top="6885" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="7410" top="7140" width="0" height="0">
+   <BOUNDS type="Node" left="7440" top="6885" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -213,7 +213,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6945" top="4980" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.45851,0.00000,0.49767,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.20772,0.63668,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Diffuse Color|">
    </PIN>
@@ -225,9 +225,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8070" top="7140" width="480" height="480">
+   <BOUNDS type="Box" left="8100" top="6885" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="8070" top="7140" width="0" height="0">
+   <BOUNDS type="Node" left="8100" top="6885" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -323,6 +323,8 @@
    </PIN>
    <PIN pinname="LightCount" visible="1">
    </PIN>
+   <PIN pinname="ShadowPOM" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="48" srcpinname="DirectionalLights" dstnodeid="45" dstpinname="Input Node" linkstyle="Bezier">
    <LINKPOINT x="2910" y="8475">
@@ -367,9 +369,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Helper" linkstyle="Bezier">
-   <LINKPOINT x="7440" y="7778">
+   <LINKPOINT x="7460" y="7608">
    </LINKPOINT>
-   <LINKPOINT x="7440" y="7778">
+   <LINKPOINT x="7450" y="7693">
    </LINKPOINT>
    </LINK>
    <NODE systemname="VSM (SuperPhysical ShadowType)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="VSM (SuperPhysical ShadowType)" componentmode="Hidden" id="63">
@@ -439,9 +441,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="65">
-   <BOUNDS type="Box" left="8730" top="7140" width="795" height="240">
+   <BOUNDS type="Box" left="8760" top="6885" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8730" top="7140" width="0" height="0">
+   <BOUNDS type="Node" left="8760" top="6885" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -457,9 +459,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="65" srcpinname="Y Output Value" dstnodeid="48" dstpinname="LightIntensity" linkstyle="Bezier">
-   <LINKPOINT x="8760" y="7658">
+   <LINKPOINT x="8780" y="7488">
    </LINKPOINT>
-   <LINKPOINT x="8760" y="7658">
+   <LINKPOINT x="8770" y="7573">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Shadow (SuperPhysical Shadow)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Shadow (SuperPhysical Shadow)" componentmode="Hidden" id="67">
@@ -616,10 +618,12 @@
    </LINK>
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Enabled">
    </LINK>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.3">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
    </PATCH>
