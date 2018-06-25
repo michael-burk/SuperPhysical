@@ -296,4 +296,8 @@
    </NODE>
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="227" dstpinname="PointLightSettings">
    </LINK>
+   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="227" dstpinname="SpotLightSettings">
+   </LINK>
+   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="227" dstpinname="DirectionalLightSettings">
+   </LINK>
    </PATCH>
