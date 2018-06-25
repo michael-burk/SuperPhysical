@@ -219,7 +219,7 @@ vs2ps VS(
 }
 
 #ifdef doShadowPOM
-float4 doLighting(float4 PosW, float3 N, float4 TexCd, float4x3 tbnh){
+float4 doLighting(float4 PosW, float3 N, float4 TexCd, float3x3 tbn){
 #else
 float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 #endif
@@ -352,7 +352,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					
 			
 					#ifdef doShadowPOM
-						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
+						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 					#endif
 
 					
@@ -391,7 +391,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				
 				#ifdef doShadowPOM
 //						float3 LDir1 = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
-						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
+						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 				#endif
 			
 				float attenuation = Light[i].lAtt0;
@@ -440,7 +440,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					}
 					
 							#ifdef doShadowPOM
-								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
+								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 							#endif
 					
 							float attenuation = Light[i].lAtt0 * falloff;
@@ -452,7 +452,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				} else {
 							shadow = 1;
 							#ifdef doShadowPOM
-								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbnh, texID, i,Light[i].shadowPOM).xxxx);
+								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 							#endif
 					
 						    float attenuation = Light[i].lAtt0 * falloff;
@@ -510,9 +510,8 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 {	
 	uint texID = ID%mCount;
 	#ifdef doPOM
-	float POM_Height = 0;
 	if(Material[texID].POM){
-		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(In.tangent,In.binormal,In.NormW.xyz),texID,POM_Height);
+		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(In.tangent,In.binormal,In.NormW.xyz),texID);
 	}
 	#endif
 	
@@ -527,7 +526,7 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 //	return doLighting(In.PosW, Nb, In.TexCd);
 	
 	#ifdef doShadowPOM
-		return doLighting(In.PosW, Nb, In.TexCd, float4x3(In.tangent, In.binormal,In.NormW,POM_Height.xxx));
+		return doLighting(In.PosW, Nb, In.TexCd, float3x3(In.tangent, In.binormal,In.NormW));
 	#else	
 		return doLighting(In.PosW, In.NormW, In.TexCd);
 	#endif
@@ -557,9 +556,8 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	b = normalize(b);
 	
 	#ifdef doPOM
-	float POM_Height = 0;
 	if(Material[texID].POM){
-		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(t,b,In.NormW.xyz),texID,POM_Height);
+		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(t,b,In.NormW.xyz),texID);
 	}
 	#endif
 	
@@ -573,7 +571,7 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b))*Material[texID].bumpy);
 
 	#ifdef doShadowPOM
-		return doLighting(In.PosW, Nb, In.TexCd, float4x3(t, b, Nb,POM_Height.xxx));
+		return doLighting(In.PosW, Nb, In.TexCd, float3x3(t, b, Nb));
 	#else	
 		return doLighting(In.PosW, Nb, In.TexCd);
 	#endif

@@ -3,9 +3,9 @@
 //StructuredBuffer <uint> POM_numSamples;
 
 #ifdef Instancing
-void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID, inout float POM_Height, uint iid){
+void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID, uint iid){
 #else
-void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID, inout float POM_Height){
+void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V, float3x3 tbn, uint texID){
 #endif
 	
 	float3x3 tangentToWorldSpace;
@@ -93,7 +93,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 		float scale = sqrt(tW._11*tW._11 + tW._12*tW._12 + tW._13*tW._13);
 	#endif
 	
-	POM_Height = heightMap.SampleGrad( g_samLinear, float3(texcoord, texID), dx, dy ).r;
+//	POM_Height = heightMap.SampleGrad( g_samLinear, float3(texcoord, texID), dx, dy ).r;
 	
 	#ifdef Deferred
 		PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material_NormalMapping[texID].tTexInv)).xyz,scale);
@@ -107,7 +107,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 
 #ifndef Instancing
 static const float POM_shadow_factor = 8;
-float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float4x3 tbnh,  uint texID, uint lightID, float factor)
+float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float3x3 tbnh,  uint texID, uint lightID, float factor)
 {
 	float3x3 tangentToWorldSpace;
 
@@ -137,10 +137,12 @@ float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float
 		float fHeightMapScale = Material[texID].fHeightMapScale ;  
 		#endif
    	
+   	  float startHeight = heightMap.SampleGrad( g_samLinear, float3(initialTexCoord, texID), ddx( initialTexCoord ), ddy( initialTexCoord ) ).r;
+   	
       float2 texStep	= fHeightMapScale * L.xy / (L.z + (L.z == 0) ) / numLayers ;
-
+		
       // current parameters
-      float currentLayerHeight	= 1 - tbnh[3].x - layerHeight;
+      float currentLayerHeight	= 1 - startHeight - layerHeight;
       float2 currentTextureCoords	= initialTexCoord + texStep;
 
       float heightFromTexture	= 1 - heightMap.SampleLevel(g_samLinear, currentTextureCoords,0).r;

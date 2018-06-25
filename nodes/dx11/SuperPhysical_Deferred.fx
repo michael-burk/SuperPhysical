@@ -173,7 +173,7 @@ psInput VS(VS_IN input)
 {
     psInput output;
     output.p  = input.PosO;
-    output.uv = input.TexCd;
+    output.uv = input.TexCd.xy;
     return output;
 }
 

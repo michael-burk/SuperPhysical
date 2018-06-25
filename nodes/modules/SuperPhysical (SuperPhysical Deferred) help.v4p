@@ -4,7 +4,7 @@
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
-   <PACK Name="dx11" Version="1.3">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
@@ -154,22 +154,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE id="90" systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden">
-   <BOUNDS type="Node" left="6855" top="3690" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="6855" top="3690">
-   </BOUNDS>
-   <PIN pinname="Initial Longitude" slicecount="1" values="-0.5">
-   </PIN>
-   <PIN pinname="Initial Distance" slicecount="1" values="0.85">
-   </PIN>
-   <PIN pinname="Initial FOV" slicecount="1" values="0.18">
-   </PIN>
-   <PIN pinname="Camera State" visible="1">
-   </PIN>
-   <PIN pinname="Near Plane" slicecount="1" values="0.01">
-   </PIN>
-   </NODE>
    <NODE id="92" componentmode="Hidden" stayontop="0" systemname="ShadowMaps (SuperPhysical Deferred)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred).v4p" nodename="ShadowMaps (SuperPhysical Deferred)" debug="0" hiddenwhenlocked="0">
    <PIN pinname="ShadowMapsVSM" visible="1">
    </PIN>
@@ -223,7 +207,7 @@
    </PIN>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Camera State" visible="1">
+   <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="0">
    </PIN>
@@ -236,12 +220,6 @@
    <LINKPOINT x="700" y="5665">
    </LINKPOINT>
    <LINKPOINT x="1325" y="5690">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="98" dstpinname="Camera State" linkstyle="Bezier">
-   <LINKPOINT x="6685" y="6378">
-   </LINKPOINT>
-   <LINKPOINT x="2090" y="6403">
    </LINKPOINT>
    </LINK>
    <PACK Name="vvvv-Message" Version="2.9.10">
@@ -304,24 +282,6 @@
    <LINKPOINT x="735" y="4945">
    </LINKPOINT>
    <LINKPOINT x="3690" y="4880">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Projection" dstnodeid="46" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="7135" y="5425">
-   </LINKPOINT>
-   <LINKPOINT x="4265" y="5810">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="View" dstnodeid="46" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="6985" y="5425">
-   </LINKPOINT>
-   <LINKPOINT x="4100" y="5810">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="46" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6705" y="5658">
-   </LINKPOINT>
-   <LINKPOINT x="5145" y="5593">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="92" srcpinname="ShadowMaps" dstnodeid="46" dstpinname="ShadowMaps" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -418,30 +378,6 @@
    <LINKPOINT x="2210" y="5550">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="90" srcpinname="View" dstnodeid="102" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="6295" y="5008">
-   </LINKPOINT>
-   <LINKPOINT x="4250" y="5598">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Projection" dstnodeid="102" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="6445" y="5008">
-   </LINKPOINT>
-   <LINKPOINT x="4580" y="5598">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Inverse View" dstnodeid="102" dstpinname="tVI" linkstyle="Bezier">
-   <LINKPOINT x="6760" y="5008">
-   </LINKPOINT>
-   <LINKPOINT x="4895" y="5598">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="102" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="6690" y="5310">
-   </LINKPOINT>
-   <LINKPOINT x="4335" y="5310">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="92" srcpinname="ShadowMapsVSM" dstnodeid="102" dstpinname="ShadowMaps">
    </LINK>
    <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="102" dstpinname="LightSetup" linkstyle="Bezier" hiddenwhenlocked="0">
@@ -493,7 +429,7 @@
    </PIN>
    <PIN pinname="Default SizeXY" visible="1">
    </PIN>
-   <PIN pinname="Camera State" visible="1">
+   <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Geometry In" visible="1">
    </PIN>
@@ -534,12 +470,6 @@
    <LINKPOINT x="870" y="3728">
    </LINKPOINT>
    <LINKPOINT x="1875" y="3728">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="91" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="6855" y="4440">
-   </LINKPOINT>
-   <LINKPOINT x="5040" y="4440">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="88" srcpinname="Geometry" dstnodeid="91" dstpinname="Geometry In" linkstyle="PolyLine">
@@ -601,5 +531,77 @@
    <LINK srcnodeid="97" srcpinname="SelectedMaterial" dstnodeid="91" dstpinname="MaterialID (AssignToObject)">
    </LINK>
    <LINK srcnodeid="88" srcpinname="Output" dstnodeid="91" dstpinname="Transform Buffer">
+   </LINK>
+   <NODE id="90" systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden">
+   <BOUNDS type="Node" left="6855" top="3690" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6855" top="3690">
+   </BOUNDS>
+   <PIN pinname="Initial Longitude" slicecount="1" values="-0.5">
+   </PIN>
+   <PIN pinname="Initial Distance" slicecount="1" values="0.85">
+   </PIN>
+   <PIN pinname="Initial FOV" slicecount="1" values="0.18">
+   </PIN>
+   <PIN pinname="Camera State" visible="1">
+   </PIN>
+   <PIN pinname="Near Plane" slicecount="1" values="0.01">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="4575" width="18120" height="9600">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="98" dstpinname="Camera State" linkstyle="Bezier">
+   <LINKPOINT x="6685" y="6378">
+   </LINKPOINT>
+   <LINKPOINT x="2090" y="6403">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Projection" dstnodeid="46" dstpinname="Projection" linkstyle="Bezier">
+   <LINKPOINT x="7135" y="5425">
+   </LINKPOINT>
+   <LINKPOINT x="4265" y="5810">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="View" dstnodeid="46" dstpinname="View" linkstyle="Bezier">
+   <LINKPOINT x="6985" y="5425">
+   </LINKPOINT>
+   <LINKPOINT x="4100" y="5810">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="46" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6705" y="5658">
+   </LINKPOINT>
+   <LINKPOINT x="5145" y="5593">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="View" dstnodeid="102" dstpinname="View" linkstyle="Bezier">
+   <LINKPOINT x="6295" y="5008">
+   </LINKPOINT>
+   <LINKPOINT x="4250" y="5598">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Projection" dstnodeid="102" dstpinname="Projection" linkstyle="Bezier">
+   <LINKPOINT x="6445" y="5008">
+   </LINKPOINT>
+   <LINKPOINT x="4580" y="5598">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Inverse View" dstnodeid="102" dstpinname="tVI" linkstyle="Bezier">
+   <LINKPOINT x="6760" y="5008">
+   </LINKPOINT>
+   <LINKPOINT x="4895" y="5598">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="102" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="6690" y="5310">
+   </LINKPOINT>
+   <LINKPOINT x="4335" y="5310">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Camera State" dstnodeid="91" dstpinname="Camera State" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="6855" y="4440">
+   </LINKPOINT>
+   <LINKPOINT x="5040" y="4440">
+   </LINKPOINT>
    </LINK>
    </PATCH>
