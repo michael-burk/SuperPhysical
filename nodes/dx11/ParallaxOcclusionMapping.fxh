@@ -179,7 +179,7 @@ float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float
 		 shadowMultiplier = (1.0 - shadowMultiplier * factor);
       }
    }
-	return shadowMultiplier;
+	return saturate(shadowMultiplier);
 }
 	
 #endif
