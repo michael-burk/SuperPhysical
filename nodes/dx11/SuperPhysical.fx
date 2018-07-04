@@ -363,7 +363,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			// SPOT
 			case 1:
 			
-				shadow = 1;
+				shadow = 0;
 				viewPosition = mul(PosW, LightMatrices[i].VP);
 					
 				projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
@@ -521,7 +521,6 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 	#endif
 	
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * In.tangent + bumpMap.y * In.binormal)*Material[texID].bumpy);
-//	return doLighting(In.PosW, Nb, In.TexCd);
 	
 	#ifdef doShadowPOM
 		return doLighting(In.PosW, Nb, In.TexCd, float3x3(In.tangent, In.binormal,In.NormW));

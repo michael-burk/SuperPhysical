@@ -1,3 +1,11 @@
+
+SamplerState IBL_samLinear : immutable
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
 static const half3 wavelength[3] =
 {
 	{ 1, 0, 0},
@@ -18,17 +26,17 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	float3 kS  = fresnelSchlickRoughness(max(dot(N, V), 0.0), F0,roughness);
 	float3 kD  = 1.0 - kS;
 		   kD *= 1.0 - metallic;
-	float2 envBRDF  = brdfLUT.Sample(g_samLinear, float2(max(dot(N, V), 0.0)-.01,roughness)*float2(1,-1)).rg;
+	float2 envBRDF  = brdfLUT.Sample(IBL_samLinear, float2(max(dot(N, V), 0.0)-.01,roughness)*float2(1,-1)).rg;
 	
 	float3 reflVect = -reflect(V,N);
 	float3 reflVecNorm = N;
 	
 	
 			
-	IBL = cubeTexIrradiance.Sample(g_samLinear,reflVecNorm).rgb;
+	IBL = cubeTexIrradiance.Sample(IBL_samLinear,reflVecNorm).rgb;
 	IBL  = IBL * albedo.xyz;
 	
-	float3 refl = cubeTexRefl.SampleLevel(g_samLinear,reflVect,roughness*MAX_REFLECTION_LOD).rgb;
+	float3 refl = cubeTexRefl.SampleLevel(IBL_samLinear,reflVect,roughness*MAX_REFLECTION_LOD).rgb;
 	
 	#ifdef doIridescence
 	if(Material[texID%mCount].Iridescence){
@@ -43,7 +51,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 		float3 refrVect;
 	    for(int r=0; r<3; r++) {
 	    	refrVect = refract(-V, N , Material[texID%mCount].Refraction.xyz[r]);
-	    	refrColor += cubeTexRefl.SampleLevel(g_samLinear,refrVect,roughness*MAX_REFLECTION_LOD).rgb * wavelength[r];
+	    	refrColor += cubeTexRefl.SampleLevel(IBL_samLinear,refrVect,roughness*MAX_REFLECTION_LOD).rgb * wavelength[r];
 		}
 		refrColor *= 1 - (kS * envBRDF.x + envBRDF.y);
 		

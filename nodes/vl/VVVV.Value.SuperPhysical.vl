@@ -1802,7 +1802,11 @@
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="R7wJ6WRSmDvO136sM8o20f" Name="Shadow FOV" Kind="InputPin" />
+            <Pin Id="R7wJ6WRSmDvO136sM8o20f" Name="Shadow FOV" Kind="InputPin" DefaultValue="0.27">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
             <Pin Id="MU7XJf7SGJIL917OlR6BMb" Name="Color" Kind="InputPin" />
             <Pin Id="H1itaRnhV4YPrN2OLCLyeZ" Name="Helper" Kind="InputPin" />
             <Pin Id="JP5ljxfEt0ILmDhwaMf37r" Name="Enabled" Kind="InputPin" />
