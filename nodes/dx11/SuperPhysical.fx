@@ -331,7 +331,6 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			case 0:
 			
 				shadow = 0;
-//				float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
 
 				viewPosition = mul(PosW, LightMatrices[i].VP);
 				
@@ -349,10 +348,9 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					shadow = 1;
 				}
 							
-					
-			
+
 					#ifdef doShadowPOM
-						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
+						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 					#endif
 
 					
@@ -391,7 +389,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				
 				#ifdef doShadowPOM
 //						float3 LDir1 = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
-						if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
+						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 				#endif
 			
 				float attenuation = Light[i].lAtt0;
@@ -440,7 +438,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					}
 					
 							#ifdef doShadowPOM
-								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
+								if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 							#endif
 					
 							float attenuation = Light[i].lAtt0 * falloff;
@@ -510,7 +508,7 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 {	
 	uint texID = ID%mCount;
 	#ifdef doPOM
-	if(Material[texID].POM){
+	if(Material[texID].POM && useTex[texID]){
 		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(In.tangent,In.binormal,In.NormW.xyz),texID);
 	}
 	#endif
@@ -518,7 +516,7 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 	float3 bumpMap = float3(0,0,0);
 	
 	#ifdef doControlTextures
-	if(Material[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
+	if(Material[texID].sampleNormal && useTex[texID]) bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
 	#endif
 	
@@ -555,16 +553,19 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	b = cross(In.NormW, x);
 	b = normalize(b);
 	
+	
+	#ifdef doControlTextures
 	#ifdef doPOM
-	if(Material[texID].POM){
+	if(Material[texID].POM && useTex[texID]){
 		parallaxOcclusionMapping(In.TexCd.xy, In.PosW.xyz, normalize(tVI[3].xyz - In.PosW.xyz), float3x3(t,b,In.NormW.xyz),texID);
 	}
+	#endif
 	#endif
 	
 	float3 bumpMap = float3(0,0,0);
 
 	#ifdef doControlTextures
-	if(Material[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
+	if(Material[texID].sampleNormal && useTex[texID]) bumpMap = normalTex.Sample(g_samLinear,float3(In.TexCd.xy, texID)).rgb;
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
 	#endif
 	

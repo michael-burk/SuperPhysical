@@ -1969,7 +1969,11 @@
             <Link Id="D2KaNyYVo07OjL0rGDNhFB" Ids="DAIXbuHtUBsLfN2wbNNLwB,UyC4t64CiuyLLF3CuWh4RU" IsHidden="true" />
             <ControlPoint Id="I8dPycO17n4McR5JjcWEmQ" Bounds="-15,1241" />
             <Link Id="JttAujs8UYoOPnJyO4dtaK" Ids="I8dPycO17n4McR5JjcWEmQ,NJT4QZhZBQ2NmdEYwoGFNZ" />
-            <Pin Id="DreRDHhYI7zMkuZw0PBZDk" Name="Falloff" Kind="InputPin" Bounds="92,1226" />
+            <Pin Id="DreRDHhYI7zMkuZw0PBZDk" Name="Falloff" Kind="InputPin" Bounds="92,1226" DefaultValue="0.5">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
             <Link Id="COFKUwHK4BRQDDZWHyNYXd" Ids="DreRDHhYI7zMkuZw0PBZDk,I8dPycO17n4McR5JjcWEmQ" IsHidden="true" />
             <Link Id="IcWpkMPXvmdLI8uwqNvBqq" Ids="JfAiLGSyDsDLLSfj86Xfqv,DJNjXbRfXxaO10ywjyf5B3" />
             <ControlPoint Id="Bp9Hf2kqdF1NAqTKsshfvG" Bounds="59,1326" />
