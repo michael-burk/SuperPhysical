@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="780">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="15" scrolly="0">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="3150" top="2940" width="21465" height="11505">
+   <BOUNDS type="Window" left="720" top="3120" width="16020" height="11505">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -627,7 +627,11 @@
    </BOUNDS>
    <PIN pinname="POM_shadow_factor" slicecount="1" values="8">
    </PIN>
-   <PIN pinname="Defines" visible="1">
+   <PIN pinname="Defines" visible="1" slicecount="10" values=",doPOM=1,,,doIBL=1,doGlobalLight=1,doControlTextures=1,,,">
+   </PIN>
+   <PIN pinname="PlanarReflections" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="brdfLUT" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="138" srcpinname="Texture" dstnodeid="375" dstpinname="Iridescence" linkstyle="Bezier">
@@ -896,8 +900,8 @@
    <LINKPOINT x="6300" y="8198">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="373" srcpinname="Texture Out" dstnodeid="375" dstpinname="brdfLUT">
-   </LINK>
    <LINK srcnodeid="344" srcpinname="Output" dstnodeid="375" dstpinname="Defines">
+   </LINK>
+   <LINK srcnodeid="373" srcpinname="Texture Out" dstnodeid="375" dstpinname="brdfLUT">
    </LINK>
    </PATCH>

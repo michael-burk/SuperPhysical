@@ -28,7 +28,7 @@ float4 PS(psInput input) : SV_Target
 
 technique10 Process
 {
-	pass P0
+	pass P0 <bool mips=true;>
 	{
 		SetPixelShader(CompileShader(ps_4_0,PS()));
 	}

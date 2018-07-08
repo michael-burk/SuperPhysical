@@ -90,6 +90,7 @@ cbuffer cbPerObject : register (b0)
 	//transforms
 	float4x4 tW: WORLD;
 	float4x4 tWI: WORLDINVERSE;
+	float4x4 tVP: VIEWPROJECTION;
 	float4x4 tWVP: WORLDVIEWPROJECTION;
 	
 	float4 GlobalReflectionColor <bool color = true; string uiname="Global Reflection Color";>  = { 0.0f,0.0f,0.0f,0.0f };
@@ -121,8 +122,6 @@ Texture2D iridescence <string uiname="Iridescence"; >;
 
 StructuredBuffer <bool> useTex;
 
-//StructuredBuffer <float> refractionIndex <String uiname="Refraction Index";>;
-
 TextureCube cubeTexRefl <string uiname="CubeMap Refl"; >;
 TextureCube cubeTexIrradiance <string uiname="CubeMap Irradiance"; >;
 Texture2D brdfLUT <string uiname="brdfLUT"; >;
@@ -141,6 +140,13 @@ SamplerState g_samLinear
     AddressV = WRAP;
 };
 
+SamplerState g_samLinearIBL
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
 #include "ShadowMapping.fxh"
 #include "NoTile.fxh"
 #include "ParallaxOcclusionMapping.fxh"
@@ -151,6 +157,9 @@ SamplerState g_samLinear
 #include "IRIDESCENCE.fxh"
 #elif doGlobalLight
 #include "GLOBALLIGHT.fxh"
+#endif
+#ifdef doPlanarReflections
+#include "PLANARREFLECTION.fxh"
 #endif
 
 #ifdef doToneMap
@@ -246,7 +255,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	
 		roughnessT = Material[texID].roughness;
 		if(Material[texID].sampleRoughness) roughnessT = roughTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
-		roughnessT = min(max(roughnessT * Material[texID].roughness,.01),.95);
+		roughnessT = min(max(roughnessT * Material[texID].roughness,.02),1);
 
 		aoT = 1;
 		if(Material[texID].sampleAO) aoT = aoTex.Sample(g_samLinear,  float3(TexCd.xy, texID)).r;
@@ -261,7 +270,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		albedo = texCol * saturate(Material[texID].Color) * aoT;	
 		
 	} else {
-		roughnessT = min(max(Material[texID].roughness,.01),.95);
+		roughnessT = min(max(Material[texID].roughness,.02),1);
 		aoT = 1;
 		metallicT = Material[texID].metallic;
 		albedo = saturate(Material[texID].Color);
@@ -269,7 +278,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	
 	#else
 		
-		roughnessT = min(max(Material[texID].roughness,.01),.95);
+		roughnessT = min(max(Material[texID].roughness,.02),1);
 		aoT = 1;
 		metallicT = Material[texID].metallic;
 		albedo = saturate( Material[texID].Color);
@@ -477,13 +486,20 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	#elif doGlobalLight
 		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughnessT, aoT, metallicT );
 	#endif
+	#ifdef doPlanarReflections
+		finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughnessT, aoT, metallicT, TexCd, ID );
+	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
 	// EMISSIVE LIGHTING
 	///////////////////////////////////////////////////////////////////////////
 	
 	#ifdef doControlTextures
-		if(Material[texID].sampleEmissive) finalLight.rgb += saturate(Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb);
+		if(Material[texID].sampleEmissive){
+			finalLight.rgb += saturate(Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb);
+		} else {
+			finalLight.rgb += saturate( Material[texID].Emissive.rgb);
+		}
 	#else
 		finalLight.rgb += saturate( Material[texID].Emissive.rgb);
 	#endif
