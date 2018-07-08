@@ -485,7 +485,7 @@
    <LINK srcnodeid="17" srcpinname="Output" dstnodeid="33" dstpinname="Input 1" linkstyle="PolyLine">
    </LINK>
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
-   <BOUNDS type="Node" left="2610" top="4245" width="1410" height="270">
+   <BOUNDS type="Node" left="2775" top="3840" width="1410" height="270">
    </BOUNDS>
    <BOUNDS type="Window" left="1140" top="1050" width="14010" height="11580">
    </BOUNDS>
@@ -493,7 +493,7 @@
    </PIN>
    <PIN pinname="Iridescence" visible="1" slicecount="1" values="0">
    </PIN>
-   <BOUNDS type="Box" left="2610" top="4245">
+   <BOUNDS type="Box" left="2775" top="3840">
    </BOUNDS>
    <PIN pinname="MaterialSettings" visible="1">
    </PIN>
@@ -755,13 +755,7 @@
    </PIN>
    <PIN pinname="Rows" slicecount="1" values="2">
    </PIN>
-   </NODE>
-   <NODE systemname="Quad (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Geometry)" componentmode="Hidden" id="55">
-   <BOUNDS type="Node" left="4245" top="2670" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="4245" top="2670" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Geometry Out" visible="1">
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="GetSlice (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="GetSlice (Transform)" componentmode="Hidden" id="56">
@@ -773,7 +767,7 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Index" slicecount="1" values="3" visible="1">
+   <PIN pinname="Index" slicecount="1" visible="1" values="3">
    </PIN>
    </NODE>
    <LINK srcnodeid="25" srcpinname="Transform Out" dstnodeid="56" dstpinname="Input">
@@ -815,39 +809,17 @@
    </BOUNDS>
    <BOUNDS type="Box" left="5955" top="10545" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="20745" top="1035" width="6180" height="6585">
+   <BOUNDS type="Window" left="22755" top="690" width="5400" height="5400">
    </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="73" srcpinname="Sampler" dstnodeid="81" dstpinname="Sampler State">
    </LINK>
-   <NODE systemname="Planar Reflections (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" nodename="Planar Reflections (SuperPhysical)" componentmode="Hidden" id="80">
-   <BOUNDS type="Node" left="5910" top="8955" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Window" left="2715" top="1035" width="11670" height="12960">
-   </BOUNDS>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <PIN pinname="Mesh ID" visible="1">
-   </PIN>
-   <PIN pinname="Intensity" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="80" dstpinname="Texture SizeXY">
-   </LINK>
-   <LINK srcnodeid="38" srcpinname="Camera State" dstnodeid="80" dstpinname="Camera State">
-   </LINK>
-   <LINK srcnodeid="56" srcpinname="Output" dstnodeid="80" dstpinname="Planar Transform">
-   </LINK>
-   <LINK srcnodeid="40" srcpinname="Layer Out" dstnodeid="80" dstpinname="Layer">
-   </LINK>
-   <LINK srcnodeid="80" srcpinname="Layer Out" dstnodeid="41" dstpinname="Layer">
-   </LINK>
-   <LINK srcnodeid="80" srcpinname="Texture Out" dstnodeid="81" dstpinname="Texture In">
-   </LINK>
    <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="82">
-   <BOUNDS type="Node" left="2265" top="1650" width="100" height="100">
+   <BOUNDS type="Node" left="4335" top="2655" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2265" top="1650" width="3000" height="3000">
+   <BOUNDS type="Box" left="4335" top="2655" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Geometry Out" visible="1">
    </PIN>
@@ -874,14 +846,12 @@
    </NODE>
    <LINK srcnodeid="83" srcpinname="Y Output Value" dstnodeid="56" dstpinname="Index">
    </LINK>
-   <LINK srcnodeid="83" srcpinname="Y Output Value" dstnodeid="80" dstpinname="Mesh ID">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="84">
    <BOUNDS type="Box" left="6960" top="7380" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="6960" top="7380" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -889,13 +859,13 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Intensity">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="80" dstpinname="Intensity">
-   </LINK>
    <NODE systemname="Anisotropic (DX11 Sampler)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Anisotropic (DX11 Sampler)" componentmode="Hidden" id="85">
-   <BOUNDS type="Node" left="7050" top="4275" width="100" height="100">
+   <BOUNDS type="Node" left="4035" top="3315" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="7050" top="4275" width="3000" height="3000">
+   <BOUNDS type="Box" left="4035" top="3315" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Sampler" visible="1">
    </PIN>
@@ -939,9 +909,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="86">
-   <BOUNDS type="Box" left="1275" top="1245" width="795" height="720">
+   <BOUNDS type="Box" left="2025" top="1320" width="795" height="720">
    </BOUNDS>
-   <BOUNDS type="Node" left="1275" top="1245" width="0" height="0">
+   <BOUNDS type="Node" left="2025" top="1320" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="3" visible="1" values="2,2,0.01">
    </PIN>
@@ -970,4 +940,40 @@
    <PIN pinname="String Type" slicecount="1" values="Url">
    </PIN>
    </NODE>
+   <NODE systemname="Reflections (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" nodename="Reflections (SuperPhysical)" componentmode="Hidden" id="90">
+   <BOUNDS type="Node" left="5985" top="8895" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1">
+   </PIN>
+   <PIN pinname="Camera State" visible="1">
+   </PIN>
+   <PIN pinname="Mesh ID" visible="1">
+   </PIN>
+   <PIN pinname="Planar Transform" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Intensity" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Layer Out" dstnodeid="90" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Layer Out" dstnodeid="41" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="90" dstpinname="Texture SizeXY">
+   </LINK>
+   <LINK srcnodeid="38" srcpinname="Camera State" dstnodeid="90" dstpinname="Camera State">
+   </LINK>
+   <LINK srcnodeid="83" srcpinname="Y Output Value" dstnodeid="90" dstpinname="Mesh ID">
+   </LINK>
+   <LINK srcnodeid="56" srcpinname="Output" dstnodeid="90" dstpinname="Planar Transform">
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Texture Out" dstnodeid="81" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="90" dstpinname="Intensity">
+   </LINK>
    </PATCH>
