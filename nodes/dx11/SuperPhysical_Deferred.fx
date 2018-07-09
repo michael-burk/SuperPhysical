@@ -8,6 +8,13 @@ SamplerState linearSampler : Immutable
     AddressV = WRAP;
 };
 
+SamplerState g_samLinearIBL
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
 struct VS_IN
 {
 	float4 PosO : POSITION;
