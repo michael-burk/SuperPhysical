@@ -281,7 +281,7 @@ float4 doShadow(inout float4 shadow, int shadowType, float lightDist, float ligh
 			}
 	
 	// Reduce projective aliasing
-	shadow = min(dot(N,L) * 2, shadow);
+//	shadow = min(dot(N,L) * 2, shadow);
 	
 	return shadow;
 }
