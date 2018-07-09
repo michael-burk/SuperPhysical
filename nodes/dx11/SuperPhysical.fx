@@ -353,6 +353,8 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				&& (saturate(projectTexCoord.z) == projectTexCoord.z
 				&& Light[i].useShadow)){
 					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter, N, L);
+				
+					shadow += smoothstep(0,1,saturate(pow(length(.5-projectTexCoord.xy)*2,3)));
 				} else {
 					shadow = 1;
 				}
@@ -361,8 +363,9 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					#ifdef doShadowPOM
 						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 					#endif
-
+	
 //				attenuation = Light[i].lAtt0 * falloff;	
+			
 				finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
 				lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, 1, roughnessT, metallicT, aoT, iridescenceColor, texID);
 				
