@@ -584,7 +584,7 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
 	#endif
 	
-	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b))*Material[texID].bumpy);
+	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (-t) + bumpMap.y * (b))*Material[texID].bumpy);
 
 	#ifdef doShadowPOM
 		return doLighting(In.PosW, Nb, In.TexCd, float3x3(t, b, Nb));
