@@ -347,12 +347,12 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		   		projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;			
 				projectTexCoord.z =  viewPosition.z / viewPosition.w / 2.0f + 0.5f;
 			
-					
+				
+			
 				if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y)
 				&& (saturate(projectTexCoord.z) == projectTexCoord.z
 				&& Light[i].useShadow)){
 					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter, N, L);
-					shadowCounter++;
 				} else {
 					shadow = 1;
 				}
@@ -367,6 +367,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);
 				
 				lightCounter ++;
+				if(Light[i].useShadow) shadowCounter++;	
 				break;
 			
 			// SPOT
