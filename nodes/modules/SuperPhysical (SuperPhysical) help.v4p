@@ -618,7 +618,7 @@
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.3.1">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
@@ -627,7 +627,7 @@
    <NODE id="45" componentmode="Hidden" debug="0" systemname="LightHelper (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\LightHelper (SuperPhysical).v4p" nodename="LightHelper (SuperPhysical)">
    <BOUNDS type="Window" left="2445" top="4095" width="15690" height="10740">
    </BOUNDS>
-   <PIN pinname="Enabled" slicecount="1" values="0">
+   <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
    <BOUNDS type="Node" left="3120" top="6675" width="100" height="100">
    </BOUNDS>
@@ -782,7 +782,7 @@
    </LINK>
    <LINK srcnodeid="47" srcpinname="Texture Out" dstnodeid="4" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="81" stayontop="1">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="81" stayontop="1">
    <BOUNDS type="Node" left="5955" top="10545" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="5955" top="10545" width="6000" height="4500">
@@ -857,7 +857,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="6645" top="5385" width="2970" height="1275">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|todo: correct reflection brightness;&cr;&lf;weird flickering without tonemapping&cr;&lf;bump map reflection&cr;&lf;ignore backside&cr;&lf;bluriness according to angle|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|todo: correct reflection brightness;&cr;&lf;weird flickering without tonemapping&cr;&lf;bump map reflection&cr;&lf;ignore backside&cr;&lf;bluriness according to angle&cr;&lf;different normal map format|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
