@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="75">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="360" top="7710" width="795" height="240">
    </BOUNDS>
@@ -29,7 +29,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2145" top="7620" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -422,7 +422,7 @@
    </LINK>
    <LINK srcnodeid="105" srcpinname="Y Output Value" dstnodeid="56" dstpinname="ScaleZ">
    </LINK>
-   <PACK Name="dx11" Version="1.3.1.1">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="156">
    <BOUNDS type="Node" left="16425" top="5955" width="100" height="100">
@@ -1061,16 +1061,16 @@
    </PIN>
    <PIN pinname="SubsurfaceScattering" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="Emissive" visible="1" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Metallic" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="417" dstpinname="Metallic" linkstyle="PolyLine">
-   </LINK>
    <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="417" dstpinname="Roughness" linkstyle="Bezier">
    <LINKPOINT x="2175" y="8108">
    </LINKPOINT>
    <LINKPOINT x="2175" y="8108">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="417" dstpinname="Emissive" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="417" srcpinname="Output" dstnodeid="284" dstpinname="Input Node" linkstyle="VHV">
    <LINKPOINT x="375" y="8723">
@@ -1119,5 +1119,27 @@
    <LINK srcnodeid="263" srcpinname="Output" dstnodeid="417" dstpinname="Refraction">
    </LINK>
    <LINK srcnodeid="236" srcpinname="Output" dstnodeid="417" dstpinname="ParallaxOcclusionMapping">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="423">
+   <BOUNDS type="Node" left="1395" top="5925" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1395" top="5925" width="795" height="960">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="4" values="0,0,0,1">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0, 0, 1|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="423" srcpinname="Y Output Value" dstnodeid="417" dstpinname="Metallic">
+   </LINK>
+   <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="417" dstpinname="Emissive">
    </LINK>
    </PATCH>
