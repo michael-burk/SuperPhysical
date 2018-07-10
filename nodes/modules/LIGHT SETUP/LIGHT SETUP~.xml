@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1935" top="1725" width="9255" height="7515">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="255" scrolly="0">
+   <BOUNDS type="Window" left="9315" top="2220" width="11625" height="7455">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -23,7 +23,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1395" top="1095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.60151,0.60151,0.60151,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Global Reflection Color|">
    </PIN>
@@ -86,7 +86,7 @@
    <LINKPOINT x="9840" y="2175">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.3.1">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="86">
    <BOUNDS type="Node" left="9825" top="2670" width="100" height="100">
@@ -131,11 +131,11 @@
    </PIN>
    </NODE>
    <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182">
-   <BOUNDS type="Node" left="4005" top="4080" width="100" height="100">
+   <BOUNDS type="Node" left="3780" top="3945" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Window" left="1455" top="2445" width="14460" height="10410">
    </BOUNDS>
-   <BOUNDS type="Box" left="4005" top="4080">
+   <BOUNDS type="Box" left="3780" top="3945">
    </BOUNDS>
    <PIN pinname="SpotLights" visible="1" slicecount="1" values="||">
    </PIN>
@@ -287,9 +287,9 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Spot Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" componentmode="Hidden" id="185" debug="0" stayontop="0">
-   <BOUNDS type="Node" left="2940" top="4530" width="100" height="100">
+   <BOUNDS type="Node" left="2820" top="4455" width="1035" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="2940" top="4530">
+   <BOUNDS type="Box" left="2820" top="4455">
    </BOUNDS>
    <BOUNDS type="Window" left="705" top="885" width="15390" height="11685">
    </BOUNDS>
@@ -299,7 +299,7 @@
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="227" dstpinname="PointLightSettings">
    </LINK>
    <NODE systemname="PlanarReflections (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="PlanarReflections (SuperPhysical Light)" componentmode="Hidden" id="229">
-   <BOUNDS type="Node" left="6615" top="4425" width="100" height="100">
+   <BOUNDS type="Node" left="6135" top="4500" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -309,9 +309,9 @@
    <LINK srcnodeid="229" srcpinname="Output" dstnodeid="227" dstpinname="PlanarReflections">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="230">
-   <BOUNDS type="Box" left="6690" top="3765" width="480" height="480">
+   <BOUNDS type="Box" left="6150" top="3825" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="6690" top="3765" width="0" height="0">
+   <BOUNDS type="Node" left="6150" top="3825" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>

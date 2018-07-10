@@ -367,11 +367,11 @@ float4 doLighting(psInput input) : SV_Target
 					shadowCounter++;
 							
 					finalLight += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-					lerp(1.0,saturate(shadow),falloff).x, 1.0, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);
+					lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);
 				} else {
 					float3 LDir = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
 					finalLight += cookTorrance(V, -LDir, N, albedo.xyz, Light[i].Color.rgb,
-					1.0, 1.0, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);
+					1.0, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughnessT, metallicT, aoT, iridescenceColor, texID);
 				}
 				lightCounter ++;
 				break;
@@ -404,12 +404,12 @@ float4 doLighting(psInput input) : SV_Target
 						shadowCounter++;
 						float attenuation = Light[i].lAtt0;
 						finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-						shadow.x, falloffSpot * falloff, falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
+						shadow.x, falloffSpot * falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
 					
 				} else {
 						float attenuation = Light[i].lAtt0;
 						finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-						1.0, falloffSpot * falloff, falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
+						1.0, falloffSpot * falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
 				}
 			
 				lightCounter ++;
@@ -453,14 +453,14 @@ float4 doLighting(psInput input) : SV_Target
 					}
 							float attenuation = Light[i].lAtt0 * falloff;
 							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-							shadow.x, 1.0, falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
+							shadow.x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
 				
 							shadowCounter += 6;
 							lightCounter  += 6;
 				} else {
 						    float attenuation = Light[i].lAtt0 * falloff;
 							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-							1, 1, falloff, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
+							1, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
 			
 				}	
 			
