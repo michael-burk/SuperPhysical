@@ -627,7 +627,7 @@
    <NODE id="45" componentmode="Hidden" debug="0" systemname="LightHelper (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\LightHelper (SuperPhysical).v4p" nodename="LightHelper (SuperPhysical)">
    <BOUNDS type="Window" left="2445" top="4095" width="15690" height="10740">
    </BOUNDS>
-   <PIN pinname="Enabled" slicecount="1" values="1">
+   <PIN pinname="Enabled" slicecount="1" values="0">
    </PIN>
    <BOUNDS type="Node" left="3120" top="6675" width="100" height="100">
    </BOUNDS>
@@ -855,9 +855,9 @@
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="87">
    <BOUNDS type="Node" left="6645" top="5385" width="5370" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6645" top="5385" width="2970" height="1275">
+   <BOUNDS type="Box" left="6645" top="5385" width="3180" height="2580">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|todo: correct reflection brightness;&cr;&lf;weird flickering without tonemapping&cr;&lf;bump map reflection&cr;&lf;ignore backside&cr;&lf;bluriness according to angle&cr;&lf;different normal map format|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|todo: correct reflection brightness;&cr;&lf;weird flickering without tonemapping&cr;&lf;bump map reflection&cr;&lf;ignore backside&cr;&lf;bluriness according to angle&cr;&lf;different normal map format&cr;&lf;remove IBL if plane refl|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
