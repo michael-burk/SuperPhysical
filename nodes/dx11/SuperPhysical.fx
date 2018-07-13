@@ -3,7 +3,7 @@
 //@tags: shading
 //@credits: Vux, Dottore, Catweasel
 
-static const float MAX_REFLECTION_LOD = 9.0;
+static const uint MAX_REFLECTION_LOD = 9;
 
 float2 R : Targetsize;
 
@@ -151,15 +151,15 @@ SamplerState g_samLinearIBL
 #include "NoTile.fxh"
 #include "ParallaxOcclusionMapping.fxh"
 #include "CookTorrance.fxh"
+#ifdef doPlanarReflections
+#include "PLANARREFLECTION.fxh"
+#endif
 #ifdef doIBL
 #include "IBL.fxh"
 #elif doIridescence	
 #include "IRIDESCENCE.fxh"
 #elif doGlobalLight
 #include "GLOBALLIGHT.fxh"
-#endif
-#ifdef doPlanarReflections
-#include "PLANARREFLECTION.fxh"
 #endif
 
 #ifdef doToneMap
@@ -491,7 +491,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughnessT, aoT, metallicT );
 	#endif
 	#ifdef doPlanarReflections
-		finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughnessT, aoT, metallicT, TexCd, ID );
+		if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughnessT, aoT, metallicT, TexCd, ID );
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////

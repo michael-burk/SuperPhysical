@@ -60,8 +60,15 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	}
 	#endif
 	
+	float GlobalReflConstant = 1.75;
 	#ifdef doGlobalLight
-	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao+ GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * 1.75 * iridescenceColor;
+		#ifdef doPlanarReflections
+			if(PlanarID == ID){
+				if(dot(planeNormal[0], V) < 0) GlobalReflConstant -= planarIntensity;
+			}
+		#endif
+	
+		IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao+ GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * GlobalReflConstant * iridescenceColor;
 	#endif
 	
 	//////////////////////////////////

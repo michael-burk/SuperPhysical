@@ -11,7 +11,14 @@ float3 GLOBALLIGHT(float3 N, float3 V, float3 F0, float4 albedo, float roughness
 		   kD *= 1.0 - metallic;
 	float2 envBRDF  = brdfLUT.Sample(g_samLinearIBL, float2(max(dot(N, V), 0.0)-.01,roughness)*float2(1,-1)).rg;
 
-	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y)* ao * 1.75;
+	float GlobalReflConstant = 1.75;
+	#ifdef doPlanarReflections
+			if(PlanarID == ID){
+				if(dot(planeNormal[0], V) < 0) GlobalReflConstant -= planarIntensity;
+			}
+	#endif
+	
+	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * GlobalReflConstant;
 	
 	//////////////////////////////////
 

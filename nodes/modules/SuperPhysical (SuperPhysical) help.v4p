@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1485" top="1035" width="10650" height="15945">
+   <BOUNDS type="Window" left="2430" top="525" width="10650" height="14895">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
    <BOUNDS type="Node" left="775" top="11065" width="100" height="100">
@@ -853,11 +853,11 @@
    <LINK srcnodeid="86" srcpinname="Y Output Value" dstnodeid="82" dstpinname="SizeXYZ">
    </LINK>
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="87">
-   <BOUNDS type="Node" left="6645" top="5385" width="5370" height="270">
+   <BOUNDS type="Node" left="6540" top="5370" width="5370" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6645" top="5385" width="3180" height="2580">
+   <BOUNDS type="Box" left="6540" top="5370" width="3735" height="1440">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|todo: correct reflection brightness;&cr;&lf;weird flickering without tonemapping&cr;&lf;bump map reflection&cr;&lf;ignore backside&cr;&lf;bluriness according to angle&cr;&lf;different normal map format&cr;&lf;remove IBL if plane refl|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|todo: correct reflection brightness;&cr;&lf;weird flickering without tonemapping&cr;&lf;bump map reflection&cr;&lf;bluriness according to angle&cr;&lf;different normal map format|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -941,5 +941,19 @@
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="90" dstpinname="Texture SizeXY">
    </LINK>
    <LINK srcnodeid="82" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Input 4">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="91">
+   <BOUNDS type="Box" left="4155" top="7860" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4155" top="7860" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="91" srcpinname="Y Output Value" dstnodeid="90" dstpinname="Intensity">
    </LINK>
    </PATCH>

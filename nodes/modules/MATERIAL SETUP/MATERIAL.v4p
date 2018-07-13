@@ -422,7 +422,7 @@
    </LINK>
    <LINK srcnodeid="105" srcpinname="Y Output Value" dstnodeid="56" dstpinname="ScaleZ">
    </LINK>
-   <PACK Name="dx11" Version="1.3.1">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="156">
    <BOUNDS type="Node" left="16425" top="5955" width="100" height="100">
@@ -886,8 +886,6 @@
    </LINK>
    <LINK srcnodeid="166" srcpinname="Pointer" dstnodeid="174" dstpinname="Y Input Value">
    </LINK>
-   <LINK srcnodeid="167" srcpinname="Pointer" dstnodeid="175" dstpinname="Y Input Value">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="280">
    <BOUNDS type="Box" left="15135" top="1050" width="450" height="1410">
    </BOUNDS>
@@ -1141,5 +1139,7 @@
    <LINK srcnodeid="423" srcpinname="Y Output Value" dstnodeid="417" dstpinname="Metallic">
    </LINK>
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="417" dstpinname="Emissive">
+   </LINK>
+   <LINK srcnodeid="167" srcpinname="Pointer" dstnodeid="175" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
