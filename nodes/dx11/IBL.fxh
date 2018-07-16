@@ -68,7 +68,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 			}
 		#endif
 	
-		IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao+ GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * GlobalReflConstant * iridescenceColor;
+		IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * GlobalReflConstant * iridescenceColor;
 	#endif
 	
 	//////////////////////////////////

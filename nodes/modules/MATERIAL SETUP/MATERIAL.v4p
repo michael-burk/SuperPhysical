@@ -422,7 +422,7 @@
    </LINK>
    <LINK srcnodeid="105" srcpinname="Y Output Value" dstnodeid="56" dstpinname="ScaleZ">
    </LINK>
-   <PACK Name="dx11" Version="1.3.1.1">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="156">
    <BOUNDS type="Node" left="16425" top="5955" width="100" height="100">
@@ -914,8 +914,6 @@
    </NODE>
    <LINK srcnodeid="30" srcpinname="Texture Out" dstnodeid="272" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="167" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="36" srcpinname="Texture Out" dstnodeid="166" dstpinname="Texture In">
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="284">
@@ -1141,5 +1139,7 @@
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="417" dstpinname="Emissive">
    </LINK>
    <LINK srcnodeid="167" srcpinname="Pointer" dstnodeid="175" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="167" dstpinname="Texture In">
    </LINK>
    </PATCH>
