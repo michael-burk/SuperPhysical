@@ -22,7 +22,7 @@ float roughness, float ao, float metallic, float4 TexCd, int ID){
 	float3 kS  = fresnelSchlickRoughness(max(dot(N, V), 0.0), F0,roughness);
 	float3 kD  = 1.0 - kS;
 		   kD *= 1.0 - metallic;
-	float2 envBRDF  = brdfLUT.Sample(g_samLinearIBL, float2(max(dot(N, V), 0.0)-.01,roughness)*float2(1,1)).rg;
+	float2 envBRDF  = brdfLUT.Sample(g_samLinearIBL, float2(max(dot(N, V), 0.0)-.01,roughness)*float2(1,-1)).rg;
 	
 	
 	float4 viewPosition = mul(PosW, CamtVP);
