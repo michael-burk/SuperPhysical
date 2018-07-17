@@ -15,7 +15,7 @@ float3 IRIDESCENCE(float3 N, float3 V, float3 F0, float4 albedo, float3 iridesce
 	float3 kS  = fresnelSchlickRoughness(max(dot(N, V), 0.0), F0,roughness);
 	float3 kD  = 1.0 - kS;
 		   kD *= 1.0 - metallic;
-	float2 envBRDF  = brdfLUT.Sample(IBL_samLinear, float2(max(dot(N, V), 0.0)-.01,roughness)*float2(1,-1)).rg;
+	float2 envBRDF  = brdfLUT.Sample(IBL_samLinear, float2(max(dot(N, V), 0.0),roughness)*float2(1,-1)).rg;
 
 	
 	iridescenceColor *= (kS * envBRDF.x + envBRDF.y);
