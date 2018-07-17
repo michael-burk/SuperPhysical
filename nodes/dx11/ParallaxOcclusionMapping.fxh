@@ -96,9 +96,9 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 //	POM_Height = heightMap.SampleGrad( g_samLinear, float3(texcoord, texID), dx, dy ).r;
 	
 	#ifdef Deferred
-		PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material_NormalMapping[texID].tTexInv)).xyz,scale);
+		PosW.xyz -= mul(mul((float3(vCurrOffset,0)),mul(tangentToWorldSpace,(float3x3)Material_NormalMapping[texID].tTexInv)).xyz,scale);
 	#else
-		PosW.xyz -= mul(mul((float3(vCurrOffset,delta1*-fHeightMapScale)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
+		PosW.xyz -= mul(mul((float3(vCurrOffset,0)),mul(tangentToWorldSpace,(float3x3)Material[texID].tTexInv)).xyz,scale);
 	#endif
 	
 	
