@@ -353,7 +353,6 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 				&& (saturate(projectTexCoord.z) == projectTexCoord.z
 				&& Light[i].useShadow)){
 					doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter, N, L);
-				
 					shadow += smoothstep(0,1,saturate(pow(length(.5-projectTexCoord.xy)*2,3)));
 				} else {
 					shadow = 1;
@@ -376,7 +375,10 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			// SPOT
 			case 1:
 			
-				shadow = 0;
+				
+				if(Light[i].useShadow) 	shadow = 0;
+				else 					shadow = 1;
+			
 				viewPosition = mul(PosW, LightMatrices[i].VP);
 					
 				projectTexCoord.x =  viewPosition.x / viewPosition.w / 2.0f + 0.5f;
@@ -392,18 +394,19 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					lightMap.GetDimensions(tXS,tYS,mS);
 					if(tXS+tYS > 4) falloffSpot = lightMap.SampleLevel(g_samLinear, float3(projectTexCoord.xy, spotLightCount), 0 ).rgb;
 					else if(tXS+tYS < 4) falloffSpot = smoothstep(1,0,saturate(length(.5-projectTexCoord.xy)*2));
-					
+
 					if(Light[i].useShadow){
 						doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter, N, L);
-						shadow = min(dot(N,L) * 2, shadow);
+//						shadow = min(dot(N,L) * 1, shadow);
 					}
 			
 				} else {
 					shadow = 1;
 				}
 				
+				
+			
 				#ifdef doShadowPOM
-//						float3 LDir1 = float3(LightMatrices[i].V._m02,LightMatrices[i].V._m12,LightMatrices[i].V._m22);	
 						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 				#endif
 			
