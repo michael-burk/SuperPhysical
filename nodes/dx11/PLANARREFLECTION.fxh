@@ -31,8 +31,14 @@ float roughness, float ao, float metallic, float4 TexCd, int ID){
 	projectTexCoord.y = -viewPosition.y / viewPosition.w / 2.0f + 0.5f;	
 	
 //	float PRDepth = PlanarDepth.Sample(g_samLinearPR, projectTexCoord);
+	
+	// y tho?
+	#ifdef doControlTextures
+		float4 PR = PlanarReflections.SampleLevel(g_samLinearPR, projectTexCoord, saturate(roughness) * MAX_REFLECTION_LOD * MAX_REFLECTION_LOD);
+	#else
+		float4 PR = PlanarReflections.SampleLevel(g_samLinearPR, projectTexCoord, saturate(roughness) * MAX_REFLECTION_LOD * 1);
+	#endif
 
-	float4 PR = PlanarReflections.SampleLevel(g_samLinearPR, projectTexCoord, roughness * MAX_REFLECTION_LOD * 9);
 	
 	return PR.rgb *(kS * envBRDF.x + envBRDF.y) * planarIntensity;
 

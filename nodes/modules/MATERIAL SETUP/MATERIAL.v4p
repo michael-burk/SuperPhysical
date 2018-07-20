@@ -29,7 +29,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2145" top="7620" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1137,5 +1137,7 @@
    <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="167" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="402" srcpinname="Output" dstnodeid="417" dstpinname="ControlTextures">
+   <LINKPOINT x="7590" y="8310">
+   </LINKPOINT>
    </LINK>
    </PATCH>
