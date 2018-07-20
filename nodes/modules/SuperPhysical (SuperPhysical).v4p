@@ -622,7 +622,7 @@
    </NODE>
    <LINK srcnodeid="299" srcpinname="Texture Out" dstnodeid="373" dstpinname="Texture In">
    </LINK>
-   <NODE id="375" systemname="SuperPhysical (DX11.Effect)" filename="..\dx11\SuperPhysical.fx" nodename="SuperPhysical (DX11.Effect)" componentmode="Hidden">
+   <NODE id="375" systemname="SuperPhysical (DX11.Effect)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\SuperPhysical.fx" nodename="SuperPhysical (DX11.Effect)" componentmode="Hidden">
    <BOUNDS type="Node" left="1020" top="9572" width="10935" height="270">
    </BOUNDS>
    <PIN pinname="POM_shadow_factor" slicecount="1" values="8">

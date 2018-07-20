@@ -245,45 +245,31 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	// INITIALIZE PBR PRAMETERS WITH TEXTURE LOOKUP
 	///////////////////////////////////////////////////////////////////////////
 	
-	float4 albedo = 1;
-	float roughnessT = 0;
-	float aoT = 1;
-	float metallicT = 0;
+	float4 albedo =  Material[texID].Color;
+	float roughness = Material[texID].roughness;;
+	float ao = 1;
+	float metallic = Material[texID].metallic;
 	
 	#ifdef doControlTextures
 	if(useTex[texID]){
 	
-		roughnessT = Material[texID].roughness;
-		if(Material[texID].sampleRoughness) roughnessT = roughTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
-		roughnessT = min(max(roughnessT * Material[texID].roughness,.02),1);
+		
+		if(Material[texID].sampleRoughness) roughness *= roughTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
+//		roughnessT = min(max(roughnessT * Material[texID].roughness,.00),1);
 
-		aoT = 1;
-		if(Material[texID].sampleAO) aoT = aoTex.Sample(g_samLinear,  float3(TexCd.xy, texID)).r;
+//		aoT = 1;
+		if(Material[texID].sampleAO) ao = aoTex.Sample(g_samLinear,  float3(TexCd.xy, texID)).r;
 	
-		metallicT = 1;
-		if(Material[texID].sampleMetallic) metallicT = metallTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
-		metallicT *= Material[texID].metallic;
+//		metallicT = 1;
+		if(Material[texID].sampleMetallic) metallic *= metallTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
+//		metallicT *= Material[texID].metallic;
 		
 		float4 texCol = 1;
-		if(Material[texID].sampleAlbedo) texCol = texture2d.Sample(g_samLinear, float3(TexCd.xy, texID));
+		if(Material[texID].sampleAlbedo) albedo *= texture2d.Sample(g_samLinear, float3(TexCd.xy, texID)) * ao;
 	
-		albedo = texCol * saturate(Material[texID].Color) * aoT;	
+//		albedo = texCol * saturate(Material[texID].Color) * ao;	
 		
-	} else {
-		roughnessT = min(max(Material[texID].roughness,.02),1);
-		aoT = 1;
-		metallicT = Material[texID].metallic;
-		albedo = saturate(Material[texID].Color);
-	}
-	
-	#else
-		
-		roughnessT = min(max(Material[texID].roughness,.02),1);
-		aoT = 1;
-		metallicT = Material[texID].metallic;
-		albedo = saturate( Material[texID].Color);
-		
-		
+	} 
 	
 	#endif
 	
@@ -306,7 +292,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	float4 viewPosition;
 	float4 projectTexCoord;
 	
-	float3 F0 = lerp(F, albedo.xyz, metallicT);
+	float3 F0 = lerp(F, albedo.xyz, metallic);
 	
 	int shadowCounter = 0;
 	int spotLightCount = 0;
@@ -366,7 +352,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 //				attenuation = Light[i].lAtt0 * falloff;	
 			
 				finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-				lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, 1, roughnessT, metallicT, aoT, iridescenceColor, texID);
+				lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, 1, roughness, metallic, ao, iridescenceColor, texID);
 				
 				lightCounter ++;
 				if(Light[i].useShadow) shadowCounter++;	
@@ -412,7 +398,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 			
 				attenuation = Light[i].lAtt0 * falloff;
 				finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-				shadow.x, falloffSpot, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
+				shadow.x, falloffSpot, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughness, metallic, ao, iridescenceColor, texID);
 
 				if(Light[i].useShadow) shadowCounter++;	
 				lightCounter ++;
@@ -461,7 +447,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					
 							float attenuation = Light[i].lAtt0 * falloff;
 							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-							shadow.x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
+							shadow.x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughness, metallic, ao, iridescenceColor, texID);
 				
 							shadowCounter += 6;
 							lightCounter  += 6;
@@ -473,7 +459,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 					
 						    float attenuation = Light[i].lAtt0 * falloff;
 							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-							shadow, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughnessT, metallicT, aoT, iridescenceColor, texID);
+							shadow, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughness, metallic, ao, iridescenceColor, texID);
 			
 				}	
 			
@@ -487,14 +473,14 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	// IMAGE BASED LIGHTING
 	///////////////////////////////////////////////////////////////////////////
 	#ifdef doIBL
-		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughnessT, metallicT, aoT, texID );
+		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughness, metallic, ao, texID );
 	#elif doIridescence
-		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughnessT, aoT,metallicT );
+		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughness, ao, metallic );
 	#elif doGlobalLight
-		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughnessT, aoT, metallicT );
+		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughness, ao, metallic );
 	#endif
 	#ifdef doPlanarReflections
-		if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughnessT, aoT, metallicT, TexCd, ID );
+		if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughness, ao, metallic, TexCd, ID );
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -516,8 +502,9 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	#endif
 	
 	
-	return float4(finalLight,Alpha*albedo.a);
-}
+//	return float4(finalLight,Alpha*albedo.a);
+	return clamp(float4(finalLight,Alpha*albedo.a),0,3);
+}	
 
 
 float4 PS_PBR(vs2ps In): SV_Target
