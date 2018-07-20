@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="870">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="360" top="7710" width="795" height="240">
    </BOUNDS>
@@ -29,7 +29,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2145" top="7620" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1059,7 +1059,7 @@
    </PIN>
    <PIN pinname="Emissive" visible="1" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
-   <PIN pinname="Metallic" visible="1">
+   <PIN pinname="Metallic" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="417" dstpinname="Roughness" linkstyle="Bezier">
@@ -1128,16 +1128,18 @@
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
    </NODE>
-   <LINK srcnodeid="423" srcpinname="Y Output Value" dstnodeid="417" dstpinname="Metallic">
-   </LINK>
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="417" dstpinname="Emissive">
    </LINK>
    <LINK srcnodeid="167" srcpinname="Pointer" dstnodeid="175" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="167" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="402" srcpinname="Output" dstnodeid="417" dstpinname="ControlTextures">
-   <LINKPOINT x="7590" y="8310">
+   <LINK srcnodeid="423" srcpinname="Y Output Value" dstnodeid="417" dstpinname="Metallic">
+   </LINK>
+   <LINK srcnodeid="402" srcpinname="Output" dstnodeid="417" dstpinname="ControlTextures" linkstyle="Bezier">
+   <LINKPOINT x="1575" y="5993">
+   </LINKPOINT>
+   <LINKPOINT x="7485" y="5993">
    </LINKPOINT>
    </LINK>
    </PATCH>

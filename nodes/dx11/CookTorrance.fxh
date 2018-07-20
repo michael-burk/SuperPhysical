@@ -50,7 +50,8 @@ float3 cookTorrance(float3 V, float3 L, float3 N, float3 albedo, float3 lDiff,
                     float shadow, float3 projectionColor,
                     float lightDist, float sss, float sssFalloff, float3 F0,
                     float attenuation, float roughness, float metallic, float ao,float3 iridescenceColor, uint texID){
-    roughness = clamp(roughness,0.0500,1);
+//    roughness = clamp(roughness,0.0500,1);
+	  roughness = roughness * .75 + .05;
     float3 H = normalize(V + L);
     float3 radiance   = lDiff * attenuation * shadow * projectionColor;      
     // cook-torrance brdf

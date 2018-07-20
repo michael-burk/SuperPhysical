@@ -86,7 +86,7 @@
    <LINKPOINT x="9090" y="2175">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.3.1">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="86">
    <BOUNDS type="Node" left="9075" top="2670" width="100" height="100">
@@ -133,7 +133,7 @@
    <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182">
    <BOUNDS type="Node" left="3030" top="3945" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="1455" top="2445" width="14460" height="10410">
+   <BOUNDS type="Window" left="1035" top="4695" width="14460" height="10410">
    </BOUNDS>
    <BOUNDS type="Box" left="3030" top="3945">
    </BOUNDS>
@@ -265,7 +265,7 @@
    </BOUNDS>
    <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
    </BOUNDS>
-   <PIN pinname="IBLSettings" visible="1">
+   <PIN pinname="IBLSettings" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="SpotLightSettings" visible="1" slicecount="1" values="||">
    </PIN>
@@ -281,12 +281,6 @@
    <LINK srcnodeid="227" srcpinname="Info" dstnodeid="200" dstpinname="Input String">
    </LINK>
    <LINK srcnodeid="227" srcpinname="LightSetup" dstnodeid="188" dstpinname="Input Node">
-   </LINK>
-   <LINK srcnodeid="226" srcpinname="Output" dstnodeid="227" dstpinname="IBLSettings" linkstyle="Bezier">
-   <LINKPOINT x="5835" y="4275">
-   </LINKPOINT>
-   <LINKPOINT x="4860" y="4275">
-   </LINKPOINT>
    </LINK>
    <NODE systemname="Spot Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" componentmode="Hidden" id="185" debug="0" stayontop="0">
    <BOUNDS type="Node" left="2070" top="4455" width="1035" height="270">
@@ -335,5 +329,7 @@
    <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="227" dstpinname="SpotLightSettings">
    </LINK>
    <LINK srcnodeid="220" srcpinname="Output" dstnodeid="227" dstpinname="GlobalSettings">
+   </LINK>
+   <LINK srcnodeid="226" srcpinname="Output" dstnodeid="227" dstpinname="IBLSettings">
    </LINK>
    </PATCH>
