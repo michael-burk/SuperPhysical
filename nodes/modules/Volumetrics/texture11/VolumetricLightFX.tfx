@@ -80,18 +80,21 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 
 	float3 lightDir = 0;
 	float3 spotTex = 1;
+	uint shadowCounter = 0;
+	uint lightCounter = 0;
 	
 	for (uint i = 0; i < NB_STEPS; i++)
 	{	
 		if( length(currentPos - endRayPos) <= stepLength) break;		
-		
+		shadowCounter = 0;
+		lightCounter = 0;
 		for (uint j = 0; j < lightCount; j++)
 		{
 			
 			bool shadowed = true;
 			
 			float4x4 LVP = 0; 
-
+			
 			switch(LightType[j]){
 				case 0:
 				
@@ -109,7 +112,8 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 						shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
 						
 						if(shadowMapValue >= worldInShadowCameraSpace.z) shadowed = false;
-						
+						lightCounter++;
+				
 						break;
 				case 1:
 				
@@ -128,23 +132,28 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 						shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
 						
 						if(shadowMapValue >= worldInShadowCameraSpace.z && shadowMapValue != 0) shadowed = false;
+
+						lightCounter++;		
 				
 						break;
 				case 2:
 						spotTex = 1;
+				
 						for (uint k = 0; k < 6; k++){
-						
-							LVP = (lightVP[j+k]); 
+							
+							
+							LVP = (lightVP[k+shadowCounter*6+lightCounter]); 
 				
 							lightDir = float3(LVP._13, LVP._23, LVP._33);
 							
 							worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
 							worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
 							
-							shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j+k), 0).r;
+							shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, k+shadowCounter*6+lightCounter), 0).r;
 							if(shadowMapValue >= worldInShadowCameraSpace.z && shadowMapValue != 0) shadowed = false;
+							
 						}
-			
+						shadowCounter++;
 						break;
 			}
 
@@ -156,6 +165,7 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 			}
 			
 		}
+
 			currentPos += steppy /* NB_STEPS */;		
 	}
 	
