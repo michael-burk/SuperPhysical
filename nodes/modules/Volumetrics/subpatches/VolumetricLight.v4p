@@ -96,40 +96,8 @@
    <PIN pinname="ID" pintype="Output" visible="-1">
    </PIN>
    </NODE>
-   <NODE id="12" systemname="BilateralBlur (DX11.TextureFX)" filename="..\texture11\BilateralBlur.tfx" nodename="BilateralBlur (DX11.TextureFX)" componentmode="Hidden">
-   <PIN pinname="Texture In" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Factor" slicecount="1" values="1">
-   </PIN>
-   <BOUNDS type="Node" left="4245" top="12075" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="linearDepth" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <PIN pinname="ZVP" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="worldPosMap" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="lPosXYZ" visible="1" slicecount="3" values="-4.79412698745728,7.50820207595825,-5.16994142532349">
-   </PIN>
-   <PIN pinname="control" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Default SizeXY" visible="1" pintype="Input" slicecount="2" values="920,920">
-   </PIN>
-   <PIN pinname="Use Default Size" slicecount="1" visible="1" pintype="Input" values="1">
-   </PIN>
-   <PIN pinname="blurSampler" visible="1" slicecount="1" values="||">
-   </PIN>
-   <BOUNDS type="Box" left="4245" top="12075">
-   </BOUNDS>
-   <PIN pinname="Query" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="21">
-   <BOUNDS type="Node" left="4770" top="10800" width="100" height="100">
+   <BOUNDS type="Node" left="4905" top="11700" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 2" slicecount="2" visible="1" values="1024,1024">
    </PIN>
@@ -139,7 +107,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Bilateral_Upsampling (DX11.TextureFX)" filename="..\texture11\Bilateral_Upsampling.tfx" nodename="Bilateral_Upsampling (DX11.TextureFX)" componentmode="Hidden" id="22">
-   <BOUNDS type="Node" left="4245" top="11205" width="100" height="100">
+   <BOUNDS type="Node" left="4335" top="12195" width="100" height="100">
    </BOUNDS>
    <PIN pinname="t_depth" visible="1" slicecount="1" values="||">
    </PIN>
@@ -171,7 +139,7 @@
    </PIN>
    <PIN pinname="Use Default Size" slicecount="1" visible="1" values="1">
    </PIN>
-   <BOUNDS type="Box" left="4245" top="11205">
+   <BOUNDS type="Box" left="4335" top="12195">
    </BOUNDS>
    <PIN pinname="Query" visible="1">
    </PIN>
@@ -251,9 +219,9 @@
    <NODE id="36" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
    </PIN>
-   <BOUNDS type="Box" left="4245" top="12765" width="750" height="240">
+   <BOUNDS type="Box" left="4335" top="12690" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4245" top="12765" width="750" height="240">
+   <BOUNDS type="Node" left="4335" top="12690" width="750" height="240">
    </BOUNDS>
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
@@ -263,9 +231,9 @@
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
    <LINK srcnodeid="33" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Default SizeXY" linkstyle="Bezier">
-   <LINKPOINT x="2610" y="6203">
+   <LINKPOINT x="2590" y="6705">
    </LINKPOINT>
-   <LINKPOINT x="4620" y="6203">
+   <LINKPOINT x="4730" y="6705">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="38" systemname="IOBox (Value Advanced)">
@@ -298,16 +266,10 @@
    <PIN pinname="SizeXY" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="22" srcpinname="Texture Out" dstnodeid="12" dstpinname="Texture In" linkstyle="Bezier">
-   <LINKPOINT x="4275" y="11775">
-   </LINKPOINT>
-   <LINKPOINT x="4275" y="11775">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="Hidden" id="53" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="5925" top="8985" width="100" height="100">
+   <BOUNDS type="Node" left="5115" top="8415" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="5925" top="8985" width="3000" height="3000">
+   <BOUNDS type="Box" left="5115" top="8415" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -325,7 +287,7 @@
    </PIN>
    </NODE>
    <NODE systemname="FullscreenQuad (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\modules\FullscreenQuad (DX11.Layer).v4p" nodename="FullscreenQuad (DX11.Layer)" componentmode="Hidden" id="56" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="6030" top="8505" width="100" height="100">
+   <BOUNDS type="Node" left="5220" top="7935" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -333,27 +295,27 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="30" srcpinname="Output Node" dstnodeid="56" dstpinname="Texture" linkstyle="Bezier">
-   <LINKPOINT x="9855" y="4860">
+   <LINKPOINT x="9585" y="4670">
    </LINKPOINT>
-   <LINKPOINT x="6480" y="4860">
+   <LINKPOINT x="5940" y="4480">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="56" srcpinname="Layer" dstnodeid="53" dstpinname="Layer" linkstyle="Bezier">
-   <LINKPOINT x="6060" y="8873">
+   <LINKPOINT x="5250" y="8303">
    </LINKPOINT>
-   <LINKPOINT x="6090" y="8873">
+   <LINKPOINT x="5280" y="8303">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="53" dstpinname="Texture SizeXY" linkstyle="Bezier">
-   <LINKPOINT x="3630" y="5100">
+   <LINKPOINT x="3360" y="4910">
    </LINKPOINT>
-   <LINKPOINT x="7335" y="5100">
+   <LINKPOINT x="6795" y="4720">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="59">
-   <BOUNDS type="Box" left="4380" top="10410" width="285" height="240">
+   <BOUNDS type="Box" left="4455" top="11310" width="285" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4380" top="10410" width="0" height="0">
+   <BOUNDS type="Node" left="4455" top="11310" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -371,23 +333,17 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Use Default Size" linkstyle="Bezier">
-   <LINKPOINT x="4410" y="10920">
+   <LINKPOINT x="4490" y="11850">
    </LINKPOINT>
-   <LINKPOINT x="4425" y="10920">
+   <LINKPOINT x="4510" y="11880">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="21" srcpinname="Output" dstnodeid="22" dstpinname="c_texelsizeXY" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="33" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Default SizeXY" linkstyle="Bezier">
-   <LINKPOINT x="2610" y="6645">
-   </LINKPOINT>
-   <LINKPOINT x="4590" y="6645">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="30" srcpinname="Output Node" dstnodeid="22" dstpinname="t_depth_hires" linkstyle="Bezier">
-   <LINKPOINT x="9855" y="6203">
+   <LINKPOINT x="9835" y="6698">
    </LINKPOINT>
-   <LINKPOINT x="5340" y="6203">
+   <LINKPOINT x="5450" y="6698">
    </LINKPOINT>
    </LINK>
    <NODE systemname="TransformTexture (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Filter\TransformTexture.tfx" nodename="TransformTexture (DX11.TextureFX)" componentmode="Hidden" id="68">
@@ -483,9 +439,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="21" dstpinname="Input 2" linkstyle="Bezier">
-   <LINKPOINT x="3640" y="5993">
+   <LINKPOINT x="3615" y="6443">
    </LINKPOINT>
-   <LINKPOINT x="4955" y="5993">
+   <LINKPOINT x="5115" y="6443">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="84">
@@ -543,9 +499,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="53" srcpinname="Buffers" dstnodeid="22" dstpinname="t_depth" linkstyle="Bezier">
-   <LINKPOINT x="7160" y="10343">
+   <LINKPOINT x="6430" y="10425">
    </LINKPOINT>
-   <LINKPOINT x="5170" y="10088">
+   <LINKPOINT x="5270" y="10425">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="32" srcpinname="Output Node" dstnodeid="83" dstpinname="Source" linkstyle="Bezier">
@@ -642,18 +598,6 @@
    <LINKPOINT x="3580" y="1975">
    </LINKPOINT>
    <LINKPOINT x="16280" y="1835">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="30" srcpinname="Output Node" dstnodeid="12" dstpinname="linearDepth" linkstyle="Bezier">
-   <LINKPOINT x="9855" y="6638">
-   </LINKPOINT>
-   <LINKPOINT x="5085" y="6638">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="12" srcpinname="Texture Out" dstnodeid="36" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="4275" y="12555">
-   </LINKPOINT>
-   <LINKPOINT x="4275" y="12555">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="131">
@@ -796,22 +740,10 @@
    <LINKPOINT x="17880" y="5078">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="137" srcpinname="Output" dstnodeid="22" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="17850" y="8355">
-   </LINKPOINT>
-   <LINKPOINT x="5895" y="8355">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="137" srcpinname="Output" dstnodeid="53" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="17850" y="7245">
+   <LINKPOINT x="17580" y="7055">
    </LINKPOINT>
-   <LINKPOINT x="7695" y="7245">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="136" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="19305" y="7755">
-   </LINKPOINT>
-   <LINKPOINT x="5445" y="7755">
+   <LINKPOINT x="7155" y="6865">
    </LINKPOINT>
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Color)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Color)" componentmode="Hidden" id="139">
@@ -899,6 +831,10 @@
    </PIN>
    <PIN pinname="Iteration Count" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Query" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="144" dstpinname="fade" linkstyle="Bezier">
    <LINKPOINT x="7645" y="5963">
@@ -948,18 +884,6 @@
    <LINKPOINT x="6535" y="5520">
    </LINKPOINT>
    <LINKPOINT x="6200" y="5520">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="144" srcpinname="Texture Out" dstnodeid="22" dstpinname="t_tex" linkstyle="Bezier">
-   <LINKPOINT x="4250" y="8865">
-   </LINKPOINT>
-   <LINKPOINT x="5515" y="8865">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="144" srcpinname="Texture Out" dstnodeid="22" dstpinname="Texture In" linkstyle="Bezier">
-   <LINKPOINT x="4250" y="8865">
-   </LINKPOINT>
-   <LINKPOINT x="4285" y="8865">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="110" srcpinname="Transform Out" dstnodeid="144" dstpinname="tVI" linkstyle="Bezier">
@@ -1014,7 +938,7 @@
    <LINKPOINT x="9945" y="3705">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
@@ -1022,4 +946,40 @@
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
+   <LINK srcnodeid="137" srcpinname="Output" dstnodeid="22" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="17830" y="8850">
+   </LINKPOINT>
+   <LINKPOINT x="6005" y="8850">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Texture Out" dstnodeid="36" dstpinname="Input Node">
+   </LINK>
+   <NODE id="152" systemname="BilateralBlur (DX11.TextureFX)" filename="..\texture11\BilateralBlur.tfx" nodename="BilateralBlur (DX11.TextureFX)" componentmode="Hidden">
+   <BOUNDS type="Node" left="4335" top="9855" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4335" top="9855">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="144" srcpinname="Texture Out" dstnodeid="152" dstpinname="Texture In" linkstyle="Bezier">
+   <LINKPOINT x="4255" y="8190">
+   </LINKPOINT>
+   <LINKPOINT x="4370" y="8190">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="152" srcpinname="Texture Out" dstnodeid="22" dstpinname="t_tex">
+   </LINK>
+   <LINK srcnodeid="152" srcpinname="Texture Out" dstnodeid="22" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="136" srcpinname="Y Output Value" dstnodeid="152" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="19285" y="6645">
+   </LINKPOINT>
+   <LINKPOINT x="5555" y="6645">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="30" srcpinname="Output Node" dstnodeid="152" dstpinname="linearDepth" linkstyle="Bezier">
+   <LINKPOINT x="9835" y="5535">
+   </LINKPOINT>
+   <LINKPOINT x="5210" y="5535">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

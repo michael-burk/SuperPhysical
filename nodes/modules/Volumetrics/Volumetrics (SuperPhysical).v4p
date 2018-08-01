@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics.v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="0" bgcolor="15132390">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="0" bgcolor="15132390">
    <BOUNDS type="Window" left="3675" top="1740" width="15975" height="13365">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -161,9 +161,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="436">
-   <BOUNDS type="Box" left="9015" top="6285" width="810" height="240">
+   <BOUNDS type="Box" left="9555" top="6210" width="810" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="9015" top="6285" width="0" height="0">
+   <BOUNDS type="Node" left="9555" top="6210" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="6">
    </PIN>
@@ -435,9 +435,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="436" srcpinname="Y Output Value" dstnodeid="288" dstpinname="lightCount" linkstyle="Bezier">
-   <LINKPOINT x="9015" y="7208">
+   <LINKPOINT x="9375" y="7158">
    </LINKPOINT>
-   <LINKPOINT x="6285" y="7208">
+   <LINKPOINT x="6465" y="7183">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="449" srcpinname="Output" dstnodeid="288" dstpinname="farPlane" linkstyle="Bezier">
@@ -573,9 +573,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="475" srcpinname="Count" dstnodeid="436" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="9750" y="5895">
+   <LINKPOINT x="9930" y="5870">
    </LINKPOINT>
-   <LINKPOINT x="9075" y="5895">
+   <LINKPOINT x="9435" y="5845">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="564" srcpinname="Color" dstnodeid="518" dstpinname="Input" linkstyle="Bezier">
@@ -606,13 +606,17 @@
    <PIN pinname="View" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="567" srcpinname="Output Node" dstnodeid="566" dstpinname="Camera State">
+   <LINK srcnodeid="567" srcpinname="Output Node" dstnodeid="566" dstpinname="Camera State" linkstyle="Bezier">
+   <LINKPOINT x="14175" y="2400">
+   </LINKPOINT>
+   <LINKPOINT x="3600" y="2400">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="566" srcpinname="View" dstnodeid="288" dstpinname="View">
    </LINK>
    <LINK srcnodeid="566" srcpinname="Projection" dstnodeid="288" dstpinname="Projection">
    </LINK>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
