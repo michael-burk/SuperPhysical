@@ -19,6 +19,7 @@ StructuredBuffer <float3> lPos;
 StructuredBuffer <uint> LightType;
 
 float fade;
+float offsetZ = 0;
 
 static const float G_SCATTERING = -.2;
 static const float PI = 3.14159265f;
@@ -68,6 +69,7 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 	float3 steppy = rayDir * stepLength;
 
 	startPos += steppy * noiseTex.Sample(s0,x).r;
+	startPos +=  rayDir * offsetZ;
 	
 	float3 currentPos = startPos;
 	
@@ -216,7 +218,7 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 	accumFog ;
 
 	
-	return float4(accumFog,1);
+	return float4(accumFog,currentPos.z);
 
 }
 

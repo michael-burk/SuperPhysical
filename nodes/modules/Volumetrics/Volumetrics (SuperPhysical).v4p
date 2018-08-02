@@ -15,9 +15,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="301" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5745" top="5250" width="795" height="240">
+   <BOUNDS type="Box" left="4695" top="5250" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5745" top="5250" width="0" height="0">
+   <BOUNDS type="Node" left="4695" top="5250" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -29,11 +29,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="302" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="6720" top="5250" width="795" height="240">
+   <BOUNDS type="Box" left="5670" top="5250" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="6720" top="5250" width="0" height="0">
+   <BOUNDS type="Node" left="5670" top="5250" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="32">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="6">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -45,9 +45,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="305" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7620" top="5250" width="525" height="240">
+   <BOUNDS type="Box" left="6570" top="5250" width="525" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="7620" top="5250" width="0" height="0">
+   <BOUNDS type="Node" left="6570" top="5250" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -91,11 +91,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="384" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8595" top="5250" width="795" height="240">
+   <BOUNDS type="Box" left="7545" top="5250" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8595" top="5250" width="0" height="0">
+   <BOUNDS type="Node" left="7545" top="5250" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.15">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -413,7 +413,7 @@
    </PIN>
    </NODE>
    <NODE systemname="CameraState (EditingFramework Split 3d)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\vl\VVVV.Cameras.vl" nodename="CameraState (EditingFramework Split 3d)" componentmode="Hidden" id="566">
-   <BOUNDS type="Node" left="3540" top="3930" width="100" height="100">
+   <BOUNDS type="Node" left="3540" top="4020" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
    </PIN>
@@ -423,11 +423,15 @@
    </PIN>
    <PIN pinname="View" visible="1">
    </PIN>
+   <PIN pinname="PositionXYZ" visible="1">
+   </PIN>
+   <PIN pinname="InterestXYZ" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="567" srcpinname="Output Node" dstnodeid="566" dstpinname="Camera State" linkstyle="Bezier">
-   <LINKPOINT x="14175" y="2400">
+   <LINKPOINT x="14175" y="2430">
    </LINKPOINT>
-   <LINKPOINT x="3600" y="2400">
+   <LINKPOINT x="3600" y="2460">
    </LINKPOINT>
    </LINK>
    <PACK Name="dx11" Version="1.0.5">
@@ -507,6 +511,12 @@
    </PIN>
    <PIN pinname="shadowMaps" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="PositionXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Inverse View" visible="1">
+   </PIN>
+   <PIN pinname="offsetZ" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="242" srcpinname="Output" dstnodeid="288" dstpinname="LowRes" linkstyle="Bezier">
    <LINKPOINT x="1725" y="7718">
@@ -515,27 +525,27 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="301" srcpinname="Y Output Value" dstnodeid="288" dstpinname="FadeZ" linkstyle="Bezier">
-   <LINKPOINT x="5730" y="6698">
+   <LINKPOINT x="5030" y="6698">
    </LINKPOINT>
-   <LINKPOINT x="3540" y="6698">
+   <LINKPOINT x="3190" y="6698">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="302" srcpinname="Y Output Value" dstnodeid="288" dstpinname="NB_STEPS" linkstyle="Bezier">
-   <LINKPOINT x="6705" y="6690">
+   <LINKPOINT x="6005" y="6690">
    </LINKPOINT>
-   <LINKPOINT x="4455" y="6690">
+   <LINKPOINT x="4105" y="6690">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="305" srcpinname="Y Output Value" dstnodeid="288" dstpinname="brightness" linkstyle="Bezier">
-   <LINKPOINT x="7620" y="6690">
+   <LINKPOINT x="6920" y="6690">
    </LINKPOINT>
-   <LINKPOINT x="4905" y="6690">
+   <LINKPOINT x="4555" y="6690">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="384" srcpinname="Y Output Value" dstnodeid="288" dstpinname="stepLength" linkstyle="Bezier">
-   <LINKPOINT x="8595" y="6690">
+   <LINKPOINT x="7895" y="6690">
    </LINKPOINT>
-   <LINKPOINT x="5820" y="6690">
+   <LINKPOINT x="5470" y="6690">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="288" srcpinname="Texture Out" dstnodeid="421" dstpinname="Input Node" linkstyle="Bezier">
@@ -607,9 +617,9 @@
    <LINK srcnodeid="420" srcpinname="Output Node" dstnodeid="288" dstpinname="shadowMap">
    </LINK>
    <LINK srcnodeid="420" srcpinname="Output Node" dstnodeid="288" dstpinname="shadowMaps" linkstyle="Bezier">
-   <LINKPOINT x="12825" y="4358">
+   <LINKPOINT x="12810" y="4358">
    </LINKPOINT>
-   <LINKPOINT x="8115" y="4358">
+   <LINKPOINT x="7770" y="4358">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="565" srcpinname="Texture Array Out" dstnodeid="288" dstpinname="LightMap" linkstyle="Bezier">
@@ -621,5 +631,29 @@
    <LINK srcnodeid="566" srcpinname="View" dstnodeid="288" dstpinname="View">
    </LINK>
    <LINK srcnodeid="566" srcpinname="Projection" dstnodeid="288" dstpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="566" srcpinname="PositionXYZ" dstnodeid="288" dstpinname="CamPositionXYZ">
+   </LINK>
+   <LINK srcnodeid="566" srcpinname="Inverse View" dstnodeid="288" dstpinname="Inverse View">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="571">
+   <BOUNDS type="Box" left="8550" top="5205" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8550" top="5205" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="offsetZ">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="571" srcpinname="Y Output Value" dstnodeid="288" dstpinname="offsetZ" linkstyle="Bezier">
+   <LINKPOINT x="8580" y="6683">
+   </LINKPOINT>
+   <LINKPOINT x="8595" y="6683">
+   </LINKPOINT>
    </LINK>
    </PATCH>
