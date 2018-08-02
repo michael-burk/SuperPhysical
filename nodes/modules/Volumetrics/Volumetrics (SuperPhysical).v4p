@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="0" bgcolor="15132390">
-   <BOUNDS type="Window" left="3675" top="1740" width="15975" height="13365">
+   <BOUNDS type="Window" left="3420" top="2805" width="15975" height="10545">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -314,12 +314,134 @@
    </NODE>
    <LINK srcnodeid="517" srcpinname="Output" dstnodeid="475" dstpinname="Input" linkstyle="PolyLine">
    </LINK>
+   <NODE id="536" nodename="IOBox (Node)" componentmode="InABox" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="11625" top="555" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11625" top="555" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Input">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="517" srcpinname="Output" dstnodeid="507" dstpinname="Y Input Value" linkstyle="Bezier">
+   <LINKPOINT x="9880" y="4765">
+   </LINKPOINT>
+   <LINKPOINT x="10820" y="4745">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="GetVolumetricsData (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetVolumetricsData (SuperPhysical)" componentmode="Hidden" id="564">
+   <BOUNDS type="Node" left="6000" top="1440" width="4695" height="270">
+   </BOUNDS>
+   <PIN pinname="SpotLightTex" visible="1">
+   </PIN>
+   <PIN pinname="LightType" visible="1">
+   </PIN>
+   <PIN pinname="LightCount" visible="1">
+   </PIN>
+   <PIN pinname="PositionXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Range" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="564" srcpinname="Range" dstnodeid="449" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="6630" y="2130">
+   </LINKPOINT>
+   <LINKPOINT x="6390" y="2130">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="564" srcpinname="PositionXYZ" dstnodeid="480" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="7245" y="2880">
+   </LINKPOINT>
+   <LINKPOINT x="7125" y="2880">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="564" srcpinname="LightType" dstnodeid="517" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="9765" y="2838">
+   </LINKPOINT>
+   <LINKPOINT x="9840" y="2848">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="564" srcpinname="VP" dstnodeid="448" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="6015" y="2880">
+   </LINKPOINT>
+   <LINKPOINT x="6015" y="2880">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="536" srcpinname="Output Node" dstnodeid="564" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="11625" y="1103">
+   </LINKPOINT>
+   <LINKPOINT x="6060" y="1103">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="SpotLightTextures" filename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" nodename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" componentmode="Hidden" id="565">
+   <BOUNDS type="Node" left="8160" top="2205" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5460" top="180" width="5400" height="6670">
+   </BOUNDS>
+   <BOUNDS type="Window" left="16980" top="5775" width="5400" height="7125">
+   </BOUNDS>
+   <PIN pinname="Pointer" visible="1">
+   </PIN>
+   <PIN pinname="Texture Array Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="564" srcpinname="SpotLightTex" dstnodeid="565" dstpinname="Pointer" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="475" srcpinname="Count" dstnodeid="436" dstpinname="Y Input Value" linkstyle="Bezier">
+   <LINKPOINT x="9930" y="5870">
+   </LINKPOINT>
+   <LINKPOINT x="9435" y="5845">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="564" srcpinname="Color" dstnodeid="518" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="8965" y="2350">
+   </LINKPOINT>
+   <LINKPOINT x="9380" y="2630">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="567">
+   <BOUNDS type="Box" left="14175" top="660" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14175" top="660" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Camera State|">
+   </PIN>
+   </NODE>
+   <NODE systemname="CameraState (EditingFramework Split 3d)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\vl\VVVV.Cameras.vl" nodename="CameraState (EditingFramework Split 3d)" componentmode="Hidden" id="566">
+   <BOUNDS type="Node" left="3540" top="3930" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Inverse View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="567" srcpinname="Output Node" dstnodeid="566" dstpinname="Camera State" linkstyle="Bezier">
+   <LINKPOINT x="14175" y="2400">
+   </LINKPOINT>
+   <LINKPOINT x="3600" y="2400">
+   </LINKPOINT>
+   </LINK>
+   <PACK Name="dx11" Version="1.0.5">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
+   </PACK>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
    <NODE systemname="VolumetricLight" filename="subpatches\VolumetricLight.v4p" nodename="subpatches\VolumetricLight.v4p" componentmode="Hidden" id="288" stayontop="0">
    <BOUNDS type="Node" left="1185" top="7920" width="8760" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1185" top="7920" width="13305" height="11770">
    </BOUNDS>
-   <BOUNDS type="Window" left="810" top="1710" width="20550" height="13155">
+   <BOUNDS type="Window" left="4695" top="6525" width="20550" height="14550">
    </BOUNDS>
    <PIN pinname="fadeZ" slicecount="1" values="1.78">
    </PIN>
@@ -476,16 +598,6 @@
    <LINKPOINT x="8815" y="5590">
    </LINKPOINT>
    </LINK>
-   <NODE id="536" nodename="IOBox (Node)" componentmode="InABox" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="11625" top="555" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="11625" top="555" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Input">
-   </PIN>
-   </NODE>
    <LINK srcnodeid="448" srcpinname="Output" dstnodeid="288" dstpinname="LightVP" linkstyle="Bezier">
    <LINKPOINT x="6000" y="6120">
    </LINKPOINT>
@@ -500,126 +612,14 @@
    <LINKPOINT x="8115" y="4358">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="517" srcpinname="Output" dstnodeid="507" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="9880" y="4765">
-   </LINKPOINT>
-   <LINKPOINT x="10820" y="4745">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="GetVolumetricsData (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetVolumetricsData (SuperPhysical)" componentmode="Hidden" id="564">
-   <BOUNDS type="Node" left="6000" top="1440" width="4695" height="270">
-   </BOUNDS>
-   <PIN pinname="SpotLightTex" visible="1">
-   </PIN>
-   <PIN pinname="LightType" visible="1">
-   </PIN>
-   <PIN pinname="LightCount" visible="1">
-   </PIN>
-   <PIN pinname="PositionXYZ" visible="1">
-   </PIN>
-   <PIN pinname="Range" visible="1">
-   </PIN>
-   <PIN pinname="Color" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="564" srcpinname="Range" dstnodeid="449" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="6630" y="2130">
-   </LINKPOINT>
-   <LINKPOINT x="6390" y="2130">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="564" srcpinname="PositionXYZ" dstnodeid="480" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="7245" y="2880">
-   </LINKPOINT>
-   <LINKPOINT x="7125" y="2880">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="564" srcpinname="LightType" dstnodeid="517" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="9765" y="2838">
-   </LINKPOINT>
-   <LINKPOINT x="9840" y="2848">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="564" srcpinname="VP" dstnodeid="448" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="6015" y="2880">
-   </LINKPOINT>
-   <LINKPOINT x="6015" y="2880">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="536" srcpinname="Output Node" dstnodeid="564" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="11625" y="1103">
-   </LINKPOINT>
-   <LINKPOINT x="6060" y="1103">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="SpotLightTextures" filename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" nodename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" componentmode="Hidden" id="565">
-   <BOUNDS type="Node" left="8160" top="2205" width="0" height="0">
-   </BOUNDS>
-   <BOUNDS type="Box" left="5460" top="180" width="5400" height="6670">
-   </BOUNDS>
-   <BOUNDS type="Window" left="16980" top="5775" width="5400" height="7125">
-   </BOUNDS>
-   <PIN pinname="Pointer" visible="1">
-   </PIN>
-   <PIN pinname="Texture Array Out" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="564" srcpinname="SpotLightTex" dstnodeid="565" dstpinname="Pointer" linkstyle="PolyLine">
-   </LINK>
    <LINK srcnodeid="565" srcpinname="Texture Array Out" dstnodeid="288" dstpinname="LightMap" linkstyle="Bezier">
    <LINKPOINT x="8345" y="5220">
    </LINKPOINT>
    <LINKPOINT x="7000" y="5160">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="475" srcpinname="Count" dstnodeid="436" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="9930" y="5870">
-   </LINKPOINT>
-   <LINKPOINT x="9435" y="5845">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="564" srcpinname="Color" dstnodeid="518" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="8965" y="2350">
-   </LINKPOINT>
-   <LINKPOINT x="9380" y="2630">
-   </LINKPOINT>
-   </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="567">
-   <BOUNDS type="Box" left="14175" top="660" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="14175" top="660" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Camera State|">
-   </PIN>
-   </NODE>
-   <NODE systemname="CameraState (EditingFramework Split 3d)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\vl\VVVV.Cameras.vl" nodename="CameraState (EditingFramework Split 3d)" componentmode="Hidden" id="566">
-   <BOUNDS type="Node" left="3540" top="3930" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Inverse View" visible="1">
-   </PIN>
-   <PIN pinname="Projection" visible="1">
-   </PIN>
-   <PIN pinname="View" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="567" srcpinname="Output Node" dstnodeid="566" dstpinname="Camera State" linkstyle="Bezier">
-   <LINKPOINT x="14175" y="2400">
-   </LINKPOINT>
-   <LINKPOINT x="3600" y="2400">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="566" srcpinname="View" dstnodeid="288" dstpinname="View">
    </LINK>
    <LINK srcnodeid="566" srcpinname="Projection" dstnodeid="288" dstpinname="Projection">
    </LINK>
-   <PACK Name="dx11" Version="1.0.5">
-   </PACK>
-   <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
-   </PACK>
-   <PACK Name="VVVV.Packs" Version="0.2.0">
-   </PACK>
    </PATCH>

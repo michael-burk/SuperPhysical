@@ -226,7 +226,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="810" top="1710" width="20550" height="13155">
+   <BOUNDS type="Window" left="4695" top="6525" width="20550" height="14550">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>

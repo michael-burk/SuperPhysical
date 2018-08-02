@@ -56,7 +56,7 @@ float3 UVtoEYE(float2 UV){
 	}
 
 
-
+//float fac;
 float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 	
 	float3 endRayPos =  UVZtoWORLD(x,depthMap.Sample(s0,x).r).xyz;
@@ -82,6 +82,7 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 	float3 spotTex = 1;
 	uint shadowCounter = 0;
 	uint lightCounter = 0;
+	float4 frustrum;
 	
 	for (uint i = 0; i < NB_STEPS; i++)
 	{	
@@ -91,7 +92,7 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 		for (uint j = 0; j < lightCount; j++)
 		{
 			
-			bool shadowed = true;
+			bool shadowed = false;
 			
 			float4x4 LVP = 0; 
 			
@@ -105,13 +106,27 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 						
 						worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
 						worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
-				
-						spotTex = worldInShadowCameraSpace.z > 0; 
-
-				
-						shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
 						
-						if(shadowMapValue >= worldInShadowCameraSpace.z) shadowed = false;
+						frustrum =  worldInShadowCameraSpace / 2.0f + 0.5f;
+								
+						if((saturate(frustrum.x ) == frustrum.x) && (saturate(frustrum.y) == frustrum.y)
+						&& (saturate(frustrum.z ) == frustrum.z)){	
+							
+						
+							spotTex = worldInShadowCameraSpace.z > 0; 
+	
+					
+							shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
+							
+							if(shadowMapValue.r <= worldInShadowCameraSpace.z) shadowed = true;
+//							else if(shadowMapValue.g > .6){
+//								shadowed = false;
+//							} 
+							
+						}else{
+							shadowed = true;
+						}
+				
 						lightCounter++;
 				
 						break;
@@ -124,24 +139,40 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 						worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
 						worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
 				
-						uint tXS,tYS,mS;
-						lightMap.GetDimensions(tXS,tYS,mS);
-						if(tXS+tYS > 4) spotTex = lightMap.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5,(-worldInShadowCameraSpace.y + 1) * .5, j),0).rgb;
-						else if(tXS+tYS < 4) spotTex = smoothstep(1, 0, saturate(length(worldInShadowCameraSpace.xy)));
+						frustrum =  worldInShadowCameraSpace / 2.0f + 0.5f;
+								
+						if((saturate(frustrum.x ) == frustrum.x) && (saturate(frustrum.y) == frustrum.y)
+						&& (saturate(frustrum.z ) == frustrum.z)){
+							
 						
-						shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
-						
-						if(shadowMapValue >= worldInShadowCameraSpace.z && shadowMapValue != 0) shadowed = false;
-
-						lightCounter++;		
+							uint tXS,tYS,mS;
+							lightMap.GetDimensions(tXS,tYS,mS);
+							if(tXS+tYS > 4) spotTex = lightMap.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5,(-worldInShadowCameraSpace.y + 1) * .5, j),0).rgb;
+							else if(tXS+tYS < 4) spotTex = smoothstep(1, 0, saturate(length(worldInShadowCameraSpace.xy)));
+							
+							shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
+							
+							if(shadowMapValue.r <= worldInShadowCameraSpace.z && shadowMapValue.r != 0) shadowed = true;
+//							else if(shadowMapValue.g > .6){
+//								shadowed = false;
+//							} 
+					
+								
+						} else{
+							shadowed = true;
+						}
+				
+						lightCounter++;	
 				
 						break;
 				case 2:
 						spotTex = 1;
 				
+						float inFrustrumCounter = 0;
+				
 						for (uint k = 0; k < 6; k++){
 							
-							
+							inFrustrumCounter++;
 							LVP = (lightVP[k+shadowCounter*6+lightCounter]); 
 				
 							lightDir = float3(LVP._13, LVP._23, LVP._33);
@@ -149,10 +180,23 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 							worldInShadowCameraSpace = mul(float4(currentPos, 1.0f), LVP);
 							worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
 							
-							shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, k+shadowCounter*6+lightCounter), 0).r;
-							if(shadowMapValue >= worldInShadowCameraSpace.z && shadowMapValue != 0) shadowed = false;
+							frustrum =  worldInShadowCameraSpace / 2.0f + 0.5f;
+								
+							if((saturate(frustrum.x ) == frustrum.x) && (saturate(frustrum.y) == frustrum.y)
+							&& (saturate(frustrum.z ) == frustrum.z)){
+								
 							
+								shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, k+shadowCounter*6+lightCounter), 0).r;
+								
+								if(shadowMapValue.r <= worldInShadowCameraSpace.z && shadowMapValue.r != 0)	shadowed = true;
+//								else if(shadowMapValue.g > .6){
+//									shadowed = false;
+//								} 
+
+								if(shadowed) break;
+							}
 						}
+				
 						shadowCounter++;
 						break;
 			}
