@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical).v4p" systemname="ShadowMaps" filename="C:\Users\Michael\Desktop\PROJECTS\superphong\Modules\ShadowMaps.v4p" scrollx="0" scrolly="0" locked="0">
-   <BOUNDS type="Window" left="27540" top="5565" width="13170" height="17700">
+   <BOUNDS type="Window" left="15735" top="5790" width="13170" height="17700">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -426,7 +426,7 @@
    <LINKPOINT x="3435" y="13553">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <NODE systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden" id="259">
    <BOUNDS type="Node" left="2265" top="4650" width="100" height="100">
@@ -905,7 +905,7 @@
    <LINK srcnodeid="277" srcpinname="Layout Message" dstnodeid="319" dstpinname="Input String">
    </LINK>
    <NODE systemname="Enum2Ord (Enumerations)" nodename="Enum2Ord (Enumerations)" componentmode="Hidden" id="320">
-   <BOUNDS type="Node" left="510" top="8700" width="100" height="100">
+   <BOUNDS type="Node" left="585" top="8430" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Enum" visible="1">
    </PIN>
@@ -913,9 +913,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="209" srcpinname="Output Enum" dstnodeid="320" dstpinname="Enum" linkstyle="Bezier">
-   <LINKPOINT x="10155" y="7425">
+   <LINKPOINT x="10180" y="7335">
    </LINKPOINT>
-   <LINKPOINT x="1290" y="7860">
+   <LINKPOINT x="1340" y="7680">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Ord2Enum (Enumerations)" nodename="Ord2Enum (Enumerations)" componentmode="Hidden" id="322">
@@ -935,23 +935,19 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="320" srcpinname="Ord Value" dstnodeid="323" dstpinname="Switch" linkstyle="Bezier">
-   <LINKPOINT x="1215" y="9563">
-   </LINKPOINT>
-   <LINKPOINT x="0" y="9128">
-   </LINKPOINT>
+   <LINK srcnodeid="320" srcpinname="Ord Value" dstnodeid="323" dstpinname="Switch" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="323" srcpinname="Output" dstnodeid="322" dstpinname="Ord Value">
-   </LINK>
-   <LINK srcnodeid="322" srcpinname="Enum" dstnodeid="280" dstpinname="Input Enum">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="324">
    <BOUNDS type="Box" left="1080" top="9330" width="465" height="300">
    </BOUNDS>
    <BOUNDS type="Node" left="1080" top="9330" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="11">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -973,5 +969,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="325" srcpinname="Output Node" dstnodeid="277" dstpinname="Render State">
+   </LINK>
+   <LINK srcnodeid="322" srcpinname="Enum" dstnodeid="280" dstpinname="Input Enum">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="327">
+   <BOUNDS type="Box" left="840" top="8910" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="840" top="8910" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="11">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="327" srcpinname="Y Output Value" dstnodeid="323" dstpinname="Input 1">
    </LINK>
    </PATCH>
