@@ -255,19 +255,14 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	
 		
 		if(Material[texID].sampleRoughness) roughness *= roughTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
-//		roughnessT = min(max(roughnessT * Material[texID].roughness,.00),1);
 
-//		aoT = 1;
 		if(Material[texID].sampleAO) ao = aoTex.Sample(g_samLinear,  float3(TexCd.xy, texID)).r;
 	
-//		metallicT = 1;
 		if(Material[texID].sampleMetallic) metallic *= metallTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
-//		metallicT *= Material[texID].metallic;
 		
 		float4 texCol = 1;
 		if(Material[texID].sampleAlbedo) albedo *= texture2d.Sample(g_samLinear, float3(TexCd.xy, texID)) * ao;
-	
-//		albedo = texCol * saturate(Material[texID].Color) * ao;	
+
 		
 	} 
 	
@@ -580,7 +575,7 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
 	#endif
 	
-	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (-t) + bumpMap.y * (b))*Material[texID].bumpy);
+	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b)) * Material[texID].bumpy);
 
 	#ifdef doShadowPOM
 		return doLighting(In.PosW, Nb, In.TexCd, float3x3(t, b, Nb));
