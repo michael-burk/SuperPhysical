@@ -378,7 +378,6 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 
 					if(Light[i].useShadow){
 						doShadow(shadow, Light[i].shadowType, lightDist, Light[i%num].lightRange, projectTexCoord, viewPosition, i, shadowCounter, N, L);
-//						shadow = min(dot(N,L) * 1, shadow);
 					}
 			
 				} else {
@@ -467,15 +466,16 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	///////////////////////////////////////////////////////////////////////////
 	// IMAGE BASED LIGHTING
 	///////////////////////////////////////////////////////////////////////////
+	float planarMask = 1;
 	#ifdef doPlanarReflections
-		if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughness, ao, metallic, TexCd, ID );
+		if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughness, ao, metallic, TexCd, ID, planarMask);
 	#endif
 	#ifdef doIBL
-		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughness, metallic, ao, texID );
+		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughness, metallic, ao, texID, planarMask);
 	#elif doIridescence
 		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughness, ao, metallic );
 	#elif doGlobalLight
-		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughness, ao, metallic );
+		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughness, ao, metallic);
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -497,7 +497,6 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	#endif
 	
 	
-//	return float4(finalLight,Alpha*albedo.a);
 	return clamp(float4(finalLight,Alpha*albedo.a),0,3);
 }	
 

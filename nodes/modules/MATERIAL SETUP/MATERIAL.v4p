@@ -29,7 +29,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2145" top="7620" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.6">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1025,6 +1025,8 @@
    </PIN>
    <PIN pinname="Emissive" visible="1">
    </PIN>
+   <PIN pinname="Metallic" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="432" dstpinname="Roughness" linkstyle="Bezier">
    <LINKPOINT x="2175" y="8108">
@@ -1040,8 +1042,6 @@
    </LINK>
    <LINK srcnodeid="236" srcpinname="Output" dstnodeid="432" dstpinname="ParallaxOcclusionMapping">
    </LINK>
-   <LINK srcnodeid="423" srcpinname="Y Output Value" dstnodeid="432" dstpinname="Metallic">
-   </LINK>
    <LINK srcnodeid="432" srcpinname="Output" dstnodeid="284" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="430" srcpinname="Output" dstnodeid="432" dstpinname="ControlTextures" linkstyle="Bezier">
@@ -1053,5 +1053,7 @@
    <LINK srcnodeid="415" srcpinname="Color Output" dstnodeid="432" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="432" dstpinname="Emissive">
+   </LINK>
+   <LINK srcnodeid="423" srcpinname="Y Output Value" dstnodeid="432" dstpinname="Metallic">
    </LINK>
    </PATCH>

@@ -5,7 +5,8 @@ static const half3 wavelength[3] =
 	{ 0, 0, 1},
 };
 
-float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor, float roughness, float metallic, float ao, uint texID){
+float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor, float roughness, float metallic, float ao, uint texID, float planarMask){
+	
 	///////////////////////////////////
 	//  IBL
 	//////////////////////////////////
@@ -51,6 +52,18 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	}
 	#endif
 	
+	float GlobalReflConstant = 1.75;
+	#ifdef doGlobalLight
+		#ifdef doPlanarReflections
+			if(PlanarID == ID){
+				if(dot(planeNormal[0], V) < 0){
+					GlobalReflConstant -= planarIntensity;
+					refl *= planarMask;
+				} 
+			}
+		#endif
+	
+	
 	
 	IBL  = saturate( (IBL * iblIntensity.x + refrColor) * kD + refl * iblIntensity.y) * ao;
 	
@@ -60,15 +73,8 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	}
 	#endif
 	
-	float GlobalReflConstant = 1.75;
-	#ifdef doGlobalLight
-		#ifdef doPlanarReflections
-			if(PlanarID == ID){
-				if(dot(planeNormal[0], V) < 0) GlobalReflConstant -= planarIntensity;
-			}
-		#endif
+	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * GlobalReflConstant * iridescenceColor;
 	
-		IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * GlobalReflConstant * iridescenceColor;
 	#endif
 	
 	//////////////////////////////////

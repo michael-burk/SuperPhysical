@@ -15,7 +15,7 @@ SamplerState g_samLinearPR
 
 
 float3 PLANARREFLECTION(float4 PosW, float3 N, float3 V, float3 F0, float4 albedo,
-float roughness, float ao, float metallic, float4 TexCd, int ID){
+float roughness, float ao, float metallic, float4 TexCd, int ID, inout float planarMask){
 
 	if(dot(planeNormal[0], V) > 0) return 0;
 	
@@ -46,7 +46,8 @@ float roughness, float ao, float metallic, float4 TexCd, int ID){
 	#else
 		float4 PR = PlanarReflections.SampleLevel(g_samLinearPR, projectTexCoord + (bumpMap.xy - .5)  * Material[ID].bumpy , saturate(roughness) * MAX_REFLECTION_LOD * 1);
 	#endif
-
+	
+	planarMask = 1 - PR.a;
 	
 	return PR.rgb *(kS * envBRDF.x + envBRDF.y) * planarIntensity;
 

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" locked="0" systemname="Planar Reflections (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" scrollx="2325" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" locked="0" systemname="Planar Reflections (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2715" top="1035" width="11595" height="12960">
    </BOUNDS>
    <PACK Name="dx11" Version="1.0.5">
@@ -391,7 +391,7 @@
    </PIN>
    <PIN pinname="Depth Buffer Mode" slicecount="1" values="Standard">
    </PIN>
-   <PIN pinname="Depth Buffer Format" slicecount="1" values="D32_Float">
+   <PIN pinname="Depth Buffer Format" slicecount="1" values="D24_UNorm_S8_UInt">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -407,7 +407,7 @@
    </PIN>
    <PIN pinname="AA Samples per Pixel" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Depth Buffer" visible="1">
+   <PIN pinname="Depth Buffer" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="130" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Texture SizeXY">
@@ -417,9 +417,9 @@
    <LINK srcnodeid="127" srcpinname="Projection" dstnodeid="15" dstpinname="Projection">
    </LINK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="139">
-   <BOUNDS type="Node" left="3030" top="7380" width="100" height="100">
+   <BOUNDS type="Node" left="3060" top="7695" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3030" top="7380">
+   <BOUNDS type="Box" left="3060" top="7695">
    </BOUNDS>
    <PIN pinname="Mode" slicecount="1" visible="1" values="FrontCullSimple">
    </PIN>
@@ -427,9 +427,9 @@
    </PIN>
    </NODE>
    <NODE systemname="RenderState (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderState (DX11.Layer)" componentmode="Hidden" id="148">
-   <BOUNDS type="Node" left="3045" top="9105" width="100" height="100">
+   <BOUNDS type="Node" left="3120" top="9150" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3045" top="9105" width="3000" height="3000">
+   <BOUNDS type="Box" left="3120" top="9150" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -673,9 +673,9 @@
    <LINK srcnodeid="154" srcpinname="Layer Out" dstnodeid="148" dstpinname="Layer In">
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 3d)" componentmode="Hidden" id="196">
-   <BOUNDS type="Node" left="2085" top="11370" width="100" height="100">
+   <BOUNDS type="Node" left="2325" top="11160" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2085" top="11370" width="3000" height="3000">
+   <BOUNDS type="Box" left="2325" top="11160" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="DataXYZ" visible="1">
    </PIN>
@@ -718,6 +718,18 @@
    </LINK>
    <LINK srcnodeid="148" srcpinname="Layer Out" dstnodeid="15" dstpinname="Layer">
    </LINK>
-   <LINK srcnodeid="174" srcpinname="GlobalReflectionColor" dstnodeid="15" dstpinname="Background Color">
+   <NODE systemname="SetAlpha (Color)" filename="" nodename="SetAlpha (Color)" componentmode="Hidden" id="207">
+   <BOUNDS type="Node" left="4065" top="9630" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Alpha" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="174" srcpinname="GlobalReflectionColor" dstnodeid="207" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="207" srcpinname="Output" dstnodeid="15" dstpinname="Background Color">
    </LINK>
    </PATCH>
