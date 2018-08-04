@@ -63,7 +63,7 @@ struct MaterialStruct
 	float4	Refraction;
 	
 	float	bumpy;
-	float	noTile;
+	float	TangentDir;
 	float	useTex;
 	float	Iridescence;
 	
@@ -148,7 +148,7 @@ SamplerState g_samLinearIBL
 };
 
 #include "ShadowMapping.fxh"
-#include "NoTile.fxh"
+//#include "NoTile.fxh"
 #include "ParallaxOcclusionMapping.fxh"
 #include "CookTorrance.fxh"
 #ifdef doPlanarReflections
@@ -467,15 +467,15 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	///////////////////////////////////////////////////////////////////////////
 	// IMAGE BASED LIGHTING
 	///////////////////////////////////////////////////////////////////////////
+	#ifdef doPlanarReflections
+		if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughness, ao, metallic, TexCd, ID );
+	#endif
 	#ifdef doIBL
 		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughness, metallic, ao, texID );
 	#elif doIridescence
 		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughness, ao, metallic );
 	#elif doGlobalLight
 		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughness, ao, metallic );
-	#endif
-	#ifdef doPlanarReflections
-		if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughness, ao, metallic, TexCd, ID );
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -527,7 +527,7 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
 	#endif
 	
-	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * -In.tangent + bumpMap.y * In.binormal)*Material[texID].bumpy);
+	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * In.tangent*Material[texID].TangentDir + bumpMap.y * In.binormal)*Material[texID].bumpy);
 	
 	#ifdef doShadowPOM
 		return doLighting(In.PosW, Nb, In.TexCd, float3x3(In.tangent, In.binormal,In.NormW));
@@ -575,7 +575,7 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
 	#endif
 	
-	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t) + bumpMap.y * (b)) * Material[texID].bumpy);
+	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t*Material[texID].TangentDir) + bumpMap.y * (b)) * Material[texID].bumpy);
 
 	#ifdef doShadowPOM
 		return doLighting(In.PosW, Nb, In.TexCd, float3x3(t, b, Nb));

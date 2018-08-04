@@ -7376,7 +7376,7 @@
                 <Pin Id="M8d30EaWKh2LBlLJECXzs5" Name="AOMap" Kind="OutputPin" />
                 <Pin Id="MnJxT3CP3m0MnDqWUQ8rfC" Name="tTex" Kind="OutputPin" />
                 <Pin Id="Li0406tuLQhPNH2xSMBNOL" Name="Bumpiness" Kind="OutputPin" />
-                <Pin Id="OvlZQZuHcoiPaLrfnJA4HU" Name="noTile" Kind="OutputPin" />
+                <Pin Id="OvlZQZuHcoiPaLrfnJA4HU" Name="TangentDir" Kind="OutputPin" />
                 <Pin Id="AHt62OFsxHgNVNqvkZJ3gK" Name="useTex" Kind="OutputPin" />
                 <Pin Id="SI1NCLtKx7VPTDYHGcYTu2" Name="ControlTextures" Kind="OutputPin" />
               </Node>
@@ -7853,7 +7853,7 @@
               <Pad Id="Ld5ELj96qqMLVgUuheez3h" SlotId="Q0QtfoVsprMLgExU2sc1yO" Bounds="1403,355">
                 <p:ValueBoxSettings />
               </Pad>
-              <ControlPoint Id="RqxFnsYYRvpLj17nJhhIuo" Bounds="1401,243" />
+              <ControlPoint Id="RqxFnsYYRvpLj17nJhhIuo" Bounds="1401,235" />
               <ControlPoint Id="SUqUViHrta2NlGOAJqbo23" Bounds="1403,473" />
             </Canvas>
             <Patch Id="V2dNexWdyJBPMWsxgXM3nY" Name="Create" ParticipatingElements="OtfTPNFxw6SMpjc3Vld16m">
@@ -7897,9 +7897,9 @@
                   <Choice Kind="TypeFlag" Name="Float32" />
                 </p:TypeAnnotation>
               </Pin>
-              <Pin Id="Q31qYrEapSxPr6ZKjxrnpA" Name="noTile" Kind="InputPin">
+              <Pin Id="Q31qYrEapSxPr6ZKjxrnpA" Name="TangentDir" Kind="InputPin" DefaultValue="1.0">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
-                  <Choice Kind="TypeFlag" Name="Boolean" />
+                  <Choice Kind="TypeFlag" Name="Float32" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="JslOa1oIIU1ObU5MFCKsUH" Name="tTex" Kind="InputPin">
@@ -7929,7 +7929,7 @@
               <Pin Id="Il8B63MtqyTNW1wMqj7bbv" MergeId="84688" Name="AOMap" Kind="OutputPin" />
               <Pin Id="MJGgdEn4wMvPtcVEFdux24" MergeId="84689" Name="EmissiveTex" Kind="OutputPin" />
               <Pin Id="Da4E4u1YNZ5N2X5At6h3hY" Name="Bumpiness" Kind="OutputPin" />
-              <Pin Id="Qdx5G9smh9RMhSDQZMftIN" Name="noTile" Kind="OutputPin" />
+              <Pin Id="Qdx5G9smh9RMhSDQZMftIN" Name="TangentDir" Kind="OutputPin" />
               <Pin Id="VXuqrGucvjZNVylygTCLcj" Name="tTex" Kind="OutputPin" />
               <Pin Id="BqGbH7HeJsdOvUqFd75bXf" Name="ControlTextures" Kind="OutputPin" />
               <Pin Id="JJ0ycmwPpkiLg1iNX5NMBv" Name="useTex" Kind="OutputPin" />
@@ -7974,7 +7974,7 @@
             <Link Id="VDKlItXznYqOyyjeU0Fi8Q" Ids="TlwGAUZ5Ac3O8Vs4JvcIuv,Da4E4u1YNZ5N2X5At6h3hY" IsHidden="true" />
             <Link Id="RLQnkPwCAPaLRXt1ifKqcE" Ids="Ll7rJ5fj0McMlcNjTv36JF,TlwGAUZ5Ac3O8Vs4JvcIuv" />
             <Link Id="Fk34Uy5GHU2O3zHUklF9Vq" Ids="G8JRjXF0OYoMEwMd02C2Qa,EzXnItKsd0ZMIvTRWTAOtP" IsHidden="true" />
-            <Slot Id="KoW1CJx3kOgNBf9x9DIVyC" Name="noTile" />
+            <Slot Id="KoW1CJx3kOgNBf9x9DIVyC" Name="TangentDir" />
             <Link Id="CdkPz3VOtFZM3NVGuOvjmx" Ids="EY4UyN7jPXJNJWtGT6YlWW,JMKXztuq9AkOp6bKPLj5at" />
             <Link Id="MeobwE2J7ysP1hShTqOg5j" Ids="EIwwGN1q4jVLNlzvRP1aqL,Qdx5G9smh9RMhSDQZMftIN" IsHidden="true" />
             <Link Id="HurFschoDm0PTLUzbFKP79" Ids="JMKXztuq9AkOp6bKPLj5at,EIwwGN1q4jVLNlzvRP1aqL" />
@@ -8026,7 +8026,7 @@
               <Pin Id="RpU8vI6MCNfOd2gCEjF5tH" Name="AOMap" Kind="InputPin" />
               <Pin Id="I9YvTwaeIJQMhyvWeBUWOB" Name="tTex" Kind="InputPin" />
               <Pin Id="GnSY9YWJOoLLRAKWOvnX2s" Name="Bumpiness" Kind="InputPin" />
-              <Pin Id="NmPP0SDlWsHQYeVUWriWNZ" Name="noTile" Kind="InputPin" />
+              <Pin Id="NmPP0SDlWsHQYeVUWriWNZ" Name="TangentDir" Kind="InputPin" />
               <Pin Id="UmD9olSma6DNfXNo7l11EN" Name="Output" Kind="StateOutputPin" />
               <Pin Id="RxP0IzdE6IdN9eTZiA80Ja" Name="useTex" Kind="InputPin" />
             </Node>
@@ -8065,7 +8065,11 @@
             <Link Id="Hq9h44wAiyqQFWPQphecL6" Ids="TOZLpKbNkgzMwzhKTTsY4t,AoZ9DMiDz0bLPwDT4IPF02" IsHidden="true" />
             <ControlPoint Id="C9miHRR6qTrP7i3ZpsbSle" Bounds="284,1668" />
             <Link Id="TrTpXHJgoTfMpXzfzROeNh" Ids="C9miHRR6qTrP7i3ZpsbSle,NmPP0SDlWsHQYeVUWriWNZ" />
-            <Pin Id="O75hH6tc47xLGQ54p0RLXp" Name="noTile" Kind="InputPin" Bounds="160,1633" />
+            <Pin Id="O75hH6tc47xLGQ54p0RLXp" Name="TangentDir" Kind="InputPin" Bounds="160,1633" DefaultValue="1.0">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
             <Link Id="GtdVf5APD36OunoOKCZG4a" Ids="O75hH6tc47xLGQ54p0RLXp,C9miHRR6qTrP7i3ZpsbSle" IsHidden="true" />
             <ControlPoint Id="Td8FZOwEv0YLpwyIHp9cvu" Bounds="188,1682" />
             <Link Id="G0PZtDc68IdLpdQIQUIV0L" Ids="Td8FZOwEv0YLpwyIHp9cvu,I9YvTwaeIJQMhyvWeBUWOB" />
@@ -12252,7 +12256,11 @@
             <Patch Id="C0ZnXZMSHkkMqAT0w1Gj8E" Name="Update">
               <Pin Id="G71hEnIGnsZOuEFWGnTaH7" Name="Metallic" Kind="InputPin" />
               <Pin Id="BvaRIRqFssbQRc6yCJVAA6" Name="Roughness" Kind="InputPin" />
-              <Pin Id="AVfPOATXmVjO6ONrKMuMTo" Name="Color" Kind="InputPin" />
+              <Pin Id="AVfPOATXmVjO6ONrKMuMTo" Name="Color" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Color" LastSymbolSource="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="RGBA" />
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="FfCDNgUkE7ULJj1mkqzZrS" Name="Emissive" Kind="InputPin" />
               <Pin Id="JSNtxcQkGpjQQjeg4t9U6S" Name="Output" Kind="OutputPin" />
               <Pin Id="CnsQPeRAMpePpI5TNfJTh6" Name="ControlTextures" Kind="InputPin" Bounds="-447,1589" />

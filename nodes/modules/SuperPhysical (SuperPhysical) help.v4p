@@ -477,7 +477,7 @@
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
    <BOUNDS type="Node" left="2775" top="3840" width="1410" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="3885" top="1950" width="14010" height="11580">
+   <BOUNDS type="Window" left="2310" top="2235" width="14010" height="11595">
    </BOUNDS>
    <PIN pinname="Material" visible="1" slicecount="1" values="||">
    </PIN>
