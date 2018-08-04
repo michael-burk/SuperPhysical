@@ -27,10 +27,10 @@ float roughness, float ao, float metallic, float4 TexCd, int ID, inout float pla
 	
 		
 	float3 bumpMap = float3(0,0,0);
-
+	#ifndef Deferred
 	#ifdef doControlTextures
-	if(Material[ID].sampleNormal && useTex[ID]) bumpMap = normalTex.Sample(g_samLinear,float3(TexCd.xy, ID)).rgb;
-//	bumpMap = (bumpMap * 2.0f) - 1.0f;
+		if(Material[ID].sampleNormal && useTex[ID]) bumpMap = normalTex.Sample(g_samLinear,float3(TexCd.xy, ID)).rgb;
+	#endif
 	#endif
 	
 

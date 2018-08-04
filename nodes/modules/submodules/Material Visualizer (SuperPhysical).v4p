@@ -1,10 +1,10 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="1845" scrolly="2505">
-   <BOUNDS type="Window" left="4560" top="810" width="22470" height="13590">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" systemname="Material Visualizer (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="9960" top="3420" width="22470" height="13590">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
-   <PACK Name="dx11" Version="1.3.1.1">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
@@ -653,9 +653,9 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1" slicecount="3" values="0,0,0">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE systemname="Cross (2d)" nodename="Cross (2d)" componentmode="Hidden" id="518">
@@ -1540,8 +1540,6 @@
    </LINK>
    <LINK srcnodeid="595" srcpinname="OnChange" dstnodeid="514" dstpinname="Input 2">
    </LINK>
-   <LINK srcnodeid="514" srcpinname="Output" dstnodeid="515" dstpinname="Y Input Value">
-   </LINK>
    <LINK srcnodeid="672" srcpinname="Output" dstnodeid="514" dstpinname="Input 3">
    </LINK>
    <LINK srcnodeid="670" srcpinname="Output" dstnodeid="599" dstpinname="Texture In" linkstyle="VHV">
@@ -1635,7 +1633,7 @@
    </BOUNDS>
    <PIN pinname="ToneMapping" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="DirectionalLightSettings" visible="1">
+   <PIN pinname="DirectionalLightSettings" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="680" srcpinname="LightSetup" dstnodeid="442" dstpinname="Input Node">
@@ -1922,18 +1920,28 @@
    </LINK>
    <LINK srcnodeid="702" srcpinname="Texture Out" dstnodeid="599" dstpinname="Texture In 2">
    </LINK>
-   <NODE systemname="DirectionalLight (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="DirectionalLight (SuperPhysical Light)" componentmode="Hidden" id="703">
-   <BOUNDS type="Node" left="12570" top="4485" width="100" height="100">
+   <NODE systemname="DirectionalLight (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="DirectionalLight (SuperPhysical Light)" componentmode="Hidden" id="704">
+   <BOUNDS type="Node" left="12630" top="4500" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="DirectionalLights" visible="1">
-   </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Color" slicecount="1" values="|0.90547,1.00000,0.95690,1.00000|">
+   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
-   <PIN pinname="Pitch" slicecount="1" values="0.47">
+   <PIN pinname="Yaw" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Pitch" slicecount="1" values="0.33">
+   </PIN>
+   <PIN pinname="Scale" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Helper" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="LightIntensity" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Distance" slicecount="1" values="10">
    </PIN>
    </NODE>
-   <LINK srcnodeid="703" srcpinname="DirectionalLights" dstnodeid="680" dstpinname="DirectionalLightSettings">
+   <LINK srcnodeid="704" srcpinname="DirectionalLights" dstnodeid="680" dstpinname="DirectionalLightSettings">
+   </LINK>
+   <LINK srcnodeid="514" srcpinname="Output" dstnodeid="515" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

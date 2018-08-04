@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred).v4p" systemname="SuperPhysical Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical).v4p" scrollx="0" scrolly="315">
-   <BOUNDS type="Window" left="1005" top="1290" width="21315" height="12180">
+   <BOUNDS type="Window" left="-3840" top="1710" width="21315" height="12180">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -26,7 +26,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.3">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <NODE systemname="UploadBuffer (DX11.Buffer)" filename="%VVVV%\lib\packs\VL.VVVV.DirectX11.0.79.17-g63a3d4ba77\vvvv\nodes\plugins\VL.VVVV.DirectX11.dll" nodename="UploadBuffer (DX11.Buffer)" componentmode="Hidden" id="237">
    <BOUNDS type="Node" left="11250" top="5160" width="100" height="100">
@@ -524,29 +524,13 @@
    <LINKPOINT x="16485" y="5490">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="422" srcpinname="Buffer" dstnodeid="588" dstpinname="useTex" linkstyle="Bezier">
-   <LINKPOINT x="9855" y="8790">
-   </LINKPOINT>
-   <LINKPOINT x="9645" y="8790">
-   </LINKPOINT>
+   <LINK srcnodeid="422" srcpinname="Buffer" dstnodeid="588" dstpinname="useTex" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="394" srcpinname="Output Node" dstnodeid="588" dstpinname="GBufferTexCd" linkstyle="Bezier">
-   <LINKPOINT x="11250" y="9510">
-   </LINKPOINT>
-   <LINKPOINT x="11130" y="9510">
-   </LINKPOINT>
+   <LINK srcnodeid="394" srcpinname="Output Node" dstnodeid="588" dstpinname="GBufferTexCd" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="393" srcpinname="Output Node" dstnodeid="588" dstpinname="GBufferNorm" linkstyle="Bezier">
-   <LINKPOINT x="10800" y="9308">
-   </LINKPOINT>
-   <LINKPOINT x="10620" y="9308">
-   </LINKPOINT>
+   <LINK srcnodeid="393" srcpinname="Output Node" dstnodeid="588" dstpinname="GBufferNorm" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="392" srcpinname="Output Node" dstnodeid="588" dstpinname="GBufferPos" linkstyle="Bezier">
-   <LINKPOINT x="10305" y="9068">
-   </LINKPOINT>
-   <LINKPOINT x="10125" y="9068">
-   </LINKPOINT>
+   <LINK srcnodeid="392" srcpinname="Output Node" dstnodeid="588" dstpinname="GBufferPos" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="371" srcpinname="Y Output Value" dstnodeid="588" dstpinname="Default SizeXY" linkstyle="Bezier">
    <LINKPOINT x="645" y="5490">
@@ -668,8 +652,6 @@
    <PIN pinname="Maximum Anisotropy" slicecount="1" values="8">
    </PIN>
    </NODE>
-   <LINK srcnodeid="636" srcpinname="Sampler" dstnodeid="300" dstpinname="Input Node">
-   </LINK>
    <NODE systemname="ToTextureArray(FromPointer)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\ToTextureArray(FromPointer).v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\ToTextureArray(FromPointer).v4p" componentmode="Hidden" id="628">
    <BOUNDS type="Node" left="5523" top="4867" width="0" height="0">
    </BOUNDS>
@@ -785,5 +767,7 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="642" srcpinname="Output" dstnodeid="588" dstpinname="Defines">
+   </LINK>
+   <LINK srcnodeid="636" srcpinname="Sampler" dstnodeid="300" dstpinname="Input Node">
    </LINK>
    </PATCH>

@@ -148,7 +148,6 @@ SamplerState g_samLinearIBL
 };
 
 #include "ShadowMapping.fxh"
-//#include "NoTile.fxh"
 #include "ParallaxOcclusionMapping.fxh"
 #include "CookTorrance.fxh"
 #ifdef doPlanarReflections
@@ -302,6 +301,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 
 	float3 finalLight = 0;
 	float attenuation;
+	
 	///////////////////////////////////////////////////////////////////////////
 	// SHADING AND SHADOW MAPPING FOR EACH LIGHT
 	///////////////////////////////////////////////////////////////////////////
@@ -344,7 +344,6 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 					#endif
 	
-//				attenuation = Light[i].lAtt0 * falloff;	
 			
 				finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
 				lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, 1, roughness, metallic, ao, iridescenceColor, texID);

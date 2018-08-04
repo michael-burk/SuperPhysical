@@ -945,7 +945,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="4">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="4" values="0,0,0,1">
+   <PIN pinname="Y Input Value" slicecount="4" values="0,0,0,0.75">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="4">
    </PIN>

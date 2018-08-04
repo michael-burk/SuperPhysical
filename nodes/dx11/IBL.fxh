@@ -55,12 +55,14 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	float GlobalReflConstant = 1.75;
 	#ifdef doGlobalLight
 		#ifdef doPlanarReflections
-			if(PlanarID == ID){
-				if(dot(planeNormal[0], V) < 0){
-					GlobalReflConstant -= planarIntensity;
-					refl *= planarMask;
-				} 
-			}
+			#ifndef Deferred
+				if(PlanarID == ID){
+					if(dot(planeNormal[0], V) < 0){
+						GlobalReflConstant -= planarIntensity;
+						refl *= planarMask;
+					} 
+				}
+			#endif
 		#endif
 	
 	
