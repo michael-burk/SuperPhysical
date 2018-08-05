@@ -1,5 +1,7 @@
 matrix CamtVP : PRCAM;
-Texture2D PlanarReflections : PLANARTEX ;
+Texture2D PlanarReflections : PLANARTEX;
+bool DoPlanarRefraction : REFRACTION;
+Texture2D PlanarRefraction : PLANARTEX_REFR;
 //Texture2D PlanarDepth : PLANARDEPTH ;
 StructuredBuffer <float3> planeNormal : PLANENORMAL;
 
@@ -43,12 +45,14 @@ float roughness, float ao, float metallic, float4 TexCd, int ID, inout float pla
 	// y tho?
 	#ifdef doControlTextures
 		float4 PR = PlanarReflections.SampleLevel(g_samLinearPR, projectTexCoord + (bumpMap.xy - .5)  * Material[ID].bumpy , saturate(roughness) * MAX_REFLECTION_LOD * MAX_REFLECTION_LOD);
+		float4 PRefr = PlanarRefraction.SampleLevel(g_samLinearPR, projectTexCoord + (bumpMap.xy - .5)  * Material[ID].bumpy , saturate(roughness) * MAX_REFLECTION_LOD * MAX_REFLECTION_LOD);
 	#else
 		float4 PR = PlanarReflections.SampleLevel(g_samLinearPR, projectTexCoord + (bumpMap.xy - .5)  * Material[ID].bumpy , saturate(roughness) * MAX_REFLECTION_LOD * 1);
+		float4 PRefr = PlanarRefraction.SampleLevel(g_samLinearPR, TexCd + (bumpMap.xy - .5)  * Material[ID].bumpy , saturate(roughness) * MAX_REFLECTION_LOD * MAX_REFLECTION_LOD);
 	#endif
 	
 	planarMask = 1 - PR.a;
 	
-	return PR.rgb *(kS * envBRDF.x + envBRDF.y) * planarIntensity;
+	return PR.rgb *(kS * envBRDF.x + envBRDF.y) * planarIntensity + PRefr * kD * planarIntensity ;
 
 }

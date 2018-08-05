@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="15">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="1050">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="570" top="7500" width="795" height="240">
    </BOUNDS>
@@ -29,7 +29,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2145" top="7620" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.6">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.54">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -945,7 +945,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="4">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="4" values="0,0,0,0.75">
+   <PIN pinname="Y Input Value" slicecount="4" values="0,0,0,0">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="4">
    </PIN>

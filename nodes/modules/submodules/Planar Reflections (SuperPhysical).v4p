@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" locked="0" systemname="Planar Reflections (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="2715" top="1035" width="13950" height="13815">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" locked="0" systemname="Planar Reflections (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" scrollx="0" scrolly="75">
+   <BOUNDS type="Window" left="1305" top="660" width="13950" height="13830">
    </BOUNDS>
    <PACK Name="dx11" Version="1.0.5">
    </PACK>
@@ -345,7 +345,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1260" top="4260" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="400,300">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="512,512">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -356,6 +356,8 @@
    <PIN pinname="Rows" slicecount="1" values="2">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Texture SizeXY|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="131" systemname="IOBox (Node)">
@@ -417,9 +419,9 @@
    <LINK srcnodeid="127" srcpinname="Projection" dstnodeid="15" dstpinname="Projection">
    </LINK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="139">
-   <BOUNDS type="Node" left="2910" top="6345" width="100" height="100">
+   <BOUNDS type="Node" left="2865" top="6270" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2910" top="6345">
+   <BOUNDS type="Box" left="2865" top="6270">
    </BOUNDS>
    <PIN pinname="Mode" slicecount="1" visible="1" values="FrontCullSimple">
    </PIN>
@@ -427,25 +429,23 @@
    </PIN>
    </NODE>
    <NODE systemname="RenderState (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderState (DX11.Layer)" componentmode="Hidden" id="148">
-   <BOUNDS type="Node" left="2970" top="7800" width="100" height="100">
+   <BOUNDS type="Node" left="2865" top="6945" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2970" top="7800" width="3000" height="3000">
+   <BOUNDS type="Box" left="2865" top="6945" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Render State" visible="1">
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="139" srcpinname="Render State" dstnodeid="148" dstpinname="Render State">
-   </LINK>
    <NODE systemname="Validator (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Validator (DX11.Layer)" componentmode="Hidden" id="154">
-   <BOUNDS type="Node" left="3825" top="4035" width="100" height="100">
+   <BOUNDS type="Node" left="3270" top="3975" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3825" top="4035" width="3000" height="3000">
+   <BOUNDS type="Box" left="3270" top="3975" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Validators" visible="1">
    </PIN>
@@ -489,9 +489,9 @@
    <LINK srcnodeid="152" srcpinname="Y Output Value" dstnodeid="153" dstpinname="Index">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="151" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5145" top="3630" width="480" height="480">
+   <BOUNDS type="Box" left="6495" top="3195" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="5145" top="3630" width="0" height="0">
+   <BOUNDS type="Node" left="6495" top="3195" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -683,9 +683,9 @@
    </PIN>
    </NODE>
    <NODE systemname="RenderSemantic (DX11 StructuredBuffer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11 StructuredBuffer)" componentmode="Hidden" id="197">
-   <BOUNDS type="Node" left="2160" top="11025" width="100" height="100">
+   <BOUNDS type="Node" left="1545" top="10275" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2160" top="11025" width="3000" height="3000">
+   <BOUNDS type="Box" left="1545" top="10275" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -707,6 +707,10 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 3" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="197" srcpinname="Output" dstnodeid="198" dstpinname="Input 2">
    </LINK>
@@ -715,8 +719,6 @@
    <LINK srcnodeid="198" srcpinname="Output" dstnodeid="158" dstpinname="Resource Semantics">
    </LINK>
    <LINK srcnodeid="72" srcpinname="XYZ Transformed" dstnodeid="196" dstpinname="DataXYZ">
-   </LINK>
-   <LINK srcnodeid="148" srcpinname="Layer Out" dstnodeid="15" dstpinname="Layer">
    </LINK>
    <NODE systemname="SetAlpha (Color)" filename="" nodename="SetAlpha (Color)" componentmode="Hidden" id="207">
    <BOUNDS type="Node" left="3915" top="8280" width="100" height="100">
@@ -731,5 +733,277 @@
    <LINK srcnodeid="174" srcpinname="GlobalReflectionColor" dstnodeid="207" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="207" srcpinname="Output" dstnodeid="15" dstpinname="Background Color">
+   </LINK>
+   <NODE systemname="RenderSemantic (DX11.Layer Int)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11.Layer Int)" componentmode="Hidden" id="208">
+   <BOUNDS type="Node" left="6900" top="10245" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6900" top="10245" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Semantic" slicecount="1" values="REFRACTION">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="208" srcpinname="Output" dstnodeid="167" dstpinname="Input 4">
+   </LINK>
+   <NODE systemname="RenderSemantic (DX11.Layer Texture2D)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11.Layer Texture2D)" componentmode="Hidden" id="210">
+   <BOUNDS type="Node" left="9960" top="11175" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9960" top="11175" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Semantic" slicecount="1" values="PLANARTEX_REFR">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="211">
+   <BOUNDS type="Box" left="6900" top="9585" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6900" top="9585" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Refraction">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="211" srcpinname="Y Output Value" dstnodeid="208" dstpinname="Input">
+   </LINK>
+   <NODE id="214" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow">
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mip Map Levels" slicecount="1" values="9">
+   </PIN>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Target Format" slicecount="1" values="R32G32B32A32_Float">
+   </PIN>
+   <BOUNDS type="Node" left="8475" top="8730" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8475" top="8730" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="14400" top="9015" width="7170" height="6555">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Depth Buffer Mode" slicecount="1" values="Standard">
+   </PIN>
+   <PIN pinname="Depth Buffer Format" slicecount="1" values="D24_UNorm_S8_UInt">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Buffers" visible="1">
+   </PIN>
+   <PIN pinname="Generate Mip Maps" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1" slicecount="2" values="512,512">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,0.00000|">
+   </PIN>
+   <PIN pinname="Shared Texture" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="AA Samples per Pixel" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Depth Buffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="127" srcpinname="Projection" dstnodeid="214" dstpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="127" srcpinname="View" dstnodeid="214" dstpinname="View">
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="215" stayontop="1">
+   <BOUNDS type="Node" left="9345" top="9360" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9345" top="9360" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="22185" top="10665" width="6195" height="5085">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="139" srcpinname="Render State" dstnodeid="148" dstpinname="Render State">
+   </LINK>
+   <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="217">
+   <BOUNDS type="Node" left="8520" top="7380" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8520" top="7380">
+   </BOUNDS>
+   <PIN pinname="Mode" slicecount="1" visible="1" values="BackCullSimple">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="RenderState (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderState (DX11.Layer)" componentmode="Hidden" id="216">
+   <BOUNDS type="Node" left="8520" top="8055" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8520" top="8055" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="154" srcpinname="Layer Out" dstnodeid="216" dstpinname="Layer In">
+   </LINK>
+   <LINK srcnodeid="217" srcpinname="Render State" dstnodeid="216" dstpinname="Render State">
+   </LINK>
+   <LINK srcnodeid="210" srcpinname="Output" dstnodeid="198" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="130" srcpinname="Y Output Value" dstnodeid="214" dstpinname="Texture SizeXY">
+   </LINK>
+   <NODE systemname="FXAA11Mips (DX11.TextureFX)" filename="%VVVV%\packs\SuperPhysical\nodes\dx11\FXAA11Mips.tfx" nodename="FXAA11Mips (DX11.TextureFX)" componentmode="Hidden" id="219">
+   <BOUNDS type="Node" left="9960" top="9900" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="KeepAlpha" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Box" left="9960" top="9900">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="214" srcpinname="Buffers" dstnodeid="219" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="207" srcpinname="Output" dstnodeid="214" dstpinname="Background Color">
+   </LINK>
+   <LINK srcnodeid="219" srcpinname="Texture Out" dstnodeid="210" dstpinname="Input">
+   </LINK>
+   <NODE nodename="Group (DX11.Layer)" id="221">
+   <BOUNDS type="Node" left="1245" top="7425" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1245" top="7425" width="2400" height="1800">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="222">
+   <BOUNDS type="Node" left="5520" top="4560" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="152" srcpinname="Y Output Value" dstnodeid="222" dstpinname="Index">
+   </LINK>
+   <NODE id="223" systemname="GetSlice (DX11.Validator)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="GetSlice (DX11.Validator)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="4455" top="4275" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4455" top="4275" width="3000" height="3000">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enable Slice" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Index" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output">
+   </PIN>
+   <PIN pinname="Output" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="152" srcpinname="Y Output Value" dstnodeid="223" dstpinname="Index">
+   </LINK>
+   <NODE systemname="Validator (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Validator (DX11.Layer)" componentmode="Hidden" id="224">
+   <BOUNDS type="Node" left="2025" top="5190" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2025" top="5190" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Validators" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="151" srcpinname="Y Output Value" dstnodeid="224" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="131" srcpinname="Output Node" dstnodeid="224" dstpinname="Layer In">
+   </LINK>
+   <LINK srcnodeid="223" srcpinname="Output" dstnodeid="224" dstpinname="Validators">
+   </LINK>
+   <NODE systemname="DepthOnly (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DepthOnly (DX11.Layer)" componentmode="Hidden" id="225">
+   <BOUNDS type="Node" left="1680" top="5880" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1680" top="5880" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="224" srcpinname="Layer Out" dstnodeid="225" dstpinname="Layer In">
+   </LINK>
+   <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="227">
+   <BOUNDS type="Node" left="1200" top="6285" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1200" top="6285">
+   </BOUNDS>
+   <PIN pinname="Mode" slicecount="1" visible="1" values="FrontCullSimple">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="RenderState (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderState (DX11.Layer)" componentmode="Hidden" id="226">
+   <BOUNDS type="Node" left="1200" top="6960" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1200" top="6960" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="227" srcpinname="Render State" dstnodeid="226" dstpinname="Render State">
+   </LINK>
+   <LINK srcnodeid="226" srcpinname="Layer Out" dstnodeid="221" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="225" srcpinname="Layer Out" dstnodeid="226" dstpinname="Layer In">
+   </LINK>
+   <LINK srcnodeid="216" srcpinname="Layer Out" dstnodeid="214" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="148" srcpinname="Layer Out" dstnodeid="221" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="150" srcpinname="Texture Out" dstnodeid="215" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="148" srcpinname="Layer Out" dstnodeid="15" dstpinname="Layer">
    </LINK>
    </PATCH>
