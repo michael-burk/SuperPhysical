@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="0" bgcolor="15132390">
-   <BOUNDS type="Window" left="3675" top="1740" width="15975" height="13365">
+   <BOUNDS type="Window" left="1440" top="1230" width="15975" height="11295">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -95,7 +95,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7545" top="5250" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.15">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.07">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -161,9 +161,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="436">
-   <BOUNDS type="Box" left="9555" top="6210" width="810" height="240">
+   <BOUNDS type="Box" left="9750" top="5775" width="810" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="9555" top="6210" width="0" height="0">
+   <BOUNDS type="Node" left="9750" top="5775" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="6">
    </PIN>
@@ -390,11 +390,7 @@
    </NODE>
    <LINK srcnodeid="564" srcpinname="SpotLightTex" dstnodeid="565" dstpinname="Pointer" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="475" srcpinname="Count" dstnodeid="436" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="9930" y="5870">
-   </LINKPOINT>
-   <LINKPOINT x="9435" y="5845">
-   </LINKPOINT>
+   <LINK srcnodeid="475" srcpinname="Count" dstnodeid="436" dstpinname="Y Input Value" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="564" srcpinname="Color" dstnodeid="518" dstpinname="Input" linkstyle="Bezier">
    <LINKPOINT x="8965" y="2350">
@@ -445,7 +441,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1185" top="7920" width="13305" height="11770">
    </BOUNDS>
-   <BOUNDS type="Window" left="4695" top="6525" width="20550" height="14550">
+   <BOUNDS type="Window" left="4155" top="810" width="20550" height="14550">
    </BOUNDS>
    <PIN pinname="fadeZ" slicecount="1" values="1.78">
    </PIN>
@@ -517,6 +513,12 @@
    </PIN>
    <PIN pinname="offsetZ" visible="1">
    </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ViewPort" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="viewPortTransforms" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="242" srcpinname="Output" dstnodeid="288" dstpinname="LowRes" linkstyle="Bezier">
    <LINKPOINT x="1725" y="7718">
@@ -567,9 +569,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="436" srcpinname="Y Output Value" dstnodeid="288" dstpinname="lightCount" linkstyle="Bezier">
-   <LINKPOINT x="9375" y="7158">
+   <LINKPOINT x="9505" y="6868">
    </LINKPOINT>
-   <LINKPOINT x="6465" y="7183">
+   <LINKPOINT x="6530" y="7038">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="449" srcpinname="Output" dstnodeid="288" dstpinname="farPlane" linkstyle="Bezier">
@@ -658,4 +660,98 @@
    </LINK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
+   <NODE systemname="Transform (Transform 2d Vector)" nodename="Transform (Transform 2d Vector)" componentmode="Hidden" id="578">
+   <BOUNDS type="Node" left="12045" top="6135" width="2175" height="270">
+   </BOUNDS>
+   <PIN pinname="TranslateXY" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ScaleXY" slicecount="2" visible="1" values="1,1">
+   </PIN>
+   <PIN pinname="CenterXY" slicecount="2" visible="1" values="0,0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="577">
+   <BOUNDS type="Node" left="11520" top="6570" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="578" srcpinname="Transform Out" dstnodeid="577" dstpinname="Source">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="576">
+   <BOUNDS type="Box" left="12570" top="4500" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12570" top="4500" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|ViewPort - CenterXY|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="2" values="0,0">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0,0|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="575">
+   <BOUNDS type="Box" left="13095" top="5415" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13095" top="5415" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="1,1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|ViewPort - SizeXY|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="2" values="1,1">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|1,1|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="575" srcpinname="Y Output Value" dstnodeid="578" dstpinname="ScaleXY">
+   </LINK>
+   <LINK srcnodeid="577" srcpinname="Transform Out" dstnodeid="288" dstpinname="viewPortTransforms">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="579">
+   <BOUNDS type="Node" left="12570" top="5580" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="576" srcpinname="Y Output Value" dstnodeid="579" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="579" srcpinname="Output" dstnodeid="578" dstpinname="TranslateXY">
+   </LINK>
    </PATCH>

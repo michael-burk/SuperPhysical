@@ -13,6 +13,7 @@ Texture2DArray lightMap <string uiname="LightMap";>;
 float4x4 tVI;
 float4x4 tPI;
 float4x4 tP;
+float4x4 viewPortTransforms <bool uvspace = true;>;
 
 StructuredBuffer <float> farPlane;
 StructuredBuffer <float3> lPos;
@@ -37,7 +38,7 @@ float4 UVZtoVIEW(float2 UV,float z){
 	float4 p=mul(float4(UV.x*2-1,1-2*UV.y,0,1.0),tPI);
 	float ld = tP._43 / (z - tP._33);
 	p=float4(p.xy*ld,ld,1.0);
-	return p; 
+	return p ; 
 }
 float4 UVZtoWORLD(float2 UV,float z){
 	return mul(UVZtoVIEW(UV,z),tVI); 
@@ -59,18 +60,19 @@ float3 UVtoEYE(float2 UV){
 
 //float fac;
 float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	float2 vieportUVs = mul(float4(x.x,x.y,0,1),viewPortTransforms).xy;
 	
-	float3 endRayPos =  UVZtoWORLD(x,depthMap.Sample(s0,x).r).xyz;
+	float3 endRayPos =  UVZtoWORLD(vieportUVs,depthMap.Sample(s0,x).r).xyz;
 	// Ray Origin
-	float3 startPos = tVI[3].xyz;
+	float3 startPos = tVI[3].xyz ;
 	// Ray Direction
-	float3 rayDir = UVtoEYE(x.xy);
+	float3 rayDir = UVtoEYE(vieportUVs);
 	
 	float3 steppy = rayDir * stepLength;
 
 	startPos += steppy * noiseTex.Sample(s0,x).r;
 	startPos +=  rayDir * offsetZ;
-	
+
 	float3 currentPos = startPos;
 	
 	float3 accumFog = 0.0f.xxx;
