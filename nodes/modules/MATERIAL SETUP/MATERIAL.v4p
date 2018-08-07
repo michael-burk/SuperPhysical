@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="15">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha36.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha36.1_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="180">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="570" top="7500" width="795" height="240">
    </BOUNDS>
@@ -983,6 +983,8 @@
    </BOUNDS>
    <PIN pinname="TangentDir" visible="1">
    </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="205" srcpinname="Y Output Value" dstnodeid="430" dstpinname="Bumpiness">
    </LINK>
@@ -1027,6 +1029,8 @@
    </PIN>
    <PIN pinname="Metallic" visible="1">
    </PIN>
+   <PIN pinname="ControlTextures" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="432" dstpinname="Roughness" linkstyle="Bezier">
    <LINKPOINT x="2175" y="8108">
@@ -1044,16 +1048,12 @@
    </LINK>
    <LINK srcnodeid="432" srcpinname="Output" dstnodeid="284" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="430" srcpinname="Output" dstnodeid="432" dstpinname="ControlTextures" linkstyle="Bezier">
-   <LINKPOINT x="1575" y="5993">
-   </LINKPOINT>
-   <LINKPOINT x="7485" y="5993">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="415" srcpinname="Color Output" dstnodeid="432" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="432" dstpinname="Emissive">
    </LINK>
    <LINK srcnodeid="423" srcpinname="Y Output Value" dstnodeid="432" dstpinname="Metallic">
+   </LINK>
+   <LINK srcnodeid="430" srcpinname="Output" dstnodeid="432" dstpinname="ControlTextures">
    </LINK>
    </PATCH>
