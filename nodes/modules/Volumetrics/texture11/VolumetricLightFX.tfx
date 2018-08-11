@@ -90,7 +90,11 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 	
 	for (uint i = 0; i < NB_STEPS; i++)
 	{	
-		if( length(currentPos - endRayPos) <= stepLength) break;		
+		
+		if ( length(startPos-endRayPos) - length(startPos-currentPos)  < 0 ) break;
+		if( length(startPos-endRayPos) < offsetZ) break;
+//		if( length(currentPos - endRayPos) <= stepLength) break;
+
 		shadowCounter = 0;
 		lightCounter = 0;
 		for (uint j = 0; j < lightCount; j++)
