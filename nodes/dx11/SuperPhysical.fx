@@ -260,7 +260,7 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		if(Material[texID].sampleMetallic) metallic *= metallTex.Sample(g_samLinear, float3(TexCd.xy, texID)).r;
 		
 		float4 texCol = 1;
-		if(Material[texID].sampleAlbedo) albedo *= texture2d.Sample(g_samLinear, float3(TexCd.xy, texID)) * ao;
+		if(Material[texID].sampleAlbedo) albedo *= texture2d.Sample(g_samLinear, float3(TexCd.xy, texID)) * float4(ao.xxx,1);
 
 		
 	} 
