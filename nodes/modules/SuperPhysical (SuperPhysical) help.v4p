@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="630" top="405" width="10470" height="14865">
+   <BOUNDS type="Window" left="630" top="405" width="10575" height="14865">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
    <BOUNDS type="Node" left="775" top="11065" width="100" height="100">

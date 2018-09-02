@@ -166,12 +166,21 @@ SamplerState g_samLinear
 #ifdef doPlanarReflections
 #include "PLANARREFLECTION.fxh"
 #endif
+
 #ifdef doIBL
 #include "..\dx11\IBL.fxh"
-#elif doIridescence	
+#endif
+
+#ifdef doIridescence
+#ifndef doIBL
 #include "..\dx11\IRIDESCENCE.fxh"
-#elif doGlobalLight
+#endif
+#endif
+
+#ifdef doGlobalLight
+#ifndef doIBL
 #include "..\dx11\GLOBALLIGHT.fxh"
+#endif
 #endif
 
 #ifdef doToneMap
@@ -488,10 +497,16 @@ float4 doLighting(psInput input) : SV_Target
 	#endif
 	#ifdef doIBL
 		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughness, metallic, ao, texID, planarMask);
-	#elif doIridescence
-		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughness, ao, metallic );
-	#elif doGlobalLight
-		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughness, ao, metallic);
+	#endif
+	#ifdef doIridescence
+		#ifndef doIBL
+			if(Material[texID].Iridescence) finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughness, ao, metallic );
+		#endif
+	#endif
+	#ifdef doGlobalLight
+		#ifndef doIBL
+			finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughness, ao, metallic);
+		#endif
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -499,7 +514,11 @@ float4 doLighting(psInput input) : SV_Target
 	///////////////////////////////////////////////////////////////////////////
 	
 	#ifdef doControlTextures
-	if(Material[texID].sampleEmissive) finalLight.rgb += saturate(Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb);
+	if(Material[texID].sampleEmissive){
+		finalLight.rgb += saturate(Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb);
+	}else{
+		finalLight.rgb += saturate( Material[texID].Emissive.rgb);
+	}
 	#else
 		finalLight.rgb += saturate( Material[texID].Emissive.rgb);
 	#endif

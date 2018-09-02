@@ -226,7 +226,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="4155" top="810" width="20550" height="14550">
+   <BOUNDS type="Window" left="10515" top="1455" width="20550" height="14550">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -880,8 +880,6 @@
    <LINKPOINT x="6105" y="4703">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="22" srcpinname="Texture Out" dstnodeid="36" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="30" srcpinname="Output Node" dstnodeid="152" dstpinname="linearDepth" linkstyle="Bezier">
    <LINKPOINT x="9855" y="5535">
    </LINKPOINT>
@@ -902,6 +900,10 @@
    <BOUNDS type="Box" left="4245" top="6255">
    </BOUNDS>
    <PIN pinname="viewPortTransforms" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="noise" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="190" dstpinname="fade" linkstyle="Bezier">
@@ -941,12 +943,6 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="28" srcpinname="Output Node" dstnodeid="190" dstpinname="shadowVP">
-   </LINK>
-   <LINK srcnodeid="68" srcpinname="Texture Out" dstnodeid="190" dstpinname="noise" linkstyle="Bezier">
-   <LINKPOINT x="15510" y="5573">
-   </LINKPOINT>
-   <LINKPOINT x="11880" y="5573">
-   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="131" srcpinname="Y Output Value" dstnodeid="190" dstpinname="lightCount" linkstyle="Bezier">
    <LINKPOINT x="9810" y="5603">
@@ -1043,5 +1039,9 @@
    </LINKPOINT>
    <LINKPOINT x="7335" y="4350">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Texture Out" dstnodeid="36" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="68" srcpinname="Texture Out" dstnodeid="190" dstpinname="noise">
    </LINK>
    </PATCH>

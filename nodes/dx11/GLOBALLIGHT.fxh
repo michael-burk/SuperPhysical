@@ -13,9 +13,11 @@ float3 GLOBALLIGHT(float3 N, float3 V, float3 F0, float4 albedo, float roughness
 
 	float GlobalReflConstant = 1.75;
 	#ifdef doPlanarReflections
-			if(PlanarID == ID){
-				if(dot(planeNormal[0], V) < 0) GlobalReflConstant -= planarIntensity;
-			}
+			#ifndef Deferred
+				if(PlanarID == ID){
+					if(dot(planeNormal[0], V) < 0) GlobalReflConstant -= planarIntensity;
+				}
+			#endif
 	#endif
 	
 	IBL +=  GlobalDiffuseColor.rgb * albedo.rgb * kD * ao + GlobalReflectionColor.rgb *(kS * envBRDF.x + envBRDF.y) * ao * GlobalReflConstant;

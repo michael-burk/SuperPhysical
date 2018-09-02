@@ -147,18 +147,27 @@ SamplerState g_samLinearIBL
     AddressV = Clamp;
 };
 
-#include "ShadowMapping.fxh"
-#include "ParallaxOcclusionMapping.fxh"
-#include "CookTorrance.fxh"
+#include "..\dx11\ShadowMapping.fxh"
+#include "..\dx11\ParallaxOcclusionMapping.fxh"
+#include "..\dx11\CookTorrance.fxh"
 #ifdef doPlanarReflections
 #include "PLANARREFLECTION.fxh"
 #endif
+
 #ifdef doIBL
-#include "IBL.fxh"
-#elif doIridescence	
-#include "IRIDESCENCE.fxh"
-#elif doGlobalLight
-#include "GLOBALLIGHT.fxh"
+#include "..\dx11\IBL.fxh"
+#endif
+
+#ifdef doIridescence
+#ifndef doIBL
+#include "..\dx11\IRIDESCENCE.fxh"
+#endif
+#endif
+
+#ifdef doGlobalLight
+#ifndef doIBL
+#include "..\dx11\GLOBALLIGHT.fxh"
+#endif
 #endif
 
 #ifdef doToneMap
@@ -467,14 +476,22 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 	///////////////////////////////////////////////////////////////////////////
 	float planarMask = 1;
 	#ifdef doPlanarReflections
-		if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughness, ao, metallic, TexCd, ID, planarMask);
+		#ifndef Deferred
+			if(PlanarID == ID) finalLight += PLANARREFLECTION(PosW, N, V, F0, albedo, roughness, ao, metallic, TexCd, ID, planarMask);
+		#endif
 	#endif
 	#ifdef doIBL
 		finalLight += IBL(N, V, F0, albedo, iridescenceColor, roughness, metallic, ao, texID, planarMask);
-	#elif doIridescence
-		finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughness, ao, metallic );
-	#elif doGlobalLight
-		finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughness, ao, metallic);
+	#endif
+	#ifdef doIridescence
+		#ifndef doIBL
+			if(Material[texID].Iridescence) finalLight += IRIDESCENCE(N, V, F0, albedo, iridescenceColor, roughness, ao, metallic );
+		#endif
+	#endif
+	#ifdef doGlobalLight
+		#ifndef doIBL
+			finalLight +=  GLOBALLIGHT(N, V, F0, albedo, roughness, ao, metallic);
+		#endif
 	#endif
 	
 	///////////////////////////////////////////////////////////////////////////

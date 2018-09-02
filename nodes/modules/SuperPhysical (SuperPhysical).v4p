@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="15" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="180" scrolly="300">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="720" top="3120" width="16020" height="11505">
+   <BOUNDS type="Window" left="2265" top="1920" width="16020" height="11505">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -78,7 +78,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Render State|">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.3.1.1">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="126">
    <BOUNDS type="Node" left="13695" top="2085" width="100" height="100">
@@ -457,7 +457,7 @@
    <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="364">
    <BOUNDS type="Node" left="4155" top="8865" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Count" visible="1">
    </PIN>
@@ -627,11 +627,13 @@
    </BOUNDS>
    <PIN pinname="POM_shadow_factor" slicecount="1" values="8">
    </PIN>
-   <PIN pinname="Defines" visible="1" slicecount="10" values=",doPOM=1,,,doIBL=1,doGlobalLight=1,doControlTextures=1,,,">
+   <PIN pinname="Defines" visible="1" slicecount="10" values=",,,,,doGlobalLight=1,doControlTextures=1,,,">
    </PIN>
    <PIN pinname="PlanarReflections" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="brdfLUT" visible="1">
+   </PIN>
+   <PIN pinname="gamma" slicecount="1" values="1.5">
    </PIN>
    </NODE>
    <LINK srcnodeid="138" srcpinname="Texture" dstnodeid="375" dstpinname="Iridescence" linkstyle="Bezier">

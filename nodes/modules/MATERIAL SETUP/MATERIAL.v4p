@@ -1,25 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="15">
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="570" top="7500" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="570" top="7500" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="metallic">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="False">
-   </PIN>
-   <PIN pinname="Minimum" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Maximum" slicecount="1" values="1">
-   </PIN>
-   </NODE>
+   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2310" top="2235" width="14010" height="11595">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -983,6 +963,8 @@
    </BOUNDS>
    <PIN pinname="TangentDir" visible="1">
    </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="205" srcpinname="Y Output Value" dstnodeid="430" dstpinname="Bumpiness">
    </LINK>
@@ -1027,6 +1009,8 @@
    </PIN>
    <PIN pinname="Metallic" visible="1">
    </PIN>
+   <PIN pinname="ControlTextures" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="432" dstpinname="Roughness" linkstyle="Bezier">
    <LINKPOINT x="2175" y="8108">
@@ -1044,16 +1028,16 @@
    </LINK>
    <LINK srcnodeid="432" srcpinname="Output" dstnodeid="284" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="430" srcpinname="Output" dstnodeid="432" dstpinname="ControlTextures" linkstyle="Bezier">
-   <LINKPOINT x="1575" y="5993">
-   </LINKPOINT>
-   <LINKPOINT x="7485" y="5993">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="415" srcpinname="Color Output" dstnodeid="432" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="204" srcpinname="Color Output" dstnodeid="432" dstpinname="Emissive">
    </LINK>
    <LINK srcnodeid="423" srcpinname="Y Output Value" dstnodeid="432" dstpinname="Metallic">
+   </LINK>
+   <LINK srcnodeid="430" srcpinname="Output" dstnodeid="432" dstpinname="ControlTextures" linkstyle="Bezier">
+   <LINKPOINT x="1575" y="5993">
+   </LINKPOINT>
+   <LINKPOINT x="7485" y="5993">
+   </LINKPOINT>
    </LINK>
    </PATCH>

@@ -32,9 +32,11 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	float3 refl = cubeTexRefl.SampleLevel(g_samLinear,reflVect,roughness*MAX_REFLECTION_LOD).rgb;
 	
 	#ifdef doIridescence
-	if(Material[texID%mCount].Iridescence){
+	if(Material[texID].Iridescence){
 	  refl *= iridescenceColor * (kS * envBRDF.x + envBRDF.y);
-	} 
+	} else {
+		refl *= (kS * envBRDF.x + envBRDF.y);
+	}
 	#else
 		refl *= (kS * envBRDF.x + envBRDF.y);
 	#endif
