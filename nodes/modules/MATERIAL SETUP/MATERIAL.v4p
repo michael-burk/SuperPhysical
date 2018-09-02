@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="2310" top="2235" width="14010" height="11595">
+   <BOUNDS type="Window" left="510" top="960" width="14010" height="11595">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -880,8 +880,6 @@
    </LINK>
    <LINK srcnodeid="39" srcpinname="Texture Out" dstnodeid="409" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Y Input Value">
-   </LINK>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="415">
    <BOUNDS type="Box" left="3960" top="7575" width="2250" height="480">
    </BOUNDS>
@@ -1039,5 +1037,7 @@
    </LINKPOINT>
    <LINKPOINT x="7485" y="5993">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

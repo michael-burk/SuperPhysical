@@ -42,10 +42,10 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	#endif
 	
 	#ifdef doRefraction
-	if(Material[texID%mCount].Refraction.x){
+	if(Material[texID].Refraction.x){
 		float3 refrVect;
 	    for(int r=0; r<3; r++) {
-	    	refrVect = refract(-V, N , Material[texID%mCount].Refraction.xyz[r]);
+	    	refrVect = refract(-V, N , Material[texID].Refraction.xyz[r]);
 	    	refrColor += cubeTexRefl.SampleLevel(g_samLinear,refrVect,roughness*MAX_REFLECTION_LOD).rgb * wavelength[r];
 		}
 		refrColor *= 1 - (kS * envBRDF.x + envBRDF.y);
@@ -72,7 +72,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	IBL  = saturate( (IBL * iblIntensity.x + refrColor) * kD + refl * iblIntensity.y) * ao;
 	
 	#ifdef doRefraction
-	if(Material[texID%mCount].Refraction.x){
+	if(Material[texID].Refraction.x){
 		IBL += GlobalReflectionColor.rgb;
 	}
 	#endif

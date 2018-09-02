@@ -330,10 +330,6 @@
    </LINK>
    <LINK srcnodeid="220" srcpinname="Output" dstnodeid="227" dstpinname="GlobalSettings">
    </LINK>
-   <LINK srcnodeid="226" srcpinname="Output" dstnodeid="227" dstpinname="IBLSettings" linkstyle="Bezier">
-   <LINKPOINT x="5835" y="4268">
-   </LINKPOINT>
-   <LINKPOINT x="4485" y="4268">
-   </LINKPOINT>
+   <LINK srcnodeid="226" srcpinname="Output" dstnodeid="227" dstpinname="IBLSettings">
    </LINK>
    </PATCH>

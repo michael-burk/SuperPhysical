@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="9315" top="2220" width="11625" height="7455">
+   <BOUNDS type="Window" left="1935" top="1725" width="9255" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -309,7 +309,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5400" top="3825" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -319,7 +319,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="230" srcpinname="Y Output Value" dstnodeid="229" dstpinname="Enabled">
@@ -330,10 +330,6 @@
    </LINK>
    <LINK srcnodeid="220" srcpinname="Output" dstnodeid="227" dstpinname="GlobalSettings">
    </LINK>
-   <LINK srcnodeid="226" srcpinname="Output" dstnodeid="227" dstpinname="IBLSettings" linkstyle="Bezier">
-   <LINKPOINT x="5835" y="4268">
-   </LINKPOINT>
-   <LINKPOINT x="4485" y="4268">
-   </LINKPOINT>
+   <LINK srcnodeid="226" srcpinname="Output" dstnodeid="227" dstpinname="IBLSettings">
    </LINK>
    </PATCH>

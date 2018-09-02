@@ -477,7 +477,7 @@
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
    <BOUNDS type="Node" left="2775" top="3840" width="1410" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="2310" top="2235" width="14010" height="11595">
+   <BOUNDS type="Window" left="510" top="960" width="14010" height="11595">
    </BOUNDS>
    <PIN pinname="Material" visible="1" slicecount="1" values="||">
    </PIN>
@@ -693,7 +693,7 @@
    <LINK srcnodeid="38" srcpinname="Camera State" dstnodeid="46" dstpinname="Camera State">
    </LINK>
    <NODE id="51" componentmode="Hidden" systemname="SuperPhysical (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" nodename="SuperPhysical (SuperPhysical)" debug="0" stayontop="0">
-   <BOUNDS type="Window" left="720" top="3120" width="16020" height="11505">
+   <BOUNDS type="Window" left="1515" top="840" width="16020" height="11505">
    </BOUNDS>
    <BOUNDS type="Node" left="1080" top="4845" width="3870" height="270">
    </BOUNDS>
@@ -809,7 +809,7 @@
    <NODE systemname="Reflections (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" nodename="Reflections (SuperPhysical)" componentmode="Hidden" id="90">
    <BOUNDS type="Node" left="915" top="9090" width="4680" height="270">
    </BOUNDS>
-   <PIN pinname="Layer" visible="1">
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
@@ -830,10 +830,6 @@
    <BOUNDS type="Window" left="2715" top="1035" width="13950" height="13815">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="40" srcpinname="Layer Out" dstnodeid="90" dstpinname="Layer">
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Layer Out" dstnodeid="41" dstpinname="Layer">
-   </LINK>
    <LINK srcnodeid="38" srcpinname="Camera State" dstnodeid="90" dstpinname="Camera State">
    </LINK>
    <LINK srcnodeid="83" srcpinname="Y Output Value" dstnodeid="90" dstpinname="Mesh ID">
@@ -907,5 +903,9 @@
    <LINK srcnodeid="91" srcpinname="Y Output Value" dstnodeid="90" dstpinname="Intensity">
    </LINK>
    <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="40" srcpinname="Layer Out" dstnodeid="90" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Layer Out" dstnodeid="41" dstpinname="Layer">
    </LINK>
    </PATCH>

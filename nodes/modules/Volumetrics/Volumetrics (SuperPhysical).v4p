@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="0" bgcolor="15132390">
-   <BOUNDS type="Window" left="1440" top="1230" width="15975" height="11295">
+   <BOUNDS type="Window" left="3675" top="1740" width="15975" height="13365">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -49,7 +49,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6570" top="5250" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.52">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>

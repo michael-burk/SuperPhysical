@@ -435,7 +435,7 @@
    <NODE systemname="Visualizer (SuperPhysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\submodules\Material Visualizer (SuperPhysical).v4p" nodename="Visualizer (SuperPhysical)" componentmode="Hidden" id="97">
    <BOUNDS type="Node" left="4485" top="4080" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="9960" top="3420" width="22470" height="13590">
+   <BOUNDS type="Window" left="5340" top="1635" width="22470" height="13590">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="97" dstpinname="Input" linkstyle="Bezier">
@@ -449,7 +449,7 @@
    <NODE id="10" componentmode="Hidden" systemname="MATERIAL" filename="%VVVV%\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" nodename="MATERIAL SETUP\MATERIAL.v4p" stayontop="0" debug="0">
    <BOUNDS type="Node" left="4020" top="2280" width="1410" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="915" top="780" width="18825" height="13320">
+   <BOUNDS type="Window" left="2265" top="1830" width="18825" height="13320">
    </BOUNDS>
    <PIN pinname="Material" visible="1" slicecount="1" values="||">
    </PIN>

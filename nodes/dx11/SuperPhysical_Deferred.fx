@@ -50,8 +50,8 @@ struct LightStruct
 	
 	float 	 penumbraScale;
 	float 	 numShadowSamples;
-	float 	 pad0;
-	float 	 pad1;
+	float 	 shadowPOMSamples;
+	float 	 shadowPOM;
 };
 
 struct LightMatricesStruct
@@ -172,15 +172,15 @@ SamplerState g_samLinear
 #endif
 
 #ifdef doIridescence
-#ifndef doIBL
+//#ifndef doIBL
 #include "..\dx11\IRIDESCENCE.fxh"
-#endif
+//#endif
 #endif
 
 #ifdef doGlobalLight
-#ifndef doIBL
+//#ifndef doIBL
 #include "..\dx11\GLOBALLIGHT.fxh"
-#endif
+//#endif
 #endif
 
 #ifdef doToneMap
@@ -363,9 +363,9 @@ float4 doLighting(psInput input) : SV_Target
 				}
 							
 
-					#ifdef doShadowPOM
-						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
-					#endif
+//					#ifdef doShadowPOM
+//						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
+//					#endif
 	
 //				attenuation = Light[i].lAtt0 * falloff;	
 			
@@ -409,9 +409,9 @@ float4 doLighting(psInput input) : SV_Target
 				
 				
 			
-				#ifdef doShadowPOM
-						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
-				#endif
+//				#ifdef doShadowPOM
+//						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
+//				#endif
 			
 				attenuation = Light[i].lAtt0 * falloff;
 				finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
@@ -458,9 +458,9 @@ float4 doLighting(psInput input) : SV_Target
 						}
 					}
 					
-							#ifdef doShadowPOM
-								if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
-							#endif
+//							#ifdef doShadowPOM
+//								if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
+//							#endif
 					
 							float attenuation = Light[i].lAtt0 * falloff;
 							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
@@ -470,9 +470,9 @@ float4 doLighting(psInput input) : SV_Target
 							lightCounter  += 6;
 				} else {
 							shadow = 1;
-							#ifdef doShadowPOM
-								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
-							#endif
+//							#ifdef doShadowPOM
+//								if(Light[i].shadowPOM > 0 && Material[texID].POM) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
+//							#endif
 					
 						    float attenuation = Light[i].lAtt0 * falloff;
 							finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
