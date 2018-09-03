@@ -80,7 +80,7 @@ struct MaterialStruct
 	
 	float	sampleNormal;
 	float	sampleHeight;
-	float	pad0;
+	float	TangentDir;
 	float	pad1;
 	
 	#endif
@@ -155,7 +155,7 @@ gBuffer PS(psInput input)
 			float3 bumpMap = float3(.5,.5,1);
 			if(Material_NormalMapping[texID].sampleNormal) bumpMap = normalTex.Sample(g_samLinear,float3(input.uv.xy, texID)).rgb;
 			if(length(bumpMap) > 0) bumpMap = (bumpMap * 2.0f) - 1.0f;
-			N = normalize(N + (bumpMap.x * (t) + bumpMap.y * (b)) * Material_NormalMapping[texID].bumpy);
+			N = normalize(N + (bumpMap.x * (t*Material_NormalMapping[texID].TangentDir) + bumpMap.y * (b)) * Material_NormalMapping[texID].bumpy);
 			
 		
 	#endif

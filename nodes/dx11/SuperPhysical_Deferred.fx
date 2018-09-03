@@ -87,7 +87,7 @@ struct MaterialStruct
 	float4	Refraction;
 	
 	float	bumpy;
-	float	noTile;
+	float	TangentDir;
 	float	useTex;
 	float	Iridescence;
 	
