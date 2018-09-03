@@ -495,7 +495,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1650" top="12705">
    </BOUNDS>
-   <PIN pinname="gamma" slicecount="1" values="1">
+   <PIN pinname="gamma" slicecount="1" values="1.15">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>

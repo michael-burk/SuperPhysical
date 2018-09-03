@@ -29,7 +29,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	IBL = cubeTexIrradiance.Sample(g_samLinear,reflVecNorm).rgb;
 	IBL  = IBL * albedo.xyz;
 	
-	float3 refl = cubeTexRefl.SampleLevel(g_samLinear,reflVect,roughness*MAX_REFLECTION_LOD).rgb;
+	float3 refl = cubeTexRefl.SampleLevel(g_samLinearIBL,reflVect,roughness*MAX_REFLECTION_LOD).rgb;
 	
 	#ifdef doIridescence
 	if(Material[texID].Iridescence){
@@ -46,7 +46,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 		float3 refrVect;
 	    for(int r=0; r<3; r++) {
 	    	refrVect = refract(-V, N , Material[texID].Refraction.xyz[r]);
-	    	refrColor += cubeTexRefl.SampleLevel(g_samLinear,refrVect,roughness*MAX_REFLECTION_LOD).rgb * wavelength[r];
+	    	refrColor += cubeTexRefl.SampleLevel(g_samLinearIBL,refrVect,roughness*MAX_REFLECTION_LOD).rgb * wavelength[r];
 		}
 		refrColor *= 1 - (kS * envBRDF.x + envBRDF.y);
 		
