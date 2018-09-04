@@ -226,7 +226,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="10515" top="1455" width="20550" height="14550">
+   <BOUNDS type="Window" left="4155" top="810" width="20550" height="14550">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -839,7 +839,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4335" top="9855">
    </BOUNDS>
-   <PIN pinname="Factor" slicecount="1" visible="1" values="0.25">
+   <PIN pinname="Factor" slicecount="1" visible="1" values="0.5">
    </PIN>
    <PIN pinname="linearDepth" visible="1" slicecount="1" values="||">
    </PIN>
