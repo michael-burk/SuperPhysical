@@ -18,6 +18,7 @@ float4x4 viewPortTransforms <bool uvspace = true;>;
 StructuredBuffer <float> farPlane;
 StructuredBuffer <float3> lPos;
 StructuredBuffer <uint> LightType;
+StructuredBuffer <float> lightintensity;
 
 float fade;
 float offsetZ = 0;
@@ -29,7 +30,6 @@ uint NB_STEPS = 32;
 
 StructuredBuffer <float4x4> lightVP;
 
-float brightness = 1;
 float stepLength = 1;
 
 uint lightCount = 0;
@@ -213,7 +213,7 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 			if (!shadowed)
 			{	
 				distFactor =  pow(saturate( farPlane[j] * fade - length(currentPos - lPos[j])), 1);
-				accumFog   += ComputeScattering(dot(rayDir, lightDir)).r * distFactor * brightness * stepLength * spotTex.rgb * LightColor[j].rgb * 10;
+				accumFog   += ComputeScattering(dot(rayDir, lightDir)).r * distFactor * lightintensity[j] * stepLength * spotTex.rgb * LightColor[j].rgb * 10;
 			}
 			
 		}
