@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="705" top="885" width="15390" height="11685">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -232,7 +232,7 @@
    <PIN pinname="X Input Value" slicecount="1" values="3">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.3.1.1">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="58">
    <BOUNDS type="Box" left="1365" top="9990" width="795" height="240">
@@ -666,18 +666,6 @@
    </LINK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
-   <NODE systemname="ParallaxOcclusionMapping (SuperPhysical Shadow)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="ShadowPOM (SuperPhysical Shadow)" componentmode="Hidden" id="321">
-   <BOUNDS type="Node" left="10335" top="6045" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Samples" slicecount="1" values="32">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="321" srcpinname="Output" dstnodeid="300" dstpinname="ShadowPOM">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="322">
    <BOUNDS type="Box" left="12300" top="5295" width="480" height="480">
    </BOUNDS>
@@ -693,7 +681,19 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="322" srcpinname="Y Output Value" dstnodeid="321" dstpinname="Enabled">
+   <NODE systemname="ParallaxOcclusionMapping (SuperPhysical Shadow)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="ParallaxOcclusionMapping (SuperPhysical Shadow)" componentmode="Hidden" id="323">
+   <BOUNDS type="Node" left="11220" top="6000" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="323" srcpinname="Output" dstnodeid="300" dstpinname="ShadowPOM">
+   </LINK>
+   <LINK srcnodeid="322" srcpinname="Y Output Value" dstnodeid="323" dstpinname="Enabled">
    </LINK>
    </PATCH>
