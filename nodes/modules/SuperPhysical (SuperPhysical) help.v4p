@@ -836,7 +836,7 @@
    </LINK>
    <LINK srcnodeid="56" srcpinname="Output" dstnodeid="90" dstpinname="Planar Transform">
    </LINK>
-   <NODE id="7" componentmode="InAWindow" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
+   <NODE id="7" componentmode="Hidden" systemname="LIGHT SETUP" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\LIGHT SETUP.v4p" debug="0" stayontop="0">
    <BOUNDS type="Node" left="4245" top="4215" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="4245" top="4215">

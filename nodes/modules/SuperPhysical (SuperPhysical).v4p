@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="2085" scrolly="45">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="2085" scrolly="45">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -78,7 +78,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Render State|">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.0.5">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <NODE systemname="FromPointer (DX11.Texture 2d)" filename="..\..\plugins\PointerNodes.dll" nodename="FromPointer (DX11.Texture 2d)" componentmode="Hidden" id="126">
    <BOUNDS type="Node" left="13695" top="2085" width="100" height="100">
@@ -335,7 +335,7 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Update" visible="1" slicecount="1" values="1">
+   <PIN pinname="Update" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
    </PIN>
@@ -631,7 +631,7 @@
    </PIN>
    <PIN pinname="brdfLUT" visible="1">
    </PIN>
-   <PIN pinname="gamma" slicecount="1" values="1.25">
+   <PIN pinname="gamma" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="138" srcpinname="Texture" dstnodeid="375" dstpinname="Iridescence" linkstyle="Bezier">
@@ -939,9 +939,9 @@
    <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="379">
    <BOUNDS type="Node" left="11895" top="9090" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
+   <PIN pinname="Input 1" visible="1" slicecount="10" values="doSSS=1,doPOM=1,doRefraction=1,doIridescence=1,doIBL=1,doGlobalLight=1,doControlTextures=1,doToneMap=1,doShadowPOM=1,doPlanarReflections=1">
    </PIN>
-   <PIN pinname="Input 2" visible="1">
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="text">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
