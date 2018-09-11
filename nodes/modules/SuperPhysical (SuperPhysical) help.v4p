@@ -707,6 +707,8 @@
    </PIN>
    <PIN pinname="g_samLinear" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="Technique" slicecount="1" values="PBR_Bump_AutoTNB">
+   </PIN>
    </NODE>
    <LINK srcnodeid="25" srcpinname="Transform Out" dstnodeid="51" dstpinname="Transform In" linkstyle="Bezier">
    <LINKPOINT x="4995" y="4410">
