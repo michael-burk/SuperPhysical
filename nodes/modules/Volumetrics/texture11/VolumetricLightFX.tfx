@@ -21,7 +21,8 @@ StructuredBuffer <uint> LightType;
 StructuredBuffer <float> lightintensity;
 
 float fade;
-float offsetZ = 0;
+float3 volPos = float3(0,0,0);
+float volSize = 1;
 
 static const float G_SCATTERING = -.2;
 static const float PI = 3.14159265f;
@@ -29,8 +30,6 @@ static const float PI = 3.14159265f;
 uint NB_STEPS = 32;
 
 StructuredBuffer <float4x4> lightVP;
-
-float stepLength = 1;
 
 uint lightCount = 0;
 
@@ -60,21 +59,27 @@ float3 UVtoEYE(float2 UV){
 
 //float fac;
 float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
-	float2 vieportUVs = mul(float4(x.x,x.y,0,1),viewPortTransforms).xy;
 	
+	float2 vieportUVs = mul(float4(x.x,x.y,0,1),viewPortTransforms).xy;
 	float3 endRayPos =  UVZtoWORLD(vieportUVs,depthMap.Sample(s0,x).r).xyz;
+	
+	
 	// Ray Origin
 	float3 startPos = tVI[3].xyz ;
 	// Ray Direction
 	float3 rayDir = UVtoEYE(vieportUVs);
 	
+	float stepLength = volSize*2/ NB_STEPS;
+
 	float3 steppy = rayDir * stepLength;
 
-	startPos += steppy * noiseTex.Sample(s0,x).r;
-	startPos +=  rayDir * offsetZ;
-
-	float3 currentPos = startPos;
+ 	// offset of outside of volume. todo: lerp on border?
+	if(length(startPos - volPos) >= volSize * 2) startPos +=  rayDir * (length(volPos-startPos) - volSize); // offset in z
 	
+	startPos += steppy * noiseTex.Sample(s0,x).r;
+	
+	float3 currentPos = startPos;
+
 	float3 accumFog = 0.0f.xxx;
 	float  shadowMapValue = 0;
 	float4 worldInShadowCameraSpace;
@@ -90,10 +95,10 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 	
 	for (uint i = 0; i < NB_STEPS; i++)
 	{	
+		if(length(currentPos - volPos) > volSize * 2) break;
 		
-		if ( length(startPos-endRayPos) - length(startPos-currentPos)  < 0 ) break;
-		if( length(startPos-endRayPos) < offsetZ) break;
-//		if( length(currentPos - endRayPos) <= stepLength) break;
+		if ( length(tVI[3].xyz-endRayPos) - length(tVI[3].xyz-(currentPos))  < 0 ) break;
+//		if( length(startPos-endRayPos) < offsetZ) break;
 
 		shadowCounter = 0;
 		lightCounter = 0;
@@ -127,9 +132,6 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 							shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
 							
 							if(shadowMapValue.r <= worldInShadowCameraSpace.z) shadowed = true;
-//							else if(shadowMapValue.g > .6){
-//								shadowed = false;
-//							} 
 							
 						}else{
 							shadowed = true;
@@ -161,9 +163,6 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 							shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, j), 0).r;
 							
 							if(shadowMapValue.r <= worldInShadowCameraSpace.z && shadowMapValue.r != 0) shadowed = true;
-//							else if(shadowMapValue.g > .6){
-//								shadowed = false;
-//							} 
 					
 								
 						} else{
@@ -197,9 +196,6 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 								shadowMapValue = shadowMaps.SampleLevel(s0, float3((worldInShadowCameraSpace.x + 1) * .5, (-worldInShadowCameraSpace.y + 1) * .5, k+shadowCounter*6+lightCounter), 0).r;
 								
 								if(shadowMapValue.r <= worldInShadowCameraSpace.z && shadowMapValue.r != 0)	shadowed = true;
-//								else if(shadowMapValue.g > .6){
-//									shadowed = false;
-//								} 
 
 								if(shadowed) break;
 							}

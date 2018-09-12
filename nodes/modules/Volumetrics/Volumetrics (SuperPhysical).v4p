@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\Projects\wdchdreams\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="0" bgcolor="15132390">
-   <BOUNDS type="Window" left="2040" top="15585" width="15975" height="13365">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="60" bgcolor="15132390">
+   <BOUNDS type="Window" left="5775" top="9810" width="15975" height="13365">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -44,22 +44,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="NB_STEPS">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="305" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="6705" top="4950" width="525" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="6705" top="4950" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="brightness">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="359" systemname="IOBox (String)">
    <BOUNDS type="Node" left="555" top="480" width="1335" height="270">
    </BOUNDS>
@@ -88,20 +72,6 @@
    <PIN pinname="Show Grid" slicecount="1" values="0">
    </PIN>
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="384" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7545" top="5250" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="7545" top="5250" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.2">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="stepLength">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="420">
@@ -432,7 +402,7 @@
    <LINKPOINT x="3600" y="2460">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.3.1">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
@@ -443,7 +413,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1185" top="7920" width="13305" height="11770">
    </BOUNDS>
-   <BOUNDS type="Window" left="22575" top="15750" width="20550" height="14550">
+   <BOUNDS type="Window" left="15270" top="13170" width="20550" height="14550">
    </BOUNDS>
    <PIN pinname="fadeZ" slicecount="1" values="1.78">
    </PIN>
@@ -477,7 +447,7 @@
    </PIN>
    <PIN pinname="DepthLightVP" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="stepLength" slicecount="1" visible="1" values="0.22">
+   <PIN pinname="stepLength" slicecount="1" visible="1" values="0.2">
    </PIN>
    <PIN pinname="tVP" visible="1">
    </PIN>
@@ -513,7 +483,7 @@
    </PIN>
    <PIN pinname="Inverse View" visible="1">
    </PIN>
-   <PIN pinname="offsetZ" visible="1">
+   <PIN pinname="offsetZ" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -522,6 +492,10 @@
    <PIN pinname="viewPortTransforms" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Lightintensity" visible="1">
+   </PIN>
+   <PIN pinname="volPosXYZ" visible="1">
+   </PIN>
+   <PIN pinname="volSize" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="242" srcpinname="Output" dstnodeid="288" dstpinname="LowRes" linkstyle="Bezier">
@@ -540,12 +514,6 @@
    <LINKPOINT x="6005" y="6690">
    </LINKPOINT>
    <LINKPOINT x="4105" y="6690">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="384" srcpinname="Y Output Value" dstnodeid="288" dstpinname="stepLength" linkstyle="Bezier">
-   <LINKPOINT x="7895" y="6690">
-   </LINKPOINT>
-   <LINKPOINT x="5470" y="6690">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="288" srcpinname="Texture Out" dstnodeid="421" dstpinname="Input Node" linkstyle="Bezier">
@@ -635,26 +603,6 @@
    <LINK srcnodeid="566" srcpinname="PositionXYZ" dstnodeid="288" dstpinname="CamPositionXYZ">
    </LINK>
    <LINK srcnodeid="566" srcpinname="Inverse View" dstnodeid="288" dstpinname="Inverse View">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="571">
-   <BOUNDS type="Box" left="8550" top="5205" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="8550" top="5205" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="offsetZ">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="571" srcpinname="Y Output Value" dstnodeid="288" dstpinname="offsetZ" linkstyle="Bezier">
-   <LINKPOINT x="8580" y="6683">
-   </LINKPOINT>
-   <LINKPOINT x="8595" y="6683">
-   </LINKPOINT>
    </LINK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
@@ -775,5 +723,41 @@
    <LINK srcnodeid="580" srcpinname="Y Output Value" dstnodeid="288" dstpinname="brightness">
    </LINK>
    <LINK srcnodeid="580" srcpinname="Y Output Value" dstnodeid="288" dstpinname="Lightintensity">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="581">
+   <BOUNDS type="Box" left="12780" top="2910" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12780" top="2910" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="volPosXYZ">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="581" srcpinname="Y Output Value" dstnodeid="288" dstpinname="volPosXYZ">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="582">
+   <BOUNDS type="Box" left="13770" top="3060" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13770" top="3060" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.25">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="volSize">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="582" srcpinname="Y Output Value" dstnodeid="288" dstpinname="volSize">
    </LINK>
    </PATCH>

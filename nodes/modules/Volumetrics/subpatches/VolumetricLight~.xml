@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\Volumetrics\subpatches\VolumetricLight.v4p" systemname="VolumetricLight" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\subpatches\VolumetricLight.v4p" scrollx="0" scrolly="0" bgcolor="15329769">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\Volumetrics\subpatches\VolumetricLight.v4p" systemname="VolumetricLight" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\subpatches\VolumetricLight.v4p" scrollx="1035" scrolly="0" bgcolor="15329769">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8070" top="4170" width="780" height="375">
    </BOUNDS>
@@ -226,7 +226,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="4155" top="810" width="20550" height="14550">
+   <BOUNDS type="Window" left="15270" top="13170" width="20550" height="14550">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -236,22 +236,6 @@
    <LINKPOINT x="4730" y="6705">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="38" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8550" top="5070" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="8550" top="5070" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="brightness">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="49">
    <BOUNDS type="Node" left="15525" top="2055" width="100" height="100">
    </BOUNDS>
@@ -444,24 +428,6 @@
    <LINKPOINT x="5115" y="6443">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="84">
-   <BOUNDS type="Box" left="9045" top="5670" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="9045" top="5670" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.5">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="stepLength">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
    <NODE id="83" systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <BOUNDS type="Node" left="6570" top="4620" width="100" height="100">
    </BOUNDS>
@@ -601,9 +567,9 @@
    </PIN>
    </NODE>
    <NODE systemname="DynamicBuffer (DX11.Buffer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Transform)" componentmode="Hidden" id="132">
-   <BOUNDS type="Node" left="14820" top="5685" width="100" height="100">
+   <BOUNDS type="Node" left="14325" top="5340" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="14820" top="5685" width="3000" height="3000">
+   <BOUNDS type="Box" left="14325" top="5340" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Data" visible="1" slicecount="1" values="||">
    </PIN>
@@ -611,9 +577,9 @@
    </PIN>
    </NODE>
    <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="133">
-   <BOUNDS type="Node" left="13215" top="4140" width="100" height="100">
+   <BOUNDS type="Node" left="12810" top="4140" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="13215" top="4140" width="3000" height="3000">
+   <BOUNDS type="Box" left="12810" top="4140" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="DataXY" visible="1">
    </PIN>
@@ -625,15 +591,15 @@
    <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="133" dstpinname="DataXY">
    </LINK>
    <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="133" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="6550" y="2633">
+   <LINKPOINT x="6415" y="2633">
    </LINKPOINT>
-   <LINKPOINT x="12800" y="2693">
+   <LINKPOINT x="12530" y="2693">
    </LINKPOINT>
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 3d)" componentmode="Hidden" id="134">
-   <BOUNDS type="Node" left="13755" top="4740" width="100" height="100">
+   <BOUNDS type="Node" left="13320" top="4605" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="13755" top="4740" width="3000" height="3000">
+   <BOUNDS type="Box" left="13320" top="4605" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="DataXY" visible="1">
    </PIN>
@@ -731,9 +697,9 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Color)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Color)" componentmode="Hidden" id="139">
-   <BOUNDS type="Node" left="12210" top="3570" width="100" height="100">
+   <BOUNDS type="Node" left="11835" top="3735" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="12210" top="3570" width="3000" height="3000">
+   <BOUNDS type="Box" left="11835" top="3735" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
@@ -771,23 +737,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="140" srcpinname="Color Output" dstnodeid="139" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="16285" y="2410">
+   <LINKPOINT x="16160" y="2465">
    </LINKPOINT>
-   <LINKPOINT x="12335" y="2600">
+   <LINKPOINT x="12085" y="2710">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="135" srcpinname="Y Output Value" dstnodeid="134" dstpinname="DataXYZ" linkstyle="Bezier">
-   <LINKPOINT x="12755" y="3165">
+   <LINKPOINT x="12610" y="3120">
    </LINKPOINT>
-   <LINKPOINT x="13345" y="3255">
+   <LINKPOINT x="13055" y="3165">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="28" srcpinname="Output Node" dstnodeid="132" dstpinname="Data" linkstyle="PolyLine">
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer UInt)" componentmode="Hidden" id="141">
-   <BOUNDS type="Node" left="14235" top="5175" width="100" height="100">
+   <BOUNDS type="Node" left="13815" top="4980" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="14235" top="5175" width="3000" height="3000">
+   <BOUNDS type="Box" left="13815" top="4980" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
@@ -820,7 +786,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.0.5">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
@@ -905,6 +871,14 @@
    </PIN>
    <PIN pinname="noise" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="brightness" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="lightintensity" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="volPosXYZ" visible="1">
+   </PIN>
+   <PIN pinname="volSize" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="190" dstpinname="fade" linkstyle="Bezier">
    <LINKPOINT x="7635" y="5963">
@@ -924,18 +898,6 @@
    <LINKPOINT x="11325" y="3728">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="38" srcpinname="Y Output Value" dstnodeid="190" dstpinname="brightness" linkstyle="Bezier">
-   <LINKPOINT x="8610" y="5775">
-   </LINKPOINT>
-   <LINKPOINT x="9300" y="5775">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="190" dstpinname="stepLength" linkstyle="Bezier">
-   <LINKPOINT x="9105" y="6068">
-   </LINKPOINT>
-   <LINKPOINT x="9795" y="6068">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="190" dstpinname="Default SizeXY" linkstyle="Bezier">
    <LINKPOINT x="3615" y="3735">
    </LINKPOINT>
@@ -950,23 +912,11 @@
    <LINKPOINT x="10320" y="5603">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="132" srcpinname="Buffer" dstnodeid="190" dstpinname="lightVP" linkstyle="Bezier">
-   <LINKPOINT x="14850" y="6098">
-   </LINKPOINT>
-   <LINKPOINT x="14865" y="6098">
-   </LINKPOINT>
+   <LINK srcnodeid="132" srcpinname="Buffer" dstnodeid="190" dstpinname="lightVP" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="133" srcpinname="Buffer" dstnodeid="190" dstpinname="farPlane" linkstyle="Bezier">
-   <LINKPOINT x="13245" y="5325">
-   </LINKPOINT>
-   <LINKPOINT x="13350" y="5325">
-   </LINKPOINT>
+   <LINK srcnodeid="133" srcpinname="Buffer" dstnodeid="190" dstpinname="farPlane" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="134" srcpinname="Buffer" dstnodeid="190" dstpinname="lPos" linkstyle="Bezier">
-   <LINKPOINT x="13785" y="5625">
-   </LINKPOINT>
-   <LINKPOINT x="13845" y="5625">
-   </LINKPOINT>
+   <LINK srcnodeid="134" srcpinname="Buffer" dstnodeid="190" dstpinname="lPos" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="136" srcpinname="Y Output Value" dstnodeid="190" dstpinname="Enabled" linkstyle="Bezier">
    <LINKPOINT x="19305" y="4845">
@@ -974,23 +924,11 @@
    <LINKPOINT x="15915" y="4845">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="139" srcpinname="Buffer" dstnodeid="190" dstpinname="LightColor" linkstyle="Bezier">
-   <LINKPOINT x="12240" y="5033">
-   </LINKPOINT>
-   <LINKPOINT x="12330" y="5033">
-   </LINKPOINT>
+   <LINK srcnodeid="139" srcpinname="Buffer" dstnodeid="190" dstpinname="LightColor" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="141" srcpinname="Buffer" dstnodeid="190" dstpinname="LightType" linkstyle="Bezier">
-   <LINKPOINT x="14265" y="5850">
-   </LINKPOINT>
-   <LINKPOINT x="14355" y="5850">
-   </LINKPOINT>
+   <LINK srcnodeid="141" srcpinname="Buffer" dstnodeid="190" dstpinname="LightType" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="143" srcpinname="Output Node" dstnodeid="190" dstpinname="LightMap" linkstyle="Bezier">
-   <LINKPOINT x="11025" y="3848">
-   </LINKPOINT>
-   <LINKPOINT x="12840" y="3848">
-   </LINKPOINT>
+   <LINK srcnodeid="143" srcpinname="Output Node" dstnodeid="190" dstpinname="LightMap" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="145" srcpinname="Output Node" dstnodeid="190" dstpinname="shadowMaps" linkstyle="Bezier">
    <LINKPOINT x="13440" y="3713">
@@ -1042,6 +980,78 @@
    </LINK>
    <LINK srcnodeid="22" srcpinname="Texture Out" dstnodeid="36" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="68" srcpinname="Texture Out" dstnodeid="190" dstpinname="noise">
+   <LINK srcnodeid="68" srcpinname="Texture Out" dstnodeid="190" dstpinname="noise" linkstyle="PolyLine">
+   </LINK>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Value)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Value)" componentmode="Hidden" id="192">
+   <BOUNDS type="Node" left="14835" top="5760" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="14835" top="5760" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="DataXY" visible="1">
+   </PIN>
+   <PIN pinname="Data" visible="1" slicecount="1" values="0.7">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <PIN pinname="DataXYZ" visible="1" slicecount="6" values="-4.38200187683105,2.1288959980011,1.12510812282562,-1.68968796730042,3.61930775642395,0.213457092642784">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="192" srcpinname="Buffer" dstnodeid="190" dstpinname="brightness">
+   </LINK>
+   <LINK srcnodeid="192" srcpinname="Buffer" dstnodeid="190" dstpinname="lightintensity">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="196">
+   <BOUNDS type="Box" left="14775" top="1605" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14775" top="1605" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Lightintensity">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="196" srcpinname="Y Output Value" dstnodeid="192" dstpinname="Data">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="197">
+   <BOUNDS type="Box" left="18750" top="915" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="18750" top="915" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="volPosXYZ">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="197" srcpinname="Y Output Value" dstnodeid="190" dstpinname="volPosXYZ">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="198">
+   <BOUNDS type="Box" left="19515" top="1860" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="19515" top="1860" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="volSize">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="198" srcpinname="Y Output Value" dstnodeid="190" dstpinname="volSize">
    </LINK>
    </PATCH>
