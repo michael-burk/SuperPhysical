@@ -69,12 +69,13 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 	// Ray Direction
 	float3 rayDir = UVtoEYE(vieportUVs);
 	
-	float stepLength = volSize*2/ NB_STEPS;
+	float stepLength = volSize * 2 / NB_STEPS; // ????;
 
 	float3 steppy = rayDir * stepLength;
 
  	// offset of outside of volume. todo: lerp on border?
-	if(length(startPos - volPos) >= volSize * 2) startPos +=  rayDir * (length(volPos-startPos) - volSize); // offset in z
+	if(length(startPos - volPos) >= volSize * 1) startPos +=  (rayDir * (length(volPos-startPos) - volSize * .5)); // offset in z
+
 	
 	startPos += steppy * noiseTex.Sample(s0,x).r;
 	
@@ -95,10 +96,10 @@ float4 VolumetricLight(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
 	
 	for (uint i = 0; i < NB_STEPS; i++)
 	{	
-		if(length(currentPos - volPos) > volSize * 2) break;
-		
+		if(length(currentPos - volPos) > volSize * 1) break;
 		if ( length(tVI[3].xyz-endRayPos) - length(tVI[3].xyz-(currentPos))  < 0 ) break;
-//		if( length(startPos-endRayPos) < offsetZ) break;
+	
+//		if((currentPos*rayDir).z > (endRayPos*rayDir).z) break;
 
 		shadowCounter = 0;
 		lightCounter = 0;

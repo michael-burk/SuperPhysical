@@ -818,22 +818,6 @@
    </LINK>
    <LINK srcnodeid="152" srcpinname="Texture Out" dstnodeid="22" dstpinname="Texture In">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="172">
-   <BOUNDS type="Box" left="14700" top="3765" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="14700" top="3765" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="offsetZ">
-   </PIN>
-   </NODE>
    <LINK srcnodeid="32" srcpinname="Output Node" dstnodeid="83" dstpinname="Source" linkstyle="Bezier">
    <LINKPOINT x="7975" y="2890">
    </LINKPOINT>
@@ -934,12 +918,6 @@
    <LINKPOINT x="13440" y="3713">
    </LINKPOINT>
    <LINKPOINT x="10845" y="3713">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="172" srcpinname="Y Output Value" dstnodeid="190" dstpinname="offsetZ" linkstyle="Bezier">
-   <LINKPOINT x="14700" y="5115">
-   </LINKPOINT>
-   <LINKPOINT x="8340" y="5115">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="32" srcpinname="Output Node" dstnodeid="190" dstpinname="tP" linkstyle="Bezier">
