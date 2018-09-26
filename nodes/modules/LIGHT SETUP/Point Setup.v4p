@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1035" top="4695" width="14460" height="10410">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -453,8 +453,6 @@
    </LINKPOINT>
    <LINKPOINT x="4500" y="5963">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="126" dstpinname="FOV">
    </LINK>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="126" dstpinname="PosXYZ" linkstyle="Bezier">
    <LINKPOINT x="1560" y="5655">

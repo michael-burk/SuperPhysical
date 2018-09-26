@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.15.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\modules\LIGHT\Light Helper (SuperPhysical).v4p" systemname="Cone (DX11)" filename="C:\vvvv\vvvv-addons\Modules\Cone (DX11).v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT\LightHelper (SuperPhysical).v4p" systemname="Cone (DX11)" filename="C:\vvvv\vvvv-addons\Modules\Cone (DX11).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2445" top="4095" width="15690" height="10740">
    </BOUNDS>
-   <PACK Name="addonpack" Version="35.9.0">
+   <PACK Name="addonpack" Version="36.0.0">
    </PACK>
    <NODE hiddenwhenlocked="0" id="3" nodename="Inverse (Transform)" systemname="Inverse (Transform)">
    <BOUNDS height="0" left="4485" top="5160" type="Node" width="0">
@@ -108,8 +108,6 @@
    <PIN pinname="Transform In 2" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="3" srcpinname="Transform Out" dstnodeid="41" dstpinname="Transform">
-   </LINK>
    <LINK srcnodeid="3" srcpinname="Transform Out" dstnodeid="41" dstpinname="Transform In 2" linkstyle="Bezier">
    <LINKPOINT x="4515" y="5640">
    </LINKPOINT>
@@ -651,7 +649,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="14385" top="3465" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -720,4 +718,6 @@
    </LINK>
    <LINK srcnodeid="105" srcpinname="Geometry Out" dstnodeid="106" dstpinname="Geometry">
    </LINK>
+   <PACK Name="dx11" Version="1.3.1.1">
+   </PACK>
    </PATCH>

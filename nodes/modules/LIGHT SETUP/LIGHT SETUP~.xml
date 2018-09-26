@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1935" top="1725" width="9255" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -86,7 +86,7 @@
    <LINKPOINT x="9090" y="2175">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.0.5">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="86">
    <BOUNDS type="Node" left="9075" top="2670" width="100" height="100">
@@ -289,7 +289,7 @@
    </BOUNDS>
    <BOUNDS type="Window" left="705" top="885" width="15390" height="11685">
    </BOUNDS>
-   <PIN pinname="SpotLights" visible="1">
+   <PIN pinname="SpotLights" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="227" dstpinname="PointLightSettings">
@@ -309,7 +309,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5400" top="3825" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -319,7 +319,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="230" srcpinname="Y Output Value" dstnodeid="229" dstpinname="Enabled">

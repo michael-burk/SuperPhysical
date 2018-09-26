@@ -86,7 +86,7 @@
    <LINKPOINT x="9090" y="2175">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.3.1">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="86">
    <BOUNDS type="Node" left="9075" top="2670" width="100" height="100">
@@ -200,18 +200,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="86" srcpinname="Pointer" dstnodeid="220" dstpinname="CubeMapRefl" linkstyle="Bezier">
-   <LINKPOINT x="7460" y="3043">
-   </LINKPOINT>
-   <LINKPOINT x="4705" y="2988">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="87" srcpinname="Pointer" dstnodeid="220" dstpinname="CubeMapIrrradiance" linkstyle="Bezier">
-   <LINKPOINT x="6800" y="3083">
-   </LINKPOINT>
-   <LINKPOINT x="4420" y="3008">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="42" srcpinname="Color Output" dstnodeid="220" dstpinname="GlobalDiffuseColor">
    </LINK>
    <LINK srcnodeid="41" srcpinname="Color Output" dstnodeid="220" dstpinname="GlobalReflectionColor">

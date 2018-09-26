@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha35.18.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\AsTextureArray.v4p" systemname="AsTextureArray" filename="C:\Projects\superphong\Modules\AsTextureArray.v4p" scrollx="0" scrolly="810">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\AsTextureArray.v4p" systemname="AsTextureArray" filename="C:\Projects\superphong\Modules\AsTextureArray.v4p" scrollx="0" scrolly="810">
    <BOUNDS type="Window" left="5085" top="4455" width="7635" height="8925">
    </BOUNDS>
    <PACK Name="vvvv.packs_" Version="0.2.0">
@@ -278,7 +278,7 @@
    </LINK>
    <LINK srcnodeid="5" srcpinname="Count" dstnodeid="8" dstpinname="Y Input Value">
    </LINK>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>

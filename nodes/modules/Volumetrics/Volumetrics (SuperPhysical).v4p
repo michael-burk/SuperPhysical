@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="60" bgcolor="15132390">
-   <BOUNDS type="Window" left="5775" top="9810" width="15975" height="13365">
+   <BOUNDS type="Window" left="3675" top="1740" width="15975" height="13365">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -582,8 +582,6 @@
    <LINKPOINT x="5340" y="6120">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="420" srcpinname="Output Node" dstnodeid="288" dstpinname="shadowMap">
-   </LINK>
    <LINK srcnodeid="420" srcpinname="Output Node" dstnodeid="288" dstpinname="shadowMaps" linkstyle="Bezier">
    <LINKPOINT x="12810" y="4358">
    </LINKPOINT>
@@ -599,10 +597,6 @@
    <LINK srcnodeid="566" srcpinname="View" dstnodeid="288" dstpinname="View">
    </LINK>
    <LINK srcnodeid="566" srcpinname="Projection" dstnodeid="288" dstpinname="Projection">
-   </LINK>
-   <LINK srcnodeid="566" srcpinname="PositionXYZ" dstnodeid="288" dstpinname="CamPositionXYZ">
-   </LINK>
-   <LINK srcnodeid="566" srcpinname="Inverse View" dstnodeid="288" dstpinname="Inverse View">
    </LINK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
@@ -713,15 +707,9 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="564" srcpinname="Lightintensity" dstnodeid="580" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="10305" y="4343">
-   </LINKPOINT>
-   <LINKPOINT x="8280" y="4343">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="580" srcpinname="Y Output Value" dstnodeid="288" dstpinname="brightness">
-   </LINK>
    <LINK srcnodeid="580" srcpinname="Y Output Value" dstnodeid="288" dstpinname="Lightintensity">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="581">
@@ -749,7 +737,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13770" top="3060" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.25">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -759,5 +747,19 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="582" srcpinname="Y Output Value" dstnodeid="288" dstpinname="volSize">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="583">
+   <BOUNDS type="Node" left="10530" top="2040" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="10530" top="2040">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="564" srcpinname="Lightintensity" dstnodeid="583" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="583" srcpinname="Output" dstnodeid="580" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

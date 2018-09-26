@@ -226,7 +226,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="24270" top="7500" width="20550" height="14550">
+   <BOUNDS type="Window" left="15270" top="13170" width="20550" height="14550">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -588,8 +588,6 @@
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="133" dstpinname="DataXY">
-   </LINK>
    <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="133" dstpinname="Data" linkstyle="Bezier">
    <LINKPOINT x="6415" y="2633">
    </LINKPOINT>
@@ -888,8 +886,6 @@
    <LINKPOINT x="5265" y="3735">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="28" srcpinname="Output Node" dstnodeid="190" dstpinname="shadowVP">
-   </LINK>
    <LINK srcnodeid="131" srcpinname="Y Output Value" dstnodeid="190" dstpinname="lightCount" linkstyle="Bezier">
    <LINKPOINT x="9810" y="5603">
    </LINKPOINT>
@@ -974,8 +970,6 @@
    <PIN pinname="DataXYZ" visible="1" slicecount="6" values="-4.38200187683105,2.1288959980011,1.12510812282562,-1.68968796730042,3.61930775642395,0.213457092642784">
    </PIN>
    </NODE>
-   <LINK srcnodeid="192" srcpinname="Buffer" dstnodeid="190" dstpinname="brightness">
-   </LINK>
    <LINK srcnodeid="192" srcpinname="Buffer" dstnodeid="190" dstpinname="lightintensity">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="196">

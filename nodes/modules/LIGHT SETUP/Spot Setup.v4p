@@ -232,7 +232,7 @@
    <PIN pinname="X Input Value" slicecount="1" values="3">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.3.1">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="58">
    <BOUNDS type="Box" left="1365" top="9990" width="795" height="240">
@@ -532,8 +532,6 @@
    <PIN pinname="ShadowPOM" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="300" dstpinname="PosXYZ">
-   </LINK>
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Helper" linkstyle="Bezier">
    <LINKPOINT x="7425" y="8318">
    </LINKPOINT>
