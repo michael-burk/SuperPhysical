@@ -12801,7 +12801,7 @@
                         <Pin Id="SfW7pngQW4CO85ahkFjhQJ" Name="Iridescence" Kind="OutputPin" />
                         <Pin Id="JBE46yk5auAMKUJD4nwG1p" Name="IridescenceMap" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1569,521,35,13" Id="QnRmSGe5JaEP5NMvJpwPjz">
+                      <Node Bounds="1516,542,35,13" Id="QnRmSGe5JaEP5NMvJpwPjz">
                         <p:NodeReference LastCategoryFullName="SharpDX.Matrix" LastSymbolSource="SharpDX.Mathematics.dll" LastDependency="VVVV.Value.SuperPhysical.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Invert" />
@@ -12811,7 +12811,7 @@
                         <Pin Id="IBjC8gsrhFmLEjWvk8aCTq" Name="Value" Kind="InputPin" />
                         <Pin Id="OytGEpw3AhpOb7ukLZ9qNM" Name="Output" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1493,552,65,13" Id="HtZrNQrzq84NC9BIyOKdcN">
+                      <Node Bounds="1442,572,65,13" Id="HtZrNQrzq84NC9BIyOKdcN">
                         <p:NodeReference LastCategoryFullName="3D.Matrix" LastSymbolSource="CoreLibBasics.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="GetRows" />
@@ -12822,7 +12822,7 @@
                         <Pin Id="LlqWHTZLbmRQIf94jsLzhI" Name="Row 3" Kind="OutputPin" />
                         <Pin Id="AbjEf1nT8FiNuPW5KlBJRX" Name="Row 4" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1492,587,65,13" Id="R518OlZK62qMJNPnc82FY4">
+                      <Node Bounds="1442,607,65,13" Id="R518OlZK62qMJNPnc82FY4">
                         <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Cons" />
@@ -12833,7 +12833,7 @@
                         <Pin Id="CG4T3tCMmBLLNlVuSBALQi" Name="Input 4" Kind="InputPin" />
                         <Pin Id="HCxe5Xg8bzFPfhCL6rzRKK" Name="Result" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1567,551,65,13" Id="CE9sRGJzLPFNe9NqRI0SXw">
+                      <Node Bounds="1516,572,65,13" Id="CE9sRGJzLPFNe9NqRI0SXw">
                         <p:NodeReference LastCategoryFullName="3D.Matrix" LastSymbolSource="CoreLibBasics.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="GetRows" />
@@ -12844,7 +12844,7 @@
                         <Pin Id="VTpjBnx5XXvOn5zkSZhDnh" Name="Row 3" Kind="OutputPin" />
                         <Pin Id="Q25BuwMsmFcPASb4NWyi7p" Name="Row 4" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1566,586,65,13" Id="BwfD0LQ8AlSOpBKmHr9hw9">
+                      <Node Bounds="1516,607,65,13" Id="BwfD0LQ8AlSOpBKmHr9hw9">
                         <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Cons" />
@@ -12855,7 +12855,7 @@
                         <Pin Id="PTGLBZinQSqQCOSEexsPt3" Name="Input 4" Kind="InputPin" />
                         <Pin Id="BHnqL1FDsZ5OJEO6r5Qcdg" Name="Result" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1491,624,79,13" Id="IfnyGJJ2Z8XM0SzWarTKlU">
+                      <Node Bounds="1442,644,79,13" Id="IfnyGJJ2Z8XM0SzWarTKlU">
                         <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Concat" />
@@ -13130,6 +13130,7 @@
             <Link Id="Qjos20lOBSALfFeMAulk70" Ids="V4Cr9SWhpkSMq7Y64z24Wx,CJEQh0Y6keBOR7w4Sbf7xz" />
             <Link Id="Ujdtk1WUjEfNnRyu1knH9m" Ids="UynWXnWDTPzP6uaFRvO1Pk,KNES0r2erfJMJ32CYP8IFo" />
             <Link Id="SHV2SLgUYWQQBdfwiEoTqq" Ids="K2c9c4jxZf2NR9AevJPRD1,MRxY85nsi9DPO6Cz8WKcQa" />
+            <Link Id="TIJoMcAO0q6OftC3UojOmf" Ids="PEbyEFM3uM6LbPshzDz3Wa,ATJVm2KxIHfPbUCrel8GlV" />
           </Patch>
         </Node>
         <!--
@@ -13217,38 +13218,18 @@
           </Patch>
         </Node>
       </Canvas>
-      <!--
-
-    ************************ Patch ************************
-
--->
-      <Node Name="Patch" Bounds="200,100" Id="DHUBWUVVjbQLSWGOrzsxlb">
-        <p:NodeReference>
-          <Choice Kind="ContainerDefinition" Name="Process" />
-          <FullNameCategoryReference ID="Primitive" />
-        </p:NodeReference>
-        <Patch Id="OrmH8cTXG4sNsPi8aVUCOE" IsGeneric="true">
-          <Canvas Id="GkWnN54zr6OPTy1Y5wAd5u" CanvasType="Group" />
-          <Patch Id="MED5FoTJ0X6MwC963TuMsL" Name="Create" />
-          <Patch Id="ErYZPsjT2dLQZKezsw1flU" Name="Update" />
-          <ProcessDefinition Id="KdBNWnLE2PiNo2bextjKzt">
-            <Fragment Id="TRed3HAQ8nHN5E7RiQNes6" Patch="MED5FoTJ0X6MwC963TuMsL" Enabled="true" />
-            <Fragment Id="NGxcdVU9ENcQE1dmP7zs2m" Patch="ErYZPsjT2dLQZKezsw1flU" Enabled="true" />
-          </ProcessDefinition>
-        </Patch>
-      </Node>
     </Canvas>
   </Patch>
-  <PlatformDependency Id="DDAFTtXK0G8LWhJN0NlSiY" Location="C:/vvvv/dx11/core/AssimpNet.dll" />
-  <PlatformDependency Id="Q9K3ccA72BIM1GkFx2gv2u" Location="C:/vvvv/dx11/core/FeralTic.dll" />
-  <PlatformDependency Id="FX9QgLlHppBQY5YPeDdCQT" Location="C:/vvvv/dx11/core/SharpDX.D3DCompiler.dll" />
-  <PlatformDependency Id="NFLEsCUtyclLIe5ctpf3zB" Location="C:/vvvv/dx11/core/SharpDX.Direct2D1.dll" />
-  <PlatformDependency Id="FBzczgdflQ5MeKhJRKPFaq" Location="C:/vvvv/dx11/core/SharpDX.Direct3D11.dll" />
-  <PlatformDependency Id="CwZBXaxZSHLPPq9O6YTcXD" Location="C:/vvvv/dx11/core/SharpDX.dll" />
-  <PlatformDependency Id="GkTqwqZjIUSM5SGDatkpRY" Location="C:/vvvv/dx11/core/SharpDX.DXGI.dll" />
-  <PlatformDependency Id="NGSZjnXHcycLwZGzjgT8Mt" Location="C:/vvvv/dx11/core/SharpDX.Mathematics.dll" />
-  <PlatformDependency Id="P49phgdxcocL3xnbsR7Ja0" Location="C:/vvvv/dx11/core/VVVV.DX11.Core.dll" />
-  <PlatformDependency Id="IrDHfabQkbFNI1tqOgVFJd" Location="C:/vvvv/dx11/core/VVVV.DX11.Lib.dll" />
+  <PlatformDependency Id="DDAFTtXK0G8LWhJN0NlSiY" Location="../../../../../dx11/core/AssimpNet.dll" />
+  <PlatformDependency Id="Q9K3ccA72BIM1GkFx2gv2u" Location="../../../../../dx11/core/FeralTic.dll" />
+  <PlatformDependency Id="FX9QgLlHppBQY5YPeDdCQT" Location="../../../../../dx11/core/SharpDX.D3DCompiler.dll" />
+  <PlatformDependency Id="NFLEsCUtyclLIe5ctpf3zB" Location="../../../../../dx11/core/SharpDX.Direct2D1.dll" />
+  <PlatformDependency Id="FBzczgdflQ5MeKhJRKPFaq" Location="../../../../../dx11/core/SharpDX.Direct3D11.dll" />
+  <PlatformDependency Id="CwZBXaxZSHLPPq9O6YTcXD" Location="../../../../../dx11/core/SharpDX.dll" />
+  <PlatformDependency Id="GkTqwqZjIUSM5SGDatkpRY" Location="../../../../../dx11/core/SharpDX.DXGI.dll" />
+  <PlatformDependency Id="NGSZjnXHcycLwZGzjgT8Mt" Location="../../../../../dx11/core/SharpDX.Mathematics.dll" />
+  <PlatformDependency Id="P49phgdxcocL3xnbsR7Ja0" Location="../../../../../dx11/core/VVVV.DX11.Core.dll" />
+  <PlatformDependency Id="IrDHfabQkbFNI1tqOgVFJd" Location="../../../../../dx11/core/VVVV.DX11.Lib.dll" />
   <PlatformDependency Id="GmK0pYzWmgqMF8wQNpzGlT" Location="C:/vvvv/vvvv_50beta37_x64/packs/SuperPhysical/nodes/PointerNodes.dll" />
   <PlatformDependency Id="BDAiMP59jIKOy7yRhXzucV" Location="System" />
   <PlatformDependency Id="VMKejoMGOXnQK7kq7aLPqY" Location="System.Reflection" />
