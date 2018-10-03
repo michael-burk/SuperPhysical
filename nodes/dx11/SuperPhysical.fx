@@ -5,7 +5,7 @@
 
 static const uint MAX_REFLECTION_LOD = 9;
 
-float2 R : Targetsize;
+float2 R : TARGETSIZE;
 
 int ID : DRAWINDEX;
 
@@ -91,6 +91,7 @@ cbuffer cbPerObject : register (b0)
 	float4x4 tW: WORLD;
 	float4x4 tWI: WORLDINVERSE;
 	float4x4 tVP: VIEWPROJECTION;
+	float4x4 tV: VIEW;
 	float4x4 tWVP: WORLDVIEWPROJECTION;
 	
 	float4 GlobalReflectionColor <bool color = true; string uiname="Global Reflection Color";>  = { 0.0f,0.0f,0.0f,0.0f };
@@ -174,6 +175,17 @@ SamplerState g_samLinearIBL
 #include "ToneMapping.fxh"
 #endif
 
+/////////////////// FORWARD PLUS ////////////////////////////////////
+
+#include "..\modules\SuperForward\nodes\dx11\forwardplus.fxh"
+
+int numThreadGroupsX : THREADGROUPSX;
+StructuredBuffer<Light_FWP> LightFWP : LIGHTS;
+StructuredBuffer<uint> LightIndexList : LIGHTINDEXLIST;
+StructuredBuffer<uint2> LightGrid : LIGHTGRID;
+
+/////////////////////////////////////////////////////////////////////
+
 struct vs2ps
 {
     float4 PosWVP: SV_POSITION;
@@ -236,9 +248,9 @@ vs2ps VS(
 }
 
 #ifdef doShadowPOM
-float4 doLighting(float4 PosW, float3 N, float4 TexCd, float3x3 tbn){
+float4 doLighting(float4 PosW, float3 N, float4 TexCd, float2 pos, float3x3 tbn){
 #else
-float4 doLighting(float4 PosW, float3 N, float4 TexCd){
+float4 doLighting(float4 PosW, float3 N, float4 TexCd, float2 pos){
 #endif
 	
 	uint texID = ID%mCount;
@@ -471,6 +483,41 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 		}	
 	}
 	
+	
+
+	///////////////////////////////////////////////////////////////////////////
+	// FORWAD PLUS POINT LIGHTS
+	///////////////////////////////////////////////////////////////////////////
+	
+	// Get the index of the current pixel in the light grid.
+    uint2 tileIndex = uint2( floor(pos.xy / BLOCK_SIZE));
+	uint  flatIndex = tileIndex.x + ( tileIndex.y * numThreadGroupsX );
+
+    // Get the start position and offset of the light in the light index list.
+    uint startOffset = LightGrid[flatIndex].x;
+    uint lightCount  = LightGrid[flatIndex].y;
+	
+	for ( uint j = 0; j < lightCount; j++ )
+	    {
+	    
+
+	    	
+	    float iterator = LightIndexList[startOffset + j];
+	    lightToObject = LightFWP[iterator].position.xyz - PosW.xyz;
+	    	
+		L = normalize(lightToObject);
+		lightDist = length(lightToObject);
+	    falloff = smoothstep(0,LightFWP[iterator].lAtt1,(LightFWP[iterator].range-lightDist));
+	    	
+	    if(lightDist > LightFWP[iterator].range) continue;
+	    	
+	    	  float attenuation = LightFWP[iterator].lAtt0 * falloff;
+					finalLight += cookTorrance(V, L, N, albedo.xyz, LightFWP[iterator].color.rgb,
+					1, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughness, metallic, ao, iridescenceColor, texID);
+
+	    }
+	
+	
 	///////////////////////////////////////////////////////////////////////////
 	// IMAGE BASED LIGHTING
 	///////////////////////////////////////////////////////////////////////////
@@ -517,16 +564,16 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd){
 }	
 
 
-float4 PS_PBR(vs2ps In): SV_Target
+float4 PS_PBR(vs2ps In, float4 pos : SV_POSITION): SV_Target
 {	
 	#ifdef doShadowPOM
-		return doLighting(In.PosW, In.NormW, In.TexCd, 1);
+		return doLighting(In.PosW, In.NormW, In.TexCd, pos.xy, 1);
 	#else	
-		return doLighting(In.PosW, In.NormW, In.TexCd);
+		return doLighting(In.PosW, In.NormW, In.TexCd, pos.xy);
 	#endif
 }
 
-float4 PS_PBR_Bump(vs2psBump In): SV_Target
+float4 PS_PBR_Bump(vs2psBump In, float4 pos : SV_POSITION): SV_Target
 {	
 	uint texID = ID%mCount;
 	#ifdef doPOM
@@ -545,14 +592,14 @@ float4 PS_PBR_Bump(vs2psBump In): SV_Target
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * In.tangent*Material[texID].TangentDir + bumpMap.y * In.binormal)*Material[texID].bumpy);
 	
 	#ifdef doShadowPOM
-		return doLighting(In.PosW, Nb, In.TexCd, float3x3(In.tangent, In.binormal,In.NormW));
+		return doLighting(In.PosW, Nb, In.TexCd, pos.xy, float3x3(In.tangent, In.binormal,In.NormW));
 	#else	
-		return doLighting(In.PosW, Nb, In.TexCd);
+		return doLighting(In.PosW, Nb, In.TexCd, pos.xy);
 	#endif
 
 }
 
-float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
+float4 PS_PBR_Bump_AutoTNB(vs2ps In, float4 pos : SV_POSITION): SV_Target
 {	
 	uint texID = ID%mCount;
 	// compute derivations of the world position
@@ -593,9 +640,9 @@ float4 PS_PBR_Bump_AutoTNB(vs2ps In): SV_Target
 	float3 Nb = normalize(In.NormW.xyz + (bumpMap.x * (t*Material[texID].TangentDir) + bumpMap.y * (b)) * Material[texID].bumpy);
 
 	#ifdef doShadowPOM
-		return doLighting(In.PosW, Nb, In.TexCd, float3x3(t, b, Nb));
+		return doLighting(In.PosW, Nb, In.TexCd, pos.xy, float3x3(t, b, Nb));
 	#else	
-		return doLighting(In.PosW, Nb, In.TexCd);
+		return doLighting(In.PosW, Nb, In.TexCd, pos.xy);
 	#endif
 }
 

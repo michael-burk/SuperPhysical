@@ -1,0 +1,52 @@
+//@author: Johannes Schmidt || Kopffarben GbR
+//@help: ComputeHeatMaps
+//@tags: forwardPlus
+//@credits: Jeremiah van Oosten
+
+#ifndef HEATMAP
+#define HEATMAP 1
+#endif
+
+#ifndef FORWARDPLUS_FXH
+#include "forwardplus.fxh"
+#endif
+
+StructuredBuffer<uint2> LightGrid;
+int maxLights = 127;
+float2 Resolution:TARGETSIZE;
+
+
+//float4x4 tTex <string uiname="Texture Transform"; bool uvspace=true; >;
+
+struct psInput
+{ 
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+
+
+float4 PS(psInput IN) : SV_Target
+{
+	
+	
+	uint2 tileIndex = uint2( floor(IN.uv * Resolution.xy) );
+	uint  flatIndex = tileIndex.x + ( tileIndex.y * Resolution.x );
+	 
+	
+	
+	
+	float4 c = (float)LightGrid[flatIndex].y/(float)maxLights;
+	return c;
+}
+
+technique11 Process
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_5_0,PS()));
+	}
+}
+
+
+

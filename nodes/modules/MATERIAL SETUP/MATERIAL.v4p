@@ -1034,4 +1034,6 @@
    </LINK>
    <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Y Input Value">
    </LINK>
+   <PACK Name="dx11.particles" Version="1.0.5">
+   </PACK>
    </PATCH>
