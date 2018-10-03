@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="1965" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="1515" top="840" width="16020" height="11505">
+   <BOUNDS type="Window" left="1515" top="840" width="17280" height="11505">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -826,14 +826,6 @@
    </LINK>
    <LINK srcnodeid="378" srcpinname="Y Output Value" dstnodeid="379" dstpinname="Switch">
    </LINK>
-   <NODE nodename="R (Node)" id="380">
-   <BOUNDS type="Node" left="12105" top="225" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Receive String" slicecount="1" values="PointLights">
-   </PIN>
-   </NODE>
    <PACK Name="dx11.particles" Version="1.0.5">
    </PACK>
    <NODE systemname="GetBuffer (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical)" componentmode="Hidden" id="381" debug="0">
@@ -865,7 +857,5 @@
    </LINKPOINT>
    <LINKPOINT x="4590" y="5580">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="380" srcpinname="Input Value" dstnodeid="381" dstpinname="Input 2">
    </LINK>
    </PATCH>

@@ -175,7 +175,9 @@ SamplerState g_samLinearIBL
 #include "ToneMapping.fxh"
 #endif
 
-/////////////////// FORWARD PLUS ////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+///////////  FORWARD PLUS   /////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
 #include "..\modules\SuperForward\nodes\dx11\forwardplus.fxh"
 
@@ -183,6 +185,7 @@ int numThreadGroupsX : THREADGROUPSX;
 StructuredBuffer<Light_FWP> LightFWP : LIGHTS;
 StructuredBuffer<uint> LightIndexList : LIGHTINDEXLIST;
 StructuredBuffer<uint2> LightGrid : LIGHTGRID;
+int useForwardPlus : FORWARDPLUS;
 
 /////////////////////////////////////////////////////////////////////
 
@@ -489,33 +492,37 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd, float2 pos){
 	// FORWAD PLUS POINT LIGHTS
 	///////////////////////////////////////////////////////////////////////////
 	
-	// Get the index of the current pixel in the light grid.
-    uint2 tileIndex = uint2( floor(pos.xy / BLOCK_SIZE));
-	uint  flatIndex = tileIndex.x + ( tileIndex.y * numThreadGroupsX );
-
-    // Get the start position and offset of the light in the light index list.
-    uint startOffset = LightGrid[flatIndex].x;
-    uint lightCount  = LightGrid[flatIndex].y;
 	
-	for ( uint j = 0; j < lightCount; j++ )
-	    {
-	    
-
-	    	
-	    float iterator = LightIndexList[startOffset + j];
-	    lightToObject = LightFWP[iterator].position.xyz - PosW.xyz;
-	    	
-		L = normalize(lightToObject);
-		lightDist = length(lightToObject);
-	    falloff = smoothstep(0,LightFWP[iterator].lAtt1,(LightFWP[iterator].range-lightDist));
-	    	
-	    if(lightDist > LightFWP[iterator].range) continue;
-	    	
-	    	  float attenuation = LightFWP[iterator].lAtt0 * falloff;
-					finalLight += cookTorrance(V, L, N, albedo.xyz, LightFWP[iterator].color.rgb,
-					1, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughness, metallic, ao, iridescenceColor, texID);
-
-	    }
+	if(useForwardPlus){
+		// Get the index of the current pixel in the light grid.
+	    uint2 tileIndex = uint2( floor(pos.xy / BLOCK_SIZE));
+		uint  flatIndex = tileIndex.x + ( tileIndex.y * numThreadGroupsX );
+	
+	    // Get the start position and offset of the light in the light index list.
+	    uint startOffset = LightGrid[flatIndex].x;
+	    uint lightCount  = LightGrid[flatIndex].y;
+		
+		for ( uint j = 0; j < lightCount; j++ )
+		    {
+		    
+	
+		    	
+		    float iterator = LightIndexList[startOffset + j];
+		    lightToObject = LightFWP[iterator].position.xyz - PosW.xyz;
+		    	
+			L = normalize(lightToObject);
+			lightDist = length(lightToObject);
+		    falloff = smoothstep(0,LightFWP[iterator].lAtt1,(LightFWP[iterator].range-lightDist));
+		    	
+		    if(lightDist > LightFWP[iterator].range) continue;
+		    	
+		    	  float attenuation = LightFWP[iterator].lAtt0 * falloff;
+						finalLight += cookTorrance(V, L, N, albedo.xyz, LightFWP[iterator].color.rgb,
+						1, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughness, metallic, ao, iridescenceColor, texID);
+	
+		  }
+	}
+	
 	
 	
 	///////////////////////////////////////////////////////////////////////////

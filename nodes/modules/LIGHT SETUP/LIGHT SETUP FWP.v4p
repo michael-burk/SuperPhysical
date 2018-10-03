@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP.v4p" systemname="LIGHT SETUP - IBL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\LIGHT SETUP\LIGHT SETUP - IBL.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" systemname="LIGHT SETUP FWP" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1935" top="1725" width="9255" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -23,7 +23,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="645" top="1095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.35681,0.35681,0.35681,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Global Reflection Color|">
    </PIN>
@@ -32,7 +32,7 @@
    <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
-   <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="50">
+   <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="50">
    <BOUNDS type="Node" left="6330" top="1530" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\..\assets\ibl\studio\output_irrad.dds">
@@ -44,7 +44,7 @@
    <PIN pinname="Reload" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="49">
+   <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="49">
    <BOUNDS type="Node" left="7875" top="1485" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\..\assets\ibl\studio\output_refl.dds">
@@ -88,7 +88,7 @@
    </LINK>
    <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
-   <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="86">
+   <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\nodes\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="86">
    <BOUNDS type="Node" left="7875" top="2565" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="7875" top="2565" width="3000" height="3000">
@@ -102,7 +102,7 @@
    </NODE>
    <LINK srcnodeid="47" srcpinname="Output Node" dstnodeid="86" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="ToPointer (DX11.Texture 2d)" filename="..\..\..\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="87">
+   <NODE systemname="ToPointer (DX11.Texture 2d)" filename="%VVVV%\packs\SuperPhysical\nodes\plugins\PointerNodes.dll" nodename="ToPointer (DX11.Texture 2d)" componentmode="Hidden" id="87">
    <BOUNDS type="Node" left="6330" top="2610" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="6330" top="2610" width="3000" height="3000">
@@ -120,7 +120,7 @@
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <NODE systemname="Directional Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" componentmode="Hidden" id="183" stayontop="0">
+   <NODE systemname="Directional Setup" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Directional Setup.v4p" componentmode="Hidden" id="183" stayontop="0">
    <BOUNDS type="Node" left="1035" top="4065" width="1410" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1035" top="4065" width="3100" height="3100">
@@ -130,7 +130,7 @@
    <PIN pinname="DirectionalLights" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182" debug="0">
+   <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182" debug="0">
    <BOUNDS type="Node" left="2625" top="3825" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Window" left="-690" top="2070" width="13605" height="8625">
@@ -160,7 +160,7 @@
    </LINK>
    <LINK srcnodeid="186" srcpinname="Output" dstnodeid="42" dstpinname="Color Input">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="188">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="188" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="645" top="5640" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="645" top="5640" width="0" height="0">
@@ -172,7 +172,7 @@
    </NODE>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="200">
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="200" systemname="IOBox (String)">
    <BOUNDS type="Box" left="5865" top="5580" width="2160" height="540">
    </BOUNDS>
    <BOUNDS type="Node" left="5865" top="5580" width="0" height="0">
@@ -190,7 +190,7 @@
    <PIN pinname="Input String" slicecount="1" values="|BRDF LUT located successfully.|">
    </PIN>
    </NODE>
-   <NODE id="220" systemname="GlobalLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GlobalLight (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <NODE id="220" systemname="GlobalLight (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GlobalLight (SuperPhysical)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <BOUNDS type="Node" left="630" top="3120" width="1050" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="630" top="3120" width="2400" height="1800">
@@ -206,7 +206,7 @@
    </LINK>
    <LINK srcnodeid="41" srcpinname="Color Output" dstnodeid="220" dstpinname="GlobalReflectionColor">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="222">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="222" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5520" top="645" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="5520" top="645" width="0" height="0">
@@ -219,13 +219,15 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Reflection Intensity|">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="223">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="223" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4650" top="1395" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="4650" top="1395" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -233,8 +235,10 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Irradiance Intensity|">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
-   <NODE systemname="ImageBasedLighting (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="ImageBasedLighting (SuperPhysical)" componentmode="Hidden" id="226">
+   <NODE systemname="ImageBasedLighting (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="ImageBasedLighting (SuperPhysical)" componentmode="Hidden" id="226">
    <BOUNDS type="Node" left="4650" top="3195" width="2610" height="270">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
@@ -248,7 +252,7 @@
    </LINK>
    <LINK srcnodeid="223" srcpinname="Y Output Value" dstnodeid="226" dstpinname="Irradiance Intensity">
    </LINK>
-   <NODE systemname="Spot Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" componentmode="Hidden" id="185" debug="0" stayontop="0">
+   <NODE systemname="Spot Setup" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Spot Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Spot Setup.v4p" componentmode="Hidden" id="185" debug="0" stayontop="0">
    <BOUNDS type="Node" left="1845" top="4485" width="1035" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="1845" top="4485">
@@ -266,7 +270,7 @@
    <PIN pinname="Enabled" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="230">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="230" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5400" top="3825" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="5400" top="3825" width="0" height="0">
@@ -321,6 +325,18 @@
    <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="232" dstpinname="DirectionalLightSettings">
    </LINK>
    <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="232" dstpinname="SpotLightSettings">
+   </LINK>
+   <NODE systemname="Point FWP" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" componentmode="Hidden" id="233">
+   <BOUNDS type="Node" left="3420" top="3360" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="75" width="7125" height="7935">
+   </BOUNDS>
+   <BOUNDS type="Window" left="6240" top="6015" width="7125" height="7935">
+   </BOUNDS>
+   <PIN pinname="PointLightsFWP" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="233" srcpinname="PointLightsFWP" dstnodeid="232" dstpinname="PointLightSettingsFWP">
    </LINK>
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="232" dstpinname="PointLightSettings">
    </LINK>

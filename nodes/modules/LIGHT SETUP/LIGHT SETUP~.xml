@@ -131,11 +131,11 @@
    </PIN>
    </NODE>
    <NODE systemname="Point Setup" filename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" nodename="%VVVV%\packs\SuperPhysical\03 SuperPhysical - SCENE\modules\LIGHT SETUP\Point Setup.v4p" componentmode="Hidden" id="182" debug="0">
-   <BOUNDS type="Node" left="2820" top="3915" width="100" height="100">
+   <BOUNDS type="Node" left="2625" top="3825" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Window" left="-690" top="2070" width="13605" height="8625">
    </BOUNDS>
-   <BOUNDS type="Box" left="2820" top="3915">
+   <BOUNDS type="Box" left="2625" top="3825">
    </BOUNDS>
    <PIN pinname="SpotLights" visible="1" slicecount="1" values="||">
    </PIN>
@@ -305,7 +305,7 @@
    </PIN>
    <PIN pinname="SpotLightSettings" visible="1">
    </PIN>
-   <PIN pinname="PointLightSettingsFWP" visible="1">
+   <PIN pinname="PointLightSettingsFWP" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="232" srcpinname="Info" dstnodeid="200" dstpinname="Input String">
@@ -332,6 +332,6 @@
    <PIN pinname="PointLightsFWP" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="233" srcpinname="PointLightsFWP" dstnodeid="232" dstpinname="PointLightSettingsFWP">
+   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="232" dstpinname="PointLightSettings">
    </LINK>
    </PATCH>
