@@ -898,4 +898,58 @@
    </LINK>
    <LINK srcnodeid="90" srcpinname="Layer Out" dstnodeid="41" dstpinname="Layer">
    </LINK>
+   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
+   <BOUNDS type="Node" left="8190" top="5310" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Maximum Foreground FPS" visible="1">
+   </PIN>
+   <PIN pinname="Maximum Background FPS" visible="1">
+   </PIN>
+   <PIN pinname="Time Mode" slicecount="1" values="Filtered">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="92">
+   <BOUNDS type="Box" left="8295" top="4530" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8295" top="4530" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="120">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="30">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="92" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
+   </LINK>
+   <LINK srcnodeid="92" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
+   </LINK>
+   <PACK Name="dx11.particles" Version="1.0.5">
+   </PACK>
+   <NODE systemname="Timing (Debug)" nodename="Timing (Debug)" componentmode="Hidden" id="93">
+   <BOUNDS type="Node" left="7800" top="7095" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="frames per second" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="94">
+   <BOUNDS type="Box" left="7755" top="7890" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7755" top="7890" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="93" srcpinname="frames per second" dstnodeid="94" dstpinname="Y Input Value">
+   </LINK>
    </PATCH>

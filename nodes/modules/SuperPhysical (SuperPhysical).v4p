@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="2085" scrolly="45">
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="1965" scrolly="0">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -226,32 +226,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="g_samLinear">
    </PIN>
    </NODE>
-   <NODE systemname="GetBuffer (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical)" componentmode="Hidden" id="301">
-   <BOUNDS type="Node" left="10350" top="1350" width="2460" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="10350" top="1350">
-   </BOUNDS>
-   <PIN pinname="LightCount" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="301" srcpinname="LightParameterBuffer" dstnodeid="237" dstpinname="Buffer Description" linkstyle="Bezier">
-   <LINKPOINT x="11580" y="2100">
-   </LINKPOINT>
-   <LINKPOINT x="11595" y="2100">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="301" srcpinname="LightMatricesBuffer" dstnodeid="238" dstpinname="Buffer Description" linkstyle="Bezier">
-   <LINKPOINT x="10380" y="2115">
-   </LINKPOINT>
-   <LINKPOINT x="10380" y="2115">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="254" srcpinname="Output Node" dstnodeid="301" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="10350" y="953">
-   </LINKPOINT>
-   <LINKPOINT x="10365" y="953">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="SpotLightTextures" filename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" nodename="%VVVV%\Packs\SuperPhysical\nodes\modules\LIGHT\SpotLightTextures.v4p" componentmode="Hidden" id="314">
    <BOUNDS type="Node" left="13920" top="4591" width="0" height="0">
    </BOUNDS>
@@ -730,12 +704,6 @@
    <LINKPOINT x="10695" y="6210">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="301" srcpinname="LightCount" dstnodeid="375" dstpinname="num" linkstyle="Bezier">
-   <LINKPOINT x="12750" y="5580">
-   </LINKPOINT>
-   <LINKPOINT x="4590" y="5580">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="314" srcpinname="Texture Array Out" dstnodeid="375" dstpinname="SpotTex" linkstyle="Bezier">
    <LINKPOINT x="13905" y="7208">
    </LINKPOINT>
@@ -841,7 +809,7 @@
    <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="379">
    <BOUNDS type="Node" left="11895" top="9090" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input 1" visible="1" slicecount="10" values="doSSS=1,doPOM=1,doRefraction=1,doIridescence=1,doIBL=1,doGlobalLight=1,doControlTextures=1,doToneMap=1,doShadowPOM=1,doPlanarReflections=1">
+   <PIN pinname="Input 1" visible="1" slicecount="10" values="doSSS=1,doPOM=1,doRefraction=1,doIridescence=1,doIBL=1,doGlobalLight=1,doControlTextures=1,,doShadowPOM=1,doPlanarReflections=1">
    </PIN>
    <PIN pinname="Input 2" visible="1" slicecount="1" values="text">
    </PIN>
@@ -857,5 +825,47 @@
    <LINK srcnodeid="379" srcpinname="Output" dstnodeid="375" dstpinname="Defines">
    </LINK>
    <LINK srcnodeid="378" srcpinname="Y Output Value" dstnodeid="379" dstpinname="Switch">
+   </LINK>
+   <NODE nodename="R (Node)" id="380">
+   <BOUNDS type="Node" left="12105" top="225" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="PointLights">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11.particles" Version="1.0.5">
+   </PACK>
+   <NODE systemname="GetBuffer (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical)" componentmode="Hidden" id="381" debug="0">
+   <BOUNDS type="Node" left="10350" top="1350" width="2460" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10350" top="1350">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="381" srcpinname="LightParameterBuffer" dstnodeid="237" dstpinname="Buffer Description" linkstyle="Bezier">
+   <LINKPOINT x="11580" y="2100">
+   </LINKPOINT>
+   <LINKPOINT x="11595" y="2100">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="381" srcpinname="LightMatricesBuffer" dstnodeid="238" dstpinname="Buffer Description" linkstyle="Bezier">
+   <LINKPOINT x="10380" y="2115">
+   </LINKPOINT>
+   <LINKPOINT x="10380" y="2115">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="254" srcpinname="Output Node" dstnodeid="381" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="10350" y="953">
+   </LINKPOINT>
+   <LINKPOINT x="10365" y="953">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="381" srcpinname="LightCount" dstnodeid="375" dstpinname="num" linkstyle="Bezier">
+   <LINKPOINT x="12750" y="5580">
+   </LINKPOINT>
+   <LINKPOINT x="4590" y="5580">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="380" srcpinname="Input Value" dstnodeid="381" dstpinname="Input 2">
    </LINK>
    </PATCH>
