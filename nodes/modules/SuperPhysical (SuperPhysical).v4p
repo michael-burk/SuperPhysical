@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical).v4p" systemname="SuperPhysical - IBL + Tex CTRL - SCENE" filename="C:\Users\Michael\Desktop\PROJECTS\superphysical\Modules\SuperPhysical - IBL + Tex CTRL - SCENE.v4p" scrollx="0" scrolly="2385">
    <NODE id="8" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -10,7 +10,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="1515" top="840" width="17280" height="11505">
+   <BOUNDS type="Window" left="840" top="2235" width="17280" height="11505">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -607,6 +607,10 @@
    </PIN>
    <PIN pinname="gamma" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="test_value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="transform" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="138" srcpinname="Texture" dstnodeid="375" dstpinname="Iridescence" linkstyle="Bezier">
    <LINKPOINT x="7260" y="8888">
@@ -857,5 +861,17 @@
    </LINKPOINT>
    <LINKPOINT x="4590" y="5580">
    </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="382">
+   <BOUNDS type="Box" left="14100" top="9510" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14100" top="9510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="transform">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="382" srcpinname="Output Node" dstnodeid="375" dstpinname="transform">
    </LINK>
    </PATCH>

@@ -175,6 +175,8 @@ SamplerState g_samLinearIBL
 #include "ToneMapping.fxh"
 #endif
 
+#include "LightRaymarcher.fxh"
+
 /////////////////////////////////////////////////////////////////////
 ///////////  FORWARD PLUS   /////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
@@ -523,6 +525,36 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd, float2 pos){
 		  }
 	}
 	
+	///////////////////////////////////////////////////////////////////////////
+	// SDF LIGHTS
+	///////////////////////////////////////////////////////////////////////////
+
+	
+	float d0 = raymarch (PosW.xyz, N, 0 );	
+	float3 p = PosW.xyz + d0 * N;
+	float3 normal = calcNormal(p);
+	
+	lightToObject = p - PosW.xyz;
+	L = -normal;
+	
+	
+	float d = sceneSDF(PosW.xyz);
+
+	attenuation = smoothstep(0,1, saturate( 1 - pow(d,.2)) * 3);
+	
+//	finalLight += attenuation;
+	
+//	finalLight += attenuation * saturate(dot(N,L));
+	
+	finalLight += cookTorrance(V, L, N, albedo.xyz, float3(1,1,1),
+				1, 1, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughness, metallic, ao, iridescenceColor, texID);
+	
+	
+//	return N.xyzx;
+	
+	
+//	}
+		    	
 	
 	
 	///////////////////////////////////////////////////////////////////////////
