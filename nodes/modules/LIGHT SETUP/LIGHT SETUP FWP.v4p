@@ -299,13 +299,11 @@
    </BOUNDS>
    <BOUNDS type="Box" left="0" top="75" width="7125" height="7935">
    </BOUNDS>
-   <BOUNDS type="Window" left="6825" top="5745" width="7125" height="7935">
+   <BOUNDS type="Window" left="7410" top="5190" width="7125" height="7935">
    </BOUNDS>
    <PIN pinname="PointLightsFWP" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="233" srcpinname="PointLightsFWP" dstnodeid="232" dstpinname="PointLightSettingsFWP">
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="234">
    <BOUNDS type="Box" left="5430" top="4530" width="795" height="240">
    </BOUNDS>
@@ -323,5 +321,7 @@
    <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="232" dstpinname="SpotLightSettings">
    </LINK>
    <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="232" dstpinname="PointLightSettings">
+   </LINK>
+   <LINK srcnodeid="233" srcpinname="PointLightsFWP" dstnodeid="232" dstpinname="PointLightSettingsFWP">
    </LINK>
    </PATCH>

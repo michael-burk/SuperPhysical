@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\examples\SuperPhysical - Forward Plus.v4p" systemname="SuperPhysical - Forward Plus" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\examples\SuperPhysical - Forward Plus.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\examples\SuperPhysical - Forward Plus.v4p" systemname="SuperPhysical - Forward Plus" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\examples\SuperPhysical - Forward Plus.v4p" scrollx="15" scrolly="15">
    <BOUNDS type="Window" left="720" top="450" width="10530" height="12930">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
@@ -185,7 +185,7 @@
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
-   <BOUNDS type="Window" left="11370" top="420" width="12540" height="12885">
+   <BOUNDS type="Window" left="11310" top="450" width="13740" height="14085">
    </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
@@ -435,7 +435,7 @@
    <NODE id="95" systemname="SuperForwardPlus (Superphysical)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" nodename="SuperForwardPlus (Superphysical)" componentmode="Hidden" debug="0">
    <BOUNDS type="Node" left="915" top="8595" width="5370" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="24765" top="10020" width="14610" height="15855">
+   <BOUNDS type="Window" left="6435" top="10305" width="14610" height="15855">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -443,7 +443,7 @@
    </PIN>
    <PIN pinname="ScreenDimension" visible="1">
    </PIN>
-   <PIN pinname="LightCount" slicecount="1" values="10000">
+   <PIN pinname="LightCount" slicecount="1" values="4096">
    </PIN>
    <PIN pinname="ComputeTBN" slicecount="1" values="1">
    </PIN>
@@ -484,7 +484,7 @@
    </LINK>
    <LINK srcnodeid="95" srcpinname="Layer" dstnodeid="41" dstpinname="Layer" linkstyle="PolyLine">
    </LINK>
-   <NODE systemname="LIGHT SETUP FWP" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" componentmode="Hidden" id="96">
+   <NODE systemname="LIGHT SETUP FWP" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" componentmode="InAWindow" id="96" debug="0">
    <BOUNDS type="Node" left="5325" top="4245" width="100" height="100">
    </BOUNDS>
    <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">

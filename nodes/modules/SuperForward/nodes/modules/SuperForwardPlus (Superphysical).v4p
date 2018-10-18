@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" systemname="SuperForwardPlus (Superphysical)" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" scrollx="0" scrolly="27450" locked="0" bgcolor="15527148">
-   <BOUNDS type="Window" left="4575" top="1290" width="14610" height="15855">
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" systemname="SuperForwardPlus (Superphysical)" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" scrollx="23865" scrolly="240" locked="0" bgcolor="15527148">
+   <BOUNDS type="Window" left="6435" top="10305" width="14610" height="15855">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
