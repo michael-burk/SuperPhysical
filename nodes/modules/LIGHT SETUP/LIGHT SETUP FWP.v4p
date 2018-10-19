@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" systemname="LIGHT SETUP FWP" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" scrollx="15" scrolly="15">
+   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" systemname="LIGHT SETUP FWP" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" scrollx="30" scrolly="15">
    <BOUNDS type="Window" left="1935" top="1725" width="9255" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="36.0.0">
@@ -23,7 +23,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="645" top="1095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.78271,1.00000,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Global Reflection Color|">
    </PIN>
@@ -227,7 +227,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4650" top="1395" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.5">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -303,6 +303,10 @@
    </BOUNDS>
    <PIN pinname="PointLightsFWP" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="234">
    <BOUNDS type="Box" left="5430" top="4530" width="795" height="240">
@@ -316,12 +320,34 @@
    </NODE>
    <LINK srcnodeid="234" srcpinname="Output Node" dstnodeid="232" dstpinname="PlanarReflections">
    </LINK>
-   <LINK srcnodeid="183" srcpinname="DirectionalLights" dstnodeid="232" dstpinname="DirectionalLightSettings">
-   </LINK>
-   <LINK srcnodeid="185" srcpinname="SpotLights" dstnodeid="232" dstpinname="SpotLightSettings">
-   </LINK>
-   <LINK srcnodeid="182" srcpinname="SpotLights" dstnodeid="232" dstpinname="PointLightSettings">
-   </LINK>
    <LINK srcnodeid="233" srcpinname="PointLightsFWP" dstnodeid="232" dstpinname="PointLightSettingsFWP">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="235">
+   <BOUNDS type="Box" left="4185" top="6165" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4185" top="6165" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="XYZ">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="233" srcpinname="XYZ" dstnodeid="235" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="236">
+   <BOUNDS type="Box" left="5580" top="6615" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5580" top="6615" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="233" srcpinname="Output" dstnodeid="236" dstpinname="Color Input">
    </LINK>
    </PATCH>

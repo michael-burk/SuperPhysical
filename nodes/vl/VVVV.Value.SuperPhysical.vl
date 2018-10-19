@@ -7414,7 +7414,7 @@
                   <ControlPoint Id="TuV4hXCxrG0L5QelbzUORh" Bounds="-342,749" Alignment="Top" />
                   <ControlPoint Id="BbmtpKENBk5MocT8QN6sX5" Bounds="-273,749" Alignment="Top" />
                 </Node>
-                <Node Bounds="-604,648,58,22" Id="JER5gUmpaPhOuqxqxzk6wA">
+                <Node Bounds="-480,655,58,22" Id="JER5gUmpaPhOuqxqxzk6wA">
                   <p:NodeReference LastCategoryFullName="Collections.Builder.SpreadBuilder" LastSymbolSource="VL.Collections.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="ClassType" Name="SpreadBuilder" />
@@ -7426,9 +7426,10 @@
                 <Pad Id="QryePQN60j4PQvq05XvP1G" Bounds="-398,715">
                   <p:ValueBoxSettings />
                 </Pad>
-                <ControlPoint Id="NSAiFRnhYq2L6plBEnDR7P" Bounds="-610,566" />
+                <ControlPoint Id="NSAiFRnhYq2L6plBEnDR7P" Bounds="-486,573" />
                 <Pad Id="D2lo2iz4ltYP3jmrsX6r3Y" Bounds="-401,1171" />
                 <ControlPoint Id="JqJula63e5eNnPPkYCEzA2" Bounds="-306,1225" />
+                <ControlPoint Id="T1Y6vB5tORvNl40z5qoJUa" Bounds="-484,577" />
               </Canvas>
               <Patch Id="DoPCH5z7mTdLHG3pb4mYZ2" Name="Create" />
               <Patch Id="Vvg6ozGrC8NOT717Bz3vPT" Name="Update">
@@ -7466,7 +7467,7 @@
               <Link Id="Gyaz2DHYde8Mk1Ynt5zyr6" Ids="EKY1hiyliucNYxExCUVogm,Bi8XPUDX9t6QcGTqF0ctVx" />
               <Link Id="Csx21Da0L2oLGs0OlljxxM" Ids="PQpKqQLIBBaOp7i5CA0Xgn,TKXkhBXBB4pPzn6gvZJe6k" />
               <Link Id="HpMjgmuSrWyPLaeuh52qoi" Ids="VXLOnT2bVEQN71nB2sfqFI,A9gCX7N12oxK9dwhXBK8O2" />
-              <Link Id="EwsOy5hNhf4NhAsrCbSlVq" Ids="NSAiFRnhYq2L6plBEnDR7P,BUmZJzio2EzMirpDnqG5nK" />
+              <Link Id="EwsOy5hNhf4NhAsrCbSlVq" Ids="NSAiFRnhYq2L6plBEnDR7P,T1Y6vB5tORvNl40z5qoJUa,BUmZJzio2EzMirpDnqG5nK" />
               <Link Id="HyGeaKBFNk4QSH67I8SwTa" Ids="CaRsdfTilVcOAi0xZo7kzT,NSAiFRnhYq2L6plBEnDR7P" IsHidden="true" />
               <Link Id="BoJTYc8iI7zQBWE4JRRYKq" Ids="Le7XVURF0VzNyrv62jKka7,TuV4hXCxrG0L5QelbzUORh" />
               <Link Id="FdkonepU3GLL3WxY70Zl6b" Ids="V2SoopivaJkPMIPSOiTk48,BbmtpKENBk5MocT8QN6sX5" />
@@ -13676,7 +13677,7 @@
                 <ControlPoint Id="IOJHKnkBumINqSZVBNh9LR" Bounds="913,783" Alignment="Top" />
                 <ControlPoint Id="E2wgIgFfLHYOaPhu7ewDOy" Bounds="625,942" Alignment="Bottom" />
               </Node>
-              <Pad Id="MjcYzubAws3OM2V1KfUOVy" Comment="Force" Bounds="585,721,40,19" ShowValueBox="true" isIOBox="true" Value="false">
+              <Pad Id="MjcYzubAws3OM2V1KfUOVy" Comment="Force" Bounds="585,721,40,19" ShowValueBox="true" isIOBox="true" Value="true">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
@@ -13719,11 +13720,6 @@
               <Pin Id="Ju4J2YyYxZZPxlRW6zbf5K" Name="Color" Kind="InputPin" Bounds="843,692" />
               <Pin Id="QEpex45Ca2OLOt3N37TVLN" Name="Enabled" Kind="InputPin" />
             </Patch>
-            <!--
-
-    ************************  ************************
-
--->
             <ProcessDefinition Id="ParQykiicToNfaX4M1qNdn">
               <Fragment Id="E36ad6zNBrMPS0Abdw8XxO" Patch="VtrYhG4ZzBINi0XHu4UxgZ" Enabled="true" />
               <Fragment Id="Nd20NfXoyo8O0jWNQuf6lB" Patch="IoCY01oxw6pMtdm8Z9IrEd" Enabled="true" />
@@ -13772,11 +13768,6 @@
           <Canvas Id="Rn1gQsarPA8Pg6wc9U4t6d" BordersChecked="false" CanvasType="Group" />
           <Patch Id="Er924KtfyoyMNRqybHJARC" Name="Create" />
           <Patch Id="JqZYvASIm2DMgOxghQdFBt" Name="Update" />
-          <!--
-
-    ************************  ************************
-
--->
           <ProcessDefinition Id="R9UuhHhE3ZILr7ueK2sths">
             <Fragment Id="Ipjiu5ZdwGQPJTcVUOPE9V" Patch="Er924KtfyoyMNRqybHJARC" Enabled="true" />
             <Fragment Id="UEupVfwRJgLNS4VMx3chtJ" Patch="JqZYvASIm2DMgOxghQdFBt" Enabled="true" />
@@ -13785,16 +13776,16 @@
       </Node>
     </Canvas>
   </Patch>
-  <PlatformDependency Id="DDAFTtXK0G8LWhJN0NlSiY" Location="../../../../../dx11/core/AssimpNet.dll" />
-  <PlatformDependency Id="Q9K3ccA72BIM1GkFx2gv2u" Location="../../../../../dx11/core/FeralTic.dll" />
-  <PlatformDependency Id="FX9QgLlHppBQY5YPeDdCQT" Location="../../../../../dx11/core/SharpDX.D3DCompiler.dll" />
-  <PlatformDependency Id="NFLEsCUtyclLIe5ctpf3zB" Location="../../../../../dx11/core/SharpDX.Direct2D1.dll" />
-  <PlatformDependency Id="FBzczgdflQ5MeKhJRKPFaq" Location="../../../../../dx11/core/SharpDX.Direct3D11.dll" />
-  <PlatformDependency Id="CwZBXaxZSHLPPq9O6YTcXD" Location="../../../../../dx11/core/SharpDX.dll" />
-  <PlatformDependency Id="GkTqwqZjIUSM5SGDatkpRY" Location="../../../../../dx11/core/SharpDX.DXGI.dll" />
-  <PlatformDependency Id="NGSZjnXHcycLwZGzjgT8Mt" Location="../../../../../dx11/core/SharpDX.Mathematics.dll" />
-  <PlatformDependency Id="P49phgdxcocL3xnbsR7Ja0" Location="../../../../../dx11/core/VVVV.DX11.Core.dll" />
-  <PlatformDependency Id="IrDHfabQkbFNI1tqOgVFJd" Location="../../../../../dx11/core/VVVV.DX11.Lib.dll" />
+  <PlatformDependency Id="DDAFTtXK0G8LWhJN0NlSiY" Location="C:/vvvv/dx11/core/AssimpNet.dll" />
+  <PlatformDependency Id="Q9K3ccA72BIM1GkFx2gv2u" Location="C:/vvvv/dx11/core/FeralTic.dll" />
+  <PlatformDependency Id="FX9QgLlHppBQY5YPeDdCQT" Location="C:/vvvv/dx11/core/SharpDX.D3DCompiler.dll" />
+  <PlatformDependency Id="NFLEsCUtyclLIe5ctpf3zB" Location="C:/vvvv/dx11/core/SharpDX.Direct2D1.dll" />
+  <PlatformDependency Id="FBzczgdflQ5MeKhJRKPFaq" Location="C:/vvvv/dx11/core/SharpDX.Direct3D11.dll" />
+  <PlatformDependency Id="CwZBXaxZSHLPPq9O6YTcXD" Location="C:/vvvv/dx11/core/SharpDX.dll" />
+  <PlatformDependency Id="GkTqwqZjIUSM5SGDatkpRY" Location="C:/vvvv/dx11/core/SharpDX.DXGI.dll" />
+  <PlatformDependency Id="NGSZjnXHcycLwZGzjgT8Mt" Location="C:/vvvv/dx11/core/SharpDX.Mathematics.dll" />
+  <PlatformDependency Id="P49phgdxcocL3xnbsR7Ja0" Location="C:/vvvv/dx11/core/VVVV.DX11.Core.dll" />
+  <PlatformDependency Id="IrDHfabQkbFNI1tqOgVFJd" Location="C:/vvvv/dx11/core/VVVV.DX11.Lib.dll" />
   <PlatformDependency Id="GmK0pYzWmgqMF8wQNpzGlT" Location="C:/vvvv/vvvv_50beta37_x64/packs/SuperPhysical/nodes/PointerNodes.dll" />
   <PlatformDependency Id="BDAiMP59jIKOy7yRhXzucV" Location="System" />
   <PlatformDependency Id="VMKejoMGOXnQK7kq7aLPqY" Location="System.Reflection" />
