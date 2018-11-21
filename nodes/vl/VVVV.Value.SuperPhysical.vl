@@ -11351,7 +11351,6 @@
             <Link Id="G10bgaCyvoRP79tHjQihlU" Ids="G03RhMiu27wMsmLmyOQIsH,GjELhhnFrfwLS38VzEJ9eB" />
             <Link Id="G0bsydFMOFKMNLgVncPHSS" Ids="EssmyVxaTQDPda6SngatEP,GY2fTn6Nkt8M6rX5vZGlSV" />
             <Link Id="UTfT6Lo3TvsO1ztdQRD2gW" Ids="GY2fTn6Nkt8M6rX5vZGlSV,JX9QEiyGlxiMkMHyYTwiNj" />
-            <Link Id="CgtjOlCPl4WPkVx6DHjXxs" Ids="K7EWHHVrqHRNfqYxJGwI6X,HDgI2ULoILINRkAReGkf5G" />
             <Link Id="TPs930BS1E4M1QfTgKuhbe" Ids="TPRQEYfrz1RPQcv7h3XAaI,QBrfj92RtdOOZx24o5bzPL" />
             <Link Id="VNkp4sbxYb2NjL9ZcwkVeS" Ids="Ch5o2hOQSNYOlbLj0YBmLW,OItY3IJHjK0LF9qiYl8Eby" />
             <Link Id="M4eyfuIAXeoM7jq4EXuFta" Ids="OItY3IJHjK0LF9qiYl8Eby,ODhBT48LSu6LyfMdRHSFyN" />
@@ -13776,16 +13775,16 @@
       </Node>
     </Canvas>
   </Patch>
-  <PlatformDependency Id="DDAFTtXK0G8LWhJN0NlSiY" Location="C:/vvvv/dx11/core/AssimpNet.dll" />
-  <PlatformDependency Id="Q9K3ccA72BIM1GkFx2gv2u" Location="C:/vvvv/dx11/core/FeralTic.dll" />
-  <PlatformDependency Id="FX9QgLlHppBQY5YPeDdCQT" Location="C:/vvvv/dx11/core/SharpDX.D3DCompiler.dll" />
-  <PlatformDependency Id="NFLEsCUtyclLIe5ctpf3zB" Location="C:/vvvv/dx11/core/SharpDX.Direct2D1.dll" />
-  <PlatformDependency Id="FBzczgdflQ5MeKhJRKPFaq" Location="C:/vvvv/dx11/core/SharpDX.Direct3D11.dll" />
-  <PlatformDependency Id="CwZBXaxZSHLPPq9O6YTcXD" Location="C:/vvvv/dx11/core/SharpDX.dll" />
-  <PlatformDependency Id="GkTqwqZjIUSM5SGDatkpRY" Location="C:/vvvv/dx11/core/SharpDX.DXGI.dll" />
-  <PlatformDependency Id="NGSZjnXHcycLwZGzjgT8Mt" Location="C:/vvvv/dx11/core/SharpDX.Mathematics.dll" />
-  <PlatformDependency Id="P49phgdxcocL3xnbsR7Ja0" Location="C:/vvvv/dx11/core/VVVV.DX11.Core.dll" />
-  <PlatformDependency Id="IrDHfabQkbFNI1tqOgVFJd" Location="C:/vvvv/dx11/core/VVVV.DX11.Lib.dll" />
+  <PlatformDependency Id="DDAFTtXK0G8LWhJN0NlSiY" Location="../../../../../dx11/core/AssimpNet.dll" />
+  <PlatformDependency Id="Q9K3ccA72BIM1GkFx2gv2u" Location="../../../../../dx11/core/FeralTic.dll" />
+  <PlatformDependency Id="FX9QgLlHppBQY5YPeDdCQT" Location="../../../../../dx11/core/SharpDX.D3DCompiler.dll" />
+  <PlatformDependency Id="NFLEsCUtyclLIe5ctpf3zB" Location="../../../../../dx11/core/SharpDX.Direct2D1.dll" />
+  <PlatformDependency Id="FBzczgdflQ5MeKhJRKPFaq" Location="../../../../../dx11/core/SharpDX.Direct3D11.dll" />
+  <PlatformDependency Id="CwZBXaxZSHLPPq9O6YTcXD" Location="../../../../../dx11/core/SharpDX.dll" />
+  <PlatformDependency Id="GkTqwqZjIUSM5SGDatkpRY" Location="../../../../../dx11/core/SharpDX.DXGI.dll" />
+  <PlatformDependency Id="NGSZjnXHcycLwZGzjgT8Mt" Location="../../../../../dx11/core/SharpDX.Mathematics.dll" />
+  <PlatformDependency Id="P49phgdxcocL3xnbsR7Ja0" Location="../../../../../dx11/core/VVVV.DX11.Core.dll" />
+  <PlatformDependency Id="IrDHfabQkbFNI1tqOgVFJd" Location="../../../../../dx11/core/VVVV.DX11.Lib.dll" />
   <PlatformDependency Id="GmK0pYzWmgqMF8wQNpzGlT" Location="C:/vvvv/vvvv_50beta37_x64/packs/SuperPhysical/nodes/PointerNodes.dll" />
   <PlatformDependency Id="BDAiMP59jIKOy7yRhXzucV" Location="System" />
   <PlatformDependency Id="VMKejoMGOXnQK7kq7aLPqY" Location="System.Reflection" />
