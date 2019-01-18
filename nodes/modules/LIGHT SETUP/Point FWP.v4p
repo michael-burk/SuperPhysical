@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" systemname="Point FWP" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" systemname="Point FWP" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4215" top="2745" width="930" height="285">
    </BOUNDS>
@@ -188,11 +188,11 @@
    </LINK>
    <BOUNDS type="Window" left="7410" top="5190" width="7125" height="7935">
    </BOUNDS>
-   <PACK Name="dx11" Version="1.3.1.1">
+   <PACK Name="dx11" Version="1.3">
    </PACK>
    <PACK Name="dx11.particles" Version="1.0.5">
    </PACK>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="14">
    <BOUNDS type="Box" left="3225" top="255" width="480" height="480">
@@ -246,7 +246,35 @@
    </LINK>
    <LINK srcnodeid="18" srcpinname="X" dstnodeid="16" dstpinname="Hue">
    </LINK>
-   <NODE systemname="PointLightSpreaded (SuperPhysical Light)" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="pss (SuperPhysical)" componentmode="Hidden" id="20" debug="0">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="21">
+   <BOUNDS type="Box" left="4500" top="6015" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4500" top="6015" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="XYZ">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="XYZ" dstnodeid="21" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="22">
+   <BOUNDS type="Box" left="5580" top="6030" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5580" top="6030" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="22" dstpinname="Color Input">
+   </LINK>
+   <NODE systemname="PointLightSpreaded (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="PointLightSpreaded (SuperPhysical Light)" componentmode="Hidden" id="20" debug="0">
    <BOUNDS type="Node" left="1245" top="5490" width="100" height="100">
    </BOUNDS>
    </NODE>
@@ -280,32 +308,10 @@
    </LINK>
    <LINK srcnodeid="16" srcpinname="Output" dstnodeid="20" dstpinname="Color">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="21">
-   <BOUNDS type="Box" left="4500" top="6015" width="795" height="720">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4500" top="6015" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="XYZ">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="11" srcpinname="XYZ" dstnodeid="21" dstpinname="Y Input Value">
-   </LINK>
-   <NODE nodename="IOBox (Color)" componentmode="InABox" id="22">
-   <BOUNDS type="Box" left="5580" top="6030" width="2250" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="5580" top="6030" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="22" dstpinname="Color Input">
-   </LINK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ" Version="0.5.7">
+   </PACK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
    </PATCH>
