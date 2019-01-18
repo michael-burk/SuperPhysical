@@ -13776,17 +13776,17 @@
       </Node>
     </Canvas>
   </Patch>
-  <PlatformDependency Id="DDAFTtXK0G8LWhJN0NlSiY" Location="C:/vvvv/dx11/core/AssimpNet.dll" />
-  <PlatformDependency Id="Q9K3ccA72BIM1GkFx2gv2u" Location="C:/vvvv/dx11/core/FeralTic.dll" />
-  <PlatformDependency Id="FX9QgLlHppBQY5YPeDdCQT" Location="C:/vvvv/dx11/core/SharpDX.D3DCompiler.dll" />
-  <PlatformDependency Id="NFLEsCUtyclLIe5ctpf3zB" Location="C:/vvvv/dx11/core/SharpDX.Direct2D1.dll" />
-  <PlatformDependency Id="FBzczgdflQ5MeKhJRKPFaq" Location="C:/vvvv/dx11/core/SharpDX.Direct3D11.dll" />
-  <PlatformDependency Id="CwZBXaxZSHLPPq9O6YTcXD" Location="C:/vvvv/dx11/core/SharpDX.dll" />
-  <PlatformDependency Id="GkTqwqZjIUSM5SGDatkpRY" Location="C:/vvvv/dx11/core/SharpDX.DXGI.dll" />
-  <PlatformDependency Id="NGSZjnXHcycLwZGzjgT8Mt" Location="C:/vvvv/dx11/core/SharpDX.Mathematics.dll" />
-  <PlatformDependency Id="P49phgdxcocL3xnbsR7Ja0" Location="C:/vvvv/dx11/core/VVVV.DX11.Core.dll" />
-  <PlatformDependency Id="IrDHfabQkbFNI1tqOgVFJd" Location="C:/vvvv/dx11/core/VVVV.DX11.Lib.dll" />
-  <PlatformDependency Id="GmK0pYzWmgqMF8wQNpzGlT" Location="C:/vvvv/vvvv_50beta37_x64/packs/SuperPhysical/nodes/PointerNodes.dll" />
+  <PlatformDependency Id="DDAFTtXK0G8LWhJN0NlSiY" Location="AssimpNet.dll" />
+  <PlatformDependency Id="Q9K3ccA72BIM1GkFx2gv2u" Location="FeralTic.dll" />
+  <PlatformDependency Id="FX9QgLlHppBQY5YPeDdCQT" Location="SharpDX.D3DCompiler.dll" />
+  <PlatformDependency Id="NFLEsCUtyclLIe5ctpf3zB" Location="SharpDX.Direct2D1.dll" />
+  <PlatformDependency Id="FBzczgdflQ5MeKhJRKPFaq" Location="SharpDX.Direct3D11.dll" />
+  <PlatformDependency Id="CwZBXaxZSHLPPq9O6YTcXD" Location="SharpDX.dll" />
+  <PlatformDependency Id="GkTqwqZjIUSM5SGDatkpRY" Location="SharpDX.DXGI.dll" />
+  <PlatformDependency Id="NGSZjnXHcycLwZGzjgT8Mt" Location="SharpDX.Mathematics.dll" />
+  <PlatformDependency Id="P49phgdxcocL3xnbsR7Ja0" Location="VVVV.DX11.Core.dll" />
+  <PlatformDependency Id="IrDHfabQkbFNI1tqOgVFJd" Location="VVVV.DX11.Lib.dll" />
+  <PlatformDependency Id="GmK0pYzWmgqMF8wQNpzGlT" Location="PointerNodes.dll" />
   <PlatformDependency Id="BDAiMP59jIKOy7yRhXzucV" Location="System" />
   <PlatformDependency Id="VMKejoMGOXnQK7kq7aLPqY" Location="System.Reflection" />
   <PlatformDependency Id="AYbGbwF2UO5NOZ6d6yuSpI" Location="mscorlib" IsForward="true" />
