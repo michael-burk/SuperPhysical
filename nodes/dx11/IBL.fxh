@@ -45,7 +45,7 @@ float3 IBL(float3 N, float3 V, float3 F0, float4 albedo, float3 iridescenceColor
 	if(Material[texID].Refraction.x){
 		float3 refrVect;
 	    for(int r=0; r<3; r++) {
-	    	refrVect = refract(-V, N , Material[texID].Refraction.xyz[r]);
+	    	refrVect = refract(-V, N , Material[texID].Refraction.yzw[r]);
 	    	refrColor += cubeTexRefl.SampleLevel(g_samLinearIBL,refrVect,roughness*MAX_REFLECTION_LOD).rgb * wavelength[r];
 		}
 		refrColor *= 1 - (kS * envBRDF.x + envBRDF.y);
