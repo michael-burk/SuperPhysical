@@ -554,12 +554,12 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd, float2 pos){
 	
 	#ifdef doControlTextures
 		if(Material[texID].sampleEmissive){
-			finalLight.rgb += saturate(Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb);
+			finalLight.rgb += Material[texID].Emissive.rgb + EmissiveTex.SampleLevel(g_samLinear, float3(TexCd.xy, texID),0).rgb;
 		} else {
-			finalLight.rgb += saturate( Material[texID].Emissive.rgb);
+			finalLight.rgb += Material[texID].Emissive.rgb;
 		}
 	#else
-		finalLight.rgb += saturate( Material[texID].Emissive.rgb);
+		finalLight.rgb += Material[texID].Emissive.rgb;
 	#endif
 	
 	#ifdef doToneMap
