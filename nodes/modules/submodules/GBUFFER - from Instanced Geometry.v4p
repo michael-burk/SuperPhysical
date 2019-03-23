@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GBUFFER - from Instanced Geometry.v4p" systemname="GBUFFER from Instanced Geometry" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GBUFFER from Instanced Geometry.v4p" scrollx="1815" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha38.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha38.1_x64\packs\SuperPhysical\nodes\modules\submodules\GBUFFER - from Instanced Geometry.v4p" systemname="GBUFFER from Instanced Geometry" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GBUFFER from Instanced Geometry.v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)" exposed="0">
    <BOUNDS type="Box" left="330" top="465" width="795" height="480">
    </BOUNDS>
@@ -33,20 +33,6 @@
    </PIN>
    <BOUNDS type="Box" left="3375" top="4485">
    </BOUNDS>
-   </NODE>
-   <NODE systemname="DynamicBuffer (DX11.Buffer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Transform)" componentmode="Hidden" id="2">
-   <BOUNDS type="Node" left="6330" top="7425" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="6330" top="7425" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Buffer" visible="1">
-   </PIN>
-   <PIN pinname="Preferred Buffer Type" slicecount="1" values="Dynamic">
-   </PIN>
-   <PIN pinname="Keep In Memory" slicecount="1" values="0">
-   </PIN>
    </NODE>
    <NODE systemname="Integral (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Integral (Spreads)" componentmode="Hidden" id="3">
    <BOUNDS type="Node" left="4815" top="4080" width="100" height="100">
@@ -264,7 +250,7 @@
    <PIN pinname="Default" slicecount="1" values="-1">
    </PIN>
    </NODE>
-   <NODE systemname="SelectObject" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Submodules\PixelCoverage\SelectObject.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\PixelCoverage\SelectObject.v4p" componentmode="Hidden" id="23">
+   <NODE systemname="SelectObject" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Submodules\PixelCoverage\SelectObject.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\PixelCoverage\SelectObject.v4p" componentmode="InAWindow" id="23">
    <BOUNDS type="Node" left="11042" top="7922" width="4560" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="8830" top="5155" width="4425" height="5535">
@@ -278,6 +264,8 @@
    <PIN pinname="Projection" visible="1">
    </PIN>
    <PIN pinname="MouseActive" visible="1">
+   </PIN>
+   <PIN pinname="world" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="24" hiddenwhenlocked="1" systemname="IOBox (Value Advanced)" exposed="0">
@@ -382,22 +370,6 @@
    </LINK>
    <LINK srcnodeid="3" srcpinname="Output" dstnodeid="4" dstpinname="Input" linkstyle="PolyLine">
    </LINK>
-   <NODE id="36" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)" exposed="0">
-   <PIN pinname="Descriptive Name" slicecount="1" values="Transforms">
-   </PIN>
-   <BOUNDS type="Box" left="5505" top="465" width="750" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="5505" top="465" width="750" height="240">
-   </BOUNDS>
-   <PIN pinname="Output Node" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="36" srcpinname="Output Node" dstnodeid="2" dstpinname="Data" linkstyle="Bezier">
-   <LINKPOINT x="5550" y="4100">
-   </LINKPOINT>
-   <LINKPOINT x="6330" y="4015">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Data" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="12" srcpinname="Output" dstnodeid="7" dstpinname="Apply" linkstyle="PolyLine">
@@ -425,8 +397,6 @@
    </LINKPOINT>
    <LINKPOINT x="12330" y="6353">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="2" srcpinname="Buffer" dstnodeid="23" dstpinname="world" linkstyle="PolyLine">
    </LINK>
    <NODE id="39" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)" exposed="0">
    <PIN pinname="Descriptive Name" slicecount="1" values="MouseActive">
@@ -494,13 +464,13 @@
    </LINK>
    <BOUNDS type="Window" left="2205" top="1035" width="19215" height="13680">
    </BOUNDS>
-   <PACK Name="dx11" Version="1.0.5">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
    <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="43">
    <BOUNDS type="Node" left="8910" top="5640" width="100" height="100">
@@ -677,13 +647,9 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Transforms ByPass|">
    </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="36" srcpinname="Output Node" dstnodeid="52" dstpinname="Input Node" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5535" y="7575">
-   </LINKPOINT>
-   <LINKPOINT x="7680" y="8025">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="60">
    <BOUNDS type="Box" left="11070" top="3840" width="795" height="240">
    </BOUNDS>
@@ -937,6 +903,8 @@
    </BOUNDS>
    <PIN pinname="Defines" visible="1">
    </PIN>
+   <PIN pinname="world" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="109" srcpinname="Textures Out" dstnodeid="119" dstpinname="HeightMap">
    </LINK>
@@ -950,12 +918,6 @@
    <LINKPOINT x="7020" y="10200">
    </LINKPOINT>
    <LINKPOINT x="7740" y="10200">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="2" srcpinname="Buffer" dstnodeid="119" dstpinname="world" linkstyle="Bezier">
-   <LINKPOINT x="6360" y="9518">
-   </LINKPOINT>
-   <LINKPOINT x="7020" y="9518">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="4" srcpinname="Remainder" dstnodeid="119" dstpinname="IntanceStartIndex" linkstyle="PolyLine">
@@ -1061,5 +1023,25 @@
    <LINK srcnodeid="78" srcpinname="Output Node" dstnodeid="123" dstpinname="Material">
    </LINK>
    <LINK srcnodeid="120" srcpinname="Output" dstnodeid="119" dstpinname="Defines">
+   </LINK>
+   <PACK Name="dx11.particles" Version="1.0.5">
+   </PACK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="125">
+   <BOUNDS type="Box" left="5730" top="915" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5730" top="915" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="world">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="125" srcpinname="Output Node" dstnodeid="119" dstpinname="world">
+   </LINK>
+   <LINK srcnodeid="125" srcpinname="Output Node" dstnodeid="23" dstpinname="world">
+   </LINK>
+   <LINK srcnodeid="125" srcpinname="Output Node" dstnodeid="52" dstpinname="Input Node">
    </LINK>
    </PATCH>

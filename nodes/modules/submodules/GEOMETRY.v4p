@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" systemname="GEOMETRY" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" scrollx="360" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha38.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha38.1_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" systemname="GEOMETRY" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" scrollx="360" scrolly="0">
    <NODE id="0" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
    <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.35,0.08,-0.5">
    </PIN>
@@ -407,9 +407,9 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5025" top="5805" width="750" height="240">
    </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="22" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="7" srcpinname="XYZ" dstnodeid="6" dstpinname="Translate XYZ">
    </LINK>
    <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Spread Count" linkstyle="VHV">
@@ -462,16 +462,36 @@
    <LINKPOINT x="7695" y="2445">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="8955" top="4155" width="11145" height="8070">
+   <BOUNDS type="Window" left="8955" top="4155" width="12300" height="8325">
    </BOUNDS>
-   <PACK Name="dx11" Version="1.3.1.1">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
    <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Transform)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="5070" top="5430" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5070" top="5430" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Data" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Preferred Buffer Type" slicecount="1" values="Dynamic">
+   </PIN>
+   <PIN pinname="Keep In Memory" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="23" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Buffer" dstnodeid="22" dstpinname="Input Node">
+   </LINK>
+   <PACK Name="dx11.particles" Version="1.0.5">
    </PACK>
    </PATCH>
