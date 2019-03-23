@@ -889,19 +889,21 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="[ From .." slicecount="1" values="0">
+   </PIN>
    </NODE>
    <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="137">
    <BOUNDS type="Node" left="3030" top="5280" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Spread Count" visible="1">
    </PIN>
-   <PIN pinname="Width" slicecount="1" values="5">
+   <PIN pinname="Width" slicecount="1" values="6">
    </PIN>
    <PIN pinname="Input" slicecount="1" values="2.5">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Random Seed" slicecount="1" values="69">
+   <PIN pinname="Random Seed" slicecount="1" values="62">
    </PIN>
    </NODE>
    <LINK srcnodeid="118" srcpinname="Y Output Value" dstnodeid="137" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -923,12 +925,6 @@
    <LINK srcnodeid="130" srcpinname="Output" dstnodeid="138" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="137" srcpinname="Output" dstnodeid="138" dstpinname="Index">
-   </LINK>
-   <LINK srcnodeid="138" srcpinname="Output" dstnodeid="51" dstpinname="Material IDs" linkstyle="VHV">
-   <LINKPOINT x="2490" y="6608">
-   </LINKPOINT>
-   <LINKPOINT x="5130" y="6608">
-   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="111" srcpinname="Transform Buffer" dstnodeid="110" dstpinname="Transform  Buffer">
    </LINK>
@@ -973,5 +969,53 @@
    <LINK srcnodeid="139" srcpinname="Output" dstnodeid="140" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="140" srcpinname="Output" dstnodeid="128" dstpinname="Metallic">
+   </LINK>
+   <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="141">
+   <BOUNDS type="Node" left="2445" top="6450" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="142">
+   <BOUNDS type="Node" left="3240" top="5685" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="118" srcpinname="Y Output Value" dstnodeid="142" dstpinname="Input">
+   </LINK>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="143">
+   <BOUNDS type="Node" left="3240" top="6240" width="870" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="142" srcpinname="OnChange" dstnodeid="143" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="144">
+   <BOUNDS type="Node" left="4050" top="5670" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Bang" visible="1">
+   </PIN>
+   <PIN pinname="Simulate" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="144" srcpinname="Bang" dstnodeid="143" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="138" srcpinname="Output" dstnodeid="141" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="143" srcpinname="Output" dstnodeid="141" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="141" srcpinname="Output" dstnodeid="51" dstpinname="Material IDs">
    </LINK>
    </PATCH>
