@@ -105,7 +105,7 @@ void parallaxOcclusionMapping(inout float2 texcoord, inout float3 PosW, float3 V
 	
 }
 
-#ifndef Instancing
+//#ifndef Instancing
 static const float POM_shadow_factor = 8;
 float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float3x3 tbnh,  uint texID, uint lightID, float factor)
 {
@@ -145,11 +145,12 @@ float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float
       float currentLayerHeight	= 1 - startHeight - layerHeight;
       float2 currentTextureCoords	= initialTexCoord + texStep;
 
-      float heightFromTexture	= 1 - heightMap.SampleLevel(g_samLinear, currentTextureCoords,0).r;
+      float heightFromTexture	= 1 - heightMap.SampleGrad( g_samLinear, float3(currentTextureCoords, texID), ddx( currentTextureCoords ), ddy( currentTextureCoords ) ).r;
       float stepIndex	= 1;
 	  
 //   	  float counter = 0;
       // while point is below depth 0.0 )
+//   	[unroll 256]
       while(currentLayerHeight > 0)
       {
 //      	counter ++;
@@ -166,7 +167,7 @@ float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float
          stepIndex	+= 1;
          currentLayerHeight	-= layerHeight;
          currentTextureCoords	+= texStep;
-         heightFromTexture	= 1-heightMap.SampleLevel(g_samLinear, currentTextureCoords,0).r;
+//         heightFromTexture	= 1 - heightMap.SampleGrad( g_samLinear, float3(currentTextureCoords, texID), ddx( currentTextureCoords ), ddy( currentTextureCoords ) ).r;
       }
 
       // Shadowing factor should be 1 if there were no points under the surface
@@ -182,4 +183,4 @@ float parallaxSoftShadowMultiplier(in float3 L, in float2 initialTexCoord, float
 	return saturate(shadowMultiplier);
 }
 	
-#endif
+//#endif

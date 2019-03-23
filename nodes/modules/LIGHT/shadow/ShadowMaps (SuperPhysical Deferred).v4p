@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred).v4p" systemname="ShadowMaps Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps Deferred (SuperPhysical).v4p" scrollx="0" scrolly="0" locked="0">
-   <BOUNDS type="Window" left="3045" top="2115" width="12780" height="13905">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha38.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha38.1_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred).v4p" systemname="ShadowMaps Deferred (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps Deferred (SuperPhysical).v4p" scrollx="0" scrolly="870" locked="0">
+   <BOUNDS type="Window" left="3465" top="765" width="13170" height="16500">
    </BOUNDS>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="3000" top="6735" width="100" height="100">
@@ -412,7 +412,7 @@
    <LINKPOINT x="3435" y="13553">
    </LINKPOINT>
    </LINK>
-   <PACK Name="dx11" Version="1.3">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <NODE systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden" id="259">
    <BOUNDS type="Node" left="2265" top="4650" width="100" height="100">
@@ -748,20 +748,6 @@
    <LINKPOINT x="8215" y="1980">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="DynamicBuffer (DX11.Buffer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Transform)" componentmode="Hidden" id="316">
-   <BOUNDS type="Node" left="9675" top="8025" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="9675" top="8025" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Data" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Buffer" visible="1">
-   </PIN>
-   <PIN pinname="Preferred Buffer Type" slicecount="1" values="Default">
-   </PIN>
-   <PIN pinname="Apply" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="317" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4995" top="5655" width="795" height="240">
    </BOUNDS>
@@ -792,12 +778,6 @@
    <BOUNDS type="Box" left="5040" top="8025">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="18" srcpinname="Output Node" dstnodeid="316" dstpinname="Data" linkstyle="VHV">
-   <LINKPOINT x="9675" y="7268">
-   </LINKPOINT>
-   <LINKPOINT x="9450" y="7268">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="286" dstpinname="Input">
    </LINK>
    <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="320">
@@ -849,8 +829,6 @@
    </LINKPOINT>
    <LINKPOINT x="3720" y="9728">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="206" srcpinname="Output" dstnodeid="316" dstpinname="Apply">
    </LINK>
    <NODE systemname="Integral (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Integral (Spreads)" componentmode="Hidden" id="321">
    <BOUNDS type="Node" left="5040" top="6420" width="100" height="100">
@@ -915,7 +893,7 @@
    </PIN>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="world" visible="1">
+   <PIN pinname="world" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Alpha Tex" visible="1" slicecount="1" values="||">
    </PIN>
@@ -948,8 +926,6 @@
    </LINK>
    <LINK srcnodeid="303" srcpinname="Output" dstnodeid="277" dstpinname="shadowType">
    </LINK>
-   <LINK srcnodeid="316" srcpinname="Buffer" dstnodeid="277" dstpinname="world">
-   </LINK>
    <LINK srcnodeid="124" srcpinname="Output" dstnodeid="277" dstpinname="Geometry" linkstyle="Bezier">
    <LINKPOINT x="4005" y="8565">
    </LINKPOINT>
@@ -971,5 +947,9 @@
    <LINK srcnodeid="297" srcpinname="Texture Array Out" dstnodeid="283" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="290" srcpinname="Texture Array Out" dstnodeid="30" dstpinname="Input Node">
+   </LINK>
+   <PACK Name="dx11.particles" Version="1.0.5">
+   </PACK>
+   <LINK srcnodeid="18" srcpinname="Output Node" dstnodeid="277" dstpinname="world">
    </LINK>
    </PATCH>
