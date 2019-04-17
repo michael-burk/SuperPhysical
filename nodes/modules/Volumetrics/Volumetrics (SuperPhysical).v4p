@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="60" bgcolor="15132390">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\Volumetrics\Volumetrics (SuperPhysical).v4p" systemname="Volumetrics" filename="C:\Users\Michael\Desktop\PROJECTS\VolumetricLight\Volumetrics.v4p" scrollx="0" scrolly="60" bgcolor="15132390">
    <BOUNDS type="Window" left="3675" top="1740" width="15975" height="13365">
    </BOUNDS>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="242">
    <BOUNDS type="Node" left="1710" top="7260" width="100" height="100">
@@ -762,4 +762,10 @@
    </LINK>
    <LINK srcnodeid="583" srcpinname="Output" dstnodeid="580" dstpinname="Y Input Value">
    </LINK>
+   <PACK Name="dx11-vvvv-girlpower" Version="33.0">
+   </PACK>
+   <PACK Name="dx11.particles" Version="1.0.6">
+   </PACK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
    </PATCH>

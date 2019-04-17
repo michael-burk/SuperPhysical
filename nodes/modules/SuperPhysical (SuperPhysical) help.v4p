@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical) help.v4p" systemname="SuperPhysical help" filename="C:\vvvv\vvvv_50alpha35.15_x64\Packs\SuperPhysical\nodes\modules\SuperPhysical help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="720" top="570" width="10425" height="14865">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
@@ -506,7 +506,7 @@
    <PIN pinname="Query" visible="1">
    </PIN>
    </NODE>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
    <NODE systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.74.6-g5402bea065\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden" id="38">
    <BOUNDS type="Node" left="6345" top="6015" width="100" height="100">
@@ -872,7 +872,7 @@
    </LINK>
    <LINK srcnodeid="40" srcpinname="Layer Out" dstnodeid="90" dstpinname="Layer">
    </LINK>
-   <PACK Name="dx11.particles" Version="1.0.5">
+   <PACK Name="dx11.particles" Version="1.0.6">
    </PACK>
    <LINK srcnodeid="90" srcpinname="Layer Out" dstnodeid="41" dstpinname="Layer">
    </LINK>
@@ -916,4 +916,8 @@
    <LINKPOINT x="2265" y="6788">
    </LINKPOINT>
    </LINK>
+   <PACK Name="dx11-vvvv-girlpower" Version="33.0">
+   </PACK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
    </PATCH>

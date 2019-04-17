@@ -368,9 +368,9 @@ float4 doLighting(float4 PosW, float3 N, float4 TexCd, float2 pos){
 						if(Light[i].shadowPOM > 0 && Material[texID].POM && useTex[texID]) shadow = min(shadow, parallaxSoftShadowMultiplier(-L, TexCd.xy, tbn, texID, i,Light[i].shadowPOM).xxxx);
 					#endif
 	
-			
+				attenuation = Light[i].lAtt0;
 				finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-				lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, 1, roughness, metallic, ao, iridescenceColor, texID);
+				lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, attenuation, roughness, metallic, ao, iridescenceColor, texID);
 				
 				lightCounter ++;
 				if(Light[i].useShadow) shadowCounter++;	
