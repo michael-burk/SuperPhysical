@@ -59,6 +59,29 @@ StructuredBuffer<uint> materialID;
 Texture2DArray normalTex <string uiname="NormalMap"; >;
 Texture2DArray heightMap <string uiname="HeightMap"; >;
 
+struct LightStruct
+{
+	float4   Color;
+    float4   lPos;
+	
+    float    lightRange;
+    float    lAtt0;
+    float    lAtt1;
+    float    lightType;
+	
+    float 	 useShadow;
+	float 	 shadowType;
+	float 	 lightBleedingLimit;
+	float 	 lightSize;
+	
+	float 	 penumbraScale;
+	float 	 numShadowSamples;
+	float 	 shadowPOMSamples;
+	float 	 shadowPOM;
+};
+StructuredBuffer <LightStruct> Light  <string uiname="Light Parameter Buffer";>;
+
+
 
 cbuffer cbTextureData : register(b2)
 {

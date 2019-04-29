@@ -1,10 +1,10 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred) help.v4p" systemname="SuperPhysical Deferred (SuperPhysical) help" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha38.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha38.1_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Deferred) help.v4p" systemname="SuperPhysical Deferred (SuperPhysical) help" filename="C:\vvvv\vvvv_50alpha35.18_x64\packs\SuperPhysical\nodes\modules\SuperPhysical Deferred (SuperPhysical) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="7290" top="795" width="9420" height="12255">
    </BOUNDS>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
-   <PACK Name="dx11" Version="1.0.5">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
@@ -285,7 +285,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1005" top="1755" width="7965" height="10990">
    </BOUNDS>
-   <BOUNDS type="Window" left="2205" top="1035" width="19215" height="13680">
+   <BOUNDS type="Window" left="9585" top="4875" width="19215" height="13680">
    </BOUNDS>
    <PIN pinname="MaterialCount" visible="1" slicecount="1" values="3">
    </PIN>
@@ -332,6 +332,8 @@
    <PIN pinname="MaterialSetup" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Transform Buffer" visible="1">
+   </PIN>
+   <PIN pinname="world" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Default SizeXY" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -555,5 +557,9 @@
    </LINKPOINT>
    <LINKPOINT x="2595" y="4605">
    </LINKPOINT>
+   </LINK>
+   <PACK Name="dx11.particles" Version="1.0.5">
+   </PACK>
+   <LINK srcnodeid="88" srcpinname="Transforms" dstnodeid="91" dstpinname="world">
    </LINK>
    </PATCH>

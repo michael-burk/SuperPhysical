@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="510" top="960" width="14010" height="11595">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha38.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50alpha38.1_x64\packs\SuperPhysical\nodes\modules\MATERIAL SETUP\MATERIAL.v4p" systemname="STANDARD MATERIAL - IBL + TEX CNTRL" filename="C:\Users\Michael\Desktop\PROJECTS\PBR_VVVV\Modules\MATERIAL SETUP\STANDARD MATERIAL - IBL + TEX CNTRL.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="2265" top="1830" width="18825" height="13320">
    </BOUNDS>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2145" top="7620" width="645" height="255">
@@ -324,7 +324,7 @@
    </LINK>
    <LINK srcnodeid="105" srcpinname="Y Output Value" dstnodeid="56" dstpinname="ScaleZ">
    </LINK>
-   <PACK Name="dx11" Version="1.3.1.1">
+   <PACK Name="dx11" Version="1.3.1">
    </PACK>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="156">
    <BOUNDS type="Node" left="16425" top="5955" width="100" height="100">
