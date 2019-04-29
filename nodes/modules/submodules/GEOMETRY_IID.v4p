@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" systemname="GEOMETRY" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY.v4p" scrollx="360" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY_IID.v4p" systemname="GEOMETRY_IID" filename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\submodules\GEOMETRY_IID.v4p" scrollx="360" scrolly="0">
    <NODE id="0" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
    <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.35,0.08,-0.5">
    </PIN>
@@ -175,7 +175,7 @@
    </PIN>
    </NODE>
    <NODE id="9" systemname="GeometryFile (DX11.Geometry Assimp)" filename="%VVVV%\packs\dx11\nodes\plugins\assimp\VVVV.DX11.Nodes.Assimp.dll" nodename="GeometryFile (DX11.Geometry Assimp)" componentmode="Hidden">
-   <BOUNDS type="Node" left="585" top="1875" width="100" height="100">
+   <BOUNDS type="Node" left="705" top="570" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\..\assets\teapot.fbx">
    </PIN>
@@ -183,7 +183,7 @@
    </PIN>
    <PIN pinname="Reload" slicecount="1" values="0">
    </PIN>
-   <BOUNDS type="Box" left="585" top="1875">
+   <BOUNDS type="Box" left="705" top="570">
    </BOUNDS>
    </NODE>
    <NODE id="10" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
@@ -312,24 +312,6 @@
    <BOUNDS type="Box" left="1065" top="2445">
    </BOUNDS>
    </NODE>
-   <NODE systemname="Cons (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Spreads)" componentmode="Hidden" id="17">
-   <BOUNDS type="Node" left="3720" top="4500" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="3720" top="4500" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Input Count" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1">
-   </PIN>
-   <PIN pinname="Input 3" visible="1">
-   </PIN>
-   <PIN pinname="Input 4" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3690" top="2910" width="480" height="240">
    </BOUNDS>
@@ -346,43 +328,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="3915" top="3975" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3915" top="3975" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input 3">
-   </LINK>
-   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input 4">
-   </LINK>
-   <NODE id="20" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
-   <PIN pinname="Descriptive Name" slicecount="1" values="InstanceCount">
-   </PIN>
-   <BOUNDS type="Box" left="3720" top="5805" width="750" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3720" top="5805" width="750" height="240">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="20" dstpinname="Y Input Value">
-   </LINK>
    <LINK srcnodeid="8" srcpinname="Geometry Out" dstnodeid="16" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="14" srcpinname="Geometry Out" dstnodeid="16" dstpinname="Input 3">
-   </LINK>
-   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="16" dstpinname="Input 4" linkstyle="PolyLine">
    </LINK>
    <NODE id="21" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Geometry">
@@ -494,8 +440,90 @@
    </PACK>
    <PACK Name="VVVV.Packs.Image" Version="0.2.0">
    </PACK>
-   <LINK srcnodeid="8" srcpinname="Geometry Out" dstnodeid="16" dstpinname="Input 1">
-   </LINK>
    <LINK srcnodeid="6" srcpinname="Transform Out" dstnodeid="5" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="IID (DX11.GeomFX)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\DX11.GeomFX\IID (DX11.GeomFX)\IID (DX11.GeomFX).v4p" nodename="IID (DX11.GeomFX)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="1050" top="1155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="IID" visible="1">
+   </PIN>
+   <PIN pinname="Instance Count" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Vertex Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="25" dstpinname="Instance Count">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="26">
+   <BOUNDS type="Box" left="1935" top="4470" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1935" top="4470" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="IID">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="IID" dstnodeid="26" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="25" dstpinname="Geometry In">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Geometry Out" dstnodeid="16" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Geometry Out" dstnodeid="16" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="16" dstpinname="Input 4">
+   </LINK>
+   <NODE id="20" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="InstanceCount">
+   </PIN>
+   <BOUNDS type="Box" left="3720" top="5805" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3720" top="5805" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <NODE id="19" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3915" top="3975" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3915" top="3975" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="17" systemname="Cons (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Spreads)" componentmode="Hidden">
+   <BOUNDS type="Node" left="3720" top="4500" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3720" top="4500" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Input 4" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="20" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input 4">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Input 1">
    </LINK>
    </PATCH>
