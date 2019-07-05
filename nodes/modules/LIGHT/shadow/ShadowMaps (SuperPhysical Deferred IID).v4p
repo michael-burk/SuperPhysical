@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred IID).v4p" systemname="ShadowMaps (SuperPhysical Deferred IID)" filename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred IID).v4p" scrollx="0" scrolly="870" locked="0">
+   <PATCH nodename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred IID).v4p" systemname="ShadowMaps (SuperPhysical Deferred IID)" filename="C:\vvvv\vvvv_50beta38.1_x64\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred IID).v4p" scrollx="0" scrolly="0" locked="0">
    <BOUNDS type="Window" left="19365" top="6570" width="13170" height="16500">
    </BOUNDS>
    <PACK Name="addonpack" Version="38.1.0">
@@ -748,24 +748,6 @@
    <LINKPOINT x="8215" y="1980">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="317" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5220" top="5100" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="5220" top="5100" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0,0,0,0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="IntanceCount">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
    <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="286" dstpinname="Input">
    </LINK>
    <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="320">

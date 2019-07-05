@@ -161,7 +161,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="17940" top="8250" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="PBR">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="PBR_Bump_AutoTNB">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
@@ -317,7 +317,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="364">
-   <BOUNDS type="Node" left="5355" top="10815" width="100" height="100">
+   <BOUNDS type="Node" left="5415" top="11010" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -327,9 +327,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="255" srcpinname="Output Node" dstnodeid="364" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="4440" y="6830">
+   <LINKPOINT x="4460" y="6895">
    </LINKPOINT>
-   <LINKPOINT x="5535" y="6805">
+   <LINKPOINT x="5575" y="6935">
    </LINKPOINT>
    </LINK>
    <NODE systemname="GetBuffer (SuperPhysical Material)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetBuffer (SuperPhysical Material)" componentmode="Hidden" id="366">
@@ -346,18 +346,6 @@
    </LINK>
    <LINK srcnodeid="366" srcpinname="Output" dstnodeid="348" dstpinname="Buffer Description">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="368" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="16455" top="7620" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="16455" top="7620" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Shadow Render State|">
-   </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
-   </PIN>
-   </NODE>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
    <NODE systemname="HSCB (DX11.TextureFX)" filename="%VVVV%\packs\dx11-vvvv-girlpower\nodes\texture11\Filter\HSCB.tfx" nodename="HSCB (DX11.TextureFX)" componentmode="Hidden" id="373">
@@ -623,11 +611,13 @@
    </BOUNDS>
    <PIN pinname="Filter Mode" slicecount="1" values="Anisotropic">
    </PIN>
-   <PIN pinname="Maximum Lod" slicecount="1" values="0">
+   <PIN pinname="Maximum Lod" slicecount="1" values="3.40282346638529E038">
    </PIN>
    <PIN pinname="Sampler" visible="1">
    </PIN>
    <PIN pinname="Maximum Anisotropy" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Mip Lod Bias" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE id="225" componentmode="Hidden" stayontop="0" systemname="ShadowMaps (SuperPhysical Deferred IID)" filename="%VVVV%\packs\SuperPhysical\nodes\modules\LIGHT\shadow\ShadowMaps (SuperPhysical Deferred IID).v4p" nodename="ShadowMaps (SuperPhysical Deferred IID)" debug="0" hiddenwhenlocked="0">
@@ -682,12 +672,6 @@
    <LINKPOINT x="14845" y="9380">
    </LINKPOINT>
    <LINKPOINT x="17150" y="9400">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="368" srcpinname="Output Node" dstnodeid="225" dstpinname="Render State" linkstyle="Bezier">
-   <LINKPOINT x="16205" y="8013">
-   </LINKPOINT>
-   <LINKPOINT x="13780" y="7993">
    </LINKPOINT>
    </LINK>
    <PACK Name="dx11-vvvv-girlpower" Version="33.0">
@@ -749,8 +733,6 @@
    </LINKPOINT>
    <LINKPOINT x="11900" y="10030">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="401" srcpinname="Sampler" dstnodeid="375" dstpinname="g_samLinear">
    </LINK>
    <LINK srcnodeid="399" srcpinname="Buffer" dstnodeid="375" dstpinname="materialID">
    </LINK>
@@ -889,5 +871,7 @@
    <LINK srcnodeid="403" srcpinname="Output Node" dstnodeid="225" dstpinname="iidb">
    </LINK>
    <LINK srcnodeid="391" srcpinname="Output Node" dstnodeid="225" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="401" srcpinname="Sampler" dstnodeid="375" dstpinname="g_samLinear">
    </LINK>
    </PATCH>
