@@ -370,7 +370,7 @@ float4 doLighting(psInput input) : SV_Target
 //				attenuation = Light[i].lAtt0 * falloff;	
 			
 				finalLight += cookTorrance(V, L, N, albedo.xyz, Light[i].Color.rgb,
-				lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, 1, roughness, metallic, ao, iridescenceColor, texID);
+				lerp(1.0,saturate(shadow),falloff).x, 1.0, lightDist, Material[texID].sssAmount, Material[texID].sssFalloff, F0, Light[i].lAtt0, roughness, metallic, ao, iridescenceColor, texID);
 				
 				lightCounter ++;
 				if(Light[i].useShadow) shadowCounter++;	
