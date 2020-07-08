@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" systemname="Point FWP" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" scrollx="180" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" systemname="Point FWP" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point FWP.v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4215" top="2745" width="930" height="285">
    </BOUNDS>
@@ -97,7 +97,7 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="PointLightsFWP">
    </PIN>
-   <PIN pinname="Input Node" visible="1">
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE systemname="RandomSpread (Spreads 3d)" filename="%VVVV%\lib\nodes\modules\2D\RandomSpread (Spreads 3d).v4p" nodename="RandomSpread (Spreads 3d)" componentmode="Hidden" id="11">
@@ -170,7 +170,7 @@
    <LINKPOINT x="4305" y="3293">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="4950" top="19620" width="7125" height="7935">
+   <BOUNDS type="Window" left="20985" top="13035" width="7125" height="7935">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
@@ -266,36 +266,6 @@
    </PACK>
    <PACK Name="dx11-vvvv-girlpower" Version="33.0">
    </PACK>
-   <NODE systemname="PointlightSpreaded (SuperPhysical.Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="PointlightSpreaded (SuperPhysical.Light)" componentmode="Hidden" id="25">
-   <BOUNDS type="Node" left="1260" top="5550" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="PosXYZ" visible="1">
-   </PIN>
-   <PIN pinname="Range" visible="1">
-   </PIN>
-   <PIN pinname="LightIntensity" visible="1">
-   </PIN>
-   <PIN pinname="Falloff" visible="1">
-   </PIN>
-   <PIN pinname="Color" visible="1">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1" visible="1">
-   </PIN>
-   <PIN pinname="PointLightsFWP" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="11" srcpinname="XYZ" dstnodeid="25" dstpinname="PosXYZ">
-   </LINK>
-   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="25" dstpinname="Range">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="25" dstpinname="LightIntensity">
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="25" dstpinname="Falloff">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="25" dstpinname="Color">
-   </LINK>
-   <LINK srcnodeid="25" srcpinname="PointLightsFWP" dstnodeid="9" dstpinname="Input Node">
-   </LINK>
    <NODE id="5" systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden">
    <BOUNDS type="Node" left="3285" top="3900" width="100" height="100">
    </BOUNDS>
@@ -316,6 +286,22 @@
    <LINKPOINT x="3785" y="3050">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="25" dstpinname="Enabled">
+   <NODE systemname="PointLightSpreaded (SuperPhysical.Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="PointLightSpreaded (SuperPhysical.Light)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="1260" top="5550" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="XYZ" dstnodeid="26" dstpinname="PosXYZ">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="26" dstpinname="Range">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="26" dstpinname="LightIntensity">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="26" dstpinname="Falloff">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="26" dstpinname="Color">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="PointLightsFWP" dstnodeid="9" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="26" dstpinname="Enabled">
    </LINK>
    </PATCH>

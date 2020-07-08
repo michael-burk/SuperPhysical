@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" systemname="LIGHT SETUP FWP" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\LIGHT SETUP FWP.v4p" scrollx="0" scrolly="135">
-   <BOUNDS type="Window" left="1935" top="1725" width="9255" height="7515">
+   <BOUNDS type="Window" left="21495" top="3840" width="9255" height="7515">
    </BOUNDS>
    <PACK Name="addonpack" Version="40.0.0">
    </PACK>
@@ -347,7 +347,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="0" top="75" width="7125" height="7935">
    </BOUNDS>
-   <BOUNDS type="Window" left="4950" top="19620" width="7125" height="7935">
+   <BOUNDS type="Window" left="20985" top="13035" width="7125" height="7935">
    </BOUNDS>
    <PIN pinname="PointLightsFWP" visible="1" slicecount="1" values="||">
    </PIN>

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
-   <PATCH nodename="F:\_jhnnslmk\Repositories\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\submodules\GBUFFER - from Instanced Geometry.v4p" systemname="GBUFFER from Instanced Geometry" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GBUFFER from Instanced Geometry.v4p" scrollx="840" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\submodules\GBUFFER - from Instanced Geometry.v4p" systemname="GBUFFER from Instanced Geometry" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\GBUFFER from Instanced Geometry.v4p" scrollx="840" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)" exposed="0">
    <BOUNDS type="Box" left="330" top="465" width="795" height="480">
    </BOUNDS>
@@ -250,7 +250,7 @@
    <PIN pinname="Default" slicecount="1" values="-1">
    </PIN>
    </NODE>
-   <NODE systemname="SelectObject" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Submodules\PixelCoverage\SelectObject.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\PixelCoverage\SelectObject.v4p" componentmode="InAWindow" id="23">
+   <NODE systemname="SelectObject" filename="%VVVV%\packs\SuperPhysical\nodes\modules\Submodules\PixelCoverage\SelectObject.v4p" nodename="%VVVV%\packs\SuperPhysical\nodes\modules\PixelCoverage\SelectObject.v4p" componentmode="Hidden" id="23">
    <BOUNDS type="Node" left="11042" top="7922" width="4560" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="8830" top="5155" width="4425" height="5535">
@@ -1044,4 +1044,6 @@
    </LINK>
    <LINK srcnodeid="77" srcpinname="HeightMap" dstnodeid="109" dstpinname="Pointer">
    </LINK>
+   <PACK Name="dx11-vvvv-girlpower" Version="33.0">
+   </PACK>
    </PATCH>

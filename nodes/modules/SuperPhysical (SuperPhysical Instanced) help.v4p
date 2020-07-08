@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha38.1.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50alpha38.1_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Instanced) help.v4p" systemname="SuperPhysical (SuperPhysical Instanced) help" filename="C:\vvvv\vvvv_50alpha38.1_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Instanced) help.v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Instanced) help.v4p" systemname="SuperPhysical (SuperPhysical Instanced) help" filename="C:\vvvv\vvvv_50alpha38.1_x64\packs\SuperPhysical\nodes\modules\SuperPhysical (SuperPhysical Instanced) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="960" top="225" width="10425" height="14865">
    </BOUNDS>
    <NODE id="41" systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="InAWindow" stayontop="0">
@@ -230,7 +230,7 @@
    <PIN pinname="Query" visible="1">
    </PIN>
    </NODE>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="40.0.0">
    </PACK>
    <NODE systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.94.36-g648a856a73\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden" id="38">
    <BOUNDS type="Node" left="5760" top="6015" width="100" height="100">
@@ -276,14 +276,6 @@
    <LINKPOINT x="1600" y="5885">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="GetGlobalLight (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalLight (SuperPhysical Light)" componentmode="Hidden" id="11" debug="0">
-   <BOUNDS type="Node" left="1845" top="8310" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="GlobalReflectionColor" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="BlendBasic (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Mixer\BlendBasic.tfx" nodename="BlendBasic (DX11.TextureFX)" componentmode="Hidden" id="47">
    <BOUNDS type="Node" left="1665" top="10185" width="100" height="100">
    </BOUNDS>
@@ -318,7 +310,7 @@
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <PACK Name="dx11" Version="1.3.1">
+   <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
@@ -404,12 +396,6 @@
    </LINK>
    <LINK srcnodeid="47" srcpinname="Texture Out" dstnodeid="4" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="11" srcpinname="GlobalReflectionColor" dstnodeid="41" dstpinname="Background Color" linkstyle="Bezier">
-   <LINKPOINT x="1875" y="8768">
-   </LINKPOINT>
-   <LINKPOINT x="1875" y="8768">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="21" dstpinname="Texture In">
    </LINK>
    <PACK Name="dx11.particles" Version="1.0.5">
@@ -424,12 +410,6 @@
    <PIN pinname="LightSetup" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="11" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="5095" y="5578">
-   </LINKPOINT>
-   <LINKPOINT x="1865" y="5523">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="45" dstpinname="Input" linkstyle="Bezier">
    <LINKPOINT x="5080" y="3853">
    </LINKPOINT>
@@ -544,4 +524,26 @@
    <LINKPOINT x="3030" y="2933">
    </LINKPOINT>
    </LINK>
+   <NODE systemname="GetGlobalLight (SuperPhysical.Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="GetGlobalLight (SuperPhysical.Light)" componentmode="Hidden" id="11" debug="0">
+   <BOUNDS type="Node" left="1845" top="8310" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="GlobalReflectionColor" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="GlobalReflectionColor" dstnodeid="41" dstpinname="Background Color" linkstyle="Bezier">
+   <LINKPOINT x="1875" y="8768">
+   </LINKPOINT>
+   <LINKPOINT x="1875" y="8768">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="LightSetup" dstnodeid="11" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="5095" y="5578">
+   </LINKPOINT>
+   <LINKPOINT x="1865" y="5523">
+   </LINKPOINT>
+   </LINK>
+   <PACK Name="dx11-vvvv-girlpower" Version="33.0">
+   </PACK>
    </PATCH>
