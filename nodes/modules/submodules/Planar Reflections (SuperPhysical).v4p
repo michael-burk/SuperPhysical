@@ -1,10 +1,10 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" locked="0" systemname="Planar Reflections (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
+   <PATCH nodename="F:\_jhnnslmk\Repositories\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" locked="0" systemname="Planar Reflections (SuperPhysical)" filename="C:\vvvv\vvvv_50beta36_x64\packs\SuperPhysical\nodes\modules\submodules\Planar Reflections (SuperPhysical).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2715" top="1035" width="13950" height="13815">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1.1">
    </PACK>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="40.0.0">
    </PACK>
    <NODE systemname="SetMatrix (Transform)" nodename="SetMatrix (Transform)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="7140" top="7125" width="100" height="100">
@@ -650,14 +650,6 @@
    </LINK>
    <LINK srcnodeid="150" srcpinname="Texture Out" dstnodeid="129" dstpinname="Input Node">
    </LINK>
-   <NODE systemname="GetGlobalLight (SuperPhysical Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="GetGlobalLight (SuperPhysical Light)" componentmode="Hidden" id="174" debug="0">
-   <BOUNDS type="Node" left="3915" top="7530" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="GlobalReflectionColor" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="175">
    <BOUNDS type="Box" left="2775" top="2640" width="795" height="240">
    </BOUNDS>
@@ -668,8 +660,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Input">
    </PIN>
    </NODE>
-   <LINK srcnodeid="175" srcpinname="Output Node" dstnodeid="174" dstpinname="Input">
-   </LINK>
    <LINK srcnodeid="154" srcpinname="Layer Out" dstnodeid="148" dstpinname="Layer In">
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 3d)" componentmode="Hidden" id="196">
@@ -721,15 +711,27 @@
    <NODE systemname="SetAlpha (Color)" filename="" nodename="SetAlpha (Color)" componentmode="Hidden" id="207">
    <BOUNDS type="Node" left="3915" top="8280" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="Alpha" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="174" srcpinname="GlobalReflectionColor" dstnodeid="207" dstpinname="Input">
-   </LINK>
    <LINK srcnodeid="207" srcpinname="Output" dstnodeid="15" dstpinname="Background Color">
+   </LINK>
+   <PACK Name="dx11.particles" Version="1.0.7">
+   </PACK>
+   <NODE systemname="GetGlobalLight (SuperPhysical.Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="GetGlobalLight (SuperPhysical.Light)" componentmode="Hidden" id="174" debug="0">
+   <BOUNDS type="Node" left="3915" top="7530" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="GlobalReflectionColor" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="175" srcpinname="Output Node" dstnodeid="174" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="174" srcpinname="GlobalReflectionColor" dstnodeid="207" dstpinname="Input">
    </LINK>
    </PATCH>
