@@ -1350,13 +1350,13 @@
           <Link Id="IY1il78nTnhOitCw62ILDk" Ids="JLMyGpYpA0XM7eBmTXun3X,MuYxQngMk3iPhUaZC4RjH8" />
         </Patch>
       </Node>
-      <Canvas Id="QMz7VrFXHRWL4oZppkjPdW" Name="Light" Position="59,-88">
+      <Canvas Id="QMz7VrFXHRWL4oZppkjPdW" Name="Light" Position="51,-102">
         <!--
 
     ************************ LightTransform ************************
 
 -->
-        <Node Name="LightTransform" Bounds="688,848" Id="ESPewtZABuwPD0SpVdEuXH">
+        <Node Name="LightTransform" Bounds="696,842" Id="ESPewtZABuwPD0SpVdEuXH">
           <p:NodeReference>
             <Choice Kind="ContainerDefinition" Name="Process" />
             <FullNameCategoryReference ID="Primitive" />
@@ -2347,13 +2347,13 @@
     ************************ PlanarReflections ************************
 
 -->
-        <Node Name="PlanarReflections" Bounds="156,1079,126,137" Id="R82Rx5QA5XrO5cCgfLIR5n">
+        <Node Name="PlanarReflections" Bounds="163,1035,126,126" Id="R82Rx5QA5XrO5cCgfLIR5n">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VVVV.Value.SuperPhysical.vl">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
           </p:NodeReference>
           <Patch Id="DtTPMJBwCaAMxPTx74loBa">
-            <Node Bounds="168,1137,102,26" Id="GBtoaquJchAL8UMQtlp1q4">
+            <Node Bounds="175,1084,102,26" Id="GBtoaquJchAL8UMQtlp1q4">
               <p:NodeReference LastCategoryFullName="VVVV.SuperPhysical.Light.PlanarReflectionSettings" LastSymbolSource="VVVV.Value.SuperPhysical.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="Create" />
@@ -2362,10 +2362,10 @@
               <Pin Id="HGMLcNah091MzJV14ND4ie" Name="Enabled" Kind="InputPin" />
               <Pin Id="MqlNKt9U3L1PdSQvSUuVzw" Name="Output" Kind="StateOutputPin" />
             </Node>
-            <ControlPoint Id="CpV4hlHs0HcLMFlsDBeRr8" Bounds="170,1197" />
+            <ControlPoint Id="CpV4hlHs0HcLMFlsDBeRr8" Bounds="177,1144" />
             <Link Id="NMK9siDcbqZLEjj20OdMSp" Ids="CpV4hlHs0HcLMFlsDBeRr8,PX5plwgWyWfMcVshY4jH6w" IsHidden="true" />
             <Link Id="OyD50uTyT0IPJCosnRG6so" Ids="MqlNKt9U3L1PdSQvSUuVzw,CpV4hlHs0HcLMFlsDBeRr8" />
-            <ControlPoint Id="MTfGGqN8R9MNBteKGabJ9m" Bounds="187,1097" />
+            <ControlPoint Id="MTfGGqN8R9MNBteKGabJ9m" Bounds="183,1053" />
             <Link Id="Q52N9acxOaFNHColkJRS1h" Ids="MTfGGqN8R9MNBteKGabJ9m,HGMLcNah091MzJV14ND4ie" />
             <Link Id="EYycuYBY3KuQKmgWf54lpb" Ids="RYhaumrfFf3Lw1eQwkXdXR,MTfGGqN8R9MNBteKGabJ9m" IsHidden="true" />
             <Pin Id="RYhaumrfFf3Lw1eQwkXdXR" Name="Enabled" Kind="InputPin" Bounds="1875,994" />
@@ -2377,14 +2377,14 @@
     ************************ DirectionalLight ************************
 
 -->
-        <Node Name="DirectionalLight" Bounds="1077,550,515,254" Id="A6IF0k0OEadOdfqzjpCl7s">
+        <Node Name="DirectionalLight" Bounds="1053,549,515,254" Id="A6IF0k0OEadOdfqzjpCl7s">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
             <Choice Kind="OperationDefinition" Name="Operation" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
           <Patch Id="Ger6bNWbAnyMvp1XdhAoSg" ManuallySortedPins="true">
-            <Node Bounds="1090,723,410,26" Id="JzLzhcjoOUELKVyWutinuA">
+            <Node Bounds="1066,722,410,26" Id="JzLzhcjoOUELKVyWutinuA">
               <p:NodeReference LastCategoryFullName="VVVV.SuperPhysical.Light.DirectionalLightSettings" LastSymbolSource="VVVV.Value.SuperPhysical.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="Create" />
@@ -2404,43 +2404,42 @@
               <Pin Id="DDWnpf3AkrDPQunKz7rmaL" Name="Enabled" Kind="InputPin" />
               <Pin Id="KP2BjZHh9kQLDAQgWebbtt" Name="Output" Kind="StateOutputPin" />
             </Node>
-            <ControlPoint Id="O0Jlq7VhzvtQRbDbSknOD0" Bounds="1092,785" />
+            <ControlPoint Id="O0Jlq7VhzvtQRbDbSknOD0" Bounds="1068,784" />
             <Link Id="BlNG0hcXiHfMu8nmJ2PXVm" Ids="O0Jlq7VhzvtQRbDbSknOD0,HeYqYovInczMD5RY6WuZQv" IsHidden="true" />
-            <ControlPoint Id="E8dwFwyiiKLLmFHFHnhPL8" Bounds="1111,568" />
+            <ControlPoint Id="E8dwFwyiiKLLmFHFHnhPL8" Bounds="1087,567" />
             <Link Id="RjJ0jmhESlhO4obXIAXi5w" Ids="A5u859B0UQBP22xruaUGBd,E8dwFwyiiKLLmFHFHnhPL8" IsHidden="true" />
             <Link Id="Oh12CnM1jdDLJYT9MItIAe" Ids="E8dwFwyiiKLLmFHFHnhPL8,DTObkEyXc7fMN9DGiw9seT" />
-            <ControlPoint Id="VphevBM8fmfLsCxxYCh3N2" Bounds="1130,588" />
+            <ControlPoint Id="VphevBM8fmfLsCxxYCh3N2" Bounds="1106,587" />
             <Link Id="O2hSScu6wrLLu9gaRBbVM9" Ids="NCap6WmwtBvMcmrUDmRfum,VphevBM8fmfLsCxxYCh3N2" IsHidden="true" />
             <Link Id="RQ8wjDcHWpdLjMF5vip8pz" Ids="VphevBM8fmfLsCxxYCh3N2,JAmvRFtX5huP3mZah7jxfU" />
-            <ControlPoint Id="SLESpraraPPOJSobATZvwv" Bounds="1149,623" />
+            <ControlPoint Id="SLESpraraPPOJSobATZvwv" Bounds="1125,622" />
             <Link Id="KrtX4QsRwslL4kMetG6tPY" Ids="UNBzv1PfbVrLbA6qWaOs1e,SLESpraraPPOJSobATZvwv" IsHidden="true" />
             <Link Id="UU4E4F3pJCaQMk3kX0vgvj" Ids="SLESpraraPPOJSobATZvwv,HwTKaprRiqJPOs0r8UZ3K2" />
-            <ControlPoint Id="MyrcAoY0fxVMeXfjVeKmXZ" Bounds="1179,584" />
+            <ControlPoint Id="MyrcAoY0fxVMeXfjVeKmXZ" Bounds="1155,583" />
             <Link Id="U3XLeg118wTOM0FmNM1UzO" Ids="Oj7xqpNE0DqMwN0aaZDAHF,MyrcAoY0fxVMeXfjVeKmXZ" IsHidden="true" />
             <Link Id="DTCcRK1uLNbLtcOCg11Da5" Ids="MyrcAoY0fxVMeXfjVeKmXZ,F32N1adXCbaMLrweG7cMMg" />
-            <ControlPoint Id="EWYjuqN2ZABQRH9sLDHi5h" Bounds="1533,574" />
+            <ControlPoint Id="EWYjuqN2ZABQRH9sLDHi5h" Bounds="1509,573" />
             <Link Id="KDgwXj4khc1PU0Y3sMWFgH" Ids="DpZ5HG5w0QAM6wOKuOxolp,EWYjuqN2ZABQRH9sLDHi5h" IsHidden="true" />
             <Link Id="HsTbcZCno7WLS3HMfy2yQa" Ids="EWYjuqN2ZABQRH9sLDHi5h,DDWnpf3AkrDPQunKz7rmaL" />
-            <ControlPoint Id="PscG7IkNx1dNDRwOvHAGzH" Bounds="1496,609" />
+            <ControlPoint Id="PscG7IkNx1dNDRwOvHAGzH" Bounds="1472,608" />
             <Link Id="S10mEsocyWKLByOs4VUkQm" Ids="D1pioD7B52GOAJFQsTIsR0,PscG7IkNx1dNDRwOvHAGzH" IsHidden="true" />
             <Link Id="KEC6UDc7fiEPJoBxmxCetw" Ids="PscG7IkNx1dNDRwOvHAGzH,DokDkud1wruMu2EwsCPMJT" />
-            <ControlPoint Id="ENdlSIHj898NAhcxXWWB8I" Bounds="1255,602" />
+            <ControlPoint Id="ENdlSIHj898NAhcxXWWB8I" Bounds="1231,601" />
             <Link Id="Hc2FZ6wXZM5PtTW0TFQrxc" Ids="HlgokbrnSclMkiN3KZfHh4,ENdlSIHj898NAhcxXWWB8I" IsHidden="true" />
-            <Link Id="RU9lillgzsePJefItDwQuh" Ids="ENdlSIHj898NAhcxXWWB8I,J07Czpcf2ELO3ybcmkVRlh,NcVjFYoYoySMuIWyxZPDQm" />
-            <ControlPoint Id="TkKtlxlH5LCNwV35EUhtCY" Bounds="1091,605" />
+            <Link Id="RU9lillgzsePJefItDwQuh" Ids="ENdlSIHj898NAhcxXWWB8I,NcVjFYoYoySMuIWyxZPDQm" />
+            <ControlPoint Id="TkKtlxlH5LCNwV35EUhtCY" Bounds="1067,604" />
             <Link Id="LKJMNIGWGFDOKbFWMtDhVn" Ids="VWMjFdYUi85NYs5DN6ZAOM,TkKtlxlH5LCNwV35EUhtCY" IsHidden="true" />
             <Link Id="FI1k1fMLtwkMbfKEkCQi56" Ids="TkKtlxlH5LCNwV35EUhtCY,V6YxjIa1WTXOkBuQQdefbx" />
-            <ControlPoint Id="RdZwr6t2DO4NApLhsoZzhP" Bounds="1250,651" />
+            <ControlPoint Id="RdZwr6t2DO4NApLhsoZzhP" Bounds="1226,650" />
             <Link Id="Ne9ePHDjGRfL3wWI9uW4Zv" Ids="Muaz9EeO0cHLaxgAWvuaPV,RdZwr6t2DO4NApLhsoZzhP" IsHidden="true" />
             <Link Id="Nb4J6kxshbLNvd3zyzgtfu" Ids="RdZwr6t2DO4NApLhsoZzhP,La9V2j0vxIzOTgscnThTN8" />
             <Link Id="TUy8on24GnEO8qzLJrLQLK" Ids="KP2BjZHh9kQLDAQgWebbtt,O0Jlq7VhzvtQRbDbSknOD0" />
-            <ControlPoint Id="QuhurtGs8mELmZajXuG2xe" Bounds="1344,578" />
+            <ControlPoint Id="QuhurtGs8mELmZajXuG2xe" Bounds="1320,577" />
             <Link Id="Q90TvkapSH9O2W3XLFgtYC" Ids="OMxXtLGpbFnM3FZAkjps2I,QuhurtGs8mELmZajXuG2xe" IsHidden="true" />
-            <ControlPoint Id="EEyGl6RtdNLLq0JET8fZ2M" Bounds="1400,622" />
+            <ControlPoint Id="EEyGl6RtdNLLq0JET8fZ2M" Bounds="1376,621" />
             <Link Id="EQ5mdDgFpH4MUfvmCZWqfN" Ids="DGWWAVzF9UYLhA123xmS3h,EEyGl6RtdNLLq0JET8fZ2M" IsHidden="true" />
             <Link Id="VYngYvmyyjTOt7Ua7ZF4Vf" Ids="EEyGl6RtdNLLq0JET8fZ2M,QhFm0jyZIE3PE7Zu1SfcLb" />
-            <ControlPoint Id="J07Czpcf2ELO3ybcmkVRlh" Bounds="1359,665" />
-            <ControlPoint Id="T7E4qA5H5riLVSUFPsCYdj" Bounds="1425,661" />
+            <ControlPoint Id="T7E4qA5H5riLVSUFPsCYdj" Bounds="1401,660" />
             <Link Id="BiEny3TZ4s0Mfm0wg7B3iL" Ids="T7E4qA5H5riLVSUFPsCYdj,DHTFru93XmlM7zvva8vG4O" />
             <Link Id="LPuoAJfKfqmOeKYryF3WVS" Ids="IxPdjHgXhAdOn0bbMv3gSI,T7E4qA5H5riLVSUFPsCYdj" IsHidden="true" />
             <Pin Id="VWMjFdYUi85NYs5DN6ZAOM" Name="Interest" Kind="InputPin" />
@@ -2786,6 +2785,73 @@
             <Link Id="BVONR4ZkGcwLDSZ4F6qjTZ" Ids="PCBJ34zJer5L58KgNIirNK,Mjd1Zq89dGIN9ps7MqY4H4" />
             <Link Id="RxtiqxrdKMROfudlvqKqQ3" Ids="Kwe1pNnsUHZOAMNzRhc5dN,NU2ibxghdd9M3tGFMbCQey" />
             <Link Id="EbRa3ZCYPtgPeWw5rdhXDD" Ids="MPuVtAhZJt6ONxjRWPTR2s,PuuMOtHPXlfPaetO87lBBE" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ PointlightSpreaded ************************
+
+-->
+        <Node Name="PointlightSpreaded" Bounds="416,935,433,179" Id="HHDFQ4QpqJzOHkzzFZrDhx">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+            <Choice Kind="RegionFlag" Name="Region" Fixed="true" />
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <Patch Id="NAWp8V8vxu4M5U8dCCn6RP" ManuallySortedPins="true">
+            <Node Bounds="428,958,110,26" Id="Fyu8S6pEzT0LudUnN8di0N">
+              <p:NodeReference LastCategoryFullName="SuperPhysical.Light.PointLightSpreaded_new" LastSymbolSource="VL.SuperPhysical.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="Create" />
+                <CategoryReference Kind="ClassType" Name="PointLightSpreaded_new" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="Bs7sVXMA8JKNWPYZmkxpLO" Name="Output" Kind="StateOutputPin" />
+            </Node>
+            <Node Bounds="429,1039,332,26" Id="FZ1MLx6cRKyNb9eniTsqif">
+              <p:NodeReference LastCategoryFullName="SuperPhysical.Light.PointLightSpreaded_new" LastSymbolSource="VL.SuperPhysical.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="ClassType" Name="PointLightSpreaded_new" />
+                <Choice Kind="OperationCallFlag" Name="Update" />
+              </p:NodeReference>
+              <Pin Id="C7MG7Pp9stwNiiYz430tfG" Name="Input" Kind="StateInputPin" />
+              <Pin Id="OEESANJXHMLPEi1Wk0UYmy" Name="Pos" Kind="InputPin" />
+              <Pin Id="BkhhMbWb44sNT8yeaGdgHQ" Name="Range" Kind="InputPin" />
+              <Pin Id="IjODSRYh6lSNFwewxUE8Uc" Name="LightIntensity" Kind="InputPin" />
+              <Pin Id="Fd08a2VQ7b9OJuvxiJvaw5" Name="Falloff" Kind="InputPin" />
+              <Pin Id="Ph2lA34p2rmMjwhG02Mrl7" Name="Color" Kind="InputPin" />
+              <Pin Id="F10HTHyvOpVPRLn9gQuVkt" Name="Enabled" Kind="InputPin" />
+              <Pin Id="LhewCUz5XSgNP094ObvvsM" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="I9Q3K7qeOwlNDy5NC5Sh6B" Name="PointLightsFWP" Kind="OutputPin" />
+            </Node>
+            <Link Id="AgCDO8xP67AQbJFITMbYJt" Ids="Bs7sVXMA8JKNWPYZmkxpLO,C7MG7Pp9stwNiiYz430tfG" />
+            <Pin Id="ESKAp7NDqMiPZQQnvNc733" Name="Pos" Kind="InputPin" />
+            <ControlPoint Id="UqmP5NJjDfbLdgMHIcCkTn" Bounds="449,1008" />
+            <Link Id="ERdqBdzSoitN12spADw2yd" Ids="ESKAp7NDqMiPZQQnvNc733,UqmP5NJjDfbLdgMHIcCkTn" IsHidden="true" />
+            <Link Id="KBHH6YRw3xAMVIV8sKxpbw" Ids="UqmP5NJjDfbLdgMHIcCkTn,OEESANJXHMLPEi1Wk0UYmy" />
+            <Pin Id="MLXTRIEUu2jL6OFvFPwjfe" Name="Range" Kind="InputPin" />
+            <ControlPoint Id="QKAXW57iQa7M8htUBpvrQ5" Bounds="497,1008" />
+            <Link Id="QtGomNGTttIMRlfTSCKK4m" Ids="MLXTRIEUu2jL6OFvFPwjfe,QKAXW57iQa7M8htUBpvrQ5" IsHidden="true" />
+            <Link Id="MoEtaTQLOgHL9KflPSA8bE" Ids="QKAXW57iQa7M8htUBpvrQ5,BkhhMbWb44sNT8yeaGdgHQ" />
+            <Pin Id="D97PSaYprK8OXOPliylrUW" Name="LightIntensity" Kind="InputPin" />
+            <ControlPoint Id="VxvnH6nA3IMNoS6Kn9vSt8" Bounds="557,1008" />
+            <Link Id="Omb0SIPazopL5NDugtxiYc" Ids="D97PSaYprK8OXOPliylrUW,VxvnH6nA3IMNoS6Kn9vSt8" IsHidden="true" />
+            <Link Id="MkKEQ195od3LN6jy0TITyS" Ids="VxvnH6nA3IMNoS6Kn9vSt8,IjODSRYh6lSNFwewxUE8Uc" />
+            <Pin Id="TodzU8SYSwDL3q39R89WuZ" Name="Falloff" Kind="InputPin" />
+            <ControlPoint Id="Q0I5wFnskwpO6FqBPXArtC" Bounds="651,1008" />
+            <Link Id="Srl5apNMaGjP5xZYXcGVjF" Ids="TodzU8SYSwDL3q39R89WuZ,Q0I5wFnskwpO6FqBPXArtC" IsHidden="true" />
+            <Link Id="OYOwWn8gBcYNMPBdUXIAOQ" Ids="Q0I5wFnskwpO6FqBPXArtC,Fd08a2VQ7b9OJuvxiJvaw5" />
+            <Pin Id="VttS0OfqTAWOV21MDWdvSM" Name="Color" Kind="InputPin" />
+            <ControlPoint Id="R1dHgYL7T4WOcXE637BU5D" Bounds="712,1008" />
+            <Link Id="Q0d2LGexHkdMewdUy1KTPI" Ids="VttS0OfqTAWOV21MDWdvSM,R1dHgYL7T4WOcXE637BU5D" IsHidden="true" />
+            <Link Id="POYoZfOBQLqNEguqamSfSV" Ids="R1dHgYL7T4WOcXE637BU5D,Ph2lA34p2rmMjwhG02Mrl7" />
+            <Pin Id="MpLHuYYcFbPNKShLTUbsXL" Name="Enabled" Kind="InputPin" />
+            <ControlPoint Id="Bhh5kXviNngQU2phF1GprI" Bounds="769,1008" />
+            <Link Id="InaXDgHRFQxNNTrPBal8Zy" Ids="MpLHuYYcFbPNKShLTUbsXL,Bhh5kXviNngQU2phF1GprI" IsHidden="true" />
+            <Link Id="D3Ly9Tmxy9AL7kb0MrYZBF" Ids="Bhh5kXviNngQU2phF1GprI,F10HTHyvOpVPRLn9gQuVkt" />
+            <Pin Id="MwoQ2aUg59XP7P9CE8nncE" Name="PointLightsFWP" Kind="OutputPin" />
+            <ControlPoint Id="QP4ADZtQHh3M99vPbAL7rL" Bounds="757,1097" />
+            <Link Id="TEwpHLi1DkqL3jydDJ7pE3" Ids="QP4ADZtQHh3M99vPbAL7rL,MwoQ2aUg59XP7P9CE8nncE" IsHidden="true" />
+            <Link Id="IbCHzCVfluxMW6sfdRKVQC" Ids="I9Q3K7qeOwlNDy5NC5Sh6B,QP4ADZtQHh3M99vPbAL7rL" />
           </Patch>
         </Node>
       </Canvas>
@@ -4739,7 +4805,7 @@
     ************************ MaterialIDs (Legacy) ************************
 
 -->
-        <Node Name="MaterialIDs (Legacy)" Bounds="161,385" Id="LE4ZJIzSsqKMISSmObEHYt">
+        <Node Name="MaterialIDs (Legacy)" Bounds="156,385" Id="LE4ZJIzSsqKMISSmObEHYt">
           <p:NodeReference>
             <Choice Kind="ContainerDefinition" Name="Process" />
             <FullNameCategoryReference ID="Primitive" />
@@ -5793,7 +5859,7 @@
     ************************ MaterialIDs ************************
 
 -->
-        <Node Name="MaterialIDs" Bounds="160,422" Id="Bvr31Q6IHdJLJCAn65mi44">
+        <Node Name="MaterialIDs" Bounds="156,422" Id="Bvr31Q6IHdJLJCAn65mi44">
           <p:NodeReference>
             <Choice Kind="ContainerDefinition" Name="Process" />
             <FullNameCategoryReference ID="Primitive" />
@@ -6242,7 +6308,7 @@
     ************************ GetBuffer ************************
 
 -->
-        <Node Name="GetBuffer" Bounds="481,491" Id="BVTq9mflrBRLzfdo1yGrQc">
+        <Node Name="GetBuffer" Bounds="469,491" Id="BVTq9mflrBRLzfdo1yGrQc">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VVVV.Value.SuperPhysical.vl">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
@@ -7341,7 +7407,7 @@
     ************************ ParallaxOcclusionMapping ************************
 
 -->
-        <Node Name="ParallaxOcclusionMapping" Bounds="477,549" Id="JNUuQwZLHxbLjyfF3Ssypd">
+        <Node Name="ParallaxOcclusionMapping" Bounds="469,549" Id="JNUuQwZLHxbLjyfF3Ssypd">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
@@ -7440,7 +7506,7 @@
     ************************ Refraction ************************
 
 -->
-        <Node Name="Refraction" Bounds="478,611" Id="Hooh8lIMWIEMQqCmBFeWUx">
+        <Node Name="Refraction" Bounds="469,602" Id="Hooh8lIMWIEMQqCmBFeWUx">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
@@ -7487,7 +7553,7 @@
     ************************ Iridescence ************************
 
 -->
-        <Node Name="Iridescence" Bounds="476,439" Id="BzTyzf1oTQvOaDSO2IFjCg">
+        <Node Name="Iridescence" Bounds="469,439" Id="BzTyzf1oTQvOaDSO2IFjCg">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>

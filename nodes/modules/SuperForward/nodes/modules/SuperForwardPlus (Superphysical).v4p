@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" systemname="SuperForwardPlus (Superphysical)" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" scrollx="23865" scrolly="240" locked="0" bgcolor="15527148">
-   <BOUNDS type="Window" left="6435" top="10305" width="14610" height="15855">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" systemname="SuperForwardPlus (Superphysical)" filename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\SuperForward\nodes\modules\SuperForwardPlus (Superphysical).v4p" scrollx="19935" scrolly="0" locked="0" bgcolor="15527148">
+   <BOUNDS type="Window" left="1215" top="2670" width="14610" height="15855">
    </BOUNDS>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="40.0.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="1" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="600" top="45392" width="795" height="240">
@@ -4414,4 +4414,6 @@
    <LINKPOINT x="15300" y="10260">
    </LINKPOINT>
    </LINK>
+   <PACK Name="dx11-vvvv-girlpower" Version="33.0">
+   </PACK>
    </PATCH>

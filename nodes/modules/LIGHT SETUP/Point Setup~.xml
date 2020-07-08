@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_50beta37_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="-690" top="2070" width="13605" height="8625">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="11895" top="945" width="13605" height="8625">
    </BOUNDS>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="40.0.0">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
    <BOUNDS type="Node" left="825" top="1065" width="1290" height="270">
@@ -134,22 +134,6 @@
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    </NODE>
-   <NODE systemname="VSM (SuperPhysical ShadowType)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="VSM (SuperPhysical ShadowType)" componentmode="Hidden" id="83">
-   <BOUNDS type="Node" left="7245" top="1680" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="7245" top="1680">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="ESM (SuperPhysical ShadowType)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="ESM (SuperPhysical ShadowType)" componentmode="Hidden" id="82">
-   <BOUNDS type="Node" left="8055" top="1680" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="8055" top="1680">
-   </BOUNDS>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="78">
    <BOUNDS type="Box" left="7890" top="2460" width="705" height="240">
    </BOUNDS>
@@ -232,28 +216,6 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Shadow (SuperPhysical Shadow)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="Shadow (SuperPhysical Shadow)" componentmode="Hidden" id="97">
-   <BOUNDS type="Node" left="7260" top="3855" width="3195" height="270">
-   </BOUNDS>
-   <PIN pinname="PostFiltering" visible="1">
-   </PIN>
-   <PIN pinname="ShadowRes" visible="1" slicecount="2" values="256,256">
-   </PIN>
-   <PIN pinname="ShadowBlurWidth" visible="1" slicecount="3" values="0.17,0.29,0.32">
-   </PIN>
-   <PIN pinname="Enabled" visible="1">
-   </PIN>
-   <PIN pinname="ShadowType" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="97" dstpinname="LightBleedingLimit" linkstyle="Bezier">
-   <LINKPOINT x="7920" y="3278">
-   </LINKPOINT>
-   <LINKPOINT x="7920" y="3278">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="101">
    <BOUNDS type="Box" left="10665" top="1020" width="795" height="240">
    </BOUNDS>
@@ -320,54 +282,6 @@
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    </NODE>
-   <NODE systemname="PostFiltering (SuperPhysical Shadow)" filename="%VVVV%\packs\SuperPhysical\plugins\vl\VVVV.Value.SuperPhysical.vl" nodename="PostFiltering (SuperPhysical Shadow)" componentmode="Hidden" id="98">
-   <BOUNDS type="Node" left="9780" top="2445" width="2670" height="270">
-   </BOUNDS>
-   <PIN pinname="LightSize" visible="1" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="NumShadowSamples" visible="1">
-   </PIN>
-   <PIN pinname="PenumbraScale" visible="1" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Enabled" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="101" srcpinname="Y Output Value" dstnodeid="98" dstpinname="NumShadowSamples">
-   </LINK>
-   <LINK srcnodeid="99" srcpinname="Y Output Value" dstnodeid="98" dstpinname="Enabled" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="98" srcpinname="Output" dstnodeid="97" dstpinname="PostFiltering" linkstyle="Bezier">
-   <LINKPOINT x="9795" y="3278">
-   </LINKPOINT>
-   <LINKPOINT x="9795" y="3278">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="97" dstpinname="ShadowRes" linkstyle="Bezier">
-   <LINKPOINT x="8550" y="3495">
-   </LINKPOINT>
-   <LINKPOINT x="8550" y="3495">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="76" srcpinname="Y Output Value" dstnodeid="97" dstpinname="ShadowBlurWidth" linkstyle="Bezier">
-   <LINKPOINT x="9150" y="3750">
-   </LINKPOINT>
-   <LINKPOINT x="9150" y="3750">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="83" srcpinname="Output" dstnodeid="97" dstpinname="ShadowType" linkstyle="Bezier">
-   <LINKPOINT x="7275" y="2915">
-   </LINKPOINT>
-   <LINKPOINT x="7275" y="2890">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="92" srcpinname="Y Output Value" dstnodeid="97" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="10425" y="3720">
-   </LINKPOINT>
-   <LINKPOINT x="10425" y="3720">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="124">
    <BOUNDS type="Box" left="2100" top="3435" width="795" height="240">
    </BOUNDS>
@@ -406,17 +320,15 @@
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    </NODE>
-   <LINK srcnodeid="125" srcpinname="Y Output Value" dstnodeid="98" dstpinname="LightSize">
-   </LINK>
-   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="98" dstpinname="PenumbraScale">
-   </LINK>
    <PACK Name="vvvv-ZeroMQ_Release_x64" Version="0.5.0">
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
    <PACK Name="vvvv-Message" Version="2.9.10">
    </PACK>
-   <NODE systemname="PointLight (SuperPhysical Light)" filename="C:\vvvv\vvvv_50alpha35.15_x64\packs\SuperPhysical\nodes\vl\VVVV.Value.SuperPhysical.vl" nodename="PointLights (SuperPhysical)" componentmode="Hidden" id="127">
+   <PACK Name="dx11.particles" Version="1.0.7">
+   </PACK>
+   <NODE systemname="PointLight (SuperPhysical.Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="PointLight (SuperPhysical.Light)" componentmode="Hidden" id="127">
    <BOUNDS type="Node" left="1365" top="5385" width="5940" height="270">
    </BOUNDS>
    <PIN pinname="SpotLights" visible="1">
@@ -442,12 +354,6 @@
    <LINKPOINT x="2835" y="5265">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="97" srcpinname="Output" dstnodeid="127" dstpinname="Shadow" linkstyle="Bezier">
-   <LINKPOINT x="7260" y="4733">
-   </LINKPOINT>
-   <LINKPOINT x="5835" y="4733">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="127" dstpinname="Enabled">
    </LINK>
    <LINK srcnodeid="124" srcpinname="Y Output Value" dstnodeid="127" dstpinname="Range">
@@ -456,6 +362,102 @@
    </LINK>
    <LINK srcnodeid="127" srcpinname="SpotLights" dstnodeid="72" dstpinname="Input Node">
    </LINK>
-   <PACK Name="dx11.particles" Version="1.0.5">
+   <NODE systemname="Shadow (SuperPhysical Shadow)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="Shadow (SuperPhysical Shadow)" componentmode="Hidden" id="97">
+   <BOUNDS type="Node" left="7260" top="3855" width="3195" height="270">
+   </BOUNDS>
+   <PIN pinname="PostFiltering" visible="1">
+   </PIN>
+   <PIN pinname="ShadowRes" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="ShadowBlurWidth" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="ShadowType" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="97" dstpinname="LightBleedingLimit" linkstyle="Bezier">
+   <LINKPOINT x="7920" y="3278">
+   </LINKPOINT>
+   <LINKPOINT x="7920" y="3278">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="97" dstpinname="ShadowRes" linkstyle="Bezier">
+   <LINKPOINT x="8550" y="3495">
+   </LINKPOINT>
+   <LINKPOINT x="8550" y="3495">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="76" srcpinname="Y Output Value" dstnodeid="97" dstpinname="ShadowBlurWidth" linkstyle="Bezier">
+   <LINKPOINT x="9150" y="3750">
+   </LINKPOINT>
+   <LINKPOINT x="9150" y="3750">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="92" srcpinname="Y Output Value" dstnodeid="97" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="10425" y="3720">
+   </LINKPOINT>
+   <LINKPOINT x="10425" y="3720">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="Output" dstnodeid="127" dstpinname="Shadow" linkstyle="Bezier">
+   <LINKPOINT x="7260" y="4733">
+   </LINKPOINT>
+   <LINKPOINT x="5835" y="4733">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="PostFiltering (SuperPhysical Shadow)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="PostFiltering (SuperPhysical Shadow)" componentmode="Hidden" id="98">
+   <BOUNDS type="Node" left="9780" top="2445" width="2670" height="270">
+   </BOUNDS>
+   <PIN pinname="LightSize" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="NumShadowSamples" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="PenumbraScale" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="101" srcpinname="Y Output Value" dstnodeid="98" dstpinname="NumShadowSamples">
+   </LINK>
+   <LINK srcnodeid="99" srcpinname="Y Output Value" dstnodeid="98" dstpinname="Enabled" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="125" srcpinname="Y Output Value" dstnodeid="98" dstpinname="LightSize">
+   </LINK>
+   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="98" dstpinname="PenumbraScale">
+   </LINK>
+   <LINK srcnodeid="98" srcpinname="Output" dstnodeid="97" dstpinname="PostFiltering" linkstyle="Bezier">
+   <LINKPOINT x="9795" y="3278">
+   </LINKPOINT>
+   <LINKPOINT x="9795" y="3278">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="VSM (SuperPhysical ShadowType)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="VSM (SuperPhysical ShadowType)" componentmode="Hidden" id="83">
+   <BOUNDS type="Node" left="7245" top="1680" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7245" top="1680">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="83" srcpinname="Output" dstnodeid="97" dstpinname="ShadowType" linkstyle="Bezier">
+   <LINKPOINT x="7275" y="2915">
+   </LINKPOINT>
+   <LINKPOINT x="7275" y="2890">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="ESM (SuperPhysical ShadowType)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="ESM (SuperPhysical ShadowType)" componentmode="Hidden" id="82">
+   <BOUNDS type="Node" left="8055" top="1680" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="8055" top="1680">
+   </BOUNDS>
+   </NODE>
+   <PACK Name="dx11-vvvv-girlpower" Version="33.0">
    </PACK>
    </PATCH>

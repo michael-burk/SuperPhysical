@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
-   <PATCH nodename="F:\_jhnnslmk\Repositories\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="30">
-   <BOUNDS type="Window" left="1215" top="930" width="13950" height="10500">
+   <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Directional Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="30">
+   <BOUNDS type="Window" left="15210" top="-165" width="13950" height="10500">
    </BOUNDS>
    <PACK Name="addonpack" Version="40.0.0">
    </PACK>
@@ -440,7 +440,7 @@
    </PACK>
    <PACK Name="dx11.particles" Version="1.0.7">
    </PACK>
-   <NODE systemname="DirectionalLight (SuperPhysical.Light)" filename="%VVVV%\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="DirectionalLight (SuperPhysical.Light)" componentmode="Hidden" id="48">
+   <NODE systemname="PointlightSpreaded (SuperPhysical.Light)" filename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\vl\VVVV.SuperPhysical.vl" nodename="DirectionalLight (SuperPhysical.Light)" componentmode="Hidden" id="48">
    <BOUNDS type="Node" left="2880" top="7935" width="6555" height="270">
    </BOUNDS>
    <PIN pinname="Scale" visible="1" slicecount="1" values="0">
@@ -628,4 +628,6 @@
    <BOUNDS type="Box" left="10245" top="3435">
    </BOUNDS>
    </NODE>
+   <PACK Name="dx11-vvvv-girlpower" Version="33.0">
+   </PACK>
    </PATCH>

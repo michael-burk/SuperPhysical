@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
-   <PATCH nodename="F:\_jhnnslmk\Repositories\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="-690" top="2070" width="13605" height="8625">
+   <PATCH nodename="C:\vvvv\vvvv_beta_40_x64\packs\SuperPhysical\nodes\modules\LIGHT SETUP\Point Setup.v4p" systemname="Directional Setup" filename="C:\Projects\PBR_VVVV\Modules\Directional Setup.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="11895" top="945" width="13605" height="8625">
    </BOUNDS>
    <PACK Name="addonpack" Version="40.0.0">
    </PACK>
@@ -458,4 +458,6 @@
    <BOUNDS type="Box" left="8055" top="1680">
    </BOUNDS>
    </NODE>
+   <PACK Name="dx11-vvvv-girlpower" Version="33.0">
+   </PACK>
    </PATCH>
